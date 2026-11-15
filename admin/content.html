@@ -3,68 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content Manager | Sadana Green Society Admin</title>
+  <title>Universal Page Content Editor | Sadana Green Society Admin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
-  <style>
-    .content-tabs {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-      border-bottom: 2px solid var(--admin-border);
-      padding-bottom: 12px;
-    }
-    .content-tab-btn {
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border: none;
-      background: none;
-      color: var(--admin-muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .content-tab-btn.active {
-      background: var(--admin-primary);
-      color: #ffffff;
-    }
-    .clipping-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .clipping-card-admin {
-      background: #ffffff;
-      border: 1px solid var(--admin-border);
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .clipping-card-admin img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-    .clipping-admin-body {
-      padding: 16px;
-      flex: 1;
-    }
-  </style>
 </head>
 <body>
 
   <!-- Admin Sidebar -->
   <aside class="admin-sidebar">
     <div class="sidebar-header">
-      <img src="../assets/logo.png" alt="SGS" class="sidebar-logo">
+      <img src="../assets/logo.png" alt="SGS Official Logo" class="sidebar-logo">
       <div>
         <div class="sidebar-title">Sadana Green</div>
-        <div class="sidebar-subtitle">Admin Console</div>
+        <div class="sidebar-subtitle">Executive Console</div>
       </div>
     </div>
 
@@ -77,23 +30,18 @@
       </li>
       <li>
         <a href="applications.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           <span>Farmer Applications</span>
-        </a>
-      </li>
-      <li>
-        <a href="navigation.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <span>Navbar & Header</span>
+          <span class="badge-pill" id="statPendingApps">5</span>
         </a>
       </li>
       <li>
         <a href="content.html" class="active">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          <span>Content Manager</span>
+          <span>Universal CMS Editor</span>
         </a>
       </li>
-      <li style="margin-top: 20px;">
+      <li style="margin-top: 24px;">
         <a href="../index.html" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           <span>Public Website &nearr;</span>
@@ -111,10 +59,10 @@
       <div class="user-badge">
         <div class="user-avatar">SG</div>
         <div style="flex:1;">
-          <div style="font-weight:700; font-size:0.9rem;">SGS Coordinator</div>
-          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool Field HQ</div>
+          <div style="font-weight:700; font-size:0.9rem;">SGS Executive</div>
+          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool HQ</div>
         </div>
-        <button onclick="handleLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.1rem;">
+        <button onclick="handleAdminLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.15rem;">
           ⎋
         </button>
       </div>
@@ -125,154 +73,157 @@
   <main class="admin-main">
     <header class="admin-topbar">
       <div class="topbar-title">
-        <h1>Website Content Manager</h1>
-        <p style="font-size:0.85rem; color:var(--admin-muted);">Manage regional Telugu newspaper clippings, press notes, and field gallery albums.</p>
+        <h1>Universal Website Content Editor</h1>
+        <p style="font-size:0.86rem; color:var(--admin-muted); margin-top:2px;">Edit texts, headlines, metrics, and banners across EVERY page of the website.</p>
+      </div>
+      <div class="topbar-actions">
+        <a id="cmsPreviewLink" href="../index.html" target="_blank" class="btn-admin btn-admin-outline">
+          <span>👁️ Live Preview</span>
+        </a>
+        <button onclick="saveCurrentCMSPage(event)" class="btn-admin btn-admin-primary">
+          <span>💾 Save &amp; Publish Changes</span>
+        </button>
       </div>
     </header>
 
     <div class="admin-body">
-
-      <div class="content-tabs">
-        <button class="content-tab-btn active" onclick="switchContentTab('news')">📰 News & Press Clippings</button>
-        <button class="content-tab-btn" onclick="switchContentTab('gallery')">📸 Field Photo Gallery</button>
+      
+      <!-- Page Selector Bar (All 11 Pages) -->
+      <div class="cms-page-bar">
+        <button class="cms-page-tab active" data-page="home" onclick="loadCMSPage('home')">🏠 Home</button>
+        <button class="cms-page-tab" data-page="about" onclick="loadCMSPage('about')">ℹ️ About Us</button>
+        <button class="cms-page-tab" data-page="services" onclick="loadCMSPage('services')">🚜 Services</button>
+        <button class="cms-page-tab" data-page="agroforestry" onclick="loadCMSPage('agroforestry')">🌳 Agroforestry</button>
+        <button class="cms-page-tab" data-page="carbon" onclick="loadCMSPage('carbon')">🌍 Carbon Credits</button>
+        <button class="cms-page-tab" data-page="awd" onclick="loadCMSPage('awd')">🌾 AWD Paddy</button>
+        <button class="cms-page-tab" data-page="species" onclick="loadCMSPage('species')">🌱 16 Species Catalog</button>
+        <button class="cms-page-tab" data-page="news" onclick="loadCMSPage('news')">📰 News &amp; Press</button>
+        <button class="cms-page-tab" data-page="gallery" onclick="loadCMSPage('gallery')">📸 Photo Gallery</button>
+        <button class="cms-page-tab" data-page="contact" onclick="loadCMSPage('contact')">📞 Contact HQ</button>
+        <button class="cms-page-tab" data-page="faq" onclick="loadCMSPage('faq')">❓ FAQ &amp; Telugu Help</button>
       </div>
 
-      <!-- TAB 1: News Clippings -->
-      <div id="tab-news-content">
-        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; align-items: start;">
-
-          <!-- Add News Form -->
-          <div class="admin-card" style="padding: 24px;">
-            <h3 style="font-size: 1.15rem; margin-bottom: 16px; color: var(--admin-primary);">Add New Press Clipping</h3>
-            <form onsubmit="handleAddNewClipping(event)">
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">English Headline *</label>
-                <input type="text" id="news-headline-en" class="login-input" placeholder="e.g. Tree Plantation Drive in Banaganapalle" required>
-              </div>
-
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Telugu Headline / తెలుగు శీర్షిక *</label>
-                <input type="text" id="news-headline-te" class="login-input" placeholder="e.g. బనగానపల్లెలో మొక్కల పెంపకం" required style="font-family:'Noto Sans Telugu', sans-serif;">
-              </div>
-
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Publication / Newspaper Name *</label>
-                <input type="text" id="news-publication" class="login-input" placeholder="e.g. Eenadu / Sakshi / Andhra Jyothi" required>
-              </div>
-
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Image / Clipping File</label>
-                <input type="file" id="news-image-file" class="login-input" accept="image/*">
-              </div>
-
-              <div style="margin-bottom: 20px;">
-                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Article Summary</label>
-                <textarea id="news-summary" class="login-input" rows="3" placeholder="Brief explanation of the news coverage..."></textarea>
-              </div>
-
-              <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%; justify-content: center;">
-                Save & Publish to News Page
-              </button>
-            </form>
-          </div>
-
-          <!-- Existing Clippings -->
+      <!-- Editor Card -->
+      <div class="admin-card">
+        <div class="admin-card-header">
           <div>
-            <div class="admin-card" style="padding: 24px;">
-              <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--admin-primary);">Published Media Clippings</h3>
-              <p style="font-size: 0.88rem; color: var(--admin-muted);">Active regional news articles displayed on the public <a href="../news.html" target="_blank" style="color:var(--admin-accent);">News & Media</a> page.</p>
+            <h2 class="admin-card-title">Editing: <span id="cmsCurrentPageLabel" style="color:var(--admin-accent);">Home Page</span></h2>
+            <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Configure page titles, hero headings, and key statistical counters.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button onclick="resetCMSPageToDefault()" class="btn-admin btn-admin-outline" style="font-size:0.82rem; padding:6px 12px;">
+              ↺ Reset to Defaults
+            </button>
+            <button onclick="exportSiteConfigJSON()" class="btn-admin btn-admin-outline" style="font-size:0.82rem; padding:6px 12px;">
+              📥 Export Site Config
+            </button>
+            <label class="btn-admin btn-admin-outline" style="font-size:0.82rem; padding:6px 12px; cursor:pointer;">
+              📤 Import Config
+              <input type="file" accept=".json" onchange="importSiteConfigJSON(this)" style="display:none;">
+            </label>
+          </div>
+        </div>
 
-              <div class="clipping-preview-grid">
-                <div class="clipping-card-admin">
-                  <img src="../assets/images/news/news-clipping-01.jpg" alt="Clipping 1">
-                  <div class="clipping-admin-body">
-                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</strong>
-                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">Horticulture Support • Kurnool Daily</div>
-                  </div>
-                </div>
+        <form onsubmit="saveCurrentCMSPage(event)">
 
-                <div class="clipping-card-admin">
-                  <img src="../assets/images/news/news-clipping-02.jpg" alt="Clipping 2">
-                  <div class="clipping-admin-body">
-                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు</strong>
-                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">Farmer Incomes • District Bureau</div>
-                  </div>
-                </div>
-
-                <div class="clipping-card-admin">
-                  <img src="../assets/images/news/news-clipping-03.jpg" alt="Clipping 3">
-                  <div class="clipping-admin-body">
-                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట</strong>
-                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">AWD Paddy Water • Agriculture Feature</div>
-                  </div>
-                </div>
-
-                <div class="clipping-card-admin">
-                  <img src="../assets/images/news/news-clipping-04.jpg" alt="Clipping 4">
-                  <div class="clipping-admin-body">
-                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">రైతుల కృషి అభినందనీయం</strong>
-                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">Community Honors • Kurnool Bureau</div>
-                  </div>
-                </div>
+          <!-- Section 1: SEO & Browser Metadata -->
+          <div style="margin-bottom:30px;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
+              1. Search Engine Optimization (SEO) &amp; Browser Head
+            </h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+              <div class="form-group">
+                <label>Browser Page Title (HTML Title Tag)</label>
+                <input type="text" id="cms-meta-title" class="form-control" placeholder="Browser Title">
+              </div>
+              <div class="form-group">
+                <label>Meta Description (Google Search Snippet)</label>
+                <input type="text" id="cms-meta-desc" class="form-control" placeholder="Meta description">
               </div>
             </div>
           </div>
 
-        </div>
-      </div>
+          <!-- Section 2: Hero Section -->
+          <div style="margin-bottom:30px;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
+              2. Hero Banner &amp; Main Headline
+            </h3>
+            
+            <div class="form-group">
+              <label>Hero Tagline / Section Kicker</label>
+              <input type="text" id="cms-hero-tagline" class="form-control" placeholder="e.g. Sustainable Agriculture & Carbon Integrity">
+            </div>
 
-      <!-- TAB 2: Gallery -->
-      <div id="tab-gallery-content" style="display: none;">
-        <div class="admin-card" style="padding: 24px;">
-          <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--admin-primary);">Field Photos & Activity Albums</h3>
-          <p style="font-size: 0.88rem; color: var(--admin-muted); margin-bottom: 20px;">
-            Sadana Green Society maintains over 53 high-resolution field photos documenting nurseries, farmer meetings, sapling distribution, and AWD tube installations.
-          </p>
+            <div class="form-group">
+              <label>Main Headline (Supports &lt;br&gt; and HTML accents)</label>
+              <input type="text" id="cms-hero-title" class="form-control" placeholder="e.g. Greening Farmlands.<br>Securing Farmer Prosperity.">
+            </div>
 
-          <div style="display: flex; gap: 14px; margin-bottom: 24px;">
-            <a href="../gallery.html" target="_blank" class="btn-admin btn-admin-accent">
-              View Public Field Gallery (53+ Photos) &rarr;
-            </a>
+            <div class="form-group">
+              <label>Hero Lead Subtitle / Paragraph</label>
+              <textarea id="cms-hero-subtitle" class="form-control" rows="3" placeholder="Lead paragraph text explaining the page value proposition..."></textarea>
+            </div>
           </div>
 
-          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-            <img src="../assets/images/gallery/sgs-activity-01.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-02.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-03.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-04.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-05.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-06.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-07.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
-            <img src="../assets/images/gallery/sgs-activity-08.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+          <!-- Section 3: Four Impact Statistics Counters -->
+          <div style="margin-bottom:30px;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
+              3. Four Impact Statistics / Numbers
+            </h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 1 Number &amp; Label</label>
+                <input type="text" id="cms-stat1-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+                <input type="text" id="cms-stat1-lbl" class="form-control" style="font-size:0.85rem;">
+              </div>
+              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 2 Number &amp; Label</label>
+                <input type="text" id="cms-stat2-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+                <input type="text" id="cms-stat2-lbl" class="form-control" style="font-size:0.85rem;">
+              </div>
+              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 3 Number &amp; Label</label>
+                <input type="text" id="cms-stat3-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+                <input type="text" id="cms-stat3-lbl" class="form-control" style="font-size:0.85rem;">
+              </div>
+              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 4 Number &amp; Label</label>
+                <input type="text" id="cms-stat4-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+                <input type="text" id="cms-stat4-lbl" class="form-control" style="font-size:0.85rem;">
+              </div>
+            </div>
           </div>
-        </div>
+
+          <!-- Section 4: Secondary Section Headings -->
+          <div style="margin-bottom:30px;">
+            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
+              4. Core Feature Section Titles
+            </h3>
+            <div class="form-group">
+              <label>Feature Section Title</label>
+              <input type="text" id="cms-sec1-title" class="form-control" placeholder="e.g. How Our Dedicated Approach Works for Your Success">
+            </div>
+            <div class="form-group">
+              <label>Feature Section Subtitle</label>
+              <input type="text" id="cms-sec1-subtitle" class="form-control" placeholder="Subtitle description">
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display:flex; justify-content:flex-end; gap:12px; border-top:1px solid var(--admin-border); padding-top:20px;">
+            <button type="button" onclick="loadCMSPage(currentCMSPage)" class="btn-admin btn-admin-outline">Cancel</button>
+            <button type="submit" class="btn-admin btn-admin-primary" style="padding:12px 28px; font-size:0.95rem;">
+              <span>💾 Save &amp; Publish Page Changes</span>
+            </button>
+          </div>
+
+        </form>
+
       </div>
 
     </div>
   </main>
 
   <script src="admin.js"></script>
-  <script>
-    function switchContentTab(tab) {
-      var btns = document.querySelectorAll('.content-tab-btn');
-      btns.forEach(function(b) { b.classList.remove('active'); });
-
-      if (tab === 'news') {
-        btns[0].classList.add('active');
-        document.getElementById('tab-news-content').style.display = 'block';
-        document.getElementById('tab-gallery-content').style.display = 'none';
-      } else {
-        btns[1].classList.add('active');
-        document.getElementById('tab-news-content').style.display = 'none';
-        document.getElementById('tab-gallery-content').style.display = 'block';
-      }
-    }
-
-    function handleAddNewClipping(e) {
-      e.preventDefault();
-      alert('Clipping added to local staging! This entry will appear on your regional news feed.');
-      e.target.reset();
-    }
-  </script>
 </body>
 </html>

@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#55a630">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>About Us | Sadana Green Society — Leadership & Mission</title>
   <meta name="description" content="Learn about Sadana Green Society, Founder & President B. Raghu Bhaskar, our grassroots agroforestry journey from Kurnool across Andhra Pradesh, Telangana, and Karnataka.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://sadanagreensociety.com/">
   
-  <!-- Favicons -->
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="About Us | Sadana Green Society — Leadership & Mission">
+  <meta property="og:description" content="Learn about Sadana Green Society, Founder & President B. Raghu Bhaskar, our grassroots agroforestry journey from Kurnool across Andhra Pradesh, Telangana, and Karnataka.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sadanagreensociety.com/">
+  <meta property="og:image" content="https://sadanagreensociety.com/assets/logo.png">
+
+  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
@@ -36,7 +40,7 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu with Mega Menu -->
+      <!-- Desktop Navigation Menu with Mega Menu and Selio Cascading Dropdown -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-menu">
           <li class="nav-item">
@@ -94,7 +98,7 @@
                   </a>
 
                   <a href="news.html" class="megamenu-news-item">
-                    <img src="assets/images/news/news-clipping-03.jpg" alt="News 2">
+                    <img src="assets/images/news/news-clipping-02.jpg" alt="News 2">
                     <div>
                       <h5 style="font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట (AWD)</h5>
                       <small>Agriculture Feature</small>
@@ -103,7 +107,7 @@
                 </div>
               </div>
 
-              <!-- Right Column: Featured Program + Video Card (Exact image2.png) -->
+              <!-- Right Column: Highlight Card with Video & CTA -->
               <div class="megamenu-right-highlight">
                 <div class="megamenu-right-header">
                   <h4>Farmer Registration 2026</h4>
@@ -121,12 +125,61 @@
             </div>
           </li>
 
-          <li class="nav-item">
-            <a href="about.html" class="nav-link active">About Us</a>
+          <!-- Selio-Style Species Cascading Flyout Dropdown (Images 2 & 3) -->
+          <li class="nav-item ct-has-dropdown selio-dropdown-parent">
+            <a href="species.html" class="nav-link">
+              Species
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            
+            <div class="selio-flyout-menu">
+              <a href="agroforestry.html" class="selio-flyout-item">
+                <span>Why Agroforestry</span>
+              </a>
+              
+              <div class="selio-flyout-subgroup">
+                <a href="forest-species.html" class="selio-flyout-item has-sub">
+                  <span>Forest Species (Timber)</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <div class="selio-sub-menu">
+                  <a href="forest-species.html#teak" class="selio-sub-item">Teak (టేకు)</a>
+                  <a href="forest-species.html#melia-dubia" class="selio-sub-item">Melia Dubia (మలబార్ వేప)</a>
+                  <a href="forest-species.html#casuarina" class="selio-sub-item">Casuarina (సర్వి)</a>
+                  <a href="forest-species.html#pongamia" class="selio-sub-item">Pongamia (కానుగ)</a>
+                  <a href="forest-species.html#neem" class="selio-sub-item">Neem (వేప)</a>
+                  <a href="forest-species.html#bamboo" class="selio-sub-item">Bamboo (వెదురు)</a>
+                  <a href="forest-species.html#subabul" class="selio-sub-item">Subabul (సుబాబుల్)</a>
+                  <a href="forest-species.html#red-sanders" class="selio-sub-item">Red Sanders (ఎర్రచందనం)</a>
+                </div>
+              </div>
+
+              <div class="selio-flyout-subgroup">
+                <a href="fruit-species.html" class="selio-flyout-item has-sub">
+                  <span>Fruit Species (Horticulture)</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <div class="selio-sub-menu">
+                  <a href="fruit-species.html#mango" class="selio-sub-item">Mango (మామిడి)</a>
+                  <a href="fruit-species.html#guava" class="selio-sub-item">Guava (జామ)</a>
+                  <a href="fruit-species.html#sapota" class="selio-sub-item">Sapota (సపోటా)</a>
+                  <a href="fruit-species.html#custard-apple" class="selio-sub-item">Custard Apple (సీతాఫలం)</a>
+                  <a href="fruit-species.html#amla" class="selio-sub-item">Amla (ఉసిరి)</a>
+                  <a href="fruit-species.html#lemon" class="selio-sub-item">Lemon (నిమ్మ)</a>
+                  <a href="fruit-species.html#coconut" class="selio-sub-item">Coconut (కొబ్బరి)</a>
+                  <a href="fruit-species.html#cashew" class="selio-sub-item">Cashew (జీడిమామిడి)</a>
+                </div>
+              </div>
+
+              <div class="selio-flyout-divider"></div>
+              <a href="species.html" class="selio-flyout-item all-species-link">
+                <span>View All 16 Species Catalog &rarr;</span>
+              </a>
+            </div>
           </li>
 
           <li class="nav-item">
-            <a href="species.html" class="nav-link">Species</a>
+            <a href="about.html" class="nav-link active">About Us</a>
           </li>
 
           <li class="nav-item">
@@ -158,57 +211,62 @@
           <span class="cta-arrow">&rarr;</span>
         </a>
 
-        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Open Mobile Navigation">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Open mobile menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
 
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Dark Drawer (Image 12) -->
-  <div class="mobile-drawer-overlay" id="drawer-overlay" onclick="closeMobileDrawer()"></div>
-  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
-    <div>
-      <div class="drawer-header">
-        <div class="drawer-logo">
-          <img src="assets/logo.png" alt="SGS Logo">
-          <span>Sadana Green Society</span>
-        </div>
-        <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close Mobile Navigation">&times;</button>
+  <!-- Mobile Responsive Navigation Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <img src="assets/logo.png" alt="Sadana Green Society Logo" width="36" height="36">
+        <span style="font-weight:800; font-size:1.05rem; color:#172723;">Sadana Green Society</span>
       </div>
+      <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">&times;</button>
+    </div>
 
-      <ul class="drawer-menu">
-        <li><a href="index.html" class="drawer-link">Home</a></li>
-        <li><a href="services.html" class="drawer-link">Programmes Overview</a></li>
-        <li><a href="agroforestry.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
-        <li><a href="carbon-credits.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Carbon Credits</a></li>
-        <li><a href="awd.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ AWD Paddy Water</a></li>
-        <li><a href="environment.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Environment &amp; Climate</a></li>
-        <li><a href="about.html" class="drawer-link active">About Us</a></li>
-        <li><a href="our-journey.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Our Journey &amp; Milestones</a></li>
-        <li><a href="species.html" class="drawer-link">Plant Species</a></li>
-        <li><a href="forest-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Forest Trees (8 Species)</a></li>
-        <li><a href="fruit-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Fruit Trees (8 Species)</a></li>
-        <li><a href="gallery.html" class="drawer-link">Photo Gallery (44 Photos)</a></li>
-        <li><a href="news.html" class="drawer-link">News &amp; Media</a></li>
-        <li><a href="faq.html" class="drawer-link">FAQ</a></li>
-        <li><a href="contact.html" class="drawer-link">Contact</a></li>
-      </ul>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="services.html" class="drawer-link">Programmes Overview</a></li>
+      <li style="padding-left:16px;"><a href="agroforestry.html" class="drawer-link">&bull; Agroforestry Models</a></li>
+      <li style="padding-left:16px;"><a href="carbon-credits.html" class="drawer-link">&bull; Carbon Credits</a></li>
+      <li style="padding-left:16px;"><a href="awd.html" class="drawer-link">&bull; AWD Paddy Water</a></li>
+      
+      <li><a href="species.html" class="drawer-link">Plant Species Catalog (16)</a></li>
+      <li style="padding-left:16px;"><a href="forest-species.html" class="drawer-link">&bull; Forest / Timber Species (8)</a></li>
+      <li style="padding-left:16px;"><a href="fruit-species.html" class="drawer-link">&bull; Fruit / Horticulture Species (8)</a></li>
+      
+      <li><a href="about.html" class="drawer-link active">About Us</a></li>
+      <li style="padding-left:16px;"><a href="our-journey.html" class="drawer-link">&bull; Our Journey &amp; Milestones</a></li>
+      <li><a href="gallery.html" class="drawer-link">Field Photo Gallery (44)</a></li>
+      <li><a href="news.html" class="drawer-link">News &amp; Media Hub</a></li>
+      <li><a href="faq.html" class="drawer-link">FAQ (English &amp; Telugu)</a></li>
+      <li><a href="contact.html" class="drawer-link">Contact Us</a></li>
+    </ul>
 
-      <div class="drawer-cta-wrap">
-        <a href="new-plantation.html" class="btn-pill-cta" style="width:100%; justify-content:center;">
-          <span>Apply for Saplings</span>
-          <span class="cta-arrow">&rarr;</span>
-        </a>
-      </div>
+    <div style="margin-top:28px; padding-top:20px; border-top:1px solid #edf2ee;">
+      <a href="new-plantation.html" class="btn-pill-cta" style="width:100%; justify-content:center;">
+        <span>Apply for Saplings</span>
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+      <a href="admin/login.html" style="display:block; text-align:center; margin-top:16px; font-size:0.85rem; color:#55685d; text-decoration:none;">
+        Officer Portal Login &rarr;
+      </a>
     </div>
   </aside>
+  <div class="drawer-backdrop" id="drawer-overlay" onclick="closeMobileDrawer()"></div>
 
 
   <main id="main">
+    
+    <!-- Hero Section (Matching Image 3) -->
     <section class="hero-landscape" style="background-image: url('assets/images/template/about-us-hero-image.webp'); min-height:65vh; padding:130px 0 160px;">
-      <div class="hero-video-overlay" style="background: linear-gradient(180deg, rgba(15,26,23,0.65) 0%, rgba(15,26,23,0.85) 100%);"></div>
+      <div class="hero-video-overlay" style="background: linear-gradient(180deg, rgba(15,26,23,0.7) 0%, rgba(15,26,23,0.85) 100%);"></div>
       
       <div class="hero-container">
         <div class="hero-grid-2col" style="align-items:center;">
@@ -229,9 +287,9 @@
     </section>
 
     <!-- Large Curved Agronomists Photo Card with Floating Review Badge (Image 3) -->
-    <div class="about-hero-tablet-card" style="background-image: url('assets/images/template/about-us-hero-column-image.webp');">
+    <div class="about-hero-tablet-card" style="background-image: url('assets/images/template/about-agronomists.jpg');">
       <div class="floating-review-badge">
-        <img src="assets/images/template/testimonial-avatar-1.webp" alt="Farmer Reviewer">
+        <img src="assets/images/template/team-3.jpg" alt="Farmer Reviewer">
         <p>"Excellent service, fast and professional installation, with noticeable savings that continue to grow each passing month."</p>
       </div>
     </div>
@@ -266,8 +324,8 @@
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-            <div style="height:320px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-image-1.webp'); background-size:cover; background-position:center;"></div>
-            <div style="height:320px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-image-2.webp'); background-size:cover; background-position:center;"></div>
+            <div style="height:320px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/home-page-grid-image-3.webp'); background-size:cover; background-position:center;"></div>
+            <div style="height:320px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/feature-tractor.jpg'); background-size:cover; background-position:center;"></div>
           </div>
 
         </div>
@@ -276,7 +334,7 @@
 
     <!-- News Hub Banner with Green Card (Image 3 / Slice 2) -->
     <div class="container">
-      <div class="about-news-hub-banner" style="background-image: url('assets/images/template/about-us-cta-image.webp');">
+      <div class="about-news-hub-banner" style="background-image: url('assets/images/template/about-news-hub.jpg');">
         <div class="about-news-hub-card">
           <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <h3>Stay Informed With Updates From Our News Hub</h3>
@@ -298,53 +356,63 @@
         </h2>
 
         <div class="about-team-grid">
+          
+          <!-- Member 1: Founder & President B. Raghu Bhaskar -->
           <div class="about-team-card">
             <div class="about-team-photo" style="background-image: url('assets/images/founder/b-raghu-bhaskar-professional.png'); background-color:#e8f0eb;"></div>
             <h4>B. Raghu Bhaskar</h4>
             <p>Founder &amp; President</p>
           </div>
 
+          <!-- Member 2 -->
           <div class="about-team-card">
             <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-2.webp');"></div>
             <h4>Michael Brown</h4>
             <p>Farm manager</p>
           </div>
 
+          <!-- Member 3 -->
           <div class="about-team-card">
-            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-3.webp');"></div>
+            <div class="about-team-photo" style="background-image: url('assets/images/template/team-3.jpg');"></div>
             <h4>Sarah Thompson</h4>
             <p>Agricultural operations</p>
           </div>
 
+          <!-- Member 4 -->
           <div class="about-team-card">
-            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-4.webp');"></div>
+            <div class="about-team-photo" style="background-image: url('assets/images/template/team-4.jpg');"></div>
             <h4>David Wilson</h4>
             <p>Crop production specialist</p>
           </div>
 
+          <!-- Member 5 -->
           <div class="about-team-card">
-            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-5.webp');"></div>
+            <div class="about-team-photo" style="background-image: url('assets/images/template/team-5.jpg');"></div>
             <h4>Alicia Henderson</h4>
             <p>Soil scientist</p>
           </div>
 
+          <!-- Member 6 -->
           <div class="about-team-card">
-            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-6.webp');"></div>
+            <div class="about-team-photo" style="background-image: url('assets/images/template/team-6.jpg');"></div>
             <h4>Thomas Clark</h4>
             <p>Agricultural engineer</p>
           </div>
 
+          <!-- Member 7 -->
           <div class="about-team-card">
-            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-7.webp');"></div>
+            <div class="about-team-photo" style="background-image: url('assets/images/template/team-7.jpg');"></div>
             <h4>Robert Davis</h4>
             <p>Crop consultant</p>
           </div>
 
+          <!-- Member 8 -->
           <div class="about-team-card">
-            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-8.webp');"></div>
+            <div class="about-team-photo" style="background-image: url('assets/images/template/team-8.jpg');"></div>
             <h4>Emily Benedict</h4>
             <p>Livestock nutritionist</p>
           </div>
+
         </div>
 
       </div>
@@ -353,11 +421,13 @@
     <!-- Testimonials Section (Image 3 / Slice 4) -->
     <section style="padding: 70px 0 100px; background:#fbfcfc;">
       <div class="container">
+        
         <h2 class="section-title-twotone">
           Discover What Our <span class="muted-text">Valued Customers Are Saying About Us</span>
         </h2>
 
         <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:28px; margin-top:50px;">
+          
           <div style="background:#ffffff; padding:36px; border-radius:24px; box-shadow:0 8px 24px rgba(15,26,23,0.04); border:1px solid #edf2ef; display:flex; flex-direction:column; justify-content:space-between;">
             <div>
               <h4 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:4px;">R. Venkateshwarlu</h4>
@@ -393,32 +463,33 @@
             </div>
             <div style="font-size:1.15rem; font-weight:800; color:#172723; margin-top:24px;">5.0 ★</div>
           </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- Dark CTA Section (Image 3 / Slice 5) -->
-    <section class="dark-greenhouse-section" style="background-image: url('assets/images/template/about-us-bottom-cta-background-3.webp'); background-size:cover; background-position:center;">
+    <!-- Dark CTA Section: 3 Curved Cards Left, Action Right (Image 3 / Slice 5) -->
+    <section class="dark-greenhouse-section">
       <div class="container">
         <div class="hero-grid-2col" style="align-items:center; gap:60px;">
           
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
             <div style="background:#1f332e; border-radius:24px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; height:240px;">
               <div>
-                <h4 style="font-size:1.5rem; font-weight:800; color:#ffffff; margin-bottom:8px;">1,20,000+ Farmers</h4>
+                <h4 style="font-size:1.5rem; font-weight:800; color:#ffffff; margin-bottom:8px;">2500+ clients</h4>
                 <p style="font-size:0.8rem; color:rgba(255,255,255,0.75); line-height:1.4;">Our commitment to quality, innovation, and reliability has consistently earned the trust of farmers.</p>
               </div>
               <div class="avatar-group">
-                <img src="assets/images/template/client-image-1.webp" alt="c1">
-                <img src="assets/images/template/client-image-2.webp" alt="c2">
-                <img src="assets/images/template/client-image-3.webp" alt="c3">
+                <img src="assets/images/template/team-1.jpg" alt="c1">
+                <img src="assets/images/template/farmer-2.webp" alt="c2">
+                <img src="assets/images/template/team-3.jpg" alt="c3">
               </div>
             </div>
 
-            <div style="height:240px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-cta-image-2.webp'); background-size:cover; background-position:center;"></div>
+            <div style="height:240px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/dark-woman-nursery.jpg'); background-size:cover; background-position:center;"></div>
             
-            <div style="grid-column: span 2; height:200px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-cta-image-3.webp'); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center;">
+            <div style="grid-column: span 2; height:200px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/bento-4.jpg'); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center;">
               <div onclick="openVideoModal('assets/hero-video.mp4')" class="play-btn-circle" style="cursor:pointer;">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
@@ -468,6 +539,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="about.html" class="active">About</a></li>
+          <li><a href="species.html">Species</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -540,19 +612,19 @@
       <div class="footer-bottom-bar">
         <span>Copyright &copy; 2026 - Sadana Green Society. All Rights Reserved.</span>
         <div>
-          <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a> &nbsp;|&nbsp; <a href="admin/login.html">Admin Portal</a>
         </div>
       </div>
 
     </div>
   </footer>
 
-  <!-- Interactive Modals (Video Lightbox & Global Search) -->
+  <!-- Interactive Modals (Pure Modal Classes - Zero Document Leak) -->
   <div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal()">
     <div class="video-modal-content" onclick="event.stopPropagation()">
       <button class="video-close-btn" onclick="closeVideoModal()" aria-label="Close Video">&times;</button>
-      <div class="video-wrapper">
-        <video id="modalVideoPlayer" controls playsinline>
+      <div style="position:relative; aspect-ratio:16/9; background:#000000; border-radius:18px; overflow:hidden;">
+        <video id="modalVideoPlayer" controls playsinline style="width:100%; height:100%; display:block;">
           <source src="assets/hero-video.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -562,27 +634,36 @@
 
   <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal()">
     <div class="search-modal-box" onclick="event.stopPropagation()">
-      <div class="search-input-wrap">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="globalSearchInput" placeholder="Search programmes, species, AWD, carbon credits..." oninput="handleGlobalSearch(this.value)">
-        <button onclick="closeSearchModal()">&times;</button>
+      <button class="search-modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+      <div style="padding: 28px 28px 12px;">
+        <h3 style="font-size:1.25rem; font-weight:800; color:#172723; margin-bottom:14px;">Search Website</h3>
+        <div class="search-input-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="globalSearchInput" placeholder="Type to search species, AWD, carbon credits, programmes..." oninput="handleGlobalSearch(this.value)">
+        </div>
       </div>
-      <div class="search-results-list" id="searchResults">
+      <div class="search-results-list" id="searchResults" style="max-height:360px; overflow-y:auto; padding:0 28px 24px;">
         <p class="search-hint">Type to search across all SGS pages, species, and farmer programmes.</p>
       </div>
     </div>
   </div>
 
-  <!-- Floating WhatsApp Helpline -->
-  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS on WhatsApp">
+  <!-- Floating WhatsApp Helpline (Rectified SVG & High-Contrast Emerald Badge) -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS Farmer Support on WhatsApp">
     <div class="whatsapp-circle-btn">
-      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2a14 14 0 0 0-12.1 21L2 30l7.2-1.9A14 14 0 1 0 16 2zm0 25.6a11.6 11.6 0 0 1-5.9-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.6zm6.4-8.7c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 1 5.3 5.3 0 0 0 1.6 4.3 12.3 12.3 0 0 0 5.3 4.7 18.2 18.2 0 0 0 1.8.7 4.3 4.3 0 0 0 2 .1 3.5 3.5 0 0 0 2.3-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.4-.2-.7-.3z"/></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
     </div>
-    <span class="whatsapp-pill-label">Farmer Support</span>
+    <div class="whatsapp-badge-pill">
+      <span class="live-pulse-dot"></span>
+      <span class="badge-text">Farmer Support</span>
+    </div>
   </a>
 
   <!-- Global Scripts -->
   <script src="js/app.js"></script>
+  <script src="js/cms-client.js"></script>
 </body>
 </html>
 

@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
-# Sadana Green Society - HostingRaja Production .htaccess
-# Optimized for cPanel Apache & LiteSpeed Servers
+# Sadana Green Society - Production .htaccess
+# Optimized for cPanel Apache, LiteSpeed & HostingRaja Servers
 # ----------------------------------------------------------------------
 
 # Enable Rewrite Engine
@@ -11,6 +11,16 @@
     # Redirect HTTP to HTTPS automatically
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Clean URLs: If request has .html directly in browser, 301 redirect to extensionless URL (except admin)
+    RewriteCond %{THE_REQUEST} /([^\s?]+)\.html[\s?] [NC]
+    RewriteCond %{REQUEST_URI} !^/admin
+    RewriteRule ^ /%1 [R=301,L,NE]
+
+    # Internally rewrite clean URL to .html file if the .html file exists
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # ----------------------------------------------------------------------

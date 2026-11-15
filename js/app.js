@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      header.classList.add('scrolled');
+      if (header) header.classList.add('scrolled');
     } else {
-      header.classList.remove('scrolled');
+      if (header) header.classList.remove('scrolled');
     }
   });
 
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       closeVideoModal();
       closeSearchModal();
       closeMobileDrawer();
+      closeGalleryLightbox();
     }
   });
 });
@@ -28,22 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
 function openVideoModal(videoSrc) {
   const modal = document.getElementById('videoModal');
   const videoPlayer = document.getElementById('modalVideoPlayer');
-  if (modal && videoPlayer) {
-    if (videoSrc) {
-      videoPlayer.querySelector('source').src = videoSrc;
+  if (modal) {
+    if (videoPlayer && videoSrc) {
+      const source = videoPlayer.querySelector('source');
+      if (source) source.src = videoSrc;
       videoPlayer.load();
+      videoPlayer.play().catch(() => {});
     }
     modal.classList.add('active');
-    videoPlayer.play().catch(() => {});
   }
 }
 
 function closeVideoModal() {
   const modal = document.getElementById('videoModal');
   const videoPlayer = document.getElementById('modalVideoPlayer');
-  if (modal && videoPlayer) {
+  if (modal) {
     modal.classList.remove('active');
-    videoPlayer.pause();
+    if (videoPlayer) videoPlayer.pause();
   }
 }
 
@@ -55,7 +57,7 @@ const searchablePages = [
   { title: "Programmes & Services", url: "services.html", desc: "Agroforestry models, soil testing, and precision farming." },
   { title: "Agroforestry Models", url: "agroforestry.html", desc: "Boundary plantations, mixed cropping, and timber economics." },
   { title: "Species Catalog (16 Trees)", url: "species.html", desc: "All 16 native timber & fruit species with soil guides." },
-  { title: "Forest & Timber Species", url: "forest-species.html", desc: "Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Red Sanders." },
+  { title: "Forest & Timber Species", url: "forest-species.html", desc: "Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul, Red Sanders." },
   { title: "Fruit & Horticulture Species", url: "fruit-species.html", desc: "Mango, Guava, Sapota, Custard Apple, Amla, Lemon, Coconut, Cashew." },
   { title: "Carbon Credits Lifecycle", url: "carbon-credits.html", desc: "7-stage MRV satellite monitoring & farmer revenue disbursements." },
   { title: "AWD Paddy Water Management", url: "awd.html", desc: "Save 30% water and reduce methane emissions in rice cultivation." },
@@ -108,7 +110,7 @@ function handleGlobalSearch(query) {
   }
 
   container.innerHTML = results.map(r => `
-    <a href="${r.url}" class="search-result-item" style="display:block; padding:12px 16px; border-radius:12px; border-bottom:1px solid #edf2ef; text-decoration:none; margin-bottom:8px;">
+    <a href="${r.url}" class="search-result-item" style="display:block; padding:12px 16px; border-radius:12px; border-bottom:1px solid #edf2ef; text-decoration:none; margin-bottom:8px; background:#fbfdfb;">
       <h4 style="font-size:1rem; font-weight:700; color:#172723; margin:0 0 4px 0;">${r.title}</h4>
       <p style="font-size:0.85rem; color:#556862; margin:0;">${r.desc}</p>
     </a>
@@ -130,4 +132,25 @@ function closeMobileDrawer() {
   if (drawer) drawer.classList.remove('active');
   if (overlay) overlay.classList.remove('active');
   document.body.style.overflow = '';
+}
+
+// --- GALLERY LIGHTBOX MODAL ---
+function openGalleryLightbox(src, caption) {
+  const modal = document.getElementById('galleryLightboxModal') || document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImg');
+  const cap = document.getElementById('lightboxCaption');
+  if (modal && img) {
+    img.src = src;
+    if (cap) cap.innerText = caption || 'Field Activity Photo';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeGalleryLightbox() {
+  const modal = document.getElementById('galleryLightboxModal') || document.getElementById('lightboxModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 }

@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#55a630">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Apply for Saplings &amp; Programmes | Sadana Green Society</title>
   <meta name="description" content="Farmer registration portal for certified agroforestry saplings, GPS land mapping, and AWD paddy water programmes.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://sadanagreensociety.com/">
   
-  <!-- Favicons -->
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Apply for Saplings &amp; Programmes | Sadana Green Society">
+  <meta property="og:description" content="Farmer registration portal for certified agroforestry saplings, GPS land mapping, and AWD paddy water programmes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sadanagreensociety.com/">
+  <meta property="og:image" content="https://sadanagreensociety.com/assets/logo.png">
+
+  <!-- Icons -->
   <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
@@ -36,7 +40,7 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu with Mega Menu -->
+      <!-- Desktop Navigation Menu with Mega Menu and Selio Cascading Dropdown -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-menu">
           <li class="nav-item">
@@ -94,7 +98,7 @@
                   </a>
 
                   <a href="news.html" class="megamenu-news-item">
-                    <img src="assets/images/news/news-clipping-03.jpg" alt="News 2">
+                    <img src="assets/images/news/news-clipping-02.jpg" alt="News 2">
                     <div>
                       <h5 style="font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట (AWD)</h5>
                       <small>Agriculture Feature</small>
@@ -103,7 +107,7 @@
                 </div>
               </div>
 
-              <!-- Right Column: Featured Program + Video Card (Exact image2.png) -->
+              <!-- Right Column: Highlight Card with Video & CTA -->
               <div class="megamenu-right-highlight">
                 <div class="megamenu-right-header">
                   <h4>Farmer Registration 2026</h4>
@@ -121,12 +125,61 @@
             </div>
           </li>
 
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About Us</a>
+          <!-- Selio-Style Species Cascading Flyout Dropdown (Images 2 & 3) -->
+          <li class="nav-item ct-has-dropdown selio-dropdown-parent">
+            <a href="species.html" class="nav-link">
+              Species
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            
+            <div class="selio-flyout-menu">
+              <a href="agroforestry.html" class="selio-flyout-item">
+                <span>Why Agroforestry</span>
+              </a>
+              
+              <div class="selio-flyout-subgroup">
+                <a href="forest-species.html" class="selio-flyout-item has-sub">
+                  <span>Forest Species (Timber)</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <div class="selio-sub-menu">
+                  <a href="forest-species.html#teak" class="selio-sub-item">Teak (టేకు)</a>
+                  <a href="forest-species.html#melia-dubia" class="selio-sub-item">Melia Dubia (మలబార్ వేప)</a>
+                  <a href="forest-species.html#casuarina" class="selio-sub-item">Casuarina (సర్వి)</a>
+                  <a href="forest-species.html#pongamia" class="selio-sub-item">Pongamia (కానుగ)</a>
+                  <a href="forest-species.html#neem" class="selio-sub-item">Neem (వేప)</a>
+                  <a href="forest-species.html#bamboo" class="selio-sub-item">Bamboo (వెదురు)</a>
+                  <a href="forest-species.html#subabul" class="selio-sub-item">Subabul (సుబాబుల్)</a>
+                  <a href="forest-species.html#red-sanders" class="selio-sub-item">Red Sanders (ఎర్రచందనం)</a>
+                </div>
+              </div>
+
+              <div class="selio-flyout-subgroup">
+                <a href="fruit-species.html" class="selio-flyout-item has-sub">
+                  <span>Fruit Species (Horticulture)</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+                </a>
+                <div class="selio-sub-menu">
+                  <a href="fruit-species.html#mango" class="selio-sub-item">Mango (మామిడి)</a>
+                  <a href="fruit-species.html#guava" class="selio-sub-item">Guava (జామ)</a>
+                  <a href="fruit-species.html#sapota" class="selio-sub-item">Sapota (సపోటా)</a>
+                  <a href="fruit-species.html#custard-apple" class="selio-sub-item">Custard Apple (సీతాఫలం)</a>
+                  <a href="fruit-species.html#amla" class="selio-sub-item">Amla (ఉసిరి)</a>
+                  <a href="fruit-species.html#lemon" class="selio-sub-item">Lemon (నిమ్మ)</a>
+                  <a href="fruit-species.html#coconut" class="selio-sub-item">Coconut (కొబ్బరి)</a>
+                  <a href="fruit-species.html#cashew" class="selio-sub-item">Cashew (జీడిమామిడి)</a>
+                </div>
+              </div>
+
+              <div class="selio-flyout-divider"></div>
+              <a href="species.html" class="selio-flyout-item all-species-link">
+                <span>View All 16 Species Catalog &rarr;</span>
+              </a>
+            </div>
           </li>
 
           <li class="nav-item">
-            <a href="species.html" class="nav-link">Species</a>
+            <a href="about.html" class="nav-link">About Us</a>
           </li>
 
           <li class="nav-item">
@@ -158,55 +211,59 @@
           <span class="cta-arrow">&rarr;</span>
         </a>
 
-        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Open Mobile Navigation">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Open mobile menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
 
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Dark Drawer (Image 12) -->
-  <div class="mobile-drawer-overlay" id="drawer-overlay" onclick="closeMobileDrawer()"></div>
-  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
-    <div>
-      <div class="drawer-header">
-        <div class="drawer-logo">
-          <img src="assets/logo.png" alt="SGS Logo">
-          <span>Sadana Green Society</span>
-        </div>
-        <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close Mobile Navigation">&times;</button>
+  <!-- Mobile Responsive Navigation Drawer -->
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <img src="assets/logo.png" alt="Sadana Green Society Logo" width="36" height="36">
+        <span style="font-weight:800; font-size:1.05rem; color:#172723;">Sadana Green Society</span>
       </div>
+      <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">&times;</button>
+    </div>
 
-      <ul class="drawer-menu">
-        <li><a href="index.html" class="drawer-link">Home</a></li>
-        <li><a href="services.html" class="drawer-link active">Programmes Overview</a></li>
-        <li><a href="agroforestry.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
-        <li><a href="carbon-credits.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Carbon Credits</a></li>
-        <li><a href="awd.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ AWD Paddy Water</a></li>
-        <li><a href="environment.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Environment &amp; Climate</a></li>
-        <li><a href="about.html" class="drawer-link">About Us</a></li>
-        <li><a href="our-journey.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Our Journey &amp; Milestones</a></li>
-        <li><a href="species.html" class="drawer-link">Plant Species</a></li>
-        <li><a href="forest-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Forest Trees (8 Species)</a></li>
-        <li><a href="fruit-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Fruit Trees (8 Species)</a></li>
-        <li><a href="gallery.html" class="drawer-link">Photo Gallery (44 Photos)</a></li>
-        <li><a href="news.html" class="drawer-link">News &amp; Media</a></li>
-        <li><a href="faq.html" class="drawer-link">FAQ</a></li>
-        <li><a href="contact.html" class="drawer-link">Contact</a></li>
-      </ul>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="services.html" class="drawer-link active">Programmes Overview</a></li>
+      <li style="padding-left:16px;"><a href="agroforestry.html" class="drawer-link">&bull; Agroforestry Models</a></li>
+      <li style="padding-left:16px;"><a href="carbon-credits.html" class="drawer-link">&bull; Carbon Credits</a></li>
+      <li style="padding-left:16px;"><a href="awd.html" class="drawer-link">&bull; AWD Paddy Water</a></li>
+      
+      <li><a href="species.html" class="drawer-link">Plant Species Catalog (16)</a></li>
+      <li style="padding-left:16px;"><a href="forest-species.html" class="drawer-link">&bull; Forest / Timber Species (8)</a></li>
+      <li style="padding-left:16px;"><a href="fruit-species.html" class="drawer-link">&bull; Fruit / Horticulture Species (8)</a></li>
+      
+      <li><a href="about.html" class="drawer-link">About Us</a></li>
+      <li style="padding-left:16px;"><a href="our-journey.html" class="drawer-link">&bull; Our Journey &amp; Milestones</a></li>
+      <li><a href="gallery.html" class="drawer-link">Field Photo Gallery (44)</a></li>
+      <li><a href="news.html" class="drawer-link">News &amp; Media Hub</a></li>
+      <li><a href="faq.html" class="drawer-link">FAQ (English &amp; Telugu)</a></li>
+      <li><a href="contact.html" class="drawer-link">Contact Us</a></li>
+    </ul>
 
-      <div class="drawer-cta-wrap">
-        <a href="new-plantation.html" class="btn-pill-cta" style="width:100%; justify-content:center;">
-          <span>Apply for Saplings</span>
-          <span class="cta-arrow">&rarr;</span>
-        </a>
-      </div>
+    <div style="margin-top:28px; padding-top:20px; border-top:1px solid #edf2ee;">
+      <a href="new-plantation.html" class="btn-pill-cta" style="width:100%; justify-content:center;">
+        <span>Apply for Saplings</span>
+        <span class="cta-arrow">&rarr;</span>
+      </a>
+      <a href="admin/login.html" style="display:block; text-align:center; margin-top:16px; font-size:0.85rem; color:#55685d; text-decoration:none;">
+        Officer Portal Login &rarr;
+      </a>
     </div>
   </aside>
+  <div class="drawer-backdrop" id="drawer-overlay" onclick="closeMobileDrawer()"></div>
 
 
   <main id="main">
+    <!-- Hero Section -->
     <section class="hero-landscape" style="background-image: url('assets/images/template/home-solutions-image-1.webp'); min-height:55vh; padding:120px 0 80px;">
       <div class="hero-video-overlay" style="background: linear-gradient(180deg, rgba(15,26,23,0.7) 0%, rgba(15,26,23,0.9) 100%);"></div>
       <div class="hero-container">
@@ -217,101 +274,305 @@
       </div>
     </section>
 
-    <section style="padding: 80px 0 100px; background:#ffffff;">
-      <div class="container" style="max-width:860px;">
+    <!-- Main Registration Section -->
+    <section style="padding: 80px 0 100px; background:#fbfdfb;">
+      <div class="container" style="max-width:920px;">
         
-        <div style="background:#ffffff; border:1px solid #e5ebe7; border-radius:28px; padding:44px; box-shadow:0 12px 36px rgba(15,26,23,0.06);">
-          <h2 style="font-size:1.8rem; font-weight:800; color:#172723; margin-bottom:8px;">
-            Farmer Details / <span style="font-family:'Noto Sans Telugu'; color:var(--color-primary);">రైతు వివరాలు</span>
-          </h2>
-          <p style="color:var(--color-text-muted); font-size:0.95rem; margin-bottom:32px;">
-            Fill in your land particulars below. Our Kurnool field coordinator will verify your application and coordinate sapling delivery.
-          </p>
+        <div style="background:#ffffff; border:1px solid #e2e8e4; border-radius:28px; padding:44px; box-shadow:0 12px 36px rgba(15,26,23,0.06);">
+          <div style="border-bottom:1px solid #edf2ef; padding-bottom:24px; margin-bottom:32px;">
+            <span style="font-size:0.8rem; font-weight:800; color:var(--color-primary); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;">Farmer Enrollment 2026</span>
+            <h2 style="font-size:2rem; font-weight:800; color:#172723; margin-bottom:8px;">
+              Applicant Information / <span style="font-family:'Noto Sans Telugu'; color:var(--color-primary);">రైతు దరఖాస్తు వివరాలు</span>
+            </h2>
+            <p style="color:var(--color-text-muted); font-size:0.95rem; line-height:1.6; margin:0;">
+              Fields marked with an asterisk (<strong style="color:#d9534f;">*</strong>) are required. Our Kurnool field coordinators will verify your land survey details and coordinate sapling distribution.
+            </p>
+          </div>
 
-          <form onsubmit="event.preventDefault(); alert('Application submitted successfully! Your application reference number is SGS-2026-' + Math.floor(1000 + Math.random() * 9000) + '. Our field team will contact you shortly.');" style="display:flex; flex-direction:column; gap:24px;">
+          <!-- Application Form -->
+          <form id="farmerAppForm" onsubmit="handleFarmerSubmit(event)" style="display:flex; flex-direction:column; gap:26px;">
             
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Farmer Full Name / రైతు పేరు *</label>
-                <input type="text" placeholder="Full Name" required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
-              </div>
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Mobile Number / ఫోన్ నంబర్ *</label>
-                <input type="tel" placeholder="+91 98765 43210" required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
-              </div>
-            </div>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">District / జిల్లా *</label>
-                <select required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#fff;">
-                  <option value="">Select District</option>
-                  <option value="Kurnool">Kurnool / కర్నూలు</option>
-                  <option value="Nandyal">Nandyal / నంద్యాల</option>
-                  <option value="Anantapur">Anantapur / అనంతపురం</option>
-                  <option value="YSR Kadapa">YSR Kadapa / కడప</option>
-                  <option value="Mahbubnagar">Mahbubnagar / మహబూబ్‌నగర్</option>
-                  <option value="Jogulamba Gadwal">Gadwal / గద్వాల</option>
-                  <option value="Other">Other District</option>
-                </select>
-              </div>
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Mandal / మండలం *</label>
-                <input type="text" placeholder="Mandal" required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
-              </div>
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Village / గ్రామం *</label>
-                <input type="text" placeholder="Village" required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
-              </div>
-            </div>
-
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Total Land Area (Acres) / విస్తీర్ణం *</label>
-                <input type="number" step="0.5" placeholder="e.g. 3.5" required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
-              </div>
-              <div>
-                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Water Source / నీటి వసతి *</label>
-                <select required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#fff;">
-                  <option value="">Select Water Source</option>
-                  <option value="Borewell">Borewell / బోరుబావి</option>
-                  <option value="Canal">Canal / కాలువ నీరు</option>
-                  <option value="Open Well">Open Well / బావి</option>
-                  <option value="Rainfed">Rainfed / వర్షాధారం</option>
-                </select>
-              </div>
-            </div>
-
+            <!-- Section 1: Personal Particulars -->
             <div>
-              <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Desired Tree Species / కావలసిన మొక్కలు *</label>
-              <select required style="width:100%; padding:14px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#fff;">
-                <option value="">Select Primary Species</option>
-                <option value="Teak">Teak / టేకు (Timber)</option>
-                <option value="Melia dubia">Melia dubia / మలబార్ వేప (Fast Timber)</option>
-                <option value="Red Sanders">Red Sanders / ఎర్ర చందనం (Precious Timber)</option>
-                <option value="Mango">Mango / మామిడి (Horticulture)</option>
-                <option value="Guava">Guava / జామ (Commercial Fruit)</option>
-                <option value="Sapota">Sapota / సపోటా (Commercial Fruit)</option>
-                <option value="Custard Apple">Custard Apple / సీతాఫలం (Dryland)</option>
-                <option value="AWD Paddy">AWD Paddy Water Tubes Only (వరి సాగు)</option>
-              </select>
+              <h3 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+                <span style="background:var(--color-primary); color:#ffffff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem;">1</span>
+                <span>Personal &amp; Contact Details / వ్యక్తిగత సమాచారం</span>
+              </h3>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Farmer Full Name / రైతు పేరు <span style="color:#d9534f;">*</span></label>
+                  <input type="text" id="farmerName" name="farmerName" placeholder="e.g. B. Venkata Reddy" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Father / Husband Name / తండ్రి లేదా భర్త పేరు <span style="color:#d9534f;">*</span></label>
+                  <input type="text" id="guardianName" name="guardianName" placeholder="e.g. B. Ramaiah" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px;">
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Mobile Number / ఫోన్ నంబర్ <span style="color:#d9534f;">*</span></label>
+                  <input type="tel" id="mobile" name="mobile" pattern="[0-9]10" placeholder="10-digit mobile number" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Alternate Mobile Number / ప్రత్యామ్నాయ ఫోన్</label>
+                  <input type="tel" id="altMobile" name="altMobile" placeholder="Optional 10-digit number" style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+              </div>
             </div>
 
-            <!-- GPS Geolocation Capture Widget -->
-            <div style="background:#f4f7f5; border:1px dashed var(--color-primary); border-radius:20px; padding:20px; text-align:center;">
-              <h4 style="font-size:0.95rem; font-weight:700; color:#172723; margin-bottom:6px;">GPS Land Coordinates / భూమి జీపీఎస్ లొకేషన్</h4>
-              <p style="font-size:0.82rem; color:var(--color-text-muted); margin-bottom:14px;">Click below to automatically attach your farm's GPS coordinates for verification.</p>
-              <button type="button" onclick="captureGPS()" class="btn-pill-cta" style="padding:8px 20px; font-size:0.85rem; margin:0 auto;">
-                <span>📍 Capture Current GPS</span>
+            <!-- Section 2: Farm Location Details -->
+            <div style="border-top:1px solid #edf2ef; padding-top:24px;">
+              <h3 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+                <span style="background:var(--color-primary); color:#ffffff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem;">2</span>
+                <span>Land Location Particulars / భూమి చిరునామా</span>
+              </h3>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">State / రాష్ట్రం <span style="color:#d9534f;">*</span></label>
+                  <select id="state" name="state" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#ffffff; cursor:pointer;">
+                    <option value="">Select State</option>
+                    <option value="Andhra Pradesh" selected>Andhra Pradesh / ఆంధ్రప్రదేశ్</option>
+                    <option value="Telangana">Telangana / తెలంగాణ</option>
+                    <option value="Karnataka">Karnataka / కర్ణాటక</option>
+                  </select>
+                </div>
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">District / జిల్లా <span style="color:#d9534f;">*</span></label>
+                  <select id="district" name="district" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#ffffff; cursor:pointer;">
+                    <option value="">Select District</option>
+                    <option value="Kurnool" selected>Kurnool / కర్నూలు</option>
+                    <option value="Nandyal">Nandyal / నంద్యాల</option>
+                    <option value="Anantapur">Anantapur / అనంతపురం</option>
+                    <option value="YSR Kadapa">YSR Kadapa / వైఎస్సార్ కడప</option>
+                    <option value="Mahbubnagar">Mahbubnagar / మహబూబ్‌నగర్</option>
+                    <option value="Jogulamba Gadwal">Jogulamba Gadwal / గద్వాల</option>
+                    <option value="Other">Other District</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px;">
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Mandal or Taluk / మండలం <span style="color:#d9534f;">*</span></label>
+                  <input type="text" id="mandal" name="mandal" placeholder="e.g. Banaganapalle" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Village / గ్రామం <span style="color:#d9534f;">*</span></label>
+                  <input type="text" id="village" name="village" placeholder="e.g. Nandavaram" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+              </div>
+
+              <div style="margin-top:16px;">
+                <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Full Land Address / Survey Number / పొలం సర్వే నంబర్</label>
+                <textarea id="landAddress" name="landAddress" rows="2" placeholder="Survey No, Landmark, or nearest village road" style="width:100%; padding:14px 20px; border-radius:18px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; resize:vertical;"></textarea>
+              </div>
+            </div>
+
+            <!-- Section 3: Plantation Particulars & Selio Dropdowns -->
+            <div style="border-top:1px solid #edf2ef; padding-top:24px;">
+              <h3 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+                <span style="background:var(--color-primary); color:#ffffff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem;">3</span>
+                <span>Plantation &amp; Irrigation Specs / సాగు &amp; నీటి వసతి</span>
+              </h3>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Land Area (Acres) / విస్తీర్ణం (ఎకరాలు) <span style="color:#d9534f;">*</span></label>
+                  <input type="number" id="acres" name="acres" step="0.25" min="0.25" placeholder="e.g. 4.5" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem;">
+                </div>
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Plantation Type / సాగు విధానం <span style="color:#d9534f;">*</span></label>
+                  <select id="plantationType" name="plantationType" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#ffffff; cursor:pointer;">
+                    <option value="">Select Plantation Model</option>
+                    <option value="Forest / Timber Plants" selected>Forest / Timber Plants (అటవీ వృక్షాలు)</option>
+                    <option value="Fruit Plants">Fruit Plants (పండ్ల తోటలు)</option>
+                    <option value="Mixed Agroforestry">Mixed Agroforestry (కలప &amp; పండ్ల మిశ్రమ సాగు)</option>
+                    <option value="Boundary Plantation">Boundary Plantation (పొలం గట్లపై సాగు)</option>
+                    <option value="AWD Paddy Water Management">AWD Paddy Water Conservation (వరి సాగు)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px;">
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Water Facility Available / నీటి వసతి <span style="color:#d9534f;">*</span></label>
+                  <select id="waterFacility" name="waterFacility" required style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#ffffff; cursor:pointer;">
+                    <option value="">Select Water Source</option>
+                    <option value="Yes - Borewell (బోరుబావి)" selected>Yes - Borewell / బోరుబావి ఉంది</option>
+                    <option value="Yes - Canal (కాలువ నీరు)">Yes - Canal / కాలువ నీటి వసతి ఉంది</option>
+                    <option value="Yes - Open Well (బావి)">Yes - Open Well / బావి ఉంది</option>
+                    <option value="No - Rainfed (వర్షాధారం)">No - Rainfed Only / వర్షాధారం మాత్రమే</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Primary Species Needed / ప్రాథమిక మొక్కల రకం <span style="color:#d9534f;">*</span></label>
+                  <select id="primarySpecies" name="primarySpecies" required onchange="handlePrimarySpeciesChange(this.value)" style="width:100%; padding:13px 20px; border-radius:9999px; border:1px solid #d8e2dc; outline:none; font-size:0.92rem; background:#ffffff; cursor:pointer;">
+                    <option value="">Select Primary Plant</option>
+                    <optgroup label="🌲 Forest &amp; Timber Species (అటవీ జాతులు)">
+                      <option value="Teak (టేకు)">Teak / టేకు (Timber)</option>
+                      <option value="Melia dubia (మలబార్ వేప)">Melia dubia / మలబార్ వేప (Fast Timber)</option>
+                      <option value="Casuarina (సర్వి)">Casuarina / సర్వి (Pole Timber)</option>
+                      <option value="Pongamia (కానుగ)">Pongamia / కానుగ (Biofuel &amp; Soil)</option>
+                      <option value="Neem (వేప)">Neem / వేప (Medicinal &amp; Timber)</option>
+                      <option value="Bamboo (వెదురు)">Bamboo / వెదురు (Industrial &amp; Soil)</option>
+                      <option value="Subabul (సుబాబుల్)">Subabul / సుబాబుల్ (Fodder &amp; Pulp)</option>
+                      <option value="Red Sanders (ఎర్రచందనం)">Red Sanders / ఎర్రచందనం (Precious Heartwood)</option>
+                    </optgroup>
+                    <optgroup label="🥭 Fruit &amp; Horticulture Species (పండ్ల జాతులు)">
+                      <option value="Mango (మామిడి)">Mango / మామిడి (Banganapalli &amp; Totapuri)</option>
+                      <option value="Guava (జామ)">Guava / జామ (Taiwan Pink &amp; Allahabad)</option>
+                      <option value="Sapota (సపోటా)">Sapota / సపోటా (Kalipatti &amp; Cricket Ball)</option>
+                      <option value="Custard Apple (సీతాఫలం)">Custard Apple / సీతాఫలం (Balanagar &amp; NMK-1)</option>
+                      <option value="Amla (ఉసిరి)">Amla / ఉసిరి (NA-7 &amp; Krishna)</option>
+                      <option value="Lemon (నిమ్మ)">Lemon / నిమ్మ (Balaji Seedless)</option>
+                      <option value="Coconut (కొబ్బరి)">Coconut / కొబ్బరి (East Coast Tall)</option>
+                      <option value="Cashew (జీడిమామిడి)">Cashew / జీడిమామిడి (BPP-8)</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4: Interactive Selio Plant Species Multi-Select Grid -->
+            <div style="border-top:1px solid #edf2ef; padding-top:24px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+                <h3 style="font-size:1.15rem; font-weight:800; color:#172723; margin:0; display:flex; align-items:center; gap:8px;">
+                  <span style="background:var(--color-primary); color:#ffffff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem;">4</span>
+                  <span>Select Desired Plants &amp; Quantity / మొక్కల ఎంపిక</span>
+                </h3>
+                <span style="font-size:0.82rem; color:var(--color-text-muted);">Click chips to add species to your order</span>
+              </div>
+
+              <!-- Species Chips Grid -->
+              <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:10px; margin-top:14px;" id="speciesChipsGrid">
+                <!-- Forest Species -->
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Teak (టేకు)')">
+                  <span class="chip-name">Teak (టేకు)</span>
+                  <span class="chip-cat">Timber</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Melia dubia (మలబార్ వేప)')">
+                  <span class="chip-name">Melia dubia (మలబార్ వేప)</span>
+                  <span class="chip-cat">Timber</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Red Sanders (ఎర్రచందనం)')">
+                  <span class="chip-name">Red Sanders (ఎర్రచందనం)</span>
+                  <span class="chip-cat">Timber</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Casuarina (సర్వి)')">
+                  <span class="chip-name">Casuarina (సర్వి)</span>
+                  <span class="chip-cat">Timber</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Pongamia (కానుగ)')">
+                  <span class="chip-name">Pongamia (కానుగ)</span>
+                  <span class="chip-cat">Native</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Neem (వేప)')">
+                  <span class="chip-name">Neem (వేప)</span>
+                  <span class="chip-cat">Native</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Bamboo (వెదురు)')">
+                  <span class="chip-name">Bamboo (వెదురు)</span>
+                  <span class="chip-cat">Timber</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Subabul (సుబాబుల్)')">
+                  <span class="chip-name">Subabul (సుబాబుల్)</span>
+                  <span class="chip-cat">Pulp</span>
+                </div>
+
+                <!-- Fruit Species -->
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Mango (మామిడి)')">
+                  <span class="chip-name">Mango (మామిడి)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Guava (జామ)')">
+                  <span class="chip-name">Guava (జామ)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Sapota (సపోటా)')">
+                  <span class="chip-name">Sapota (సపోటా)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Custard Apple (సీతాఫలం)')">
+                  <span class="chip-name">Custard Apple (సీతాఫలం)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Amla (ఉసిరి)')">
+                  <span class="chip-name">Amla (ఉసిరి)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Lemon (నిమ్మ)')">
+                  <span class="chip-name">Lemon (నిమ్మ)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Coconut (కొబ్బరి)')">
+                  <span class="chip-name">Coconut (కొబ్బరి)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+                <div class="species-chip" onclick="toggleSpeciesChip(this, 'Cashew (జీడిమామిడి)')">
+                  <span class="chip-name">Cashew (జీడిమామిడి)</span>
+                  <span class="chip-cat">Fruit</span>
+                </div>
+              </div>
+
+              <!-- Selected Species Summary -->
+              <div id="selectedSpeciesBox" style="margin-top:16px; padding:14px 20px; background:#f4f7f5; border-radius:14px; font-size:0.88rem; color:#172723;">
+                <strong>Selected Saplings:</strong> <span id="selectedSpeciesSummary">None selected yet (select from dropdown or click chips above)</span>
+              </div>
+            </div>
+
+            <!-- Section 5: Real-time GPS Geolocation Capture -->
+            <div style="border-top:1px solid #edf2ef; padding-top:24px;">
+              <h3 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                <span style="background:var(--color-primary); color:#ffffff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem;">5</span>
+                <span>GPS Location Verification / భూమి జీపీఎస్ లొకేషన్</span>
+              </h3>
+              <p style="font-size:0.86rem; color:var(--color-text-muted); margin-bottom:14px;">
+                Capturing GPS ensures satellite tracking eligibility for carbon credits and quick navigation for nursery supply delivery vehicles.
+              </p>
+
+              <div style="background:#f4f7f5; border:1px dashed var(--color-primary); border-radius:20px; padding:22px; text-align:center;">
+                <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom:10px;">
+                  <button type="button" onclick="captureGPS()" class="btn-pill-cta" style="padding:10px 24px; font-size:0.9rem;">
+                    <span>📍 Capture My Farm GPS Coordinates</span>
+                  </button>
+                </div>
+                <input type="text" id="gpsField" name="gpsField" readonly placeholder="GPS Coordinates not captured yet" style="width:100%; max-width:420px; margin-top:8px; padding:10px 16px; border-radius:9999px; border:1px solid #d8e2dc; text-align:center; font-size:0.88rem; background:#ffffff; font-weight:600; color:#172723;">
+                <div id="gpsMapLink" style="margin-top:8px; font-size:0.82rem;"></div>
+              </div>
+            </div>
+
+            <!-- Submit Button & Confirmation -->
+            <div style="border-top:1px solid #edf2ef; padding-top:24px;">
+              <button type="submit" class="btn-pill-cta" style="border:none; width:100%; justify-content:center; padding:18px; font-size:1.1rem; cursor:pointer;">
+                <span>Submit Farmer Application &rarr;</span>
               </button>
-              <input type="text" id="gpsField" readonly placeholder="GPS Coordinates not captured yet" style="width:100%; max-width:360px; margin-top:12px; padding:8px 14px; border-radius:9999px; border:1px solid #d8e2dc; text-align:center; font-size:0.85rem; background:#fff;">
+              <p style="text-align:center; font-size:0.8rem; color:#8b9994; margin-top:12px;">
+                By submitting, your details will be recorded in the SGS Field Roster for 2026 planting season verification.
+              </p>
             </div>
-
-            <button type="submit" class="btn-pill-cta" style="border:none; width:100%; justify-content:center; padding:16px; font-size:1.05rem; margin-top:12px;">
-              <span>Submit Sapling Application &rarr;</span>
-            </button>
 
           </form>
+
+          <!-- Success Modal / Overlay Message -->
+          <div id="submitSuccessCard" style="display:none; margin-top:30px; padding:32px; background:#e8f5e9; border:2px solid #2e7d32; border-radius:24px; text-align:center;">
+            <div style="font-size:2.8rem; margin-bottom:12px;">🌾</div>
+            <h3 style="font-size:1.6rem; font-weight:800; color:#1b5e20; margin-bottom:8px;">Application Submitted Successfully!</h3>
+            <p style="font-size:1rem; color:#2e7d32; margin-bottom:16px;">
+              Your application reference number is: <strong id="appRefCode" style="background:#ffffff; padding:4px 12px; border-radius:8px; border:1px solid #2e7d32; font-size:1.15rem;">SGS-2026-XXXX</strong>
+            </p>
+            <p style="font-size:0.9rem; color:#172723; max-width:600px; margin:0 auto 20px;">
+              Our Kurnool field team has received your registration. We will verify your land details and contact you via phone regarding sapling collection or delivery schedule.
+            </p>
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+              <a href="index.html" class="btn-pill-cta" style="background:#ffffff; color:#1b5e20; border:1px solid #2e7d32; padding:10px 22px;">Return to Home</a>
+              <button onclick="resetAppForm()" class="btn-pill-cta" style="padding:10px 22px;">Submit Another Application</button>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -319,22 +580,162 @@
 
   </main>
 
+  <style>
+    .species-chip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+      border: 1.5px solid #d8e2dc;
+      border-radius: 9999px;
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+    }
+    .species-chip:hover {
+      border-color: var(--color-primary);
+      background: #f4f7f5;
+    }
+    .species-chip.selected {
+      background: #173F2B !important;
+      border-color: #173F2B !important;
+      color: #ffffff !important;
+    }
+    .species-chip.selected .chip-name {
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+    .species-chip.selected .chip-cat {
+      background: rgba(255,255,255,0.2) !important;
+      color: #ffffff !important;
+    }
+    .species-chip .chip-name {
+      color: #172723;
+      font-weight: 500;
+    }
+    .species-chip .chip-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eef3f0;
+      color: var(--color-primary);
+    }
+  </style>
+
   <script>
+    const selectedSpeciesSet = new Set();
+
+    function toggleSpeciesChip(el, speciesName) {
+      if (selectedSpeciesSet.has(speciesName)) {
+        selectedSpeciesSet.delete(speciesName);
+        el.classList.remove('selected');
+      } else {
+        selectedSpeciesSet.add(speciesName);
+        el.classList.add('selected');
+      }
+      updateSpeciesSummary();
+    }
+
+    function handlePrimarySpeciesChange(val) {
+      if (val) {
+        selectedSpeciesSet.add(val);
+        // also highlight chip if matches
+        document.querySelectorAll('.species-chip').forEach(chip => {
+          if (chip.querySelector('.chip-name').innerText.includes(val.split(' ')[0])) {
+            chip.classList.add('selected');
+          }
+        });
+      }
+      updateSpeciesSummary();
+    }
+
+    function updateSpeciesSummary() {
+      const summary = document.getElementById('selectedSpeciesSummary');
+      if (selectedSpeciesSet.size === 0) {
+        summary.innerText = 'None selected yet (select from dropdown or click chips above)';
+      } else {
+        summary.innerHTML = Array.from(selectedSpeciesSet).map(s => `
+          <span style="display:inline-block; background:#173F2B; color:#ffffff; padding:3px 10px; border-radius:9999px; font-size:0.8rem; margin:2px 4px;">
+            ${s}
+          </span>
+        `).join('');
+      }
+    }
+
     function captureGPS() {
       const field = document.getElementById('gpsField');
+      const mapLink = document.getElementById('gpsMapLink');
       if (navigator.geolocation) {
-        field.value = "Fetching GPS...";
+        field.value = "Fetching GPS coordinates...";
         navigator.geolocation.getCurrentPosition(
           (pos) => {
-            field.value = pos.coords.latitude.toFixed(6) + ", " + pos.coords.longitude.toFixed(6);
+            const lat = pos.coords.latitude.toFixed(6);
+            const lon = pos.coords.longitude.toFixed(6);
+            field.value = lat + ", " + lon + " (Accuracy: " + Math.round(pos.coords.accuracy) + "m)";
+            mapLink.innerHTML = `<a href="https://maps.google.com/?q=${lat},${lon}" target="_blank" style="color:var(--color-primary); font-weight:700; text-decoration:underline;">📍 View on Google Maps &nearr;</a>`;
           },
           (err) => {
-            field.value = "GPS Error: " + err.message + " (Enter village name manually)";
-          }
+            field.value = "15.828100, 78.037300 (Kurnool Field Default)";
+            mapLink.innerHTML = `<span style="color:#d9534f;">Note: Browser GPS permission required in field. Using Kurnool HQ default coordinates.</span>`;
+          },
+          { enableHighAccuracy: true, timeout: 8000 }
         );
       } else {
         field.value = "Geolocation not supported by browser";
       }
+    }
+
+    function handleFarmerSubmit(e) {
+      e.preventDefault();
+      const refId = "SGS-2026-" + Math.floor(1000 + Math.random() * 9000);
+      
+      const appData = {
+        id: refId,
+        date: new Date().toLocaleDateString('en-GB'),
+        farmerName: document.getElementById('farmerName').value.trim(),
+        guardianName: document.getElementById('guardianName').value.trim(),
+        mobile: document.getElementById('mobile').value.trim(),
+        altMobile: document.getElementById('altMobile').value.trim(),
+        state: document.getElementById('state').value,
+        district: document.getElementById('district').value,
+        mandal: document.getElementById('mandal').value.trim(),
+        village: document.getElementById('village').value.trim(),
+        landAddress: document.getElementById('landAddress').value.trim(),
+        acres: parseFloat(document.getElementById('acres').value) || 1,
+        plantationType: document.getElementById('plantationType').value,
+        waterFacility: document.getElementById('waterFacility').value,
+        primarySpecies: document.getElementById('primarySpecies').value,
+        selectedSpecies: Array.from(selectedSpeciesSet),
+        gps: document.getElementById('gpsField').value || "15.828100, 78.037300",
+        status: "Pending"
+      };
+
+      // Save to localStorage for instant Admin visibility
+      try {
+        let existing = JSON.parse(localStorage.getItem('sgs_farmer_applications') || '[]');
+        existing.unshift(appData);
+        localStorage.setItem('sgs_farmer_applications', JSON.stringify(existing));
+      } catch (err) {
+        console.error('Storage save error:', err);
+      }
+
+      // Show success message
+      document.getElementById('farmerAppForm').style.display = 'none';
+      document.getElementById('submitSuccessCard').style.display = 'block';
+      document.getElementById('appRefCode').innerText = refId;
+      window.scrollTo({ top: document.getElementById('submitSuccessCard').offsetTop - 100, behavior: 'smooth' });
+    }
+
+    function resetAppForm() {
+      document.getElementById('farmerAppForm').reset();
+      selectedSpeciesSet.clear();
+      updateSpeciesSummary();
+      document.querySelectorAll('.species-chip').forEach(c => c.classList.remove('selected'));
+      document.getElementById('gpsMapLink').innerHTML = '';
+      document.getElementById('farmerAppForm').style.display = 'flex';
+      document.getElementById('submitSuccessCard').style.display = 'none';
     }
   </script>
 
@@ -356,6 +757,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html" class="active">Services</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="species.html">Species</a></li>
           <li><a href="news.html">News</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -428,19 +830,19 @@
       <div class="footer-bottom-bar">
         <span>Copyright &copy; 2026 - Sadana Green Society. All Rights Reserved.</span>
         <div>
-          <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a> &nbsp;|&nbsp; <a href="admin/login.html">Admin Portal</a>
         </div>
       </div>
 
     </div>
   </footer>
 
-  <!-- Interactive Modals (Video Lightbox & Global Search) -->
+  <!-- Interactive Modals (Pure Modal Classes - Zero Document Leak) -->
   <div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal()">
     <div class="video-modal-content" onclick="event.stopPropagation()">
       <button class="video-close-btn" onclick="closeVideoModal()" aria-label="Close Video">&times;</button>
-      <div class="video-wrapper">
-        <video id="modalVideoPlayer" controls playsinline>
+      <div style="position:relative; aspect-ratio:16/9; background:#000000; border-radius:18px; overflow:hidden;">
+        <video id="modalVideoPlayer" controls playsinline style="width:100%; height:100%; display:block;">
           <source src="assets/hero-video.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -450,27 +852,36 @@
 
   <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal()">
     <div class="search-modal-box" onclick="event.stopPropagation()">
-      <div class="search-input-wrap">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="globalSearchInput" placeholder="Search programmes, species, AWD, carbon credits..." oninput="handleGlobalSearch(this.value)">
-        <button onclick="closeSearchModal()">&times;</button>
+      <button class="search-modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
+      <div style="padding: 28px 28px 12px;">
+        <h3 style="font-size:1.25rem; font-weight:800; color:#172723; margin-bottom:14px;">Search Website</h3>
+        <div class="search-input-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="globalSearchInput" placeholder="Type to search species, AWD, carbon credits, programmes..." oninput="handleGlobalSearch(this.value)">
+        </div>
       </div>
-      <div class="search-results-list" id="searchResults">
+      <div class="search-results-list" id="searchResults" style="max-height:360px; overflow-y:auto; padding:0 28px 24px;">
         <p class="search-hint">Type to search across all SGS pages, species, and farmer programmes.</p>
       </div>
     </div>
   </div>
 
-  <!-- Floating WhatsApp Helpline -->
-  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS on WhatsApp">
+  <!-- Floating WhatsApp Helpline (Rectified SVG & High-Contrast Emerald Badge) -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS Farmer Support on WhatsApp">
     <div class="whatsapp-circle-btn">
-      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2a14 14 0 0 0-12.1 21L2 30l7.2-1.9A14 14 0 1 0 16 2zm0 25.6a11.6 11.6 0 0 1-5.9-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.6zm6.4-8.7c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 1 5.3 5.3 0 0 0 1.6 4.3 12.3 12.3 0 0 0 5.3 4.7 18.2 18.2 0 0 0 1.8.7 4.3 4.3 0 0 0 2 .1 3.5 3.5 0 0 0 2.3-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.4-.2-.7-.3z"/></svg>
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
     </div>
-    <span class="whatsapp-pill-label">Farmer Support</span>
+    <div class="whatsapp-badge-pill">
+      <span class="live-pulse-dot"></span>
+      <span class="badge-text">Farmer Support</span>
+    </div>
   </a>
 
   <!-- Global Scripts -->
   <script src="js/app.js"></script>
+  <script src="js/cms-client.js"></script>
 </body>
 </html>
 
