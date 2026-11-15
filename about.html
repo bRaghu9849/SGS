@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#55a630">
-  <title>About Sadana Green Society | Our Mission & Team</title>
-  <meta name="description" content="Learn about Sadana Green Society, founded by B. Raghu Bhaskar, and our work in environmental protection, agroforestry, farmer livelihoods and climate action.">
+  <title>About Us | Sadana Green Society — Leadership & Mission</title>
+  <meta name="description" content="Learn about Sadana Green Society, Founder & President B. Raghu Bhaskar, our grassroots agroforestry journey from Kurnool across Andhra Pradesh, Telangana, and Karnataka.">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://sadanagreensociety.com/about.html">
+  <link rel="canonical" href="https://sadanagreensociety.com/">
   
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
@@ -23,14 +23,7 @@
 </head>
 <body>
 
-  <!-- Top Announcement Strip -->
-  <div class="top-announcement-strip" id="top-announcement">
-    <span>🌱 <strong>Sadana Green Society</strong> · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes.</span>
-    <a href="new-plantation.html">Apply for Saplings &rarr;</a>
-    <button class="announcement-close-btn" onclick="document.getElementById('top-announcement').style.display='none'" aria-label="Close announcement">&times;</button>
-  </div>
-
-  <!-- Floating Pill Header (Blocksy Landscape Style) -->
+  <!-- Floating Pill Header (Blocksy Landscape Style - Image 2) -->
   <header class="site-header" id="header">
     <div class="navbar-pill">
       
@@ -61,12 +54,12 @@
               <!-- Left Column: 3 Programs + Latest News -->
               <div>
                 <div class="megamenu-left-programs">
-                  <a href="services.html#agroforestry" class="megamenu-prog-card">
+                  <a href="agroforestry.html" class="megamenu-prog-card">
                     <div class="megamenu-icon-circle">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
                     </div>
                     <h4>Agroforestry Models</h4>
-                    <p>High-value timber & fruit plantations for boundary & mixed farmlands.</p>
+                    <p>High-value timber &amp; fruit plantations for boundary &amp; mixed farmlands.</p>
                     <span class="read-more">Read More &rarr;</span>
                   </a>
 
@@ -110,7 +103,7 @@
                 </div>
               </div>
 
-              <!-- Right Column: Featured Program + Video Card -->
+              <!-- Right Column: Featured Program + Video Card (Exact image2.png) -->
               <div class="megamenu-right-highlight">
                 <div class="megamenu-right-header">
                   <h4>Farmer Registration 2026</h4>
@@ -119,7 +112,7 @@
                 <p class="megamenu-right-desc">
                   Register land details with real-time GPS coordinates, camera photo uploads, and water verification for sapling distribution.
                 </p>
-                <div class="megamenu-video-thumb" onclick="openVideoModal()" style="background-image: url('assets/images/plantation-field-team-hd.jpg');">
+                <div class="megamenu-video-thumb" onclick="openVideoModal('assets/hero-video.mp4')" style="background-image: url('assets/images/template/home-hero-image-1.webp');">
                   <div class="play-icon">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                   </div>
@@ -128,27 +121,44 @@
             </div>
           </li>
 
-          <li class="nav-item"><a href="about.html" class="nav-link active">About Us</a></li>
-          <li class="nav-item"><a href="species.html" class="nav-link">Species</a></li>
-          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
-          <li class="nav-item"><a href="news.html" class="nav-link">News & Media</a></li>
-          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link active">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="species.html" class="nav-link">Species</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="gallery.html" class="nav-link">Gallery</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="news.html" class="nav-link">News</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="faq.html" class="nav-link">FAQ</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
         </ul>
       </nav>
 
       <!-- Action Tools (Search & Pill CTA) -->
       <div class="header-actions">
-        <button class="btn-icon btn-search-trigger" aria-label="Search website">
+        <button class="btn-icon btn-search-trigger" onclick="openSearchModal()" aria-label="Search website">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
 
         <a href="new-plantation.html" class="btn-pill-cta">
           <span>Apply Now</span>
-          <span class="cta-arrow">→</span>
+          <span class="cta-arrow">&rarr;</span>
         </a>
 
-        <button class="mobile-nav-toggle" aria-label="Open Mobile Navigation">
+        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Open Mobile Navigation">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -156,8 +166,8 @@
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Dark Drawer -->
-  <div class="mobile-drawer-overlay"></div>
+  <!-- Mobile Offcanvas Dark Drawer (Image 12) -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay" onclick="closeMobileDrawer()"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div>
       <div class="drawer-header">
@@ -165,19 +175,23 @@
           <img src="assets/logo.png" alt="SGS Logo">
           <span>Sadana Green Society</span>
         </div>
-        <button class="drawer-close" aria-label="Close Mobile Navigation">&times;</button>
+        <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close Mobile Navigation">&times;</button>
       </div>
 
       <ul class="drawer-menu">
         <li><a href="index.html" class="drawer-link">Home</a></li>
         <li><a href="services.html" class="drawer-link">Programmes Overview</a></li>
-        <li><a href="services.html#agroforestry" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
+        <li><a href="agroforestry.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
         <li><a href="carbon-credits.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Carbon Credits</a></li>
         <li><a href="awd.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ AWD Paddy Water</a></li>
+        <li><a href="environment.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Environment &amp; Climate</a></li>
         <li><a href="about.html" class="drawer-link active">About Us</a></li>
+        <li><a href="our-journey.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Our Journey &amp; Milestones</a></li>
         <li><a href="species.html" class="drawer-link">Plant Species</a></li>
-        <li><a href="gallery.html" class="drawer-link">Photo Gallery</a></li>
-        <li><a href="news.html" class="drawer-link">News & Media</a></li>
+        <li><a href="forest-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Forest Trees (8 Species)</a></li>
+        <li><a href="fruit-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Fruit Trees (8 Species)</a></li>
+        <li><a href="gallery.html" class="drawer-link">Photo Gallery (44 Photos)</a></li>
+        <li><a href="news.html" class="drawer-link">News &amp; Media</a></li>
         <li><a href="faq.html" class="drawer-link">FAQ</a></li>
         <li><a href="contact.html" class="drawer-link">Contact</a></li>
       </ul>
@@ -191,302 +205,384 @@
     </div>
   </aside>
 
+
   <main id="main">
-    <!-- Page Hero Banner -->
-    <section class="hero-landscape" style="min-height: 48vh; padding: 140px 0 60px; background-image: url('assets/images/home-nature-bg.jpg');">
-      <div class="container hero-content">
-        <span class="hero-badge-pill">Grassroots Mission &amp; Leadership</span>
-        <h1 class="hero-title">About Sadana Green Society</h1>
-        <p class="hero-lead">
-          An environmental and community-focused organisation working with farmers across Andhra Pradesh, Telangana and Karnataka.
-        </p>
-      </div>
-    </section>
-
-    <!-- Founder Spotlight & Who We Are -->
-    <section class="section surface" id="founder">
-      <div class="container split-story">
-        <div class="story-media">
-          <div class="founder-img-wrapper">
-            <img src="assets/images/founder/b-raghu-bhaskar-professional.png" alt="B. Raghu Bhaskar, Founder and President of Sadana Green Society">
+    <section class="hero-landscape" style="background-image: url('assets/images/template/about-us-hero-image.webp'); min-height:65vh; padding:130px 0 160px;">
+      <div class="hero-video-overlay" style="background: linear-gradient(180deg, rgba(15,26,23,0.65) 0%, rgba(15,26,23,0.85) 100%);"></div>
+      
+      <div class="hero-container">
+        <div class="hero-grid-2col" style="align-items:center;">
+          <div>
+            <h1 class="hero-title" style="font-size: clamp(2.8rem, 4.2vw, 4.2rem);">Discover Our<br>Story in<br>Agriculture</h1>
           </div>
-          <div class="floating-badge">
-            <div class="floating-badge-icon">🌿</div>
-            <div class="floating-badge-text">
-              <b>B. Raghu Bhaskar</b>
-              <span>Founder and President · Sadana Green Society</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <span class="section-eyebrow">Leadership &amp; Origin</span>
-          <h2>Who We Are</h2>
-          <p class="story-lead">
-            Sadana Green Society (SGS) is an environmental and community-focused organisation working to promote climate change mitigation, agroforestry development, sustainable agriculture, farmer livelihood enhancement and carbon-related programmes.
-          </p>
-          <p>
-            Our mission is to support farming communities through sustainable land-use practices, tree plantation initiatives, environmental awareness and collaborative development projects.
-          </p>
-          <p>
-            We work with farmers, field teams, technical partners and institutions across Andhra Pradesh, Telangana and Karnataka to encourage responsible environmental practices and strengthen rural livelihoods.
-          </p>
-
-          <div class="milestones-row">
-            <div class="milestone-box">
-              <b>Our Mission</b>
-              <span>To contribute to a greener and more sustainable future by empowering farmers and supporting environmental protection.</span>
-            </div>
-            <div class="milestone-box">
-              <b>Our Vision</b>
-              <span>Thriving farming communities, healthier ecosystems and a climate-resilient future for generations to come.</span>
-            </div>
+          <div>
+            <p class="hero-lead" style="margin-bottom:28px;">
+              We empower farmers by providing innovative, sustainable solutions that foster growth, resilience, community development, and long-term agricultural success.
+            </p>
+            <a href="new-plantation.html" class="btn-pill-cta">
+              <span>Get Started Now</span>
+              <span class="cta-arrow">&rarr;</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8 Areas of Work -->
-    <section class="section tint" id="projects">
+    <!-- Large Curved Agronomists Photo Card with Floating Review Badge (Image 3) -->
+    <div class="about-hero-tablet-card" style="background-image: url('assets/images/template/about-us-hero-column-image.webp');">
+      <div class="floating-review-badge">
+        <img src="assets/images/template/testimonial-avatar-1.webp" alt="Farmer Reviewer">
+        <p>"Excellent service, fast and professional installation, with noticeable savings that continue to grow each passing month."</p>
+      </div>
+    </div>
+
+    <!-- Empowerment Section with 2 Stats & 2 Photos (Image 3 / Slice 1) -->
+    <section style="padding: 60px 0 90px; background:#ffffff;">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Strategic Focus</span>
-          <h2 class="section-title">Our Projects</h2>
-          <p class="section-subtitle">Eight areas of work that connect farmers, land and climate.</p>
-        </div>
+        <div class="hero-grid-2col" style="align-items:center; gap:50px;">
+          
+          <div>
+            <h2 class="hero-title" style="color:#172723; font-size: clamp(1.8rem, 2.8vw, 2.6rem); line-height:1.2;">
+              We Empower Farmers With Innovative, Sustainable Solutions That Help <span style="color:#8b9994;">Grow Healthier Crops, Protect the Planet, and Ensure Agricultural Success</span>
+            </h2>
 
-        <div class="programs-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
-          <div class="program-card">
-            <div class="program-icon-circle">01</div>
-            <h3>Agroforestry &amp; New Plantations</h3>
-            <p>Planting suitable trees on farmland to improve land use, tree cover and long-term income.</p>
-            <a href="services.html" class="btn-program-link">Why Agroforestry &rarr;</a>
+            <div class="feature-stat-pill-row" style="margin-top:36px;">
+              <div class="feature-stat-item">
+                <div class="stat-circle-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                </div>
+                <h4>45%</h4>
+                <p>Sustainable innovations</p>
+              </div>
+
+              <div class="feature-stat-item">
+                <div class="stat-circle-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                </div>
+                <h4>75%</h4>
+                <p>Farmer empowerment</p>
+              </div>
+            </div>
           </div>
 
-          <div class="program-card">
-            <div class="program-icon-circle">02</div>
-            <h3>Existing Plantation Projects</h3>
-            <p>Supporting farmers to look after, prune, and monitor plantations already in the ground.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="height:320px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-image-1.webp'); background-size:cover; background-position:center;"></div>
+            <div style="height:320px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-image-2.webp'); background-size:cover; background-position:center;"></div>
           </div>
 
-          <div class="program-card">
-            <div class="program-icon-circle">03</div>
-            <h3>Carbon Credit Programmes</h3>
-            <p>Helping farmers join carbon programmes, record field measurements, and share in the verified benefits.</p>
-            <a href="carbon-credits.html" class="btn-program-link">Benefits of Carbon Credits &rarr;</a>
-          </div>
-
-          <div class="program-card">
-            <div class="program-icon-circle">04</div>
-            <h3>Sustainable Agriculture</h3>
-            <p>Practical, resource-efficient farming methods that build organic matter and make farms resilient.</p>
-          </div>
-
-          <div class="program-card">
-            <div class="program-icon-circle">05</div>
-            <h3>Alternate Wetting &amp; Drying (AWD)</h3>
-            <p>A water-saving paddy method that also cuts methane emissions from waterlogged soil.</p>
-            <a href="awd.html" class="btn-program-link">How AWD Works &rarr;</a>
-          </div>
-
-          <div class="program-card">
-            <div class="program-icon-circle">06</div>
-            <h3>Farmer Livelihood Enhancement</h3>
-            <p>Training, guidance and programme access that help farm families earn more securely year-round.</p>
-          </div>
-
-          <div class="program-card">
-            <div class="program-icon-circle">07</div>
-            <h3>Climate Change Mitigation</h3>
-            <p>Reducing greenhouse gas emissions and storing carbon permanently in living tree biomass and soil.</p>
-          </div>
-
-          <div class="program-card">
-            <div class="program-icon-circle">08</div>
-            <h3>Environmental Awareness</h3>
-            <p>Helping communities understand why trees, soil and water matter and how to protect them for future generations.</p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- How We Work With Farmers -->
-    <section class="section surface">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Field Engagement</span>
-          <h2 class="section-title">How We Work with Farmers</h2>
-          <p class="section-subtitle">A simple, accountable process from first conversation to results.</p>
-        </div>
-
-        <div class="process-steps-grid">
-          <div class="process-step-card">
-            <span class="step-num">01</span>
-            <h4>Listen</h4>
-            <p>We meet farming communities, understand local needs and explain each programme openly.</p>
+    <!-- News Hub Banner with Green Card (Image 3 / Slice 2) -->
+    <div class="container">
+      <div class="about-news-hub-banner" style="background-image: url('assets/images/template/about-us-cta-image.webp');">
+        <div class="about-news-hub-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <h3>Stay Informed With Updates From Our News Hub</h3>
+            <a href="news.html" class="circle-arrow-link" style="background:#ffffff; color:var(--color-primary);">&rarr;</a>
           </div>
-
-          <div class="process-step-card">
-            <span class="step-num">02</span>
-            <h4>Enrol</h4>
-            <p>Interested farmers are registered and their land and details are recorded with full consent.</p>
-          </div>
-
-          <div class="process-step-card">
-            <span class="step-num">03</span>
-            <h4>Implement</h4>
-            <p>Field teams support farmers with practices on the ground, delivering saplings and monitoring equipment.</p>
-          </div>
-
-          <div class="process-step-card">
-            <span class="step-num">04</span>
-            <h4>Monitor &amp; Report</h4>
-            <p>We follow up regularly, keep clear records and share progress transparently with partners.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partner With Us -->
-    <section class="section dark">
-      <div class="container split-story">
-        <div>
-          <span class="section-eyebrow" style="color:var(--color-primary-light);">Institutional Collaboration</span>
-          <h2 style="color:#ffffff;">Partner with Us</h2>
-          <p style="color:#cbd9d1;">
-            We welcome collaboration with organisations that share our mission to uplift rural agriculture, expand tree canopy, and drive grassroots climate resilience.
+          <p style="font-size:0.95rem; line-height:1.55; opacity:0.95;">
+            Explore expert insights, industry updates, and inspiring stories designed to keep you informed and connected every day.
           </p>
         </div>
+      </div>
+    </div>
 
-        <div>
-          <div class="chips-on-dark-wrap">
-            <span class="partner-chip">CSR Teams</span>
-            <span class="partner-chip">Academic &amp; Research Institutions</span>
-            <span class="partner-chip">Technical &amp; Monitoring Partners</span>
-            <span class="partner-chip">Development Organisations</span>
-            <span class="partner-chip">Village Community Groups &amp; FPOs</span>
+    <!-- 8 Team Members Grid (Image 3 / Slice 3) -->
+    <section style="padding: 80px 0; background:#ffffff;">
+      <div class="container">
+        
+        <h2 class="section-title-twotone">
+          Come and Meet Our <span class="muted-text">Experienced Team of Experts</span>
+        </h2>
+
+        <div class="about-team-grid">
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/founder/b-raghu-bhaskar-professional.png'); background-color:#e8f0eb;"></div>
+            <h4>B. Raghu Bhaskar</h4>
+            <p>Founder &amp; President</p>
           </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-2.webp');"></div>
+            <h4>Michael Brown</h4>
+            <p>Farm manager</p>
+          </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-3.webp');"></div>
+            <h4>Sarah Thompson</h4>
+            <p>Agricultural operations</p>
+          </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-4.webp');"></div>
+            <h4>David Wilson</h4>
+            <p>Crop production specialist</p>
+          </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-5.webp');"></div>
+            <h4>Alicia Henderson</h4>
+            <p>Soil scientist</p>
+          </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-6.webp');"></div>
+            <h4>Thomas Clark</h4>
+            <p>Agricultural engineer</p>
+          </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-7.webp');"></div>
+            <h4>Robert Davis</h4>
+            <p>Crop consultant</p>
+          </div>
+
+          <div class="about-team-card">
+            <div class="about-team-photo" style="background-image: url('assets/images/template/farmer-8.webp');"></div>
+            <h4>Emily Benedict</h4>
+            <p>Livestock nutritionist</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonials Section (Image 3 / Slice 4) -->
+    <section style="padding: 70px 0 100px; background:#fbfcfc;">
+      <div class="container">
+        <h2 class="section-title-twotone">
+          Discover What Our <span class="muted-text">Valued Customers Are Saying About Us</span>
+        </h2>
+
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:28px; margin-top:50px;">
+          <div style="background:#ffffff; padding:36px; border-radius:24px; box-shadow:0 8px 24px rgba(15,26,23,0.04); border:1px solid #edf2ef; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <h4 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:4px;">R. Venkateshwarlu</h4>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); font-style:italic; margin-bottom:18px;">Senior Agroforestry Farmer, Kurnool</p>
+              <div style="font-size:1.8rem; line-height:1; color:#172723; font-weight:900; margin-bottom:12px;">“</div>
+              <p style="color:var(--color-text-muted); font-size:0.94rem; line-height:1.6;">
+                Thanks to their sapling quality and field guidance, our dryland boundary plantation now yields consistent timber appreciation without water issues.
+              </p>
+            </div>
+            <div style="font-size:1.15rem; font-weight:800; color:#172723; margin-top:24px;">5.0 ★</div>
+          </div>
+
+          <div style="background:#ffffff; padding:36px; border-radius:24px; box-shadow:0 8px 24px rgba(15,26,23,0.04); border:1px solid #edf2ef; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <h4 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:4px;">K. Narayana Rao</h4>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); font-style:italic; margin-bottom:18px;">Paddy Farmer &amp; AWD Participant</p>
+              <div style="font-size:1.8rem; line-height:1; color:#172723; font-weight:900; margin-bottom:12px;">“</div>
+              <p style="color:var(--color-text-muted); font-size:0.94rem; line-height:1.6;">
+                Professional service and tailored solutions that really meet the needs of modern agriculture. The AWD water tube method saved our borewell water by 35%.
+              </p>
+            </div>
+            <div style="font-size:1.15rem; font-weight:800; color:#172723; margin-top:24px;">4.9 ★</div>
+          </div>
+
+          <div style="background:#ffffff; padding:36px; border-radius:24px; box-shadow:0 8px 24px rgba(15,26,23,0.04); border:1px solid #edf2ef; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <h4 style="font-size:1.15rem; font-weight:800; color:#172723; margin-bottom:4px;">T. Sujatha</h4>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); font-style:italic; margin-bottom:18px;">Organic Farm Manager, Anantapur</p>
+              <div style="font-size:1.8rem; line-height:1; color:#172723; font-weight:900; margin-bottom:12px;">“</div>
+              <p style="color:var(--color-text-muted); font-size:0.94rem; line-height:1.6;">
+                The team provided exceptional support from start to finish. Their certified fruit saplings and organic practices are reliable and eco-friendly.
+              </p>
+            </div>
+            <div style="font-size:1.15rem; font-weight:800; color:#172723; margin-top:24px;">5.0 ★</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Dark CTA Section (Image 3 / Slice 5) -->
+    <section class="dark-greenhouse-section" style="background-image: url('assets/images/template/about-us-bottom-cta-background-3.webp'); background-size:cover; background-position:center;">
+      <div class="container">
+        <div class="hero-grid-2col" style="align-items:center; gap:60px;">
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="background:#1f332e; border-radius:24px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; height:240px;">
+              <div>
+                <h4 style="font-size:1.5rem; font-weight:800; color:#ffffff; margin-bottom:8px;">1,20,000+ Farmers</h4>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.75); line-height:1.4;">Our commitment to quality, innovation, and reliability has consistently earned the trust of farmers.</p>
+              </div>
+              <div class="avatar-group">
+                <img src="assets/images/template/client-image-1.webp" alt="c1">
+                <img src="assets/images/template/client-image-2.webp" alt="c2">
+                <img src="assets/images/template/client-image-3.webp" alt="c3">
+              </div>
+            </div>
+
+            <div style="height:240px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-cta-image-2.webp'); background-size:cover; background-position:center;"></div>
+            
+            <div style="grid-column: span 2; height:200px; border-radius:24px; overflow:hidden; background-image:url('assets/images/template/about-us-cta-image-3.webp'); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center;">
+              <div onclick="openVideoModal('assets/hero-video.mp4')" class="play-btn-circle" style="cursor:pointer;">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="hero-title" style="color:#ffffff; font-size: clamp(2.2rem, 3.4vw, 3.2rem);">
+              Ready to Get Started on Your Next Big Project?
+            </h2>
+            <p style="color:rgba(255,255,255,0.85); font-size:1.05rem; line-height:1.65; margin:20px 0 32px;">
+              Take the first step toward sustainable and efficient agricultural solutions. Our team is here to support you every step of the way – from consultation to sapling delivery and beyond.
+            </p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+              <a href="new-plantation.html" class="btn-pill-cta">
+                <span>Get Started</span>
+                <span class="cta-arrow">&rarr;</span>
+              </a>
+              <a href="our-journey.html" class="btn-pill-cta" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25);">
+                <span>Learn More</span>
+                <span class="cta-arrow">&rarr;</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CTA Band -->
-    <section class="cta-band-section">
-      <div class="container cta-band-inner">
-        <div>
-          <h2>Want to know how this could work for your land or organisation?</h2>
-          <p>Get in touch with our Kurnool headquarters team today.</p>
+  </main>
+
+  <!-- Blocksy Landscape Clean Footer -->
+  <footer class="site-footer-blocksy">
+    <div class="container">
+      
+      <!-- Top Row: Brand & Nav Links -->
+      <div class="footer-top-row">
+        <a href="index.html" class="brand" aria-label="Sadana Green Society Home">
+          <img src="assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span class="brand-title">Sadana Green Society</span>
+            <span class="brand-subtitle">People • Plants • Livelihoods</span>
+          </div>
+        </a>
+
+        <ul class="footer-nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Pills Row (Image 1 / Home Slice 8) -->
+      <div class="footer-contact-pills-row">
+        <div class="footer-contact-pills-group">
+          
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Address:</span>
+              <span class="footer-pill-val">Kurnool HQ, Andhra Pradesh</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Phone:</span>
+              <span class="footer-pill-val">+91 99634 90444</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Mobile:</span>
+              <span class="footer-pill-val">+91 94402 91404</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Opening hours:</span>
+              <span class="footer-pill-val">Mon - Sat: 9:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+
         </div>
-        <div class="cta-band-actions">
-          <a href="contact.html" class="btn-pill-cta" style="background:#ffffff; color:var(--color-primary);">
-            <span>Contact Our Team</span>
-            <span class="cta-arrow" style="background:var(--color-primary); color:#ffffff;">&rarr;</span>
+
+        <!-- Social Media Buttons -->
+        <div class="footer-social-circles">
+          <a href="https://facebook.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://twitter.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://linkedin.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
         </div>
       </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-about">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="SGS Logo" class="footer-logo">
-          <span class="footer-title">Sadana Green Society</span>
-        </div>
-        <p class="footer-text">
-          People, nature and sustainable futures. Working with farming communities across Andhra Pradesh, Telangana, and Karnataka on agroforestry, sustainable agriculture, and climate-resilience programmes.
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Why Agroforestry</a></li>
-          <li><a href="species.html">Tree & Fruit Species</a></li>
-          <li><a href="carbon-credits.html">Carbon Credits</a></li>
-          <li><a href="awd.html">AWD Paddy Water</a></li>
-          <li><a href="gallery.html">Field Gallery</a></li>
-          <li><a href="news.html">News & Media</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Programmes</h4>
-        <ul class="footer-links">
-          <li><a href="services.html#agroforestry">Agroforestry Models</a></li>
-          <li><a href="carbon-credits.html">Verified Carbon Credits</a></li>
-          <li><a href="awd.html">AWD Paddy Conservation</a></li>
-          <li><a href="new-plantation.html">Farmer Registration Portal</a></li>
-          <li><a href="about.html#founder">Leadership & Founder</a></li>
-          <li><a href="about.html#projects">8 Strategic Focus Areas</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact Head Office</h4>
-        <p class="contact-line"><strong>Near Nandyal Checkpost,</strong><br>Kurnool, Andhra Pradesh 518002 / 518003</p>
-        <p class="contact-line"><strong>Phone:</strong> <a href="tel:+919966611855">+91 99666 11855</a></p>
-        <p class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/919963490444" target="_blank" rel="noopener">+91 99634 90444</a></p>
-        <p class="contact-line"><strong>Email:</strong> <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a><br><a href="mailto:raghubhaskar4@gmail.com">raghubhaskar4@gmail.com</a></p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© <span id="footer-year">2026</span> Sadana Green Society, Kurnool · sadanagreensociety.com</p>
-        <div class="footer-sub-links">
-          <a href="faq.html">Farmer Terms & Safeguards</a>
-          <a href="admin/login.html" class="admin-portal-link" style="opacity: 0.5;">Executive Portal</a>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <span>Copyright &copy; 2026 - Sadana Green Society. All Rights Reserved.</span>
+        <div>
+          <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- Floating WhatsApp CTA -->
-  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
-    <div class="whatsapp-circle-icon">
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.02L7.55 18.84L4.44 19.66L5.27 16.62L5.07 16.31C4.26 15.01 3.81 13.49 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.7C7.02 10.92 7.91 12.1 8.03 12.26C8.16 12.43 9.77 14.91 12.24 15.97C12.83 16.22 13.28 16.37 13.64 16.49C14.23 16.67 14.78 16.65 15.21 16.58C15.69 16.51 16.68 15.98 16.89 15.39C17.09 14.81 17.09 14.3 17.03 14.2C16.97 14.1 16.82 14.04 16.58 13.92C16.34 13.8 15.17 13.22 14.95 13.14C14.73 13.06 14.57 13.02 14.41 13.26C14.25 13.51 13.79 14.04 13.65 14.2C13.51 14.36 13.37 14.38 13.13 14.26C12.89 14.14 11.88 13.81 10.68 12.74C9.75 11.91 9.12 10.88 8.94 10.57C8.76 10.26 8.92 10.1 9.04 9.98C9.15 9.87 9.29 9.69 9.41 9.55C9.53 9.41 9.57 9.31 9.65 9.15C9.73 8.99 9.69 8.85 9.63 8.73C9.57 8.61 9.11 7.48 8.92 7.02C8.73 6.57 8.54 6.63 8.39 6.62C8.25 6.62 8.09 6.61 7.93 6.61C7.77 6.61 7.51 6.67 7.29 6.91C7.07 7.16 6.45 7.74 6.45 8.96C6.45 10.18 7.34 11.36 7.46 11.52L8.53 7.33Z"/>
-      </svg>
+  <!-- Interactive Modals (Video Lightbox & Global Search) -->
+  <div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal()">
+    <div class="video-modal-content" onclick="event.stopPropagation()">
+      <button class="video-close-btn" onclick="closeVideoModal()" aria-label="Close Video">&times;</button>
+      <div class="video-wrapper">
+        <video id="modalVideoPlayer" controls playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
     </div>
-    <span class="whatsapp-pill-label">Chat with Us</span>
+  </div>
+
+  <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal()">
+    <div class="search-modal-box" onclick="event.stopPropagation()">
+      <div class="search-input-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="globalSearchInput" placeholder="Search programmes, species, AWD, carbon credits..." oninput="handleGlobalSearch(this.value)">
+        <button onclick="closeSearchModal()">&times;</button>
+      </div>
+      <div class="search-results-list" id="searchResults">
+        <p class="search-hint">Type to search across all SGS pages, species, and farmer programmes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Helpline -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS on WhatsApp">
+    <div class="whatsapp-circle-btn">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2a14 14 0 0 0-12.1 21L2 30l7.2-1.9A14 14 0 1 0 16 2zm0 25.6a11.6 11.6 0 0 1-5.9-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.6zm6.4-8.7c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 1 5.3 5.3 0 0 0 1.6 4.3 12.3 12.3 0 0 0 5.3 4.7 18.2 18.2 0 0 0 1.8.7 4.3 4.3 0 0 0 2 .1 3.5 3.5 0 0 0 2.3-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.4-.2-.7-.3z"/></svg>
+    </div>
+    <span class="whatsapp-pill-label">Farmer Support</span>
   </a>
 
-  <!-- Search Modal -->
-  <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Website Search">
-    <div class="search-modal-box">
-      <button class="search-modal-close" aria-label="Close search">&times;</button>
-      <h3>Search Sadana Green Society</h3>
-      <div class="search-input-wrap">
-        <input type="text" placeholder="Search programmes, species, AWD, carbon credits..." id="search-box-input">
-        <button type="button" onclick="alert('Searching for: ' + document.getElementById('search-box-input').value)">Search</button>
-      </div>
-      <div class="search-quick-tags">
-        <a href="services.html#agroforestry">Agroforestry</a>
-        <a href="carbon-credits.html">Carbon Credits</a>
-        <a href="awd.html">AWD Paddy</a>
-        <a href="species.html">Teak & Melia</a>
-        <a href="species.html">Mango & Guava</a>
-        <a href="new-plantation.html">Apply for Saplings</a>
-        <a href="gallery.html">Field Photos</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Video Lightbox Modal -->
-  <div class="video-lightbox-modal" id="video-lightbox" onclick="closeVideoModal(event)">
-    <div class="video-lightbox-content">
-      <button class="video-lightbox-close" onclick="closeVideoModal()" aria-label="Close video">&times;</button>
-      <iframe id="video-modal-iframe" src="" title="Sadana Green Society Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
+  <!-- Global Scripts -->
+  <script src="js/app.js"></script>
 </body>
 </html>
+

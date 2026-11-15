@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#55a630">
-  <title>Plantation & Farmer Activity Gallery | Sadana Green Society</title>
-  <meta name="description" content="Explore 44 authentic photos of Sadana Green Society field programmes, farmer meetings, nursery distribution, and AWD paddy field work across Andhra Pradesh, Telangana, and Karnataka.">
+  <title>Photo Gallery (44 Photos) | Sadana Green Society</title>
+  <meta name="description" content="View authentic field photos of Sadana Green Society's agroforestry plantations, AWD paddy fields, nursery sapling hardening, and community meetings across Andhra Pradesh.">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://sadanagreensociety.com/gallery.html">
+  <link rel="canonical" href="https://sadanagreensociety.com/">
   
   <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
@@ -23,14 +23,7 @@
 </head>
 <body>
 
-  <!-- Top Announcement Strip -->
-  <div class="top-announcement-strip" id="top-announcement">
-    <span>🌱 <strong>Sadana Green Society</strong> · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes.</span>
-    <a href="new-plantation.html">Apply for Saplings &rarr;</a>
-    <button class="announcement-close-btn" onclick="document.getElementById('top-announcement').style.display='none'" aria-label="Close announcement">&times;</button>
-  </div>
-
-  <!-- Floating Pill Header (Blocksy Landscape Style) -->
+  <!-- Floating Pill Header (Blocksy Landscape Style - Image 2) -->
   <header class="site-header" id="header">
     <div class="navbar-pill">
       
@@ -61,12 +54,12 @@
               <!-- Left Column: 3 Programs + Latest News -->
               <div>
                 <div class="megamenu-left-programs">
-                  <a href="services.html#agroforestry" class="megamenu-prog-card">
+                  <a href="agroforestry.html" class="megamenu-prog-card">
                     <div class="megamenu-icon-circle">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
                     </div>
                     <h4>Agroforestry Models</h4>
-                    <p>High-value timber & fruit plantations for boundary & mixed farmlands.</p>
+                    <p>High-value timber &amp; fruit plantations for boundary &amp; mixed farmlands.</p>
                     <span class="read-more">Read More &rarr;</span>
                   </a>
 
@@ -110,7 +103,7 @@
                 </div>
               </div>
 
-              <!-- Right Column: Featured Program + Video Card -->
+              <!-- Right Column: Featured Program + Video Card (Exact image2.png) -->
               <div class="megamenu-right-highlight">
                 <div class="megamenu-right-header">
                   <h4>Farmer Registration 2026</h4>
@@ -119,7 +112,7 @@
                 <p class="megamenu-right-desc">
                   Register land details with real-time GPS coordinates, camera photo uploads, and water verification for sapling distribution.
                 </p>
-                <div class="megamenu-video-thumb" onclick="openVideoModal()" style="background-image: url('assets/images/plantation-field-team-hd.jpg');">
+                <div class="megamenu-video-thumb" onclick="openVideoModal('assets/hero-video.mp4')" style="background-image: url('assets/images/template/home-hero-image-1.webp');">
                   <div class="play-icon">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                   </div>
@@ -128,27 +121,44 @@
             </div>
           </li>
 
-          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="species.html" class="nav-link">Species</a></li>
-          <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
-          <li class="nav-item"><a href="news.html" class="nav-link">News & Media</a></li>
-          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="species.html" class="nav-link">Species</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="gallery.html" class="nav-link active">Gallery</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="news.html" class="nav-link">News</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="faq.html" class="nav-link">FAQ</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
         </ul>
       </nav>
 
       <!-- Action Tools (Search & Pill CTA) -->
       <div class="header-actions">
-        <button class="btn-icon btn-search-trigger" aria-label="Search website">
+        <button class="btn-icon btn-search-trigger" onclick="openSearchModal()" aria-label="Search website">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
 
         <a href="new-plantation.html" class="btn-pill-cta">
           <span>Apply Now</span>
-          <span class="cta-arrow">→</span>
+          <span class="cta-arrow">&rarr;</span>
         </a>
 
-        <button class="mobile-nav-toggle" aria-label="Open Mobile Navigation">
+        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Open Mobile Navigation">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
@@ -156,8 +166,8 @@
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Dark Drawer -->
-  <div class="mobile-drawer-overlay"></div>
+  <!-- Mobile Offcanvas Dark Drawer (Image 12) -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay" onclick="closeMobileDrawer()"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div>
       <div class="drawer-header">
@@ -165,19 +175,23 @@
           <img src="assets/logo.png" alt="SGS Logo">
           <span>Sadana Green Society</span>
         </div>
-        <button class="drawer-close" aria-label="Close Mobile Navigation">&times;</button>
+        <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close Mobile Navigation">&times;</button>
       </div>
 
       <ul class="drawer-menu">
         <li><a href="index.html" class="drawer-link">Home</a></li>
         <li><a href="services.html" class="drawer-link">Programmes Overview</a></li>
-        <li><a href="services.html#agroforestry" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
+        <li><a href="agroforestry.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
         <li><a href="carbon-credits.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Carbon Credits</a></li>
         <li><a href="awd.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ AWD Paddy Water</a></li>
+        <li><a href="environment.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Environment &amp; Climate</a></li>
         <li><a href="about.html" class="drawer-link">About Us</a></li>
+        <li><a href="our-journey.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Our Journey &amp; Milestones</a></li>
         <li><a href="species.html" class="drawer-link">Plant Species</a></li>
-        <li><a href="gallery.html" class="drawer-link active">Photo Gallery</a></li>
-        <li><a href="news.html" class="drawer-link">News & Media</a></li>
+        <li><a href="forest-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Forest Trees (8 Species)</a></li>
+        <li><a href="fruit-species.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Fruit Trees (8 Species)</a></li>
+        <li><a href="gallery.html" class="drawer-link active">Photo Gallery (44 Photos)</a></li>
+        <li><a href="news.html" class="drawer-link">News &amp; Media</a></li>
         <li><a href="faq.html" class="drawer-link">FAQ</a></li>
         <li><a href="contact.html" class="drawer-link">Contact</a></li>
       </ul>
@@ -191,546 +205,385 @@
     </div>
   </aside>
 
+
   <main id="main">
-    <!-- Hero Banner -->
-    <section class="hero-landscape" style="min-height: 48vh; padding: 140px 0 60px; background-image: url('assets/images/home-nature-bg.jpg');">
-      <div class="container hero-content">
-        <span class="hero-badge-pill">OUR WORK IN THE FIELD</span>
-        <h1 class="hero-title">SGS Photo Gallery</h1>
+    <section class="hero-landscape" style="background-image: url('assets/images/template/home-page-grid-image-1.webp'); min-height:55vh; padding:120px 0 80px;">
+      <div class="hero-video-overlay" style="background: linear-gradient(180deg, rgba(15,26,23,0.7) 0%, rgba(15,26,23,0.9) 100%);"></div>
+      <div class="hero-container">
+        <h1 class="hero-title">Field Photo Gallery</h1>
         <p class="hero-lead">
-          Plantation activities, farmer meetings, field visits and community programmes across Andhra Pradesh, Telangana and Karnataka.
+          Authentic visual evidence of our active agroforestry plots, AWD paddy fields, farmer training workshops, and community partnerships across 3 states.
         </p>
       </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="section surface" id="activities">
+    <section style="padding: 70px 0 100px; background:#ffffff;">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Real Field Documentation</span>
-          <h2 class="section-title">Our Activities</h2>
-          <p class="section-subtitle">Photos from Sadana Green Society programmes.</p>
-          <p class="telugu" style="color:var(--color-primary); font-weight:600; margin-top:8px;">సదన గ్రీన్ సొసైటీ కార్యక్రమాల నిజమైన ఫోటోలు.</p>
+        
+        <!-- Filter Tabs -->
+        <div style="display:flex; justify-content:center; gap:12px; margin-bottom:40px; flex-wrap:wrap;">
+          <button class="btn-pill-cta gallery-tab-btn active" onclick="filterGallery('all', this)">All Photos (29)</button>
+          <button class="btn-pill-cta gallery-tab-btn" style="background:#ffffff; color:#172723; border:1px solid #d8e2dc;" onclick="filterGallery('plantation', this)">Agroforestry &amp; Plantations</button>
+          <button class="btn-pill-cta gallery-tab-btn" style="background:#ffffff; color:#172723; border:1px solid #d8e2dc;" onclick="filterGallery('awd', this)">AWD Paddy &amp; Water</button>
+          <button class="btn-pill-cta gallery-tab-btn" style="background:#ffffff; color:#172723; border:1px solid #d8e2dc;" onclick="filterGallery('community', this)">Community &amp; Training</button>
         </div>
 
-        <div class="gallery-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px;">
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-01.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 01 - Explore Sadana Green Society’s plantation activities, farmer engagement, field programmes and community work.">
-              <img src="assets/images/gallery/sgs-activity-01.jpg" alt="Sadana Green Society Activity 01" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 01</h3>
-              <p>Explore Sadana Green Society’s plantation activities, farmer engagement, field programmes and community work.</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-02.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 02 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-02.jpg" alt="Sadana Green Society Activity 02" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 02</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-03.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 03 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-03.jpg" alt="Sadana Green Society Activity 03" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 03</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-04.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 04 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-04.jpg" alt="Sadana Green Society Activity 04" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 04</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-05.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 05 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-05.jpg" alt="Sadana Green Society Activity 05" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 05</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-06.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 06 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-06.jpg" alt="Sadana Green Society Activity 06" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 06</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-07.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 07 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-07.jpg" alt="Sadana Green Society Activity 07" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 07</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-08.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 08 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-08.jpg" alt="Sadana Green Society Activity 08" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 08</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-09.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 09 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-09.jpg" alt="Sadana Green Society Activity 09" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 09</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-10.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 10 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-10.jpg" alt="Sadana Green Society Activity 10" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 10</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-11.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 11 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-11.jpg" alt="Sadana Green Society Activity 11" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 11</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-12.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 12 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-12.jpg" alt="Sadana Green Society Activity 12" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 12</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-13.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 13 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-13.jpg" alt="Sadana Green Society Activity 13" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 13</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-14.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 14 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-14.jpg" alt="Sadana Green Society Activity 14" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 14</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-15.jpg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 15 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-15.jpg" alt="Sadana Green Society Activity 15" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 15</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-16.jpeg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 16 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-16.jpeg" alt="Sadana Green Society Activity 16" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 16</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-17.jpeg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 17 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-17.jpeg" alt="Sadana Green Society Activity 17" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 17</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-18.jpeg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 18 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-18.jpeg" alt="Sadana Green Society Activity 18" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 18</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-19.jpeg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 19 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-19.jpeg" alt="Sadana Green Society Activity 19" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 19</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/sgs-activity-20.jpeg" class="gallery-lightbox-trigger" data-caption="Sadana Green Society Activity 20 - SGS field programme photo">
-              <img src="assets/images/gallery/sgs-activity-20.jpeg" alt="Sadana Green Society Activity 20" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Sadana Green Society Activity 20</h3>
-              <p>SGS field programme photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-01.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 01 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-01.jpg" alt="Field Activity 01" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 01</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-02.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 02 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-02.jpg" alt="Field Activity 02" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 02</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-03.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 03 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-03.jpg" alt="Field Activity 03" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 03</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-04.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 04 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-04.jpg" alt="Field Activity 04" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 04</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-05.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 05 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-05.jpg" alt="Field Activity 05" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 05</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-06.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 06 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-06.jpg" alt="Field Activity 06" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 06</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-07.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 07 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-07.jpg" alt="Field Activity 07" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 07</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-08.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 08 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-08.jpg" alt="Field Activity 08" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 08</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-09.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 09 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-09.jpg" alt="Field Activity 09" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 09</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-10.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 10 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-10.jpg" alt="Field Activity 10" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 10</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-11.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 11 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-11.jpg" alt="Field Activity 11" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 11</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-12.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 12 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-12.jpg" alt="Field Activity 12" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 12</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-13.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 13 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-13.jpg" alt="Field Activity 13" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 13</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-14.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 14 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-14.jpg" alt="Field Activity 14" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 14</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-15.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 15 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-15.jpg" alt="Field Activity 15" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 15</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-16.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 16 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-16.jpg" alt="Field Activity 16" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 16</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-17.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 17 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-17.jpg" alt="Field Activity 17" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 17</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-18.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 18 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-18.jpg" alt="Field Activity 18" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 18</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-19.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 19 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-19.jpg" alt="Field Activity 19" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 19</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-20.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 20 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-20.jpg" alt="Field Activity 20" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 20</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-21.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 21 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-21.jpg" alt="Field Activity 21" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 21</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-22.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 22 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-22.jpg" alt="Field Activity 22" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 22</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-23.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 23 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-23.jpg" alt="Field Activity 23" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 23</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
-          <article class="gallery-card">
-            <a href="assets/images/gallery/field-photos/field-activity-24.jpg" class="gallery-lightbox-trigger" data-caption="Field Activity 24 - Sadana Green Society field activity photo">
-              <img src="assets/images/gallery/field-photos/field-activity-24.jpg" alt="Field Activity 24" loading="lazy">
-            </a>
-            <div class="gallery-caption">
-              <h3>Field Activity 24</h3>
-              <p>Sadana Green Society field activity photo</p>
-            </div>
-          </article>
+        <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:20px;" id="galleryGrid">
+          
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-01.jpg', 'Field Plantation Activity #1')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-01.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #1</span>
+          </div>
         </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-02.jpg', 'Field Plantation Activity #2')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-02.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #2</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-03.jpg', 'Field Plantation Activity #3')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-03.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #3</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-04.jpg', 'Field Plantation Activity #4')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-04.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #4</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-05.jpg', 'Field Plantation Activity #5')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-05.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #5</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-06.jpg', 'Field Plantation Activity #6')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-06.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #6</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-07.jpg', 'Field Plantation Activity #7')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-07.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #7</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-08.jpg', 'Field Plantation Activity #8')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-08.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #8</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-09.jpg', 'Field Plantation Activity #9')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-09.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #9</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-10.jpg', 'Field Plantation Activity #10')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-10.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #10</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-11.jpg', 'Field Plantation Activity #11')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-11.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #11</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-12.jpg', 'Field Plantation Activity #12')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-12.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #12</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-13.jpg', 'Field Plantation Activity #13')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-13.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #13</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-14.jpg', 'Field Plantation Activity #14')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-14.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #14</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-15.jpg', 'Field Plantation Activity #15')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-15.jpg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #15</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-16.jpeg', 'Field Plantation Activity #16')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-16.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #16</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-17.jpeg', 'Field Plantation Activity #17')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-17.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #17</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-18.jpeg', 'Field Plantation Activity #18')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-18.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #18</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-19.jpeg', 'Field Plantation Activity #19')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-19.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #19</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-20.jpeg', 'Field Plantation Activity #20')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-20.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #20</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-21.jpeg', 'Field Plantation Activity #21')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-21.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #21</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-22.jpeg', 'Field Plantation Activity #22')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-22.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #22</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-23.jpeg', 'Field Plantation Activity #23')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-23.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #23</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-24.jpeg', 'Field Plantation Activity #24')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-24.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #24</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-25.jpeg', 'Field Plantation Activity #25')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-25.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #25</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-26.jpeg', 'Field Plantation Activity #26')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-26.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #26</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-27.jpeg', 'Field Plantation Activity #27')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-27.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #27</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-28.jpeg', 'Field Plantation Activity #28')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-28.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #28</span>
+          </div>
+        </div>
+        
+        <div class="gallery-photo-card" data-cat="plantation" onclick="openLightbox('assets/images/gallery/sgs-activity-29.jpeg', 'Field Plantation Activity #29')" style="border-radius:20px; overflow:hidden; position:relative; cursor:pointer; height:260px; box-shadow:0 8px 24px rgba(15,26,23,0.08); background-image:url('assets/images/gallery/sgs-activity-29.jpeg'); background-size:cover; background-position:center; transition:transform 0.25s ease;">
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(15,26,23,0.85) 100%); display:flex; align-items:flex-end; padding:16px;">
+            <span style="color:#ffffff; font-size:0.85rem; font-weight:600;">Field Plantation Activity #29</span>
+          </div>
+        </div>
+        
+        </div>
+
       </div>
     </section>
 
-    <!-- CTA Band -->
-    <section class="cta-band-section">
-      <div class="container cta-band-inner">
-        <div>
-          <h2>Want to invite SGS field coordinators to your village?</h2>
-          <p>We organize farmer awareness meetings, tree plantation drives, and AWD demonstrations.</p>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="video-modal-backdrop" id="lightboxModal" onclick="closeLightbox()">
+    <div class="video-modal-content" onclick="event.stopPropagation()" style="max-width:900px; background:none;">
+      <button class="video-close-btn" onclick="closeLightbox()" aria-label="Close Lightbox">&times;</button>
+      <img id="lightboxImg" src="" alt="Field Photo" style="width:100%; border-radius:16px; max-height:80vh; object-fit:contain; box-shadow:0 24px 60px rgba(0,0,0,0.5);">
+      <p id="lightboxCaption" style="color:#ffffff; text-align:center; font-weight:600; margin-top:14px; font-size:1.05rem;"></p>
+    </div>
+  </div>
+
+  <script>
+    function filterGallery(cat, btn) {
+      document.querySelectorAll('.gallery-tab-btn').forEach(b => {
+        b.style.background = '#ffffff';
+        b.style.color = '#172723';
+        b.style.border = '1px solid #d8e2dc';
+      });
+      btn.style.background = 'var(--color-primary)';
+      btn.style.color = '#ffffff';
+      btn.style.border = 'none';
+
+      document.querySelectorAll('.gallery-photo-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(url, caption) {
+      document.getElementById('lightboxImg').src = url;
+      document.getElementById('lightboxCaption').innerText = caption;
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+  </script>
+
+  <!-- Blocksy Landscape Clean Footer -->
+  <footer class="site-footer-blocksy">
+    <div class="container">
+      
+      <!-- Top Row: Brand & Nav Links -->
+      <div class="footer-top-row">
+        <a href="index.html" class="brand" aria-label="Sadana Green Society Home">
+          <img src="assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <span class="brand-title">Sadana Green Society</span>
+            <span class="brand-subtitle">People • Plants • Livelihoods</span>
+          </div>
+        </a>
+
+        <ul class="footer-nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Pills Row (Image 1 / Home Slice 8) -->
+      <div class="footer-contact-pills-row">
+        <div class="footer-contact-pills-group">
+          
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Address:</span>
+              <span class="footer-pill-val">Kurnool HQ, Andhra Pradesh</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Phone:</span>
+              <span class="footer-pill-val">+91 99634 90444</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Mobile:</span>
+              <span class="footer-pill-val">+91 94402 91404</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-pill-item">
+            <div class="footer-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="footer-pill-text">
+              <span class="footer-pill-label">Opening hours:</span>
+              <span class="footer-pill-val">Mon - Sat: 9:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+
         </div>
-        <div class="cta-band-actions">
-          <a href="contact.html" class="btn-pill-cta" style="background:#ffffff; color:var(--color-primary);">
-            <span>Contact Us</span>
-            <span class="cta-arrow" style="background:var(--color-primary); color:#ffffff;">&rarr;</span>
+
+        <!-- Social Media Buttons -->
+        <div class="footer-social-circles">
+          <a href="https://facebook.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://twitter.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://linkedin.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
         </div>
       </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-about">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="SGS Logo" class="footer-logo">
-          <span class="footer-title">Sadana Green Society</span>
-        </div>
-        <p class="footer-text">
-          People, nature and sustainable futures. Working with farming communities across Andhra Pradesh, Telangana, and Karnataka on agroforestry, sustainable agriculture, and climate-resilience programmes.
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Why Agroforestry</a></li>
-          <li><a href="species.html">Tree & Fruit Species</a></li>
-          <li><a href="carbon-credits.html">Carbon Credits</a></li>
-          <li><a href="awd.html">AWD Paddy Water</a></li>
-          <li><a href="gallery.html">Field Gallery</a></li>
-          <li><a href="news.html">News & Media</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Programmes</h4>
-        <ul class="footer-links">
-          <li><a href="services.html#agroforestry">Agroforestry Models</a></li>
-          <li><a href="carbon-credits.html">Verified Carbon Credits</a></li>
-          <li><a href="awd.html">AWD Paddy Conservation</a></li>
-          <li><a href="new-plantation.html">Farmer Registration Portal</a></li>
-          <li><a href="about.html#founder">Leadership & Founder</a></li>
-          <li><a href="about.html#projects">8 Strategic Focus Areas</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact Head Office</h4>
-        <p class="contact-line"><strong>Near Nandyal Checkpost,</strong><br>Kurnool, Andhra Pradesh 518002 / 518003</p>
-        <p class="contact-line"><strong>Phone:</strong> <a href="tel:+919966611855">+91 99666 11855</a></p>
-        <p class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/919963490444" target="_blank" rel="noopener">+91 99634 90444</a></p>
-        <p class="contact-line"><strong>Email:</strong> <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a><br><a href="mailto:raghubhaskar4@gmail.com">raghubhaskar4@gmail.com</a></p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© <span id="footer-year">2026</span> Sadana Green Society, Kurnool · sadanagreensociety.com</p>
-        <div class="footer-sub-links">
-          <a href="faq.html">Farmer Terms & Safeguards</a>
-          <a href="admin/login.html" class="admin-portal-link" style="opacity: 0.5;">Executive Portal</a>
+      <!-- Bottom Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <span>Copyright &copy; 2026 - Sadana Green Society. All Rights Reserved.</span>
+        <div>
+          <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a>
         </div>
       </div>
+
     </div>
   </footer>
 
-  <!-- Floating WhatsApp CTA -->
-  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
-    <div class="whatsapp-circle-icon">
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.02L7.55 18.84L4.44 19.66L5.27 16.62L5.07 16.31C4.26 15.01 3.81 13.49 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.7C7.02 10.92 7.91 12.1 8.03 12.26C8.16 12.43 9.77 14.91 12.24 15.97C12.83 16.22 13.28 16.37 13.64 16.49C14.23 16.67 14.78 16.65 15.21 16.58C15.69 16.51 16.68 15.98 16.89 15.39C17.09 14.81 17.09 14.3 17.03 14.2C16.97 14.1 16.82 14.04 16.58 13.92C16.34 13.8 15.17 13.22 14.95 13.14C14.73 13.06 14.57 13.02 14.41 13.26C14.25 13.51 13.79 14.04 13.65 14.2C13.51 14.36 13.37 14.38 13.13 14.26C12.89 14.14 11.88 13.81 10.68 12.74C9.75 11.91 9.12 10.88 8.94 10.57C8.76 10.26 8.92 10.1 9.04 9.98C9.15 9.87 9.29 9.69 9.41 9.55C9.53 9.41 9.57 9.31 9.65 9.15C9.73 8.99 9.69 8.85 9.63 8.73C9.57 8.61 9.11 7.48 8.92 7.02C8.73 6.57 8.54 6.63 8.39 6.62C8.25 6.62 8.09 6.61 7.93 6.61C7.77 6.61 7.51 6.67 7.29 6.91C7.07 7.16 6.45 7.74 6.45 8.96C6.45 10.18 7.34 11.36 7.46 11.52L8.53 7.33Z"/>
-      </svg>
+  <!-- Interactive Modals (Video Lightbox & Global Search) -->
+  <div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal()">
+    <div class="video-modal-content" onclick="event.stopPropagation()">
+      <button class="video-close-btn" onclick="closeVideoModal()" aria-label="Close Video">&times;</button>
+      <div class="video-wrapper">
+        <video id="modalVideoPlayer" controls playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
     </div>
-    <span class="whatsapp-pill-label">Chat with Us</span>
+  </div>
+
+  <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal()">
+    <div class="search-modal-box" onclick="event.stopPropagation()">
+      <div class="search-input-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="globalSearchInput" placeholder="Search programmes, species, AWD, carbon credits..." oninput="handleGlobalSearch(this.value)">
+        <button onclick="closeSearchModal()">&times;</button>
+      </div>
+      <div class="search-results-list" id="searchResults">
+        <p class="search-hint">Type to search across all SGS pages, species, and farmer programmes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Helpline -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS on WhatsApp">
+    <div class="whatsapp-circle-btn">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 2a14 14 0 0 0-12.1 21L2 30l7.2-1.9A14 14 0 1 0 16 2zm0 25.6a11.6 11.6 0 0 1-5.9-1.6l-.4-.3-4.4 1.1 1.2-4.3-.3-.5A11.6 11.6 0 1 1 16 27.6zm6.4-8.7c-.3-.2-2-1-2.3-1.1-.3-.1-.6-.2-.8.2s-.9 1.1-1.1 1.3-.4.2-.7.1a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6s-.8-2-1.1-2.7c-.3-.7-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 1 5.3 5.3 0 0 0 1.6 4.3 12.3 12.3 0 0 0 5.3 4.7 18.2 18.2 0 0 0 1.8.7 4.3 4.3 0 0 0 2 .1 3.5 3.5 0 0 0 2.3-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.4-.2-.7-.3z"/></svg>
+    </div>
+    <span class="whatsapp-pill-label">Farmer Support</span>
   </a>
 
-  <!-- Search Modal -->
-  <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Website Search">
-    <div class="search-modal-box">
-      <button class="search-modal-close" aria-label="Close search">&times;</button>
-      <h3>Search Sadana Green Society</h3>
-      <div class="search-input-wrap">
-        <input type="text" placeholder="Search programmes, species, AWD, carbon credits..." id="search-box-input">
-        <button type="button" onclick="alert('Searching for: ' + document.getElementById('search-box-input').value)">Search</button>
-      </div>
-      <div class="search-quick-tags">
-        <a href="services.html#agroforestry">Agroforestry</a>
-        <a href="carbon-credits.html">Carbon Credits</a>
-        <a href="awd.html">AWD Paddy</a>
-        <a href="species.html">Teak & Melia</a>
-        <a href="species.html">Mango & Guava</a>
-        <a href="new-plantation.html">Apply for Saplings</a>
-        <a href="gallery.html">Field Photos</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Video Lightbox Modal -->
-  <div class="video-lightbox-modal" id="video-lightbox" onclick="closeVideoModal(event)">
-    <div class="video-lightbox-content">
-      <button class="video-lightbox-close" onclick="closeVideoModal()" aria-label="Close video">&times;</button>
-      <iframe id="video-modal-iframe" src="" title="Sadana Green Society Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
+  <!-- Global Scripts -->
+  <script src="js/app.js"></script>
 </body>
 </html>
+
