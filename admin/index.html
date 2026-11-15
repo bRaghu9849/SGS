@@ -3,207 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Executive Dashboard | Sadana Green Society Admin</title>
+  <title>Executive Operations | Sadana Green Society</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <!-- Admin Sidebar -->
-  <aside class="admin-sidebar">
-    <div class="sidebar-header">
-      <img src="../assets/logo.png" alt="SGS Official Logo" class="sidebar-logo">
+  <!-- Top Executive Navbar -->
+  <header class="admin-navbar">
+    <a href="index.html" class="admin-nav-brand">
+      <img src="../assets/logo.png" alt="Sadana Green Society Logo" class="admin-nav-logo">
       <div>
-        <div class="sidebar-title">Sadana Green</div>
-        <div class="sidebar-subtitle">Executive Console</div>
+        <div class="admin-nav-title">Sadana Green Society</div>
+        <div class="admin-nav-sub">Operations &bull; Field HQ Kurnool</div>
       </div>
-    </div>
+    </a>
 
-    <ul class="sidebar-menu">
-      <li>
-        <a href="index.html" class="active">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="applications.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Farmer Applications</span>
-          <span class="badge-pill" id="statPendingApps">5</span>
-        </a>
-      </li>
-      <li>
-        <a href="content.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          <span>Universal CMS Editor</span>
-        </a>
-      </li>
-      <li style="margin-top: 24px;">
-        <a href="../index.html" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span>Public Website &nearr;</span>
-        </a>
-      </li>
-      <li>
-        <a href="../new-plantation.html" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          <span>Farmer Form &nearr;</span>
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <ul class="admin-nav-links">
+        <li><a href="index.html" class="active">👨‍🌾 Farmer Application Details</a></li>
+        <li><a href="content.html">✏️ Edit Website Pages</a></li>
+        <li><a href="/" target="_blank">🌐 Live Site &nearr;</a></li>
+        <li><a href="../new-plantation/" target="_blank">🌾 Farmer Form &nearr;</a></li>
+        <li><button onclick="handleAdminLogout()" class="btn-selio btn-selio-danger" style="margin-left:12px;">Sign Out</button></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="sidebar-footer">
-      <div class="user-badge">
-        <div class="user-avatar">SG</div>
-        <div style="flex:1;">
-          <div style="font-weight:700; font-size:0.9rem;">SGS Executive</div>
-          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool HQ</div>
-        </div>
-        <button onclick="handleAdminLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.15rem;">
-          ⎋
+  <!-- Main Content Container -->
+  <main class="admin-content-area">
+    
+    <!-- Top Action Toolbar -->
+    <div class="admin-toolbar">
+      <div class="toolbar-title">
+        <h1>Farmer Application Details (Directly Editable)</h1>
+        <p>Edit farmer names, phone numbers, acres, species counts, and GPS coordinates directly below. Click <strong>"Save All Changes"</strong> to persist.</p>
+      </div>
+
+      <div class="toolbar-actions">
+        <span id="totalFarmerCountBadge" style="background:#eef7f2; color:#173F2B; font-weight:700; padding:8px 16px; border-radius:999px; font-size:0.88rem;">
+          Loading...
+        </span>
+        <button onclick="addNewFarmerRecord()" class="btn-selio btn-selio-outline">
+          <span>+ Add New Farmer</span>
+        </button>
+        <button onclick="exportFarmerCSV()" class="btn-selio btn-selio-outline">
+          <span>📥 Export CSV</span>
+        </button>
+        <button onclick="saveAllFarmerRecords()" class="btn-selio btn-selio-save">
+          <span>💾 Save All Farmer Changes</span>
         </button>
       </div>
     </div>
-  </aside>
 
-  <!-- Main Content View -->
-  <main class="admin-main">
-    <header class="admin-topbar">
-      <div class="topbar-title">
-        <h1>SGS Executive Field Dashboard</h1>
-        <p style="font-size:0.86rem; color:var(--admin-muted); margin-top:2px;">Real-time agroforestry metrics, AWD paddy water tracking, and farmer registrations.</p>
-      </div>
-      <div class="topbar-actions">
-        <a href="content.html" class="btn-admin btn-admin-outline">
-          <span>✏️ Edit Public Pages</span>
-        </a>
-        <a href="applications.html" class="btn-admin btn-admin-primary">
-          <span>📋 View All Applications</span>
-        </a>
-      </div>
-    </header>
-
-    <div class="admin-body">
-
-      <!-- Metrics Row -->
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-icon-box">🌱</div>
-          <div>
-            <div class="metric-val" id="statTotalApps">5</div>
-            <div class="metric-label">Active Applications</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon-box">🗺️</div>
-          <div>
-            <div class="metric-val" id="statTotalAcres">21.0 Ac</div>
-            <div class="metric-label">Land Enrolled</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon-box">📦</div>
-          <div>
-            <div class="metric-val">1.8M+</div>
-            <div class="metric-label">Nursery Saplings Available</div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-icon-box">💧</div>
-          <div>
-            <div class="metric-val">3,800+</div>
-            <div class="metric-label">AWD Tubes Installed</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Two-Column Layout: Quick CMS Editor Access & Recent Applications -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
-        
-        <!-- Left: Quick CMS Page Editor Shortcuts -->
-        <div class="admin-card">
-          <div class="admin-card-header">
-            <h2 class="admin-card-title">Universal Website Content Editor</h2>
-            <a href="content.html" class="btn-admin btn-admin-accent" style="padding:6px 14px; font-size:0.82rem;">Open Editor &rarr;</a>
-          </div>
-          <p style="font-size:0.88rem; color:var(--admin-muted); margin-bottom:18px;">
-            Select any page below to instantly customize headlines, statistics, Telugu text, and contact information:
-          </p>
-
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'home')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>🏠 Home Page</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'about')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>ℹ️ About Us</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'services')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>🚜 Services &amp; Models</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'agroforestry')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>🌳 Agroforestry</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'carbon')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>🌍 Carbon Credits</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'awd')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>🌾 AWD Paddy Water</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'species')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>🌱 16 Species Catalog</span>
-            </a>
-            <a href="content.html" onclick="localStorage.setItem('sgs_admin_goto_page', 'contact')" class="btn-admin btn-admin-outline" style="justify-content:flex-start;">
-              <span>📞 Contact &amp; HQ</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: Recent Farmer Registrations -->
-        <div class="admin-card">
-          <div class="admin-card-header">
-            <h2 class="admin-card-title">Recent Farmer Enrollments</h2>
-            <a href="applications.html" class="btn-admin btn-admin-primary" style="padding:6px 14px; font-size:0.82rem;">Full Roster &rarr;</a>
-          </div>
-          <p style="font-size:0.88rem; color:var(--admin-muted); margin-bottom:18px;">
-            Latest incoming applications from Kurnool, Nandyal, and Gadwal farmers:
-          </p>
-
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f7faf8; border-radius:12px; border:1px solid var(--admin-border);">
-              <div>
-                <strong style="color:var(--admin-primary);">B. Venkata Reddy</strong>
-                <div style="font-size:0.8rem; color:var(--admin-muted);">Kurnool • 4.5 Acres • Teak (టేకు)</div>
-              </div>
-              <span class="badge-status badge-verified">Verified</span>
-            </div>
-
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f7faf8; border-radius:12px; border:1px solid var(--admin-border);">
-              <div>
-                <strong style="color:var(--admin-primary);">K. Chenna Kesavulu</strong>
-                <div style="font-size:0.8rem; color:var(--admin-muted);">Nandyal • 3.0 Acres • Mango (మామిడి)</div>
-              </div>
-              <span class="badge-status badge-pending">Pending</span>
-            </div>
-
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; background:#f7faf8; border-radius:12px; border:1px solid var(--admin-border);">
-              <div>
-                <strong style="color:var(--admin-primary);">M. Lakshmidevi</strong>
-                <div style="font-size:0.8rem; color:var(--admin-muted);">Dhone • 2.5 Acres • Red Sanders</div>
-              </div>
-              <span class="badge-status badge-dispatched">Dispatched</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+    <!-- Container of Editable Farmer Cards -->
+    <div id="farmerCardsContainer">
+      <!-- Injected dynamically via admin.js -->
     </div>
+
+    <!-- Bottom Save Button -->
+    <div style="display:flex; justify-content:center; margin-top:20px;">
+      <button onclick="saveAllFarmerRecords()" class="btn-selio btn-selio-save" style="padding:16px 48px; font-size:1.1rem;">
+        <span>💾 Save All Farmer Changes</span>
+      </button>
+    </div>
+
   </main>
 
   <script src="admin.js"></script>

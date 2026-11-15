@@ -6,61 +6,61 @@
   <title>Executive Login | Sadana Green Society</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
   <style>
     body {
-      background: linear-gradient(135deg, #071911 0%, #0f2a1d 50%, #163d2b 100%);
+      background: linear-gradient(135deg, #0d2619 0%, #173F2B 60%, #1e5239 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       padding: 24px;
     }
-    .login-container {
+    .login-box {
       background: #ffffff;
-      border-radius: 20px;
-      max-width: 440px;
+      border-radius: 28px;
+      max-width: 460px;
       width: 100%;
-      padding: 44px 38px;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+      padding: 48px 40px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       text-align: center;
     }
-    .login-logo {
-      height: 68px;
-      margin-bottom: 20px;
-      background: white;
+    .login-brand-logo {
+      height: 72px;
+      background: #ffffff;
       padding: 6px;
-      border-radius: 12px;
+      border-radius: 16px;
       border: 1px solid var(--admin-border);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 14px rgba(15, 26, 23, 0.08);
     }
   </style>
 </head>
 <body>
 
-  <div class="login-container">
-    <img src="../assets/logo.png" alt="Sadana Green Society Logo" class="login-logo">
-    <h1 style="font-size:1.6rem; font-weight:800; color:var(--admin-primary); margin-bottom:4px;">Sadana Green Society</h1>
-    <p style="font-size:0.86rem; color:var(--admin-muted); margin-bottom:28px;">Executive Management &amp; Field CMS Portal</p>
+  <div class="login-box">
+    <img src="../assets/logo.png" alt="Sadana Green Society Logo" class="login-brand-logo">
+    <h1 style="font-size:1.7rem; font-weight:800; color:var(--admin-primary); margin-bottom:4px; letter-spacing:-0.02em;">Sadana Green Society</h1>
+    <p style="font-size:0.92rem; color:var(--admin-muted); margin-bottom:30px;">Operations &bull; Field Operations Management</p>
 
-    <form id="loginForm" onsubmit="handleLoginSubmit(event)" style="text-align:left;">
-      <div class="form-group">
-        <label>Username / Officer ID</label>
-        <input type="text" id="admin-username" class="form-control" placeholder="Enter username" value="admin" required>
+    <form onsubmit="handleLoginSubmit(event)" style="text-align:left;">
+      <div class="edit-field" style="margin-bottom:18px;">
+        <label>Username / User ID</label>
+        <input type="text" id="admin-user" value="admin" required style="padding:13px 18px; border-radius:12px;">
       </div>
 
-      <div class="form-group" style="margin-bottom:26px;">
+      <div class="edit-field" style="margin-bottom:28px;">
         <label>Password</label>
-        <input type="password" id="admin-password" class="form-control" placeholder="Enter password" value="sadhana2026" required>
+        <input type="password" id="admin-pass" value="sadhana2026" required style="padding:13px 18px; border-radius:12px;">
       </div>
 
-      <button type="submit" class="btn-admin btn-admin-primary" style="width:100%; padding:14px; font-size:1rem; justify-content:center;">
-        Sign In to Executive Console &rarr;
+      <button type="submit" class="btn-selio btn-selio-primary" style="width:100%; padding:15px; font-size:1.05rem;">
+        Sign In to Operations &rarr;
       </button>
 
-      <div style="margin-top:20px; text-align:center; padding:12px; background:#f4f7f5; border-radius:10px; font-size:0.82rem; color:var(--admin-muted);">
-        <strong>Demo Credentials:</strong><br>
-        Username: <code style="color:var(--admin-primary); font-weight:700;">admin</code> &bull; Password: <code style="color:var(--admin-primary); font-weight:700;">sadhana2026</code>
+      <div style="margin-top:22px; padding:12px; background:#f7faf8; border-radius:12px; border:1px solid #e0e7e2; font-size:0.85rem; color:var(--admin-muted); text-align:center;">
+        <strong>Demo Login:</strong> <code style="color:var(--admin-primary); font-weight:700;">admin</code> &bull; Password: <code style="color:var(--admin-primary); font-weight:700;">sadhana2026</code>
       </div>
     </form>
   </div>
@@ -68,13 +68,13 @@
   <script>
     function handleLoginSubmit(e) {
       e.preventDefault();
-      const u = document.getElementById('admin-username').value.trim();
-      const p = document.getElementById('admin-password').value.trim();
+      const u = document.getElementById('admin-user').value.trim();
+      const p = document.getElementById('admin-pass').value.trim();
       if ((u === 'admin' && p === 'sadhana2026') || (u === 'admin' && p === 'admin')) {
         sessionStorage.setItem('sgs_admin_logged', 'true');
         window.location.href = 'index.html';
       } else {
-        alert('Invalid credentials. Please use admin / sadhana2026');
+        alert('Invalid credentials. Use admin / sadhana2026');
       }
     }
   </script>

@@ -1,13 +1,390 @@
 /**
- * Sadana Green Society - Executive Admin Portal Script
- * Manages Multi-Page CMS, Farmer Application Workflow, GPS Location Maps & CSV Export
+ * Sadana Green Society - Executive Operations Engine
+ * Direct In-Place Editable & Savable Farmer Records (Zero Approvals/Bureaucracy)
+ * Direct Universal CMS Editor
  */
 
-// Initial Seed Data for Multi-Page CMS (All 11 Pages editable by admin)
+const SEED_FARMERS = [
+  {
+    id: "SGS-2026-1042",
+    date: "14/11/2026",
+    farmerName: "B. Venkata Reddy",
+    guardianName: "B. Ramaiah",
+    mobile: "9848022311",
+    altMobile: "9440122311",
+    state: "Andhra Pradesh",
+    district: "Kurnool",
+    mandal: "Banaganapalle",
+    village: "Nandavaram",
+    landAddress: "Sy. No. 245/B, Near Canal Road",
+    acres: 4.5,
+    plantationType: "Forest / Timber Plants",
+    waterFacility: "Yes - Borewell (బోరుబావి)",
+    species: "Teak 200, Melia dubia 100",
+    gps: "15.318200, 78.228400"
+  },
+  {
+    id: "SGS-2026-1055",
+    date: "14/11/2026",
+    farmerName: "K. Chenna Kesavulu",
+    guardianName: "K. Subbaiah",
+    mobile: "9989123456",
+    altMobile: "",
+    state: "Andhra Pradesh",
+    district: "Nandyal",
+    mandal: "Allagadda",
+    village: "Ahobilam Road",
+    landAddress: "Sy. No. 112/1, North Field",
+    acres: 3.0,
+    plantationType: "Fruit Plants",
+    waterFacility: "Yes - Canal (కాలువ నీరు)",
+    species: "Mango 150, Guava 50",
+    gps: "15.132400, 78.513200"
+  },
+  {
+    id: "SGS-2026-1061",
+    date: "13/11/2026",
+    farmerName: "M. Lakshmidevi",
+    guardianName: "M. Narayana",
+    mobile: "9490567890",
+    altMobile: "9490567891",
+    state: "Andhra Pradesh",
+    district: "Kurnool",
+    mandal: "Dhone",
+    village: "Kothakota",
+    landAddress: "Plot near ZP School",
+    acres: 2.5,
+    plantationType: "Mixed Agroforestry",
+    waterFacility: "Yes - Open Well (బావి)",
+    species: "Red Sanders 80, Sapota 40",
+    gps: "15.421500, 77.876200"
+  },
+  {
+    id: "SGS-2026-1078",
+    date: "13/11/2026",
+    farmerName: "G. Raghava Rao",
+    guardianName: "G. Peddaiah",
+    mobile: "9866112233",
+    altMobile: "",
+    state: "Andhra Pradesh",
+    district: "Kurnool",
+    mandal: "Kurnool Rural",
+    village: "Nidzur",
+    landAddress: "Sy. No. 88, Tungabhadra river bank",
+    acres: 6.0,
+    plantationType: "AWD Paddy Water Management",
+    waterFacility: "Yes - Canal (కాలువ నీరు)",
+    species: "AWD Paddy Observation Pipes (15 Units)",
+    gps: "15.852300, 78.071200"
+  },
+  {
+    id: "SGS-2026-1089",
+    date: "12/11/2026",
+    farmerName: "S. Mallikarjuna",
+    guardianName: "S. Sivanna",
+    mobile: "9701445566",
+    altMobile: "",
+    state: "Telangana",
+    district: "Jogulamba Gadwal",
+    mandal: "Alampur",
+    village: "Undavelli",
+    landAddress: "Sy. No. 34/A",
+    acres: 5.0,
+    plantationType: "Forest / Timber Plants",
+    waterFacility: "Yes - Borewell (బోరుబావి)",
+    species: "Melia dubia 250, Casuarina 100",
+    gps: "15.894100, 78.132500"
+  }
+];
+
+function getFarmerRecords() {
+  try {
+    const raw = localStorage.getItem('sgs_farmer_applications');
+    if (!raw) {
+      localStorage.setItem('sgs_farmer_applications', JSON.stringify(SEED_FARMERS));
+      return SEED_FARMERS;
+    }
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) && parsed.length > 0 ? parsed : SEED_FARMERS;
+  } catch (e) {
+    return SEED_FARMERS;
+  }
+}
+
+function saveFarmerRecords(records) {
+  localStorage.setItem('sgs_farmer_applications', JSON.stringify(records));
+}
+
+// Render All Editable Farmer Cards
+function renderEditableFarmerList() {
+  const container = document.getElementById('farmerCardsContainer');
+  if (!container) return;
+
+  const records = getFarmerRecords();
+  if (records.length === 0) {
+    container.innerHTML = `<div style="text-align:center; padding:48px; background:#fff; border-radius:18px; border:1px solid #e0e7e2; color:var(--admin-muted);">No farmer records found. Click "+ Add New Farmer Record" above to create one.</div>`;
+    return;
+  }
+
+  container.innerHTML = records.map((f, idx) => {
+    const cleanGPS = (f.gps || '15.828100, 78.037300').split('(')[0].trim();
+    const [lat, lon] = cleanGPS.split(',').map(s => s.trim());
+    const speciesVal = f.species || (Array.isArray(f.selectedSpecies) ? f.selectedSpecies.join(', ') : (f.primarySpecies || 'Teak'));
+
+    return `
+      <div class="farmer-edit-card" data-index="${idx}">
+        <div class="farmer-card-header">
+          <div class="farmer-card-ref">
+            <span>🌾 Record #${idx + 1} &bull; ${f.id || 'SGS-2026-NEW'}</span>
+            <span class="farmer-card-date">${f.date || 'Recent'}</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <a href="https://maps.google.com/?q=${lat},${lon}" target="_blank" class="btn-selio btn-selio-outline" style="padding:6px 14px; font-size:0.8rem;">
+              📍 Open Google Maps &nearr;
+            </a>
+            <button onclick="removeFarmerRecord(${idx})" class="btn-selio btn-selio-danger">
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+
+        <!-- Row 1: Personal Particulars -->
+        <div class="form-grid-4">
+          <div class="edit-field">
+            <label>Farmer Full Name / రైతు పేరు</label>
+            <input type="text" class="inp-farmer-name" value="${f.farmerName || ''}" placeholder="Full Name">
+          </div>
+          <div class="edit-field">
+            <label>Father / Guardian Name</label>
+            <input type="text" class="inp-guardian-name" value="${f.guardianName || ''}" placeholder="Guardian Name">
+          </div>
+          <div class="edit-field">
+            <label>Primary Mobile / ఫోన్ నంబర్</label>
+            <input type="tel" class="inp-mobile" value="${f.mobile || ''}" placeholder="10-digit number">
+          </div>
+          <div class="edit-field">
+            <label>Alternate Mobile</label>
+            <input type="tel" class="inp-alt-mobile" value="${f.altMobile || ''}" placeholder="Optional number">
+          </div>
+        </div>
+
+        <!-- Row 2: Location Particulars -->
+        <div class="form-grid-4">
+          <div class="edit-field">
+            <label>State / రాష్ట్రం</label>
+            <select class="inp-state">
+              <option value="Andhra Pradesh" ${f.state === 'Andhra Pradesh' ? 'selected' : ''}>Andhra Pradesh</option>
+              <option value="Telangana" ${f.state === 'Telangana' ? 'selected' : ''}>Telangana</option>
+              <option value="Karnataka" ${f.state === 'Karnataka' ? 'selected' : ''}>Karnataka</option>
+            </select>
+          </div>
+          <div class="edit-field">
+            <label>District / జిల్లా</label>
+            <select class="inp-district">
+              <option value="Kurnool" ${f.district === 'Kurnool' ? 'selected' : ''}>Kurnool / కర్నూలు</option>
+              <option value="Nandyal" ${f.district === 'Nandyal' ? 'selected' : ''}>Nandyal / నంద్యాల</option>
+              <option value="Anantapur" ${f.district === 'Anantapur' ? 'selected' : ''}>Anantapur / అనంతపురం</option>
+              <option value="YSR Kadapa" ${f.district === 'YSR Kadapa' ? 'selected' : ''}>YSR Kadapa / కడప</option>
+              <option value="Mahbubnagar" ${f.district === 'Mahbubnagar' ? 'selected' : ''}>Mahbubnagar / మహబూబ్‌నగర్</option>
+              <option value="Jogulamba Gadwal" ${f.district === 'Jogulamba Gadwal' ? 'selected' : ''}>Jogulamba Gadwal / గద్వాల</option>
+              <option value="Other" ${f.district === 'Other' ? 'selected' : ''}>Other District</option>
+            </select>
+          </div>
+          <div class="edit-field">
+            <label>Mandal or Taluk / మండలం</label>
+            <input type="text" class="inp-mandal" value="${f.mandal || ''}" placeholder="Mandal">
+          </div>
+          <div class="edit-field">
+            <label>Village / గ్రామం</label>
+            <input type="text" class="inp-village" value="${f.village || ''}" placeholder="Village">
+          </div>
+        </div>
+
+        <!-- Row 3: Farm & Irrigation Specs -->
+        <div class="form-grid-3">
+          <div class="edit-field">
+            <label>Total Land Area (Acres) / విస్తీర్ణం</label>
+            <input type="number" step="0.25" class="inp-acres" value="${f.acres || 1}">
+          </div>
+          <div class="edit-field">
+            <label>Plantation Model / సాగు విధానం</label>
+            <select class="inp-plantation-type">
+              <option value="Forest / Timber Plants" ${f.plantationType === 'Forest / Timber Plants' ? 'selected' : ''}>Forest / Timber Plants</option>
+              <option value="Fruit Plants" ${f.plantationType === 'Fruit Plants' ? 'selected' : ''}>Fruit Plants</option>
+              <option value="Mixed Agroforestry" ${f.plantationType === 'Mixed Agroforestry' ? 'selected' : ''}>Mixed Agroforestry</option>
+              <option value="Boundary Plantation" ${f.plantationType === 'Boundary Plantation' ? 'selected' : ''}>Boundary Plantation</option>
+              <option value="AWD Paddy Water Management" ${f.plantationType === 'AWD Paddy Water Management' ? 'selected' : ''}>AWD Paddy Water Management</option>
+            </select>
+          </div>
+          <div class="edit-field">
+            <label>Water Facility / నీటి వసతి</label>
+            <select class="inp-water-facility">
+              <option value="Yes - Borewell (బోరుబావి)" ${f.waterFacility && f.waterFacility.includes('Borewell') ? 'selected' : ''}>Yes - Borewell (బోరుబావి)</option>
+              <option value="Yes - Canal (కాలువ నీరు)" ${f.waterFacility && f.waterFacility.includes('Canal') ? 'selected' : ''}>Yes - Canal (కాలువ నీరు)</option>
+              <option value="Yes - Open Well (బావి)" ${f.waterFacility && f.waterFacility.includes('Open Well') ? 'selected' : ''}>Yes - Open Well (బావి)</option>
+              <option value="No - Rainfed (వర్షాధారం)" ${f.waterFacility && f.waterFacility.includes('Rainfed') ? 'selected' : ''}>No - Rainfed (వర్షాధారం)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row 4: Land Address, Species & GPS -->
+        <div class="form-grid-3">
+          <div class="edit-field">
+            <label>Full Land Address / Survey Number</label>
+            <input type="text" class="inp-land-address" value="${f.landAddress || ''}" placeholder="Survey No or Location">
+          </div>
+          <div class="edit-field">
+            <label>Desired Species &amp; Quantity (Editable)</label>
+            <input type="text" class="inp-species" value="${speciesVal}" placeholder="e.g. Teak 200, Mango 50">
+          </div>
+          <div class="edit-field">
+            <label>GPS Coordinates (Lat, Lon)</label>
+            <input type="text" class="inp-gps" value="${f.gps || '15.828100, 78.037300'}" placeholder="15.828100, 78.037300">
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  updateFarmerCountSummary(records.length);
+}
+
+function updateFarmerCountSummary(count) {
+  const badge = document.getElementById('totalFarmerCountBadge');
+  if (badge) badge.innerText = `${count} Active Farmers`;
+}
+
+// Collect all inputs and SAVE to storage
+function saveAllFarmerRecords() {
+  const cards = document.querySelectorAll('.farmer-edit-card');
+  const records = [];
+
+  cards.forEach((card, idx) => {
+    const originalRecords = getFarmerRecords();
+    const orig = originalRecords[idx] || {};
+
+    records.push({
+      id: orig.id || ('SGS-2026-' + Math.floor(1000 + Math.random() * 9000)),
+      date: orig.date || new Date().toLocaleDateString('en-GB'),
+      farmerName: card.querySelector('.inp-farmer-name').value.trim(),
+      guardianName: card.querySelector('.inp-guardian-name').value.trim(),
+      mobile: card.querySelector('.inp-mobile').value.trim(),
+      altMobile: card.querySelector('.inp-alt-mobile').value.trim(),
+      state: card.querySelector('.inp-state').value,
+      district: card.querySelector('.inp-district').value,
+      mandal: card.querySelector('.inp-mandal').value.trim(),
+      village: card.querySelector('.inp-village').value.trim(),
+      acres: parseFloat(card.querySelector('.inp-acres').value) || 1,
+      plantationType: card.querySelector('.inp-plantation-type').value,
+      waterFacility: card.querySelector('.inp-water-facility').value,
+      landAddress: card.querySelector('.inp-land-address').value.trim(),
+      species: card.querySelector('.inp-species').value.trim(),
+      gps: card.querySelector('.inp-gps').value.trim()
+    });
+  });
+
+  saveFarmerRecords(records);
+  showToast('✓ All farmer details successfully updated & saved!');
+}
+
+function addNewFarmerRecord() {
+  const records = getFarmerRecords();
+  records.unshift({
+    id: 'SGS-2026-' + Math.floor(1000 + Math.random() * 9000),
+    date: new Date().toLocaleDateString('en-GB'),
+    farmerName: '',
+    guardianName: '',
+    mobile: '',
+    altMobile: '',
+    state: 'Andhra Pradesh',
+    district: 'Kurnool',
+    mandal: '',
+    village: '',
+    landAddress: '',
+    acres: 2.0,
+    plantationType: 'Forest / Timber Plants',
+    waterFacility: 'Yes - Borewell (బోరుబావి)',
+    species: 'Teak (టేకు) 100',
+    gps: '15.828100, 78.037300'
+  });
+  saveFarmerRecords(records);
+  renderEditableFarmerList();
+  window.scrollTo({ top: 120, behavior: 'smooth' });
+  showToast('+ Blank farmer record added. Edit details and click Save!');
+}
+
+function removeFarmerRecord(index) {
+  if (confirm('Are you sure you want to delete this farmer record?')) {
+    const records = getFarmerRecords();
+    records.splice(index, 1);
+    saveFarmerRecords(records);
+    renderEditableFarmerList();
+    showToast('Record removed.');
+  }
+}
+
+function exportFarmerCSV() {
+  const records = getFarmerRecords();
+  let csv = "ID,Date,Farmer Name,Guardian,Mobile,Alt Mobile,State,District,Mandal,Village,Acres,Plantation Model,Water Facility,Species,GPS\n";
+  records.forEach(f => {
+    csv += `"${f.id || ''}","${f.date || ''}","${f.farmerName || ''}","${f.guardianName || ''}","${f.mobile || ''}","${f.altMobile || ''}","${f.state || ''}","${f.district || ''}","${f.mandal || ''}","${f.village || ''}","${f.acres || ''}","${f.plantationType || ''}","${f.waterFacility || ''}","${f.species || ''}","${f.gps || ''}"\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `sgs_farmers_${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  showToast('📥 Downloaded farmer spreadsheet CSV.');
+}
+
+function showToast(msg) {
+  let toast = document.getElementById('adminToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'adminToast';
+    toast.className = 'admin-toast';
+    document.body.appendChild(toast);
+  }
+  toast.innerText = msg;
+  toast.style.display = 'flex';
+  setTimeout(() => {
+    toast.style.display = 'none';
+  }, 3500);
+}
+
+// Authentication
+function checkAdminAuth() {
+  const isAuth = sessionStorage.getItem('sgs_admin_logged');
+  if (!isAuth && !window.location.pathname.includes('login')) {
+    window.location.href = 'login.html';
+  }
+}
+
+function handleAdminLogout() {
+  sessionStorage.removeItem('sgs_admin_logged');
+  window.location.href = 'login.html';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  checkAdminAuth();
+  if (document.getElementById('farmerCardsContainer')) {
+    renderEditableFarmerList();
+  }
+});
+
+
+// ==========================================
+// UNIVERSAL CMS PAGE EDITOR LOGIC
+// ==========================================
+
 const DEFAULT_CMS_DATA = {
   home: {
     title: "Home Page",
-    url: "../index.html",
+    url: "/",
     metaTitle: "Sadana Green Society | Sustainable Agroforestry & AWD Paddy",
     metaDesc: "Sadana Green Society empowers farmers across Andhra Pradesh, Telangana & Karnataka with sustainable agroforestry, AWD paddy water conservation, and certified carbon credits.",
     heroTagline: "Sustainable Agriculture & Carbon Integrity",
@@ -26,7 +403,7 @@ const DEFAULT_CMS_DATA = {
   },
   about: {
     title: "About Us",
-    url: "../about.html",
+    url: "/about/",
     metaTitle: "About Sadana Green Society | Leadership & Grassroots Mission",
     metaDesc: "Founded by B. Raghu Bhaskar, Sadana Green Society has worked since 2008 in Kurnool to bridge ecological restoration and farmer livelihoods.",
     heroTagline: "Grassroots Foundation & Vision",
@@ -45,7 +422,7 @@ const DEFAULT_CMS_DATA = {
   },
   services: {
     title: "Services & Programmes",
-    url: "../services.html",
+    url: "/services/",
     metaTitle: "Services & Programmes | Sadana Green Society",
     metaDesc: "Discover SGS agroforestry models, certified tree sapling distribution, AWD water management, and carbon credit auditing.",
     heroTagline: "Comprehensive Agricultural Solutions",
@@ -64,7 +441,7 @@ const DEFAULT_CMS_DATA = {
   },
   agroforestry: {
     title: "Agroforestry Models",
-    url: "../agroforestry.html",
+    url: "/agroforestry/",
     metaTitle: "Agroforestry Models & Species Selection | Sadana Green Society",
     metaDesc: "Scientific boundary plantations, high-density woodlots, and mixed horticulture models designed for Rayalaseema soils.",
     heroTagline: "High-Value Timber & Fruit Cultivation",
@@ -83,7 +460,7 @@ const DEFAULT_CMS_DATA = {
   },
   carbon: {
     title: "Carbon Credits",
-    url: "../carbon-credits.html",
+    url: "/carbon-credits/",
     metaTitle: "Carbon Credits & Farmer Revenue Sharing | Sadana Green Society",
     metaDesc: "Verifiable carbon sequestration registered under global carbon standards, distributing verified credit earnings directly to smallholders.",
     heroTagline: "Global Climate Finance for Smallholders",
@@ -97,12 +474,12 @@ const DEFAULT_CMS_DATA = {
     stat3_lbl: "Direct Bank Revenue Disbursements",
     stat4_val: "Gold / Verra",
     stat4_lbl: "Methodology Compliance",
-    sec1_title: "7-Stage Carbon Registry Lifecycle",
-    sec1_subtitle: "From farmer enrollment to satellite optical biomass verification and audited registry retirement."
+    sec1_title: "7-Stage Carbon Registry Verification",
+    sec1_subtitle: "From field measurement plots to third-party validation and direct DBT disbursement into farmer accounts."
   },
   awd: {
     title: "AWD Paddy Water",
-    url: "../awd.html",
+    url: "/awd/",
     metaTitle: "Alternate Wetting and Drying (AWD) | Sadana Green Society",
     metaDesc: "Conserving 30% canal water in paddy fields using perforated soil observation pipes while reducing methane emissions by 40%.",
     heroTagline: "Water Conservation & Methane Mitigation",
@@ -121,11 +498,11 @@ const DEFAULT_CMS_DATA = {
   },
   species: {
     title: "16 Species Catalog",
-    url: "../species.html",
+    url: "/species/",
     metaTitle: "Tree Species Catalog (16 Native Trees) | Sadana Green Society",
     metaDesc: "Explore 16 certified timber and fruit species including Teak, Melia Dubia, Red Sanders, Mango, Guava, and Sapota.",
     heroTagline: "Certified Nursery Stock",
-    heroTitle: "16 Native &amp; Commercial<br>Tree Species Catalog",
+    heroTitle: "16 Native & Commercial<br>Tree Species Catalog",
     heroSubtitle: "Hardened in regional nurseries for maximum field survival, rapid root development, and reliable economic returns for smallholders.",
     stat1_val: "16",
     stat1_lbl: "Total Species Available",
@@ -140,7 +517,7 @@ const DEFAULT_CMS_DATA = {
   },
   news: {
     title: "News & Press Hub",
-    url: "../news.html",
+    url: "/news/",
     metaTitle: "News & Regional Media | Sadana Green Society",
     metaDesc: "Read Telugu newspaper coverage, regional agricultural press reports, and media features about Sadana Green Society.",
     heroTagline: "Regional Media Coverage",
@@ -159,26 +536,26 @@ const DEFAULT_CMS_DATA = {
   },
   gallery: {
     title: "Field Photo Gallery",
-    url: "../gallery.html",
+    url: "/gallery/",
     metaTitle: "Field Photo Gallery (44 Photos) | Sadana Green Society",
-    metaDesc: "Authentic field photos of agroforestry plantations, AWD paddy fields, nursery sapling hardening, and community meetings.",
-    heroTagline: "Grassroots Visual Evidence",
-    heroTitle: "Field Photo Gallery",
-    heroSubtitle: "Authentic visual evidence of our active agroforestry plots, AWD paddy fields, farmer training workshops, and community partnerships.",
+    metaDesc: "Authentic field photos of agroforestry plantations, AWD paddy field installations, nursery saplings, and farmer community meetings.",
+    heroTagline: "Visual Field Documentation",
+    heroTitle: "Moments of Transformation<br>from Grassroots Fields",
+    heroSubtitle: "Explore photographic evidence of vibrant tree lines, water-saving AWD tubes, and empowered farming communities in Kurnool & Nandyal.",
     stat1_val: "44",
-    stat1_lbl: "Verified Field Photographs",
-    stat2_val: "3",
-    stat2_lbl: "Program Categories",
-    stat3_val: "6",
-    stat3_lbl: "Districts Covered",
-    stat4_val: "100%",
-    stat4_lbl: "Original Field Photography",
-    sec1_title: "Plantations, Paddy Fields & Community Action",
-    sec1_subtitle: "Browse photos across Agroforestry, AWD Water Conservation, and Farmer Village Meetings."
+    stat1_lbl: "Curated Field Photos",
+    stat2_val: "4",
+    stat2_lbl: "Categories (Agroforestry, AWD, Nursery, Events)",
+    stat3_val: "100%",
+    stat3_lbl: "Authentic Field Documentation",
+    stat4_val: "Rayalaseema",
+    stat4_lbl: "Farming Villages Covered",
+    sec1_title: "Complete Photographic Archive",
+    sec1_subtitle: "High-resolution photos showcasing nursery development, sapling distribution, and healthy farmer yields."
   },
   contact: {
     title: "Contact & Head Office",
-    url: "../contact.html",
+    url: "/contact/",
     metaTitle: "Contact Head Office | Sadana Green Society",
     metaDesc: "Get in touch with Sadana Green Society in Kurnool, Andhra Pradesh. Phone: +91 99634 90444. Email: sadanagreensociety@gmail.com.",
     heroTagline: "Kurnool Field Headquarters",
@@ -197,7 +574,7 @@ const DEFAULT_CMS_DATA = {
   },
   faq: {
     title: "FAQ & Bilingual Help",
-    url: "../faq.html",
+    url: "/faq/",
     metaTitle: "FAQ | Sadana Green Society",
     metaDesc: "Frequently Asked Questions about SGS agroforestry sapling distribution, AWD water tubes, and carbon credits in English & Telugu.",
     heroTagline: "Frequently Asked Questions",
@@ -212,150 +589,22 @@ const DEFAULT_CMS_DATA = {
     stat4_val: "100%",
     stat4_lbl: "Transparent Process",
     sec1_title: "Agroforestry & Farming Queries Answered",
-    sec1_subtitle: "Detailed explanations covering sapling pickup, field irrigation, survival guarantees, and registry carbon monitoring."
+    sec1_subtitle: "Detailed explanations of seedling supply, soil requirements, and annual carbon revenue cycles."
   }
 };
 
-// Seed Farmer Applications
-const DEFAULT_APPLICATIONS = [
-  {
-    id: "SGS-2026-1042",
-    date: "14/11/2026",
-    farmerName: "B. Venkata Reddy",
-    guardianName: "B. Ramaiah",
-    mobile: "9848022311",
-    altMobile: "9440122311",
-    state: "Andhra Pradesh",
-    district: "Kurnool",
-    mandal: "Banaganapalle",
-    village: "Nandavaram",
-    landAddress: "Sy. No. 245/B, Near Canal Road",
-    acres: 4.5,
-    plantationType: "Forest / Timber Plants",
-    waterFacility: "Yes - Borewell (బోరుబావి)",
-    primarySpecies: "Teak (టేకు)",
-    selectedSpecies: ["Teak (టేకు)", "Melia dubia (మలబార్ వేప)"],
-    gps: "15.318200, 78.228400",
-    status: "Verified"
-  },
-  {
-    id: "SGS-2026-1055",
-    date: "14/11/2026",
-    farmerName: "K. Chenna Kesavulu",
-    guardianName: "K. Subbaiah",
-    mobile: "9989123456",
-    altMobile: "",
-    state: "Andhra Pradesh",
-    district: "Nandyal",
-    mandal: "Allagadda",
-    village: "Ahobilam Road",
-    landAddress: "Sy. No. 112/1, North Field",
-    acres: 3.0,
-    plantationType: "Fruit Plants",
-    waterFacility: "Yes - Canal (కాలువ నీరు)",
-    primarySpecies: "Mango (మామిడి)",
-    selectedSpecies: ["Mango (మామిడి)", "Guava (జామ)"],
-    gps: "15.132400, 78.513200",
-    status: "Pending"
-  },
-  {
-    id: "SGS-2026-1061",
-    date: "13/11/2026",
-    farmerName: "M. Lakshmidevi",
-    guardianName: "M. Narayana",
-    mobile: "9490567890",
-    altMobile: "9490567891",
-    state: "Andhra Pradesh",
-    district: "Kurnool",
-    mandal: "Dhone",
-    village: "Kothakota",
-    landAddress: "Plot near ZP School",
-    acres: 2.5,
-    plantationType: "Mixed Agroforestry",
-    waterFacility: "Yes - Open Well (బావి)",
-    primarySpecies: "Red Sanders (ఎర్రచందనం)",
-    selectedSpecies: ["Red Sanders (ఎర్రచందనం)", "Sapota (సపోటా)"],
-    gps: "15.421500, 77.876200",
-    status: "Saplings Dispatched"
-  },
-  {
-    id: "SGS-2026-1078",
-    date: "13/11/2026",
-    farmerName: "G. Raghava Rao",
-    guardianName: "G. Peddaiah",
-    mobile: "9866112233",
-    altMobile: "",
-    state: "Andhra Pradesh",
-    district: "Kurnool",
-    mandal: "Kurnool Rural",
-    village: "Nidzur",
-    landAddress: "Sy. No. 88, Tungabhadra river bank",
-    acres: 6.0,
-    plantationType: "AWD Paddy Water Management",
-    waterFacility: "Yes - Canal (కాలువ నీరు)",
-    primarySpecies: "AWD Paddy Water Management",
-    selectedSpecies: ["AWD Paddy Water Management"],
-    gps: "15.852300, 78.071200",
-    status: "Verified"
-  },
-  {
-    id: "SGS-2026-1089",
-    date: "12/11/2026",
-    farmerName: "S. Mallikarjuna",
-    guardianName: "S. Sivanna",
-    mobile: "9701445566",
-    altMobile: "",
-    state: "Telangana",
-    district: "Jogulamba Gadwal",
-    mandal: "Alampur",
-    village: "Undavelli",
-    landAddress: "Sy. No. 34/A",
-    acres: 5.0,
-    plantationType: "Forest / Timber Plants",
-    waterFacility: "Yes - Borewell (బోరుబావి)",
-    primarySpecies: "Melia dubia (మలబార్ వేప)",
-    selectedSpecies: ["Melia dubia (మలబార్ వేప)", "Casuarina (సర్వి)"],
-    gps: "15.894100, 78.132500",
-    status: "Pending"
-  }
-];
-
-// Initialize Storage
-function initAdminStore() {
-  if (!localStorage.getItem('sgs_cms_pages')) {
-    localStorage.setItem('sgs_cms_pages', JSON.stringify(DEFAULT_CMS_DATA));
-  }
-  if (!localStorage.getItem('sgs_farmer_applications')) {
-    localStorage.setItem('sgs_farmer_applications', JSON.stringify(DEFAULT_APPLICATIONS));
-  }
-}
-
-// Get Data Helpers
 function getCMSStore() {
   try {
-    return JSON.parse(localStorage.getItem('sgs_cms_pages') || '{}');
-  } catch (e) {
-    return DEFAULT_CMS_DATA;
-  }
-}
-
-function getApplications() {
-  try {
-    return JSON.parse(localStorage.getItem('sgs_farmer_applications') || '[]');
-  } catch (e) {
-    return DEFAULT_APPLICATIONS;
-  }
-}
-
-function saveApplications(apps) {
-  localStorage.setItem('sgs_farmer_applications', JSON.stringify(apps));
+    const raw = localStorage.getItem('sgs_cms_pages');
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return JSON.parse(JSON.stringify(DEFAULT_CMS_DATA));
 }
 
 function saveCMSStore(data) {
   localStorage.setItem('sgs_cms_pages', JSON.stringify(data));
 }
 
-// --- CMS Universal Page Editor Functions ---
 let currentCMSPage = 'home';
 
 function loadCMSPage(pageKey) {
@@ -363,7 +612,6 @@ function loadCMSPage(pageKey) {
   const store = getCMSStore();
   const pageData = store[pageKey] || DEFAULT_CMS_DATA[pageKey] || {};
 
-  // Update tabs active state
   document.querySelectorAll('.cms-page-tab').forEach(tab => {
     if (tab.getAttribute('data-page') === pageKey) {
       tab.classList.add('active');
@@ -372,7 +620,6 @@ function loadCMSPage(pageKey) {
     }
   });
 
-  // Populate Editor Inputs
   const setVal = (id, val) => {
     const el = document.getElementById(id);
     if (el) el.value = val || '';
@@ -396,10 +643,9 @@ function loadCMSPage(pageKey) {
   setVal('cms-sec1-title', pageData.sec1_title);
   setVal('cms-sec1-subtitle', pageData.sec1_subtitle);
 
-  // Update Preview Link
   const prevBtn = document.getElementById('cmsPreviewLink');
   if (prevBtn) {
-    prevBtn.href = pageData.url || '../index.html';
+    prevBtn.href = pageData.url || '/';
   }
 
   const pageLabel = document.getElementById('cmsCurrentPageLabel');
@@ -422,6 +668,7 @@ function saveCurrentCMSPage(e) {
   };
 
   store[currentCMSPage] = {
+    ...DEFAULT_CMS_DATA[currentCMSPage],
     ...store[currentCMSPage],
     metaTitle: getVal('cms-meta-title'),
     metaDesc: getVal('cms-meta-desc'),
@@ -438,273 +685,56 @@ function saveCurrentCMSPage(e) {
     stat4_lbl: getVal('cms-stat4-lbl'),
     sec1_title: getVal('cms-sec1-title'),
     sec1_subtitle: getVal('cms-sec1-subtitle'),
-    lastUpdated: new Date().toISOString()
+    lastModified: new Date().toISOString()
   };
 
   saveCMSStore(store);
-
-  // Show Toast
-  alert('Changes published successfully for ' + (store[currentCMSPage].title || currentCMSPage) + '! Public visitors will see updated live content immediately.');
+  showToast(`✓ Page "${store[currentCMSPage].title}" published successfully!`);
 }
 
 function resetCMSPageToDefault() {
-  if (confirm('Reset this page content back to official defaults? Any custom edits on this page will be discarded.')) {
+  if (confirm(`Reset "${currentCMSPage}" content back to default factory content?`)) {
     const store = getCMSStore();
     store[currentCMSPage] = JSON.parse(JSON.stringify(DEFAULT_CMS_DATA[currentCMSPage]));
     saveCMSStore(store);
     loadCMSPage(currentCMSPage);
-    alert('Page reset to default template!');
+    showToast(`Page "${DEFAULT_CMS_DATA[currentCMSPage].title}" reset to defaults.`);
   }
 }
 
 function exportSiteConfigJSON() {
   const store = getCMSStore();
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(store, null, 2));
-  const dlAnchor = document.createElement('a');
-  dlAnchor.setAttribute("href", dataStr);
-  dlAnchor.setAttribute("download", "sgs_cms_config_" + new Date().toISOString().slice(0, 10) + ".json");
-  document.body.appendChild(dlAnchor);
-  dlAnchor.click();
-  dlAnchor.remove();
+  const blob = new Blob([JSON.stringify(store, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `sgs_website_cms_${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  showToast('📥 Site CMS Configuration exported as JSON.');
 }
 
-function importSiteConfigJSON(inputEl) {
-  const file = inputEl.files[0];
-  if (!file) return;
+function importSiteConfigJSON(input) {
+  if (!input.files || !input.files[0]) return;
+  const file = input.files[0];
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
-      const parsed = JSON.parse(e.target.result);
-      if (confirm('Import this site configuration? It will update all page content fields.')) {
-        saveCMSStore(parsed);
-        loadCMSPage(currentCMSPage);
-        alert('Configuration imported successfully!');
-      }
+      const data = JSON.parse(e.target.result);
+      saveCMSStore(data);
+      loadCMSPage(currentCMSPage);
+      showToast('✓ Site CMS Configuration successfully imported!');
     } catch (err) {
-      alert('Invalid JSON file format!');
+      alert('Invalid JSON file format.');
     }
   };
   reader.readAsText(file);
 }
 
-// --- Farmer Application Management ---
-function renderApplicationsTable(filterStatus = 'all', searchQuery = '') {
-  const tbody = document.getElementById('applicationsTableBody');
-  if (!tbody) return;
-
-  const apps = getApplications();
-  const q = searchQuery.toLowerCase().trim();
-
-  const filtered = apps.filter(a => {
-    const matchesFilter = (filterStatus === 'all') || (a.status.toLowerCase().replace(/\s+/g, '') === filterStatus.toLowerCase().replace(/\s+/g, ''));
-    const matchesSearch = !q || (
-      a.farmerName.toLowerCase().includes(q) ||
-      a.id.toLowerCase().includes(q) ||
-      a.mobile.includes(q) ||
-      a.village.toLowerCase().includes(q) ||
-      a.district.toLowerCase().includes(q) ||
-      (a.primarySpecies && a.primarySpecies.toLowerCase().includes(q))
-    );
-    return matchesFilter && matchesSearch;
-  });
-
-  if (filtered.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:32px; color:var(--admin-muted);">No farmer applications match your filter.</td></tr>`;
-    return;
-  }
-
-  tbody.innerHTML = filtered.map(app => {
-    let badgeClass = 'badge-pending';
-    if (app.status === 'Verified') badgeClass = 'badge-verified';
-    if (app.status === 'Saplings Dispatched') badgeClass = 'badge-dispatched';
-
-    const speciesList = Array.isArray(app.selectedSpecies) && app.selectedSpecies.length > 0 
-      ? app.selectedSpecies.join(', ') 
-      : (app.primarySpecies || 'Teak');
-
-    const cleanGPS = app.gps ? app.gps.split('(')[0].trim() : '15.828100, 78.037300';
-    const coords = cleanGPS.split(',');
-    const lat = coords[0] ? coords[0].trim() : '15.8281';
-    const lon = coords[1] ? coords[1].trim() : '78.0373';
-
-    return `
-      <tr>
-        <td><strong style="color:var(--admin-primary);">${app.id}</strong><br><small style="color:var(--admin-muted);">${app.date}</small></td>
-        <td>
-          <strong>${app.farmerName}</strong><br>
-          <small style="color:var(--admin-muted);">${app.mobile}</small>
-        </td>
-        <td>${app.village}, ${app.district}</td>
-        <td><strong>${app.acres} Ac</strong></td>
-        <td style="max-width:180px; font-size:0.84rem;">
-          <span style="font-weight:600; color:var(--admin-primary);">${app.plantationType || 'Agroforestry'}</span><br>
-          <small style="color:var(--admin-muted);">${speciesList}</small>
-        </td>
-        <td>
-          <a href="https://maps.google.com/?q=${lat},${lon}" target="_blank" class="btn-admin btn-admin-outline" style="padding:4px 10px; font-size:0.75rem;" title="View GPS Coordinates">
-            📍 Maps
-          </a>
-        </td>
-        <td><span class="badge-status ${badgeClass}">${app.status}</span></td>
-        <td>
-          <div style="display:flex; gap:6px;">
-            <button onclick="viewApplicationDetail('${app.id}')" class="btn-admin btn-admin-outline" style="padding:5px 8px;" title="View Full Details">👁️</button>
-            <button onclick="updateAppStatus('${app.id}', 'Verified')" class="btn-admin btn-admin-accent" style="padding:5px 8px;" title="Mark Verified">✓</button>
-            <button onclick="updateAppStatus('${app.id}', 'Saplings Dispatched')" class="btn-admin btn-admin-primary" style="padding:5px 8px;" title="Mark Dispatched">🚚</button>
-            <button onclick="deleteApplication('${app.id}')" class="btn-admin btn-admin-danger" style="padding:5px 8px;" title="Delete">✕</button>
-          </div>
-        </td>
-      </tr>
-    `;
-  }).join('');
-}
-
-function updateAppStatus(appId, newStatus) {
-  const apps = getApplications();
-  const app = apps.find(a => a.id === appId);
-  if (app) {
-    app.status = newStatus;
-    saveApplications(apps);
-    renderApplicationsTable();
-    updateDashboardCounters();
-  }
-}
-
-function deleteApplication(appId) {
-  if (confirm(`Are you sure you want to delete application ${appId}?`)) {
-    let apps = getApplications();
-    apps = apps.filter(a => a.id !== appId);
-    saveApplications(apps);
-    renderApplicationsTable();
-    updateDashboardCounters();
-  }
-}
-
-function viewApplicationDetail(appId) {
-  const apps = getApplications();
-  const app = apps.find(a => a.id === appId);
-  if (!app) return;
-
-  const modal = document.getElementById('appDetailModal');
-  const content = document.getElementById('appDetailContent');
-  if (!modal || !content) return;
-
-  const cleanGPS = app.gps ? app.gps.split('(')[0].trim() : '15.828100, 78.037300';
-  const coords = cleanGPS.split(',');
-  const lat = coords[0] ? coords[0].trim() : '15.8281';
-  const lon = coords[1] ? coords[1].trim() : '78.0373';
-
-  content.innerHTML = `
-    <div style="border-bottom:2px solid var(--admin-border); padding-bottom:16px; margin-bottom:20px;">
-      <span class="badge-status badge-verified" style="float:right;">${app.status}</span>
-      <h2 style="font-size:1.4rem; color:var(--admin-primary); margin-bottom:4px;">Application ${app.id}</h2>
-      <p style="color:var(--admin-muted); font-size:0.85rem; margin:0;">Submitted on ${app.date} • Verified Field Roster</p>
-    </div>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
-      <div style="background:var(--admin-bg); padding:16px; border-radius:12px;">
-        <h4 style="font-size:0.82rem; text-transform:uppercase; color:var(--admin-muted); margin-bottom:8px;">Farmer Information</h4>
-        <p style="margin-bottom:4px;"><strong>Name:</strong> ${app.farmerName}</p>
-        <p style="margin-bottom:4px;"><strong>Father/Husband:</strong> ${app.guardianName || 'N/A'}</p>
-        <p style="margin-bottom:4px;"><strong>Primary Phone:</strong> ${app.mobile}</p>
-        <p style="margin:0;"><strong>Alternate:</strong> ${app.altMobile || 'None'}</p>
-      </div>
-
-      <div style="background:var(--admin-bg); padding:16px; border-radius:12px;">
-        <h4 style="font-size:0.82rem; text-transform:uppercase; color:var(--admin-muted); margin-bottom:8px;">Farm Location</h4>
-        <p style="margin-bottom:4px;"><strong>Village & Mandal:</strong> ${app.village}, ${app.mandal || ''}</p>
-        <p style="margin-bottom:4px;"><strong>District & State:</strong> ${app.district}, ${app.state || 'AP'}</p>
-        <p style="margin-bottom:4px;"><strong>Survey / Land:</strong> ${app.landAddress || 'Not specified'}</p>
-        <p style="margin:0;"><strong>GPS:</strong> <a href="https://maps.google.com/?q=${lat},${lon}" target="_blank" style="color:var(--admin-accent); font-weight:700;">${cleanGPS} 📍 View Map</a></p>
-      </div>
-    </div>
-
-    <div style="background:var(--admin-bg); padding:16px; border-radius:12px; margin-bottom:24px;">
-      <h4 style="font-size:0.82rem; text-transform:uppercase; color:var(--admin-muted); margin-bottom:8px;">Plantation Requirements</h4>
-      <p style="margin-bottom:4px;"><strong>Total Area:</strong> ${app.acres} Acres</p>
-      <p style="margin-bottom:4px;"><strong>Plantation Model:</strong> ${app.plantationType}</p>
-      <p style="margin-bottom:4px;"><strong>Water Facility:</strong> ${app.waterFacility}</p>
-      <p style="margin:0;"><strong>Selected Tree Species:</strong> ${Array.isArray(app.selectedSpecies) ? app.selectedSpecies.join(', ') : app.primarySpecies}</p>
-    </div>
-
-    <div style="display:flex; justify-content:flex-end; gap:12px;">
-      <button onclick="window.print()" class="btn-admin btn-admin-outline">🖨️ Print Dispatch Slip</button>
-      <button onclick="closeAppModal()" class="btn-admin btn-admin-primary">Close</button>
-    </div>
-  `;
-
-  modal.classList.add('active');
-}
-
-function closeAppModal() {
-  const modal = document.getElementById('appDetailModal');
-  if (modal) modal.classList.remove('active');
-}
-
-function exportApplicationsToCSV() {
-  const apps = getApplications();
-  let csv = "Application ID,Date,Farmer Name,Guardian,Mobile,Village,Mandal,District,State,Acres,Plantation Type,Water Facility,Species,GPS Coordinates,Status\n";
-
-  apps.forEach(a => {
-    const speciesStr = Array.isArray(a.selectedSpecies) ? a.selectedSpecies.join(' | ') : (a.primarySpecies || '');
-    csv += `"${a.id}","${a.date}","${a.farmerName}","${a.guardianName || ''}","${a.mobile}","${a.village}","${a.mandal || ''}","${a.district}","${a.state || ''}","${a.acres}","${a.plantationType || ''}","${a.waterFacility || ''}","${speciesStr}","${a.gps || ''}","${a.status}"\n`;
-  });
-
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const dlAnchor = document.createElement('a');
-  dlAnchor.setAttribute("href", url);
-  dlAnchor.setAttribute("download", "sgs_farmer_applications_" + new Date().toISOString().slice(0, 10) + ".csv");
-  document.body.appendChild(dlAnchor);
-  dlAnchor.click();
-  dlAnchor.remove();
-}
-
-function updateDashboardCounters() {
-  const apps = getApplications();
-  const totalAppsEl = document.getElementById('statTotalApps');
-  const totalAcresEl = document.getElementById('statTotalAcres');
-  const pendingEl = document.getElementById('statPendingApps');
-  const verifiedEl = document.getElementById('statVerifiedApps');
-
-  if (totalAppsEl) totalAppsEl.innerText = apps.length;
-  if (totalAcresEl) {
-    const sumAcres = apps.reduce((acc, cur) => acc + (parseFloat(cur.acres) || 0), 0);
-    totalAcresEl.innerText = sumAcres.toFixed(1) + ' Ac';
-  }
-  if (pendingEl) {
-    pendingEl.innerText = apps.filter(a => a.status === 'Pending').length;
-  }
-  if (verifiedEl) {
-    verifiedEl.innerText = apps.filter(a => a.status === 'Verified' || a.status === 'Saplings Dispatched').length;
-  }
-}
-
-// Authentication Check
-function checkAdminAuth() {
-  const isAuth = sessionStorage.getItem('sgs_admin_logged');
-  if (!isAuth && !window.location.pathname.includes('login.html')) {
-    window.location.href = 'login.html';
-  }
-}
-
-function handleAdminLogout() {
-  sessionStorage.removeItem('sgs_admin_logged');
-  window.location.href = 'login.html';
-}
-
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
-  initAdminStore();
-  checkAdminAuth();
-  updateDashboardCounters();
-
-  // If on content page, load initial page
-  if (document.getElementById('cms-meta-title')) {
+  if (document.getElementById('cmsCurrentPageLabel')) {
     loadCMSPage('home');
-  }
-
-  // If on applications page, render table
-  if (document.getElementById('applicationsTableBody')) {
-    renderApplicationsTable();
   }
 });

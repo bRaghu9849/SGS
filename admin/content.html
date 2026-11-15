@@ -3,202 +3,166 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Universal Page Content Editor | Sadana Green Society Admin</title>
+  <title>Universal Page Content Editor | Sadana Green Society</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <!-- Admin Sidebar -->
-  <aside class="admin-sidebar">
-    <div class="sidebar-header">
-      <img src="../assets/logo.png" alt="SGS Official Logo" class="sidebar-logo">
+  <!-- Top Executive Navbar -->
+  <header class="admin-navbar">
+    <a href="index.html" class="admin-nav-brand">
+      <img src="../assets/logo.png" alt="Sadana Green Society Logo" class="admin-nav-logo">
       <div>
-        <div class="sidebar-title">Sadana Green</div>
-        <div class="sidebar-subtitle">Executive Console</div>
+        <div class="admin-nav-title">Sadana Green Society</div>
+        <div class="admin-nav-sub">Executive CMS &bull; Field HQ Kurnool</div>
       </div>
-    </div>
+    </a>
 
-    <ul class="sidebar-menu">
-      <li>
-        <a href="index.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a href="applications.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-          <span>Farmer Applications</span>
-          <span class="badge-pill" id="statPendingApps">5</span>
-        </a>
-      </li>
-      <li>
-        <a href="content.html" class="active">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          <span>Universal CMS Editor</span>
-        </a>
-      </li>
-      <li style="margin-top: 24px;">
-        <a href="../index.html" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span>Public Website &nearr;</span>
-        </a>
-      </li>
-      <li>
-        <a href="../new-plantation.html" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-          <span>Farmer Form &nearr;</span>
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <ul class="admin-nav-links">
+        <li><a href="index.html">👨‍🌾 Farmer Application Details</a></li>
+        <li><a href="content.html" class="active">✏️ Edit Website Pages</a></li>
+        <li><a href="/" target="_blank">🌐 Live Site &nearr;</a></li>
+        <li><a href="../new-plantation/" target="_blank">🌾 Farmer Form &nearr;</a></li>
+        <li><button onclick="handleAdminLogout()" class="btn-selio btn-selio-danger" style="margin-left:12px;">Sign Out</button></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="sidebar-footer">
-      <div class="user-badge">
-        <div class="user-avatar">SG</div>
-        <div style="flex:1;">
-          <div style="font-weight:700; font-size:0.9rem;">SGS Executive</div>
-          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool HQ</div>
-        </div>
-        <button onclick="handleAdminLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.15rem;">
-          ⎋
-        </button>
-      </div>
-    </div>
-  </aside>
+  <!-- Main Content Area -->
+  <main class="admin-content-area">
 
-  <!-- Main Content View -->
-  <main class="admin-main">
-    <header class="admin-topbar">
-      <div class="topbar-title">
+    <!-- Top Action Toolbar -->
+    <div class="admin-toolbar">
+      <div class="toolbar-title">
         <h1>Universal Website Content Editor</h1>
-        <p style="font-size:0.86rem; color:var(--admin-muted); margin-top:2px;">Edit texts, headlines, metrics, and banners across EVERY page of the website.</p>
+        <p>Edit titles, headlines, metrics, and descriptions across <strong>every page</strong> of the website. Click <strong>"Save &amp; Publish"</strong> to update live.</p>
       </div>
-      <div class="topbar-actions">
-        <a id="cmsPreviewLink" href="../index.html" target="_blank" class="btn-admin btn-admin-outline">
-          <span>👁️ Live Preview</span>
+
+      <div class="toolbar-actions">
+        <a id="cmsPreviewLink" href="/" target="_blank" class="btn-selio btn-selio-outline">
+          👁️ Live Preview &nearr;
         </a>
-        <button onclick="saveCurrentCMSPage(event)" class="btn-admin btn-admin-primary">
-          <span>💾 Save &amp; Publish Changes</span>
+        <button onclick="saveCurrentCMSPage(event)" class="btn-selio btn-selio-primary">
+          💾 Save &amp; Publish Page Changes
         </button>
       </div>
-    </header>
+    </div>
 
-    <div class="admin-body">
-      
-      <!-- Page Selector Bar (All 11 Pages) -->
-      <div class="cms-page-bar">
-        <button class="cms-page-tab active" data-page="home" onclick="loadCMSPage('home')">🏠 Home</button>
-        <button class="cms-page-tab" data-page="about" onclick="loadCMSPage('about')">ℹ️ About Us</button>
-        <button class="cms-page-tab" data-page="services" onclick="loadCMSPage('services')">🚜 Services</button>
-        <button class="cms-page-tab" data-page="agroforestry" onclick="loadCMSPage('agroforestry')">🌳 Agroforestry</button>
-        <button class="cms-page-tab" data-page="carbon" onclick="loadCMSPage('carbon')">🌍 Carbon Credits</button>
-        <button class="cms-page-tab" data-page="awd" onclick="loadCMSPage('awd')">🌾 AWD Paddy</button>
-        <button class="cms-page-tab" data-page="species" onclick="loadCMSPage('species')">🌱 16 Species Catalog</button>
-        <button class="cms-page-tab" data-page="news" onclick="loadCMSPage('news')">📰 News &amp; Press</button>
-        <button class="cms-page-tab" data-page="gallery" onclick="loadCMSPage('gallery')">📸 Photo Gallery</button>
-        <button class="cms-page-tab" data-page="contact" onclick="loadCMSPage('contact')">📞 Contact HQ</button>
-        <button class="cms-page-tab" data-page="faq" onclick="loadCMSPage('faq')">❓ FAQ &amp; Telugu Help</button>
+    <!-- Page Selector Tabs (All 11 Pages) -->
+    <div class="cms-page-bar">
+      <button class="cms-page-tab active" data-page="home" onclick="loadCMSPage('home')">🏠 Home</button>
+      <button class="cms-page-tab" data-page="about" onclick="loadCMSPage('about')">ℹ️ About Us</button>
+      <button class="cms-page-tab" data-page="services" onclick="loadCMSPage('services')">🚜 Services</button>
+      <button class="cms-page-tab" data-page="agroforestry" onclick="loadCMSPage('agroforestry')">🌳 Agroforestry</button>
+      <button class="cms-page-tab" data-page="carbon" onclick="loadCMSPage('carbon')">🌍 Carbon Credits</button>
+      <button class="cms-page-tab" data-page="awd" onclick="loadCMSPage('awd')">🌾 AWD Paddy</button>
+      <button class="cms-page-tab" data-page="species" onclick="loadCMSPage('species')">🌱 16 Species Catalog</button>
+      <button class="cms-page-tab" data-page="news" onclick="loadCMSPage('news')">📰 News &amp; Press</button>
+      <button class="cms-page-tab" data-page="gallery" onclick="loadCMSPage('gallery')">📸 Photo Gallery</button>
+      <button class="cms-page-tab" data-page="contact" onclick="loadCMSPage('contact')">📞 Contact HQ</button>
+      <button class="cms-page-tab" data-page="faq" onclick="loadCMSPage('faq')">❓ FAQ &amp; Help</button>
+    </div>
+
+    <!-- Editor Card -->
+    <div class="admin-card">
+      <div class="admin-card-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid var(--admin-border);">
+        <div>
+          <h2 style="font-size:1.3rem; font-weight:800; color:var(--admin-primary);">Editing: <span id="cmsCurrentPageLabel" style="color:var(--admin-accent);">Home Page</span></h2>
+          <p style="font-size:0.86rem; color:var(--admin-muted); margin:2px 0 0;">Update search engine meta titles, hero texts, statistical milestones, and section headings.</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button onclick="resetCMSPageToDefault()" class="btn-selio btn-selio-outline" style="padding:7px 14px; font-size:0.84rem;">
+            ↺ Reset Defaults
+          </button>
+          <button onclick="exportSiteConfigJSON()" class="btn-selio btn-selio-outline" style="padding:7px 14px; font-size:0.84rem;">
+            📥 Export Config
+          </button>
+          <label class="btn-selio btn-selio-outline" style="padding:7px 14px; font-size:0.84rem; cursor:pointer;">
+            📤 Import Config
+            <input type="file" accept=".json" onchange="importSiteConfigJSON(this)" style="display:none;">
+          </label>
+        </div>
       </div>
 
-      <!-- Editor Card -->
-      <div class="admin-card">
-        <div class="admin-card-header">
-          <div>
-            <h2 class="admin-card-title">Editing: <span id="cmsCurrentPageLabel" style="color:var(--admin-accent);">Home Page</span></h2>
-            <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Configure page titles, hero headings, and key statistical counters.</p>
-          </div>
-          <div style="display:flex; gap:10px;">
-            <button onclick="resetCMSPageToDefault()" class="btn-admin btn-admin-outline" style="font-size:0.82rem; padding:6px 12px;">
-              ↺ Reset to Defaults
-            </button>
-            <button onclick="exportSiteConfigJSON()" class="btn-admin btn-admin-outline" style="font-size:0.82rem; padding:6px 12px;">
-              📥 Export Site Config
-            </button>
-            <label class="btn-admin btn-admin-outline" style="font-size:0.82rem; padding:6px 12px; cursor:pointer;">
-              📤 Import Config
-              <input type="file" accept=".json" onchange="importSiteConfigJSON(this)" style="display:none;">
-            </label>
-          </div>
-        </div>
+      <form onsubmit="saveCurrentCMSPage(event)">
 
-        <form onsubmit="saveCurrentCMSPage(event)">
-
-          <!-- Section 1: SEO & Browser Metadata -->
-          <div style="margin-bottom:30px;">
-            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
-              1. Search Engine Optimization (SEO) &amp; Browser Head
-            </h3>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-              <div class="form-group">
-                <label>Browser Page Title (HTML Title Tag)</label>
-                <input type="text" id="cms-meta-title" class="form-control" placeholder="Browser Title">
-              </div>
-              <div class="form-group">
-                <label>Meta Description (Google Search Snippet)</label>
-                <input type="text" id="cms-meta-desc" class="form-control" placeholder="Meta description">
-              </div>
+        <!-- Section 1: SEO & Browser Metadata -->
+        <div style="margin-bottom:30px;">
+          <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #edf2ef;">
+            1. Search Engine Optimization (SEO) &amp; Browser Head
+          </h3>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+            <div class="form-group">
+              <label>Browser Page Title (&lt;title&gt; tag)</label>
+              <input type="text" id="cms-meta-title" class="form-control" placeholder="Browser Title">
+            </div>
+            <div class="form-group">
+              <label>Meta Description (Google Search Snippet)</label>
+              <input type="text" id="cms-meta-desc" class="form-control" placeholder="Meta description">
             </div>
           </div>
+        </div>
 
-          <!-- Section 2: Hero Section -->
-          <div style="margin-bottom:30px;">
-            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
-              2. Hero Banner &amp; Main Headline
-            </h3>
-            
+        <!-- Section 2: Hero Section -->
+        <div style="margin-bottom:30px;">
+          <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #edf2ef;">
+            2. Hero Banner &amp; Main Headline
+          </h3>
+          <div style="display:grid; grid-template-columns:1fr; gap:16px;">
             <div class="form-group">
-              <label>Hero Tagline / Section Kicker</label>
+              <label>Hero Tagline / Overline Badge</label>
               <input type="text" id="cms-hero-tagline" class="form-control" placeholder="e.g. Sustainable Agriculture & Carbon Integrity">
             </div>
-
             <div class="form-group">
-              <label>Main Headline (Supports &lt;br&gt; and HTML accents)</label>
-              <input type="text" id="cms-hero-title" class="form-control" placeholder="e.g. Greening Farmlands.<br>Securing Farmer Prosperity.">
+              <label>Hero Main Heading (Supports &lt;br&gt; line breaks)</label>
+              <input type="text" id="cms-hero-title" class="form-control" placeholder="Hero Headline">
             </div>
-
             <div class="form-group">
-              <label>Hero Lead Subtitle / Paragraph</label>
-              <textarea id="cms-hero-subtitle" class="form-control" rows="3" placeholder="Lead paragraph text explaining the page value proposition..."></textarea>
+              <label>Hero Subtitle / Description Paragraph</label>
+              <textarea id="cms-hero-subtitle" rows="3" class="form-control" placeholder="Hero Subtitle"></textarea>
             </div>
           </div>
+        </div>
 
-          <!-- Section 3: Four Impact Statistics Counters -->
-          <div style="margin-bottom:30px;">
-            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
-              3. Four Impact Statistics / Numbers
-            </h3>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
-              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
-                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 1 Number &amp; Label</label>
-                <input type="text" id="cms-stat1-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
-                <input type="text" id="cms-stat1-lbl" class="form-control" style="font-size:0.85rem;">
-              </div>
-              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
-                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 2 Number &amp; Label</label>
-                <input type="text" id="cms-stat2-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
-                <input type="text" id="cms-stat2-lbl" class="form-control" style="font-size:0.85rem;">
-              </div>
-              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
-                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 3 Number &amp; Label</label>
-                <input type="text" id="cms-stat3-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
-                <input type="text" id="cms-stat3-lbl" class="form-control" style="font-size:0.85rem;">
-              </div>
-              <div style="background:#f7faf8; padding:16px; border-radius:12px; border:1px solid var(--admin-border);">
-                <label style="font-size:0.8rem; font-weight:700; color:var(--admin-muted); display:block; margin-bottom:4px;">Stat 4 Number &amp; Label</label>
-                <input type="text" id="cms-stat4-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
-                <input type="text" id="cms-stat4-lbl" class="form-control" style="font-size:0.85rem;">
-              </div>
+        <!-- Section 3: 4 Key Statistical Counters -->
+        <div style="margin-bottom:30px;">
+          <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #edf2ef;">
+            3. Key Impact Milestones &amp; Statistical Counters
+          </h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+            <div class="cms-stat-box">
+              <label>Stat 1 Number &amp; Label</label>
+              <input type="text" id="cms-stat1-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+              <input type="text" id="cms-stat1-lbl" class="form-control" style="font-size:0.85rem;">
+            </div>
+            <div class="cms-stat-box">
+              <label>Stat 2 Number &amp; Label</label>
+              <input type="text" id="cms-stat2-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+              <input type="text" id="cms-stat2-lbl" class="form-control" style="font-size:0.85rem;">
+            </div>
+            <div class="cms-stat-box">
+              <label>Stat 3 Number &amp; Label</label>
+              <input type="text" id="cms-stat3-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+              <input type="text" id="cms-stat3-lbl" class="form-control" style="font-size:0.85rem;">
+            </div>
+            <div class="cms-stat-box">
+              <label>Stat 4 Number &amp; Label</label>
+              <input type="text" id="cms-stat4-val" class="form-control" style="font-weight:800; font-size:1.1rem; margin-bottom:6px;">
+              <input type="text" id="cms-stat4-lbl" class="form-control" style="font-size:0.85rem;">
             </div>
           </div>
+        </div>
 
-          <!-- Section 4: Secondary Section Headings -->
-          <div style="margin-bottom:30px;">
-            <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; border-bottom:1px solid #edf2ef; padding-bottom:8px;">
-              4. Core Feature Section Titles
-            </h3>
+        <!-- Section 4: Secondary Section Headings -->
+        <div style="margin-bottom:30px;">
+          <h3 style="font-size:1.05rem; font-weight:800; color:var(--admin-primary); margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #edf2ef;">
+            4. Core Feature Section Titles
+          </h3>
+          <div style="display:grid; grid-template-columns:1fr; gap:16px;">
             <div class="form-group">
               <label>Feature Section Title</label>
               <input type="text" id="cms-sec1-title" class="form-control" placeholder="e.g. How Our Dedicated Approach Works for Your Success">
@@ -208,20 +172,21 @@
               <input type="text" id="cms-sec1-subtitle" class="form-control" placeholder="Subtitle description">
             </div>
           </div>
+        </div>
 
-          <!-- Action Buttons -->
-          <div style="display:flex; justify-content:flex-end; gap:12px; border-top:1px solid var(--admin-border); padding-top:20px;">
-            <button type="button" onclick="loadCMSPage(currentCMSPage)" class="btn-admin btn-admin-outline">Cancel</button>
-            <button type="submit" class="btn-admin btn-admin-primary" style="padding:12px 28px; font-size:0.95rem;">
-              <span>💾 Save &amp; Publish Page Changes</span>
-            </button>
-          </div>
+        <!-- Save Button Footer -->
+        <div style="display:flex; justify-content:flex-end; gap:12px; border-top:1px solid var(--admin-border); padding-top:20px;">
+          <button type="button" onclick="loadCMSPage(currentCMSPage)" class="btn-selio btn-selio-outline">
+            Cancel
+          </button>
+          <button type="submit" class="btn-selio btn-selio-primary" style="padding:12px 28px; font-size:0.95rem;">
+            💾 Save &amp; Publish Page Changes
+          </button>
+        </div>
 
-        </form>
-
-      </div>
-
+      </form>
     </div>
+
   </main>
 
   <script src="admin.js"></script>

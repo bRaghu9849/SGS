@@ -51,22 +51,22 @@ function closeVideoModal() {
 
 // --- SEARCH MODAL ---
 const searchablePages = [
-  { title: "Home Page", url: "index.html", desc: "Sustainable agroforestry, AWD paddy & carbon credits overview." },
-  { title: "About Us", url: "about.html", desc: "Leadership, mission, team of experts, and grassroots history." },
-  { title: "Our Journey & Milestones", url: "our-journey.html", desc: "Founder B. Raghu Bhaskar and 8 pillars of comprehensive work." },
-  { title: "Programmes & Services", url: "services.html", desc: "Agroforestry models, soil testing, and precision farming." },
-  { title: "Agroforestry Models", url: "agroforestry.html", desc: "Boundary plantations, mixed cropping, and timber economics." },
-  { title: "Species Catalog (16 Trees)", url: "species.html", desc: "All 16 native timber & fruit species with soil guides." },
-  { title: "Forest & Timber Species", url: "forest-species.html", desc: "Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul, Red Sanders." },
-  { title: "Fruit & Horticulture Species", url: "fruit-species.html", desc: "Mango, Guava, Sapota, Custard Apple, Amla, Lemon, Coconut, Cashew." },
-  { title: "Carbon Credits Lifecycle", url: "carbon-credits.html", desc: "7-stage MRV satellite monitoring & farmer revenue disbursements." },
-  { title: "AWD Paddy Water Management", url: "awd.html", desc: "Save 30% water and reduce methane emissions in rice cultivation." },
-  { title: "Environment & Climate Action", url: "environment.html", desc: "6 core environmental areas protecting soil, water, and air." },
-  { title: "Photo Gallery", url: "gallery.html", desc: "44 authentic field photos from plantations and community work." },
-  { title: "News & Media Hub", url: "news.html", desc: "Telugu newspaper clippings and agricultural press coverage." },
-  { title: "Contact Us", url: "contact.html", desc: "Kurnool HQ head office, phone +91 99634 90444, and map." },
-  { title: "Frequently Asked Questions (FAQ)", url: "faq.html", desc: "Bilingual English & Telugu answers about all SGS programmes." },
-  { title: "Apply for Saplings", url: "new-plantation.html", desc: "Farmer sapling application with real-time GPS location capture." }
+  { title: "Home Page", url: "/", desc: "Sustainable agroforestry, AWD paddy & carbon credits overview." },
+  { title: "About Us", url: "/about/", desc: "Leadership, mission, team of experts, and grassroots history." },
+  { title: "Our Journey & Milestones", url: "/our-journey/", desc: "Founder B. Raghu Bhaskar and 8 pillars of comprehensive work." },
+  { title: "Programmes & Services", url: "/services/", desc: "Agroforestry models, soil testing, and precision farming." },
+  { title: "Agroforestry Models", url: "/agroforestry/", desc: "Boundary plantations, mixed cropping, and timber economics." },
+  { title: "Species Catalog (16 Trees)", url: "/species/", desc: "All 16 native timber & fruit species with soil guides." },
+  { title: "Forest & Timber Species", url: "/forest-species/", desc: "Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul, Red Sanders." },
+  { title: "Fruit & Horticulture Species", url: "/fruit-species/", desc: "Mango, Guava, Sapota, Custard Apple, Amla, Lemon, Coconut, Cashew." },
+  { title: "Carbon Credits Lifecycle", url: "/carbon-credits/", desc: "7-stage MRV satellite monitoring & farmer revenue disbursements." },
+  { title: "AWD Paddy Water Management", url: "/awd/", desc: "Save 30% water and reduce methane emissions in rice cultivation." },
+  { title: "Environment & Climate Action", url: "/environment/", desc: "6 core environmental areas protecting soil, water, and air." },
+  { title: "Photo Gallery", url: "/gallery/", desc: "44 authentic field photos from plantations and community work." },
+  { title: "News & Media Hub", url: "/news/", desc: "Telugu newspaper clippings and agricultural press coverage." },
+  { title: "Contact Us", url: "/contact/", desc: "Kurnool HQ head office, phone +91 99634 90444, and map." },
+  { title: "Frequently Asked Questions (FAQ)", url: "/faq/", desc: "Bilingual English & Telugu answers about all SGS programmes." },
+  { title: "Apply for Saplings", url: "/new-plantation/", desc: "Farmer sapling application with real-time GPS location capture." }
 ];
 
 function openSearchModal() {

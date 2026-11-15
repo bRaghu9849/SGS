@@ -3946,3 +3946,119 @@ html, body {
     height: 34px !important;
   }
 }
+
+/* ==============================================================================
+   SELIO-STYLE FORM COMPONENTS & LUXURY DIRECTORY CONTROLS
+   ============================================================================== */
+.selio-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.selio-icon {
+  position: absolute;
+  left: 18px;
+  font-size: 1.15rem;
+  color: #556862;
+  pointer-events: none;
+  z-index: 2;
+  line-height: 1;
+}
+
+.selio-input,
+.selio-select,
+.selio-textarea {
+  width: 100%;
+  padding: 14px 20px 14px 52px !important;
+  border-radius: 14px !important;
+  border: 1.5px solid #d8e2dc !important;
+  background: #ffffff !important;
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 0.95rem !important;
+  color: #172723 !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 8px rgba(15,26,23,0.03);
+}
+
+.selio-input:focus,
+.selio-select:focus,
+.selio-textarea:focus {
+  border-color: #173F2B !important;
+  box-shadow: 0 0 0 4px rgba(23, 63, 43, 0.12) !important;
+}
+
+.selio-select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23173F2B' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 18px center !important;
+  cursor: pointer !important;
+}
+
+.selio-textarea {
+  padding: 14px 20px !important;
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Selio Species Card Chips */
+.selio-chips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.selio-chip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1.5px solid #e0e7e2;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(15,26,23,0.02);
+}
+
+.selio-chip:hover {
+  border-color: #173F2B;
+  background: #f7faf8;
+  transform: translateY(-1px);
+}
+
+.selio-chip.active {
+  background: #173F2B !important;
+  border-color: #173F2B !important;
+  box-shadow: 0 6px 18px rgba(23, 63, 43, 0.25);
+}
+
+.selio-chip.active .selio-chip-name {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.selio-chip.active .selio-chip-badge {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.selio-chip-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #172723;
+}
+
+.selio-chip-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #eef7f2;
+  color: #173F2B;
+}
