@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Manager | Sadana Green Society Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    .content-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 2px solid var(--admin-border);
+      padding-bottom: 12px;
+    }
+    .content-tab-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      background: none;
+      color: var(--admin-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .content-tab-btn.active {
+      background: var(--admin-primary);
+      color: #ffffff;
+    }
+    .clipping-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .clipping-card-admin {
+      background: #ffffff;
+      border: 1px solid var(--admin-border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .clipping-card-admin img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .clipping-admin-body {
+      padding: 16px;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <img src="../assets/logo.png" alt="SGS" class="sidebar-logo">
+      <div>
+        <div class="sidebar-title">Sadana Green</div>
+        <div class="sidebar-subtitle">Admin Console</div>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="applications.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Farmer Applications</span>
+        </a>
+      </li>
+      <li>
+        <a href="navigation.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <span>Navbar & Header</span>
+        </a>
+      </li>
+      <li>
+        <a href="content.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>Content Manager</span>
+        </a>
+      </li>
+      <li style="margin-top: 20px;">
+        <a href="../index.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Public Website &nearr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="../new-plantation.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span>Farmer Form &nearr;</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="user-badge">
+        <div class="user-avatar">SG</div>
+        <div style="flex:1;">
+          <div style="font-weight:700; font-size:0.9rem;">SGS Coordinator</div>
+          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool Field HQ</div>
+        </div>
+        <button onclick="handleLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.1rem;">
+          ⎋
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content View -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h1>Website Content Manager</h1>
+        <p style="font-size:0.85rem; color:var(--admin-muted);">Manage regional Telugu newspaper clippings, press notes, and field gallery albums.</p>
+      </div>
+    </header>
+
+    <div class="admin-body">
+
+      <div class="content-tabs">
+        <button class="content-tab-btn active" onclick="switchContentTab('news')">📰 News & Press Clippings</button>
+        <button class="content-tab-btn" onclick="switchContentTab('gallery')">📸 Field Photo Gallery</button>
+      </div>
+
+      <!-- TAB 1: News Clippings -->
+      <div id="tab-news-content">
+        <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; align-items: start;">
+
+          <!-- Add News Form -->
+          <div class="admin-card" style="padding: 24px;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 16px; color: var(--admin-primary);">Add New Press Clipping</h3>
+            <form onsubmit="handleAddNewClipping(event)">
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">English Headline *</label>
+                <input type="text" id="news-headline-en" class="login-input" placeholder="e.g. Tree Plantation Drive in Banaganapalle" required>
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Telugu Headline / తెలుగు శీర్షిక *</label>
+                <input type="text" id="news-headline-te" class="login-input" placeholder="e.g. బనగానపల్లెలో మొక్కల పెంపకం" required style="font-family:'Noto Sans Telugu', sans-serif;">
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Publication / Newspaper Name *</label>
+                <input type="text" id="news-publication" class="login-input" placeholder="e.g. Eenadu / Sakshi / Andhra Jyothi" required>
+              </div>
+
+              <div style="margin-bottom: 14px;">
+                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Image / Clipping File</label>
+                <input type="file" id="news-image-file" class="login-input" accept="image/*">
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 4px;">Article Summary</label>
+                <textarea id="news-summary" class="login-input" rows="3" placeholder="Brief explanation of the news coverage..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%; justify-content: center;">
+                Save & Publish to News Page
+              </button>
+            </form>
+          </div>
+
+          <!-- Existing Clippings -->
+          <div>
+            <div class="admin-card" style="padding: 24px;">
+              <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--admin-primary);">Published Media Clippings</h3>
+              <p style="font-size: 0.88rem; color: var(--admin-muted);">Active regional news articles displayed on the public <a href="../news.html" target="_blank" style="color:var(--admin-accent);">News & Media</a> page.</p>
+
+              <div class="clipping-preview-grid">
+                <div class="clipping-card-admin">
+                  <img src="../assets/images/news/news-clipping-01.jpg" alt="Clipping 1">
+                  <div class="clipping-admin-body">
+                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</strong>
+                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">Horticulture Support • Kurnool Daily</div>
+                  </div>
+                </div>
+
+                <div class="clipping-card-admin">
+                  <img src="../assets/images/news/news-clipping-02.jpg" alt="Clipping 2">
+                  <div class="clipping-admin-body">
+                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు</strong>
+                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">Farmer Incomes • District Bureau</div>
+                  </div>
+                </div>
+
+                <div class="clipping-card-admin">
+                  <img src="../assets/images/news/news-clipping-03.jpg" alt="Clipping 3">
+                  <div class="clipping-admin-body">
+                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట</strong>
+                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">AWD Paddy Water • Agriculture Feature</div>
+                  </div>
+                </div>
+
+                <div class="clipping-card-admin">
+                  <img src="../assets/images/news/news-clipping-04.jpg" alt="Clipping 4">
+                  <div class="clipping-admin-body">
+                    <strong style="font-size:0.95rem; font-family:'Noto Sans Telugu', sans-serif;">రైతుల కృషి అభినందనీయం</strong>
+                    <div style="font-size:0.8rem; color:var(--admin-muted); margin-top:4px;">Community Honors • Kurnool Bureau</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2: Gallery -->
+      <div id="tab-gallery-content" style="display: none;">
+        <div class="admin-card" style="padding: 24px;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px; color: var(--admin-primary);">Field Photos & Activity Albums</h3>
+          <p style="font-size: 0.88rem; color: var(--admin-muted); margin-bottom: 20px;">
+            Sadana Green Society maintains over 53 high-resolution field photos documenting nurseries, farmer meetings, sapling distribution, and AWD tube installations.
+          </p>
+
+          <div style="display: flex; gap: 14px; margin-bottom: 24px;">
+            <a href="../gallery.html" target="_blank" class="btn-admin btn-admin-accent">
+              View Public Field Gallery (53+ Photos) &rarr;
+            </a>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <img src="../assets/images/gallery/sgs-activity-01.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-02.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-03.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-04.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-05.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-06.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-07.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+            <img src="../assets/images/gallery/sgs-activity-08.jpg" style="width:130px; height:95px; object-fit:cover; border-radius:8px;" alt="Photo">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+  <script>
+    function switchContentTab(tab) {
+      var btns = document.querySelectorAll('.content-tab-btn');
+      btns.forEach(function(b) { b.classList.remove('active'); });
+
+      if (tab === 'news') {
+        btns[0].classList.add('active');
+        document.getElementById('tab-news-content').style.display = 'block';
+        document.getElementById('tab-gallery-content').style.display = 'none';
+      } else {
+        btns[1].classList.add('active');
+        document.getElementById('tab-news-content').style.display = 'none';
+        document.getElementById('tab-gallery-content').style.display = 'block';
+      }
+    }
+
+    function handleAddNewClipping(e) {
+      e.preventDefault();
+      alert('Clipping added to local staging! This entry will appear on your regional news feed.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>

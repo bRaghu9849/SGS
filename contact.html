@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Sadana Green Society - Kurnool, Andhra Pradesh</title>
+  <meta name="description" content="Get in touch with Sadana Green Society in Kurnool, AP. Contact our field offices for agroforestry inquiries, farmer enrollment, carbon credits, or CSR partnerships.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact Hero with 3 Glassmorphism Cards (crop_2 match) */
+    .contact-hero-wrap {
+      position: relative;
+      background: linear-gradient(135deg, rgba(10, 31, 22, 0.82) 0%, rgba(18, 57, 43, 0.72) 100%), url('assets/images/plantation-field-team-hd.jpg') center/cover no-repeat;
+      padding: 120px 0 60px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .contact-hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      max-width: 860px;
+      margin: 0 auto 18px;
+      line-height: 1.15;
+    }
+    .contact-hero-sub {
+      font-size: 1.1rem;
+      color: #d8e8dc;
+      max-width: 760px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+    }
+    .contact-hero-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .contact-glass-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .contact-glass-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-glass-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    .contact-glass-info h4 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #a4e48b;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .contact-glass-info p, .contact-glass-info a {
+      font-size: 1.05rem;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    @media (max-width: 820px) {
+      .contact-hero-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-card-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .contact-icon-bubble {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(46, 125, 50, 0.12);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon-bubble svg {
+      width: 24px;
+      height: 24px;
+    }
+    .contact-info-content h4 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .contact-info-content p, .contact-info-content a {
+      font-size: 1.05rem;
+      color: var(--color-dark);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .contact-info-content a:hover {
+      color: var(--color-primary);
+    }
+    .whatsapp-badge-card {
+      margin-top: 32px;
+      background: linear-gradient(135deg, #12392b, #1b4d3a);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform var(--transition-fast), background var(--transition-fast);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+      white-space: nowrap;
+    }
+    .whatsapp-btn:hover {
+      background: #20bd5a;
+      transform: translateY(-2px);
+      color: white;
+    }
+    .contact-form-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-group-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      margin-bottom: 22px;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 8px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--color-text);
+      background: #ffffff;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+    }
+    textarea.form-control {
+      min-height: 130px;
+      resize: vertical;
+    }
+    .form-notice {
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .form-notice.success {
+      background: #e8f5e9;
+      color: #1b5e20;
+      border: 1px solid #a5d6a7;
+    }
+    @media (max-width: 900px) {
+      /* Contact Hero with 3 Glassmorphism Cards (crop_2 match) */
+    .contact-hero-wrap {
+      position: relative;
+      background: linear-gradient(135deg, rgba(10, 31, 22, 0.82) 0%, rgba(18, 57, 43, 0.72) 100%), url('assets/images/plantation-field-team-hd.jpg') center/cover no-repeat;
+      padding: 120px 0 60px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .contact-hero-title {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      max-width: 860px;
+      margin: 0 auto 18px;
+      line-height: 1.15;
+    }
+    .contact-hero-sub {
+      font-size: 1.1rem;
+      color: #d8e8dc;
+      max-width: 760px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+    }
+    .contact-hero-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .contact-glass-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .contact-glass-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-glass-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    .contact-glass-info h4 {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #a4e48b;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .contact-glass-info p, .contact-glass-info a {
+      font-size: 1.05rem;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    @media (max-width: 820px) {
+      .contact-hero-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-layout {
+        grid-template-columns: 1fr;
+      }
+      .form-group-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Pill Header -->
+  <header class="ct-header-wrapper" id="site-header">
+    <div class="ct-header-inner">
+      <a href="index.html" class="ct-logo-wrap" aria-label="Sadana Green Society Home">
+        <img src="assets/logo.png" alt="Sadana Green Society Logo" class="ct-logo-img">
+        <div class="ct-logo-text">
+          <span class="ct-logo-title">Sadana Green Society</span>
+          <span class="ct-logo-sub">Kurnool, Andhra Pradesh</span>
+        </div>
+      </a>
+
+      <nav class="ct-desktop-nav" aria-label="Main Navigation">
+        <ul class="ct-nav-list">
+          <li class="ct-nav-item"><a href="index.html" class="ct-nav-link">Home</a></li>
+          <li class="ct-nav-item"><a href="about.html" class="ct-nav-link">About Us</a></li>
+          <li class="ct-nav-item ct-has-dropdown">
+            <a href="services.html" class="ct-nav-link">
+              Programmes
+              <svg class="ct-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="ct-dropdown-menu">
+              <a href="services.html" class="ct-dropdown-link">All Programmes Overview</a>
+              <a href="species.html" class="ct-dropdown-link">16 Forest & Fruit Species</a>
+              <a href="carbon-credits.html" class="ct-dropdown-link">Carbon Credits Verification</a>
+              <a href="awd.html" class="ct-dropdown-link">AWD Water-Saving Paddy</a>
+            </div>
+          </li>
+          <li class="ct-nav-item"><a href="gallery.html" class="ct-nav-link">Gallery</a></li>
+          <li class="ct-nav-item"><a href="news.html" class="ct-nav-link">News</a></li>
+          <li class="ct-nav-item"><a href="faq.html" class="ct-nav-link">FAQ</a></li>
+          <li class="ct-nav-item"><a href="contact.html" class="ct-nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="ct-header-actions">
+        <button class="ct-search-toggle" id="open-search" aria-label="Open search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <a href="new-plantation.html" class="btn btn-primary btn-pill">Farmer Registration</a>
+        <button class="ct-mobile-toggle" id="open-drawer" aria-label="Open mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="ct-drawer-overlay" id="drawer-overlay"></div>
+  <aside class="ct-mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="ct-drawer-header">
+      <div class="ct-logo-text">
+        <span class="ct-logo-title" style="color:white;">Sadana Green Society</span>
+        <span class="ct-logo-sub" style="color:#97d57a;">Kurnool, AP</span>
+      </div>
+      <button class="ct-drawer-close" id="close-drawer" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="ct-drawer-nav">
+      <li><a href="index.html" class="ct-drawer-link">Home</a></li>
+      <li><a href="about.html" class="ct-drawer-link">About Us</a></li>
+      <li><a href="services.html" class="ct-drawer-link">Programmes Overview</a></li>
+      <li><a href="species.html" class="ct-drawer-link">16 Tree Species</a></li>
+      <li><a href="carbon-credits.html" class="ct-drawer-link">Carbon Credits</a></li>
+      <li><a href="awd.html" class="ct-drawer-link">AWD Water Tube</a></li>
+      <li><a href="gallery.html" class="ct-drawer-link">Field Gallery</a></li>
+      <li><a href="news.html" class="ct-drawer-link">News & Media</a></li>
+      <li><a href="faq.html" class="ct-drawer-link">FAQ</a></li>
+      <li><a href="contact.html" class="ct-drawer-link active">Contact Us</a></li>
+    </ul>
+    <div class="ct-drawer-footer">
+      <a href="new-plantation.html" class="btn btn-primary btn-pill" style="width:100%; text-align:center;">Farmer Registration Portal</a>
+    </div>
+  </aside>
+
+  <!-- Page Hero Header (Exact Blocksy Landscape Contact Spec - crop_2) -->
+  <section class="contact-hero-wrap">
+    <div class="container">
+      <h1 class="contact-hero-title">Let's Connect and Build a Sustainable Future Together</h1>
+      <p class="contact-hero-sub">
+        Empowering farmers with innovative, eco-friendly practices to meet rising global food demands, conserve natural resources, strengthen communities, and protect our planet's sustainable future.
+      </p>
+
+      <!-- 3 Floating Glassmorphism Contact Cards -->
+      <div class="contact-hero-cards-grid">
+        <div class="contact-glass-card">
+          <div class="contact-glass-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-glass-info">
+            <h4>Phone Support</h4>
+            <a href="tel:+919966611855">+91 99666 11855</a>
+          </div>
+        </div>
+
+        <div class="contact-glass-card">
+          <div class="contact-glass-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-glass-info">
+            <h4>Our Location</h4>
+            <p>Near Nandyal Checkpost, Kurnool, AP</p>
+          </div>
+        </div>
+
+        <div class="contact-glass-card">
+          <div class="contact-glass-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-glass-info">
+            <h4>Email Address</h4>
+            <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Body -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: Details & Head Office -->
+        <div>
+          <div class="contact-card-box">
+            <span class="sub-badge">Head Office</span>
+            <h2 style="font-size: 1.75rem; margin-top: 8px;">Kurnool Headquarters</h2>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 6px;">
+              Our dedicated field coordination and project management team operates out of Kurnool, coordinating across 3 southern states.
+            </p>
+
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="contact-info-content">
+                  <h4>Physical Address</h4>
+                  <p>Near Nandyal Checkpost,<br>Kurnool, Andhra Pradesh — 518003, India</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="contact-info-content">
+                  <h4>Phone Support</h4>
+                  <p><a href="tel:+919966611855">+91 99666 11855</a></p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-info-content">
+                  <h4>Official Email</h4>
+                  <p>
+                    <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a><br>
+                    <a href="mailto:raghubhaskar4@gmail.com">raghubhaskar4@gmail.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-icon-bubble">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="contact-info-content">
+                  <h4>Working Hours</h4>
+                  <p>Monday – Saturday: 9:00 AM – 6:30 PM<br><span style="color:var(--color-text-muted); font-size:0.9rem;">Sunday: Closed (Field Teams on Duty)</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Connect Pill Card -->
+          <div class="whatsapp-badge-card">
+            <div>
+              <h4 style="color:white; margin-bottom: 4px; font-size: 1.1rem;">Direct WhatsApp Desk</h4>
+              <p style="color:#d1e7dd; font-size:0.88rem; margin:0;">Instant replies for farmer queries & GPS location support.</p>
+            </div>
+            <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20programmes." target="_blank" rel="noopener" class="whatsapp-btn">
+              <svg style="width:20px; height:20px; fill:currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Message / Inquiry Form -->
+        <div class="contact-form-card">
+          <span class="sub-badge">Send a Message</span>
+          <h2 style="font-size: 1.75rem; margin: 8px 0 20px;">Programme Inquiry Form</h2>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 24px;">
+            Fill out the details below. Our team in Kurnool will review your request and get back within 24–48 hours.
+          </p>
+
+          <div class="form-notice success" id="contact-success-msg">
+            Thank you! Your message has been received. Our team will contact you shortly.
+          </div>
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group-grid">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Ramesh Kumar" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-phone" class="form-label">Phone Number *</label>
+                <input type="tel" id="contact-phone" class="form-control" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+              </div>
+            </div>
+
+            <div class="form-group-grid">
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="name@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-state" class="form-label">State *</label>
+                <select id="contact-state" class="form-control" required>
+                  <option value="">Select State</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Other">Other State</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Primary Interest / Subject *</label>
+              <select id="contact-subject" class="form-control" required>
+                <option value="">Select Inquiry Topic</option>
+                <option value="Farmer / Plantation Inquiry">Farmer / Plantation Enrollment</option>
+                <option value="AWD Paddy Water Management">AWD Paddy Water-Saving Programme</option>
+                <option value="Carbon Credits Inquiry">Carbon Credits Programme</option>
+                <option value="Project Partnership">Institutional / NGO Partnership</option>
+                <option value="CSR Collaboration">CSR Collaboration & Grants</option>
+                <option value="Media or Research">Media, Press & Academic Research</option>
+                <option value="Other">Other Questions</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Your Message or Land Details *</label>
+              <textarea id="contact-message" class="form-control" placeholder="Please mention your village/district, land size if applicable, and any specific questions..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-pill" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+              Send Inquiry Message &rarr;
+            </button>
+            <p style="font-size: 0.82rem; color: var(--color-text-muted); text-align: center; margin-top: 14px;">
+              * Farmer registration with GPS coordinates should be submitted via the <a href="new-plantation.html" style="color: var(--color-primary); font-weight: 600;">Farmer Registration Portal</a>.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Modal -->
+  <div class="ct-search-modal" id="search-modal">
+    <div class="ct-search-box">
+      <div class="d-flex" style="justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="margin: 0; font-size: 1.25rem;">Search Website</h3>
+        <button id="close-search" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+      <input type="text" id="search-input" class="ct-search-input" placeholder="Search programmes, species, AWD, carbon credits...">
+      <div id="search-results" class="ct-search-results"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="ct-logo-wrap" style="margin-bottom: 16px;">
+            <img src="assets/logo.png" alt="Sadana Green Society" style="height: 52px; background: white; border-radius: 8px; padding: 4px;">
+            <div class="ct-logo-text" style="color: white;">
+              <span class="ct-logo-title" style="color: white;">Sadana Green Society</span>
+              <span class="ct-logo-sub" style="color: #97d57a;">Kurnool, Andhra Pradesh</span>
+            </div>
+          </div>
+          <p class="footer-text">
+            Dedicated to community agroforestry, sustainable livelihoods, and climate resilience across Andhra Pradesh, Telangana, and Karnataka.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Programmes</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">All Programmes</a></li>
+            <li><a href="species.html">16 Agroforestry Species</a></li>
+            <li><a href="carbon-credits.html">Carbon Credits Verification</a></li>
+            <li><a href="awd.html">AWD Paddy Water Management</a></li>
+            <li><a href="new-plantation.html">Farmer Registration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Founder & Team</a></li>
+            <li><a href="gallery.html">Field Photo Gallery</a></li>
+            <li><a href="news.html">News & Media</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="contact.html">Contact Head Office</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Kurnool Office</h4>
+          <p style="color: #cad8ce; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+            Near Nandyal Checkpost,<br>Kurnool, Andhra Pradesh - 518003
+          </p>
+          <p style="color: #cad8ce; font-size: 0.9rem; margin-bottom: 8px;">
+            Phone: <a href="tel:+919966611855" style="color: #97d57a;">+91 99666 11855</a>
+          </p>
+          <p style="color: #cad8ce; font-size: 0.9rem;">
+            WhatsApp: <a href="https://wa.me/919963490444" target="_blank" rel="noopener" style="color: #97d57a;">+91 99634 90444</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Sadana Green Society. All rights reserved. Kurnool, Andhra Pradesh.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <a href="admin/login.html" style="color: #97d57a;">Admin Portal &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Floating WhatsApp CTA Button -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
+    <div class="whatsapp-pill-label">
+      <span class="whatsapp-online-dot"></span>
+      Chat with SGS Field Team
+    </div>
+    <div class="whatsapp-circle-btn">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </div>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      var name = document.getElementById('contact-name').value;
+      var msgBox = document.getElementById('contact-success-msg');
+      msgBox.style.display = 'block';
+      msgBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('contact-form').reset();
+    }
+  </script>
+</body>
+</html>

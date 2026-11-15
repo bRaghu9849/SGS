@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Sadana Green Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0e2b20 0%, #12392b 50%, #1a4d3a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .login-container {
+      background: #ffffff;
+      border-radius: 16px;
+      max-width: 440px;
+      width: 100%;
+      padding: 44px 36px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    .login-logo {
+      height: 64px;
+      margin-bottom: 20px;
+      background: white;
+      padding: 6px;
+      border-radius: 10px;
+      border: 1px solid var(--admin-border);
+    }
+    .login-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--admin-primary);
+      margin-bottom: 6px;
+    }
+    .login-sub {
+      font-size: 0.9rem;
+      color: var(--admin-muted);
+      margin-bottom: 28px;
+    }
+    .login-form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .login-form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--admin-text);
+      margin-bottom: 6px;
+    }
+    .login-input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--admin-border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--admin-text);
+      transition: all 0.2s ease;
+    }
+    .login-input:focus {
+      outline: none;
+      border-color: var(--admin-accent);
+      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+    }
+    .login-error {
+      display: none;
+      background: #ffebee;
+      color: #c62828;
+      border: 1px solid #ffcdd2;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .demo-hint {
+      margin-top: 24px;
+      padding: 14px;
+      background: #f4faf4;
+      border: 1px dashed #a5d6a7;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #2e7d32;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <img src="../assets/logo.png" alt="Sadana Green Society" class="login-logo">
+    <h1 class="login-title">SGS Portal Login</h1>
+    <p class="login-sub">Officer & Field Administration Console</p>
+
+    <div class="login-error" id="login-error"></div>
+
+    <form onsubmit="handleLogin(event)">
+      <div class="login-form-group">
+        <label for="admin-username">Username</label>
+        <input type="text" id="admin-username" class="login-input" placeholder="admin" value="admin" required autocomplete="username">
+      </div>
+
+      <div class="login-form-group">
+        <label for="admin-password">Password</label>
+        <input type="password" id="admin-password" class="login-input" placeholder="••••••••" value="sgs@2026" required autocomplete="current-password">
+      </div>
+
+      <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; margin-top: 8px;">
+        Sign In to Portal &rarr;
+      </button>
+    </form>
+
+    <div class="demo-hint">
+      <strong>Demo Credentials:</strong><br>
+      • Username: <code>admin</code><br>
+      • Password: <code>sgs@2026</code>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <a href="../index.html" style="font-size: 0.88rem; color: var(--admin-muted); text-decoration: none;">
+        &larr; Back to Public Website
+      </a>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

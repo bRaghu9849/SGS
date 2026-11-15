@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions (FAQ) | Sadana Green Society</title>
+  <meta name="description" content="Answers to common questions about Sadana Green Society, agroforestry species, carbon credit timelines, Alternate Wetting and Drying (AWD), and farmer enrollment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .faq-layout {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .faq-category-nav {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .faq-cat-btn {
+      padding: 10px 22px;
+      border-radius: 9999px;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+    }
+    .faq-cat-btn.active, .faq-cat-btn:hover {
+      background: var(--color-primary);
+      color: #ffffff;
+      border-color: var(--color-primary);
+    }
+    .faq-accordion-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+    }
+    .faq-item:hover {
+      border-color: #a5d6a7;
+    }
+    .faq-item.open {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+    .faq-question-btn {
+      width: 100%;
+      text-align: left;
+      padding: 22px 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: inherit;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      transition: color var(--transition-fast);
+    }
+    .faq-question-btn:hover {
+      color: var(--color-primary);
+    }
+    .faq-toggle-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform var(--transition-normal), background var(--transition-fast);
+    }
+    .faq-item.open .faq-toggle-icon {
+      transform: rotate(180deg);
+      background: rgba(46, 125, 50, 0.15);
+      color: var(--color-primary);
+    }
+    .faq-answer-panel {
+      padding: 0 26px 24px;
+      display: none;
+      border-top: 1px solid #f0f0f0;
+      margin-top: 4px;
+      padding-top: 20px;
+    }
+    .faq-item.open .faq-answer-panel {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    .faq-answer-panel p {
+      color: var(--color-text);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .faq-telugu-box {
+      background: #f7fbf7;
+      border-left: 3px solid var(--color-primary);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-family: 'Noto Sans Telugu', var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #1b432a;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Pill Header -->
+  <header class="ct-header-wrapper" id="site-header">
+    <div class="ct-header-inner">
+      <a href="index.html" class="ct-logo-wrap" aria-label="Sadana Green Society Home">
+        <img src="assets/logo.png" alt="Sadana Green Society Logo" class="ct-logo-img">
+        <div class="ct-logo-text">
+          <span class="ct-logo-title">Sadana Green Society</span>
+          <span class="ct-logo-sub">Kurnool, Andhra Pradesh</span>
+        </div>
+      </a>
+
+      <nav class="ct-desktop-nav" aria-label="Main Navigation">
+        <ul class="ct-nav-list">
+          <li class="ct-nav-item"><a href="index.html" class="ct-nav-link">Home</a></li>
+          <li class="ct-nav-item"><a href="about.html" class="ct-nav-link">About Us</a></li>
+          <li class="ct-nav-item ct-has-dropdown">
+            <a href="services.html" class="ct-nav-link">
+              Programmes
+              <svg class="ct-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </a>
+            <div class="ct-dropdown-menu">
+              <a href="services.html" class="ct-dropdown-link">All Programmes Overview</a>
+              <a href="species.html" class="ct-dropdown-link">16 Forest & Fruit Species</a>
+              <a href="carbon-credits.html" class="ct-dropdown-link">Carbon Credits Verification</a>
+              <a href="awd.html" class="ct-dropdown-link">AWD Water-Saving Paddy</a>
+            </div>
+          </li>
+          <li class="ct-nav-item"><a href="gallery.html" class="ct-nav-link">Gallery</a></li>
+          <li class="ct-nav-item"><a href="news.html" class="ct-nav-link">News</a></li>
+          <li class="ct-nav-item"><a href="faq.html" class="ct-nav-link active">FAQ</a></li>
+          <li class="ct-nav-item"><a href="contact.html" class="ct-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="ct-header-actions">
+        <button class="ct-search-toggle" id="open-search" aria-label="Open search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <a href="new-plantation.html" class="btn btn-primary btn-pill">Farmer Registration</a>
+        <button class="ct-mobile-toggle" id="open-drawer" aria-label="Open mobile menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="ct-drawer-overlay" id="drawer-overlay"></div>
+  <aside class="ct-mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="ct-drawer-header">
+      <div class="ct-logo-text">
+        <span class="ct-logo-title" style="color:white;">Sadana Green Society</span>
+        <span class="ct-logo-sub" style="color:#97d57a;">Kurnool, AP</span>
+      </div>
+      <button class="ct-drawer-close" id="close-drawer" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="ct-drawer-nav">
+      <li><a href="index.html" class="ct-drawer-link">Home</a></li>
+      <li><a href="about.html" class="ct-drawer-link">About Us</a></li>
+      <li><a href="services.html" class="ct-drawer-link">Programmes Overview</a></li>
+      <li><a href="species.html" class="ct-drawer-link">16 Tree Species</a></li>
+      <li><a href="carbon-credits.html" class="ct-drawer-link">Carbon Credits</a></li>
+      <li><a href="awd.html" class="ct-drawer-link">AWD Water Tube</a></li>
+      <li><a href="gallery.html" class="ct-drawer-link">Field Gallery</a></li>
+      <li><a href="news.html" class="ct-drawer-link">News & Media</a></li>
+      <li><a href="faq.html" class="ct-drawer-link active">FAQ</a></li>
+      <li><a href="contact.html" class="ct-drawer-link">Contact Us</a></li>
+    </ul>
+    <div class="ct-drawer-footer">
+      <a href="new-plantation.html" class="btn btn-primary btn-pill" style="width:100%; text-align:center;">Farmer Registration Portal</a>
+    </div>
+  </aside>
+
+  <!-- Page Hero Header -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="hero-badge">Knowledge Base</span>
+      <h1 class="page-hero-title">Frequently Asked Questions</h1>
+      <p class="page-hero-subtitle">
+        Clear, transparent explanations in English and Telugu regarding agroforestry species, carbon credit timelines, AWD water management, and farmer verification guidelines.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="faq-layout">
+
+        <!-- Category Filters -->
+        <div class="faq-category-nav">
+          <button class="faq-cat-btn active" onclick="filterFAQ('all')">All Questions</button>
+          <button class="faq-cat-btn" onclick="filterFAQ('general')">General & Organisation</button>
+          <button class="faq-cat-btn" onclick="filterFAQ('agroforestry')">Agroforestry & Trees</button>
+          <button class="faq-cat-btn" onclick="filterFAQ('carbon')">Carbon Credits</button>
+          <button class="faq-cat-btn" onclick="filterFAQ('awd')">AWD Water Management</button>
+          <button class="faq-cat-btn" onclick="filterFAQ('registration')">Farmer Registration</button>
+        </div>
+
+        <div class="faq-accordion-group" id="faq-group">
+
+          <!-- Item 1: General -->
+          <div class="faq-item open" data-category="general">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>What is Sadana Green Society (SGS)?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Sadana Green Society (SGS) is a registered environmental and community-focused non-profit organisation based in Kurnool, Andhra Pradesh. We support smallholder farmers through agroforestry tree planting, sustainable water practices like AWD in paddy, carbon credit project monitoring, and climate resilience programmes across Andhra Pradesh, Telangana, and Karnataka.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>సదన గ్రీన్ సొసైటీ (SGS) అంటే ఏమిటి?</strong><br>
+                ఆంధ్రప్రదేశ్, తెలంగాణ, కర్ణాటక రాష్ట్రాల్లో అగ్రోఫారెస్ట్రీ, స్థిరమైన వ్యవసాయం, రైతుల జీవనోపాధి మరియు పర్యావరణ పరిరక్షణ కార్యక్రమాలకు తోడ్పడే కర్నూలు ప్రధాన కేంద్రంగా పనిచేసే సంస్థ.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Agroforestry -->
+          <div class="faq-item" data-category="agroforestry">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>What is agroforestry and how does it benefit small farmers?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Agroforestry intentionally combines perennial trees (both timber species like Teak, Casuarina, Melia Dubia, and fruit species like Mango, Guava, Custard Apple) with existing crops on farm boundaries or mixed plots. It enhances soil moisture retention, generates windbreaks, creates multi-layered harvest cycles, and provides financial buffers during crop failure.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>అగ్రోఫారెస్ట్రీ అంటే ఏమిటి? రైతులకు ఎలా ఉపయోగపడుతుంది?</strong><br>
+                వ్యవసాయ భూమిలో పంటలతో పాటు చెట్లను పెంచే సమగ్ర విధానం. ఇది భూసారాన్ని కాపాడటంతో పాటు గాలివానల నుంచి రక్షణనిచ్చి, పండ్లు మరియు కలప ద్వారా రైతులకు దీర్ఘకాలిక అదనపు ఆదాయాన్ని సమకూరుస్తుంది.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Carbon Credits -->
+          <div class="faq-item" data-category="carbon">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>What are carbon credit programmes and how do they function?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Carbon credit programmes measure and verify genuine greenhouse gas emissions reductions or biomass carbon sequestration achieved by farmers' sustainable actions under international carbon registry standards (e.g. Verra VCS, Gold Standard). Each registered plot undergoes strict boundary mapping, baseline deforestation checks, periodic satellite and physical audits, and third-party verification before any credits can be minted.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>కార్బన్ క్రెడిట్ కార్యక్రమాలు అంటే ఏమిటి?</strong><br>
+                చెట్లు నాటడం మరియు నీటి ఆదా పద్ధతుల ద్వారా వాతావరణంలో కార్బన్ డయాక్సైడ్ మరియు మీథేన్ వాయువుల తగ్గింపును అంతర్జాతీయ ప్రమాణాల ప్రకారం శాస్త్రీయంగా కొలిచి, ధృవీకరించే కార్యక్రమాలు.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Carbon Payments -->
+          <div class="faq-item" data-category="carbon">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>When do farmers receive carbon credit payments? Are they guaranteed?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                <strong>Carbon credit payments are NEVER immediate or unconditionally guaranteed.</strong> Payments are contingent upon successful tree survival audits, satellite multi-year canopy analysis, official validation by accredited Designated Operational Entities (DOEs), international registry issuance, and prevailing carbon market sales. Farmers should only rely on official written agreements authorized by SGS and project partners.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>రైతులకు కార్బన్ క్రెడిట్ చెల్లింపులు ఎప్పుడు వస్తాయి? అవి హామీగా ఉంటాయా?</strong><br>
+                చెల్లింపులు వెంటనే లేదా ముందుగా హామీగా రావు. క్షేత్రస్థాయి చెట్ల పెరుగుదల, శాటిలైట్ పర్యవేక్షణ, అంతర్జాతీయ ఆడిట్ ధృవీకరణ మరియు క్రెడిట్ల విక్రయాలపై మాత్రమే ఇవి ఆధారపడి ఉంటాయి.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: AWD -->
+          <div class="faq-item" data-category="awd">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>What is Alternate Wetting and Drying (AWD) in paddy fields?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Alternate Wetting and Drying (AWD) is an established water-saving technology developed by the International Rice Research Institute (IRRI). Rather than keeping the paddy field continuously submerged under 5 cm of stagnant water, a perforated plastic field tube is installed. Farmers irrigate only when the subsurface water level drops 15 cm below the soil surface, cutting water use by 15–30% and reducing anaerobic methane emissions by 30–50% without lowering grain yields.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>వరిలో ఆల్టర్నేట్ వెట్టింగ్ అండ్ డ్రైయింగ్ (AWD) అంటే ఏమిటి?</strong><br>
+                వరి పొలంలో ఎల్లప్పుడూ నీరు నిల్వ ఉంచకుండా, భూమిలో రంధ్రాలు గల గొట్టాన్ని అమర్చి, నీటి మట్టం 15 సెం.మీ దిగువకు చేరినప్పుడు మాత్రమే మళ్లీ తడి ఇచ్చే పద్ధతి. ఇది 15-30% నీటిని ఆదా చేస్తూ, దిగుబడి తగ్గకుండా మీథేన్ వాయు ఉద్గారాలను తగ్గిస్తుంది.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Registration & Eligibility -->
+          <div class="faq-item" data-category="registration">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>What is the 2014–2026 non-deforestation eligibility requirement?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                To comply with strict international afforestation/reforestation (A/R) standards, land submitted for plantation must NOT have been created by clearing or deforesting native forest cover between 1 January 2014 and the date of application. Only degraded agricultural lands, barren fields, or boundary plantations with proven historical records qualify.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>2014-2026 అటవీ నిర్మూలన చేయని నిబంధన ఏమిటి?</strong><br>
+                2014 జనవరి 1 నుంచి సహజ అడవిని నరికివేసి లేదా చెట్లను తొలగించి రూపొందించిన భూములు ఈ ప్రాజెక్టుకు అనర్హం. కేవలం వ్యవసాయ భూములు, పడావు భూములు మాత్రమే అర్హత కలిగి ఉంటాయి.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7: Water Source Requirement -->
+          <div class="faq-item" data-category="registration">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>Why is an assured water facility mandatory for new sapling plantation?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Young saplings require reliable irrigation during their first 24–36 months to establish deep root architecture. Without an available borewell, canal connection, farm pond, or tanker arrangement, sapling mortality is extremely high during summer dry spells. SGS verifies water availability before allocating nursery resources.
+              </p>
+              <div class="faq-telugu-box">
+                <strong>మొక్కలు నాటడానికి నీటి వసతి ఎందుకు తప్పనిసరి?</strong><br>
+                మొక్కలు నాటిన మొదటి 2-3 సంవత్సరాలు ఎండకాలంలో బ్రతకడానికి తగినంత నీటి వసతి (బోరు, కాలువ, చెరువు లేదా ట్యాంకర్) ఉండటం చాలా ముఖ్యం. నీటి వసతి లేని భూముల్లో మొక్కల మనుగడ కష్టమవుతుంది.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 8: Operational Geography -->
+          <div class="faq-item" data-category="general">
+            <button class="faq-question-btn" onclick="toggleFAQ(this)">
+              <span>Which districts and states does SGS operate in?</span>
+              <span class="faq-toggle-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer-panel">
+              <p>
+                Sadana Green Society actively works across contiguous agricultural agro-climatic zones in:
+                <ul style="margin-left: 20px; margin-top: 8px;">
+                  <li><strong>Andhra Pradesh:</strong> Kurnool, Nandyal, Ananthapuramu, Sri Sathya Sai, YSR Kadapa, and neighboring districts.</li>
+                  <li><strong>Telangana:</strong> Jogulamba Gadwal, Wanaparthy, Mahabubnagar, and southern mandals.</li>
+                  <li><strong>Karnataka:</strong> Raichur, Bellary, and border taluks.</li>
+                </ul>
+              </p>
+              <div class="faq-telugu-box">
+                <strong>SGS ఏయే జిల్లాలలో పనిచేస్తుంది?</strong><br>
+                ఆంధ్రప్రదేశ్ (కర్నూలు, నంద్యాల, అనంతపురం, కడప), తెలంగాణ (గద్వాల, వనపర్తి, మహబూబ్ నగర్) మరియు కర్ణాటక (రాయచూరు, బళ్లారి) సరిహద్దు జిల్లాలలోని గ్రామాలలో పనిచేస్తుంది.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Still Have Questions Banner -->
+  <section class="section" style="background: var(--color-surface); padding: 60px 0;">
+    <div class="container text-center">
+      <span class="sub-badge">Need Clarification?</span>
+      <h2>Have a question that is not listed here?</h2>
+      <p style="max-width: 650px; margin: 16px auto 32px; color: var(--color-text-muted);">
+        Our field specialists and coordinators in Kurnool are readily available to clarify doubts about seedling distribution, GPS mapping, or AWD trials.
+      </p>
+      <div class="d-flex" style="justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary btn-pill">Send an Enquiry</a>
+        <a href="https://wa.me/919963490444" target="_blank" rel="noopener" class="btn btn-outline btn-pill">WhatsApp Field Desk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Modal -->
+  <div class="ct-search-modal" id="search-modal">
+    <div class="ct-search-box">
+      <div class="d-flex" style="justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="margin: 0; font-size: 1.25rem;">Search Website</h3>
+        <button id="close-search" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+      <input type="text" id="search-input" class="ct-search-input" placeholder="Search programmes, species, AWD, carbon credits...">
+      <div id="search-results" class="ct-search-results"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="ct-logo-wrap" style="margin-bottom: 16px;">
+            <img src="assets/logo.png" alt="Sadana Green Society" style="height: 52px; background: white; border-radius: 8px; padding: 4px;">
+            <div class="ct-logo-text" style="color: white;">
+              <span class="ct-logo-title" style="color: white;">Sadana Green Society</span>
+              <span class="ct-logo-sub" style="color: #97d57a;">Kurnool, Andhra Pradesh</span>
+            </div>
+          </div>
+          <p class="footer-text">
+            Dedicated to community agroforestry, sustainable livelihoods, and climate resilience across Andhra Pradesh, Telangana, and Karnataka.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Programmes</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">All Programmes</a></li>
+            <li><a href="species.html">16 Agroforestry Species</a></li>
+            <li><a href="carbon-credits.html">Carbon Credits Verification</a></li>
+            <li><a href="awd.html">AWD Paddy Water Management</a></li>
+            <li><a href="new-plantation.html">Farmer Registration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Founder & Team</a></li>
+            <li><a href="gallery.html">Field Photo Gallery</a></li>
+            <li><a href="news.html">News & Media</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="contact.html">Contact Head Office</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Kurnool Office</h4>
+          <p style="color: #cad8ce; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+            Near Nandyal Checkpost,<br>Kurnool, Andhra Pradesh - 518003
+          </p>
+          <p style="color: #cad8ce; font-size: 0.9rem; margin-bottom: 8px;">
+            Phone: <a href="tel:+919966611855" style="color: #97d57a;">+91 99666 11855</a>
+          </p>
+          <p style="color: #cad8ce; font-size: 0.9rem;">
+            WhatsApp: <a href="https://wa.me/919963490444" target="_blank" rel="noopener" style="color: #97d57a;">+91 99634 90444</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> Sadana Green Society. All rights reserved. Kurnool, Andhra Pradesh.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+          <a href="admin/login.html" style="color: #97d57a;">Admin Portal &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Floating WhatsApp CTA Button -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
+    <div class="whatsapp-pill-label">
+      <span class="whatsapp-online-dot"></span>
+      Chat with SGS Field Team
+    </div>
+    <div class="whatsapp-circle-btn">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </div>
+  </a>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    function toggleFAQ(btn) {
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      
+      // Close all items in group
+      document.querySelectorAll('.faq-item').forEach(function(i) {
+        i.classList.remove('open');
+      });
+
+      if (!wasOpen) {
+        item.classList.add('open');
+      }
+    }
+
+    function filterFAQ(category) {
+      // Update buttons
+      document.querySelectorAll('.faq-cat-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Filter items
+      var items = document.querySelectorAll('.faq-item');
+      items.forEach(function(item) {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

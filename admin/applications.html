@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Applications Management | Sadana Green Society Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--admin-surface);
+      padding: 18px 24px;
+      border: 1px solid var(--admin-border);
+      border-radius: var(--admin-radius);
+    }
+    .search-box-wrap {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .search-box-wrap input {
+      width: 100%;
+      padding: 10px 16px 10px 38px;
+      border: 1.5px solid var(--admin-border);
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-family: inherit;
+    }
+    .search-box-wrap input:focus {
+      outline: none;
+      border-color: var(--admin-accent);
+    }
+    .search-icon-svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: var(--admin-muted);
+    }
+    .filter-select {
+      padding: 10px 14px;
+      border: 1.5px solid var(--admin-border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <img src="../assets/logo.png" alt="SGS" class="sidebar-logo">
+      <div>
+        <div class="sidebar-title">Sadana Green</div>
+        <div class="sidebar-subtitle">Admin Console</div>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="applications.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Farmer Applications</span>
+        </a>
+      </li>
+      <li>
+        <a href="navigation.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <span>Navbar & Header</span>
+        </a>
+      </li>
+      <li>
+        <a href="content.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>Content Manager</span>
+        </a>
+      </li>
+      <li style="margin-top: 20px;">
+        <a href="../index.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Public Website &nearr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="../new-plantation.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span>Farmer Form &nearr;</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="user-badge">
+        <div class="user-avatar">SG</div>
+        <div style="flex:1;">
+          <div style="font-weight:700; font-size:0.9rem;">SGS Coordinator</div>
+          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool Field HQ</div>
+        </div>
+        <button onclick="handleLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.1rem;">
+          ⎋
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content View -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h1>Farmer Plantation Applications</h1>
+        <p style="font-size:0.85rem; color:var(--admin-muted);">Review submitted land details, GPS coordinates, water checks, and eligibility status.</p>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn-admin btn-admin-accent" onclick="exportApplicationsCSV()">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export CSV Spreadsheet
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body">
+
+      <!-- Filter / Search Toolbar -->
+      <div class="filter-bar">
+        <div class="search-box-wrap">
+          <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="search-app-input" placeholder="Search by Farmer name, mobile, village, district, or ID..." oninput="renderApplicationsTable()">
+        </div>
+
+        <div>
+          <select id="filter-state" class="filter-select" onchange="renderApplicationsTable()">
+            <option value="all">All States (AP, TS, KA)</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Karnataka">Karnataka</option>
+          </select>
+        </div>
+
+        <div>
+          <select id="filter-status" class="filter-select" onchange="renderApplicationsTable()">
+            <option value="all">All Verification Statuses</option>
+            <option value="Pending Verification">Pending Verification</option>
+            <option value="Approved for Saplings">Approved for Saplings</option>
+            <option value="Field Audit Scheduled">Field Audit Scheduled</option>
+            <option value="Rejected">Ineligible / Rejected</option>
+          </select>
+        </div>
+
+        <div style="font-weight: 700; font-size: 0.88rem; color: var(--admin-muted); margin-left: auto;" id="filtered-count-display">
+          Loading applications...
+        </div>
+      </div>
+
+      <!-- Table Card -->
+      <div class="admin-card">
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>App ID</th>
+                <th>Farmer & Contact</th>
+                <th>Village & Mandal</th>
+                <th>Land / Plantation</th>
+                <th>GPS Geolocation</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applications-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Inspection Modal -->
+  <div class="admin-modal-backdrop" id="app-inspect-modal">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 id="modal-app-id-title">Application Inspection</h3>
+        <button onclick="closeInspectModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="admin-modal-body">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+          <div><small style="color:var(--admin-muted);">Farmer Name</small><div id="m-farmer-name" style="font-weight:700;"></div></div>
+          <div><small style="color:var(--admin-muted);">Father/Husband</small><div id="m-guardian" style="font-weight:700;"></div></div>
+          <div><small style="color:var(--admin-muted);">Contact Phone</small><div id="m-mobile" style="font-weight:700;"></div></div>
+          <div><small style="color:var(--admin-muted);">Village & District</small><div id="m-location" style="font-weight:700;"></div></div>
+          <div style="grid-column: 1 / -1;"><small style="color:var(--admin-muted);">Survey No. / Location Address</small><div id="m-address"></div></div>
+          <div><small style="color:var(--admin-muted);">Land Area & Category</small><div id="m-acres" style="font-weight:700;"></div></div>
+          <div><small style="color:var(--admin-muted);">Water Facility Available</small><div id="m-water" style="font-weight:700;"></div></div>
+          <div style="grid-column: 1 / -1;"><small style="color:var(--admin-muted);">Requested Species</small><div id="m-species"></div></div>
+          <div style="grid-column: 1 / -1;"><small style="color:var(--admin-muted);">Field GPS Geolocation</small><div id="m-gps" style="margin-top:4px;"></div></div>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <small style="color:var(--admin-muted); display:block; margin-bottom:8px;">Uploaded Land Photo Evidence</small>
+          <div id="m-photos-grid" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
+        </div>
+
+        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--admin-border);">
+          <label for="m-status-select" style="font-weight:700; font-size:0.9rem; display:block; margin-bottom:6px;">Update Verification Status</label>
+          <select id="m-status-select" class="login-input" style="padding:10px;">
+            <option value="Pending Verification">Pending Verification</option>
+            <option value="Field Audit Scheduled">Field Audit Scheduled</option>
+            <option value="Approved for Saplings">Approved for Saplings</option>
+            <option value="Rejected">Rejected (Ineligible / No Water)</option>
+          </select>
+        </div>
+      </div>
+      <div class="admin-modal-footer">
+        <button class="btn-admin btn-admin-outline" onclick="closeInspectModal()">Close</button>
+        <button class="btn-admin btn-admin-primary" onclick="updateApplicationStatus()">Save Status Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      renderApplicationsTable();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Species Catalog | Sadana Green Society</title>
+  <meta name="description" content="Explore the 16 timber and fruit tree species promoted by Sadana Green Society for agroforestry, complete with Telugu guidance and soil compatibility.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Pill Header -->
+  <header class="site-header" id="header">
+    <div class="navbar-pill">
+      <a href="index.html" class="brand" aria-label="Sadana Green Society Home">
+        <img src="assets/logo.png" alt="SGS Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">Sadana Green Society</span>
+          <span class="brand-subtitle">People • Plants • Livelihoods</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Programmes</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="species.html" class="nav-link active">Species</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link">News & Media</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="new-plantation.html" class="btn-pill-cta">
+          <span>Apply Now</span>
+          <span class="cta-arrow">→</span>
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <div class="drawer-logo"><img src="assets/logo.png" alt="SGS Logo"><span>Sadana Green Society</span></div>
+      <button class="drawer-close" aria-label="Close">✕</button>
+    </div>
+    <ul class="drawer-menu">
+      <li><a href="index.html" class="drawer-link">Home</a></li>
+      <li><a href="services.html" class="drawer-link">Programmes & Services</a></li>
+      <li><a href="species.html" class="drawer-link active">Species Guide (16 Plants)</a></li>
+      <li><a href="about.html" class="drawer-link">About Us & Founder</a></li>
+      <li><a href="gallery.html" class="drawer-link">Field Photo Gallery</a></li>
+      <li><a href="news.html" class="drawer-link">News & Press</a></li>
+      <li><a href="contact.html" class="drawer-link">Contact Us</a></li>
+    </ul>
+    <div class="drawer-cta-wrap"><a href="new-plantation.html" class="btn-pill-cta"><span>Apply for Plantation</span><span class="cta-arrow">→</span></a></div>
+  </aside>
+
+  <!-- Page Header -->
+  <main id="main">
+    <section class="hero-landscape" style="min-height: 50vh; padding: 140px 0 60px; background-image: url('assets/images/home-nature-bg.jpg');">
+      <div class="container hero-content">
+        <span class="hero-badge-pill">Botanical & Farm Guide</span>
+        <h1 class="hero-title">16 Plants We Promote</h1>
+        <p class="hero-lead">Explore high-value timber, soil-regenerating forestry species, and lucrative horticultural fruit trees.</p>
+      </div>
+    </section>
+
+    <!-- Interactive Species Filter -->
+    <section class="section surface">
+      <div class="container">
+        <div class="species-tabs">
+          <button class="tab-btn active" data-filter="all">All Species (16)</button>
+          <button class="tab-btn" data-filter="forest">Forest & Timber Trees (8)</button>
+          <button class="tab-btn" data-filter="fruit">Fruit & Cash Crop Trees (8)</button>
+        </div>
+
+        <div class="species-grid">
+          <!-- 1. Teak -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Teak</h4><span class="species-telugu">టేకు</span></div>
+              <span class="species-tag">Premium Timber</span>
+            </div>
+            <span class="species-sci">Tectona grandis</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Best for deep, well-drained soils with reliable moisture. Functions like a family financial savings asset.</p>
+            <ul class="species-benefits">
+              <li>High commercial value for furniture & construction</li>
+              <li>Stores massive carbon in durable heartwood</li>
+              <li>Fallen leaves enrich organic topsoil matter</li>
+            </ul>
+          </div>
+
+          <!-- 2. Melia dubia -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Melia dubia</h4><span class="species-telugu">మలబార్ వేప</span></div>
+              <span class="species-tag">Fast Growing</span>
+            </div>
+            <span class="species-sci">Malabar Neem</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Rapid biomass growth ideal for plywood and paper pulp mills, harvested within 6 to 8 years.</p>
+            <ul class="species-benefits">
+              <li>Early financial returns compared to teak</li>
+              <li>Light canopy permits intercropping in early seasons</li>
+              <li>Captures carbon at an accelerated rate</li>
+            </ul>
+          </div>
+
+          <!-- 3. Casuarina -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Casuarina</h4><span class="species-telugu">సరుగుడు</span></div>
+              <span class="species-tag">Coastal / Sandy</span>
+            </div>
+            <span class="species-sci">Casuarina equisetifolia</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Exceptional tolerance to sandy, coastal, and salt-affected lands where other species struggle.</p>
+            <ul class="species-benefits">
+              <li>Fixes atmospheric nitrogen into depleted soils</li>
+              <li>Acts as windbreaks protecting delicate cash crops</li>
+              <li>Produces straight poles and high-grade pulp</li>
+            </ul>
+          </div>
+
+          <!-- 4. Pongamia -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Pongamia</h4><span class="species-telugu">కానుగ</span></div>
+              <span class="species-tag">Drought Hardy</span>
+            </div>
+            <span class="species-sci">Millettia pinnata</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Hardy native shade tree thriving in dry, degraded, and rainfed areas of Rayalaseema.</p>
+            <ul class="species-benefits">
+              <li>Strong nitrogen-fixing roots support neighboring crops</li>
+              <li>Seeds harvested for bio-oil; seed cake acts as manure</li>
+              <li>Dense cool canopy lowers extreme ground heat</li>
+            </ul>
+          </div>
+
+          <!-- 5. Neem -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Neem</h4><span class="species-telugu">వేప</span></div>
+              <span class="species-tag">Natural Pest Barrier</span>
+            </div>
+            <span class="species-sci">Azadirachta indica</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Universal survival across arid soil types, providing invaluable organic agricultural inputs.</p>
+            <ul class="species-benefits">
+              <li>Leaves & oil produce organic bio-pesticides</li>
+              <li>Termite-resistant timber for rural utility</li>
+              <li>Deep taproot draws minerals to the soil surface</li>
+            </ul>
+          </div>
+
+          <!-- 6. Bamboo -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Bamboo</h4><span class="species-telugu">వెదురు</span></div>
+              <span class="species-tag">Perennial Harvest</span>
+            </div>
+            <span class="species-sci">Bambusa & Dendrocalamus</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Ideal for riverbanks, field bunds, and watercourses. Can be cut annually without felling the root clump.</p>
+            <ul class="species-benefits">
+              <li>Unrivaled root network halts soil erosion</li>
+              <li>Continuous harvests for construction and handicrafts</li>
+              <li>Exceptional biomass carbon sequestration</li>
+            </ul>
+          </div>
+
+          <!-- 7. Subabul -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Subabul</h4><span class="species-telugu">సుబాబుల్</span></div>
+              <span class="species-tag">Pulp & Fodder</span>
+            </div>
+            <span class="species-sci">Leucaena leucocephala</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Quick-turnaround pulpwood and protein-rich cattle fodder tree for rainfed and irrigated fields.</p>
+            <ul class="species-benefits">
+              <li>Supplies paper mills with recurring farm income</li>
+              <li>Nutrient-rich foliage for livestock feed</li>
+              <li>High-volume nitrogen fixation in farm soils</li>
+            </ul>
+          </div>
+
+          <!-- 8. Red Sanders -->
+          <div class="species-card" data-category="forest">
+            <div class="species-header">
+              <div><h4>Red Sanders</h4><span class="species-telugu">ఎర్రచందనం</span></div>
+              <span class="species-tag">Heritage Timber</span>
+            </div>
+            <span class="species-sci">Pterocarpus santalinus</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Native to the Eastern Ghats. Highly regulated and extraordinarily valuable heartwood tree.</p>
+            <ul class="species-benefits">
+              <li>Thrives on stony, poor, gravelly hillside soils</li>
+              <li>Legendary market price upon legal maturity</li>
+              <li>Preserves unique endemic regional biodiversity</li>
+            </ul>
+          </div>
+
+          <!-- 9. Mango -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Mango</h4><span class="species-telugu">మామిడి</span></div>
+              <span class="species-tag">Orchard King</span>
+            </div>
+            <span class="species-sci">Mangifera indica</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">The cornerstone orchard crop of Andhra Pradesh, including the famous Banganapalli variety.</p>
+            <ul class="species-benefits">
+              <li>Generates strong seasonal cash flow for decades</li>
+              <li>High industrial demand for fresh fruit, pickles & pulp</li>
+              <li>Expansive canopy traps high carbon volumes</li>
+            </ul>
+          </div>
+
+          <!-- 10. Guava -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Guava</h4><span class="species-telugu">జామ</span></div>
+              <span class="species-tag">Early Fruiting</span>
+            </div>
+            <span class="species-sci">Psidium guajava</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Hardy, compact fruit tree that begins bearing fruit within 2-3 years of plantation.</p>
+            <ul class="species-benefits">
+              <li>Frequent harvest cycles ensure steady monthly income</li>
+              <li>Rich in dietary Vitamin C and household nutrition</li>
+              <li>Adapts comfortably to light and red soils</li>
+            </ul>
+          </div>
+
+          <!-- 11. Sapota -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Sapota (Chikoo)</h4><span class="species-telugu">సపోటా</span></div>
+              <span class="species-tag">Continuous Bearer</span>
+            </div>
+            <span class="species-sci">Manilkara zapota</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Evergreen tree that flowers and fruits through the majority of the year under irrigation.</p>
+            <ul class="species-benefits">
+              <li>Extended marketing season reduces market glut risk</li>
+              <li>Evergreen shade moderates orchard microclimates</li>
+              <li>Resilient against common seasonal pests</li>
+            </ul>
+          </div>
+
+          <!-- 12. Custard Apple -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Custard Apple</h4><span class="species-telugu">సీతాఫలం</span></div>
+              <span class="species-tag">Dryland Specialist</span>
+            </div>
+            <span class="species-sci">Annona squamosa</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Celebrated dryland fruit producing delicious harvest even on barren, rocky Rayalaseema soils.</p>
+            <ul class="species-benefits">
+              <li>Thrives with virtually zero artificial irrigation</li>
+              <li>Rapidly increasing demand from ice-cream and pulp units</li>
+              <li>Cattle and goats naturally avoid grazing the leaves</li>
+            </ul>
+          </div>
+
+          <!-- 13. Amla -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Amla</h4><span class="species-telugu">ఉసిరి</span></div>
+              <span class="species-tag">Medicinal / Value-Add</span>
+            </div>
+            <span class="species-sci">Phyllanthus emblica</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Indian gooseberry with unmatched Vitamin C concentration and huge Ayurvedic pharmaceutical demand.</p>
+            <ul class="species-benefits">
+              <li>Exceptional drought resistance once established</li>
+              <li>High returns through drying, juicing, and pickling</li>
+              <li>Low fertilizer and labor maintenance needs</li>
+            </ul>
+          </div>
+
+          <!-- 14. Lemon -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Lemon</h4><span class="species-telugu">నిమ్మ</span></div>
+              <span class="species-tag">Quick Returns</span>
+            </div>
+            <span class="species-sci">Citrus limon</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">High-demand citrus tree suited for irrigated plots, bund perimeters, and domestic backyards.</p>
+            <ul class="species-benefits">
+              <li>Regular weekly harvests meeting daily kitchen demand</li>
+              <li>Commands premium summer market pricing</li>
+              <li>Compact size allows high density boundary planting</li>
+            </ul>
+          </div>
+
+          <!-- 15. Coconut -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Coconut</h4><span class="species-telugu">కొబ్బరి</span></div>
+              <span class="species-tag">Multi-Utility Palm</span>
+            </div>
+            <span class="species-sci">Cocos nucifera</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Iconic tropical palm delivering tender water, mature copra oil, husk fiber, and leaf roofing.</p>
+            <ul class="species-benefits">
+              <li>Generates monthly revenue for over 60 years</li>
+              <li>Wide spacing allows intercropping of cocoa, pepper, or fodder</li>
+              <li>Long-lived palm with strong root carbon retention</li>
+            </ul>
+          </div>
+
+          <!-- 16. Cashew -->
+          <div class="species-card" data-category="fruit">
+            <div class="species-header">
+              <div><h4>Cashew</h4><span class="species-telugu">జీడిమామిడి</span></div>
+              <span class="species-tag">Export Nut Crop</span>
+            </div>
+            <span class="species-sci">Anacardium occidentale</span>
+            <p style="font-size: 0.85rem; color: #4e6359; margin-bottom: 10px;">Durable nut tree thriving on red gravelly soils, coastal sandy tracts, and degraded wastelands.</p>
+            <ul class="species-benefits">
+              <li>High-value export quality cashew kernels</li>
+              <li>Stabilizes hillside contours against monsoonal runoff</li>
+              <li>Cashew apple can be processed into beverages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Application Callout -->
+    <section class="container">
+      <div class="cta-banner">
+        <h2>Select Species for Your Farm Land</h2>
+        <p>Our agricultural extension officers evaluate your water facility, soil test reports, and acreage to recommend the optimal tree combination.</p>
+        <a href="new-plantation.html" class="btn-pill-cta"><span>Apply for Species Allocation</span><span class="cta-arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand"><img src="assets/logo.png" alt="SGS" class="brand-logo-img"><div class="brand-text"><span class="brand-title">Sadana Green Society</span><span class="brand-subtitle">People • Plants • Livelihoods</span></div></a>
+        <p>Promoting ecological agroforestry, AWD water conservation, and certified carbon credits across South India.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Plantation</h4>
+        <ul class="footer-links">
+          <li><a href="species.html">All 16 Species</a></li>
+          <li><a href="services.html#agroforestry">Agroforestry Models</a></li>
+          <li><a href="new-plantation.html">Apply for Saplings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Society</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Field Gallery</a></li>
+          <li><a href="news.html">News & Media</a></li>
+          <li><a href="admin/login.html" style="color: #a4e48b; font-weight: 700;">Admin Portal 🔒</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Head Office</h4>
+        <div class="footer-contact-info">
+          <p>Near Nandyal Checkpost, Kurnool, AP 518003</p>
+          <p>Phone: <a href="tel:+919966611855">+91 99666 11855</a></p>
+          <p>WhatsApp: <a href="https://wa.me/919963490444">+91 99634 90444</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="footer-year"></span> Sadana Green Society. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Global Floating WhatsApp CTA Button -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
+    <div class="whatsapp-pill-label">
+      <span class="whatsapp-online-dot"></span>
+      Chat with SGS Field Team
+    </div>
+    <div class="whatsapp-circle-btn">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </div>
+  </a>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

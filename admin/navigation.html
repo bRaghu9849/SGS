@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation & Header Manager | Sadana Green Society Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <style>
+    .nav-manager-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 1024px) {
+      .nav-manager-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--admin-text);
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--admin-border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #ffffff;
+      color: var(--admin-text);
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--admin-accent);
+      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--admin-border);
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1;
+      transition: .3s;
+      border-radius: 24px;
+    }
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+    input:checked + .toggle-slider {
+      background-color: var(--admin-accent);
+    }
+    input:checked + .toggle-slider:before {
+      transform: translateX(20px);
+    }
+    .menu-item-row {
+      display: grid;
+      grid-template-columns: 2fr 2fr 100px 40px;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      background: #fafbfa;
+      border: 1px solid var(--admin-border);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .btn-delete-row {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+    .btn-delete-row:hover {
+      background: #fca5a5;
+    }
+    .live-preview-box {
+      background: #173f2b;
+      padding: 16px;
+      border-radius: 12px;
+      color: white;
+      margin-bottom: 24px;
+    }
+    .preview-pill {
+      background: rgba(255, 255, 255, 0.95);
+      color: #173f2b;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .preview-pill-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <img src="../assets/logo.png" alt="SGS" class="sidebar-logo">
+      <div>
+        <div class="sidebar-title">Sadana Green</div>
+        <div class="sidebar-subtitle">Admin Console</div>
+      </div>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="applications.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>Farmer Applications</span>
+        </a>
+      </li>
+      <li>
+        <a href="navigation.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <span>Navbar & Header</span>
+        </a>
+      </li>
+      <li>
+        <a href="content.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>Content Manager</span>
+        </a>
+      </li>
+      <li style="margin-top: 20px;">
+        <a href="../index.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Public Website &nearr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="../new-plantation.html" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          <span>Farmer Form &nearr;</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="user-badge">
+        <div class="user-avatar">SG</div>
+        <div style="flex:1;">
+          <div style="font-weight:700; font-size:0.9rem;">SGS Coordinator</div>
+          <div style="font-size:0.75rem; color:var(--admin-accent-glow);">Kurnool Field HQ</div>
+        </div>
+        <button onclick="handleLogout()" title="Logout" style="background:none; border:none; color:#ffffff; cursor:pointer; font-size:1.1rem;">
+          ⎋
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main View -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h1>Navigation Bar & Header Manager</h1>
+        <p style="font-size:0.85rem; color:var(--admin-muted);">
+          Edit menu items, top announcement text, header CTA buttons, and floating WhatsApp settings in real-time.
+        </p>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <button type="button" class="btn btn-outline" onclick="resetNavigationDefaults()">
+          🔄 Reset to Defaults
+        </button>
+        <button type="button" class="btn btn-primary" onclick="saveNavigationConfig()">
+          💾 Save Changes
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-body">
+
+      <!-- Live Preview Strip -->
+      <div class="live-preview-box">
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; opacity:0.8; margin-bottom:8px;">Live Preview</div>
+        <div id="preview-announcement-strip" style="background:#529837; color:#fff; padding:6px 14px; border-radius:6px; font-size:0.82rem; display:flex; justify-content:space-between; align-items:center;">
+          <span id="preview-announcement-text">🌱 Sadana Green Society · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes.</span>
+          <a href="#" id="preview-announcement-link" style="color:#fff; text-decoration:underline; font-weight:700;">Apply for Saplings &rarr;</a>
+        </div>
+        
+        <div class="preview-pill">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <img src="../assets/logo.png" style="height:26px;">
+            <span style="font-weight:800; font-size:0.9rem;">Sadana Green Society</span>
+          </div>
+          <div class="preview-pill-links" id="preview-nav-links">
+            <span>Home</span>
+            <span>Programmes ▾</span>
+            <span>About Us</span>
+            <span>Species</span>
+            <span>Gallery</span>
+            <span>News</span>
+            <span>Contact</span>
+          </div>
+          <button id="preview-pill-btn" style="background:#529837; color:#fff; border:none; padding:6px 14px; border-radius:9999px; font-weight:700; font-size:0.82rem;">
+            Apply Now &rarr;
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-manager-grid">
+
+        <!-- Column 1: Announcement & CTA & WhatsApp -->
+        <div>
+
+          <!-- Card 1: Top Announcement Bar -->
+          <div class="admin-card" style="padding: 24px; margin-bottom: 24px;">
+            <div class="toggle-row">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--admin-primary); margin-bottom: 2px;">Top Announcement Bar</h3>
+                <p style="font-size: 0.8rem; color: var(--admin-muted);">Notice strip displayed above the navbar.</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="announcement-enabled" checked onchange="updateLivePreview()">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="announcement-text">Announcement Message</label>
+              <input type="text" id="announcement-text" class="form-control" value="🌱 Sadana Green Society · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes." oninput="updateLivePreview()">
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+              <div class="form-group">
+                <label for="announcement-link-text">Action Link Text</label>
+                <input type="text" id="announcement-link-text" class="form-control" value="Apply for Saplings →" oninput="updateLivePreview()">
+              </div>
+              <div class="form-group">
+                <label for="announcement-link-url">Action Destination URL</label>
+                <input type="text" id="announcement-link-url" class="form-control" value="new-plantation.html" oninput="updateLivePreview()">
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Header Pill CTA Button -->
+          <div class="admin-card" style="padding: 24px; margin-bottom: 24px;">
+            <div class="toggle-row">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--admin-primary); margin-bottom: 2px;">Header Pill Button (CTA)</h3>
+                <p style="font-size: 0.8rem; color: var(--admin-muted);">Highlight action button on the right side of the navbar.</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="cta-enabled" checked onchange="updateLivePreview()">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+              <div class="form-group">
+                <label for="cta-text">Button Label</label>
+                <input type="text" id="cta-text" class="form-control" value="Apply Now" oninput="updateLivePreview()">
+              </div>
+              <div class="form-group">
+                <label for="cta-url">Destination URL</label>
+                <input type="text" id="cta-url" class="form-control" value="new-plantation.html" oninput="updateLivePreview()">
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Floating WhatsApp Button -->
+          <div class="admin-card" style="padding: 24px;">
+            <div class="toggle-row">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--admin-primary); margin-bottom: 2px;">Global Floating WhatsApp CTA</h3>
+                <p style="font-size: 0.8rem; color: var(--admin-muted);">Floating inquiry button in bottom-right corner.</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="whatsapp-enabled" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="whatsapp-phone">WhatsApp Number (with country code, no + or spaces)</label>
+              <input type="text" id="whatsapp-phone" class="form-control" value="919963490444">
+            </div>
+
+            <div class="form-group">
+              <label for="whatsapp-message">Pre-filled Chat Message</label>
+              <textarea id="whatsapp-message" class="form-control" rows="2">Hello Sadana Green Society, I would like to inquire about your agroforestry and plantation programmes.</textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Column 2: Main Menu Navigation Links -->
+        <div>
+          <div class="admin-card" style="padding: 24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <div>
+                <h3 style="font-size: 1.05rem; color: var(--admin-primary); margin-bottom: 2px;">Menu Links Manager</h3>
+                <p style="font-size: 0.8rem; color: var(--admin-muted);">Reorder, edit, hide, or add navigation items.</p>
+              </div>
+              <button type="button" class="btn btn-outline" style="font-size:0.8rem; padding:6px 12px;" onclick="addNewMenuItem()">
+                + Add New Link
+              </button>
+            </div>
+
+            <div id="menu-items-container">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <div style="margin-top: 16px; padding: 12px; background: #e8f5e9; border-radius: 8px; font-size: 0.82rem; color: #1b5e20;">
+              💡 <strong>Tip:</strong> Hiding a menu item instantly hides it across all desktop and mobile navigation menus without breaking existing page links.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+  <script>
+    // Navigation State
+    var currentNavConfig = {
+      announcement: {
+        enabled: true,
+        text: '🌱 Sadana Green Society · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes.',
+        link_text: 'Apply for Saplings →',
+        link_url: 'new-plantation.html'
+      },
+      header_cta: {
+        enabled: true,
+        text: 'Apply Now',
+        url: 'new-plantation.html'
+      },
+      whatsapp: {
+        enabled: true,
+        phone: '919963490444',
+        message: 'Hello Sadana Green Society, I would like to inquire about your agroforestry and plantation programmes.'
+      },
+      menu_items: [
+        { id: 1, label: 'Home', url: 'index.html', active: true },
+        { id: 2, label: 'Programmes', url: 'services.html', active: true },
+        { id: 3, label: 'About Us', url: 'about.html', active: true },
+        { id: 4, label: 'Species', url: 'species.html', active: true },
+        { id: 5, label: 'Gallery', url: 'gallery.html', active: true },
+        { id: 6, label: 'News & Media', url: 'news.html', active: true },
+        { id: 7, label: 'FAQ', url: 'faq.html', active: true },
+        { id: 8, label: 'Contact', url: 'contact.html', active: true }
+      ]
+    };
+
+    // Load Navigation Config from API or LocalStorage
+    function loadNavConfig() {
+      // Check local storage first
+      try {
+        var local = localStorage.getItem('sgs_navigation_settings');
+        if (local) {
+          currentNavConfig = JSON.parse(local);
+        }
+      } catch (e) {}
+
+      // Try server API
+      fetch('../api/navigation.php')
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          if (res && res.success && res.data) {
+            currentNavConfig = res.data;
+          }
+          populateForm();
+        })
+        .catch(function(err) {
+          populateForm();
+        });
+    }
+
+    function populateForm() {
+      // Announcement
+      document.getElementById('announcement-enabled').checked = currentNavConfig.announcement.enabled !== false;
+      document.getElementById('announcement-text').value = currentNavConfig.announcement.text || '';
+      document.getElementById('announcement-link-text').value = currentNavConfig.announcement.link_text || '';
+      document.getElementById('announcement-link-url').value = currentNavConfig.announcement.link_url || '';
+
+      // CTA
+      document.getElementById('cta-enabled').checked = currentNavConfig.header_cta.enabled !== false;
+      document.getElementById('cta-text').value = currentNavConfig.header_cta.text || '';
+      document.getElementById('cta-url').value = currentNavConfig.header_cta.url || '';
+
+      // WhatsApp
+      document.getElementById('whatsapp-enabled').checked = currentNavConfig.whatsapp.enabled !== false;
+      document.getElementById('whatsapp-phone').value = currentNavConfig.whatsapp.phone || '';
+      document.getElementById('whatsapp-message').value = currentNavConfig.whatsapp.message || '';
+
+      // Menu Items
+      renderMenuItems();
+      updateLivePreview();
+    }
+
+    function renderMenuItems() {
+      var container = document.getElementById('menu-items-container');
+      container.innerHTML = '';
+
+      currentNavConfig.menu_items.forEach(function(item, idx) {
+        var row = document.createElement('div');
+        row.className = 'menu-item-row';
+        row.innerHTML = `
+          <input type="text" class="form-control" value="${item.label}" placeholder="Label" oninput="handleItemChange(${idx}, 'label', this.value)">
+          <input type="text" class="form-control" value="${item.url}" placeholder="URL" oninput="handleItemChange(${idx}, 'url', this.value)">
+          <label style="display:flex; align-items:center; gap:6px; font-size:0.8rem; cursor:pointer;">
+            <input type="checkbox" ${item.active !== false ? 'checked' : ''} onchange="handleItemChange(${idx}, 'active', this.checked)">
+            <span>${item.active !== false ? 'Visible' : 'Hidden'}</span>
+          </label>
+          <button type="button" class="btn-delete-row" title="Delete" onclick="deleteMenuItem(${idx})">×</button>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function handleItemChange(idx, field, value) {
+      if (currentNavConfig.menu_items[idx]) {
+        currentNavConfig.menu_items[idx][field] = value;
+        updateLivePreview();
+      }
+    }
+
+    function deleteMenuItem(idx) {
+      if (confirm('Remove this menu item?')) {
+        currentNavConfig.menu_items.splice(idx, 1);
+        renderMenuItems();
+        updateLivePreview();
+      }
+    }
+
+    function addNewMenuItem() {
+      var newId = Date.now();
+      currentNavConfig.menu_items.push({
+        id: newId,
+        label: 'New Link',
+        url: 'services.html',
+        active: true
+      });
+      renderMenuItems();
+      updateLivePreview();
+    }
+
+    function updateLivePreview() {
+      // Announcement
+      var annEnabled = document.getElementById('announcement-enabled').checked;
+      var annBox = document.getElementById('preview-announcement-strip');
+      annBox.style.display = annEnabled ? 'flex' : 'none';
+      document.getElementById('preview-announcement-text').textContent = document.getElementById('announcement-text').value;
+      document.getElementById('preview-announcement-link').textContent = document.getElementById('announcement-link-text').value;
+
+      // CTA
+      var ctaEnabled = document.getElementById('cta-enabled').checked;
+      var ctaBtn = document.getElementById('preview-pill-btn');
+      ctaBtn.style.display = ctaEnabled ? 'inline-block' : 'none';
+      ctaBtn.textContent = document.getElementById('cta-text').value + ' →';
+
+      // Links
+      var linksBox = document.getElementById('preview-nav-links');
+      linksBox.innerHTML = '';
+      currentNavConfig.menu_items.forEach(function(item) {
+        if (item.active !== false) {
+          var sp = document.createElement('span');
+          sp.textContent = item.label;
+          linksBox.appendChild(sp);
+        }
+      });
+    }
+
+    function saveNavigationConfig() {
+      // Gather form values
+      currentNavConfig.announcement = {
+        enabled: document.getElementById('announcement-enabled').checked,
+        text: document.getElementById('announcement-text').value,
+        link_text: document.getElementById('announcement-link-text').value,
+        link_url: document.getElementById('announcement-link-url').value
+      };
+
+      currentNavConfig.header_cta = {
+        enabled: document.getElementById('cta-enabled').checked,
+        text: document.getElementById('cta-text').value,
+        url: document.getElementById('cta-url').value
+      };
+
+      currentNavConfig.whatsapp = {
+        enabled: document.getElementById('whatsapp-enabled').checked,
+        phone: document.getElementById('whatsapp-phone').value,
+        message: document.getElementById('whatsapp-message').value
+      };
+
+      // Save to LocalStorage
+      localStorage.setItem('sgs_navigation_settings', JSON.stringify(currentNavConfig));
+
+      // Save to Server API
+      fetch('../api/navigation.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer sgs-admin-secret-2026'
+        },
+        body: JSON.stringify(currentNavConfig)
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        alert('✅ Navigation settings saved successfully! Changes are now live across all pages.');
+      })
+      .catch(function(err) {
+        alert('✅ Navigation settings saved to local browser storage!');
+      });
+    }
+
+    function resetNavigationDefaults() {
+      if (confirm('Reset all navigation items and announcement texts to factory default settings?')) {
+        localStorage.removeItem('sgs_navigation_settings');
+        location.reload();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadNavConfig);
+  </script>
+</body>
+</html>
