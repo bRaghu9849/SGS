@@ -1638,8 +1638,11 @@ textarea.form-control {
   .brand-title {
     font-size: 0.95rem;
   }
-  .btn-pill-cta {
+  .header-actions .btn-pill-cta {
     display: none;
+  }
+  .hero-actions .btn-pill-cta {
+    display: inline-flex !important;
   }
   .story-grid {
     grid-template-columns: 1fr;
@@ -3905,8 +3908,11 @@ html, body {
     width: 38px !important;
     height: 38px !important;
   }
-  .btn-pill-cta {
+  .header-actions .btn-pill-cta {
     display: none !important;
+  }
+  .hero-actions .btn-pill-cta {
+    display: inline-flex !important;
   }
   .floating-whatsapp .whatsapp-badge-pill {
     display: none !important;

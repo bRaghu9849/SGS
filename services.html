@@ -19,21 +19,16 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
 
-  <!-- Floating Site Header -->
-  <header class="site-header site-header-sticky" id="mainHeader">
-    <div class="header-container">
+  <!-- Floating Pill Site Header (Matching style.css exactly) -->
+  <header class="site-header" id="header">
+    <div class="navbar-pill">
       
       <!-- Brand Logo -->
-      <a href="./" class="brand-logo" aria-label="Sadana Green Society Home">
-        <div class="brand-symbol">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/>
-            <path d="M12 21a10 10 0 0 0 0-20"/>
-          </svg>
-        </div>
+      <a href="./" class="brand" aria-label="Sadana Green Society Home">
+        <img src="./assets/logo.png" alt="Sadana Green Society Logo" class="brand-logo-img">
         <div class="brand-text">
-          <span class="brand-name">Sadana Green Society</span>
-          <span class="brand-tagline">Regd. No. 129/2021 &bull; Kurnool</span>
+          <span class="brand-title">Sadana Green Society</span>
+          <span class="brand-subtitle">Regd. No. 129/2021 &bull; Kurnool</span>
         </div>
       </a>
 
@@ -45,7 +40,7 @@
           </li>
           
           <!-- Agroforestry Dropdown with Forest & Fruit Species Flyouts -->
-          <li class="nav-item ct-has-dropdown selio-dropdown-parent">
+          <li class="nav-item has-dropdown selio-dropdown-parent">
             <a href="./agroforestry/" class="nav-link active">
               Agroforestry
               <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
@@ -129,11 +124,11 @@
         <button class="search-trigger-btn" onclick="openSearchModal()" aria-label="Open Search">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
-        <a href="./contact/" class="header-cta-btn">
+        <a href="./contact/" class="btn-pill-cta" style="padding: 7px 16px; font-size: 0.85rem;">
           <span>Contact HQ</span>
-          <span class="btn-arrow">&rarr;</span>
+          <span class="cta-arrow">&rarr;</span>
         </a>
-        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Mobile Menu" onclick="toggleMobileNav()">
+        <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle Mobile Menu" onclick="toggleMobileNav()">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -141,30 +136,30 @@
 
     <!-- Mobile Drawer Navigation -->
     <div class="mobile-drawer" id="mobileDrawer">
-      <div class="mobile-drawer-header">
+      <div class="drawer-header">
         <div class="brand-text">
-          <span class="brand-name" style="color:#0f382c; font-weight:700;">Sadana Green Society</span>
-          <span class="brand-tagline">Regd. No. 129/2021 &bull; Kurnool</span>
+          <span class="brand-title" style="color:#0f382c; font-weight:700;">Sadana Green Society</span>
+          <span class="brand-subtitle">Regd. No. 129/2021 &bull; Kurnool</span>
         </div>
-        <button class="mobile-drawer-close" onclick="toggleMobileNav()">&times;</button>
+        <button class="drawer-close" onclick="toggleMobileNav()">&times;</button>
       </div>
-      <div class="mobile-nav-links">
-        <a href="./" class="mobile-link">Home</a>
-        <a href="./agroforestry/" class="mobile-link active">Agroforestry</a>
-        <a href="./forest-species/" class="mobile-link">Forest Species (8 Timber Varieties)</a>
-        <a href="./fruit-species/" class="mobile-link">Fruit Species (8 Horticulture Varieties)</a>
-        <a href="./species/" class="mobile-link">All 16 Native Species Guide</a>
-        <a href="./carbon-credits/" class="mobile-link">Carbon Credits (Verra &amp; Gold Standard)</a>
-        <a href="./awd/" class="mobile-link">AWD Water Conservation (30% Reduction)</a>
-        <a href="./environment/" class="mobile-link">Environment</a>
-        <a href="./our-journey/" class="mobile-link">Our Impact</a>
-        <a href="./gallery/" class="mobile-link">Gallery</a>
-        <a href="./about/" class="mobile-link">About Us</a>
-        <a href="./news/" class="mobile-link">News &amp; Media</a>
-        <a href="./contact/" class="mobile-link">Contact</a>
+      <div class="drawer-nav">
+        <a href="./" class="drawer-link">Home</a>
+        <a href="./agroforestry/" class="drawer-link active">Agroforestry</a>
+        <a href="./forest-species/" class="drawer-link">Forest Species (8 Timber Varieties)</a>
+        <a href="./fruit-species/" class="drawer-link">Fruit Species (8 Horticulture Varieties)</a>
+        <a href="./species/" class="drawer-link">All 16 Native Species Guide</a>
+        <a href="./carbon-credits/" class="drawer-link">Carbon Credits (Verra &amp; Gold Standard)</a>
+        <a href="./awd/" class="drawer-link">AWD Water Conservation (30% Reduction)</a>
+        <a href="./environment/" class="drawer-link">Environment</a>
+        <a href="./our-journey/" class="drawer-link">Our Impact</a>
+        <a href="./gallery/" class="drawer-link">Gallery</a>
+        <a href="./about/" class="drawer-link">About Us</a>
+        <a href="./news/" class="drawer-link">News &amp; Media</a>
+        <a href="./contact/" class="drawer-link">Contact</a>
       </div>
-      <div class="mobile-drawer-footer">
-        <a href="tel:+919963490444" class="mobile-call-pill">
+      <div style="padding: 20px; border-top: 1px solid #e5e7eb;">
+        <a href="tel:+919963490444" class="btn-pill-cta" style="width: 100%; justify-content: center;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           +91 99634 90444
         </a>
@@ -505,13 +500,13 @@
         <div class="footer-col">
           <h4 class="footer-col-title">Core Programmes</h4>
           <ul class="footer-nav-list">
-            <li><a href="servicesagroforestry/">Agroforestry Models</a></li>
-            <li><a href="servicescarbon-credits/">Carbon Credit Verification</a></li>
-            <li><a href="servicesawd/">AWD Paddy Water Conservation</a></li>
-            <li><a href="servicesenvironment/">Environmental Balance</a></li>
-            <li><a href="servicesour-journey/">Our Impact &amp; Footprint</a></li>
-            <li><a href="servicesservices/">All Agriculture Services</a></li>
-            <li><a href="servicesnew-plantation/">Farmer Registration</a></li>
+            <li><a href="./agroforestry/">Agroforestry Models</a></li>
+            <li><a href="./carbon-credits/">Carbon Credit Verification</a></li>
+            <li><a href="./awd/">AWD Paddy Water Conservation</a></li>
+            <li><a href="./environment/">Environmental Balance</a></li>
+            <li><a href="./our-journey/">Our Impact &amp; Footprint</a></li>
+            <li><a href="./services/">All Agriculture Services</a></li>
+            <li><a href="./new-plantation/">Farmer Registration</a></li>
           </ul>
         </div>
 
@@ -519,14 +514,14 @@
         <div class="footer-col">
           <h4 class="footer-col-title">Native Species</h4>
           <ul class="footer-nav-list">
-            <li><a href="servicesforest-species/#teak">Teak (టేకు)</a></li>
-            <li><a href="servicesforest-species/#melia-dubia">Melia Dubia (మలబార్ వేప)</a></li>
-            <li><a href="servicesforest-species/#red-sanders">Red Sanders (ఎర్రచందనం)</a></li>
-            <li><a href="servicesfruit-species/#mango">Mango (మామిడి)</a></li>
-            <li><a href="servicesforest-species/#casuarina">Casuarina (సర్వి)</a></li>
-            <li><a href="servicesforest-species/#bamboo">Bamboo (వెదురు)</a></li>
-            <li><a href="servicesfruit-species/#guava">Guava (జామ)</a></li>
-            <li><a href="servicesfruit-species/#custard-apple">Custard Apple (సీతాఫలం)</a></li>
+            <li><a href="./forest-species/#teak">Teak (టేకు)</a></li>
+            <li><a href="./forest-species/#melia-dubia">Melia Dubia (మలబార్ వేప)</a></li>
+            <li><a href="./forest-species/#red-sanders">Red Sanders (ఎర్రచందనం)</a></li>
+            <li><a href="./fruit-species/#mango">Mango (మామిడి)</a></li>
+            <li><a href="./forest-species/#casuarina">Casuarina (సర్వి)</a></li>
+            <li><a href="./forest-species/#bamboo">Bamboo (వెదురు)</a></li>
+            <li><a href="./fruit-species/#guava">Guava (జామ)</a></li>
+            <li><a href="./fruit-species/#custard-apple">Custard Apple (సీతాఫలం)</a></li>
           </ul>
         </div>
 
@@ -563,11 +558,11 @@
           &copy; 2026 Sadana Green Society. All rights reserved. Registered under AP Societies Registration Act (Regd. No. 129/2021).
         </p>
         <div class="footer-legal-links">
-          <a href="servicesabout/">About Leadership</a>
-          <a href="servicesprivacy/">Privacy Policy</a>
-          <a href="servicesterms/">Terms of Service</a>
-          <a href="servicescontact/">Contact HQ</a>
-          <a href="servicesadmin/" class="footer-admin-link">Staff Admin</a>
+          <a href="./about/">About Leadership</a>
+          <a href="./privacy/">Privacy Policy</a>
+          <a href="./terms/">Terms of Service</a>
+          <a href="./contact/">Contact HQ</a>
+          <a href="./admin/" class="footer-admin-link">Staff Admin</a>
         </div>
       </div>
     </div>
@@ -605,5 +600,5 @@
   </div>
 
   <!-- Core JavaScript -->
-  <script src="servicesjs/app.js"></script>
+  <script src="./js/app.js"></script>
 
