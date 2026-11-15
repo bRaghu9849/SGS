@@ -1,73 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Executive Operations | Sadana Green Society</title>
+  <title>Admin Dashboard — Farmer Applications | Sadana Green Society</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="admin.css">
 </head>
-<body>
+<body class="admin-body">
 
-  <!-- Top Executive Navbar -->
-  <header class="admin-navbar">
-    <a href="index.html" class="admin-nav-brand">
-      <img src="../assets/logo.png" alt="Sadana Green Society Logo" class="admin-nav-logo">
-      <div>
-        <div class="admin-nav-title">Sadana Green Society</div>
-        <div class="admin-nav-sub">Operations &bull; Field HQ Kurnool</div>
+  <!-- Admin Top Bar -->
+  <header class="admin-topbar">
+    <div class="admin-topbar-left">
+      <div class="admin-brand">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
+        <span>SGS Staff Admin</span>
       </div>
-    </a>
-
-    <nav>
-      <ul class="admin-nav-links">
-        <li><a href="index.html" class="active">👨‍🌾 Farmer Application Details</a></li>
-        <li><a href="content.html">✏️ Edit Website Pages</a></li>
-        <li><a href="../" target="_blank">🌐 Live Site &nearr;</a></li>
-        <li><a href="../new-plantation/" target="_blank">🌾 Farmer Form &nearr;</a></li>
-        <li><button onclick="handleAdminLogout()" class="btn-selio btn-selio-danger" style="margin-left:12px;">Sign Out</button></li>
-      </ul>
-    </nav>
+      <nav class="admin-nav-tabs">
+        <a href="index.html" class="admin-nav-tab active">Farmer Applications</a>
+        <a href="content.html" class="admin-nav-tab">Page &amp; Image Editor</a>
+        <a href="../index.html" target="_blank" class="admin-nav-tab" style="color:#15803d;">View Live Site &nearr;</a>
+      </nav>
+    </div>
+    <div class="admin-topbar-right">
+      <span class="admin-user-pill">Officer: <strong>B. Raghu Bhaskar</strong></span>
+      <button class="admin-btn-logout" onclick="logoutAdmin()">Sign Out</button>
+    </div>
   </header>
 
-  <!-- Main Content Container -->
-  <main class="admin-content-area">
+  <!-- Main Container -->
+  <main class="admin-container">
     
-    <!-- Top Action Toolbar -->
-    <div class="admin-toolbar">
-      <div class="toolbar-title">
-        <h1>Farmer Application Details (Directly Editable)</h1>
-        <p>Edit farmer names, phone numbers, acres, species counts, and GPS coordinates directly below. Click <strong>"Save All Changes"</strong> to persist.</p>
+    <!-- Header Controls -->
+    <div class="admin-header-row">
+      <div>
+        <h1 class="admin-title">Farmer Registration Records</h1>
+        <p class="admin-sub">Compact high-density view. Edit details inline, add records, or export to CSV.</p>
       </div>
-
-      <div class="toolbar-actions">
-        <span id="totalFarmerCountBadge" style="background:#eef7f2; color:#173F2B; font-weight:700; padding:8px 16px; border-radius:999px; font-size:0.88rem;">
-          Loading...
-        </span>
-        <button onclick="addNewFarmerRecord()" class="btn-selio btn-selio-outline">
-          <span>+ Add New Farmer</span>
-        </button>
-        <button onclick="exportFarmerCSV()" class="btn-selio btn-selio-outline">
-          <span>📥 Export CSV</span>
-        </button>
-        <button onclick="saveAllFarmerRecords()" class="btn-selio btn-selio-save">
-          <span>💾 Save All Farmer Changes</span>
-        </button>
+      <div class="admin-actions-group">
+        <button class="btn-admin-primary" onclick="addNewBlankFarmer()">+ Add New Farmer</button>
+        <button class="btn-admin-secondary" onclick="exportFarmersToCSV()">📥 Export CSV</button>
+        <button class="btn-admin-save" onclick="saveAllFarmers()">💾 Save All Changes</button>
       </div>
     </div>
 
-    <!-- Container of Editable Farmer Cards -->
-    <div id="farmerCardsContainer">
-      <!-- Injected dynamically via admin.js -->
+    <!-- Search & Filter Bar -->
+    <div class="admin-search-bar" style="margin-bottom: 20px; display: flex; gap: 14px; flex-wrap: wrap;">
+      <input type="text" id="adminFarmerSearch" placeholder="Search by farmer name, mobile, village, or district..." oninput="filterFarmerTable(this.value)" style="flex:1; min-width:280px; padding:10px 16px; border:1px solid #d1d5db; border-radius:10px; font-family:'Rubik', sans-serif;">
+      <select id="adminModelFilter" onchange="filterFarmerTable()" style="padding:10px 16px; border:1px solid #d1d5db; border-radius:10px; font-family:'Rubik', sans-serif; background:#fff;">
+        <option value="">All Programme Models</option>
+        <option value="Agroforestry Boundary">Agroforestry Boundary</option>
+        <option value="Block Plantation">Block Plantation</option>
+        <option value="AWD Paddy Water">AWD Paddy Water</option>
+        <option value="Horticulture Mix">Horticulture Mix</option>
+      </select>
     </div>
 
-    <!-- Bottom Save Button -->
-    <div style="display:flex; justify-content:center; margin-top:20px;">
-      <button onclick="saveAllFarmerRecords()" class="btn-selio btn-selio-save" style="padding:16px 48px; font-size:1.1rem;">
-        <span>💾 Save All Farmer Changes</span>
-      </button>
+    <!-- Compact High-Density Farmer Table Container -->
+    <div class="admin-table-wrapper" style="overflow-x: auto; background:#fff; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.06); border:1px solid #e5e7eb;">
+      <table class="admin-compact-table" id="farmerTable">
+        <thead>
+          <tr>
+            <th style="width:110px;">ID &amp; Date</th>
+            <th style="min-width:180px;">Farmer Name</th>
+            <th style="min-width:140px;">Mobile &amp; Aadhaar</th>
+            <th style="min-width:180px;">Village &amp; District</th>
+            <th style="min-width:100px;">Acres</th>
+            <th style="min-width:160px;">Model</th>
+            <th style="min-width:160px;">Species</th>
+            <th style="width:130px; text-align:center;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="farmerTableBody">
+          <!-- Populated dynamically by admin.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="noResultsMsg" style="display:none; text-align:center; padding:40px; color:#6b7280; font-size:1.05rem;">
+      No farmer records matching your search query.
     </div>
 
   </main>
