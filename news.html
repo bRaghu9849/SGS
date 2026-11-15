@@ -2,397 +2,402 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News & Media Coverage | Sadana Green Society</title>
-  <meta name="description" content="Regional newspaper coverage and press reports featuring Sadana Green Society's agroforestry, farmer onboarding, and sustainable climate initiatives across AP, Telangana, and Karnataka.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#55a630">
+  <title>News & Media | Sadana Green Society</title>
+  <meta name="description" content="Sadana Green Society in the news — regional Telugu newspaper coverage of plantation programmes, farmer support and sustainable agriculture in Andhra Pradesh.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://sadanagreensociety.com/news.html">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Typography: Strict Rubik Sans-Serif & Noto Sans Telugu -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Noto+Sans+Telugu:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
-    }
-    .news-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-      display: flex;
-      flex-direction: column;
-    }
-    .news-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-    .news-card-img-wrap {
-      position: relative;
-      height: 280px;
-      overflow: hidden;
-      background: #edf3ee;
-      cursor: pointer;
-    }
-    .news-card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-slow);
-    }
-    .news-card:hover .news-card-img-wrap img {
-      transform: scale(1.05);
-    }
-    .news-card-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(18, 57, 43, 0.85);
-      backdrop-filter: blur(8px);
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 5px 12px;
-      border-radius: 9999px;
-    }
-    .news-card-body {
-      padding: 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .news-card-telugu {
-      font-family: 'Noto Sans Telugu', var(--font-body);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--color-dark);
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-    .news-card-desc {
-      color: var(--color-text-muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      flex: 1;
-    }
-    .news-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--border-color);
-      padding-top: 16px;
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Floating Pill Header -->
-  <header class="ct-header-wrapper" id="site-header">
-    <div class="ct-header-inner">
-      <a href="index.html" class="ct-logo-wrap" aria-label="Sadana Green Society Home">
-        <img src="assets/logo.png" alt="Sadana Green Society Logo" class="ct-logo-img">
-        <div class="ct-logo-text">
-          <span class="ct-logo-title">Sadana Green Society</span>
-          <span class="ct-logo-sub">Kurnool, Andhra Pradesh</span>
+  <!-- Top Announcement Strip -->
+  <div class="top-announcement-strip" id="top-announcement">
+    <span>🌱 <strong>Sadana Green Society</strong> · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes.</span>
+    <a href="new-plantation.html">Apply for Saplings &rarr;</a>
+    <button class="announcement-close-btn" onclick="document.getElementById('top-announcement').style.display='none'" aria-label="Close announcement">&times;</button>
+  </div>
+
+  <!-- Floating Pill Header (Blocksy Landscape Style) -->
+  <header class="site-header" id="header">
+    <div class="navbar-pill">
+      
+      <!-- Brand Logo & Name -->
+      <a href="index.html" class="brand" aria-label="Sadana Green Society Home">
+        <img src="assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-title">Sadana Green Society</span>
+          <span class="brand-subtitle">People • Plants • Livelihoods</span>
         </div>
       </a>
 
-      <nav class="ct-desktop-nav" aria-label="Main Navigation">
-        <ul class="ct-nav-list">
-          <li class="ct-nav-item"><a href="index.html" class="ct-nav-link">Home</a></li>
-          <li class="ct-nav-item"><a href="about.html" class="ct-nav-link">About Us</a></li>
-          <li class="ct-nav-item ct-has-dropdown">
-            <a href="services.html" class="ct-nav-link">
+      <!-- Desktop Navigation Menu with Mega Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          
+          <li class="nav-item ct-has-dropdown">
+            <a href="services.html" class="nav-link">
               Programmes
-              <svg class="ct-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
             </a>
-            <div class="ct-dropdown-menu">
-              <a href="services.html" class="ct-dropdown-link">All Programmes Overview</a>
-              <a href="species.html" class="ct-dropdown-link">16 Forest & Fruit Species</a>
-              <a href="carbon-credits.html" class="ct-dropdown-link">Carbon Credits Verification</a>
-              <a href="awd.html" class="ct-dropdown-link">AWD Water-Saving Paddy</a>
+            
+            <!-- Desktop Mega Menu (Exact Blocksy Landscape Spec - image2.png) -->
+            <div class="ct-dropdown-megamenu">
+              <!-- Left Column: 3 Programs + Latest News -->
+              <div>
+                <div class="megamenu-left-programs">
+                  <a href="services.html#agroforestry" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
+                    </div>
+                    <h4>Agroforestry Models</h4>
+                    <p>High-value timber & fruit plantations for boundary & mixed farmlands.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+
+                  <a href="carbon-credits.html" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h4>Carbon Credits</h4>
+                    <p>Verifiable biomass audits connecting smallholders to global carbon markets.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+
+                  <a href="awd.html" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h4>AWD Paddy Water</h4>
+                    <p>30% water conservation in paddy fields via perforated soil monitoring tubes.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+                </div>
+
+                <!-- Latest News Strip inside Mega Menu -->
+                <div class="megamenu-latest-news-title">Latest Regional News</div>
+                <div class="megamenu-news-row">
+                  <a href="news.html" class="megamenu-news-item">
+                    <img src="assets/images/news/news-clipping-01.jpg" alt="News 1">
+                    <div>
+                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</h5>
+                      <small>Kurnool Daily Press</small>
+                    </div>
+                  </a>
+
+                  <a href="news.html" class="megamenu-news-item">
+                    <img src="assets/images/news/news-clipping-03.jpg" alt="News 2">
+                    <div>
+                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట (AWD)</h5>
+                      <small>Agriculture Feature</small>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Column: Featured Program + Video Card -->
+              <div class="megamenu-right-highlight">
+                <div class="megamenu-right-header">
+                  <h4>Farmer Registration 2026</h4>
+                  <a href="new-plantation.html" class="megamenu-circle-arrow-btn" aria-label="Go to Farmer Application">&rarr;</a>
+                </div>
+                <p class="megamenu-right-desc">
+                  Register land details with real-time GPS coordinates, camera photo uploads, and water verification for sapling distribution.
+                </p>
+                <div class="megamenu-video-thumb" onclick="openVideoModal()" style="background-image: url('assets/images/plantation-field-team-hd.jpg');">
+                  <div class="play-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </li>
-          <li class="ct-nav-item"><a href="gallery.html" class="ct-nav-link">Gallery</a></li>
-          <li class="ct-nav-item"><a href="news.html" class="ct-nav-link active">News</a></li>
-          <li class="ct-nav-item"><a href="faq.html" class="ct-nav-link">FAQ</a></li>
-          <li class="ct-nav-item"><a href="contact.html" class="ct-nav-link">Contact</a></li>
+
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="species.html" class="nav-link">Species</a></li>
+          <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="news.html" class="nav-link active">News & Media</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="ct-header-actions">
-        <button class="ct-search-toggle" id="open-search" aria-label="Open search">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <!-- Action Tools (Search & Pill CTA) -->
+      <div class="header-actions">
+        <button class="btn-icon btn-search-trigger" aria-label="Search website">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
-        <a href="new-plantation.html" class="btn btn-primary btn-pill">Farmer Registration</a>
-        <button class="ct-mobile-toggle" id="open-drawer" aria-label="Open mobile menu">
-          <span></span><span></span><span></span>
+
+        <a href="new-plantation.html" class="btn-pill-cta">
+          <span>Apply Now</span>
+          <span class="cta-arrow">→</span>
+        </a>
+
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
+
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Drawer -->
-  <div class="ct-drawer-overlay" id="drawer-overlay"></div>
-  <aside class="ct-mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
-    <div class="ct-drawer-header">
-      <div class="ct-logo-text">
-        <span class="ct-logo-title" style="color:white;">Sadana Green Society</span>
-        <span class="ct-logo-sub" style="color:#97d57a;">Kurnool, AP</span>
+  <!-- Mobile Offcanvas Dark Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="drawer-header">
+        <div class="drawer-logo">
+          <img src="assets/logo.png" alt="SGS Logo">
+          <span>Sadana Green Society</span>
+        </div>
+        <button class="drawer-close" aria-label="Close Mobile Navigation">&times;</button>
       </div>
-      <button class="ct-drawer-close" id="close-drawer" aria-label="Close menu">&times;</button>
-    </div>
-    <ul class="ct-drawer-nav">
-      <li><a href="index.html" class="ct-drawer-link">Home</a></li>
-      <li><a href="about.html" class="ct-drawer-link">About Us</a></li>
-      <li><a href="services.html" class="ct-drawer-link">Programmes Overview</a></li>
-      <li><a href="species.html" class="ct-drawer-link">16 Tree Species</a></li>
-      <li><a href="carbon-credits.html" class="ct-drawer-link">Carbon Credits</a></li>
-      <li><a href="awd.html" class="ct-drawer-link">AWD Water Tube</a></li>
-      <li><a href="gallery.html" class="ct-drawer-link">Field Gallery</a></li>
-      <li><a href="news.html" class="ct-drawer-link active">News & Media</a></li>
-      <li><a href="faq.html" class="ct-drawer-link">FAQ</a></li>
-      <li><a href="contact.html" class="ct-drawer-link">Contact Us</a></li>
-    </ul>
-    <div class="ct-drawer-footer">
-      <a href="new-plantation.html" class="btn btn-primary btn-pill" style="width:100%; text-align:center;">Farmer Registration Portal</a>
+
+      <ul class="drawer-menu">
+        <li><a href="index.html" class="drawer-link">Home</a></li>
+        <li><a href="services.html" class="drawer-link">Programmes Overview</a></li>
+        <li><a href="services.html#agroforestry" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
+        <li><a href="carbon-credits.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Carbon Credits</a></li>
+        <li><a href="awd.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ AWD Paddy Water</a></li>
+        <li><a href="about.html" class="drawer-link">About Us</a></li>
+        <li><a href="species.html" class="drawer-link">Plant Species</a></li>
+        <li><a href="gallery.html" class="drawer-link">Photo Gallery</a></li>
+        <li><a href="news.html" class="drawer-link active">News & Media</a></li>
+        <li><a href="faq.html" class="drawer-link">FAQ</a></li>
+        <li><a href="contact.html" class="drawer-link">Contact</a></li>
+      </ul>
+
+      <div class="drawer-cta-wrap">
+        <a href="new-plantation.html" class="btn-pill-cta" style="width:100%; justify-content:center;">
+          <span>Apply for Saplings</span>
+          <span class="cta-arrow">&rarr;</span>
+        </a>
+      </div>
     </div>
   </aside>
 
-  <!-- Page Hero Header -->
-  <section class="page-hero">
-    <div class="container">
-      <span class="hero-badge">Press & Public Impact</span>
-      <h1 class="page-hero-title">News & Media Coverage</h1>
-      <p class="page-hero-subtitle">
-        Documenting grassroots environmental transformations, farmer livelihood successes, and sustainable agriculture coverage across Andhra Pradesh, Telangana, and Karnataka.
-      </p>
-    </div>
-  </section>
-
-  <!-- News Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section-title text-center">
-        <span class="sub-badge">Regional Press</span>
-        <h2>Newspaper Coverage & Articles</h2>
-        <p>Featured Telugu media articles covering Sadana Green Society's farmer training, nursery distribution, and field verification programmes.</p>
+  <main id="main">
+    <!-- Hero Banner -->
+    <section class="hero-landscape" style="min-height: 48vh; padding: 140px 0 60px; background-image: url('assets/images/home-nature-bg.jpg');">
+      <div class="container hero-content">
+        <span class="hero-badge-pill">Press &amp; Media Coverage</span>
+        <h1 class="hero-title">News &amp; Media</h1>
+        <p class="hero-lead">
+          Sadana Green Society in the news — newspaper coverage of plantation programmes, farmer support and sustainable agriculture.
+        </p>
       </div>
+    </section>
 
-      <div class="news-grid">
-        <!-- Clipping 1 -->
-        <article class="news-card">
-          <div class="news-card-img-wrap" onclick="openLightbox('assets/images/news/news-clipping-01.jpg', 'మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం')">
-            <span class="news-card-badge">Horticulture News</span>
-            <img src="assets/images/news/news-clipping-01.jpg" alt="మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం" loading="lazy">
+    <!-- News Coverage Section -->
+    <section class="section surface" id="coverage">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Archived Press Clippings</span>
+          <h2 class="section-title">Newspaper Coverage</h2>
+          <p class="section-subtitle">Selected newspaper clippings about Sadana Green Society’s field activities and farmer-focused initiatives. Select any image to view it larger.</p>
+        </div>
+
+        <div class="news-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:28px;">
+        <article class="news-card" style="background:var(--color-surface-tint); border:1px solid var(--color-border); border-radius:18px; overflow:hidden;">
+          <div class="news-card-img" style="aspect-ratio:4/3; overflow:hidden; background:#eee;">
+            <a href="assets/images/news/news-clipping-01.jpg" class="gallery-lightbox-trigger" data-caption="మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం - Kurnool Regional Press">
+              <img src="assets/images/news/news-clipping-01.jpg" alt="మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </a>
           </div>
-          <div class="news-card-body">
-            <h3 class="news-card-telugu">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</h3>
-            <p class="news-card-desc">
-              Extensive coverage on Sadana Green Society's distribution of quality grafted mango saplings to dryland farmers, offering long-term economic yield and soil canopy coverage.
-            </p>
-            <div class="news-card-footer">
-              <span>Regional Daily Coverage</span>
-              <button class="btn btn-sm btn-outline" onclick="openLightbox('assets/images/news/news-clipping-01.jpg', 'మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం')">View Clipping</button>
-            </div>
+          <div class="news-card-body" style="padding:22px;">
+            <span class="news-tag">Kurnool Regional Press</span>
+            <h2 class="telugu" style="font-size:1.15rem; font-weight:700; margin:10px 0; color:var(--color-dark);">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</h2>
+            <p style="font-size:0.86rem; color:var(--color-text-muted); line-height:1.5;">Newspaper clipping supplied by Sadana Green Society. Field training on mango orchard establishment and organic canopy management.</p>
+            <p style="font-size:0.78rem; color:#888; margin-top:8px;">Newspaper clipping supplied by Sadana Green Society</p>
           </div>
         </article>
-
-        <!-- Clipping 2 -->
-        <article class="news-card">
-          <div class="news-card-img-wrap" onclick="openLightbox('assets/images/news/news-clipping-02.jpg', 'పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు')">
-            <span class="news-card-badge">Farmer Livelihoods</span>
-            <img src="assets/images/news/news-clipping-02.jpg" alt="పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు" loading="lazy">
+        <article class="news-card" style="background:var(--color-surface-tint); border:1px solid var(--color-border); border-radius:18px; overflow:hidden;">
+          <div class="news-card-img" style="aspect-ratio:4/3; overflow:hidden; background:#eee;">
+            <a href="assets/images/news/news-clipping-02.jpg" class="gallery-lightbox-trigger" data-caption="పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు - Agriculture Daily">
+              <img src="assets/images/news/news-clipping-02.jpg" alt="పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </a>
           </div>
-          <div class="news-card-body">
-            <h3 class="news-card-telugu">పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు</h3>
-            <p class="news-card-desc">
-              Technical guidance on mixed orchard cultivation—combining Guava, Custard Apple, and Sapota with seasonal pulses to generate steady supplementary farmer revenue.
-            </p>
-            <div class="news-card-footer">
-              <span>District News Bureau</span>
-              <button class="btn btn-sm btn-outline" onclick="openLightbox('assets/images/news/news-clipping-02.jpg', 'పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు')">View Clipping</button>
-            </div>
+          <div class="news-card-body" style="padding:22px;">
+            <span class="news-tag">Agriculture Daily</span>
+            <h2 class="telugu" style="font-size:1.15rem; font-weight:700; margin:10px 0; color:var(--color-dark);">పండ్ల తోటల పెంపకంపై ప్రోత్సాహకాలు</h2>
+            <p style="font-size:0.86rem; color:var(--color-text-muted); line-height:1.5;">Newspaper clipping supplied by Sadana Green Society. Distribution of saplings and guidance on mixed horticulture plantations.</p>
+            <p style="font-size:0.78rem; color:#888; margin-top:8px;">Newspaper clipping supplied by Sadana Green Society</p>
           </div>
         </article>
-
-        <!-- Clipping 3 -->
-        <article class="news-card">
-          <div class="news-card-img-wrap" onclick="openLightbox('assets/images/news/news-clipping-03.jpg', 'వరి సాగులో కొత్త బాట')">
-            <span class="news-card-badge">AWD Innovation</span>
-            <img src="assets/images/news/news-clipping-03.jpg" alt="వరి సాగులో కొత్త బాట" loading="lazy">
+        <article class="news-card" style="background:var(--color-surface-tint); border:1px solid var(--color-border); border-radius:18px; overflow:hidden;">
+          <div class="news-card-img" style="aspect-ratio:4/3; overflow:hidden; background:#eee;">
+            <a href="assets/images/news/news-clipping-03.jpg" class="gallery-lightbox-trigger" data-caption="వరి సాగులో కొత్త బాట - Rural Development Feature">
+              <img src="assets/images/news/news-clipping-03.jpg" alt="వరి సాగులో కొత్త బాట" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </a>
           </div>
-          <div class="news-card-body">
-            <h3 class="news-card-telugu">వరి సాగులో కొత్త బాట</h3>
-            <p class="news-card-desc">
-              Spotlight on the groundbreaking Alternate Wetting and Drying (AWD) water-tube method in paddy fields, demonstrating up to 30% water conservation and methane mitigation.
-            </p>
-            <div class="news-card-footer">
-              <span>Agriculture & Climate Feature</span>
-              <button class="btn btn-sm btn-outline" onclick="openLightbox('assets/images/news/news-clipping-03.jpg', 'వరి సాగులో కొత్త బాట')">View Clipping</button>
-            </div>
+          <div class="news-card-body" style="padding:22px;">
+            <span class="news-tag">Rural Development Feature</span>
+            <h2 class="telugu" style="font-size:1.15rem; font-weight:700; margin:10px 0; color:var(--color-dark);">వరి సాగులో కొత్త బాట</h2>
+            <p style="font-size:0.86rem; color:var(--color-text-muted); line-height:1.5;">Newspaper clipping supplied by Sadana Green Society. Coverage of Alternate Wetting and Drying (AWD) water conservation adoption in paddy fields.</p>
+            <p style="font-size:0.78rem; color:#888; margin-top:8px;">Newspaper clipping supplied by Sadana Green Society</p>
           </div>
         </article>
-
-        <!-- Clipping 4 -->
-        <article class="news-card">
-          <div class="news-card-img-wrap" onclick="openLightbox('assets/images/news/news-clipping-04.jpg', 'రైతుల కృషి అభినందనీయం')">
-            <span class="news-card-badge">Community Honors</span>
-            <img src="assets/images/news/news-clipping-04.jpg" alt="రైతుల కృషి అభినందనీయం" loading="lazy">
+        <article class="news-card" style="background:var(--color-surface-tint); border:1px solid var(--color-border); border-radius:18px; overflow:hidden;">
+          <div class="news-card-img" style="aspect-ratio:4/3; overflow:hidden; background:#eee;">
+            <a href="assets/images/news/news-clipping-04.jpg" class="gallery-lightbox-trigger" data-caption="రైతుల కృషి అభినందనీయం - District Edition">
+              <img src="assets/images/news/news-clipping-04.jpg" alt="రైతుల కృషి అభినందనీయం" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </a>
           </div>
-          <div class="news-card-body">
-            <h3 class="news-card-telugu">రైతుల కృషి అభినందనీయం</h3>
-            <p class="news-card-desc">
-              Commending the dedication of rural farming families in Kurnool, Nandyal, and neighboring mandals for adopting bio-fencing and long-term timber species such as Teak and Casuarina.
-            </p>
-            <div class="news-card-footer">
-              <span>Community Impact Bureau</span>
-              <button class="btn btn-sm btn-outline" onclick="openLightbox('assets/images/news/news-clipping-04.jpg', 'రైతుల కృషి అభినందనీయం')">View Clipping</button>
-            </div>
+          <div class="news-card-body" style="padding:22px;">
+            <span class="news-tag">District Edition</span>
+            <h2 class="telugu" style="font-size:1.15rem; font-weight:700; margin:10px 0; color:var(--color-dark);">రైతుల కృషి అభినందనీయం</h2>
+            <p style="font-size:0.86rem; color:var(--color-text-muted); line-height:1.5;">Newspaper clipping supplied by Sadana Green Society. Commending smallholder farmers for adopting agroforestry and boundary tree planting.</p>
+            <p style="font-size:0.78rem; color:#888; margin-top:8px;">Newspaper clipping supplied by Sadana Green Society</p>
           </div>
         </article>
-
-        <!-- Clipping 5 -->
-        <article class="news-card">
-          <div class="news-card-img-wrap" onclick="openLightbox('assets/images/news/news-clipping-05.jpg', 'సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం')">
-            <span class="news-card-badge">Special Edition</span>
-            <img src="assets/images/news/news-clipping-05.jpg" alt="సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం" loading="lazy">
+        <article class="news-card" style="background:var(--color-surface-tint); border:1px solid var(--color-border); border-radius:18px; overflow:hidden;">
+          <div class="news-card-img" style="aspect-ratio:4/3; overflow:hidden; background:#eee;">
+            <a href="assets/images/news/news-clipping-05.jpg" class="gallery-lightbox-trigger" data-caption="సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం - Special Report">
+              <img src="assets/images/news/news-clipping-05.jpg" alt="సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+            </a>
           </div>
-          <div class="news-card-body">
-            <h3 class="news-card-telugu">సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం</h3>
-            <p class="news-card-desc">
-              A comprehensive feature on Sadana Green Society's mission under founder B. Raghu Bhaskar: balancing nature restoration with measurable farmer empowerment and ecological resilience.
-            </p>
-            <div class="news-card-footer">
-              <span>Special Feature Article</span>
-              <button class="btn btn-sm btn-outline" onclick="openLightbox('assets/images/news/news-clipping-05.jpg', 'సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం')">View Clipping</button>
-            </div>
+          <div class="news-card-body" style="padding:22px;">
+            <span class="news-tag">Special Report</span>
+            <h2 class="telugu" style="font-size:1.15rem; font-weight:700; margin:10px 0; color:var(--color-dark);">సదన గ్రీన్ సొసైటీ కార్యక్రమాలపై వార్తా కథనం</h2>
+            <p style="font-size:0.86rem; color:var(--color-text-muted); line-height:1.5;">Newspaper clipping supplied by Sadana Green Society. In-depth report on SGS environmental protection initiatives and farmer livelihood enhancement.</p>
+            <p style="font-size:0.78rem; color:#888; margin-top:8px;">Newspaper clipping supplied by Sadana Green Society</p>
           </div>
         </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Press Inquiries Banner -->
-  <section class="section" style="background: var(--color-surface); padding: 60px 0;">
-    <div class="container text-center">
-      <span class="sub-badge">Media Inquiries</span>
-      <h2>Are you a journalist or researcher?</h2>
-      <p style="max-width: 680px; margin: 16px auto 32px; color: var(--color-text-muted);">
-        Sadana Green Society welcomes journalists, academic institutions, and CSR partners seeking transparent field verification data, project documentation, or farmer interviews.
-      </p>
-      <div class="d-flex" style="justify-content: center; gap: 16px; flex-wrap: wrap;">
-        <a href="contact.html" class="btn btn-primary btn-pill">Contact Media Desk</a>
-        <a href="about.html" class="btn btn-outline btn-pill">Explore Our Organisation</a>
+    <!-- CTA Band -->
+    <section class="cta-band-section">
+      <div class="container cta-band-inner">
+        <div>
+          <h2>Media or Press Enquiries?</h2>
+          <p>For press releases, high-resolution photographs, or interviews with Founder B. Raghu Bhaskar, reach out to our media desk.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="contact.html" class="btn-pill-cta" style="background:#ffffff; color:var(--color-primary);">
+            <span>Contact Media Desk</span>
+            <span class="cta-arrow" style="background:var(--color-primary); color:#ffffff;">&rarr;</span>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Lightbox Modal for Clippings -->
-  <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox(event)">
-    <div class="lightbox-content" style="max-width: 880px;">
-      <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
-      <img src="" alt="Enlarged news clipping" id="lightbox-img">
-      <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-  </div>
-
-  <!-- Search Modal -->
-  <div class="ct-search-modal" id="search-modal">
-    <div class="ct-search-box">
-      <div class="d-flex" style="justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h3 style="margin: 0; font-size: 1.25rem;">Search Website</h3>
-        <button id="close-search" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
-      </div>
-      <input type="text" id="search-input" class="ct-search-input" placeholder="Search programmes, species, AWD, carbon credits...">
-      <div id="search-results" class="ct-search-results"></div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
         <div class="footer-brand">
-          <div class="ct-logo-wrap" style="margin-bottom: 16px;">
-            <img src="assets/logo.png" alt="Sadana Green Society" style="height: 52px; background: white; border-radius: 8px; padding: 4px;">
-            <div class="ct-logo-text" style="color: white;">
-              <span class="ct-logo-title" style="color: white;">Sadana Green Society</span>
-              <span class="ct-logo-sub" style="color: #97d57a;">Kurnool, Andhra Pradesh</span>
-            </div>
-          </div>
-          <p class="footer-text">
-            Dedicated to community agroforestry, sustainable livelihoods, and climate resilience across Andhra Pradesh, Telangana, and Karnataka.
-          </p>
+          <img src="assets/logo.png" alt="SGS Logo" class="footer-logo">
+          <span class="footer-title">Sadana Green Society</span>
         </div>
-
-        <div class="footer-col">
-          <h4 class="footer-title">Programmes</h4>
-          <ul class="footer-links">
-            <li><a href="services.html">All Programmes</a></li>
-            <li><a href="species.html">16 Agroforestry Species</a></li>
-            <li><a href="carbon-credits.html">Carbon Credits Verification</a></li>
-            <li><a href="awd.html">AWD Paddy Water Management</a></li>
-            <li><a href="new-plantation.html">Farmer Registration</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-title">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="about.html">About Founder & Team</a></li>
-            <li><a href="gallery.html">Field Photo Gallery</a></li>
-            <li><a href="news.html">News & Media</a></li>
-            <li><a href="faq.html">Frequently Asked Questions</a></li>
-            <li><a href="contact.html">Contact Head Office</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-title">Kurnool Office</h4>
-          <p style="color: #cad8ce; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
-            Near Nandyal Checkpost,<br>Kurnool, Andhra Pradesh - 518003
-          </p>
-          <p style="color: #cad8ce; font-size: 0.9rem; margin-bottom: 8px;">
-            Phone: <a href="tel:+919966611855" style="color: #97d57a;">+91 99666 11855</a>
-          </p>
-          <p style="color: #cad8ce; font-size: 0.9rem;">
-            WhatsApp: <a href="https://wa.me/919963490444" target="_blank" rel="noopener" style="color: #97d57a;">+91 99634 90444</a>
-          </p>
-        </div>
+        <p class="footer-text">
+          People, nature and sustainable futures. Working with farming communities across Andhra Pradesh, Telangana, and Karnataka on agroforestry, sustainable agriculture, and climate-resilience programmes.
+        </p>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year"></span> Sadana Green Society. All rights reserved. Kurnool, Andhra Pradesh.</p>
-        <div class="footer-bottom-links">
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="faq.html">FAQ</a>
-          <a href="admin/login.html" style="color: #97d57a;">Admin Portal &rarr;</a>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Why Agroforestry</a></li>
+          <li><a href="species.html">Tree & Fruit Species</a></li>
+          <li><a href="carbon-credits.html">Carbon Credits</a></li>
+          <li><a href="awd.html">AWD Paddy Water</a></li>
+          <li><a href="gallery.html">Field Gallery</a></li>
+          <li><a href="news.html">News & Media</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Programmes</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#agroforestry">Agroforestry Models</a></li>
+          <li><a href="carbon-credits.html">Verified Carbon Credits</a></li>
+          <li><a href="awd.html">AWD Paddy Conservation</a></li>
+          <li><a href="new-plantation.html">Farmer Registration Portal</a></li>
+          <li><a href="about.html#founder">Leadership & Founder</a></li>
+          <li><a href="about.html#projects">8 Strategic Focus Areas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Head Office</h4>
+        <p class="contact-line"><strong>Near Nandyal Checkpost,</strong><br>Kurnool, Andhra Pradesh 518002 / 518003</p>
+        <p class="contact-line"><strong>Phone:</strong> <a href="tel:+919966611855">+91 99666 11855</a></p>
+        <p class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/919963490444" target="_blank" rel="noopener">+91 99634 90444</a></p>
+        <p class="contact-line"><strong>Email:</strong> <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a><br><a href="mailto:raghubhaskar4@gmail.com">raghubhaskar4@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© <span id="footer-year">2026</span> Sadana Green Society, Kurnool · sadanagreensociety.com</p>
+        <div class="footer-sub-links">
+          <a href="faq.html">Farmer Terms & Safeguards</a>
+          <a href="admin/login.html" class="admin-portal-link" style="opacity: 0.5;">Executive Portal</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Global Floating WhatsApp CTA Button -->
+  <!-- Floating WhatsApp CTA -->
   <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
-    <div class="whatsapp-pill-label">
-      <span class="whatsapp-online-dot"></span>
-      Chat with SGS Field Team
+    <div class="whatsapp-circle-icon">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.02L7.55 18.84L4.44 19.66L5.27 16.62L5.07 16.31C4.26 15.01 3.81 13.49 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.7C7.02 10.92 7.91 12.1 8.03 12.26C8.16 12.43 9.77 14.91 12.24 15.97C12.83 16.22 13.28 16.37 13.64 16.49C14.23 16.67 14.78 16.65 15.21 16.58C15.69 16.51 16.68 15.98 16.89 15.39C17.09 14.81 17.09 14.3 17.03 14.2C16.97 14.1 16.82 14.04 16.58 13.92C16.34 13.8 15.17 13.22 14.95 13.14C14.73 13.06 14.57 13.02 14.41 13.26C14.25 13.51 13.79 14.04 13.65 14.2C13.51 14.36 13.37 14.38 13.13 14.26C12.89 14.14 11.88 13.81 10.68 12.74C9.75 11.91 9.12 10.88 8.94 10.57C8.76 10.26 8.92 10.1 9.04 9.98C9.15 9.87 9.29 9.69 9.41 9.55C9.53 9.41 9.57 9.31 9.65 9.15C9.73 8.99 9.69 8.85 9.63 8.73C9.57 8.61 9.11 7.48 8.92 7.02C8.73 6.57 8.54 6.63 8.39 6.62C8.25 6.62 8.09 6.61 7.93 6.61C7.77 6.61 7.51 6.67 7.29 6.91C7.07 7.16 6.45 7.74 6.45 8.96C6.45 10.18 7.34 11.36 7.46 11.52L8.53 7.33Z"/>
+      </svg>
     </div>
-    <div class="whatsapp-circle-btn">
-      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </div>
+    <span class="whatsapp-pill-label">Chat with Us</span>
   </a>
 
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Website Search">
+    <div class="search-modal-box">
+      <button class="search-modal-close" aria-label="Close search">&times;</button>
+      <h3>Search Sadana Green Society</h3>
+      <div class="search-input-wrap">
+        <input type="text" placeholder="Search programmes, species, AWD, carbon credits..." id="search-box-input">
+        <button type="button" onclick="alert('Searching for: ' + document.getElementById('search-box-input').value)">Search</button>
+      </div>
+      <div class="search-quick-tags">
+        <a href="services.html#agroforestry">Agroforestry</a>
+        <a href="carbon-credits.html">Carbon Credits</a>
+        <a href="awd.html">AWD Paddy</a>
+        <a href="species.html">Teak & Melia</a>
+        <a href="species.html">Mango & Guava</a>
+        <a href="new-plantation.html">Apply for Saplings</a>
+        <a href="gallery.html">Field Photos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Lightbox Modal -->
+  <div class="video-lightbox-modal" id="video-lightbox" onclick="closeVideoModal(event)">
+    <div class="video-lightbox-content">
+      <button class="video-lightbox-close" onclick="closeVideoModal()" aria-label="Close video">&times;</button>
+      <iframe id="video-modal-iframe" src="" title="Sadana Green Society Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

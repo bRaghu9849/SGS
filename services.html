@@ -3,28 +3,131 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Programmes & Services | Sadana Green Society</title>
-  <meta name="description" content="Explore Sadana Green Society programmes: Agroforestry plantations, Carbon Credit projects, and Alternate Wetting and Drying (AWD) paddy management.">
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="theme-color" content="#55a630">
+  <title>Agroforestry Benefits for Farmers | Sadana Green Society</title>
+  <meta name="description" content="Explore why agroforestry helps farmers: regular income, lower crop risks, healthier soil, and carbon credit opportunities across Andhra Pradesh, Telangana and Karnataka.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://sadanagreensociety.com/services.html">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Typography: Strict Rubik Sans-Serif & Noto Sans Telugu -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Floating Pill Header -->
+  <!-- Top Announcement Strip -->
+  <div class="top-announcement-strip" id="top-announcement">
+    <span>🌱 <strong>Sadana Green Society</strong> · Farmer registration active for 2026 Agroforestry & AWD Paddy Programmes.</span>
+    <a href="new-plantation.html">Apply for Saplings &rarr;</a>
+    <button class="announcement-close-btn" onclick="document.getElementById('top-announcement').style.display='none'" aria-label="Close announcement">&times;</button>
+  </div>
+
+  <!-- Floating Pill Header (Blocksy Landscape Style) -->
   <header class="site-header" id="header">
     <div class="navbar-pill">
+      
+      <!-- Brand Logo & Name -->
       <a href="index.html" class="brand" aria-label="Sadana Green Society Home">
-        <img src="assets/logo.png" alt="SGS Logo" class="brand-logo-img">
+        <img src="assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
         <div class="brand-text">
           <span class="brand-title">Sadana Green Society</span>
           <span class="brand-subtitle">People • Plants • Livelihoods</span>
         </div>
       </a>
 
+      <!-- Desktop Navigation Menu with Mega Menu -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="services.html" class="nav-link active">Programmes</a></li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          
+          <li class="nav-item ct-has-dropdown">
+            <a href="services.html" class="nav-link active">
+              Programmes
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            
+            <!-- Desktop Mega Menu (Exact Blocksy Landscape Spec - image2.png) -->
+            <div class="ct-dropdown-megamenu">
+              <!-- Left Column: 3 Programs + Latest News -->
+              <div>
+                <div class="megamenu-left-programs">
+                  <a href="services.html#agroforestry" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
+                    </div>
+                    <h4>Agroforestry Models</h4>
+                    <p>High-value timber & fruit plantations for boundary & mixed farmlands.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+
+                  <a href="carbon-credits.html" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h4>Carbon Credits</h4>
+                    <p>Verifiable biomass audits connecting smallholders to global carbon markets.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+
+                  <a href="awd.html" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h4>AWD Paddy Water</h4>
+                    <p>30% water conservation in paddy fields via perforated soil monitoring tubes.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+                </div>
+
+                <!-- Latest News Strip inside Mega Menu -->
+                <div class="megamenu-latest-news-title">Latest Regional News</div>
+                <div class="megamenu-news-row">
+                  <a href="news.html" class="megamenu-news-item">
+                    <img src="assets/images/news/news-clipping-01.jpg" alt="News 1">
+                    <div>
+                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</h5>
+                      <small>Kurnool Daily Press</small>
+                    </div>
+                  </a>
+
+                  <a href="news.html" class="megamenu-news-item">
+                    <img src="assets/images/news/news-clipping-03.jpg" alt="News 2">
+                    <div>
+                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట (AWD)</h5>
+                      <small>Agriculture Feature</small>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Column: Featured Program + Video Card -->
+              <div class="megamenu-right-highlight">
+                <div class="megamenu-right-header">
+                  <h4>Farmer Registration 2026</h4>
+                  <a href="new-plantation.html" class="megamenu-circle-arrow-btn" aria-label="Go to Farmer Application">&rarr;</a>
+                </div>
+                <p class="megamenu-right-desc">
+                  Register land details with real-time GPS coordinates, camera photo uploads, and water verification for sapling distribution.
+                </p>
+                <div class="megamenu-video-thumb" onclick="openVideoModal()" style="background-image: url('assets/images/plantation-field-team-hd.jpg');">
+                  <div class="play-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
           <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="species.html" class="nav-link">Species</a></li>
           <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
@@ -34,143 +137,303 @@
         </ul>
       </nav>
 
+      <!-- Action Tools (Search & Pill CTA) -->
       <div class="header-actions">
+        <button class="btn-icon btn-search-trigger" aria-label="Search website">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+
         <a href="new-plantation.html" class="btn-pill-cta">
           <span>Apply Now</span>
           <span class="cta-arrow">→</span>
         </a>
+
         <button class="mobile-nav-toggle" aria-label="Open Mobile Navigation">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
+
     </div>
   </header>
 
-  <!-- Mobile Offcanvas Drawer -->
+  <!-- Mobile Offcanvas Dark Drawer -->
   <div class="mobile-drawer-overlay"></div>
-  <aside class="mobile-drawer" id="mobile-drawer">
-    <div class="drawer-header">
-      <div class="drawer-logo"><img src="assets/logo.png" alt="SGS Logo"><span>Sadana Green Society</span></div>
-      <button class="drawer-close" aria-label="Close">✕</button>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="drawer-header">
+        <div class="drawer-logo">
+          <img src="assets/logo.png" alt="SGS Logo">
+          <span>Sadana Green Society</span>
+        </div>
+        <button class="drawer-close" aria-label="Close Mobile Navigation">&times;</button>
+      </div>
+
+      <ul class="drawer-menu">
+        <li><a href="index.html" class="drawer-link">Home</a></li>
+        <li><a href="services.html" class="drawer-link active">Programmes Overview</a></li>
+        <li><a href="services.html#agroforestry" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Agroforestry Models</a></li>
+        <li><a href="carbon-credits.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ Carbon Credits</a></li>
+        <li><a href="awd.html" class="drawer-link" style="padding-left:36px;font-size:0.85rem;">↳ AWD Paddy Water</a></li>
+        <li><a href="about.html" class="drawer-link">About Us</a></li>
+        <li><a href="species.html" class="drawer-link">Plant Species</a></li>
+        <li><a href="gallery.html" class="drawer-link">Photo Gallery</a></li>
+        <li><a href="news.html" class="drawer-link">News & Media</a></li>
+        <li><a href="faq.html" class="drawer-link">FAQ</a></li>
+        <li><a href="contact.html" class="drawer-link">Contact</a></li>
+      </ul>
+
+      <div class="drawer-cta-wrap">
+        <a href="new-plantation.html" class="btn-pill-cta" style="width:100%; justify-content:center;">
+          <span>Apply for Saplings</span>
+          <span class="cta-arrow">&rarr;</span>
+        </a>
+      </div>
     </div>
-    <ul class="drawer-menu">
-      <li><a href="index.html" class="drawer-link">Home</a></li>
-      <li><a href="services.html" class="drawer-link active">Programmes & Services</a></li>
-      <li><a href="carbon-credits.html" class="drawer-link">Carbon Credits</a></li>
-      <li><a href="awd.html" class="drawer-link">AWD Paddy Management</a></li>
-      <li><a href="about.html" class="drawer-link">About Us & Founder</a></li>
-      <li><a href="species.html" class="drawer-link">Species Guide</a></li>
-      <li><a href="gallery.html" class="drawer-link">Field Photo Gallery</a></li>
-      <li><a href="news.html" class="drawer-link">News & Press</a></li>
-      <li><a href="faq.html" class="drawer-link">FAQ</a></li>
-      <li><a href="contact.html" class="drawer-link">Contact Us</a></li>
-    </ul>
-    <div class="drawer-cta-wrap"><a href="new-plantation.html" class="btn-pill-cta"><span>Apply for Plantation</span><span class="cta-arrow">→</span></a></div>
   </aside>
 
-  <!-- Hero Header -->
   <main id="main">
-    <section class="hero-landscape" style="min-height: 55vh; padding: 140px 0 60px; background-image: url('assets/images/home-nature-bg.jpg');">
+    <!-- Hero Banner -->
+    <section class="hero-landscape" style="min-height: 50vh; padding: 140px 0 60px; background-image: url('assets/images/home-nature-bg.jpg');">
       <div class="container hero-content">
-        <span class="hero-badge-pill">Sustainable Field Models</span>
-        <h1 class="hero-title">Our Programmes & Services</h1>
-        <p class="hero-lead">Connecting farmers, land restoration, and climate markets through verified agroforestry and water conservation.</p>
+        <span class="hero-badge-pill">Sustainable Land Use</span>
+        <h1 class="hero-title">Why agroforestry?</h1>
+        <p class="hero-lead">
+          Growing trees with crops and livestock on the same land gives farmers more income, healthier soil and a cooler, more resilient farm.
+        </p>
+
+        <div class="hero-stat-badge">
+          <b class="stat-highlight">1,20,000</b>
+          <span>farmers enrolled in agroforestry carbon credit programmes</span>
+        </div>
       </div>
     </section>
 
-    <!-- 1. Agroforestry Development Section -->
+    <!-- What is Agroforestry -->
     <section class="section surface" id="agroforestry">
       <div class="container split-story">
         <div>
-          <span class="section-eyebrow">Program 01 · Agroforestry</span>
-          <h2>Farm Boundary & Block Plantations</h2>
-          <p class="story-lead">Agroforestry combines commercial tree crops with regular agriculture or livestock on the same piece of land, creating multiple revenue streams.</p>
-          <p>Farmers are guided to select species matching their land contour, irrigation level, and soil depth. Trees planted on bunds do not displace food crops, yet generate invaluable timber, shade, and organic leaf manure.</p>
-          
-          <div class="milestones-row">
-            <div class="milestone-box">
-              <b>Bund & Boundary</b>
-              <span>Zero crop-loss agroforestry</span>
-            </div>
-            <div class="milestone-box">
-              <b>Orchard + Intercrop</b>
-              <span>Early pulse & vegetable income</span>
-            </div>
-          </div>
-          <a href="species.html" class="btn-pill-cta"><span>Explore Promoted Species</span><span class="cta-arrow">→</span></a>
+          <span class="section-eyebrow">Core Definition</span>
+          <h2>What is agroforestry?</h2>
         </div>
-        <div class="story-media">
-          <div class="founder-img-wrapper">
-            <img src="assets/images/plantation-field-team-hd.jpg" alt="SGS Plantation Field Team">
+
+        <div class="prose">
+          <p class="story-lead">
+            Agroforestry means growing trees on farmland together with crops or livestock, instead of keeping trees and farming apart.
+          </p>
+          <p>
+            Trees can be planted on field boundaries, between crop rows, in orchards or in small blocks. They give timber, fruit, fodder and shade, and they protect the soil that crops depend on. Every tree also stores carbon, which is why agroforestry can earn carbon credits.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits of Agroforestry (3 Columns) -->
+    <section class="section tint">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Triple Impact</span>
+          <h2 class="section-title">Benefits of agroforestry</h2>
+          <p class="section-subtitle">One practice that helps the farmer, the land and the climate.</p>
+        </div>
+
+        <div class="programs-grid">
+          <!-- Col 1 -->
+          <div class="program-card">
+            <div class="program-icon-circle">👨‍🌾</div>
+            <h3>For Farmers</h3>
+            <ul class="program-features-list">
+              <li>More than one source of income: fruit, timber and crops</li>
+              <li>Lower risk when one crop or market fails</li>
+              <li>Fodder, fuelwood and shade on the farm</li>
+              <li>Long-term assets that grow in value each year</li>
+              <li>A route into carbon credit programmes</li>
+            </ul>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="program-card">
+            <div class="program-icon-circle">🌱</div>
+            <h3>For Soil and Water</h3>
+            <ul class="program-features-list">
+              <li>Leaf litter builds organic matter and soil life</li>
+              <li>Roots hold soil and reduce erosion by wind and water</li>
+              <li>Shade and mulch keep soil moist for longer</li>
+              <li>Nitrogen-fixing trees feed nearby crops</li>
+              <li>Better water infiltration in the rainy season</li>
+            </ul>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="program-card">
+            <div class="program-icon-circle">🌍</div>
+            <h3>For Climate and Nature</h3>
+            <ul class="program-features-list">
+              <li>Carbon stored in trunks, roots and soil</li>
+              <li>A cooler microclimate on hot days</li>
+              <li>Habitat for birds, bees and other pollinators</li>
+              <li>Windbreaks that protect crops and homes</li>
+              <li>Greener, more resilient landscapes</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Carbon Credit Projects Section -->
-    <section class="section tint" id="carbon">
-      <div class="container split-story">
-        <div class="story-media">
-          <div class="founder-img-wrapper">
-            <img src="assets/images/hero/carbon-hero.jpg" alt="Carbon Field Verification">
+    <!-- Common Agroforestry Models -->
+    <section class="section surface">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Field Layouts</span>
+          <h2 class="section-title">Common agroforestry models</h2>
+          <p class="section-subtitle">The right model depends on land size, water availability and local market demand.</p>
+        </div>
+
+        <div class="process-steps-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+          <div class="process-step-card">
+            <span class="step-num">01</span>
+            <h4>Trees on Bunds and Boundaries</h4>
+            <p>Trees along field edges take very little cropping space and add reliable timber income, shelter, and property demarcation.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">02</span>
+            <h4>Orchard with Intercrops</h4>
+            <p>Fruit trees with vegetables or pulses grown between rows give short-term cash flow while the tree canopy matures.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">03</span>
+            <h4>Block Plantation</h4>
+            <p>A dedicated small timber or pulpwood block (Teak, Melia dubia, Casuarina) on part of the farm for substantial long-term value.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">04</span>
+            <h4>Alley Cropping</h4>
+            <p>Annual field crops cultivated in the alleys between regularly pruned hedgerows of nitrogen-fixing tree species.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">05</span>
+            <h4>Windbreaks &amp; Shelterbelts</h4>
+            <p>Linear tree rows that cut harsh wind speeds, reduce evaporative water loss, and protect tender crops from storms.</p>
+          </div>
+
+          <div class="process-step-card">
+            <span class="step-num">06</span>
+            <h4>Trees with Livestock (Silvopasture)</h4>
+            <p>Shade and protein-rich fodder trees (Subabul, Neem) integrated into grazing land that support cattle, sheep and goats.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Which Trees for Which Land -->
+    <section class="section tint" id="land-suitability">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Agro-Ecological Matching</span>
+          <h2 class="section-title">Which trees for which land</h2>
+          <p class="section-subtitle">General guidance. Our field team visits your plot to confirm the ideal species combination.</p>
+        </div>
+
+        <div class="land-suitability-table">
+          <div class="land-row">
+            <div class="land-type"><strong>Dry and rainfed land</strong></div>
+            <div class="land-species">
+              <a href="species.html#fruit">Custard apple</a>, 
+              <a href="species.html#fruit">Amla</a>, 
+              <a href="species.html#forest">Neem</a>, 
+              <a href="species.html#forest">Pongamia</a>
+            </div>
+          </div>
+
+          <div class="land-row">
+            <div class="land-type"><strong>Coastal and sandy land</strong></div>
+            <div class="land-species">
+              <a href="species.html#forest">Casuarina</a>, 
+              <a href="species.html#fruit">Coconut</a>, 
+              <a href="species.html#fruit">Cashew</a>, 
+              <a href="species.html#fruit">Sapota</a>
+            </div>
+          </div>
+
+          <div class="land-row">
+            <div class="land-type"><strong>Irrigated land with deep soil</strong></div>
+            <div class="land-species">
+              <a href="species.html#forest">Teak</a>, 
+              <a href="species.html#fruit">Mango</a>, 
+              <a href="species.html#forest">Melia dubia</a>, 
+              <a href="species.html#forest">Bamboo</a>, 
+              <a href="species.html#fruit">Lemon</a>, 
+              <a href="species.html#fruit">Guava</a>
+            </div>
+          </div>
+
+          <div class="land-row">
+            <div class="land-type"><strong>Poor, rocky or sloping land</strong></div>
+            <div class="land-species">
+              <a href="species.html#fruit">Cashew</a>, 
+              <a href="species.html#forest">Pongamia</a>, 
+              <a href="species.html#fruit">Custard apple</a>, 
+              <a href="species.html#forest">Red sanders</a>
+            </div>
+          </div>
+
+          <div class="land-row">
+            <div class="land-type"><strong>Farm boundaries and bunds</strong></div>
+            <div class="land-species">
+              <a href="species.html#forest">Melia dubia</a>, 
+              <a href="species.html#forest">Bamboo</a>, 
+              <a href="species.html#forest">Neem</a>, 
+              <a href="species.html#forest">Subabul</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore the Plants Cards -->
+    <section class="section surface">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Species Selection</span>
+          <h2 class="section-title">Explore the plants</h2>
+          <p class="section-subtitle">Benefits, best-fit land and uses for every species promoted by Sadana Green Society.</p>
+        </div>
+
+        <div class="programs-grid" style="grid-template-columns: 1fr 1fr;">
+          <a href="species.html#forest" class="program-card" style="text-decoration:none;">
+            <div class="program-icon-circle">🌲</div>
+            <h3>Forest Species</h3>
+            <p>Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul and Red sanders for timber, pulpwood, and carbon storage.</p>
+            <span class="btn-program-link">See Forest Species &rarr;</span>
+          </a>
+
+          <a href="species.html#fruit" class="program-card" style="text-decoration:none;">
+            <div class="program-icon-circle">🥭</div>
+            <h3>Fruit Species</h3>
+            <p>Mango, Guava, Sapota, Custard apple, Amla, Lemon, Coconut and Cashew for steady seasonal farm cash flow and family nutrition.</p>
+            <span class="btn-program-link">See Fruit Species &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band-section">
+      <div class="container cta-band-inner">
         <div>
-          <span class="section-eyebrow">Program 02 · Climate Finance</span>
-          <h2>Verified Carbon Credit Programmes</h2>
-          <p class="story-lead">One carbon credit represents one verified metric tonne of CO₂ equivalent removed or prevented from entering the atmosphere.</p>
-          <p>Sadana Green Society conducts rigorous baseline land surveys, collects GPS perimeter polygons, and tracks biomass increment. When verified under international carbon registries, credits are issued, traded at market rates, and shared transparently with participating farming families.</p>
-          
-          <div class="milestones-row">
-            <div class="milestone-box">
-              <b>1,20,000+</b>
-              <span>Farmers in carbon pipelines</span>
-            </div>
-            <div class="milestone-box">
-              <b>Transparent</b>
-              <span>Signed sharing agreements</span>
-            </div>
-          </div>
-          <a href="carbon-credits.html" class="btn-pill-cta"><span>View Carbon Journey</span><span class="cta-arrow">→</span></a>
+          <h2>Want to know how this could work for your land or organisation?</h2>
+          <p>Contact our field coordinators to plan your boundary or block plantation.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- 3. AWD Paddy Water Management Section -->
-    <section class="section surface" id="awd">
-      <div class="container split-story">
-        <div>
-          <span class="section-eyebrow">Program 03 · Water Conservation</span>
-          <h2>Alternate Wetting & Drying (AWD) in Paddy</h2>
-          <p class="story-lead">Flooded paddy fields generate significant methane. AWD interrupts this process by intermittently letting the water table recede below soil level before re-irrigating.</p>
-          <p>Using calibrated perforated field water tubes inserted 15 cm deep, farmers visually inspect root-zone moisture. This method reduces irrigation pumping electricity/diesel costs by up to 30%, maintains high grain yields, and generates high-value methane abatement carbon credits.</p>
-          
-          <div class="milestones-row">
-            <div class="milestone-box">
-              <b>5,000+</b>
-              <span>Enrolled AWD paddy farmers</span>
-            </div>
-            <div class="milestone-box">
-              <b>25-30%</b>
-              <span>Groundwater irrigation savings</span>
-            </div>
-          </div>
-          <a href="awd.html" class="btn-pill-cta"><span>Read AWD Guide</span><span class="cta-arrow">→</span></a>
+        <div class="cta-band-actions">
+          <a href="new-plantation.html" class="btn-pill-cta" style="background:#ffffff; color:var(--color-primary);">
+            <span>Apply for Saplings</span>
+            <span class="cta-arrow" style="background:var(--color-primary); color:#ffffff;">&rarr;</span>
+          </a>
+          <a href="contact.html" class="btn-hero-secondary" style="border-color:#ffffff; color:#ffffff;">Contact Our Team</a>
         </div>
-        <div class="story-media">
-          <div class="founder-img-wrapper">
-            <img src="assets/images/hero/awd-hero.jpg" alt="AWD Paddy Water Tube in Field">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Callout Banner -->
-    <section class="container">
-      <div class="cta-banner">
-        <h2>Enroll Your Land in SGS Programmes</h2>
-        <p>Our field officers in Kurnool and across Andhra Pradesh, Telangana, and Karnataka verify land eligibility and assist you with sapling distribution and GPS geotagging.</p>
-        <a href="new-plantation.html" class="btn-pill-cta"><span>Apply for Farmland Enrollment</span><span class="cta-arrow">→</span></a>
       </div>
     </section>
   </main>
@@ -178,56 +441,102 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-col brand-col">
-        <a href="index.html" class="brand"><img src="assets/logo.png" alt="SGS" class="brand-logo-img"><div class="brand-text"><span class="brand-title">Sadana Green Society</span><span class="brand-subtitle">People • Plants • Livelihoods</span></div></a>
-        <p>Empowering farming communities with agroforestry, AWD water efficiency, and carbon credit programs across South India.</p>
+      <div class="footer-about">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="SGS Logo" class="footer-logo">
+          <span class="footer-title">Sadana Green Society</span>
+        </div>
+        <p class="footer-text">
+          People, nature and sustainable futures. Working with farming communities across Andhra Pradesh, Telangana, and Karnataka on agroforestry, sustainable agriculture, and climate-resilience programmes.
+        </p>
       </div>
+
       <div class="footer-col">
-        <h4>Navigation</h4>
+        <h4>Explore</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="species.html">Species Catalog</a></li>
+          <li><a href="services.html">Why Agroforestry</a></li>
+          <li><a href="species.html">Tree & Fruit Species</a></li>
+          <li><a href="carbon-credits.html">Carbon Credits</a></li>
+          <li><a href="awd.html">AWD Paddy Water</a></li>
           <li><a href="gallery.html">Field Gallery</a></li>
           <li><a href="news.html">News & Media</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h4>Programmes</h4>
         <ul class="footer-links">
-          <li><a href="services.html#agroforestry">Agroforestry</a></li>
-          <li><a href="carbon-credits.html">Carbon Credits</a></li>
-          <li><a href="awd.html">AWD in Paddy</a></li>
-          <li><a href="new-plantation.html">Farmer Enrollment</a></li>
-          <li><a href="admin/login.html" style="color: #a4e48b; font-weight: 700;">Admin Portal 🔒</a></li>
+          <li><a href="services.html#agroforestry">Agroforestry Models</a></li>
+          <li><a href="carbon-credits.html">Verified Carbon Credits</a></li>
+          <li><a href="awd.html">AWD Paddy Conservation</a></li>
+          <li><a href="new-plantation.html">Farmer Registration Portal</a></li>
+          <li><a href="about.html#founder">Leadership & Founder</a></li>
+          <li><a href="about.html#projects">8 Strategic Focus Areas</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
-        <h4>Head Office</h4>
-        <div class="footer-contact-info">
-          <p>Near Nandyal Checkpost, Kurnool, AP 518003</p>
-          <p>Phone: <a href="tel:+919966611855">+91 99666 11855</a></p>
-          <p>WhatsApp: <a href="https://wa.me/919963490444">+91 99634 90444</a></p>
-          <p>Email: <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a></p>
+        <h4>Contact Head Office</h4>
+        <p class="contact-line"><strong>Near Nandyal Checkpost,</strong><br>Kurnool, Andhra Pradesh 518002 / 518003</p>
+        <p class="contact-line"><strong>Phone:</strong> <a href="tel:+919966611855">+91 99666 11855</a></p>
+        <p class="contact-line"><strong>WhatsApp:</strong> <a href="https://wa.me/919963490444" target="_blank" rel="noopener">+91 99634 90444</a></p>
+        <p class="contact-line"><strong>Email:</strong> <a href="mailto:info@sadanagreensociety.com">info@sadanagreensociety.com</a><br><a href="mailto:raghubhaskar4@gmail.com">raghubhaskar4@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© <span id="footer-year">2026</span> Sadana Green Society, Kurnool · sadanagreensociety.com</p>
+        <div class="footer-sub-links">
+          <a href="faq.html">Farmer Terms & Safeguards</a>
+          <a href="admin/login.html" class="admin-portal-link" style="opacity: 0.5;">Executive Portal</a>
         </div>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>© <span id="footer-year"></span> Sadana Green Society. All rights reserved.</p>
-    </div>
   </footer>
 
-  <!-- Global Floating WhatsApp CTA Button -->
+  <!-- Floating WhatsApp CTA -->
   <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20inquire%20about%20your%20agroforestry%20and%20plantation%20programmes." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Chat with Sadana Green Society on WhatsApp">
-    <div class="whatsapp-pill-label">
-      <span class="whatsapp-online-dot"></span>
-      Chat with SGS Field Team
+    <div class="whatsapp-circle-icon">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.02L7.55 18.84L4.44 19.66L5.27 16.62L5.07 16.31C4.26 15.01 3.81 13.49 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.7C7.02 10.92 7.91 12.1 8.03 12.26C8.16 12.43 9.77 14.91 12.24 15.97C12.83 16.22 13.28 16.37 13.64 16.49C14.23 16.67 14.78 16.65 15.21 16.58C15.69 16.51 16.68 15.98 16.89 15.39C17.09 14.81 17.09 14.3 17.03 14.2C16.97 14.1 16.82 14.04 16.58 13.92C16.34 13.8 15.17 13.22 14.95 13.14C14.73 13.06 14.57 13.02 14.41 13.26C14.25 13.51 13.79 14.04 13.65 14.2C13.51 14.36 13.37 14.38 13.13 14.26C12.89 14.14 11.88 13.81 10.68 12.74C9.75 11.91 9.12 10.88 8.94 10.57C8.76 10.26 8.92 10.1 9.04 9.98C9.15 9.87 9.29 9.69 9.41 9.55C9.53 9.41 9.57 9.31 9.65 9.15C9.73 8.99 9.69 8.85 9.63 8.73C9.57 8.61 9.11 7.48 8.92 7.02C8.73 6.57 8.54 6.63 8.39 6.62C8.25 6.62 8.09 6.61 7.93 6.61C7.77 6.61 7.51 6.67 7.29 6.91C7.07 7.16 6.45 7.74 6.45 8.96C6.45 10.18 7.34 11.36 7.46 11.52L8.53 7.33Z"/>
+      </svg>
     </div>
-    <div class="whatsapp-circle-btn">
-      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </div>
+    <span class="whatsapp-pill-label">Chat with Us</span>
   </a>
 
+  <!-- Search Modal -->
+  <div class="search-modal" id="search-modal" role="dialog" aria-modal="true" aria-label="Website Search">
+    <div class="search-modal-box">
+      <button class="search-modal-close" aria-label="Close search">&times;</button>
+      <h3>Search Sadana Green Society</h3>
+      <div class="search-input-wrap">
+        <input type="text" placeholder="Search programmes, species, AWD, carbon credits..." id="search-box-input">
+        <button type="button" onclick="alert('Searching for: ' + document.getElementById('search-box-input').value)">Search</button>
+      </div>
+      <div class="search-quick-tags">
+        <a href="services.html#agroforestry">Agroforestry</a>
+        <a href="carbon-credits.html">Carbon Credits</a>
+        <a href="awd.html">AWD Paddy</a>
+        <a href="species.html">Teak & Melia</a>
+        <a href="species.html">Mango & Guava</a>
+        <a href="new-plantation.html">Apply for Saplings</a>
+        <a href="gallery.html">Field Photos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Lightbox Modal -->
+  <div class="video-lightbox-modal" id="video-lightbox" onclick="closeVideoModal(event)">
+    <div class="video-lightbox-content">
+      <button class="video-lightbox-close" onclick="closeVideoModal()" aria-label="Close video">&times;</button>
+      <iframe id="video-modal-iframe" src="" title="Sadana Green Society Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
