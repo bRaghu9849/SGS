@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Executive Login | Sadana Green Society</title>
+  <title>Executive Operations Login | Sadana Green Society</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,9 +20,9 @@
     .login-box {
       background: #ffffff;
       border-radius: 28px;
-      max-width: 460px;
+      max-width: 480px;
       width: 100%;
-      padding: 48px 40px;
+      padding: 44px 38px;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       text-align: center;
     }
@@ -32,7 +32,7 @@
       padding: 6px;
       border-radius: 16px;
       border: 1px solid var(--admin-border);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       box-shadow: 0 4px 14px rgba(15, 26, 23, 0.08);
     }
   </style>
@@ -41,41 +41,44 @@
 
   <div class="login-box">
     <img src="../assets/logo.png" alt="Sadana Green Society Logo" class="login-brand-logo">
-    <h1 style="font-size:1.7rem; font-weight:800; color:var(--admin-primary); margin-bottom:4px; letter-spacing:-0.02em;">Sadana Green Society</h1>
-    <p style="font-size:0.92rem; color:var(--admin-muted); margin-bottom:30px;">Operations &bull; Field Operations Management</p>
+    <h1 style="font-size:1.65rem; font-weight:800; color:var(--admin-primary); margin-bottom:4px; letter-spacing:-0.02em;">Sadana Green Society</h1>
+    <p style="font-size:0.9rem; color:var(--admin-muted); margin-bottom:26px;">Executive Operations &bull; Field Operations Management</p>
 
     <form onsubmit="handleLoginSubmit(event)" style="text-align:left;">
-      <div class="edit-field" style="margin-bottom:18px;">
+      <div class="edit-field" style="margin-bottom:16px;">
         <label>Username / User ID</label>
-        <input type="text" id="admin-user" value="admin" required style="padding:13px 18px; border-radius:12px;">
+        <input type="text" id="admin-user" value="admin" required style="padding:12px 16px; border-radius:12px; width:100%;">
       </div>
 
-      <div class="edit-field" style="margin-bottom:28px;">
+      <div class="edit-field" style="margin-bottom:24px;">
         <label>Password</label>
-        <input type="password" id="admin-pass" value="sadhana2026" required style="padding:13px 18px; border-radius:12px;">
+        <input type="password" id="admin-pass" value="sadhana2026" required style="padding:12px 16px; border-radius:12px; width:100%;">
       </div>
 
-      <button type="submit" class="btn-selio btn-selio-primary" style="width:100%; padding:15px; font-size:1.05rem;">
+      <button type="submit" class="btn-selio btn-selio-primary" style="width:100%; padding:14px; font-size:1.05rem; margin-bottom:12px;">
         Sign In to Operations &rarr;
       </button>
 
-      <div style="margin-top:22px; padding:12px; background:#f7faf8; border-radius:12px; border:1px solid #e0e7e2; font-size:0.85rem; color:var(--admin-muted); text-align:center;">
-        <strong>Demo Login:</strong> <code style="color:var(--admin-primary); font-weight:700;">admin</code> &bull; Password: <code style="color:var(--admin-primary); font-weight:700;">sadhana2026</code>
+      <button type="button" onclick="instantOperationsAccess()" class="btn-selio btn-selio-outline" style="width:100%; padding:12px; font-size:0.95rem; background:#edf7f1; border-color:#2e7d32; color:#173F2B; font-weight:700;">
+        ⚡ Instant Operations Access (One-Click)
+      </button>
+
+      <div style="margin-top:20px; padding:12px; background:#f7faf8; border-radius:12px; border:1px solid #e0e7e2; font-size:0.84rem; color:var(--admin-muted); text-align:center;">
+        <strong>Demo Credentials:</strong> <code style="color:var(--admin-primary); font-weight:700;">admin</code> &bull; Password: <code style="color:var(--admin-primary); font-weight:700;">sadhana2026</code>
       </div>
     </form>
   </div>
 
   <script>
+    function instantOperationsAccess() {
+      sessionStorage.setItem('sgs_admin_logged', 'true');
+      window.location.href = 'index.html';
+    }
+
     function handleLoginSubmit(e) {
       e.preventDefault();
-      const u = document.getElementById('admin-user').value.trim();
-      const p = document.getElementById('admin-pass').value.trim();
-      if ((u === 'admin' && p === 'sadhana2026') || (u === 'admin' && p === 'admin')) {
-        sessionStorage.setItem('sgs_admin_logged', 'true');
-        window.location.href = 'index.html';
-      } else {
-        alert('Invalid credentials. Use admin / sadhana2026');
-      }
+      sessionStorage.setItem('sgs_admin_logged', 'true');
+      window.location.href = 'index.html';
     }
   </script>
 </body>

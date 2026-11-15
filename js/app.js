@@ -1,20 +1,60 @@
 /**
- * Sadana Green Society (SGS) - Core Frontend Script
- * Handles Video Lightbox, Mobile Navigation Drawer, Global Search, and Interactive Controls
+ * Sadana Green Society (SGS) - Master Interactive Engine
+ * Handles Navigation, Reference Cascading Dropdowns, Mobile Accordions,
+ * Universal File/Server Link Resolution, Modals, and Lightboxes.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Sticky Navbar shadow on scroll
+  // 1. Sticky Navbar styling on scroll
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
       if (header) header.classList.add('scrolled');
     } else {
       if (header) header.classList.remove('scrolled');
     }
   });
 
-  // Close modals on Escape key
+  // 2. Interactive Dropdown click & tap toggle for mobile/tablets/desktop
+  document.querySelectorAll('.selio-dropdown-parent, .ct-has-dropdown').forEach(item => {
+    const link = item.querySelector('.nav-link');
+    if (link) {
+      link.addEventListener('click', (e) => {
+        // Toggle on click if touch or screen width < 1100px or clicking caret
+        if (window.innerWidth < 1100 || ('ontouchstart' in window) || e.target.closest('.caret')) {
+          e.preventDefault();
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.selio-dropdown-parent, .ct-has-dropdown').forEach(el => el.classList.remove('open'));
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+        }
+      });
+    }
+  });
+
+  // Subgroup click toggle (Forest species / Fruit species)
+  document.querySelectorAll('.selio-flyout-subgroup').forEach(sub => {
+    const subLink = sub.querySelector('.selio-flyout-item.has-sub');
+    if (subLink) {
+      subLink.addEventListener('click', (e) => {
+        if (window.innerWidth < 1100 || ('ontouchstart' in window)) {
+          e.preventDefault();
+          e.stopPropagation();
+          sub.classList.toggle('open');
+        }
+      });
+    }
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item')) {
+      document.querySelectorAll('.selio-dropdown-parent, .ct-has-dropdown, .selio-flyout-subgroup').forEach(el => el.classList.remove('open'));
+    }
+  });
+
+  // 3. Close modals on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeVideoModal();
@@ -23,7 +63,33 @@ document.addEventListener('DOMContentLoaded', () => {
       closeGalleryLightbox();
     }
   });
+
+  // 4. Universal Link Resolver: Supports double-clicking files locally via file:// protocol
+  if (window.location.protocol === 'file:') {
+    document.querySelectorAll('a[href]').forEach(a => {
+      let href = a.getAttribute('href');
+      if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+      
+      // Match relative directory links ending with /
+      if (href.endsWith('/')) {
+        let clean = href.slice(0, -1);
+        if (clean === '.' || clean === '') {
+          a.setAttribute('href', (href.startsWith('../') ? '../' : '') + 'index.html');
+        } else {
+          a.setAttribute('href', clean + '.html');
+        }
+      }
+    });
+  }
 });
+
+// --- MOBILE DRAWER ACCORDION ---
+function toggleDrawerAccordion(btn) {
+  const acc = btn.closest('.drawer-accordion');
+  if (acc) {
+    acc.classList.toggle('open');
+  }
+}
 
 // --- VIDEO MODAL ---
 function openVideoModal(videoSrc) {
@@ -51,22 +117,22 @@ function closeVideoModal() {
 
 // --- SEARCH MODAL ---
 const searchablePages = [
-  { title: "Home Page", url: "/", desc: "Sustainable agroforestry, AWD paddy & carbon credits overview." },
-  { title: "About Us", url: "/about/", desc: "Leadership, mission, team of experts, and grassroots history." },
-  { title: "Our Journey & Milestones", url: "/our-journey/", desc: "Founder B. Raghu Bhaskar and 8 pillars of comprehensive work." },
-  { title: "Programmes & Services", url: "/services/", desc: "Agroforestry models, soil testing, and precision farming." },
-  { title: "Agroforestry Models", url: "/agroforestry/", desc: "Boundary plantations, mixed cropping, and timber economics." },
-  { title: "Species Catalog (16 Trees)", url: "/species/", desc: "All 16 native timber & fruit species with soil guides." },
-  { title: "Forest & Timber Species", url: "/forest-species/", desc: "Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul, Red Sanders." },
-  { title: "Fruit & Horticulture Species", url: "/fruit-species/", desc: "Mango, Guava, Sapota, Custard Apple, Amla, Lemon, Coconut, Cashew." },
-  { title: "Carbon Credits Lifecycle", url: "/carbon-credits/", desc: "7-stage MRV satellite monitoring & farmer revenue disbursements." },
-  { title: "AWD Paddy Water Management", url: "/awd/", desc: "Save 30% water and reduce methane emissions in rice cultivation." },
-  { title: "Environment & Climate Action", url: "/environment/", desc: "6 core environmental areas protecting soil, water, and air." },
-  { title: "Photo Gallery", url: "/gallery/", desc: "44 authentic field photos from plantations and community work." },
-  { title: "News & Media Hub", url: "/news/", desc: "Telugu newspaper clippings and agricultural press coverage." },
-  { title: "Contact Us", url: "/contact/", desc: "Kurnool HQ head office, phone +91 99634 90444, and map." },
-  { title: "Frequently Asked Questions (FAQ)", url: "/faq/", desc: "Bilingual English & Telugu answers about all SGS programmes." },
-  { title: "Apply for Saplings", url: "/new-plantation/", desc: "Farmer sapling application with real-time GPS location capture." }
+  { title: "Home Page", url: "./", desc: "Sustainable agroforestry, AWD paddy & carbon credits overview." },
+  { title: "About Us", url: "about/", desc: "Leadership, mission, team of experts, and grassroots history." },
+  { title: "Our Impact & Journey", url: "our-journey/", desc: "Founder B. Raghu Bhaskar and comprehensive milestones." },
+  { title: "Services & Programmes", url: "services/", desc: "Agroforestry models, soil testing, and precision farming." },
+  { title: "Agroforestry Models", url: "agroforestry/", desc: "Boundary plantations, mixed cropping, and timber economics." },
+  { title: "Species Catalog (16 Trees)", url: "species/", desc: "All 16 native timber & fruit species with soil guides." },
+  { title: "Forest & Timber Species", url: "forest-species/", desc: "Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul, Red Sanders." },
+  { title: "Fruit & Horticulture Species", url: "fruit-species/", desc: "Mango, Guava, Sapota, Custard Apple, Amla, Lemon, Coconut, Cashew." },
+  { title: "Carbon Credits Lifecycle", url: "carbon-credits/", desc: "7-stage MRV satellite monitoring & farmer revenue disbursements." },
+  { title: "AWD Paddy Water Management", url: "awd/", desc: "Save 30% water and reduce methane emissions in rice cultivation." },
+  { title: "Environment & Climate Action", url: "environment/", desc: "6 core environmental areas protecting soil, water, and air." },
+  { title: "Photo Gallery", url: "gallery/", desc: "44 authentic field photos from plantations and community work." },
+  { title: "News & Media Hub", url: "news/", desc: "Telugu newspaper clippings and agricultural press coverage." },
+  { title: "Contact Us", url: "contact/", desc: "Kurnool HQ head office, phone +91 99634 90444, and map." },
+  { title: "Frequently Asked Questions (FAQ)", url: "faq/", desc: "Bilingual English & Telugu answers about all SGS programmes." },
+  { title: "Apply for Saplings", url: "new-plantation/", desc: "Farmer sapling application with real-time GPS location capture." }
 ];
 
 function openSearchModal() {
@@ -109,8 +175,12 @@ function handleGlobalSearch(query) {
     return;
   }
 
+  // Adjust URL prefix depending on depth
+  const isSubpage = window.location.pathname.includes('/') && !window.location.pathname.endsWith('/new_website/') && window.location.pathname.split('/').filter(Boolean).length > 1;
+  const prefix = isSubpage ? '../' : './';
+
   container.innerHTML = results.map(r => `
-    <a href="${r.url}" class="search-result-item" style="display:block; padding:12px 16px; border-radius:12px; border-bottom:1px solid #edf2ef; text-decoration:none; margin-bottom:8px; background:#fbfdfb;">
+    <a href="${prefix}${r.url.replace(/^\.\//, '')}" class="search-result-item" style="display:block; padding:12px 16px; border-radius:12px; border-bottom:1px solid #edf2ef; text-decoration:none; margin-bottom:8px; background:#fbfdfb;">
       <h4 style="font-size:1rem; font-weight:700; color:#172723; margin:0 0 4px 0;">${r.title}</h4>
       <p style="font-size:0.85rem; color:#556862; margin:0;">${r.desc}</p>
     </a>

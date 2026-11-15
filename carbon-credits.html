@@ -1,201 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Carbon Credits &amp; Smallholder Farmer Benefits | Sadana Green Society</title>
   <meta name="description" content="Learn how SGS carbon programmes measure, verify and monetize biomass from smallholder agroforestry and AWD paddy, connecting farmers to global carbon markets.">
-  
-  <!-- Open Graph / Meta -->
-  <meta property="og:title" content="Carbon Credits &amp; Smallholder Farmer Benefits | Sadana Green Society">
-  <meta property="og:description" content="Learn how SGS carbon programmes measure, verify and monetize biomass from smallholder agroforestry and AWD paddy, connecting farmers to global carbon markets.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sadanagreensociety.com/">
-  <meta property="og:image" content="https://sadanagreensociety.com/assets/logo.png">
+  <meta name="theme-color" content="#173F2B">
 
-  <!-- Icons -->
-  <link rel="icon" type="image/png" sizes="48x48" href="assets/logo.png">
-  <link rel="apple-touch-icon" href="assets/logo.png">
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
 
-  <!-- Typography: Strict Rubik Sans-Serif & Noto Sans Telugu -->
+  <!-- Preconnect & Fonts: Rubik + Noto Sans Telugu -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <link rel="stylesheet" href="./css/style.css">
 
-  <!-- Floating Pill Header (Blocksy Landscape Style - Image 2) -->
+  <!-- Floating Pill Header (Reference Blocksy Landscape Style) -->
   <header class="site-header" id="header">
     <div class="navbar-pill">
       
       <!-- Brand Logo & Name -->
-      <a href="" class="brand" aria-label="Sadana Green Society Home">
-        <img src="assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
+      <a href="./" class="brand" aria-label="Sadana Green Society Home">
+        <img src="./assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
         <div class="brand-text">
           <span class="brand-title">Sadana Green Society</span>
           <span class="brand-subtitle">People • Plants • Livelihoods</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu with Mega Menu and Selio Cascading Dropdown -->
+      <!-- Desktop Navigation Menu matching Reference Screenshots 3 & 4 -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="" class="nav-link">Home</a>
+            <a href="./" class="nav-link">Home</a>
           </li>
           
-          <li class="nav-item ct-has-dropdown">
-            <a href="services/" class="nav-link active">
-              Programmes
-              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
-            </a>
-            
-            <!-- Desktop Mega Menu (Exact Blocksy Landscape Spec - image2.png) -->
-            <div class="ct-dropdown-megamenu">
-              <!-- Left Column: 3 Programs + Latest News -->
-              <div>
-                <div class="megamenu-left-programs">
-                  <a href="agroforestry/" class="megamenu-prog-card">
-                    <div class="megamenu-icon-circle">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
-                    </div>
-                    <h4>Agroforestry Models</h4>
-                    <p>High-value timber &amp; fruit plantations for boundary &amp; mixed farmlands.</p>
-                    <span class="read-more">Read More &rarr;</span>
-                  </a>
-
-                  <a href="carbon-credits/" class="megamenu-prog-card">
-                    <div class="megamenu-icon-circle">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                    </div>
-                    <h4>Carbon Credits</h4>
-                    <p>Verifiable biomass audits connecting smallholders to global carbon markets.</p>
-                    <span class="read-more">Read More &rarr;</span>
-                  </a>
-
-                  <a href="awd/" class="megamenu-prog-card">
-                    <div class="megamenu-icon-circle">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                    </div>
-                    <h4>AWD Paddy Water</h4>
-                    <p>30% water conservation in paddy fields via perforated soil monitoring tubes.</p>
-                    <span class="read-more">Read More &rarr;</span>
-                  </a>
-                </div>
-
-                <!-- Latest News Strip inside Mega Menu -->
-                <div class="megamenu-latest-news-title">Latest Regional News</div>
-                <div class="megamenu-news-row">
-                  <a href="news/" class="megamenu-news-item">
-                    <img src="assets/images/news/news-clipping-01.jpg" alt="News 1">
-                    <div>
-                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</h5>
-                      <small>Kurnool Daily Press</small>
-                    </div>
-                  </a>
-
-                  <a href="news/" class="megamenu-news-item">
-                    <img src="assets/images/news/news-clipping-02.jpg" alt="News 2">
-                    <div>
-                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట (AWD)</h5>
-                      <small>Agriculture Feature</small>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Column: Highlight Card with Video & CTA -->
-              <div class="megamenu-right-highlight">
-                <div class="megamenu-right-header">
-                  <h4>Farmer Registration 2026</h4>
-                  <a href="new-plantation/" class="megamenu-circle-arrow-btn" aria-label="Go to Farmer Application">&rarr;</a>
-                </div>
-                <p class="megamenu-right-desc">
-                  Register land details with real-time GPS coordinates, camera photo uploads, and water verification for sapling distribution.
-                </p>
-                <div class="megamenu-video-thumb" onclick="openVideoModal('assets/hero-video.mp4')" style="background-image: url('assets/images/template/home-hero-image-1.webp');">
-                  <div class="play-icon">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <!-- Selio-Style Species Cascading Flyout Dropdown (Images 2 & 3) -->
+          <!-- Agroforestry Cascading Dropdown (Exact Reference Spec) -->
           <li class="nav-item ct-has-dropdown selio-dropdown-parent">
-            <a href="species/" class="nav-link">
-              Species
+            <a href="./agroforestry/" class="nav-link active">
+              Agroforestry
               <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
             </a>
             
             <div class="selio-flyout-menu">
-              <a href="agroforestry/" class="selio-flyout-item">
+              <a href="./agroforestry/" class="selio-flyout-item">
                 <span>Why Agroforestry</span>
               </a>
               
+              <!-- Forest Species Flyout -->
               <div class="selio-flyout-subgroup">
-                <a href="forest-species/" class="selio-flyout-item has-sub">
-                  <span>Forest Species (Timber)</span>
+                <a href="./forest-species/" class="selio-flyout-item has-sub">
+                  <span>Forest Species</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
                 </a>
                 <div class="selio-sub-menu">
-                  <a href="forest-species/#teak" class="selio-sub-item">Teak (టేకు)</a>
-                  <a href="forest-species/#melia-dubia" class="selio-sub-item">Melia Dubia (మలబార్ వేప)</a>
-                  <a href="forest-species/#casuarina" class="selio-sub-item">Casuarina (సర్వి)</a>
-                  <a href="forest-species/#pongamia" class="selio-sub-item">Pongamia (కానుగ)</a>
-                  <a href="forest-species/#neem" class="selio-sub-item">Neem (వేప)</a>
-                  <a href="forest-species/#bamboo" class="selio-sub-item">Bamboo (వెదురు)</a>
-                  <a href="forest-species/#subabul" class="selio-sub-item">Subabul (సుబాబుల్)</a>
-                  <a href="forest-species/#red-sanders" class="selio-sub-item">Red Sanders (ఎర్రచందనం)</a>
+                  <a href="./forest-species/#teak" class="selio-sub-item">Teak (టేకు)</a>
+                  <a href="./forest-species/#melia-dubia" class="selio-sub-item">Melia Dubia (మలబార్ వేప)</a>
+                  <a href="./forest-species/#casuarina" class="selio-sub-item">Casuarina (సర్వి)</a>
+                  <a href="./forest-species/#pongamia" class="selio-sub-item">Pongamia (కానుగ)</a>
+                  <a href="./forest-species/#neem" class="selio-sub-item">Neem (వేప)</a>
+                  <a href="./forest-species/#bamboo" class="selio-sub-item">Bamboo (వెదురు)</a>
+                  <a href="./forest-species/#subabul" class="selio-sub-item">Subabul (సుబాబుల్)</a>
+                  <a href="./forest-species/#red-sanders" class="selio-sub-item">Red Sanders (ఎర్రచందనం)</a>
                 </div>
               </div>
 
+              <!-- Fruit Species Flyout -->
               <div class="selio-flyout-subgroup">
-                <a href="fruit-species/" class="selio-flyout-item has-sub">
-                  <span>Fruit Species (Horticulture)</span>
+                <a href="./fruit-species/" class="selio-flyout-item has-sub">
+                  <span>Fruit Species</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
                 </a>
                 <div class="selio-sub-menu">
-                  <a href="fruit-species/#mango" class="selio-sub-item">Mango (మామిడి)</a>
-                  <a href="fruit-species/#guava" class="selio-sub-item">Guava (జామ)</a>
-                  <a href="fruit-species/#sapota" class="selio-sub-item">Sapota (సపోటా)</a>
-                  <a href="fruit-species/#custard-apple" class="selio-sub-item">Custard Apple (సీతాఫలం)</a>
-                  <a href="fruit-species/#amla" class="selio-sub-item">Amla (ఉసిరి)</a>
-                  <a href="fruit-species/#lemon" class="selio-sub-item">Lemon (నిమ్మ)</a>
-                  <a href="fruit-species/#coconut" class="selio-sub-item">Coconut (కొబ్బరి)</a>
-                  <a href="fruit-species/#cashew" class="selio-sub-item">Cashew (జీడిమామిడి)</a>
+                  <a href="./fruit-species/#mango" class="selio-sub-item">Mango (మామిడి)</a>
+                  <a href="./fruit-species/#guava" class="selio-sub-item">Guava (జామ)</a>
+                  <a href="./fruit-species/#sapota" class="selio-sub-item">Sapota (సపోటా)</a>
+                  <a href="./fruit-species/#custard-apple" class="selio-sub-item">Custard Apple (సీతాఫలం)</a>
+                  <a href="./fruit-species/#amla" class="selio-sub-item">Amla (ఉసిరి)</a>
+                  <a href="./fruit-species/#lemon" class="selio-sub-item">Lemon (నిమ్మ)</a>
+                  <a href="./fruit-species/#coconut" class="selio-sub-item">Coconut (కొబ్బరి)</a>
+                  <a href="./fruit-species/#cashew" class="selio-sub-item">Cashew (జీడిమామిడి)</a>
                 </div>
               </div>
 
               <div class="selio-flyout-divider"></div>
-              <a href="species/" class="selio-flyout-item all-species-link">
+              <a href="./species/" class="selio-flyout-item all-species-link">
                 <span>View All 16 Species Catalog &rarr;</span>
               </a>
             </div>
           </li>
 
           <li class="nav-item">
-            <a href="about/" class="nav-link">About Us</a>
+            <a href="./carbon-credits/" class="nav-link">Carbon Credits</a>
           </li>
 
           <li class="nav-item">
-            <a href="gallery/" class="nav-link">Gallery</a>
+            <a href="./awd/" class="nav-link">AWD</a>
           </li>
 
           <li class="nav-item">
-            <a href="news/" class="nav-link">News</a>
+            <a href="./environment/" class="nav-link">Environment</a>
           </li>
 
           <li class="nav-item">
-            <a href="faq/" class="nav-link">FAQ</a>
+            <a href="./our-journey/" class="nav-link">Our Impact</a>
           </li>
 
           <li class="nav-item">
-            <a href="contact/" class="nav-link">Contact</a>
+            <a href="./gallery/" class="nav-link">Gallery</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./about/" class="nav-link">About Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./news/" class="nav-link">News</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./faq/" class="nav-link">FAQ</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="./contact/" class="nav-link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -206,7 +135,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
 
-        <a href="new-plantation/" class="btn-pill-cta">
+        <a href="./new-plantation/" class="btn-pill-cta">
           <span>Apply Now</span>
           <span class="cta-arrow">&rarr;</span>
         </a>
@@ -220,42 +149,71 @@
     </div>
   </header>
 
-  <!-- Mobile Responsive Navigation Drawer -->
+  <!-- Mobile Offcanvas Drawer with Accordions -->
   <aside class="mobile-drawer" id="mobile-drawer">
     <div class="drawer-header">
       <div class="drawer-logo">
-        <img src="assets/logo.png" alt="Sadana Green Society Logo" width="36" height="36">
+        <img src="./assets/logo.png" alt="Sadana Green Society Logo" width="36" height="36">
         <span style="font-weight:800; font-size:1.05rem; color:#172723;">Sadana Green Society</span>
       </div>
       <button class="drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">&times;</button>
     </div>
 
     <ul class="drawer-menu">
-      <li><a href="" class="drawer-link">Home</a></li>
-      <li><a href="services/" class="drawer-link active">Programmes Overview</a></li>
-      <li style="padding-left:16px;"><a href="agroforestry/" class="drawer-link">&bull; Agroforestry Models</a></li>
-      <li style="padding-left:16px;"><a href="carbon-credits/" class="drawer-link">&bull; Carbon Credits</a></li>
-      <li style="padding-left:16px;"><a href="awd/" class="drawer-link">&bull; AWD Paddy Water</a></li>
+      <li><a href="./" class="drawer-link">Home</a></li>
       
-      <li><a href="species/" class="drawer-link">Plant Species Catalog (16)</a></li>
-      <li style="padding-left:16px;"><a href="forest-species/" class="drawer-link">&bull; Forest / Timber Species (8)</a></li>
-      <li style="padding-left:16px;"><a href="fruit-species/" class="drawer-link">&bull; Fruit / Horticulture Species (8)</a></li>
-      
-      <li><a href="about/" class="drawer-link">About Us</a></li>
-      <li style="padding-left:16px;"><a href="our-journey/" class="drawer-link">&bull; Our Journey &amp; Milestones</a></li>
-      <li><a href="gallery/" class="drawer-link">Field Photo Gallery (44)</a></li>
-      <li><a href="news/" class="drawer-link">News &amp; Media Hub</a></li>
-      <li><a href="faq/" class="drawer-link">FAQ (English &amp; Telugu)</a></li>
-      <li><a href="contact/" class="drawer-link">Contact Us</a></li>
+      <!-- Mobile Agroforestry Accordion -->
+      <li class="drawer-accordion">
+        <button class="drawer-acc-btn" onclick="toggleDrawerAccordion(this)">
+          <span>Agroforestry &amp; Species</span>
+          <svg class="drawer-acc-caret" viewBox="0 0 10 6" width="12" height="8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+        </button>
+        <div class="drawer-acc-content">
+          <a href="./agroforestry/" class="drawer-sublink">&bull; Why Agroforestry Overview</a>
+          <a href="./species/" class="drawer-sublink">&bull; All 16 Species Catalog</a>
+          <a href="./forest-species/" class="drawer-sublink" style="font-weight:700; color:#173F2B;">&bull; Forest Timber Species (8)</a>
+          <div style="padding-left:14px; margin-bottom:6px;">
+            <a href="./forest-species/#teak" class="drawer-tinylink">- Teak (టేకు)</a>
+            <a href="./forest-species/#melia-dubia" class="drawer-tinylink">- Melia Dubia (మలబార్ వేప)</a>
+            <a href="./forest-species/#red-sanders" class="drawer-tinylink">- Red Sanders (ఎర్రచందనం)</a>
+            <a href="./forest-species/#casuarina" class="drawer-tinylink">- Casuarina (సర్వి)</a>
+            <a href="./forest-species/#pongamia" class="drawer-tinylink">- Pongamia (కానుగ)</a>
+            <a href="./forest-species/#neem" class="drawer-tinylink">- Neem (వేప)</a>
+            <a href="./forest-species/#bamboo" class="drawer-tinylink">- Bamboo (వెదురు)</a>
+            <a href="./forest-species/#subabul" class="drawer-tinylink">- Subabul (సుబాబుల్)</a>
+          </div>
+          <a href="./fruit-species/" class="drawer-sublink" style="font-weight:700; color:#173F2B;">&bull; Fruit Horticulture Species (8)</a>
+          <div style="padding-left:14px;">
+            <a href="./fruit-species/#mango" class="drawer-tinylink">- Mango (మామిడి)</a>
+            <a href="./fruit-species/#guava" class="drawer-tinylink">- Guava (జామ)</a>
+            <a href="./fruit-species/#sapota" class="drawer-tinylink">- Sapota (సపోటా)</a>
+            <a href="./fruit-species/#custard-apple" class="drawer-tinylink">- Custard Apple (సీతాఫలం)</a>
+            <a href="./fruit-species/#amla" class="drawer-tinylink">- Amla (ఉసిరి)</a>
+            <a href="./fruit-species/#lemon" class="drawer-tinylink">- Lemon (నిమ్మ)</a>
+            <a href="./fruit-species/#coconut" class="drawer-tinylink">- Coconut (కొబ్బరి)</a>
+            <a href="./fruit-species/#cashew" class="drawer-tinylink">- Cashew (జీడిమామిడి)</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="./carbon-credits/" class="drawer-link">Carbon Credits</a></li>
+      <li><a href="./awd/" class="drawer-link">AWD Paddy Water</a></li>
+      <li><a href="./environment/" class="drawer-link">Environment</a></li>
+      <li><a href="./our-journey/" class="drawer-link">Our Impact</a></li>
+      <li><a href="./gallery/" class="drawer-link">Field Photo Gallery</a></li>
+      <li><a href="./about/" class="drawer-link">About Us</a></li>
+      <li><a href="./news/" class="drawer-link">News &amp; Media Hub</a></li>
+      <li><a href="./faq/" class="drawer-link">FAQ (Telugu &amp; English)</a></li>
+      <li><a href="./contact/" class="drawer-link">Contact Us</a></li>
     </ul>
 
     <div style="margin-top:28px; padding-top:20px; border-top:1px solid #edf2ee;">
-      <a href="new-plantation/" class="btn-pill-cta" style="width:100%; justify-content:center;">
+      <a href="./new-plantation/" class="btn-pill-cta" style="width:100%; justify-content:center;">
         <span>Apply for Saplings</span>
         <span class="cta-arrow">&rarr;</span>
       </a>
-      <a href="admin/" style="display:block; text-align:center; margin-top:16px; font-size:0.85rem; color:#55685d; text-decoration:none;">
-        Officer Portal Login &rarr;
+      <a href="./admin/" style="display:block; text-align:center; margin-top:16px; font-size:0.85rem; color:#55685d; text-decoration:none; font-weight:700;">
+        Officer Operations Portal &rarr;
       </a>
     </div>
   </aside>
@@ -337,8 +295,8 @@
       
       <!-- Top Row: Brand & Nav Links -->
       <div class="footer-top-row">
-        <a href="" class="brand" aria-label="Sadana Green Society Home">
-          <img src="assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
+        <a href="./" class="brand" aria-label="Sadana Green Society Home">
+          <img src="./assets/logo.png" alt="Sadana Green Society Official Logo" class="brand-logo-img">
           <div class="brand-text">
             <span class="brand-title">Sadana Green Society</span>
             <span class="brand-subtitle">People • Plants • Livelihoods</span>
@@ -346,134 +304,141 @@
         </a>
 
         <ul class="footer-nav-links">
-          <li><a href="">Home</a></li>
-          <li><a href="services/" class="active">Services</a></li>
-          <li><a href="about/">About</a></li>
-          <li><a href="species/">Species</a></li>
-          <li><a href="news/">News</a></li>
-          <li><a href="contact/">Contact</a></li>
+          <li><a href="./">Home</a></li>
+          <li><a href="./agroforestry/">Agroforestry</a></li>
+          <li><a href="./carbon-credits/">Carbon Credits</a></li>
+          <li><a href="./awd/">AWD Paddy</a></li>
+          <li><a href="./species/">Species Catalog</a></li>
+          <li><a href="./about/">About Us</a></li>
+          <li><a href="./news/">News</a></li>
+          <li><a href="./gallery/">Gallery</a></li>
+          <li><a href="./faq/">FAQ</a></li>
+          <li><a href="./contact/">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Contact Pills Row (Image 1 / Home Slice 8) -->
-      <div class="footer-contact-pills-row">
-        <div class="footer-contact-pills-group">
-          
-          <div class="footer-contact-pill-item">
-            <div class="footer-pill-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="footer-pill-text">
-              <span class="footer-pill-label">Address:</span>
-              <span class="footer-pill-val">Kurnool HQ, Andhra Pradesh</span>
-            </div>
-          </div>
+      <div class="footer-divider-line"></div>
 
-          <div class="footer-contact-pill-item">
-            <div class="footer-pill-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="footer-pill-text">
-              <span class="footer-pill-label">Phone:</span>
-              <span class="footer-pill-val">+91 99634 90444</span>
-            </div>
+      <!-- Main Footer Columns -->
+      <div class="footer-columns-grid">
+        <!-- Col 1: About SGS -->
+        <div>
+          <h4>Sadana Green Society</h4>
+          <p>
+            Established in 2008 in Kurnool, Andhra Pradesh under the leadership of Founder &amp; President B. Raghu Bhaskar. Transforming smallholder livelihoods through scientific agroforestry, water-saving AWD rice cultivation, and verifiable international carbon credits.
+          </p>
+          <div style="margin-top:16px;">
+            <a href="./new-plantation/" class="btn-pill-cta" style="font-size:0.86rem; padding:8px 18px;">
+              <span>Register as Farmer</span>
+              <span class="cta-arrow">&rarr;</span>
+            </a>
           </div>
-
-          <div class="footer-contact-pill-item">
-            <div class="footer-pill-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <div class="footer-pill-text">
-              <span class="footer-pill-label">Mobile:</span>
-              <span class="footer-pill-val">+91 94402 91404</span>
-            </div>
-          </div>
-
-          <div class="footer-contact-pill-item">
-            <div class="footer-pill-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="footer-pill-text">
-              <span class="footer-pill-label">Opening hours:</span>
-              <span class="footer-pill-val">Mon - Sat: 9:00 AM - 6:00 PM</span>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Social Media Buttons -->
-        <div class="footer-social-circles">
-          <a href="https://facebook.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="https://twitter.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Twitter">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-          </a>
-          <a href="https://instagram.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://linkedin.com" class="footer-social-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
+        <!-- Col 2: Core Programmes -->
+        <div>
+          <h4>Key Programmes</h4>
+          <ul class="footer-links-list">
+            <li><a href="./agroforestry/">&bull; Agroforestry Plantation Models</a></li>
+            <li><a href="./carbon-credits/">&bull; Verified Carbon Credit Generation</a></li>
+            <li><a href="./awd/">&bull; Alternate Wetting &amp; Drying (AWD)</a></li>
+            <li><a href="./forest-species/">&bull; 8 Native Timber Tree Species</a></li>
+            <li><a href="./fruit-species/">&bull; 8 Commercial Fruit Varieties</a></li>
+            <li><a href="./environment/">&bull; Soil &amp; Climate Action Framework</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Field Coverage -->
+        <div>
+          <h4>Operational Districts</h4>
+          <p style="font-size:0.9rem; line-height:1.6; color:#a2b5ab; margin-bottom:12px;">
+            Active across 28 Mandals in Rayalaseema &amp; Southern Telangana:
+          </p>
+          <div class="footer-districts-grid">
+            <span class="district-badge">Kurnool</span>
+            <span class="district-badge">Nandyal</span>
+            <span class="district-badge">Anantapur</span>
+            <span class="district-badge">YSR Kadapa</span>
+            <span class="district-badge">Mahbubnagar</span>
+            <span class="district-badge">Gadwal</span>
+          </div>
+        </div>
+
+        <!-- Col 4: Central Field Office -->
+        <div>
+          <h4>Kurnool Field Headquarters</h4>
+          <p>
+            D.No. 40/356-1, Near Collectorate Complex,<br>
+            Kurnool – 518 002, Andhra Pradesh, India.
+          </p>
+          <p style="margin-top:10px;">
+            <strong>Farmer Helpline:</strong><br>
+            <a href="tel:+919963490444" style="color:#ffffff; text-decoration:none; font-weight:700;">+91 99634 90444</a><br>
+            <a href="tel:+919848022311" style="color:#ffffff; text-decoration:none;">+91 98480 22311</a>
+          </p>
+          <p style="margin-top:8px;">
+            <strong>Email:</strong><br>
+            <a href="mailto:sadanagreensociety@gmail.com" style="color:#ffffff; text-decoration:none;">sadanagreensociety@gmail.com</a>
+          </p>
         </div>
       </div>
 
-      <!-- Bottom Copyright Bar -->
-      <div class="footer-bottom-bar">
-        <span>Copyright &copy; 2026 - Sadana Green Society. All Rights Reserved.</span>
+      <div class="footer-divider-line"></div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-row">
         <div>
-          <a href="privacy/">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms/">Terms of Use</a> &nbsp;|&nbsp; <a href="admin/">Admin Portal</a>
+          &copy; 2008 &ndash; 2026 <strong>Sadana Green Society</strong>. All rights reserved. Registered under Societies Registration Act XXI of 1860.
+        </div>
+        <div class="footer-legal-links">
+          <a href="./privacy/">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="./terms/">Terms of Programme</a>
+          <span>&bull;</span>
+          <a href="./admin/" style="color:#a5d6a7; font-weight:700;">Officer Operations Portal</a>
         </div>
       </div>
 
     </div>
   </footer>
 
-  <!-- Interactive Modals (Pure Modal Classes - Zero Document Leak) -->
-  <div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal()">
-    <div class="video-modal-content" onclick="event.stopPropagation()">
-      <button class="video-close-btn" onclick="closeVideoModal()" aria-label="Close Video">&times;</button>
-      <div style="position:relative; aspect-ratio:16/9; background:#000000; border-radius:18px; overflow:hidden;">
-        <video id="modalVideoPlayer" controls playsinline style="width:100%; height:100%; display:block;">
-          <source src="assets/hero-video.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
-      </div>
+  <!-- Floating High-Contrast Emerald WhatsApp CTA -->
+  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS Farmer Support on WhatsApp">
+    <div class="whatsapp-circle-btn">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
     </div>
-  </div>
+    <div class="whatsapp-pill-label">
+      Farmer Support
+    </div>
+  </a>
 
+  <!-- Global Search Modal -->
   <div class="search-modal-backdrop" id="searchModal" onclick="closeSearchModal()">
     <div class="search-modal-box" onclick="event.stopPropagation()">
-      <button class="search-modal-close" onclick="closeSearchModal()" aria-label="Close search">&times;</button>
-      <div style="padding: 28px 28px 12px;">
-        <h3 style="font-size:1.25rem; font-weight:800; color:#172723; margin-bottom:14px;">Search Website</h3>
-        <div class="search-input-wrap">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input type="text" id="globalSearchInput" placeholder="Type to search species, AWD, carbon credits, programmes..." oninput="handleGlobalSearch(this.value)">
-        </div>
+      <div class="search-input-wrapper">
+        <svg class="search-icon-input" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="globalSearchInput" placeholder="Search programmes, species, AWD, carbon credits..." oninput="handleGlobalSearch(this.value)" autocomplete="off">
+        <button class="search-close-btn" onclick="closeSearchModal()">&times;</button>
       </div>
-      <div class="search-results-list" id="searchResults" style="max-height:360px; overflow-y:auto; padding:0 28px 24px;">
+      <div id="searchResults" class="search-results-list">
         <p class="search-hint">Type to search across all SGS pages, species, and farmer programmes.</p>
       </div>
     </div>
   </div>
 
-  <!-- Floating WhatsApp Helpline (Rectified SVG & High-Contrast Emerald Badge) -->
-  <a href="https://wa.me/919963490444?text=Hello%20Sadana%20Green%20Society,%20I%20would%20like%20to%20know%20more%20about%20your%20farming%20programmes." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat with SGS Farmer Support on WhatsApp">
-    <div class="whatsapp-circle-btn">
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
+  <!-- Video Lightbox Modal -->
+  <div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal()">
+    <div class="video-modal-content" onclick="event.stopPropagation()">
+      <button class="video-close-btn" onclick="closeVideoModal()" aria-label="Close Video">&times;</button>
+      <video id="modalVideoPlayer" controls playsinline>
+        <source src="./assets/hero-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <div class="whatsapp-badge-pill">
-      <span class="live-pulse-dot"></span>
-      <span class="badge-text">Farmer Support</span>
-    </div>
-  </a>
+  </div>
 
-  <!-- Global Scripts -->
-  <script src="js/app.js"></script>
-  <script src="js/cms-client.js"></script>
-</body>
-</html>
+  <!-- Core JavaScript -->
+  <script src="./js/app.js"></script>
 
