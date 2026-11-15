@@ -16,7 +16,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
 
-  <!-- Floating Pill Header (Reference Blocksy Landscape Style) -->
+  <!-- Floating Pill Header (User's Preferred Blocksy Mega Menu & Selio Species Dropdown) -->
   <header class="site-header" id="header">
     <div class="navbar-pill">
       
@@ -29,17 +29,95 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu matching Reference Screenshots 3 & 4 -->
+      <!-- Desktop Navigation Menu -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-menu">
           <li class="nav-item">
             <a href="./" class="nav-link">Home</a>
           </li>
           
-          <!-- Agroforestry Cascading Dropdown (Exact Reference Spec) -->
+          <!-- Programmes Mega Menu (Exact Blocksy Landscape Spec) -->
+          <li class="nav-item ct-has-dropdown">
+            <a href="./services/" class="nav-link">
+              Programmes
+              <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
+            </a>
+            
+            <div class="ct-dropdown-megamenu">
+              <!-- Left Column: 3 Programs + Latest News -->
+              <div>
+                <div class="megamenu-left-programs">
+                  <a href="./agroforestry/" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13C4 8.5 7.5 5 12 3c4.5 2 8 5.5 8 10a7 7 0 0 1-7 7z"/><path d="M12 21a10 10 0 0 0 0-20"/></svg>
+                    </div>
+                    <h4>Agroforestry Models</h4>
+                    <p>High-value timber &amp; fruit plantations for boundary &amp; mixed farmlands.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+
+                  <a href="./carbon-credits/" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h4>Carbon Credits</h4>
+                    <p>Verifiable biomass audits connecting smallholders to global carbon markets.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+
+                  <a href="./awd/" class="megamenu-prog-card">
+                    <div class="megamenu-icon-circle">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    </div>
+                    <h4>AWD Paddy Water</h4>
+                    <p>30% water conservation in paddy fields via perforated soil monitoring tubes.</p>
+                    <span class="read-more">Read More &rarr;</span>
+                  </a>
+                </div>
+
+                <!-- Latest News Strip inside Mega Menu -->
+                <div class="megamenu-latest-news-title">Latest Regional News</div>
+                <div class="megamenu-news-row">
+                  <a href="./news/" class="megamenu-news-item">
+                    <img src="./assets/images/news/news-clipping-01.jpg" alt="News 1">
+                    <div>
+                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">మామిడి తోటల సాగుపై రైతులకు ప్రోత్సాహం</h5>
+                      <small>Kurnool Daily Press</small>
+                    </div>
+                  </a>
+
+                  <a href="./news/" class="megamenu-news-item">
+                    <img src="./assets/images/news/news-clipping-02.jpg" alt="News 2">
+                    <div>
+                      <h5 style="font-family:'Noto Sans Telugu', sans-serif;">వరి సాగులో కొత్త బాట (AWD)</h5>
+                      <small>Agriculture Feature</small>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Column: Highlight Card with Video & CTA -->
+              <div class="megamenu-right-highlight">
+                <div class="megamenu-right-header">
+                  <h4>Farmer Registration 2026</h4>
+                  <a href="./new-plantation/" class="megamenu-circle-arrow-btn" aria-label="Go to Farmer Application">&rarr;</a>
+                </div>
+                <p class="megamenu-right-desc">
+                  Register land details with real-time GPS coordinates, camera photo uploads, and water verification for sapling distribution.
+                </p>
+                <div class="megamenu-video-thumb" onclick="openVideoModal('./assets/hero-video.mp4')" style="background-image: url('./assets/images/template/home-hero-image-1.webp');">
+                  <div class="play-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Selio-Style Species Cascading Flyout Dropdown -->
           <li class="nav-item ct-has-dropdown selio-dropdown-parent">
-            <a href="./agroforestry/" class="nav-link">
-              Agroforestry
+            <a href="./species/" class="nav-link">
+              Species
               <svg class="caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
             </a>
             
@@ -51,7 +129,7 @@
               <!-- Forest Species Flyout -->
               <div class="selio-flyout-subgroup">
                 <a href="./forest-species/" class="selio-flyout-item has-sub">
-                  <span>Forest Species</span>
+                  <span>Forest Species (Timber)</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
                 </a>
                 <div class="selio-sub-menu">
@@ -69,7 +147,7 @@
               <!-- Fruit Species Flyout -->
               <div class="selio-flyout-subgroup">
                 <a href="./fruit-species/" class="selio-flyout-item has-sub">
-                  <span>Fruit Species</span>
+                  <span>Fruit Species (Horticulture)</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
                 </a>
                 <div class="selio-sub-menu">
@@ -92,27 +170,11 @@
           </li>
 
           <li class="nav-item">
-            <a href="./carbon-credits/" class="nav-link">Carbon Credits</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="./awd/" class="nav-link">AWD</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="./environment/" class="nav-link">Environment</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="./our-journey/" class="nav-link">Our Impact</a>
+            <a href="./about/" class="nav-link">About Us</a>
           </li>
 
           <li class="nav-item">
             <a href="./gallery/" class="nav-link">Gallery</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="./about/" class="nav-link">About Us</a>
           </li>
 
           <li class="nav-item">
@@ -161,16 +223,19 @@
 
     <ul class="drawer-menu">
       <li><a href="./" class="drawer-link">Home</a></li>
+      <li><a href="./services/" class="drawer-link">Programmes Overview</a></li>
+      <li style="padding-left:16px;"><a href="./agroforestry/" class="drawer-link">&bull; Agroforestry Models</a></li>
+      <li style="padding-left:16px;"><a href="./carbon-credits/" class="drawer-link">&bull; Carbon Credits</a></li>
+      <li style="padding-left:16px;"><a href="./awd/" class="drawer-link">&bull; AWD Paddy Water</a></li>
       
-      <!-- Mobile Agroforestry Accordion -->
+      <!-- Mobile Species Accordion -->
       <li class="drawer-accordion">
         <button class="drawer-acc-btn" onclick="toggleDrawerAccordion(this)">
-          <span>Agroforestry &amp; Species</span>
+          <span>Plant Species Catalog (16)</span>
           <svg class="drawer-acc-caret" viewBox="0 0 10 6" width="12" height="8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1l4 4 4-4"/></svg>
         </button>
         <div class="drawer-acc-content">
-          <a href="./agroforestry/" class="drawer-sublink">&bull; Why Agroforestry Overview</a>
-          <a href="./species/" class="drawer-sublink">&bull; All 16 Species Catalog</a>
+          <a href="./species/" class="drawer-sublink" style="font-weight:700;">&bull; View All 16 Species</a>
           <a href="./forest-species/" class="drawer-sublink" style="font-weight:700; color:#173F2B;">&bull; Forest Timber Species (8)</a>
           <div style="padding-left:14px; margin-bottom:6px;">
             <a href="./forest-species/#teak" class="drawer-tinylink">- Teak (టేకు)</a>
@@ -196,12 +261,9 @@
         </div>
       </li>
 
-      <li><a href="./carbon-credits/" class="drawer-link">Carbon Credits</a></li>
-      <li><a href="./awd/" class="drawer-link">AWD Paddy Water</a></li>
-      <li><a href="./environment/" class="drawer-link">Environment</a></li>
-      <li><a href="./our-journey/" class="drawer-link">Our Impact</a></li>
-      <li><a href="./gallery/" class="drawer-link">Field Photo Gallery</a></li>
       <li><a href="./about/" class="drawer-link">About Us</a></li>
+      <li style="padding-left:16px;"><a href="./our-journey/" class="drawer-link">&bull; Our Journey &amp; Milestones</a></li>
+      <li><a href="./gallery/" class="drawer-link">Field Photo Gallery (44)</a></li>
       <li><a href="./news/" class="drawer-link">News &amp; Media Hub</a></li>
       <li><a href="./faq/" class="drawer-link active">FAQ (Telugu &amp; English)</a></li>
       <li><a href="./contact/" class="drawer-link">Contact Us</a></li>
@@ -359,13 +421,11 @@
 
         <ul class="footer-nav-links">
           <li><a href="./">Home</a></li>
-          <li><a href="./agroforestry/">Agroforestry</a></li>
-          <li><a href="./carbon-credits/">Carbon Credits</a></li>
-          <li><a href="./awd/">AWD Paddy</a></li>
-          <li><a href="./species/">Species Catalog</a></li>
+          <li><a href="./services/">Programmes</a></li>
+          <li><a href="./species/">Species</a></li>
           <li><a href="./about/">About Us</a></li>
-          <li><a href="./news/">News</a></li>
           <li><a href="./gallery/">Gallery</a></li>
+          <li><a href="./news/">News</a></li>
           <li><a href="./faq/">FAQ</a></li>
           <li><a href="./contact/">Contact</a></li>
         </ul>
