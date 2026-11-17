@@ -24,3 +24,11 @@ Thumbs.db
 node_modules/
 dist/
 build/
+scratch/
+tests/
+checklists/
+new_website/
+old website screenshots/
+template_reference_screenshots/
+*.backup
+sadhana.pdf
