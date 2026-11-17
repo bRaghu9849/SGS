@@ -81,7 +81,88 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 5. Dynamic About Page Team Members Hydration
+  initAboutTeamSection();
 });
+
+// --- DYNAMIC ABOUT TEAM RENDERING ---
+function initAboutTeamSection() {
+  const grid = document.getElementById('aboutTeamGrid') || document.querySelector('.about-team-grid');
+  if (!grid) return;
+
+  const defaultMembers = [
+    {
+      name: "B. Raghu Bhaskar",
+      role: "Founder & President",
+      image: "assets/images/founder/b-raghu-bhaskar-professional.png"
+    },
+    {
+      name: "K. Venkata Rami Reddy",
+      role: "Field Operations Director",
+      image: "assets/images/template/team-2.jpg"
+    },
+    {
+      name: "G. Lakshmi Devi",
+      role: "Women Farmer Empowerment Lead",
+      image: "assets/images/template/team-3.jpg"
+    },
+    {
+      name: "Dr. P. Suresh Kumar",
+      role: "Agroforestry Technical Advisor",
+      image: "assets/images/template/team-4.jpg"
+    },
+    {
+      name: "M. Chennakesavulu",
+      role: "Regional Coordinator (Nandyal)",
+      image: "assets/images/template/team-5.jpg"
+    },
+    {
+      name: "S. Mallikarjuna Rao",
+      role: "AWD Paddy Water Engineer",
+      image: "assets/images/template/team-6.jpg"
+    },
+    {
+      name: "T. Ramanjaneyulu",
+      role: "Certified Nursery Quality Lead",
+      image: "assets/images/template/team-7.jpg"
+    },
+    {
+      name: "B. Srinivasulu",
+      role: "Carbon Biomass Survey Officer",
+      image: "assets/images/template/team-8.jpg"
+    }
+  ];
+
+  let members = defaultMembers;
+  try {
+    const saved = localStorage.getItem('sgs_team_members');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        members = parsed;
+      }
+    }
+  } catch(e) {}
+
+  const isSubpage = window.location.pathname.endsWith('/about/') || window.location.pathname.includes('/about/index');
+  const prefix = isSubpage ? '../' : './';
+
+  grid.innerHTML = members.map(m => {
+    let imgPath = m.image || 'assets/images/founder/b-raghu-bhaskar-professional.png';
+    if (!imgPath.startsWith('http')) {
+      imgPath = imgPath.replace(/^\.?\//, '');
+      imgPath = prefix + imgPath;
+    }
+    return `
+      <div class="about-team-card">
+        <div class="about-team-photo" style="background-image: url('${imgPath}'); background-color:#e8f0eb;"></div>
+        <h4>${m.name}</h4>
+        <p>${m.role}</p>
+      </div>
+    `;
+  }).join('');
+}
 
 // --- MOBILE DRAWER ACCORDION ---
 function toggleDrawerAccordion(btn) {

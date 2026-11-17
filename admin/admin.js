@@ -355,6 +355,143 @@ function switchCmsTab(tabName) {
   if (panel) panel.style.display = 'block';
 }
 
+// ============================================================================
+// DYNAMIC TEAM MEMBERS CMS LOGIC
+// ============================================================================
+const DEFAULT_TEAM_MEMBERS = [
+  {
+    name: "B. Raghu Bhaskar",
+    role: "Founder & President",
+    image: "assets/images/founder/b-raghu-bhaskar-professional.png"
+  },
+  {
+    name: "K. Venkata Rami Reddy",
+    role: "Field Operations Director",
+    image: "assets/images/template/team-2.jpg"
+  },
+  {
+    name: "G. Lakshmi Devi",
+    role: "Women Farmer Empowerment Lead",
+    image: "assets/images/template/team-3.jpg"
+  },
+  {
+    name: "Dr. P. Suresh Kumar",
+    role: "Agroforestry Technical Advisor",
+    image: "assets/images/template/team-4.jpg"
+  },
+  {
+    name: "M. Chennakesavulu",
+    role: "Regional Coordinator (Nandyal)",
+    image: "assets/images/template/team-5.jpg"
+  },
+  {
+    name: "S. Mallikarjuna Rao",
+    role: "AWD Paddy Water Engineer",
+    image: "assets/images/template/team-6.jpg"
+  },
+  {
+    name: "T. Ramanjaneyulu",
+    role: "Certified Nursery Quality Lead",
+    image: "assets/images/template/team-7.jpg"
+  },
+  {
+    name: "B. Srinivasulu",
+    role: "Carbon Biomass Survey Officer",
+    image: "assets/images/template/team-8.jpg"
+  }
+];
+
+function getTeamMembers() {
+  try {
+    const saved = localStorage.getItem('sgs_team_members');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(DEFAULT_TEAM_MEMBERS));
+}
+
+function resolveAdminImgPath(imgPath) {
+  if (!imgPath) return '../assets/images/founder/b-raghu-bhaskar-professional.png';
+  if (imgPath.startsWith('http')) return imgPath;
+  let clean = imgPath.replace(/^\.?\//, '');
+  return '../' + clean;
+}
+
+function renderTeamEditor() {
+  const container = document.getElementById('teamMembersList');
+  if (!container) return;
+  const members = getTeamMembers();
+  container.innerHTML = members.map((m, idx) => `
+    <div class="team-edit-card" style="background:#f8faf9; border:1px solid #cbd5e1; border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:10px; position:relative; box-shadow:0 4px 12px rgba(0,0,0,0.03);">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:0.75rem; font-weight:800; color:#15803d; text-transform:uppercase; letter-spacing:0.04em;">Member #${idx + 1}</span>
+        <button type="button" onclick="removeTeamMember(${idx})" style="background:#fee2e2; border:none; color:#dc2626; width:26px; height:26px; border-radius:50%; font-size:1.1rem; line-height:1; cursor:pointer; font-weight:700; display:flex; align-items:center; justify-content:center;" title="Delete Member">&times;</button>
+      </div>
+      <div style="height:150px; border-radius:10px; overflow:hidden; background:#e2e8f0; display:flex; align-items:center; justify-content:center;">
+        <img id="team_preview_${idx}" src="${resolveAdminImgPath(m.image)}" alt="${escapeHtml(m.name)}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='../assets/images/founder/b-raghu-bhaskar-professional.png'">
+      </div>
+      <div>
+        <label style="display:block; font-size:0.75rem; font-weight:700; color:#334155; margin-bottom:4px;">Full Name</label>
+        <input type="text" class="cms-input team-input-name" data-idx="${idx}" value="${escapeHtml(m.name)}" style="width:100%; font-size:0.9rem;" placeholder="e.g. B. Raghu Bhaskar">
+      </div>
+      <div>
+        <label style="display:block; font-size:0.75rem; font-weight:700; color:#334155; margin-bottom:4px;">Role / Designation</label>
+        <input type="text" class="cms-input team-input-role" data-idx="${idx}" value="${escapeHtml(m.role)}" style="width:100%; font-size:0.85rem;" placeholder="e.g. Field Operations Director">
+      </div>
+      <div>
+        <label style="display:block; font-size:0.75rem; font-weight:700; color:#334155; margin-bottom:4px;">Photo Path or Web URL</label>
+        <input type="text" class="cms-input team-input-img" data-idx="${idx}" value="${escapeHtml(m.image)}" style="width:100%; font-size:0.82rem;" oninput="document.getElementById('team_preview_${idx}').src = resolveAdminImgPath(this.value)">
+      </div>
+    </div>
+  `).join('');
+}
+
+function addTeamMember() {
+  const members = collectTeamMembersFromDom();
+  members.push({
+    name: "New Team Member",
+    role: "Field Coordinator",
+    image: "assets/images/template/team-1.jpg"
+  });
+  localStorage.setItem('sgs_team_members', JSON.stringify(members));
+  renderTeamEditor();
+  showToast('+ New member card added. Enter details and save.');
+}
+
+function removeTeamMember(idx) {
+  const members = collectTeamMembersFromDom();
+  if (members.length <= 1) {
+    alert("You must keep at least one team member.");
+    return;
+  }
+  const name = members[idx]?.name || 'this member';
+  if (confirm(`Are you sure you want to remove ${name}?`)) {
+    members.splice(idx, 1);
+    localStorage.setItem('sgs_team_members', JSON.stringify(members));
+    renderTeamEditor();
+    showToast('Member removed.');
+  }
+}
+
+function collectTeamMembersFromDom() {
+  const cards = document.querySelectorAll('.team-edit-card');
+  if (!cards || cards.length === 0) return getTeamMembers();
+  const members = [];
+  cards.forEach((card, idx) => {
+    const nameInp = card.querySelector('.team-input-name');
+    const roleInp = card.querySelector('.team-input-role');
+    const imgInp = card.querySelector('.team-input-img');
+    members.push({
+      name: nameInp ? nameInp.value.trim() : `Member ${idx + 1}`,
+      role: roleInp ? roleInp.value.trim() : 'Team Member',
+      image: imgInp ? imgInp.value.trim() : 'assets/images/template/team-1.jpg'
+    });
+  });
+  return members;
+}
+
 function saveSiteContentAndImages() {
   const imgs = getCmsImages();
   for (const key in DEFAULT_IMAGES) {
@@ -362,7 +499,12 @@ function saveSiteContentAndImages() {
     if (inp) imgs[key] = inp.value.trim();
   }
   localStorage.setItem('sgs_site_images', JSON.stringify(imgs));
-  showToast('✓ Media & Content changes saved and published!');
+
+  // Save Team Members
+  const teamMembers = collectTeamMembersFromDom();
+  localStorage.setItem('sgs_team_members', JSON.stringify(teamMembers));
+
+  showToast('✓ Media, Content & Team changes saved and published!');
 }
 
 function escapeHtml(str) {
@@ -397,5 +539,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (document.getElementById('img_hero_bg')) {
     loadCmsValues();
+  }
+  if (document.getElementById('teamMembersList')) {
+    renderTeamEditor();
   }
 });

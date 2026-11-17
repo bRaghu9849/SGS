@@ -170,6 +170,22 @@
           <input type="text" id="about_reg" class="cms-input" value="Regd. No. 129/2021 — AP Societies Registration Act">
         </div>
       </div>
+
+      <!-- Team Members Manager -->
+      <div class="cms-card" style="margin-top:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+          <div>
+            <h3 style="margin:0;">👥 Leadership &amp; Team Members</h3>
+            <p class="cms-desc" style="margin:4px 0 0;">Manage team members displayed in the About Us page grid. You can add, edit, or remove members and photos anytime.</p>
+          </div>
+          <button type="button" class="btn-admin-add" onclick="addTeamMember()" style="background:#15803d; color:#ffffff; border:none; padding:10px 18px; border-radius:10px; font-weight:700; cursor:pointer; font-family:'Rubik',sans-serif; display:inline-flex; align-items:center; gap:6px;">
+            <span>+ Add Team Member</span>
+          </button>
+        </div>
+        <div id="teamMembersList" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:18px;">
+          <!-- Dynamically populated via renderTeamEditor() -->
+        </div>
+      </div>
     </div>
 
     <div id="cmsTabCarbon" class="cms-tab-panel" style="display:none;">
