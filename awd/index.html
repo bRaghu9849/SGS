@@ -505,6 +505,14 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/sgs-official-logo.png",
       logoEmblem: "assets/images/sgs-official-logo.png",
@@ -899,6 +907,23 @@
             { title: "Alternate Wetting & Drying (AWD)", sub: "Water-saving paddy method utilizing perforated field tubes, conserving up to 30% water and reducing methane emissions.", stat: "5,000+ Farmers", statLabel: "Enrolled in AWD", imgKey: "sol2", page: "awd" },
             { title: "Carbon Offsets & Ecology", sub: "Quantifying tree biomass and carbon sequestration under international standards to generate transparent farmer carbon revenue.", stat: "1,20,000+", statLabel: "Registered Farmers", imgKey: "sol3", page: "carbon-credits" }
           ],
+          empower: {
+            title: "Empowering Your Farm",
+            titleHighlight: "With Expert Solutions",
+            rating: "4.9/5",
+            caption: "Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.",
+            bullets: [
+              "16 High-Value Forest & Fruit Species supplied directly from nurseries",
+              "Alternate Wetting and Drying (AWD) cutting water consumption by 30%",
+              "Transparent 70% farmer carbon benefit sharing"
+            ],
+            p1: "We provide a comprehensive suite of tailored services designed to optimize farming operations, enhance soil health, and promote environmentally sustainable practices for long-term agricultural prosperity.",
+            p2: "Our team combines satellite monitoring and ground validation to deliver innovative solutions, empowering farmers to achieve efficiency, earn carbon income, and build resilient agrarian futures.",
+            ctaText: "Get in Touch",
+            mainImg: "womanGreenhouse",
+            videoThumb1: "aboutField1",
+            videoThumb2: "aboutField2"
+          },
           steps: {
             headingDark: "How We Work With Farmers",
             headingMuted: "Step by Step",
@@ -1694,7 +1719,7 @@
     // Initialize CMS Data
     function initCmsData() {
       const initial = getInitialCmsData();
-      const raw = localStorage.getItem("sgs_cms_data_v6");
+      const raw = localStorage.getItem("sgs_cms_data_v7");
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
@@ -1716,7 +1741,7 @@
     // Save CMS Data to LocalStorage
     function saveCmsData() {
       try {
-        localStorage.setItem("sgs_cms_data_v6", JSON.stringify(CMS));
+        localStorage.setItem("sgs_cms_data_v7", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
@@ -2326,77 +2351,84 @@
         </section>
 
         <!-- SECTION 6: EMPOWERING YOUR FARM WITH EXPERT SOLUTIONS (DARK GREEN SECTION) -->
-        <section class="relative bg-[#111e15] text-white py-16 lg:py-24 overflow-hidden">
-          <div class="absolute inset-0 opacity-20">
-            <img src="${imgUrl('heroAerial')}" alt="Background texture" class="w-full h-full object-cover" />
-          </div>
-          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8">
-            <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-              <!-- Left Column: Main Farmer Photo + 2 Video Thumbnails -->
-              <div class="lg:col-span-6 space-y-4">
-                <div class="relative rounded-[24px] overflow-hidden h-[300px] sm:h-[340px]">
-                  <img data-cms-img="womanGreenhouse" src="${imgUrl('womanGreenhouse')}" alt="Female farmer in greenhouse" class="w-full h-full object-cover" />
-                  <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-4 text-xs text-white/90 leading-relaxed">
-                    Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.
-                  </div>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="relative rounded-[20px] overflow-hidden h-32 sm:h-36 cursor-pointer group" onclick="openVideoModal('Sunrise Field Operations', '${imgUrl('aboutField1')}')">
-                    <img data-cms-img="aboutField1" src="${imgUrl('aboutField1')}" alt="Field video 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                    <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
-                      <span class="play-btn-overlay w-11 h-11"><svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        ${(() => {
+          const emp = (CMS.home && CMS.home.empower) || {};
+          const empBullets = emp.bullets || [
+            "16 High-Value Forest & Fruit Species supplied directly from nurseries",
+            "Alternate Wetting and Drying (AWD) cutting water consumption by 30%",
+            "Transparent 70% farmer carbon benefit sharing"
+          ];
+          const empMainImg = emp.mainImg || 'womanGreenhouse';
+          const empThumb1 = emp.videoThumb1 || 'aboutField1';
+          const empThumb2 = emp.videoThumb2 || 'aboutField2';
+
+          return `
+          <section class="relative bg-[#111e15] text-white py-16 lg:py-24 overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+              <img src="${imgUrl('heroAerial')}" alt="Background texture" class="w-full h-full object-cover" />
+            </div>
+            <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8">
+              <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                <!-- Left Column: Main Farmer Photo + 2 Video Thumbnails -->
+                <div class="lg:col-span-6 space-y-4">
+                  <div class="relative rounded-[24px] overflow-hidden h-[300px] sm:h-[340px]">
+                    <img data-cms-img="${empMainImg}" src="${imgUrl(empMainImg)}" alt="Female farmer in greenhouse" class="w-full h-full object-cover" />
+                    <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-4 text-xs text-white/90 leading-relaxed">
+                      ${emp.caption || 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.'}
                     </div>
                   </div>
-                  <div class="relative rounded-[20px] overflow-hidden h-32 sm:h-36 cursor-pointer group" onclick="openVideoModal('Harvest Efficiency Overview', '${imgUrl('aboutField2')}')">
-                    <img data-cms-img="aboutField2" src="${imgUrl('aboutField2')}" alt="Field video 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                    <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
-                      <span class="play-btn-overlay w-11 h-11"><svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="relative rounded-[20px] overflow-hidden h-32 sm:h-36 cursor-pointer group" onclick="openVideoModal('Sunrise Field Operations', '${imgUrl(empThumb1)}')">
+                      <img data-cms-img="${empThumb1}" src="${imgUrl(empThumb1)}" alt="Field video 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                      <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
+                        <span class="play-btn-overlay w-11 h-11"><svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                      </div>
+                    </div>
+                    <div class="relative rounded-[20px] overflow-hidden h-32 sm:h-36 cursor-pointer group" onclick="openVideoModal('Harvest Efficiency Overview', '${imgUrl(empThumb2)}')">
+                      <img data-cms-img="${empThumb2}" src="${imgUrl(empThumb2)}" alt="Field video 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                      <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
+                        <span class="play-btn-overlay w-11 h-11"><svg class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Right Column: Content -->
-              <div class="lg:col-span-6">
-                <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
-                  Empowering Your Farm <span class="text-white/55">With<br class="hidden sm:inline" /> Expert Solutions</span>
-                </h2>
+                <!-- Right Column: Content -->
+                <div class="lg:col-span-6">
+                  <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
+                    ${emp.title || 'Empowering Your Farm'} <span class="text-white/55">${emp.titleHighlight || 'With<br class="hidden sm:inline" /> Expert Solutions'}</span>
+                  </h2>
 
-                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3.5 py-1 text-xs font-semibold mb-6">
-                  <span>4.9/5</span>
-                  <span class="text-[#7fd858] tracking-widest">★★★★★</span>
+                  <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3.5 py-1 text-xs font-semibold mb-6">
+                    <span>${emp.rating || '4.9/5'}</span>
+                    <span class="text-[#7fd858] tracking-widest">★★★★★</span>
+                  </div>
+
+                  <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/90 mb-6">
+                    ${empBullets.map(b => `
+                      <li class="flex items-center gap-2.5">
+                        <span class="w-4 h-4 rounded bg-white text-[#162219] flex items-center justify-center text-[10px] font-bold">✓</span>
+                        <span>${b}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+
+                  <p class="text-xs sm:text-[13px] text-white/75 leading-relaxed mb-4">
+                    ${emp.p1 || 'We provide a comprehensive suite of tailored services designed to optimize farming operations, enhance soil health, and promote environmentally sustainable practices for long-term agricultural prosperity.'}
+                  </p>
+                  <p class="text-xs sm:text-[13px] text-white/75 leading-relaxed mb-8">
+                    ${emp.p2 || 'Our team combines satellite monitoring and ground validation to deliver innovative solutions, empowering farmers to achieve efficiency, earn carbon income, and build resilient agrarian futures.'}
+                  </p>
+
+                  <a href="${routeUrl('contact')}" data-nav="contact" class="cta-pill no-underline">
+                    <span>${emp.ctaText || 'Get in Touch'}</span>
+                    ${arrowCircleSvg()}
+                  </a>
                 </div>
-
-                <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/90 mb-6">
-                  <li class="flex items-center gap-2.5">
-                    <span class="w-4 h-4 rounded bg-white text-[#162219] flex items-center justify-center text-[10px] font-bold">✓</span>
-                    <span>16 High-Value Forest & Fruit Species supplied directly from nurseries</span>
-                  </li>
-                  <li class="flex items-center gap-2.5">
-                    <span class="w-4 h-4 rounded bg-white text-[#162219] flex items-center justify-center text-[10px] font-bold">✓</span>
-                    <span>Alternate Wetting and Drying (AWD) cutting water consumption by 30%</span>
-                  </li>
-                  <li class="flex items-center gap-2.5">
-                    <span class="w-4 h-4 rounded bg-white text-[#162219] flex items-center justify-center text-[10px] font-bold">✓</span>
-                    <span>Transparent 70% farmer carbon benefit sharing</span>
-                  </li>
-                </ul>
-
-                <p class="text-xs sm:text-[13px] text-white/75 leading-relaxed mb-4">
-                  We provide a comprehensive suite of tailored services designed to optimize farming operations, enhance soil health, and promote environmentally sustainable practices for long-term agricultural prosperity.
-                </p>
-                <p class="text-xs sm:text-[13px] text-white/75 leading-relaxed mb-8">
-                  Our team combines satellite monitoring and ground validation to deliver innovative solutions, empowering farmers to achieve efficiency, earn carbon income, and build resilient agrarian futures.
-                </p>
-
-                <a href="${routeUrl('contact')}" data-nav="contact" class="cta-pill no-underline">
-                  <span>Get in Touch</span>
-                  ${arrowCircleSvg()}
-                </a>
               </div>
             </div>
-          </div>
-        </section>
+          </section>`;
+        })()}
 
         <!-- SECTION 7: COMPREHENSIVE SOLUTIONS FOR MODERN FARMING -->
         <section class="py-16 lg:py-24 max-w-[1220px] mx-auto px-5 sm:px-8">
@@ -4552,13 +4584,10 @@
               </div>
 
               <div class="mt-auto">
-                <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-3 mb-2">Submissions &amp; Assets</div>
+                <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider px-3 mb-2">Management</div>
                 <div class="space-y-1">
                   <button type="button" onclick="setCmsTab('inbox')" class="cms-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-between ${activeTab === 'inbox' ? 'bg-[#54a630] text-white shadow-sm' : 'text-gray-700 hover:bg-gray-100'}" data-tab="inbox">
                     <span>📥 Farmer Submissions</span>
-                  </button>
-                  <button type="button" onclick="setCmsTab('images')" class="cms-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-between ${activeTab === 'images' ? 'bg-[#54a630] text-white shadow-sm' : 'text-gray-700 hover:bg-gray-100'}" data-tab="images">
-                    <span>📷 Photo Replacer Studio</span>
                   </button>
                   <button type="button" onclick="setCmsTab('security')" class="cms-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-between ${activeTab === 'security' ? 'bg-[#54a630] text-white shadow-sm' : 'text-gray-700 hover:bg-gray-100'}" data-tab="security">
                     <span>🔐 Change Password</span>
@@ -4859,7 +4888,7 @@
         ws.innerHTML = `
           <!-- Section 1: Hero Text & Card -->
           <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
-            ${renderAdminCardHeader('1. Home Hero Text &amp; Rating', 'Hero main title, subtitle, CTA button and rating text.', 'Home Hero')}
+            ${renderAdminCardHeader('1. Home Hero Text &amp; Rating', 'Hero main title, subtitle, CTA button, rating text and hero images.', 'Home Hero')}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Hero Main Title</label>
@@ -4894,6 +4923,15 @@
                 <input type="text" value="${h.heroCardDesc || ''}" oninput="CMS.home.heroCardDesc=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
               </div>
             </div>
+            <!-- Hero Images inline -->
+            <div class="border-t border-gray-200 pt-4 mt-2">
+              <p class="font-bold text-gray-600 mb-3">📷 Hero Section Images</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                ${renderCmsImageCard('heroAerial', 'Hero Background (Aerial Field)')}
+                ${renderCmsImageCard('womanGreenhouse', 'Right Card Photo (Greenhouse)')}
+                ${renderCmsImageCard('farmerTomatoes', 'Right Card Video Thumb 1')}
+              </div>
+            </div>
           </div>
 
           <!-- Section 2: Impact at a Glance -->
@@ -4922,7 +4960,7 @@
           </div>
 
           <!-- Section 3: Bottom Yellow CTA Banner -->
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
             ${renderAdminCardHeader('3. Yellow Partnership CTA Banner', 'Appears on Home and major pages.', 'Yellow CTA')}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -4933,6 +4971,104 @@
                 <label class="block font-bold text-gray-600 mb-1">Button Text</label>
                 <input type="text" value="${(h.bottomCta && h.bottomCta.btnText) || ''}" oninput="if(!CMS.home.bottomCta) CMS.home.bottomCta={}; CMS.home.bottomCta.btnText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
               </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Bento Grid Images -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('4. Bento Grid Section Images', 'Four image cards shown in the bento grid below the hero.', 'Bento Grid Images')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${renderCmsImageCard('bentoImg1', 'Bento Card 1 (Top Left)')}
+              ${renderCmsImageCard('bentoImg2', 'Bento Card 2 (Top Right)')}
+              ${renderCmsImageCard('bentoImg3', 'Bento Card 3 (Bottom Left)')}
+              ${renderCmsImageCard('bentoImg4', 'Bento Card 4 (Bottom Right)')}
+            </div>
+          </div>
+
+          <!-- Section 5: Story & Commitment Images -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('5. Discover the Journey &amp; Our Commitment Images', 'Red tractor story section and split-field commitment section.', 'Story Images')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${renderCmsImageCard('redTractor', 'Discover Journey (Red Tractor)')}
+              ${renderCmsImageCard('splitField', 'Our Commitment (Split Field)')}
+            </div>
+          </div>
+
+          <!-- Section 6: Empowering Your Farm (Dark Green Section) Complete Editor -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('6. Empowering Your Farm With Expert Solutions', 'Dark green feature section: title, rating, bullets, paragraphs, and media.', 'Empowering Farm')}
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Section Title</label>
+                <input type="text" value="${(h.empower && h.empower.title) || 'Empowering Your Farm'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Title Highlight (Muted)</label>
+                <input type="text" value="${(h.empower && h.empower.titleHighlight) || 'With Expert Solutions'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.titleHighlight=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Rating Value</label>
+                <input type="text" value="${(h.empower && h.empower.rating) || '4.9/5'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.rating=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Farmer Photo Caption (Frosted overlay on greenhouse image)</label>
+              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.caption=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${(h.empower && h.empower.caption) || 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.'}</textarea>
+            </div>
+
+            <div class="space-y-2">
+              <label class="block font-bold text-gray-600">3 Key Bullet Points (Checkmarks)</label>
+              <input type="text" value="${(h.empower && h.empower.bullets && h.empower.bullets[0]) || '16 High-Value Forest & Fruit Species supplied directly from nurseries'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!CMS.home.empower.bullets) CMS.home.empower.bullets=[]; CMS.home.empower.bullets[0]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" placeholder="Bullet 1" />
+              <input type="text" value="${(h.empower && h.empower.bullets && h.empower.bullets[1]) || 'Alternate Wetting and Drying (AWD) cutting water consumption by 30%'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!CMS.home.empower.bullets) CMS.home.empower.bullets=[]; CMS.home.empower.bullets[1]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" placeholder="Bullet 2" />
+              <input type="text" value="${(h.empower && h.empower.bullets && h.empower.bullets[2]) || 'Transparent 70% farmer carbon benefit sharing'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!CMS.home.empower.bullets) CMS.home.empower.bullets=[]; CMS.home.empower.bullets[2]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" placeholder="Bullet 3" />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Paragraph 1</label>
+                <textarea rows="3" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.p1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${(h.empower && h.empower.p1) || 'We provide a comprehensive suite of tailored services designed to optimize farming operations, enhance soil health, and promote environmentally sustainable practices for long-term agricultural prosperity.'}</textarea>
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Paragraph 2</label>
+                <textarea rows="3" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.p2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${(h.empower && h.empower.p2) || 'Our team combines satellite monitoring and ground validation to deliver innovative solutions, empowering farmers to achieve efficiency, earn carbon income, and build resilient agrarian futures.'}</textarea>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">CTA Button Text</label>
+              <input type="text" value="${(h.empower && h.empower.ctaText) || 'Get in Touch'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+            </div>
+
+            <!-- Inline Section Images -->
+            <div class="border-t border-gray-200 pt-4 mt-2">
+              <p class="font-bold text-gray-600 mb-3">📷 Section Images &amp; Video Thumbnails</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                ${renderCmsImageCard('womanGreenhouse', 'Main Greenhouse Photo (Left)')}
+                ${renderCmsImageCard('aboutField1', 'Video Thumb 1 (Bottom Left)')}
+                ${renderCmsImageCard('aboutField2', 'Video Thumb 2 (Bottom Right)')}
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: Solutions Cards Images -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('7. Comprehensive Solutions Cards Images', 'Three service cards with aerial/field photos.', 'Solutions Images')}
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              ${renderCmsImageCard('sol1', 'Solution Card 1')}
+              ${renderCmsImageCard('sol2', 'Solution Card 2')}
+              ${renderCmsImageCard('sol3', 'Solution Card 3')}
+            </div>
+          </div>
+
+          <!-- Section 8: Newsletter & Wind Banner Images -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+            ${renderAdminCardHeader('8. Newsletter &amp; Wind Banner Images', 'Three staggered newsletter images and wind farm banner.', 'Newsletter Images')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${renderCmsImageCard('nl1', 'Newsletter Image 1')}
+              ${renderCmsImageCard('nl2', 'Newsletter Image 2')}
+              ${renderCmsImageCard('nl3', 'Newsletter Image 3')}
+              ${renderCmsImageCard('windBanner', 'Wind Farm Banner (Full-Width)')}
             </div>
           </div>
         `;
@@ -4989,6 +5125,15 @@
                 <textarea rows="2" oninput="CMS.about.whoWeAre.visionText=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${who.visionText || ''}</textarea>
               </div>
             </div>
+            <!-- Founder & About Images inline -->
+            <div class="border-t border-gray-200 pt-4">
+              <p class="font-bold text-gray-600 mb-3">📷 About Page Images</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                ${renderCmsImageCard('founder', 'Founder Photo')}
+                ${renderCmsImageCard('aboutAgronomists', 'Agronomists / Team Photo')}
+                ${renderCmsImageCard('aboutNewsHub', 'News Hub Section Image')}
+              </div>
+            </div>
           </div>
 
           <!-- 8 Projects Grid -->
@@ -5024,6 +5169,14 @@
             <div>
               <label class="block font-bold text-gray-600 mb-1">What is agroforestry? (Full explanation)</label>
               <textarea rows="3" oninput="CMS.agroforestry.whatIs=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${ag.whatIs || ''}</textarea>
+            </div>
+            <!-- Inline Section Images -->
+            <div class="border-t border-gray-200 pt-4 mt-2">
+              <p class="font-bold text-gray-600 mb-3">📷 Agroforestry Section Images</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${renderCmsImageCard('servicesHero', 'Agroforestry Page Hero Image')}
+                ${renderCmsImageCard('twoFarmersTablet', 'Field Agronomists with Farmers')}
+              </div>
             </div>
           </div>
 
@@ -5079,6 +5232,14 @@
             <div>
               <label class="block font-bold text-gray-600 mb-1">What is AWD? (Full text)</label>
               <textarea rows="3" oninput="CMS.awd.whatIs=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${awd.whatIs || ''}</textarea>
+            </div>
+            <!-- Inline Section Images -->
+            <div class="border-t border-gray-200 pt-4 mt-2">
+              <p class="font-bold text-gray-600 mb-3">📷 AWD in Paddy Section Image</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${renderCmsImageCard('sol2', 'AWD Water Conservation in Paddy')}
+                ${renderCmsImageCard('aboutField1', 'Field Demonstration Photo')}
+              </div>
             </div>
           </div>
 
@@ -5140,6 +5301,14 @@
               <label class="block font-bold text-gray-600 mb-1">What is a carbon credit? (Full text)</label>
               <textarea rows="3" oninput="CMS.carbon.whatIs=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${carb.whatIs || ''}</textarea>
             </div>
+            <!-- Inline Section Images -->
+            <div class="border-t border-gray-200 pt-4 mt-2">
+              <p class="font-bold text-gray-600 mb-3">📷 Carbon Credits Section Image</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${renderCmsImageCard('sol1', 'Carbon Offsets & Ecology')}
+                ${renderCmsImageCard('aboutField2', 'Harvest Verification Photo')}
+              </div>
+            </div>
           </div>
 
           <!-- Carbon Credit Journey & Price Cycle (7 Steps Bilingual) -->
@@ -5199,6 +5368,9 @@
                   <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.forestSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic" />
                   <textarea rows="2" placeholder="Best for..." oninput="CMS.forestSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${s.fit}</textarea>
                   <textarea rows="2" placeholder="Special Note..." oninput="CMS.forestSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs text-[#8a5b00]">${s.note || ''}</textarea>
+                  <div class="border-t border-gray-100 pt-3">
+                    ${renderCmsImageCard('forest' + (idx+1), s.name + ' Photo')}
+                  </div>
                 </div>
               `).join('')}
             </div>
@@ -5221,6 +5393,9 @@
                   <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.fruitSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic" />
                   <textarea rows="2" placeholder="Best for..." oninput="CMS.fruitSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${s.fit}</textarea>
                   <textarea rows="2" placeholder="Special Note..." oninput="CMS.fruitSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs text-[#8a5b00]">${s.note || ''}</textarea>
+                  <div class="border-t border-gray-100 pt-3">
+                    ${renderCmsImageCard('fruit' + (idx+1), s.name + ' Photo')}
+                  </div>
                 </div>
               `).join('')}
             </div>
@@ -5241,6 +5416,14 @@
             ${renderAdminCardHeader('Environment Hero &amp; Subtitle', 'Main title and subtitle.', 'Environment Hero')}
             <input type="text" value="${env.heroTitle || ''}" oninput="CMS.environment.heroTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold" />
             <textarea rows="2" oninput="CMS.environment.heroSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${env.heroSubtitle || ''}</textarea>
+            <!-- Inline Section Images -->
+            <div class="border-t border-gray-200 pt-4 mt-2">
+              <p class="font-bold text-gray-600 mb-3">📷 Environment &amp; Impact Section Images</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${renderCmsImageCard('sol3', 'Environment & Impact Banner')}
+                ${renderCmsImageCard('splitField', 'Landscape Preservation Photo')}
+              </div>
+            </div>
           </div>
 
           <!-- What Any Farmer Can Do (Checklist) -->
@@ -5277,6 +5460,15 @@
               </div>
             `).join('')}
           </div>
+
+          <!-- Inline Section Images -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mt-6">
+            ${renderAdminCardHeader('Journey Page Feature Photos', 'Key photos representing society milestones.', 'Journey Photos')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${renderCmsImageCard('founder', 'Founder Photo')}
+              ${renderCmsImageCard('handsGrain', 'Field Harvesting Photo')}
+            </div>
+          </div>
         `;
       }
 
@@ -5305,6 +5497,15 @@
                   <textarea rows="2" oninput="CMS.plantation.termsTelugu[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs telugu-text mb-2">${t}</textarea>
                 `).join('')}
               </div>
+            </div>
+          </div>
+
+          <!-- Plantation Banner Image -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+            ${renderAdminCardHeader('Plantation Application Page Visuals', 'Banner images shown on the application form page.', 'Plantation Visuals')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              ${renderCmsImageCard('fieldManFarmer', 'Plantation Application Banner Photo')}
+              ${renderCmsImageCard('heroAerial', 'Farmland Aerial Background')}
             </div>
           </div>
         `;
@@ -5362,6 +5563,81 @@
       }
 
       // -----------------------------------------------------------------------
+      // TAB: PHOTO GALLERY (All 24 photos with inline upload, category & text)
+      // -----------------------------------------------------------------------
+      else if (t === "gallery") {
+        const items = CMS.galleryItems || [];
+        const cats = ["Field", "AWD", "Training", "Carbon", "Plantation", "Community"];
+        ws.innerHTML = `
+          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h3 class="text-xl font-extrabold text-[#162219]">🖼️ Photo Gallery Manager (${items.length} Photos)</h3>
+              <p class="text-xs text-gray-500">Edit titles, Telugu descriptions, categories, and upload or replace photos for the Gallery page.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button type="button" onclick="addGalleryItem()" class="bg-gray-900 hover:bg-black text-white px-4 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+                ➕ Add New Photo
+              </button>
+              <button type="button" onclick="saveCmsSection('All Gallery Photos', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+                💾 Save All Photos
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 text-xs">
+            ${items.map((item, idx) => `
+              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="font-extrabold text-[#54a630]">Photo #${idx + 1}</span>
+                  <div class="flex items-center gap-2">
+                    <button type="button" onclick="deleteGalleryItem(${idx})" class="text-red-500 hover:text-red-700 font-bold text-[11px]">🗑️ Delete</button>
+                    <button type="button" onclick="saveCmsSection('Photo #${idx + 1}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2.5 py-1 rounded-lg text-[10px] font-bold">Save</button>
+                  </div>
+                </div>
+
+                <!-- Image preview and upload -->
+                <div class="relative rounded-xl overflow-hidden h-40 bg-gray-200 border border-gray-200">
+                  <img src="${imgUrl(item.imgKey)}" alt="${item.title}" class="w-full h-full object-cover" />
+                  <span class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/60 text-white text-[10px] font-bold">${item.cat}</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <label class="flex-1 cursor-pointer bg-[#54a630] hover:bg-[#468c28] text-white text-center py-2 px-3 rounded-xl font-bold text-xs transition shadow-sm">
+                    📁 Upload Photo
+                    <input type="file" accept="image/*" onchange="handleGalleryItemUpload(${idx}, event)" class="hidden" />
+                  </label>
+                </div>
+
+                <div>
+                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Or Paste Image URL</label>
+                  <input type="text" placeholder="https://..." value="${(CMS.images && CMS.images[item.imgKey]) || ''}" onchange="if(!CMS.images) CMS.images={}; CMS.images['${item.imgKey}']=this.value; saveCmsData(); renderCmsWorkspace(); renderApp();" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 text-xs bg-white" />
+                </div>
+
+                <div>
+                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Title (English)</label>
+                  <input type="text" value="${item.title || ''}" oninput="CMS.galleryItems[${idx}].title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 font-bold" />
+                </div>
+
+                <div>
+                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Subtitle (Telugu)</label>
+                  <input type="text" value="${item.sub || ''}" oninput="CMS.galleryItems[${idx}].sub=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 telugu-text text-[#54a630] font-bold" />
+                </div>
+
+                <div>
+                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Category</label>
+                  <select onchange="CMS.galleryItems[${idx}].cat=this.value; renderApp();" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 bg-white font-medium">
+                    ${cats.map(c => `
+                      <option value="${c}" ${c.toLowerCase() === (item.cat || '').toLowerCase() ? 'selected' : ''}>${c}</option>
+                    `).join('')}
+                  </select>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      // -----------------------------------------------------------------------
       // TAB 14: NEWS & MEDIA
       // -----------------------------------------------------------------------
       else if (t === "news") {
@@ -5384,6 +5660,9 @@
                   <input type="text" value="${item.date}" oninput="CMS.newsItems[${idx}].date=this.value;" class="border border-gray-200 rounded-lg px-2 py-1 text-xs" />
                 </div>
                 <textarea rows="2" oninput="CMS.newsItems[${idx}].body=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs telugu-text">${item.body}</textarea>
+                <div class="border-t border-gray-100 pt-3">
+                  ${renderCmsImageCard('news' + (idx+1), 'Clipping Photo / Thumbnail')}
+                </div>
               </div>
             `).join('')}
           </div>
@@ -5529,6 +5808,69 @@
         showToast("Hero video uploaded for " + pageKey + "!");
       };
       reader.readAsDataURL(file);
+    }
+
+    // Generic Image Key Upload Helper for inline section image cards
+    function handleUploadImageKey(imgKey, event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        if (!CMS.images) CMS.images = {};
+        CMS.images[imgKey] = ev.target.result;
+        saveCmsData();
+        renderApp();
+        renderCmsWorkspace();
+        showToast("Image updated for " + imgKey + "!");
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Gallery item management handlers
+    function handleGalleryItemUpload(idx, event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        if (!CMS.galleryItems) CMS.galleryItems = [];
+        if (!CMS.galleryItems[idx]) return;
+        const key = "gal_custom_" + idx + "_" + Date.now();
+        if (!CMS.images) CMS.images = {};
+        CMS.images[key] = ev.target.result;
+        CMS.galleryItems[idx].imgKey = key;
+        saveCmsData();
+        renderApp();
+        renderCmsWorkspace();
+        showToast("Gallery photo #" + (idx + 1) + " updated!");
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function addGalleryItem() {
+      if (!CMS.galleryItems) CMS.galleryItems = [];
+      const num = CMS.galleryItems.length + 1;
+      const key = "gal" + num;
+      CMS.galleryItems.unshift({
+        title: "New Field Activity",
+        sub: "నూతన క్షేత్ర కార్యక్రమం",
+        cat: "Field",
+        imgKey: key
+      });
+      saveCmsData();
+      renderApp();
+      renderCmsWorkspace();
+      showToast("Added new photo slot to gallery!");
+    }
+
+    function deleteGalleryItem(idx) {
+      if (!CMS.galleryItems || !CMS.galleryItems[idx]) return;
+      if (confirm("Are you sure you want to remove photo #" + (idx + 1) + "?")) {
+        CMS.galleryItems.splice(idx, 1);
+        saveCmsData();
+        renderApp();
+        renderCmsWorkspace();
+        showToast("Photo deleted!");
+      }
     }
 
 
