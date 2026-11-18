@@ -516,6 +516,14 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/sgs-official-logo.png",
       logoEmblem: "assets/images/sgs-official-logo.png",
@@ -564,18 +572,30 @@
       news3: "assets/images/news/news-clipping-03.jpg",
       news4: "assets/images/news/news-clipping-04.jpg",
       news5: "assets/images/news/news-clipping-05.jpg",
-      gal1: "assets/images/gallery/field-photos/field-activity-01.jpg",
-      gal2: "assets/images/gallery/field-photos/field-activity-02.jpg",
-      gal3: "assets/images/gallery/field-photos/field-activity-03.jpg",
-      gal4: "assets/images/gallery/field-photos/field-activity-04.jpg",
-      gal5: "assets/images/gallery/field-photos/field-activity-05.jpg",
-      gal6: "assets/images/gallery/field-photos/field-activity-06.jpg",
-      gal7: "assets/images/gallery/field-photos/field-activity-07.jpg",
-      gal8: "assets/images/gallery/field-photos/field-activity-08.jpg",
-      gal9: "assets/images/gallery/field-photos/field-activity-09.jpg",
-      gal10: "assets/images/gallery/field-photos/field-activity-10.jpg",
-      gal11: "assets/images/gallery/field-photos/field-activity-11.jpg",
-      gal12: "assets/images/gallery/field-photos/field-activity-12.jpg"
+      gal1: "assets/images/gallery/sgs-activity-01.jpg",
+      gal2: "assets/images/gallery/sgs-activity-02.jpg",
+      gal3: "assets/images/gallery/sgs-activity-03.jpg",
+      gal4: "assets/images/gallery/sgs-activity-04.jpg",
+      gal5: "assets/images/gallery/sgs-activity-05.jpg",
+      gal6: "assets/images/gallery/sgs-activity-06.jpg",
+      gal7: "assets/images/gallery/sgs-activity-07.jpg",
+      gal8: "assets/images/gallery/sgs-activity-08.jpg",
+      gal9: "assets/images/gallery/sgs-activity-09.jpg",
+      gal10: "assets/images/gallery/sgs-activity-10.jpg",
+      gal11: "assets/images/gallery/sgs-activity-11.jpg",
+      gal12: "assets/images/gallery/sgs-activity-12.jpg",
+      gal13: "assets/images/gallery/sgs-activity-13.jpg",
+      gal14: "assets/images/gallery/sgs-activity-14.jpg",
+      gal15: "assets/images/gallery/sgs-activity-15.jpg",
+      gal16: "assets/images/gallery/sgs-activity-16.jpeg",
+      gal17: "assets/images/gallery/sgs-activity-17.jpeg",
+      gal18: "assets/images/gallery/sgs-activity-18.jpeg",
+      gal19: "assets/images/gallery/sgs-activity-19.jpeg",
+      gal20: "assets/images/gallery/sgs-activity-20.jpeg",
+      gal21: "assets/images/gallery/sgs-activity-21.jpeg",
+      gal22: "assets/images/gallery/sgs-activity-22.jpeg",
+      gal23: "assets/images/gallery/sgs-activity-23.jpeg",
+      gal24: "assets/images/gallery/sgs-activity-24.jpeg"
     };
 
     // =========================================================================
@@ -1722,7 +1742,7 @@
     // Initialize CMS Data
     function initCmsData() {
       const initial = getInitialCmsData();
-      const raw = localStorage.getItem("sgs_cms_data_v7");
+      const raw = localStorage.getItem("sgs_cms_data_v8");
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
@@ -1744,7 +1764,7 @@
     // Save CMS Data to LocalStorage
     function saveCmsData() {
       try {
-        localStorage.setItem("sgs_cms_data_v7", JSON.stringify(CMS));
+        localStorage.setItem("sgs_cms_data_v8", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
@@ -1808,17 +1828,19 @@
     // =========================================================================
     // CLEAN SINGLE-LINE FLOATING WHITE PILL NAVBAR + TWO MEGA MENUS
     // =========================================================================
+    // =========================================================================
+    // CLEAN SINGLE-LINE FLOATING WHITE PILL NAVBAR + REFERENCE MEGA MENU
+    // =========================================================================
     function renderHeader() {
       const p = state.currentPage;
       const activeCls = "text-[#54a630]";
       const idleCls = "text-[#162219] hover:text-[#54a630]";
-      const isAgroGroup = ["services", "agroforestry", "forest", "fruit", "species"].includes(p) || state.megaMenu === "agro";
-      const isProgGroup = ["carbon", "carbon-credits", "awd", "environment", "impact", "gallery", "plantation", "new-plantation", "faq"].includes(p) || state.megaMenu === "prog";
+      const isServices = ["services", "agroforestry", "forest", "fruit", "species", "carbon", "carbon-credits", "awd", "environment", "impact", "gallery", "plantation", "new-plantation"].includes(p) || state.megaMenu === "agro" || state.megaMenu === "prog";
 
       return `
         <header class="relative z-30 pt-5 px-4 sm:px-8">
           <div class="max-w-[1220px] mx-auto relative">
-            <div class="bg-white rounded-full px-5 sm:px-7 py-3 shadow-lg flex items-center justify-between gap-4">
+            <div class="bg-white rounded-full px-5 sm:px-7 py-3 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between gap-4 border border-gray-100/60">
               <!-- Left: Logo + Official Tagline -->
               <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-2.5 sm:gap-3 text-[#162219] no-underline flex-shrink-0">
                 <img data-cms-img="logoFull" src="${imgUrl('logoFull')}" alt="Sadana Green Society Logo" class="h-9 sm:h-10 w-auto object-contain flex-shrink-0" />
@@ -1828,23 +1850,15 @@
                 </div>
               </a>
 
-              <!-- Center: Nav Items with 2 Mega Menus -->
+              <!-- Center: Nav Items with Blocksy Reference Mega Menu -->
               <nav class="desktop-nav-links hidden lg:flex items-center gap-7 text-[12px] font-bold tracking-wider uppercase whitespace-nowrap">
                 <a href="${routeUrl('home')}" data-nav="home" class="${p === 'home' ? activeCls : idleCls} transition">HOME</a>
 
-                <!-- MEGA MENU 1: AGROFORESTRY -->
+                <!-- MEGA MENU: SERVICES & PROGRAMMES -->
                 <div class="relative flex items-center gap-1 py-2 cursor-pointer" onmouseenter="showMegaMenu('agro')" onmouseleave="hideMegaMenu('agro')">
-                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="${isAgroGroup ? activeCls : idleCls} transition flex items-center gap-1">
-                    <span>AGROFORESTRY</span>
-                    <svg id="caret-agro" class="w-3.5 h-3.5 transition-transform ${state.megaMenu === 'agro' ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                  </a>
-                </div>
-
-                <!-- MEGA MENU 2: PROGRAMMES -->
-                <div class="relative flex items-center gap-1 py-2 cursor-pointer" onmouseenter="showMegaMenu('prog')" onmouseleave="hideMegaMenu('prog')">
-                  <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="${isProgGroup ? activeCls : idleCls} transition flex items-center gap-1">
-                    <span>PROGRAMMES</span>
-                    <svg id="caret-prog" class="w-3.5 h-3.5 transition-transform ${state.megaMenu === 'prog' ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="${isServices ? activeCls : idleCls} transition flex items-center gap-1">
+                    <span>SERVICES</span>
+                    <svg id="caret-agro" class="w-3.5 h-3.5 transition-transform ${state.megaMenu === 'agro' || state.megaMenu === 'prog' ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                   </a>
                 </div>
 
@@ -1855,12 +1869,14 @@
 
               <!-- Right: Search + Get Started CTA + Hamburger -->
               <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <button type="button" onclick="openSearchModal()" aria-label="Search" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-[#162219] flex items-center justify-center transition">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
+                <button type="button" onclick="openSearchModal()" aria-label="Search" class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-[#162219] flex items-center justify-center transition">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
                 </button>
-                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="hidden sm:inline-flex items-center gap-2 bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-full font-bold text-xs tracking-wider uppercase transition shadow-md no-underline">
-                  <span>Get Started</span>
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="hidden sm:inline-flex items-center gap-2.5 bg-[#54a630] hover:bg-[#468e26] text-white pl-5 pr-2 py-1.5 rounded-full font-bold text-xs tracking-wider uppercase transition shadow-md no-underline">
+                  <span class="font-extrabold">Get Started</span>
+                  <span class="w-7 h-7 rounded-full bg-white text-[#54a630] flex items-center justify-center font-bold">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                  </span>
                 </a>
                 <button type="button" onclick="toggleMobileDrawer()" aria-label="Menu" class="lg:hidden w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 text-[#162219] flex items-center justify-center transition">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -1868,55 +1884,135 @@
               </div>
             </div>
 
-            <!-- MEGA MENU DROPDOWN 1: AGROFORESTRY -->
-            <div id="mega-menu-agro" onmouseenter="showMegaMenu('agro')" onmouseleave="hideMegaMenu('agro')" class="${state.megaMenu === 'agro' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 z-40">
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">🌳</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">Why Agroforestry?</h4>
-                  <p class="text-xs text-gray-500">Combining trees with crops and livestock for income, soil health, and resilience.</p>
-                </a>
-                <a href="${routeUrl('species')}#sp-1" data-nav="species" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">🌲</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">8 Forest Species</h4>
-                  <p class="text-xs text-gray-500">Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul, Red sanders.</p>
-                </a>
-                <a href="${routeUrl('species')}#sp-9" data-nav="species" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">🥭</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">8 Fruit Species</h4>
-                  <p class="text-xs text-gray-500">Mango, Guava, Sapota, Custard apple, Amla, Lemon, Coconut, Cashew.</p>
-                </a>
-                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="p-4 rounded-2xl bg-[#f4f7f4] hover:bg-[#ebf2ea] transition block no-underline border border-[#54a630]/20">
-                  <div class="text-2xl mb-2">📝</div>
-                  <h4 class="font-bold text-[#54a630] text-sm mb-1">Apply for Plantation</h4>
-                  <p class="text-xs text-gray-600">Free sapling distribution and carbon credit enrollment application form.</p>
-                </a>
-              </div>
-            </div>
+            <!-- MEGA MENU DROPDOWN (100% Matching Blocksy Landscape Reference Screenshot) -->
+            <div id="mega-menu-agro" onmouseenter="showMegaMenu('agro')" onmouseleave="hideMegaMenu('agro')" class="${state.megaMenu === 'agro' || state.megaMenu === 'prog' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-gray-100/80 p-8 z-50">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8">
+                <!-- Column 1: Agroforestry -->
+                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-2 group-hover:text-[#54a630] transition">Agroforestry Models</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      16 high-value timber &amp; fruit trees integrated with agriculture for steady farmer income and soil health.
+                    </p>
+                  </div>
+                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5 no-underline">
+                    <span>Read More</span>
+                    <span class="text-sm font-bold">&rarr;</span>
+                  </a>
+                </div>
 
-            <!-- MEGA MENU DROPDOWN 2: PROGRAMMES -->
-            <div id="mega-menu-prog" onmouseenter="showMegaMenu('prog')" onmouseleave="hideMegaMenu('prog')" class="${state.megaMenu === 'prog' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 z-40">
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">♻️</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">Carbon Credits</h4>
-                  <p class="text-xs text-gray-500">1,20,000+ farmers enrolled in verified carbon credit benefit programmes.</p>
-                </a>
-                <a href="${routeUrl('awd')}" data-nav="awd" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">💧</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">AWD in Paddy</h4>
-                  <p class="text-xs text-gray-500">Saving 15-30% water and reducing methane emissions across 5,000+ farmers.</p>
-                </a>
-                <a href="${routeUrl('environment')}" data-nav="environment" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">🌲</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">Environment &amp; Impact</h4>
-                  <p class="text-xs text-gray-500">6 ecological pillars: soil health, biodiversity, microclimate, and water recharge.</p>
-                </a>
-                <a href="${routeUrl('gallery')}" data-nav="gallery" class="p-4 rounded-2xl hover:bg-gray-50 transition block no-underline">
-                  <div class="text-2xl mb-2">🖼️</div>
-                  <h4 class="font-bold text-[#162219] text-sm mb-1">Photo Gallery (24)</h4>
-                  <p class="text-xs text-gray-500">Authentic photographic documentation from villages across AP, TG and Karnataka.</p>
-                </a>
+                <!-- Column 2: AWD in Paddy -->
+                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-2 group-hover:text-[#54a630] transition">AWD in Paddy</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      Alternate Wetting &amp; Drying via perforated field tubes, saving 30% water and reducing methane emissions.
+                    </p>
+                  </div>
+                  <a href="${routeUrl('awd')}" data-nav="awd" class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5 no-underline">
+                    <span>Read More</span>
+                    <span class="text-sm font-bold">&rarr;</span>
+                  </a>
+                </div>
+
+                <!-- Column 3: Carbon Credits -->
+                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm">
+                      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-2 group-hover:text-[#54a630] transition">Carbon Credits</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      Verra/VCS accredited carbon quantification with transparent 70% direct benefit sharing for enrolled farmers.
+                    </p>
+                  </div>
+                  <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5 no-underline">
+                    <span>Read More</span>
+                    <span class="text-sm font-bold">&rarr;</span>
+                  </a>
+                </div>
+
+                <!-- Column 4: Soil Testing & Farmland GIS (Right Featured Card) -->
+                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                      <h4 class="font-extrabold text-[#162219] text-base">Soil Testing &amp; Analysis</h4>
+                      <a href="${routeUrl('environment')}" data-nav="environment" class="w-8 h-8 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center transition flex-shrink-0">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                      </a>
+                    </div>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                      Satellite polygon boundary mapping, ground soil health verification, and field audits across AP, TG &amp; Karnataka.
+                    </p>
+                  </div>
+                  <div class="rounded-[20px] overflow-hidden relative h-36 cursor-pointer group" onclick="openVideoModal('Field Mechanization & AWD Demo', imgUrl('greenTractor'))">
+                    <img src="${imgUrl('greenTractor')}" alt="Green tractor in field" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
+                      <span class="w-11 h-11 rounded-full bg-white/80 backdrop-blur text-black flex items-center justify-center shadow-md group-hover:scale-110 transition">
+                        <svg class="w-4 h-4 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Row: Latest News & Updates + Quick Navigation -->
+              <div class="pt-6 border-t border-gray-200/80">
+                <div class="flex items-center justify-between mb-4">
+                  <h5 class="text-xs font-extrabold text-[#162219] tracking-wider uppercase">Latest News &amp; Key Programmes</h5>
+                  <a href="${routeUrl('news')}" data-nav="news" class="text-xs font-bold text-[#54a630] hover:underline">View All News Clippings &rarr;</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <!-- News Item 1 -->
+                  <a href="${routeUrl('news')}" data-nav="news" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-[#f8faf8] transition no-underline">
+                    <div class="w-14 h-14 rounded-2xl overflow-hidden bg-gray-100 flex-shrink-0">
+                      <img src="${imgUrl('news1')}" alt="News 1" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="min-w-0">
+                      <div class="text-xs font-bold text-[#162219] truncate leading-tight mb-1">వరిలో నీటి పొదుపు - AWD పైపుల ప్రదర్శన</div>
+                      <div class="text-[11px] text-gray-400">మార్చి 2026 &bull; ఈనాడు</div>
+                    </div>
+                  </a>
+
+                  <!-- News Item 2 -->
+                  <a href="${routeUrl('news')}" data-nav="news" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-[#f8faf8] transition no-underline">
+                    <div class="w-14 h-14 rounded-2xl overflow-hidden bg-gray-100 flex-shrink-0">
+                      <img src="${imgUrl('news2')}" alt="News 2" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="min-w-0">
+                      <div class="text-xs font-bold text-[#162219] truncate leading-tight mb-1">రైతులకు పండ్ల మొక్కల ఉచిత సరఫరా</div>
+                      <div class="text-[11px] text-gray-400">ఫిబ్రవరి 2026 &bull; సాక్షి</div>
+                    </div>
+                  </a>
+
+                  <!-- Quick Link: 16 Species Catalog -->
+                  <a href="${routeUrl('species')}" data-nav="species" class="flex items-center gap-3 p-2.5 rounded-2xl bg-[#f8faf8] hover:bg-[#f1f6f1] transition no-underline border border-gray-100">
+                    <div class="w-10 h-10 rounded-xl bg-[#54a630]/15 text-[#54a630] flex items-center justify-center font-extrabold text-sm flex-shrink-0">
+                      🌱
+                    </div>
+                    <div class="min-w-0">
+                      <div class="text-xs font-bold text-[#162219] leading-tight">16 Species Directory</div>
+                      <div class="text-[11px] text-gray-500">8 Forest &bull; 8 Fruit Trees</div>
+                    </div>
+                  </a>
+
+                  <!-- Quick Link: 24 Photo Gallery -->
+                  <a href="${routeUrl('gallery')}" data-nav="gallery" class="flex items-center gap-3 p-2.5 rounded-2xl bg-[#f8faf8] hover:bg-[#f1f6f1] transition no-underline border border-gray-100">
+                    <div class="w-10 h-10 rounded-xl bg-[#54a630]/15 text-[#54a630] flex items-center justify-center font-extrabold text-sm flex-shrink-0">
+                      🖼️
+                    </div>
+                    <div class="min-w-0">
+                      <div class="text-xs font-bold text-[#162219] leading-tight">Photo Gallery</div>
+                      <div class="text-[11px] text-gray-500">24 Authentic Field Photos</div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1989,52 +2085,106 @@
     }
 
     // =========================================================================
-    // MOBILE DRAWER ACCORDION
+    // MOBILE DRAWER ACCORDION (100% Blocksy Mobile Reference Parity)
     // =========================================================================
     function renderMobileDrawer() {
       return `
-        <div id="mobile-drawer" class="${state.mobileDrawerOpen ? '' : 'hidden'} fixed inset-0 z-50 flex flex-col bg-[#111e15] text-white p-6 overflow-y-auto">
-          <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
-            <a href="${routeUrl('home')}" data-nav="home" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2.5 text-white no-underline">
-              <img src="${imgUrl('logoFull')}" alt="Logo" class="h-8 w-auto object-contain" />
-              <div class="font-extrabold text-sm">${CMS.global.orgName}</div>
-            </a>
-            <button type="button" onclick="toggleMobileDrawer(false)" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white text-lg">&times;</button>
-          </div>
-
-          <nav class="space-y-4 text-sm font-bold uppercase tracking-wider">
-            <div><a href="${routeUrl('home')}" data-nav="home" onclick="toggleMobileDrawer(false)" class="block py-2 text-white/90 hover:text-[#7fd858]">HOME</a></div>
-            <div class="py-2">
-              <div class="text-[#7fd858] text-xs mb-2">AGROFORESTRY</div>
-              <div class="pl-4 space-y-2 text-xs font-medium normal-case">
-                <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">Why Agroforestry</a>
-                <a href="${routeUrl('species')}#sp-1" data-nav="species" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">8 Forest Species</a>
-                <a href="${routeUrl('species')}#sp-9" data-nav="species" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">8 Fruit Species</a>
-                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" onclick="toggleMobileDrawer(false)" class="block text-[#7fd858] font-bold">Apply for Plantation</a>
-              </div>
+        <div id="mobile-drawer" class="${state.mobileDrawerOpen ? '' : 'hidden'} fixed inset-0 z-50 flex flex-col bg-[#0e1a12]/95 backdrop-blur-md p-4 sm:p-6 overflow-y-auto">
+          <div class="bg-[#0e1a12] border border-white/10 rounded-[28px] p-6 shadow-2xl flex flex-col flex-1 max-w-md mx-auto w-full">
+            <!-- Top bar -->
+            <div class="flex items-center justify-between pb-5 border-b border-white/10 mb-6">
+              <a href="${routeUrl('home')}" data-nav="home" onclick="toggleMobileDrawer(false)" class="flex items-center gap-3 text-white no-underline">
+                <img src="${imgUrl('logoFull')}" alt="Logo" class="h-9 w-auto object-contain" />
+                <div>
+                  <div class="font-extrabold text-sm tracking-tight">${CMS.global.orgName}</div>
+                  <div class="text-[9px] text-[#7fd858] font-bold uppercase tracking-wider">Kurnool &bull; Regd 129/2021</div>
+                </div>
+              </a>
+              <button type="button" onclick="toggleMobileDrawer(false)" aria-label="Close menu" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-base transition">
+                &times;
+              </button>
             </div>
-            <div class="py-2">
-              <div class="text-[#7fd858] text-xs mb-2">PROGRAMMES</div>
-              <div class="pl-4 space-y-2 text-xs font-medium normal-case">
-                <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">Carbon Credits</a>
-                <a href="${routeUrl('awd')}" data-nav="awd" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">AWD in Paddy</a>
-                <a href="${routeUrl('environment')}" data-nav="environment" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">Environment &amp; Impact</a>
-                <a href="${routeUrl('gallery')}" data-nav="gallery" onclick="toggleMobileDrawer(false)" class="block text-white/80 hover:text-white">Photo Gallery</a>
-              </div>
-            </div>
-            <div><a href="${routeUrl('about')}" data-nav="about" onclick="toggleMobileDrawer(false)" class="block py-2 text-white/90 hover:text-[#7fd858]">ABOUT</a></div>
-            <div><a href="${routeUrl('our-journey')}" data-nav="our-journey" onclick="toggleMobileDrawer(false)" class="block py-2 text-white/90 hover:text-[#7fd858]">OUR JOURNEY</a></div>
-            <div><a href="${routeUrl('news')}" data-nav="news" onclick="toggleMobileDrawer(false)" class="block py-2 text-white/90 hover:text-[#7fd858]">NEWS &amp; MEDIA</a></div>
-            <div><a href="${routeUrl('faq')}" data-nav="faq" onclick="toggleMobileDrawer(false)" class="block py-2 text-white/90 hover:text-[#7fd858]">FAQ</a></div>
-            <div><a href="${routeUrl('contact')}" data-nav="contact" onclick="toggleMobileDrawer(false)" class="block py-2 text-white/90 hover:text-[#7fd858]">CONTACT</a></div>
-          </nav>
 
-          <div class="mt-auto pt-8 border-t border-white/10 space-y-4">
-            <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" onclick="toggleMobileDrawer(false)" class="block text-center bg-[#54a630] text-white py-3 rounded-full font-bold text-xs uppercase tracking-wider no-underline">
-              Apply for New Plantation &rarr;
-            </a>
-            <div class="text-center text-xs text-white/60">
-              Helpline: ${CMS.global.phone}
+            <!-- Navigation Links -->
+            <nav class="space-y-2 text-sm font-bold uppercase tracking-wider flex-1">
+              <div>
+                <a href="${routeUrl('home')}" data-nav="home" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between py-2.5 px-3 rounded-xl text-white/95 hover:bg-white/5 hover:text-[#7fd858] transition">
+                  <span>HOME</span>
+                </a>
+              </div>
+
+              <!-- Services & Programmes accordion -->
+              <div class="rounded-2xl bg-white/[0.03] border border-white/5 p-3 space-y-2">
+                <div class="text-[11px] font-extrabold text-[#7fd858] tracking-widest uppercase px-1">SERVICES &amp; PROGRAMMES</div>
+                <div class="grid grid-cols-1 gap-1 normal-case text-xs font-semibold">
+                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2 py-2 px-2.5 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition">
+                    <span class="text-emerald-400">🌱</span> Why Agroforestry
+                  </a>
+                  <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2 py-2 px-2.5 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition">
+                    <span class="text-blue-400">💨</span> Carbon Credits (70% Farmer Share)
+                  </a>
+                  <a href="${routeUrl('awd')}" data-nav="awd" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2 py-2 px-2.5 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition">
+                    <span class="text-cyan-400">💧</span> AWD in Paddy
+                  </a>
+                  <a href="${routeUrl('species')}#sp-1" data-nav="species" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2 py-2 px-2.5 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition">
+                    <span class="text-amber-400">🌳</span> 16 Agroforestry Species (No Images)
+                  </a>
+                  <a href="${routeUrl('environment')}" data-nav="environment" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2 py-2 px-2.5 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition">
+                    <span class="text-teal-400">🌍</span> Environment &amp; Soil Health
+                  </a>
+                  <a href="${routeUrl('gallery')}" data-nav="gallery" onclick="toggleMobileDrawer(false)" class="flex items-center gap-2 py-2 px-2.5 rounded-lg text-white/80 hover:text-white hover:bg-white/5 transition">
+                    <span class="text-purple-400">🖼️</span> 24 Authentic Field Photos
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <a href="${routeUrl('about')}" data-nav="about" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between py-2.5 px-3 rounded-xl text-white/95 hover:bg-white/5 hover:text-[#7fd858] transition">
+                  <span>ABOUT US</span>
+                </a>
+              </div>
+              <div>
+                <a href="${routeUrl('our-journey')}" data-nav="our-journey" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between py-2.5 px-3 rounded-xl text-white/95 hover:bg-white/5 hover:text-[#7fd858] transition">
+                  <span>OUR JOURNEY</span>
+                </a>
+              </div>
+              <div>
+                <a href="${routeUrl('news')}" data-nav="news" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between py-2.5 px-3 rounded-xl text-white/95 hover:bg-white/5 hover:text-[#7fd858] transition">
+                  <span>NEWS &amp; CLIPPINGS</span>
+                </a>
+              </div>
+              <div>
+                <a href="${routeUrl('faq')}" data-nav="faq" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between py-2.5 px-3 rounded-xl text-white/95 hover:bg-white/5 hover:text-[#7fd858] transition">
+                  <span>BILINGUAL FAQ</span>
+                </a>
+              </div>
+              <div>
+                <a href="${routeUrl('contact')}" data-nav="contact" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between py-2.5 px-3 rounded-xl text-white/95 hover:bg-white/5 hover:text-[#7fd858] transition">
+                  <span>CONTACT US</span>
+                </a>
+              </div>
+            </nav>
+
+            <!-- Bottom CTA and Social Icons -->
+            <div class="pt-6 border-t border-white/10 mt-6 space-y-4">
+              <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" onclick="toggleMobileDrawer(false)" class="flex items-center justify-between bg-[#54a630] hover:bg-[#468c28] text-white px-5 py-3 rounded-full font-bold text-xs uppercase tracking-wider no-underline shadow-lg transition">
+                <span>Get Started</span>
+                <span class="w-6 h-6 rounded-full bg-white text-[#54a630] flex items-center justify-center font-bold">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </span>
+              </a>
+
+              <!-- Social Pills matching mobile reference -->
+              <div class="flex items-center justify-center gap-3 pt-2">
+                <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#54a630] text-white flex items-center justify-center text-xs font-bold transition">f</a>
+                <a href="#" aria-label="X" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#54a630] text-white flex items-center justify-center text-xs font-bold transition">𝕏</a>
+                <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#54a630] text-white flex items-center justify-center text-xs font-bold transition">ig</a>
+                <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#54a630] text-white flex items-center justify-center text-xs font-bold transition">in</a>
+              </div>
+
+              <div class="text-center text-[11px] text-white/50 pt-1">
+                Kurnool Helpline: <a href="tel:${CMS.global.phone}" class="text-white/80 underline">${CMS.global.phone}</a>
+              </div>
             </div>
           </div>
         </div>
@@ -3278,11 +3428,7 @@
             ${list.map(s => `
               <div id="sp-${s.id}" class="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200/90 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
                 <div>
-                  <div class="h-52 rounded-2xl overflow-hidden mb-5 bg-gray-100">
-                    <img data-cms-img="${s.imageKey || 'gal1'}" src="${imgUrl(s.imageKey || 'gal1')}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  </div>
-
-                  <div class="flex items-start justify-between gap-4 mb-3">
+                  <div class="flex items-start justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
                     <div>
                       <div class="flex items-center gap-2 mb-1">
                         <span class="w-8 h-8 rounded-full bg-[#f3f5f3] text-[#54a630] flex items-center justify-center font-extrabold text-xs">
@@ -5372,9 +5518,6 @@
                   <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.forestSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic" />
                   <textarea rows="2" placeholder="Best for..." oninput="CMS.forestSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${s.fit}</textarea>
                   <textarea rows="2" placeholder="Special Note..." oninput="CMS.forestSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs text-[#8a5b00]">${s.note || ''}</textarea>
-                  <div class="border-t border-gray-100 pt-3">
-                    ${renderCmsImageCard('forest' + (idx+1), s.name + ' Photo')}
-                  </div>
                 </div>
               `).join('')}
             </div>
@@ -5397,9 +5540,6 @@
                   <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.fruitSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic" />
                   <textarea rows="2" placeholder="Best for..." oninput="CMS.fruitSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${s.fit}</textarea>
                   <textarea rows="2" placeholder="Special Note..." oninput="CMS.fruitSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs text-[#8a5b00]">${s.note || ''}</textarea>
-                  <div class="border-t border-gray-100 pt-3">
-                    ${renderCmsImageCard('fruit' + (idx+1), s.name + ' Photo')}
-                  </div>
                 </div>
               `).join('')}
             </div>
