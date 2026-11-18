@@ -16,8 +16,8 @@ CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/
 EXPECT: G3 PASS
 
 ## G4: Zero Cropped Images Across Website
-Low-resolution cropped images (`sol1`, `sol2`, `sol3`, `nl1`, `nl2`, `nl3`, `windBanner`) are replaced with authentic full-resolution template webp/jpg images (`home-solutions-image-*.webp`, `home-subscribe-image-*.webp`, `wind-turbine-banner.jpg`).
-CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_cms_data.py', 'utf-8'); if (!code.includes('home-solutions-image-1.webp') || !code.includes('home-subscribe-image-1.webp') || !code.includes('wind-turbine-banner.jpg')) process.exit(1); console.log('G4 PASS');"
+Low-resolution cropped images (`sol1`, `sol2`, `sol3`, `nl1`, `nl2`, `nl3`) are replaced with authentic full-resolution template webp/jpg images (`home-solutions-image-*.webp`, `home-subscribe-image-*.webp`, `home-hero-image.webp`).
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_cms_data.py', 'utf-8'); if (!code.includes('home-solutions-image-1.webp') || !code.includes('home-subscribe-image-1.webp') || !code.includes('home-hero-image.webp')) process.exit(1); console.log('G4 PASS');"
 EXPECT: G4 PASS
 
 ## G5: Two Clean Un-Cluttered Navbar Menus
@@ -54,3 +54,33 @@ EXPECT: G10 PASS
 Ensures Mega Menu Programme cards and Home Solution cards are entirely clickable container anchors with hover transitions.
 CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('data-nav=\"agroforestry\" class=\"lg:col-span-3') || !code.includes('data-nav=\"agroforestry\" class=\"soft-card')) process.exit(1); console.log('G11 PASS');"
 EXPECT: G11 PASS
+
+## G12: Video Banner (Section 9) Removal
+Video banner section ("Dive Into The World of Sadana Green Society With Our Exclusive Field Videos") is removed from the website.
+CHECK: node -e "const fs = require('fs'); const html = fs.readFileSync('index.html', 'utf-8'); if (html.includes('windBanner') || html.includes('Dive Into The World of Sadana Green Society With Our Exclusive Field Videos')) process.exit(1); console.log('G12 PASS');"
+EXPECT: G12 PASS
+
+## G13: Clean Hero Background Presets
+Background images are authentic uncropped photos with zero baked-in text, and 5 clean background presets are selectable in Admin Heroes tab.
+CHECK: node -e "const fs = require('fs'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!admin.includes('selectHeroPreset') || !admin.includes('Clean High-Resolution Background Presets')) process.exit(1); console.log('G13 PASS');"
+EXPECT: G13 PASS
+
+## G14: About Page Team Member Cards & Admin CRUD
+Team member cards on About page display role, name, bio, and photo slightly smaller than founder (`aspect-[4/4.2]`), and have full CRUD in Admin Studio.
+CHECK: node -e "const fs = require('fs'); const html = fs.readFileSync('index.html', 'utf-8'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!html.includes('Our Leadership & Field Team') || !admin.includes('addAboutTeamMember') || !admin.includes('deleteAboutTeamMember')) process.exit(1); console.log('G14 PASS');"
+EXPECT: G14 PASS
+
+## G15: Species CRUD in Admin Studio
+Admin Studio Species tab provides + Add New Species button, add expander form, and individual Delete button on each species card.
+CHECK: node -e "const fs = require('fs'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!admin.includes('+ Add New Species') || !admin.includes('submitAddSpecies') || !admin.includes('deleteCmsSpecies')) process.exit(1); console.log('G15 PASS');"
+EXPECT: G15 PASS
+
+## G16: Fully Editable Plantation Application Form
+All plantation form labels, field placeholders, notices, water facility options, declarations, and submit button are editable in Admin Studio and dynamically rendered.
+CHECK: node -e "const fs = require('fs'); const html = fs.readFileSync('index.html', 'utf-8'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!html.includes('fc.farmerNameLabel') || !admin.includes('Application Form Labels, Fields &amp; Declarations')) process.exit(1); console.log('G16 PASS');"
+EXPECT: G16 PASS
+
+## G17: Explore Menu "Apply for Plantation" Featured Design
+In EXPLORE menu, Apply for Plantation matches the exact featured card styling of Soil Testing & Analysis in Services menu.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('Apply for Plantation') || !code.includes('Register Farmland') || !code.includes('rounded-[20px] overflow-hidden relative h-36')) process.exit(1); console.log('G17 PASS');"
+EXPECT: G17 PASS
