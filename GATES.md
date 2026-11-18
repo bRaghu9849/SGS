@@ -84,3 +84,23 @@ EXPECT: G16 PASS
 In EXPLORE menu, Apply for Plantation matches the exact featured card styling of Soil Testing & Analysis in Services menu.
 CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('Apply for Plantation') || !code.includes('Register Farmland') || !code.includes('rounded-[20px] overflow-hidden relative h-36')) process.exit(1); console.log('G17 PASS');"
 EXPECT: G17 PASS
+
+## G18: Square Multi-Resolution Favicon
+Favicon is generated directly from the client's official circular emblem in exact 1:1 aspect ratio, saved across 512x512, 180x180 (Apple touch), 32x32, 16x16, and multi-resolution favicon.ico.
+CHECK: node -e "const fs = require('fs'); const html = fs.readFileSync('index.html', 'utf-8'); if (!html.includes('favicon.ico') || !html.includes('favicon-32x32.png') || !fs.existsSync('favicon.ico') || !fs.existsSync('assets/images/logo/new-logo-sgs-emblem.png')) process.exit(1); console.log('G18 PASS');"
+EXPECT: G18 PASS
+
+## G19: Modern Species Admin UI/UX
+Admin Species editor features an executive dashboard layout with category stats strip, real-time live search filter (`state.adminSpeciesSearch`), category tabs (`All`, `Forest`, `Fruit`), and emerald/amber themed cards with structured inputs.
+CHECK: node -e "const fs = require('fs'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!admin.includes('Promoted Species Directory Manager') || !admin.includes('state.adminSpeciesSearch') || !admin.includes('Forest &bull;')) process.exit(1); console.log('G19 PASS');"
+EXPECT: G19 PASS
+
+## G20: Professional Plantation Form Builder & Executive Inbox in Admin
+Plantation tab in Admin features a structured Form Studio with live form preview link, grouped field editors, bilingual terms clauses, and an executive CRM inbox with KPI stats, search filter, and Google Maps GPS links.
+CHECK: node -e "const fs = require('fs'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!admin.includes('Plantation Application Form Studio') || !admin.includes('Live registry of online plantation applications')) process.exit(1); console.log('G20 PASS');"
+EXPECT: G20 PASS
+
+## G21: Elimination of White-on-White Card Blending
+All cards across Home, About, Species, Agroforestry, AWD, Carbon Credits, News, and FAQ pages utilize contrasting soft sage/mint (`#edf5eb`, `#f0f7ec`), orchard amber (`#fdf7ed`), or aqua-tinted backgrounds with distinct borders and subtle shadows to eliminate flat white-on-white card blending.
+CHECK: node -e "const fs = require('fs'); const renderers = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); const html = fs.readFileSync('index.html', 'utf-8'); if (!renderers.includes('bg-[#edf5eb]') || !renderers.includes('bg-[#f0f7ec]') || !renderers.includes('bg-[#fdf7ed]') || !html.includes('--card-bg: #edf5eb;')) process.exit(1); console.log('G21 PASS');"
+EXPECT: G21 PASS

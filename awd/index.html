@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadana Green Society (SGS) – Sustainable Farming & Agroforestry</title>
-  <link rel="icon" type="image/png" href="assets/images/logo/new-logo-sgs-emblem.png" />
-  <link rel="apple-touch-icon" href="assets/images/logo/new-logo-sgs-emblem.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo/new-logo-sgs-emblem.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo/apple-touch-icon.png" />
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +18,11 @@
       --brand-green-hover: #468e26;
       --dark-forest: #111c15;
       --muted-heading: #8c968e;
-      --card-bg: #f5f7f5;
+      --card-bg: #edf5eb;
+      --card-border: #cfe2cc;
+      --card-shadow: 0 4px 20px rgba(22, 45, 18, 0.05);
       --text-main: #162219;
-      --text-muted: #57635a;
+      --text-muted: #4e5c50;
     }
     * { box-sizing: border-box; }
     body {
@@ -35,7 +39,45 @@
     .brand-green-bg:hover { background-color: var(--brand-green-hover); }
     .brand-green-text { color: var(--brand-green); }
     .muted-heading { color: var(--muted-heading); }
-    .soft-card { background-color: var(--card-bg); border-radius: 22px; }
+    .soft-card {
+      background-color: #edf5eb;
+      border: 1px solid #cfe2cc;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(22, 45, 18, 0.04);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .soft-card:hover {
+      background-color: #e5f1e0;
+      border-color: #bad9b4;
+      box-shadow: 0 12px 32px rgba(22, 45, 18, 0.08);
+      transform: translateY(-2px);
+    }
+    .forest-card {
+      background-color: #f0f7ec;
+      border: 1.5px solid #cde2c9;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(22, 45, 18, 0.04);
+      transition: all 0.25s ease;
+    }
+    .forest-card:hover {
+      background-color: #e5f2e1;
+      border-color: #54a630;
+      box-shadow: 0 10px 28px rgba(22, 45, 18, 0.08);
+      transform: translateY(-2px);
+    }
+    .fruit-card {
+      background-color: #fdf7ed;
+      border: 1.5px solid #fae2bf;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(80, 50, 10, 0.04);
+      transition: all 0.25s ease;
+    }
+    .fruit-card:hover {
+      background-color: #faefde;
+      border-color: #f59e0b;
+      box-shadow: 0 10px 28px rgba(80, 50, 10, 0.08);
+      transform: translateY(-2px);
+    }
     .frosted-dark {
       background: rgba(18, 28, 21, 0.62);
       backdrop-filter: blur(12px);
@@ -442,6 +484,22 @@
   <script>
     // =========================================================================
     // CENTRALIZED BASE64 IMAGE ASSETS (Inlined once by Step 3 script)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
     
     // =========================================================================
@@ -2830,7 +2888,7 @@
 
           <div class="rg-3 grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Card 1 (100% Clickable Card) -->
-            <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="soft-card p-6 flex flex-col justify-between group no-underline block hover:shadow-lg transition cursor-pointer">
+            <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="soft-card bg-[#edf5eb] border border-[#cfe3cc] rounded-[26px] p-7 flex flex-col justify-between group no-underline block shadow-sm hover:shadow-xl hover:border-[#54a630] hover:bg-[#e6f2e3] transition-all duration-300 cursor-pointer">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <h3 class="font-bold text-base text-[#162219] group-hover:text-[#54a630] transition">Agroforestry &amp; Tree Planting</h3>
@@ -2848,7 +2906,7 @@
             </a>
 
             <!-- Card 2 (100% Clickable Card) -->
-            <a href="${routeUrl('awd')}" data-nav="awd" class="soft-card p-6 flex flex-col justify-between group no-underline block hover:shadow-lg transition cursor-pointer">
+            <a href="${routeUrl('awd')}" data-nav="awd" class="soft-card bg-[#edf5eb] border border-[#cfe3cc] rounded-[26px] p-7 flex flex-col justify-between group no-underline block shadow-sm hover:shadow-xl hover:border-[#54a630] hover:bg-[#e6f2e3] transition-all duration-300 cursor-pointer">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <h3 class="font-bold text-base text-[#162219] group-hover:text-[#54a630] transition">Alternate Wetting &amp; Drying (AWD)</h3>
@@ -2866,7 +2924,7 @@
             </a>
 
             <!-- Card 3 (100% Clickable Card) -->
-            <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="soft-card p-6 flex flex-col justify-between group no-underline block hover:shadow-lg transition cursor-pointer">
+            <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="soft-card bg-[#edf5eb] border border-[#cfe3cc] rounded-[26px] p-7 flex flex-col justify-between group no-underline block shadow-sm hover:shadow-xl hover:border-[#54a630] hover:bg-[#e6f2e3] transition-all duration-300 cursor-pointer">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-3">
                   <h3 class="font-bold text-base text-[#162219] group-hover:text-[#54a630] transition">Carbon Offsets &amp; Ecology</h3>
@@ -3062,7 +3120,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             ${(CMS.home.steps.items || []).map(st => `
-              <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+              <div class="bg-[#edf5ea] rounded-3xl p-6 border border-[#cfe2cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between">
                 <div>
                   <div class="w-7 h-7 rounded-full bg-[#f2a922] text-[#162219] font-extrabold text-xs flex items-center justify-center mb-3">
                     ${st.num}
@@ -3148,7 +3206,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <!-- Column 1: For farmers -->
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For farmers</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(ben.forFarmers || []).map(b => `
@@ -3161,7 +3219,7 @@
               </div>
 
               <!-- Column 2: For soil and water -->
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For soil and water</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(ben.forSoilWater || []).map(b => `
@@ -3174,7 +3232,920 @@
               </div>
 
               <!-- Column 3: For climate and nature -->
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For climate and nature</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(ben.forClimate || []).map(b => `
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-[#54a630] font-bold">&check;</span>
+                      <span>${b}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMMON AGROFORESTRY MODELS (6 Cards from why agriforect.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Implementation</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Common agroforestry models</h2>
+            </div>
+            <p class="text-xs text-gray-500">The right model depends on land size, water and market.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            ${models.map(m => `
+              <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm">
+                <h3 class="font-extrabold text-sm text-[#162219] mb-2">${m.title}</h3>
+                <p class="text-xs text-gray-500 leading-relaxed">${m.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- WHICH TREES FOR WHICH LAND MATRIX (Table from why agriforect.pdf) -->
+        <section class="py-16 bg-[#f8faf8] border-t border-gray-100">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+              <div>
+                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Soil Suitability</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Which trees for which land</h2>
+              </div>
+              <p class="text-xs text-gray-500">General guidance. Our field team confirms the best mix for your plot.</p>
+            </div>
+
+            <div class="bg-[#edf5ea] rounded-3xl border border-[#cfe2cc] overflow-hidden shadow-sm">
+              <table class="w-full text-left border-collapse text-xs">
+                <tbody>
+                  ${matrix.map((row, idx) => `
+                    <tr class="${idx !== matrix.length - 1 ? 'border-b border-gray-100' : ''} hover:bg-gray-50 transition">
+                      <td class="p-4 sm:p-5 font-bold text-[#162219] w-1/3">${row.land}</td>
+                      <td class="p-4 sm:p-5 text-[#54a630] font-medium">${row.trees}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPLORE THE PLANTS CARDS (From why agriforect.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-2xl p-8 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="text-2xl mb-3">🌳</div>
+                <h3 class="font-extrabold text-lg text-[#162219] mb-2">Forest species</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-6">Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul and Red sanders.</p>
+              </div>
+              <a href="${routeUrl('species')}#sp-1" data-nav="species" class="text-xs font-bold text-[#54a630] hover:text-[#468e26]">See forest species &rarr;</a>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="text-2xl mb-3">🥭</div>
+                <h3 class="font-extrabold text-lg text-[#162219] mb-2">Fruit species</h3>
+                <p class="text-xs text-gray-500 leading-relaxed mb-6">Mango, Guava, Sapota, Custard apple, Amla, Lemon, Coconut and Cashew.</p>
+              </div>
+              <a href="${routeUrl('species')}#sp-9" data-nav="species" class="text-xs font-bold text-[#54a630] hover:text-[#468e26]">See fruit species &rarr;</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- YELLOW PARTNERSHIP CTA BANNER -->
+        ${renderYellowCtaBanner()}
+      `;
+    }
+
+    // =========================================================================
+    // 4. AWD & CARBON CREDITS PAGES (100% Old Site Parity: Payment Cycles & 4 Questions)
+    // =========================================================================
+    function renderCarbonOrAwdPage(kind) {
+      const isAwd = (kind === "awd");
+
+      if (isAwd) {
+        const awd = CMS.awd || {};
+        const ben = awd.benefits || { forFarmers: [], forEnvironment: [] };
+        const q4 = awd.questionsBeforeJoining || { headingEn: "", questionsEn: [], headingTe: "", questionsTe: [] };
+
+        return `
+          <!-- HERO SECTION -->
+          <section class="relative bg-[#111e15] text-white pb-16">
+            ${renderHeroMediaLayer('awd', 'sol2')}
+            ${renderHeader()}
+
+            <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-14 lg:pt-20">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div class="lg:col-span-7">
+                  <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Water Conservation</span>
+                  <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">${awd.heroTitle || 'Alternate Wetting and Drying (AWD)'}</h1>
+                  <p class="text-white/80 text-xs sm:text-sm leading-relaxed mb-6">${awd.heroSubtitle || ''}</p>
+                  <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20">
+                    <span class="text-2xl font-extrabold text-[#7fd858]">${awd.enrolledCount || '5,000'}</span>
+                    <span class="text-xs text-white/80">farmers enrolled in AWD programmes</span>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                  <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-xl border border-white/15">
+                    <img src="${imgUrl('splitField')}" alt="AWD Field Verification" class="w-full h-full object-cover" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- WHAT IS AWD? (From AWD page.pdf) -->
+          <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-5">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">What is AWD?</h2>
+              </div>
+              <div class="lg:col-span-7">
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">${awd.whatIs || ''}</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- HOW AWD WORKS IN THE FIELD (4 Steps from AWD page.pdf) -->
+          <section class="py-16 bg-[#f8faf8] border-y border-gray-100">
+            <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+              <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                  <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Step by Step</span>
+                  <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">How AWD works in the field</h2>
+                </div>
+                <p class="text-xs text-gray-500">Typical guidance. Our field team adapts it to your soil, variety and water source.</p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                ${(awd.fieldSteps || []).map(st => `
+                  <div class="bg-[#edf5ea] rounded-3xl p-6 border border-[#cfe2cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between">
+                    <div>
+                      <div class="w-7 h-7 rounded-full bg-[#f2a922] text-[#162219] font-extrabold text-xs flex items-center justify-center mb-3">
+                        ${st.num}
+                      </div>
+                      <h3 class="font-extrabold text-sm text-[#162219] mb-2">${st.title}</h3>
+                      <p class="text-xs text-gray-500 leading-relaxed">${st.desc}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+
+          <!-- WHY FARMERS AND THE CLIMATE GAIN (2 Columns from AWD page.pdf) -->
+          <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Dual Benefit</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Why farmers and the climate gain</h2>
+              </div>
+              <p class="text-xs text-gray-500">Lower costs on the farm, lower emissions in the air.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For farmers</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(ben.forFarmers || []).map(b => `
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-[#54a630] font-bold">&check;</span>
+                      <span>${b}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For the environment</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(ben.forEnvironment || []).map(b => `
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-[#54a630] font-bold">&check;</span>
+                      <span>${b}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- IS AWD RIGHT FOR MY FIELD? CALLOUT -->
+          <section class="py-10 max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="bg-[#f8faf8] border-l-4 border-[#f2a922] rounded-2xl p-6 sm:p-8">
+              <h3 class="font-extrabold text-base text-[#162219] mb-2">It needs control over irrigation</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">${awd.isRightForField || ''}</p>
+            </div>
+          </section>
+
+          <!-- AWD PROJECT PAYMENT CYCLE (6 Steps Bilingual from AWD page.pdf) -->
+          <section class="py-16 bg-[#122316] text-white">
+            <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+              <div class="mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">AWD Project Payment Cycle</h2>
+                <div class="text-xs text-[#7fd858] font-bold telugu-text mb-2">${awd.paymentCycleHeader || ''}</div>
+                <p class="text-xs text-white/70 max-w-2xl leading-relaxed">${awd.paymentCycleSub || ''}</p>
+                <div class="text-[11px] text-white/50 telugu-text mt-1">${awd.paymentCycleNotice || ''}</div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                ${(awd.paymentCycleSteps || []).map(step => `
+                  <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+                    <div>
+                      <div class="text-2xl font-extrabold text-[#7fd858] mb-2">${step.num}</div>
+                      <h3 class="font-bold text-sm text-white mb-1">${step.title}</h3>
+                      <div class="text-xs text-[#7fd858] font-semibold telugu-text mb-3">${step.teluguTitle}</div>
+                      <p class="text-xs text-white/70 leading-relaxed mb-3">${step.desc}</p>
+                      <p class="text-[11.5px] text-white/60 telugu-text leading-relaxed">${step.teluguDesc}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+
+          <!-- BEFORE JOINING, ASK THESE 4 QUESTIONS (From AWD page.pdf) -->
+          <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="${isAwd ? 'bg-[#edf6f2] border-[#cbe6dc]' : 'bg-[#edf5ea] border-[#cfe3cc]'} rounded-3xl p-8 sm:p-10 border shadow-md">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="text-base font-extrabold text-[#162219] mb-4">${q4.headingEn || 'Before joining, ask these 4 questions'}</h3>
+                  <ul class="space-y-3 text-xs text-gray-600">
+                    ${(q4.questionsEn || []).map(q => `
+                      <li class="flex items-start gap-2">
+                        <span class="text-[#54a630] font-bold">•</span>
+                        <span>${q}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-base font-extrabold text-[#162219] telugu-text mb-4">${q4.headingTe || 'చేరే ముందు ఈ 4 ప్రశ్నలు అడగండి'}</h3>
+                  <ul class="space-y-3 text-xs text-gray-600 telugu-text">
+                    ${(q4.questionsTe || []).map(q => `
+                      <li class="flex items-start gap-2">
+                        <span class="text-[#54a630] font-bold">•</span>
+                        <span>${q}</span>
+                      </li>
+                    `).join('')}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- YELLOW PARTNERSHIP CTA BANNER -->
+          ${renderYellowCtaBanner()}
+        `;
+      }
+
+      // CARBON CREDITS PAGE
+      const carb = CMS.carbon || {};
+      const who = carb.whoBenefits || { farmers: [], companies: [], environment: [] };
+      const vFlow = carb.valueChangeFlow || { stages: [] };
+
+      return `
+        <!-- HERO SECTION -->
+        <section class="relative bg-[#111e15] text-white pb-16">
+          ${renderHeroMediaLayer('carbon-credits', 'sol1')}
+          ${renderHeader()}
+
+          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-14 lg:pt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div class="lg:col-span-7">
+                <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Carbon Markets</span>
+                <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">${carb.heroTitle || 'Carbon credits and their benefits'}</h1>
+                <p class="text-white/80 text-xs sm:text-sm leading-relaxed mb-6">${carb.heroSubtitle || ''}</p>
+                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20">
+                  <span class="text-2xl font-extrabold text-[#7fd858]">${carb.enrolledCount || '1,20,000'}</span>
+                  <span class="text-xs text-white/80">farmers enrolled in agroforestry carbon credit programmes</span>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5">
+                <div class="rounded-2xl overflow-hidden aspect-[4/3] bg-gray-100 shadow-xl border border-white/15">
+                  <img src="${imgUrl('fieldWomanFarmer')}" alt="SGS Carbon Farmer Review" class="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHAT IS A CARBON CREDIT? (From carbon credits.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-5">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">What is a carbon credit?</h2>
+            </div>
+            <div class="lg:col-span-7">
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">${carb.whatIs || ''}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHO BENEFITS (3 Columns from carbon credits.pdf) -->
+        <section class="py-16 bg-[#f8faf8] border-y border-gray-100">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Stakeholders</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Who benefits</h2>
+              </div>
+              <p class="text-xs text-gray-500">Carbon programmes work best when farmers, partners and the environment all gain.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">Farmers</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(who.farmers || []).map(b => `
+                    <li class="flex items-start gap-2.5"><span class="text-[#54a630] font-bold">&check;</span><span>${b}</span></li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">Companies and partners</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(who.companies || []).map(b => `
+                    <li class="flex items-start gap-2.5"><span class="text-[#54a630] font-bold">&check;</span><span>${b}</span></li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">Environment and communities</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(who.environment || []).map(b => `
+                    <li class="flex items-start gap-2.5"><span class="text-[#54a630] font-bold">&check;</span><span>${b}</span></li>
+                  `).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- HOW A CARBON PROGRAMME WORKS (4 Steps from carbon credits.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Lifecycle</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">How a carbon programme works</h2>
+            </div>
+            <p class="text-xs text-gray-500">From the first meeting to benefits reaching the farmer.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            ${(carb.howItWorks || []).map(st => `
+              <div class="bg-[#edf5ea] rounded-3xl p-6 border border-[#cfe2cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between">
+                <div>
+                  <div class="w-7 h-7 rounded-full bg-[#f2a922] text-[#162219] font-extrabold text-xs flex items-center justify-center mb-3">
+                    ${st.num}
+                  </div>
+                  <h3 class="font-extrabold text-sm text-[#162219] mb-2">${st.title}</h3>
+                  <p class="text-xs text-gray-500 leading-relaxed">${st.desc}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- DISCLAIMER CALLOUT -->
+        <section class="py-6 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="bg-[#f8faf8] border-l-4 border-[#f2a922] rounded-2xl p-6 sm:p-8">
+            <h3 class="font-extrabold text-base text-[#162219] mb-2">Be clear on the terms</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">${carb.disclaimer || ''}</p>
+          </div>
+        </section>
+
+        <!-- CARBON CREDIT JOURNEY & PRICE CYCLE (7 Steps Bilingual from carbon credits.pdf) -->
+        <section class="py-16 bg-[#122316] text-white">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="mb-10">
+              <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Carbon Credit Journey &amp; Price Cycle</h2>
+              <div class="text-xs text-[#7fd858] font-bold telugu-text mb-2">${carb.journeyCycleHeader || ''}</div>
+              <p class="text-xs text-white/70 max-w-2xl leading-relaxed">${carb.journeyCyclePriceTrans || ''}</p>
+              <div class="text-[11px] text-white/50 telugu-text mt-1">${carb.journeyCyclePriceTransTe || ''}</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              ${(carb.journeyCycleSteps || []).map(step => `
+                <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col justify-between">
+                  <div>
+                    <div class="text-2xl font-extrabold text-[#7fd858] mb-2">${step.num}</div>
+                    <h3 class="font-bold text-sm text-white mb-1">${step.title}</h3>
+                    <div class="text-xs text-[#7fd858] font-semibold telugu-text mb-3">${step.teluguTitle}</div>
+                    <p class="text-xs text-white/70 leading-relaxed mb-3">${step.desc}</p>
+                    <p class="text-[11.5px] text-white/60 telugu-text leading-relaxed">${step.teluguDesc}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- HOW CAN THE VALUE CHANGE OVER TIME? (Flowchart from carbon credits.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="${isAwd ? 'bg-[#edf6f2] border-[#cbe6dc]' : 'bg-[#edf5ea] border-[#cfe3cc]'} rounded-3xl p-8 sm:p-10 border shadow-md">
+            <h3 class="text-xl font-extrabold text-[#162219] mb-2">${vFlow.titleEn || 'How can the value change over time?'}</h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-2">${vFlow.descEn || ''}</p>
+            <p class="text-[11.5px] text-[#54a630] telugu-text leading-relaxed mb-8">${vFlow.descTe || ''}</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 text-center">
+              ${(vFlow.stages || []).map(st => `
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-4">
+                  <div class="text-xs font-extrabold text-[#162219] mb-1">${st.label}</div>
+                  <div class="text-[10px] text-gray-500">${st.sub}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- YELLOW PARTNERSHIP CTA BANNER -->
+        ${renderYellowCtaBanner()}
+      `;
+    }
+
+    // =========================================================================
+    // 5. 16 SPECIES CATALOG PAGE (100% Old Site Parity: All 16 Species with Botanical Names & Notes)
+    // =========================================================================
+    function renderSpeciesCatalogPage(kind = "all") {
+      let activeTab = state.speciesTab || kind || "all";
+      if (!["all", "forest", "fruit"].includes(activeTab)) activeTab = "all";
+
+      let list = [];
+      if (activeTab === "forest") list = CMS.forestSpecies || [];
+      else if (activeTab === "fruit") list = CMS.fruitSpecies || [];
+      else list = [...(CMS.forestSpecies || []), ...(CMS.fruitSpecies || [])];
+
+      const title = activeTab === "forest"
+        ? "Forest Species for Agroforestry (8 Trees)"
+        : (activeTab === "fruit" ? "Fruit Species for Agroforestry (8 Trees)" : "16 Promoted Tree & Fruit Species");
+
+      const sub = activeTab === "forest"
+        ? "Timber, pulpwood and soil-building trees we promote on farmland, with their benefits and uses."
+        : (activeTab === "fruit"
+          ? "High-yielding fruit tree varieties tailored for diverse soils across Andhra Pradesh, Telangana, and Karnataka to ensure recurring farmer revenue."
+          : "Complete bilingual directory of 8 timber/forest species and 8 high-yield fruit species promoted by Sadana Green Society for sustainable agroforestry.");
+
+      return `
+        <!-- HERO SECTION -->
+        <section class="relative bg-[#111e15] text-white pb-16">
+          ${renderHeroMediaLayer('species', 'heroAerial')}
+          ${renderHeader()}
+
+          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-14 lg:pt-20">
+            <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+              <div class="lg:col-span-7">
+                <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Agroforestry Species Directory</span>
+                <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">${title}</h1>
+                <p class="text-white/80 text-xs sm:text-sm leading-relaxed max-w-xl">${sub}</p>
+              </div>
+
+              <div class="lg:col-span-5 flex flex-wrap lg:justify-end gap-3">
+                <button type="button" onclick="setSpeciesFilter('all')" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'all' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
+                  All 16 Species
+                </button>
+                <button type="button" onclick="setSpeciesFilter('forest')" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'forest' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
+                  🌳 8 Forest Species
+                </button>
+                <button type="button" onclick="setSpeciesFilter('fruit')" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'fruit' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
+                  🥭 8 Fruit Species
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SPECIES DIRECTORY GRID -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="flex flex-wrap gap-2 mb-10">
+            ${list.map(s => `
+              <a href="#sp-${s.id}" onclick="event.preventDefault(); document.getElementById('sp-${s.id}')?.scrollIntoView({behavior:'smooth'});" class="px-4 py-2 rounded-full bg-[#edf5ea] border border-[#d0e3cb] hover:bg-[#54a630] hover:text-white text-xs font-bold text-[#162219] transition no-underline shadow-sm">
+                ${s.name} <span class="telugu-text opacity-75">(${s.telugu})</span>
+              </a>
+            `).join('')}
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            ${list.map(s => `
+              <div id="sp-${s.id}" class="${s.id <= 8 ? 'bg-[#f0f7ec] border-2 border-[#cde2c9] hover:border-[#54a630]' : 'bg-[#fdf7ed] border-2 border-[#fae2bf] hover:border-amber-500'} rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div class="flex items-start justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-8 h-8 rounded-full bg-[#f3f5f3] text-[#54a630] flex items-center justify-center font-extrabold text-xs">
+                          ${s.id}
+                        </span>
+                        <h3 class="text-xl font-extrabold text-[#162219]">${s.name}</h3>
+                      </div>
+                      <div class="text-sm font-bold text-[#54a630] telugu-text">${s.telugu}</div>
+                      ${s.botanical ? `<div class="text-xs text-gray-400 italic">${s.botanical}</div>` : ''}
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-[#f3f5f3] text-[#162219] text-[11px] font-bold">
+                      ${s.category || (activeTab === 'forest' ? 'Forest / Timber' : 'Fruit')}
+                    </span>
+                  </div>
+
+                  <div class="space-y-3 text-xs sm:text-[13px] text-gray-600 mb-6">
+                    <div><strong class="text-[#162219]">Best for:</strong> ${s.fit}</div>
+                    <div><strong class="text-[#162219]">Maturity / Harvest:</strong> ${s.maturity}</div>
+                    
+                    ${Array.isArray(s.benefits) ? `
+                      <div>
+                        <strong class="text-[#162219] block mb-1">Benefits:</strong>
+                        <ul class="space-y-1 pl-4">
+                          ${s.benefits.map(b => `<li class="list-disc">${b}</li>`).join('')}
+                        </ul>
+                      </div>
+                    ` : `<div><strong class="text-[#162219]">Benefits:</strong> ${s.benefits}</div>`}
+
+                    ${s.uses ? `
+                      <div>
+                        <strong class="text-[#162219] block mb-1">Main uses:</strong>
+                        <div class="flex flex-wrap gap-1.5">
+                          ${(Array.isArray(s.uses) ? s.uses : [s.uses]).map(u => `<span class="px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700 text-[11px] font-medium">${u}</span>`).join('')}
+                        </div>
+                      </div>
+                    ` : ''}
+
+                    ${s.note ? `
+                      <div class="bg-[#fef9ec] border border-[#f2a922]/40 rounded-xl p-3 text-[11px] text-[#8a5b00]">
+                        <strong>Note:</strong> ${s.note}
+                      </div>
+                    ` : ''}
+                  </div>
+                </div>
+
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span class="text-[11px] text-gray-500">AP &bull; TG &bull; Karnataka</span>
+                  <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="text-xs font-extrabold text-[#54a630] hover:text-[#468e26] flex items-center gap-1 no-underline">
+                    <span>Request Saplings &rarr;</span>
+                  </a>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- YELLOW PARTNERSHIP CTA BANNER -->
+        ${renderYellowCtaBanner()}
+      `;
+    }
+
+    function setSpeciesFilter(filter) {
+      state.speciesTab = filter;
+      renderApp();
+    }
+
+    // =========================================================================
+    // 6. ENVIRONMENT & ECOLOGICAL IMPACT (100% Old Site Parity: 6 Pillars + Farmer Checklist)
+    // =========================================================================
+    function renderEnvironmentPage() {
+      const env = CMS.environment || {};
+      const pillars = env.pillars || [];
+      const checklist = env.whatFarmerCanDo || [];
+
+      return `
+        <!-- HERO SECTION -->
+        <section class="relative bg-[#111e15] text-white pb-16">
+          ${renderHeroMediaLayer('environment', 'sol3')}
+          ${renderHeader()}
+
+          <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-4 text-center">
+            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">${env.heroTitle || 'Environment'}</h1>
+            <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
+              ${env.heroSubtitle || 'Healthy land, water and air are the base of farming. Everything SGS does is built around protecting them.'}
+            </p>
+          </div>
+        </section>
+
+        <!-- HOW OUR WORK HELPS THE ENVIRONMENT (6 Pillars from Environtment.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold mb-3">
+              How our work helps the environment
+            </h2>
+            <p class="text-xs text-gray-500 leading-relaxed">
+              Six areas where farm-level action makes a real difference.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            ${pillars.map(c => `
+              <div class="bg-[#edf5ea] rounded-3xl p-7 border border-[#d0e3cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between group">
+                <div>
+                  <div class="h-40 rounded-xl overflow-hidden mb-4 bg-gray-100">
+                    <img src="${imgUrl(c.imgKey || 'gal1')}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  </div>
+                  <h3 class="font-extrabold text-base text-[#162219] mb-2">${c.title}</h3>
+                  <p class="text-xs text-gray-500 leading-relaxed mb-4">${c.desc}</p>
+                </div>
+                <a href="${routeUrl(c.nav || 'agroforestry')}" data-nav="${c.nav || 'agroforestry'}" class="text-xs font-bold text-[#54a630] hover:text-[#468e26] flex items-center gap-1">
+                  <span>Explore programme &rarr;</span>
+                </a>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- WHAT ANY FARMER CAN DO (Checklist from Environtment.pdf) -->
+        <section class="py-16 bg-[#f8faf8] border-y border-gray-100">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              <div class="lg:col-span-5">
+                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Farmer Action</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219] mb-3">What any farmer can do</h2>
+                <p class="text-xs text-gray-500 leading-relaxed">Simple steps that help the environment and the farm at the same time.</p>
+              </div>
+
+              <div class="lg:col-span-7 space-y-3">
+                ${checklist.map(item => `
+                  <div class="bg-white rounded-xl p-4 border border-gray-200/80 shadow-sm flex items-center gap-3">
+                    <span class="w-5 h-5 rounded-full bg-[#54a630] text-white flex items-center justify-center text-xs font-bold flex-shrink-0">&check;</span>
+                    <span class="text-xs text-gray-700 font-medium">${item}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CLIMATE ACTION YOU CAN MEASURE BANNER (From Environtment.pdf) -->
+        <section class="py-16 bg-[#122316] text-white">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Climate action you can measure</h2>
+              <p class="text-xs text-white/70 max-w-lg leading-relaxed">${env.climateActionMeasure || ''}</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="px-6 py-3 rounded-full bg-[#54a630] hover:bg-[#468e26] text-white text-xs font-bold uppercase tracking-wider transition no-underline">
+                Carbon Credits
+              </a>
+              <a href="${routeUrl('awd')}" data-nav="awd" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition no-underline">
+                AWD in Paddy
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- YELLOW PARTNERSHIP CTA BANNER -->
+        ${renderYellowCtaBanner()}
+      `;
+    }
+
+    // =========================================================================
+    // 7. NEW PLANTATION APPLICATION (100% Old Site Parity: Full Fields, Telugu Declaration)
+    // =========================================================================
+    function renderAboutPage() {
+      const a = CMS.about || {};
+      const who = a.whoWeAre || {};
+      const projs = a.projects || [];
+
+      return `
+        <!-- HERO SECTION -->
+        <section class="relative bg-[#111e15] text-white pb-16">
+          ${renderHeroMediaLayer('about', 'aboutHero')}
+          ${renderHeader()}
+
+          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-14 lg:pt-20">
+            <div class="max-w-3xl">
+              <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">About SGS</span>
+              <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">${a.heroTitle || 'About Sadana Green Society'}</h1>
+              <p class="text-white/80 text-xs sm:text-sm leading-relaxed">${a.heroSubtitle || ''}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHO WE ARE SECTION (From about us.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <!-- Left: Founder Card -->
+            <div class="lg:col-span-5 bg-white rounded-3xl p-6 border border-gray-200/90 shadow-md text-center">
+              <div class="rounded-2xl overflow-hidden aspect-[4/4.5] mb-4 bg-gray-100">
+                <img src="${imgUrl('founder')}" alt="${who.founderName || CMS.global.founderName}" class="w-full h-full object-cover" />
+              </div>
+              <div class="inline-block px-3 py-1 rounded-full bg-[#f3f5f3] text-[#54a630] font-extrabold text-[10px] uppercase tracking-wider mb-2">
+                ${who.badge || 'Sadana Green Society People | Plants | Prosperity'}
+              </div>
+              <h3 class="text-xl font-extrabold text-[#162219]">${who.founderName || CMS.global.founderName}</h3>
+              <div class="text-xs font-semibold text-gray-500">${who.founderRole || 'Founder and President'}</div>
+              <div class="text-[11px] text-[#54a630] font-bold mt-1">Sadana Green Society</div>
+            </div>
+
+            <!-- Right: Paragraphs & Mission/Vision Quotes -->
+            <div class="lg:col-span-7 space-y-6">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Who we are</h2>
+              <div class="space-y-4 text-xs sm:text-[13px] text-gray-600 leading-relaxed">
+                <p>${who.p1 || ''}</p>
+                <p>${who.p2 || ''}</p>
+                <p>${who.p3 || ''}</p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                <div class="bg-[#f8faf8] border border-gray-200 rounded-2xl p-5">
+                  <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630] mb-2">${who.missionTitle || 'Our mission'}</h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">${who.missionText || ''}</p>
+                </div>
+                <div class="bg-[#f8faf8] border border-gray-200 rounded-2xl p-5">
+                  <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630] mb-2">${who.visionTitle || 'Our vision'}</h4>
+                  <p class="text-xs text-gray-600 leading-relaxed">${who.visionText || ''}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- OUR PROJECTS (8 Core Areas from about us.pdf) -->
+        <section class="py-16 bg-[#f8faf8] border-y border-gray-100">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Programmes</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Our projects</h2>
+              </div>
+              <p class="text-xs text-gray-500">Eight areas of work that connect farmers, land and climate.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              ${projs.map((p, idx) => `
+                <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm hover:shadow-md transition flex flex-col justify-between group cursor-pointer" onclick="navigateTo('${p.linkPage || 'agroforestry'}')">
+                  <div>
+                    <div class="w-8 h-8 rounded-full bg-[#f3f5f3] text-[#54a630] flex items-center justify-center font-extrabold text-xs mb-4">
+                      ${idx + 1}
+                    </div>
+                    <h3 class="font-extrabold text-sm text-[#162219] group-hover:text-[#54a630] transition mb-2">${p.title}</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-4">${p.role}</p>
+                  </div>
+                  <span class="text-xs font-bold text-[#54a630]">Learn more &rarr;</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- OUR LEADERSHIP & FIELD TEAM (Role, Name, Small Description, Photo slightly smaller than founder) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Our People</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">${a.teamTitle || 'Our Leadership & Field Team'}</h2>
+            </div>
+            <p class="text-xs text-gray-500 max-w-md">${a.teamSubtitle || 'Dedicated agronomists, project coordinators, and technical officers driving green transformation across AP, Telangana and Karnataka.'}</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            ${(a.teamMembers || [
+              { name: "Dr. K. Ramanjaneyulu", role: "Chief Agronomist & Soil Specialist", desc: "Ph.D. in Soil Science with 18+ years guiding sustainable cropping, soil biology revitalization, and AWD water management across AP & Telangana.", image: "assets/images/template/farmer-1.webp" },
+              { name: "S. Venkatesh Nayak", role: "Field Operations Director", desc: "Coordinates village-level farmer mobilization, GIS farm polygon mapping, and sapling nursery logistics across Kurnool and Nandyal districts.", image: "assets/images/template/farmer-2.webp" },
+              { name: "P. Sunitha Reddy", role: "Farmer Outreach & Training Lead", desc: "Manages women farmer self-help groups, organic bio-input training sessions, and community nursery development programs.", image: "assets/images/template/farmer-5.webp" },
+              { name: "M. Chenna Kesava", role: "Carbon Verification Officer", desc: "Specializes in Verra/VCS field monitoring, biomass circumference audits, and transparent 70% carbon revenue disbursements to growers.", image: "assets/images/template/farmer-4.webp" }
+            ]).map(m => `
+              <div class="bg-white rounded-2xl p-5 border border-gray-200/90 shadow-sm hover:shadow-md transition text-center flex flex-col justify-between group">
+                <div>
+                  <div class="rounded-xl overflow-hidden aspect-[4/4.2] mb-4 bg-gray-100 max-h-56 mx-auto w-full">
+                    <img src="${m.image && m.image.startsWith('http') ? m.image : (m.image || imgUrl('team1'))}" alt="${m.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  </div>
+                  <h3 class="font-extrabold text-base text-[#162219] mb-1">${m.name}</h3>
+                  <div class="text-xs font-bold text-[#54a630] uppercase tracking-wide mb-2.5">${m.role}</div>
+                  <p class="text-xs text-gray-500 leading-relaxed">${m.desc}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- HOW WE WORK WITH FARMERS (From about us.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Accountability</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">How we work with farmers</h2>
+            </div>
+            <p class="text-xs text-gray-500">A simple, accountable process from first conversation to results.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            ${(CMS.home.steps.items || []).map(st => `
+              <div class="bg-[#edf5ea] rounded-3xl p-6 border border-[#cfe2cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between">
+                <div>
+                  <div class="w-7 h-7 rounded-full bg-[#f2a922] text-[#162219] font-extrabold text-xs flex items-center justify-center mb-3">
+                    ${st.num}
+                  </div>
+                  <h3 class="font-extrabold text-sm text-[#162219] mb-2">${st.title}</h3>
+                  <p class="text-xs text-gray-500 leading-relaxed">${st.desc}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+
+        <!-- PARTNER WITH US (From about us.pdf) -->
+        <section class="py-16 bg-[#122316] text-white">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Partner with us</h2>
+              <p class="text-xs text-white/70 max-w-md">We welcome collaboration with organisations that share our mission.</p>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              ${(a.partnerBadges || ["CSR teams", "Institutions", "Technical partners", "Development organisations", "Community groups"]).map(badge => `
+                <span class="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-xs font-bold text-white">${badge}</span>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <!-- YELLOW PARTNERSHIP CTA BANNER -->
+        ${renderYellowCtaBanner()}
+      `;
+    }
+
+    // =========================================================================
+    // 3. AGROFORESTRY & WHY AGROFORESTRY PAGE (100% Old Site Parity: 6 Models, 5-Row Matrix)
+    // =========================================================================
+    function renderServicesPage() {
+      const ag = CMS.agroforestry || {};
+      const ben = ag.benefits || { forFarmers: [], forSoilWater: [], forClimate: [] };
+      const models = ag.models || [];
+      const matrix = ag.suitabilityMatrix || [];
+
+      return `
+        <!-- HERO SECTION -->
+        <section class="relative bg-[#111e15] text-white pb-16">
+          ${renderHeroMediaLayer('agroforestry', 'servicesHero')}
+          ${renderHeader()}
+
+          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-14 lg:pt-20">
+            <div class="max-w-3xl">
+              <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Agroforestry Overview</span>
+              <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">${ag.heroTitle || 'Why agroforestry?'}</h1>
+              <p class="text-white/80 text-xs sm:text-sm leading-relaxed mb-6">${ag.heroSubtitle || ''}</p>
+              <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20">
+                <span class="text-2xl font-extrabold text-[#7fd858]">${ag.enrolledCount || '1,20,000'}</span>
+                <span class="text-xs text-white/80">farmers enrolled in agroforestry carbon credit programmes</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WHAT IS AGROFORESTRY SECTION (From why agriforect.pdf) -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-5">
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219] mb-4">What is agroforestry?</h2>
+            </div>
+            <div class="lg:col-span-7">
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">${ag.whatIs || ''}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- BENEFITS OF AGROFORESTRY (3 Columns from why agriforect.pdf) -->
+        <section class="py-16 bg-[#f8faf8] border-y border-gray-100">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Impact</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219]">Benefits of agroforestry</h2>
+              </div>
+              <p class="text-xs text-gray-500">One practice that helps the farmer, the land and the climate.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Column 1: For farmers -->
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For farmers</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(ben.forFarmers || []).map(b => `
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-[#54a630] font-bold">&check;</span>
+                      <span>${b}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <!-- Column 2: For soil and water -->
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
+                <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For soil and water</h3>
+                <ul class="space-y-3 text-xs text-gray-600">
+                  ${(ben.forSoilWater || []).map(b => `
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-[#54a630] font-bold">&check;</span>
+                      <span>${b}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+
+              <!-- Column 3: For climate and nature -->
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For climate and nature</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(ben.forClimate || []).map(b => `
@@ -3326,7 +4297,7 @@
 
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 ${(awd.fieldSteps || []).map(st => `
-                  <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+                  <div class="bg-[#edf5ea] rounded-3xl p-6 border border-[#cfe2cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between">
                     <div>
                       <div class="w-7 h-7 rounded-full bg-[#f2a922] text-[#162219] font-extrabold text-xs flex items-center justify-center mb-3">
                         ${st.num}
@@ -3351,7 +4322,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For farmers</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(ben.forFarmers || []).map(b => `
@@ -3363,7 +4334,7 @@
                 </ul>
               </div>
 
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">For the environment</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(ben.forEnvironment || []).map(b => `
@@ -3502,7 +4473,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">Farmers</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(who.farmers || []).map(b => `
@@ -3511,7 +4482,7 @@
                 </ul>
               </div>
 
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">Companies and partners</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(who.companies || []).map(b => `
@@ -3520,7 +4491,7 @@
                 </ul>
               </div>
 
-              <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/90 shadow-sm">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 sm:p-9 border border-[#cfe2cc] shadow-sm">
                 <h3 class="font-extrabold text-base text-[#162219] mb-4 pb-3 border-b border-gray-100">Environment and communities</h3>
                 <ul class="space-y-3 text-xs text-gray-600">
                   ${(who.environment || []).map(b => `
@@ -3544,7 +4515,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             ${(carb.howItWorks || []).map(st => `
-              <div class="bg-white rounded-2xl p-6 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+              <div class="bg-[#edf5ea] rounded-3xl p-6 border border-[#cfe2cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between">
                 <div>
                   <div class="w-7 h-7 rounded-full bg-[#f2a922] text-[#162219] font-extrabold text-xs flex items-center justify-center mb-3">
                     ${st.num}
@@ -3781,7 +4752,7 @@
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             ${pillars.map(c => `
-              <div class="soft-card p-6 flex flex-col justify-between group">
+              <div class="bg-[#edf5ea] rounded-3xl p-7 border border-[#d0e3cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between group">
                 <div>
                   <div class="h-40 rounded-xl overflow-hidden mb-4 bg-gray-100">
                     <img src="${imgUrl(c.imgKey || 'gal1')}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
@@ -4543,7 +5514,7 @@
                 <div class="hidden sm:block absolute -left-32 top-1 w-24 text-right">
                   <span class="inline-block px-2.5 py-1 rounded-full bg-[#54a630]/10 text-[#54a630] font-extrabold text-xs">${m.year}</span>
                 </div>
-                <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200/80 shadow-sm hover:shadow-md transition">
+                <div class="bg-[#edf5ea] rounded-3xl p-6 sm:p-8 border border-[#d0e3cb] shadow-sm hover:shadow-md transition">
                   <div class="sm:hidden mb-2">
                     <span class="inline-block px-2.5 py-1 rounded-full bg-[#54a630]/10 text-[#54a630] font-extrabold text-xs">${m.year}</span>
                   </div>
@@ -5902,141 +6873,263 @@
         const forest = CMS.forestSpecies || [];
         const fruit = CMS.fruitSpecies || [];
         const currentSubTab = state.adminSpeciesTab || "all";
+        const query = (state.adminSpeciesSearch || "").toLowerCase().trim();
+
+        const filterItem = (s) => {
+          if (!query) return true;
+          return (s.name || "").toLowerCase().includes(query) ||
+                 (s.telugu || "").toLowerCase().includes(query) ||
+                 (s.botanical || "").toLowerCase().includes(query) ||
+                 (s.fit || "").toLowerCase().includes(query);
+        };
+
+        const filteredForest = forest.filter(filterItem);
+        const filteredFruit = fruit.filter(filterItem);
+        const totalMatching = (currentSubTab === "fruit" ? 0 : filteredForest.length) + (currentSubTab === "forest" ? 0 : filteredFruit.length);
 
         ws.innerHTML = `
-          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+          <!-- Executive Header -->
+          <div class="pb-5 border-b border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
             <div>
-              <h3 class="text-xl font-extrabold text-[#162219]">🌱 16 Species Directory Editor (Compact Mode)</h3>
-              <p class="text-xs text-gray-500">Edit botanical names, Telugu names, soil fit, maturity, uses, and advisory notes in a dense, compact view.</p>
+              <div class="flex items-center gap-2.5 mb-1">
+                <span class="w-8 h-8 rounded-xl bg-[#54a630] text-white flex items-center justify-center font-bold text-base shadow-sm">🌱</span>
+                <h3 class="text-xl font-extrabold text-[#162219]">Promoted Species Directory Manager</h3>
+              </div>
+              <p class="text-xs text-gray-500">Curate botanical specifications, Telugu nomenclature, maturity cycles, and farmer advisory notes.</p>
             </div>
-            <div class="flex items-center gap-2">
-              <button type="button" onclick="toggleAddSpeciesForm()" class="bg-[#122316] hover:bg-black text-white px-4 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+            <div class="flex items-center gap-2.5 flex-wrap">
+              <button type="button" onclick="toggleAddSpeciesForm()" class="bg-[#122316] hover:bg-black text-white px-4 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-2">
                 <span>+ Add New Species</span>
               </button>
-              <button type="button" onclick="saveCmsSection('All Species Catalog', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm">
-              💾 Save All Species
-            </button>
+              <button type="button" onclick="saveCmsSection('All Species Catalog', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+                <span>💾 Save All Species</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stats Overview Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 text-xs">
+            <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-extrabold text-sm">🌱</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">${forest.length + fruit.length} Species</div>
+                <div class="text-[10px] text-gray-400">Total Directory</div>
+              </div>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-emerald-100 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-100/70 text-emerald-800 flex items-center justify-center font-extrabold text-sm">🌳</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">${forest.length} Trees</div>
+                <div class="text-[10px] text-emerald-600 font-bold">Forest & Timber</div>
+              </div>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-amber-100 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-100/70 text-amber-800 flex items-center justify-center font-extrabold text-sm">🥭</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">${fruit.length} Trees</div>
+                <div class="text-[10px] text-amber-600 font-bold">Fruit & Orchard</div>
+              </div>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-extrabold text-sm">✓</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">100% Certified</div>
+                <div class="text-[10px] text-gray-400">Nursery Verified</div>
+              </div>
+            </div>
           </div>
 
           <!-- Add Species Drawer / Expander -->
-          <div id="add-species-panel" class="hidden mb-6 bg-white p-5 rounded-2xl border-2 border-[#54a630] shadow-md space-y-4 text-xs">
-            <div class="flex items-center justify-between pb-2 border-b border-gray-200">
-              <h4 class="font-extrabold text-[#162219] text-sm">🌱 Add New Promoted Species</h4>
-              <button type="button" onclick="toggleAddSpeciesForm()" class="text-gray-400 hover:text-gray-600 font-bold text-lg leading-none">&times;</button>
+          <div id="add-species-panel" class="hidden mb-6 bg-gradient-to-br from-white to-[#f4f9f2] p-6 rounded-2xl border-2 border-[#54a630] shadow-xl space-y-4 text-xs">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-200/80">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">🌱</span>
+                <h4 class="font-extrabold text-[#162219] text-sm">Add New Promoted Species to Catalog</h4>
+              </div>
+              <button type="button" onclick="toggleAddSpeciesForm()" class="text-gray-400 hover:text-gray-700 text-lg font-bold p-1">&times;</button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div>
-                <label class="block font-bold text-gray-700 mb-1">Category *</label>
-                <select id="new-species-cat" class="w-full border border-gray-200 rounded-lg p-2 font-bold text-xs bg-white">
-                  <option value="forest">Forest / Timber Tree</option>
-                  <option value="fruit">Fruit Tree</option>
+                <label class="block font-bold text-gray-700 mb-1">Species Category *</label>
+                <select id="new-species-cat" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-bold text-xs bg-white focus:outline-none focus:border-[#54a630]">
+                  <option value="forest">🌳 Forest / Timber Tree</option>
+                  <option value="fruit">🥭 Fruit &amp; Orchard Tree</option>
                 </select>
               </div>
               <div>
-                <label class="block font-bold text-gray-700 mb-1">English Name *</label>
-                <input id="new-species-name" type="text" placeholder="e.g. Red Sanders" class="w-full border border-gray-200 rounded-lg p-2 font-bold text-xs" />
+                <label class="block font-bold text-gray-700 mb-1">English Common Name *</label>
+                <input id="new-species-name" type="text" placeholder="e.g. Red Sanders / Sandalwood" class="w-full border border-gray-300 rounded-xl px-3 py-2 font-bold text-xs bg-white focus:outline-none focus:border-[#54a630]" />
               </div>
               <div>
                 <label class="block font-bold text-gray-700 mb-1">Telugu Name (తెలుగు) *</label>
-                <input id="new-species-telugu" type="text" placeholder="ఉదా: ఎర్రచందనం" class="w-full border border-gray-200 rounded-lg p-2 telugu-text text-[#54a630] font-bold text-xs" />
+                <input id="new-species-telugu" type="text" placeholder="ఉదా: ఎర్రచందనం" class="w-full border border-gray-300 rounded-xl px-3 py-2 telugu-text text-[#2b681c] font-bold text-xs bg-white focus:outline-none focus:border-[#54a630]" />
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div>
-                <label class="block font-bold text-gray-700 mb-1">Botanical Name</label>
-                <input id="new-species-botanical" type="text" placeholder="e.g. Pterocarpus santalinus" class="w-full border border-gray-200 rounded-lg p-2 italic text-xs" />
+                <label class="block font-bold text-gray-700 mb-1">Botanical Name (Scientific)</label>
+                <input id="new-species-botanical" type="text" placeholder="e.g. Pterocarpus santalinus" class="w-full border border-gray-300 rounded-xl px-3 py-2 italic text-xs bg-white focus:outline-none focus:border-[#54a630]" />
               </div>
               <div>
                 <label class="block font-bold text-gray-700 mb-1">Soil / Climate Fit</label>
-                <input id="new-species-fit" type="text" placeholder="Well-drained red loam, black soil" class="w-full border border-gray-200 rounded-lg p-2 text-xs" />
+                <input id="new-species-fit" type="text" placeholder="Well-drained red loam, black soil" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs bg-white focus:outline-none focus:border-[#54a630]" />
               </div>
               <div>
                 <label class="block font-bold text-gray-700 mb-1">Maturity Timeline</label>
-                <input id="new-species-maturity" type="text" placeholder="15-20 years" class="w-full border border-gray-200 rounded-lg p-2 text-xs" />
+                <input id="new-species-maturity" type="text" placeholder="15-20 years commercial harvest" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs bg-white focus:outline-none focus:border-[#54a630]" />
               </div>
             </div>
             <div>
-              <label class="block font-bold text-gray-700 mb-1">Advisory Note</label>
-              <input id="new-species-note" type="text" placeholder="High export value, protected species permissions guided by SGS." class="w-full border border-gray-200 rounded-lg p-2 text-[#8a5b00] text-xs" />
+              <label class="block font-bold text-gray-700 mb-1">Agronomic Advisory &amp; Value Guidance</label>
+              <input id="new-species-note" type="text" placeholder="High export value, protected species permissions guided by SGS field agronomists." class="w-full border border-gray-300 rounded-xl px-3 py-2 text-xs text-[#8a5b00] bg-white focus:outline-none focus:border-[#54a630]" />
             </div>
-            <div class="flex items-center justify-end gap-2 pt-2 border-t border-gray-100">
-              <button type="button" onclick="toggleAddSpeciesForm()" class="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 font-bold text-gray-700 text-xs">Cancel</button>
-              <button type="button" onclick="submitAddSpecies(event)" class="px-5 py-2 rounded-lg bg-[#54a630] hover:bg-[#468e26] text-white font-bold text-xs shadow-sm">Add to Catalog</button>
+            <div class="flex items-center justify-end gap-2.5 pt-3 border-t border-gray-200/80">
+              <button type="button" onclick="toggleAddSpeciesForm()" class="px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 font-bold text-gray-700 text-xs transition">Cancel</button>
+              <button type="button" onclick="submitAddSpecies(event)" class="px-5 py-2 rounded-xl bg-[#54a630] hover:bg-[#468e26] text-white font-bold text-xs shadow-md transition">Add to Catalog</button>
             </div>
           </div>
 
-          <!-- Filter Pills -->
-          <div class="flex items-center gap-2 mb-4 overflow-x-auto pb-1 text-xs font-bold">
-            <button type="button" onclick="state.adminSpeciesTab='all'; renderCmsWorkspace();" class="species-tab-btn px-4 py-1.5 rounded-full border transition ${currentSubTab === 'all' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
-              All 16 Species
-            </button>
-            <button type="button" onclick="state.adminSpeciesTab='forest'; renderCmsWorkspace();" class="species-tab-btn px-4 py-1.5 rounded-full border transition ${currentSubTab === 'forest' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
-              🌳 8 Forest Trees
-            </button>
-            <button type="button" onclick="state.adminSpeciesTab='fruit'; renderCmsWorkspace();" class="species-tab-btn px-4 py-1.5 rounded-full border transition ${currentSubTab === 'fruit' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
-              🥭 8 Fruit Trees
-            </button>
+          <!-- Controls Bar: Category Pills + Real-Time Live Search -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-bold">
+              <button type="button" onclick="state.adminSpeciesTab='all'; renderCmsWorkspace();" class="species-tab-btn px-4 py-2 rounded-xl border transition ${currentSubTab === 'all' ? 'bg-[#54a630] text-white border-[#54a630] shadow-sm' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50'}">
+                All Species (${forest.length + fruit.length})
+              </button>
+              <button type="button" onclick="state.adminSpeciesTab='forest'; renderCmsWorkspace();" class="species-tab-btn px-4 py-2 rounded-xl border transition ${currentSubTab === 'forest' ? 'bg-[#54a630] text-white border-[#54a630] shadow-sm' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50'}">
+                🌳 Forest Timber (${forest.length})
+              </button>
+              <button type="button" onclick="state.adminSpeciesTab='fruit'; renderCmsWorkspace();" class="species-tab-btn px-4 py-2 rounded-xl border transition ${currentSubTab === 'fruit' ? 'bg-[#54a630] text-white border-[#54a630] shadow-sm' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50'}">
+                🥭 Fruit Trees (${fruit.length})
+              </button>
+            </div>
+
+            <!-- Live Search Input -->
+            <div class="relative w-full sm:w-72">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400 text-xs">🔍</span>
+              <input type="text" value="${state.adminSpeciesSearch || ''}" oninput="state.adminSpeciesSearch=this.value; renderCmsWorkspace();" placeholder="Search species or Telugu..." class="w-full bg-white border border-gray-300 rounded-xl pl-8 pr-4 py-2 text-xs font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#54a630] shadow-sm" />
+              ${state.adminSpeciesSearch ? `
+                <button type="button" onclick="state.adminSpeciesSearch=''; renderCmsWorkspace();" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 font-bold text-xs">&times;</button>
+              ` : ''}
+            </div>
           </div>
 
-          <!-- Compact Species Grid -->
-          <div class="compact-species-grid grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-            ${(currentSubTab === 'fruit' ? [] : forest).map((s, idx) => `
-              <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 space-y-2">
-                <div class="flex items-center justify-between pb-1.5 border-b border-gray-200">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-[#54a630]/15 text-[#54a630] flex items-center justify-center font-bold text-[11px]">#${s.id}</span>
-                    <span class="font-extrabold text-[#162219] text-xs">Forest &bull; ${s.name}</span>
-                  </div>
-                  <div class="flex items-center gap-1.5">
+          ${totalMatching === 0 ? `
+            <div class="text-center py-12 bg-white rounded-2xl border border-gray-200 text-gray-500 text-xs">
+              No species found matching "${state.adminSpeciesSearch}". <button type="button" onclick="state.adminSpeciesSearch=''; renderCmsWorkspace();" class="text-[#54a630] font-bold underline ml-1">Clear search</button>
+            </div>
+          ` : `
+            <!-- Species Grid -->
+            <div class="compact-species-grid grid grid-cols-1 lg:grid-cols-2 gap-4 text-xs">
+              <!-- Forest Species -->
+              ${(currentSubTab === 'fruit' ? [] : filteredForest).map((s, idx) => `
+                <div class="bg-[#f2f8f0] border-2 border-[#cfe4cc] hover:border-[#54a630] rounded-2xl p-4 space-y-3 shadow-sm hover:shadow-md transition">
+                  <!-- Header Pill Bar -->
+                  <div class="flex items-center justify-between pb-2 border-b border-[#cfe4cc]">
+                    <div class="flex items-center gap-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-[#54a630] text-white font-extrabold text-[11px] shadow-xs">#${s.id}</span>
+                      <span class="font-extrabold text-[#162219] text-xs">🌳 Forest &bull; ${s.name}</span>
+                    </div>
                     <div class="flex items-center gap-1.5">
-                    <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2.5 py-0.5 rounded-md text-[10px] font-bold">Save</button>
-                    <button type="button" onclick="deleteCmsSpecies('fruit', ${idx})" class="bg-red-50 text-red-600 hover:bg-red-100 px-2 py-0.5 rounded-md text-[10px] font-bold" title="Delete Species">&times;</button>
+                      <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-3 py-1 rounded-lg text-[10px] font-bold transition shadow-xs">Save</button>
+                      <button type="button" onclick="deleteCmsSpecies('forest', ${idx})" class="bg-red-50 text-red-600 hover:bg-red-100 px-2.5 py-1 rounded-lg text-[10px] font-bold transition" title="Delete Species">&times; Delete</button>
+                    </div>
                   </div>
-                    <button type="button" onclick="deleteCmsSpecies('forest', ${idx})" class="bg-red-50 text-red-600 hover:bg-red-100 px-2 py-0.5 rounded-md text-[10px] font-bold" title="Delete Species">&times;</button>
-                  </div>
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                  <input type="text" value="${s.name}" oninput="CMS.forestSpecies[${idx}].name=this.value;" placeholder="English Name" class="border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
-                  <input type="text" value="${s.telugu}" oninput="CMS.forestSpecies[${idx}].telugu=this.value;" placeholder="Telugu Name" class="border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold text-xs" />
-                </div>
-                <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.forestSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic text-[11px]" />
-                <div class="grid grid-cols-1 gap-1.5">
-                  <input type="text" value="${s.fit || ''}" placeholder="Best for (soil/climate)..." oninput="CMS.forestSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
-                  <input type="text" value="${s.maturity || ''}" placeholder="Maturity timeline..." oninput="CMS.forestSpecies[${idx}].maturity=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
-                  <input type="text" value="${s.note || ''}" placeholder="Advisory Note..." oninput="CMS.forestSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px] text-[#8a5b00]" />
-                </div>
-              </div>
-            `).join('')}
 
-            ${(currentSubTab === 'forest' ? [] : fruit).map((s, idx) => `
-              <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 space-y-2">
-                <div class="flex items-center justify-between pb-1.5 border-b border-gray-200">
-                  <div class="flex items-center gap-2">
-                    <span class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-600 flex items-center justify-center font-bold text-[11px]">#${s.id}</span>
-                    <span class="font-extrabold text-[#162219] text-xs">Fruit &bull; ${s.name}</span>
+                  <!-- Names -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">English Name</label>
+                      <input type="text" value="${s.name}" oninput="CMS.forestSpecies[${idx}].name=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 font-bold text-xs focus:outline-none focus:border-[#54a630]" />
+                    </div>
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">Telugu Name (తెలుగు)</label>
+                      <input type="text" value="${s.telugu}" oninput="CMS.forestSpecies[${idx}].telugu=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 telugu-text text-[#2d6b1d] font-bold text-xs focus:outline-none focus:border-[#54a630]" />
+                    </div>
                   </div>
-                  <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2.5 py-0.5 rounded-md text-[10px] font-bold">Save</button>
+
+                  <!-- Botanical Name -->
+                  <div>
+                    <label class="block font-bold text-gray-600 mb-1 text-[10px]">Botanical Scientific Name</label>
+                    <input type="text" value="${s.botanical || ''}" placeholder="e.g. Tectona grandis" oninput="CMS.forestSpecies[${idx}].botanical=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 italic text-xs text-gray-700 focus:outline-none focus:border-[#54a630]" />
+                  </div>
+
+                  <!-- 2-Col Specs -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">Soil &amp; Climate Suitability</label>
+                      <input type="text" value="${s.fit || ''}" placeholder="Well-drained red loam..." oninput="CMS.forestSpecies[${idx}].fit=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 text-xs text-gray-700 focus:outline-none focus:border-[#54a630]" />
+                    </div>
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">Maturity Timeline</label>
+                      <input type="text" value="${s.maturity || ''}" placeholder="12-15 years..." oninput="CMS.forestSpecies[${idx}].maturity=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 text-xs text-gray-700 focus:outline-none focus:border-[#54a630]" />
+                    </div>
+                  </div>
+
+                  <!-- Advisory Note -->
+                  <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-2.5">
+                    <label class="block font-bold text-amber-900 mb-1 text-[10px]">📢 Agronomic Advisory &amp; Commercial Uses</label>
+                    <input type="text" value="${s.note || ''}" placeholder="Commercial guidance..." oninput="CMS.forestSpecies[${idx}].note=this.value;" class="w-full bg-white border border-amber-200 rounded-lg px-2.5 py-1 text-xs text-[#8a5b00] focus:outline-none focus:border-[#54a630]" />
+                  </div>
                 </div>
-                <div class="grid grid-cols-2 gap-2">
-                  <input type="text" value="${s.name}" oninput="CMS.fruitSpecies[${idx}].name=this.value;" placeholder="English Name" class="border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
-                  <input type="text" value="${s.telugu}" oninput="CMS.fruitSpecies[${idx}].telugu=this.value;" placeholder="Telugu Name" class="border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold text-xs" />
+              `).join('')}
+
+              <!-- Fruit Species -->
+              ${(currentSubTab === 'forest' ? [] : filteredFruit).map((s, idx) => `
+                <div class="bg-[#fdf8f0] border-2 border-[#fae2c0] hover:border-amber-500 rounded-2xl p-4 space-y-3 shadow-sm hover:shadow-md transition">
+                  <!-- Header Pill Bar -->
+                  <div class="flex items-center justify-between pb-2 border-b border-[#fae2c0]">
+                    <div class="flex items-center gap-2">
+                      <span class="px-2.5 py-0.5 rounded-full bg-amber-600 text-white font-extrabold text-[11px] shadow-xs">#${s.id}</span>
+                      <span class="font-extrabold text-[#162219] text-xs">🥭 Fruit &bull; ${s.name}</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-3 py-1 rounded-lg text-[10px] font-bold transition shadow-xs">Save</button>
+                      <button type="button" onclick="deleteCmsSpecies('fruit', ${idx})" class="bg-red-50 text-red-600 hover:bg-red-100 px-2.5 py-1 rounded-lg text-[10px] font-bold transition" title="Delete Species">&times; Delete</button>
+                    </div>
+                  </div>
+
+                  <!-- Names -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">English Name</label>
+                      <input type="text" value="${s.name}" oninput="CMS.fruitSpecies[${idx}].name=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 font-bold text-xs focus:outline-none focus:border-amber-500" />
+                    </div>
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">Telugu Name (తెలుగు)</label>
+                      <input type="text" value="${s.telugu}" oninput="CMS.fruitSpecies[${idx}].telugu=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 telugu-text text-[#854d0e] font-bold text-xs focus:outline-none focus:border-amber-500" />
+                    </div>
+                  </div>
+
+                  <!-- Botanical Name -->
+                  <div>
+                    <label class="block font-bold text-gray-600 mb-1 text-[10px]">Botanical Scientific Name</label>
+                    <input type="text" value="${s.botanical || ''}" placeholder="e.g. Mangifera indica" oninput="CMS.fruitSpecies[${idx}].botanical=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 italic text-xs text-gray-700 focus:outline-none focus:border-amber-500" />
+                  </div>
+
+                  <!-- 2-Col Specs -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">Soil &amp; Climate Suitability</label>
+                      <input type="text" value="${s.fit || ''}" placeholder="Alluvial and red soil..." oninput="CMS.fruitSpecies[${idx}].fit=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 text-xs text-gray-700 focus:outline-none focus:border-amber-500" />
+                    </div>
+                    <div>
+                      <label class="block font-bold text-gray-600 mb-1 text-[10px]">Maturity &amp; Bearing Timeline</label>
+                      <input type="text" value="${s.maturity || ''}" placeholder="3-4 years bearing starts..." oninput="CMS.fruitSpecies[${idx}].maturity=this.value;" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-1.5 text-xs text-gray-700 focus:outline-none focus:border-amber-500" />
+                    </div>
+                  </div>
+
+                  <!-- Advisory Note -->
+                  <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-2.5">
+                    <label class="block font-bold text-amber-900 mb-1 text-[10px]">📢 Agronomic Advisory &amp; Commercial Uses</label>
+                    <input type="text" value="${s.note || ''}" placeholder="Market guidance..." oninput="CMS.fruitSpecies[${idx}].note=this.value;" class="w-full bg-white border border-amber-200 rounded-lg px-2.5 py-1 text-xs text-[#8a5b00] focus:outline-none focus:border-amber-500" />
+                  </div>
                 </div>
-                <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.fruitSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic text-[11px]" />
-                <div class="grid grid-cols-1 gap-1.5">
-                  <input type="text" value="${s.fit || ''}" placeholder="Best for (soil/climate)..." oninput="CMS.fruitSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
-                  <input type="text" value="${s.maturity || ''}" placeholder="Maturity timeline..." oninput="CMS.fruitSpecies[${idx}].maturity=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
-                  <input type="text" value="${s.note || ''}" placeholder="Advisory Note..." oninput="CMS.fruitSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px] text-[#8a5b00]" />
-                </div>
-              </div>
-            `).join('')}
-          </div>
+              `).join('')}
+            </div>
+          `}
         `;
       }
-
-      // -----------------------------------------------------------------------
-      // TAB 10: ENVIRONMENT & IMPACT
-      // -----------------------------------------------------------------------
-      else if (t === "environment") {
+else if (t === "environment") {
         const env = CMS.environment || {};
         const list = env.whatFarmerCanDo || [];
 
@@ -6108,212 +7201,312 @@
       else if (t === "plantation") {
         const pl = CMS.plantation || {};
         const fc = pl.formConfig || {
+          badge: "OFFICIAL FARMER REGISTRATION • AP, TG & KARNATAKA",
           title: "Apply for Agroforestry Saplings & AWD Programme",
           subtitle: "Direct application for farmers across Kurnool, Nandyal, Anantapur, Kadapa, Gadwal, Mahabubnagar and Bellary.",
           benefitsNotice: "Free certified nursery saplings & GIS field mapping for eligible farmers.",
           successMsg: "Application Submitted Successfully! Reference ID has been generated and our local field officer will contact you within 48 hours.",
           helpPhone: "+91 99666 11855",
-          districts: "Kurnool, Nandyal, Anantapur, Kadapa, Jogulamba Gadwal, Mahabubnagar, Bellary, Raichur"
+          districts: "Kurnool, Nandyal, Anantapur, Kadapa, Jogulamba Gadwal, Mahabubnagar, Bellary, Raichur",
+          farmerNameLabel: "Farmer full name *",
+          guardianNameLabel: "Father / Husband / Guardian name *",
+          phoneLabel: "Mobile number *",
+          acresLabel: "Land area (acres) *",
+          plantationTypeLabel: "Plantation type *",
+          speciesCountLabel: "Tree species and approximate number",
+          waterFacilityLabel: "Water facility available for new plantation? / కొత్త మొక్కలు పెంచడానికి నీటి వసతి ఉందా? *",
+          declaration1: "I have read and understood the eligibility terms above in English/Telugu. I declare that the details given are true. / పై అర్హత నిబంధనలను చదివి అర్థం చేసుకున్నాను. నేను ఇచ్చిన వివరాలు నిజమైనవని ప్రకటిస్తున్నాను. *",
+          declaration2: "I confirm that the information provided is accurate and authorize Sadana Green Society to contact me and verify the land. / ఈ దరఖాస్తును పరిశీలించడానికి సదన గ్రీన్ సొసైటీ నన్ను సంప్రదించవచ్చని అంగీకరిస్తున్నాను. *",
+          submitBtnText: "Submit Plantation Application"
         };
         const termsEn = pl.termsEnglish || [];
         const termsTe = pl.termsTelugu || [];
 
         ws.innerHTML = `
-          <!-- Application Form Configuration Card -->
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
-            ${renderAdminCardHeader('📝 Plantation Application Form Settings', 'Customize the online farmer application form title, eligibility notice, districts and success message.', 'Form Settings')}
+          <!-- Header Bar -->
+          <div class="pb-5 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div class="flex items-center gap-2.5 mb-1">
+                <span class="w-8 h-8 rounded-xl bg-[#54a630] text-white flex items-center justify-center font-bold text-base shadow-sm">📝</span>
+                <h3 class="text-xl font-extrabold text-[#162219]">Plantation Application Form Studio</h3>
+              </div>
+              <p class="text-xs text-gray-500">Configure public farmer registration headings, eligibility alerts, field labels, bilingual terms, and declaration clauses.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="${routeUrl('new-plantation')}" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 no-underline">
+                <span>👁️ Preview Live Form</span>
+              </a>
+              <button type="button" onclick="saveCmsSection('Plantation Form Settings', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+                <span>💾 Save Form Settings</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Section 1: Form Scope, Title & Notice Banner -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6 shadow-sm">
+            ${renderAdminCardHeader('🏷️ Form Header &amp; District Scope', 'Main title, subtitle, badge and green announcement banner displayed at top of /new-plantation/.', 'Form Header')}
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">Top Badge Text</label>
+                <input type="text" value="${fc.badge || 'OFFICIAL FARMER REGISTRATION • AP, TG & KARNATAKA'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.badge=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-xs font-bold text-[#54a630] focus:outline-none focus:border-[#54a630]" />
+              </div>
               <div>
                 <label class="block font-bold text-gray-700 mb-1">Form Main Heading</label>
-                <input type="text" value="${fc.title}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold" />
-              </div>
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">District / Territory Coverage</label>
-                <input type="text" value="${fc.districts}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.districts=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+                <input type="text" value="${fc.title || ''}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-xs font-extrabold text-[#162219] focus:outline-none focus:border-[#54a630]" />
               </div>
             </div>
             <div>
-              <label class="block font-bold text-gray-700 mb-1">Form Subtitle / Intro</label>
-              <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.subtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${fc.subtitle}</textarea>
+              <label class="block font-bold text-gray-700 mb-1">Introductory Subtitle</label>
+              <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.subtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-3 text-xs focus:outline-none focus:border-[#54a630]">${fc.subtitle || ''}</textarea>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block font-bold text-gray-700 mb-1">Farmer Eligibility / Benefits Banner Notice</label>
-                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.benefitsNotice=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-[#54a630] font-bold">${fc.benefitsNotice}</textarea>
+                <label class="block font-bold text-gray-700 mb-1">Farmer Eligibility Alert Banner (Green Highlight)</label>
+                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.benefitsNotice=this.value;" class="w-full border border-gray-200 rounded-xl p-3 text-xs text-[#204a11] font-bold bg-[#f2f8ef] focus:outline-none focus:border-[#54a630]">${fc.benefitsNotice || ''}</textarea>
               </div>
               <div>
-                <label class="block font-bold text-gray-700 mb-1">Application Success Message (Displayed upon submission)</label>
-                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.successMsg=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-blue-700 font-bold">${fc.successMsg}</textarea>
+                <label class="block font-bold text-gray-700 mb-1">Covered Operational Districts</label>
+                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.districts=this.value;" class="w-full border border-gray-200 rounded-xl p-3 text-xs text-gray-700 focus:outline-none focus:border-[#54a630]">${fc.districts || ''}</textarea>
               </div>
             </div>
           </div>
 
-          <!-- Form Field Labels & Declarations Editor -->
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
-            ${renderAdminCardHeader('📋 Application Form Labels, Fields &amp; Declarations', 'Customize all input labels, dropdown texts, declarations, and submit button on the application form.', 'Form Labels')}
+          <!-- Section 2: Input Field Labels & Placeholders -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6 shadow-sm">
+            ${renderAdminCardHeader('Application Form Labels, Fields &amp; Declarations', 'Customize the exact text displayed for each input field on the live farmer form.', 'Field Labels')}
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">Farmer Full Name Label</label>
-                <input type="text" value="${fc.farmerNameLabel || 'Farmer full name *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.farmerNameLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Farmer Full Name Label</label>
+                <input type="text" value="${fc.farmerNameLabel || 'Farmer full name *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.farmerNameLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
               </div>
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">Guardian Name Label</label>
-                <input type="text" value="${fc.guardianNameLabel || 'Father / Husband / Guardian name *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.guardianNameLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Guardian / Husband Label</label>
+                <input type="text" value="${fc.guardianNameLabel || 'Father / Husband / Guardian name *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.guardianNameLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
               </div>
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">Mobile Phone Label</label>
-                <input type="text" value="${fc.phoneLabel || 'Mobile number *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.phoneLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Mobile Phone Label</label>
+                <input type="text" value="${fc.phoneLabel || 'Mobile number *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.phoneLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">Land Area (Acres) Label</label>
-                <input type="text" value="${fc.acresLabel || 'Land area (acres) *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.acresLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Land Area (Acres) Label</label>
+                <input type="text" value="${fc.acresLabel || 'Land area (acres) *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.acresLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
               </div>
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">Plantation Type Label</label>
-                <input type="text" value="${fc.plantationTypeLabel || 'Plantation type *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.plantationTypeLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Plantation Model Label</label>
+                <input type="text" value="${fc.plantationTypeLabel || 'Plantation type *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.plantationTypeLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
               </div>
-              <div>
-                <label class="block font-bold text-gray-700 mb-1">Species / Count Label</label>
-                <input type="text" value="${fc.speciesCountLabel || 'Tree species and approximate number'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.speciesCountLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Tree Varieties &amp; Count Label</label>
+                <input type="text" value="${fc.speciesCountLabel || 'Tree species and approximate number'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.speciesCountLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
               </div>
             </div>
 
+            <div class="bg-gray-50/70 p-3 rounded-xl border border-gray-200/80">
+              <label class="block font-bold text-gray-700 mb-1 text-[11px]">Water Facility Dropdown Label</label>
+              <input type="text" value="${fc.waterFacilityLabel || 'Water facility available for new plantation? / కొత్త మొక్కలు పెంచడానికి నీటి వసతి ఉందా? *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.waterFacilityLabel=this.value;" class="w-full bg-white border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs font-medium" />
+            </div>
+          </div>
+
+          <!-- Section 3: Declarations, Submit Action & Success Message -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6 shadow-sm">
+            ${renderAdminCardHeader('⚖️ Mandatory Farmer Declarations &amp; Actions', 'Legal consent clauses checkboxes and post-submission confirmation.', 'Declarations')}
             <div>
-              <label class="block font-bold text-gray-700 mb-1">Water Facility Dropdown Label</label>
-              <input type="text" value="${fc.waterFacilityLabel || 'Water facility available for new plantation? / కొత్త మొక్కలు పెంచడానికి నీటి వసతి ఉందా? *'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.waterFacilityLabel=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              <div class="text-[11px] font-bold text-gray-700 mb-1">Declaration 1 (Eligibility &amp; Truthfulness of Details)</div>
+              <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.declaration1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-xs focus:outline-none focus:border-[#54a630]">${fc.declaration1 || ''}</textarea>
             </div>
-
-            <div class="space-y-3 pt-2 border-t border-gray-200">
-              <label class="block font-bold text-gray-700">Mandatory Farmer Declarations (Checkboxes)</label>
-              <div>
-                <div class="text-[11px] font-bold text-gray-500 mb-1">Declaration 1 (Terms Agreement)</div>
-                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.declaration1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-xs">${fc.declaration1 || ''}</textarea>
-              </div>
-              <div>
-                <div class="text-[11px] font-bold text-gray-500 mb-1">Declaration 2 (Information Accuracy &amp; SGS Verification)</div>
-                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.declaration2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-xs">${fc.declaration2 || ''}</textarea>
-              </div>
+            <div>
+              <div class="text-[11px] font-bold text-gray-700 mb-1">Declaration 2 (Accuracy &amp; SGS Verification Authorization)</div>
+              <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.declaration2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-xs focus:outline-none focus:border-[#54a630]">${fc.declaration2 || ''}</textarea>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-gray-200">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div>
-                <label class="block font-bold text-gray-700 mb-1">Submit Button Text</label>
-                <input type="text" value="${fc.submitBtnText || 'Submit Plantation Application'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.submitBtnText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold text-[#54a630]" />
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Submit Button Text</label>
+                <input type="text" value="${fc.submitBtnText || 'Submit Plantation Application'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.submitBtnText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold text-[#54a630] text-xs focus:outline-none focus:border-[#54a630]" />
               </div>
               <div>
-                <label class="block font-bold text-gray-700 mb-1">Field Support Helpline Number</label>
-                <input type="text" value="${fc.helpPhone || '+91 99666 11855'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.helpPhone=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Support Helpline Number</label>
+                <input type="text" value="${fc.helpPhone || '+91 99666 11855'}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.helpPhone=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-[#54a630]" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-700 mb-1 text-[11px]">Success Message Banner</label>
+                <input type="text" value="${fc.successMsg || ''}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.successMsg=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 text-xs text-blue-700 font-bold focus:outline-none focus:border-[#54a630]" />
               </div>
             </div>
           </div>
 
-          <!-- Terms & Conditions (Bilingual) -->
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
-            ${renderAdminCardHeader('Important Terms &amp; Conditions (Bilingual from new plantation application.pdf)', 'English and Telugu declaration clauses.', 'Plantation Terms')}
-            <div class="space-y-4">
-              <div>
-                <div class="font-bold text-[#162219] mb-2">English Terms (4 Clauses)</div>
+          <!-- Section 4: Bilingual Terms & Conditions Clauses -->
+          <div class="bg-white p-6 rounded-2xl border border-gray-200 space-y-4 text-xs shadow-sm">
+            ${renderAdminCardHeader('📜 Important Terms &amp; Conditions (Bilingual Clauses)', 'English and Telugu terms displayed in the modal/accordion box on the application page.', 'Plantation Terms')}
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div class="space-y-3">
+                <div class="font-extrabold text-[#162219] flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#54a630]"></span>
+                  <span>English Terms (4 Clauses)</span>
+                </div>
                 ${termsEn.map((t, idx) => `
-                  <textarea rows="2" oninput="CMS.plantation.termsEnglish[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs mb-2">${t}</textarea>
+                  <div class="bg-gray-50 p-3 rounded-xl border border-gray-200/80">
+                    <div class="font-bold text-gray-500 text-[10px] mb-1">Clause #${idx+1}</div>
+                    <textarea rows="2" oninput="CMS.plantation.termsEnglish[${idx}]=this.value;" class="w-full bg-white border border-gray-200 rounded-lg p-2 text-xs text-gray-700 focus:outline-none focus:border-[#54a630]">${t}</textarea>
+                  </div>
                 `).join('')}
               </div>
-              <div>
-                <div class="font-bold text-[#162219] telugu-text mb-2">తెలుగు నిబంధనలు (4 నిబంధనలు)</div>
+              <div class="space-y-3">
+                <div class="font-extrabold text-[#162219] flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#204a11]"></span>
+                  <span class="telugu-text">తెలుగు నిబంధనలు (4 నిబంధనలు)</span>
+                </div>
                 ${termsTe.map((t, idx) => `
-                  <textarea rows="2" oninput="CMS.plantation.termsTelugu[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs telugu-text mb-2">${t}</textarea>
+                  <div class="bg-[#f3f8f1] p-3 rounded-xl border border-[#cfe3cb]">
+                    <div class="font-bold text-emerald-800 text-[10px] mb-1">నిబంధన #${idx+1}</div>
+                    <textarea rows="2" oninput="CMS.plantation.termsTelugu[${idx}]=this.value;" class="w-full bg-white border border-[#cfe3cb] rounded-lg p-2 text-xs telugu-text text-gray-800 focus:outline-none focus:border-[#54a630]">${t}</textarea>
+                  </div>
                 `).join('')}
               </div>
-            </div>
-          </div>
-
-          <!-- Plantation Banner Image -->
-          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
-            ${renderAdminCardHeader('Plantation Application Page Visuals', 'Banner images shown on the application form page.', 'Plantation Visuals')}
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              ${renderCmsImageCard('fieldManFarmer', 'Plantation Application Banner Photo')}
-              ${renderCmsImageCard('heroAerial', 'Farmland Aerial Background')}
             </div>
           </div>
         `;
       }
-
-      // -----------------------------------------------------------------------
-      // TAB 13: FARMER SUBMISSIONS INBOX
-      // -----------------------------------------------------------------------
-      else if (t === "inbox") {
+else if (t === "inbox") {
         const list = (CMS.submissions && CMS.submissions.plantations) || [];
+        const searchQuery = (state.adminInboxSearch || "").toLowerCase().trim();
+        const filteredList = list.filter(item => {
+          if (!searchQuery) return true;
+          return (item.id || "").toLowerCase().includes(searchQuery) ||
+                 (item.farmerName || "").toLowerCase().includes(searchQuery) ||
+                 (item.phone || "").toLowerCase().includes(searchQuery) ||
+                 (item.village || "").toLowerCase().includes(searchQuery) ||
+                 (item.district || "").toLowerCase().includes(searchQuery);
+        });
+
+        const totalAcres = list.reduce((sum, item) => sum + (parseFloat(item.acres) || 0), 0);
+
         ws.innerHTML = `
-          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+          <!-- Header Bar -->
+          <div class="pb-5 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
-              <h3 class="text-xl font-extrabold text-[#162219]">📥 Farmer Submissions Inbox</h3>
-              <p class="text-xs text-gray-500">Total ${list.length} plantation application(s) received from the public website.</p>
+              <div class="flex items-center gap-2.5 mb-1">
+                <span class="w-8 h-8 rounded-xl bg-[#54a630] text-white flex items-center justify-center font-bold text-base shadow-sm">📥</span>
+                <h3 class="text-xl font-extrabold text-[#162219]">Farmer Submissions Inbox</h3>
+              </div>
+              <p class="text-xs text-gray-500">Live registry of online plantation applications submitted from /new-plantation/.</p>
             </div>
             <div class="flex items-center gap-2">
-              <button type="button" onclick="addMockFarmerSubmission()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+              <button type="button" onclick="addMockFarmerSubmission()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
                 <span>➕ Add Test Application</span>
               </button>
-              <button type="button" onclick="exportSubmissionsCSV('plantations')" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+              <button type="button" onclick="exportSubmissionsCSV('plantations')" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
                 <span>📥 Export CSV</span>
               </button>
             </div>
           </div>
 
-          ${list.length === 0 ? `
-            <div class="text-center py-12 text-gray-400 text-xs font-medium">No plantation submissions received yet. Applications submitted on /new-plantation/ will appear here live.</div>
+          <!-- CRM KPI Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 text-xs">
+            <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-extrabold text-sm">📋</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">${list.length} Records</div>
+                <div class="text-[10px] text-gray-400">Total Applications</div>
+              </div>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-emerald-100 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-extrabold text-sm">🌾</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">${totalAcres.toFixed(1)} Acres</div>
+                <div class="text-[10px] text-emerald-600 font-bold">Total Land Area</div>
+              </div>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-blue-100 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-extrabold text-sm">📍</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">3 States</div>
+                <div class="text-[10px] text-blue-600 font-bold">AP, TG &amp; KA</div>
+              </div>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-gray-200 shadow-sm flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center font-extrabold text-sm">⏱️</div>
+              <div>
+                <div class="font-extrabold text-[#162219] text-sm">&lt; 48 hrs</div>
+                <div class="text-[10px] text-gray-400">Target Field SLA</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search Filter Bar -->
+          <div class="mb-4">
+            <div class="relative max-w-md">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400 text-xs">🔍</span>
+              <input type="text" value="${state.adminInboxSearch || ''}" oninput="state.adminInboxSearch=this.value; renderCmsWorkspace();" placeholder="Filter by farmer name, mobile number, ref ID or village..." class="w-full bg-white border border-gray-300 rounded-xl pl-8 pr-4 py-2 text-xs font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#54a630] shadow-sm" />
+              ${state.adminInboxSearch ? `
+                <button type="button" onclick="state.adminInboxSearch=''; renderCmsWorkspace();" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 font-bold text-xs">&times;</button>
+              ` : ''}
+            </div>
+          </div>
+
+          ${filteredList.length === 0 ? `
+            <div class="text-center py-12 bg-white rounded-2xl border border-gray-200 text-gray-400 text-xs font-medium">
+              ${searchQuery ? `No farmer applications matching "${searchQuery}". <button type="button" onclick="state.adminInboxSearch=''; renderCmsWorkspace();" class="text-[#54a630] font-bold underline ml-1">Clear filter</button>` : 'No plantation submissions received yet. Applications submitted on /new-plantation/ will appear here live.'}
+            </div>
           ` : `
-            <div class="border border-gray-200 rounded-2xl overflow-x-auto text-xs shadow-sm">
-              <table class="w-full text-left border-collapse">
-                <thead class="bg-gray-50 border-b border-gray-200">
-                  <tr>
-                    <th class="p-3 font-bold text-gray-600">Ref ID</th>
-                    <th class="p-3 font-bold text-gray-600">Farmer Name</th>
-                    <th class="p-3 font-bold text-gray-600">Mobile</th>
-                    <th class="p-3 font-bold text-gray-600">Location</th>
-                    <th class="p-3 font-bold text-gray-600">Acres</th>
-                    <th class="p-3 font-bold text-gray-600">Varieties</th>
-                    <th class="p-3 font-bold text-gray-600">GPS &amp; Soil</th>
-                    <th class="p-3 font-bold text-gray-600">Submitted</th>
-                    <th class="p-3 font-bold text-gray-600 text-center">Action</th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-100">
-                  ${list.map((item, idx) => `
-                    <tr class="hover:bg-gray-50/80 transition">
-                      <td class="p-3 font-mono font-bold text-[#54a630] whitespace-nowrap">${item.id}</td>
-                      <td class="p-3 font-bold text-[#162219]">
-                        <div>${item.farmerName}</div>
-                        ${item.notes ? `<div class="text-[10px] text-gray-500 font-normal line-clamp-1 mt-0.5">${item.notes}</div>` : ''}
-                      </td>
-                      <td class="p-3 whitespace-nowrap">
-                        <a href="tel:${item.phone}" class="hover:text-[#54a630] transition">${item.phone}</a>
-                      </td>
-                      <td class="p-3">${item.village}, ${item.district}</td>
-                      <td class="p-3 font-bold text-[#162219]">${item.acres}</td>
-                      <td class="p-3 text-[11px] text-gray-700 max-w-xs">${item.varieties}</td>
-                      <td class="p-3 text-[11px]">
-                        <div class="font-mono text-gray-500">${item.gps}</div>
-                        <div class="text-[10px] text-gray-400 mt-0.5">${item.soilType || 'Soil'} &bull; ${item.waterSource || 'Water'}</div>
-                      </td>
-                      <td class="p-3 text-[11px] text-gray-500 whitespace-nowrap">${item.submittedAt || 'Recent'}</td>
-                      <td class="p-3 text-center whitespace-nowrap">
-                        <button type="button" onclick="deleteFarmerSubmission(${idx})" aria-label="Delete" class="text-red-400 hover:text-red-600 font-bold text-xs p-1">🗑️</button>
-                      </td>
+            <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden text-xs shadow-sm">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead class="bg-gray-50/80 border-b border-gray-200 text-[11px] uppercase tracking-wider text-gray-500 font-bold">
+                    <tr>
+                      <th class="p-3.5">Ref ID</th>
+                      <th class="p-3.5">Farmer &amp; Contact</th>
+                      <th class="p-3.5">Village &amp; District</th>
+                      <th class="p-3.5">Acres &amp; Type</th>
+                      <th class="p-3.5">Species Requested</th>
+                      <th class="p-3.5">GPS / Water Source</th>
+                      <th class="p-3.5">Submitted</th>
+                      <th class="p-3.5 text-center">Action</th>
                     </tr>
-                  `).join('')}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody class="divide-y divide-gray-100">
+                    ${filteredList.map((item, idx) => `
+                      <tr class="hover:bg-gray-50/70 transition">
+                        <td class="p-3.5 font-mono font-bold text-[#54a630] whitespace-nowrap">
+                          <span class="px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200/80">${item.id}</span>
+                        </td>
+                        <td class="p-3.5 font-bold text-[#162219]">
+                          <div class="text-xs text-[#162219]">${item.farmerName}</div>
+                          <a href="tel:${item.phone}" class="text-[11px] font-mono text-[#54a630] hover:underline font-normal block mt-0.5">📞 ${item.phone}</a>
+                        </td>
+                        <td class="p-3.5">
+                          <div class="font-bold text-gray-800">${item.village}</div>
+                          <div class="text-[10px] text-gray-400">${item.district}, ${item.state || 'AP'}</div>
+                        </td>
+                        <td class="p-3.5 whitespace-nowrap">
+                          <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-extrabold text-[11px]">${item.acres} Acres</span>
+                          <div class="text-[10px] text-gray-500 mt-1">${item.plantationType || 'Agroforestry'}</div>
+                        </td>
+                        <td class="p-3.5 text-[11px] text-gray-700 max-w-xs">
+                          <div class="line-clamp-2">${item.varieties}</div>
+                        </td>
+                        <td class="p-3.5 text-[11px]">
+                          ${item.gps ? `
+                            <div class="font-mono text-[#2563eb] text-[10px] hover:underline cursor-pointer" onclick="window.open('https://maps.google.com/?q=' + encodeURIComponent('${item.gps}'), '_blank')">📍 ${item.gps}</div>
+                          ` : '<div class="text-gray-400 text-[10px]">No GPS attached</div>'}
+                          <div class="text-[10px] text-gray-500 mt-0.5">${item.waterSource || item.waterFacility || 'Borewell'}</div>
+                        </td>
+                        <td class="p-3.5 text-[11px] text-gray-500 whitespace-nowrap">${item.submittedAt || 'Recent'}</td>
+                        <td class="p-3.5 text-center whitespace-nowrap">
+                          <button type="button" onclick="deleteFarmerSubmission(${idx})" class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 p-1.5 rounded-lg text-xs font-bold transition" title="Delete Submission">🗑️</button>
+                        </td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
             </div>
           `}
         `;
       }
-
-      // -----------------------------------------------------------------------
-      // TAB: PHOTO GALLERY (All 24 photos with inline upload, category & text)
-      // -----------------------------------------------------------------------
-      else if (t === "gallery") {
+else if (t === "gallery") {
         const items = CMS.galleryItems || [];
         const cats = ["Field", "AWD", "Training", "Carbon", "Plantation", "Community"];
         const curCat = state.adminGalleryFilter || "all";
