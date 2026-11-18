@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadana Green Society (SGS) – Sustainable Farming & Agroforestry</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/new-logo-sgs-emblem.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo/new-logo-sgs-emblem.png" />
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -532,9 +534,13 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
-      logoFull: "assets/images/sgs-official-logo.png",
-      logoEmblem: "assets/images/sgs-official-logo.png",
+      logoFull: "assets/images/logo/new-logo-sgs-full.png",
+      logoEmblem: "assets/images/logo/new-logo-sgs-emblem.png",
       founder: "assets/images/founder/b-raghu-bhaskar-professional.png",
       fieldManFarmer: "assets/images/plantation-field-team-hd.jpg",
       fieldWomanFarmer: "assets/images/template/features-section-background.webp",
@@ -544,7 +550,9 @@
       redTractor: "assets/images/template/redTractor.jpg",
       splitField: "assets/images/template/home-commitment-image-1.webp",
       twoFarmersTablet: "assets/images/template/twoFarmersTablet.jpg",
-      womanGreenhouse: "assets/images/template/dark-woman-nursery.jpg",
+      womanGreenhouse: "assets/images/template/home-cta-section-image-3.webp",
+      darkThumb1: "assets/images/template/home-cta-section-image-1.webp",
+      darkThumb2: "assets/images/template/home-cta-section-image-2.webp",
       farmerTomatoes: "assets/images/template/farmerTomatoes.jpg",
       womanPhone: "assets/images/template/womanPhone.jpg",
       aboutHero: "assets/images/template/about-us-hero-image.webp",
@@ -1789,7 +1797,7 @@
     // Initialize CMS Data
     function initCmsData() {
       const initial = getInitialCmsData();
-      const raw = localStorage.getItem("sgs_cms_data_v9");
+      const raw = localStorage.getItem("sgs_cms_data_v10");
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
@@ -1811,7 +1819,7 @@
     // Save CMS Data to LocalStorage
     function saveCmsData() {
       try {
-        localStorage.setItem("sgs_cms_data_v9", JSON.stringify(CMS));
+        localStorage.setItem("sgs_cms_data_v10", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
@@ -1946,10 +1954,10 @@
             <!-- DROPDOWN 1: SERVICES (Agroforestry, AWD, Carbon Credits, Soil Testing) -->
             <div id="mega-menu-services" onmouseenter="showMegaMenu('services')" onmouseleave="hideMegaMenu('services')" class="${state.megaMenu === 'services' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-gray-100/80 p-8 z-50">
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-6">
-                <!-- Column 1: Agroforestry -->
-                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
+                <!-- Column 1: Agroforestry (100% Clickable Card) -->
+                <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] hover:shadow-md transition group no-underline block cursor-pointer">
                   <div>
-                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm">
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
                       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                     </div>
                     <h4 class="font-extrabold text-[#162219] text-base mb-2 group-hover:text-[#54a630] transition">Agroforestry Models</h4>
@@ -1957,16 +1965,16 @@
                       16 high-value timber &amp; fruit trees integrated with agriculture for steady farmer income and soil health.
                     </p>
                   </div>
-                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5 no-underline">
+                  <div class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5">
                     <span>Read More</span>
-                    <span class="text-sm font-bold">&rarr;</span>
-                  </a>
-                </div>
+                    <span class="text-sm font-bold group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </div>
+                </a>
 
-                <!-- Column 2: AWD in Paddy -->
-                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
+                <!-- Column 2: AWD in Paddy (100% Clickable Card) -->
+                <a href="${routeUrl('awd')}" data-nav="awd" class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] hover:shadow-md transition group no-underline block cursor-pointer">
                   <div>
-                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm">
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
                       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
                     </div>
                     <h4 class="font-extrabold text-[#162219] text-base mb-2 group-hover:text-[#54a630] transition">AWD in Paddy</h4>
@@ -1974,16 +1982,16 @@
                       Alternate Wetting &amp; Drying via perforated field tubes, saving 30% water and reducing methane emissions.
                     </p>
                   </div>
-                  <a href="${routeUrl('awd')}" data-nav="awd" class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5 no-underline">
+                  <div class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5">
                     <span>Read More</span>
-                    <span class="text-sm font-bold">&rarr;</span>
-                  </a>
-                </div>
+                    <span class="text-sm font-bold group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </div>
+                </a>
 
-                <!-- Column 3: Carbon Credits -->
-                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
+                <!-- Column 3: Carbon Credits (100% Clickable Card) -->
+                <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] hover:shadow-md transition group no-underline block cursor-pointer">
                   <div>
-                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm">
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-5 shadow-sm group-hover:scale-105 transition-transform">
                       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
                     </div>
                     <h4 class="font-extrabold text-[#162219] text-base mb-2 group-hover:text-[#54a630] transition">Carbon Credits</h4>
@@ -1991,25 +1999,25 @@
                       Verra/VCS accredited carbon quantification with transparent 70% direct benefit sharing for enrolled farmers.
                     </p>
                   </div>
-                  <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5 no-underline">
+                  <div class="text-xs font-extrabold text-[#162219] group-hover:text-[#54a630] flex items-center gap-1.5 mt-5">
                     <span>Read More</span>
-                    <span class="text-sm font-bold">&rarr;</span>
-                  </a>
-                </div>
+                    <span class="text-sm font-bold group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </div>
+                </a>
 
                 <!-- Column 4: Soil Testing & Farmland GIS (Right Featured Card) -->
-                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between">
-                  <div>
+                <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition">
+                  <a href="${routeUrl('environment')}" data-nav="environment" class="block no-underline group mb-3 cursor-pointer">
                     <div class="flex items-center justify-between gap-2 mb-2">
-                      <h4 class="font-extrabold text-[#162219] text-base">Soil Testing &amp; Analysis</h4>
-                      <a href="${routeUrl('environment')}" data-nav="environment" class="w-8 h-8 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center transition flex-shrink-0">
+                      <h4 class="font-extrabold text-[#162219] text-base group-hover:text-[#54a630] transition">Soil Testing &amp; Analysis</h4>
+                      <span class="w-8 h-8 rounded-full bg-[#162219] group-hover:bg-[#54a630] text-white flex items-center justify-center transition flex-shrink-0">
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                      </a>
+                      </span>
                     </div>
-                    <p class="text-xs text-gray-500 leading-relaxed mb-4">
+                    <p class="text-xs text-gray-500 leading-relaxed">
                       Satellite polygon boundary mapping, ground soil health verification, and field audits across AP, TG &amp; Karnataka.
                     </p>
-                  </div>
+                  </a>
                   <div class="rounded-[20px] overflow-hidden relative h-36 cursor-pointer group" onclick="openVideoModal('Field Mechanization & AWD Demo', imgUrl('greenTractor'))">
                     <img src="${imgUrl('greenTractor')}" alt="Green tractor in field" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                     <div class="absolute inset-0 bg-black/25 flex items-center justify-center">
@@ -2670,8 +2678,8 @@
             "Transparent 70% farmer carbon benefit sharing"
           ];
           const empMainImg = emp.mainImg || 'womanGreenhouse';
-          const empThumb1 = emp.videoThumb1 || 'aboutField1';
-          const empThumb2 = emp.videoThumb2 || 'aboutField2';
+          const empThumb1 = emp.videoThumb1 || 'darkThumb1';
+          const empThumb2 = emp.videoThumb2 || 'darkThumb2';
 
           return `
           <section class="relative bg-[#111e15] text-white py-16 lg:py-24 overflow-hidden">
@@ -2753,59 +2761,60 @@
           </div>
 
           <div class="rg-3 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Card 1 -->
-            <div class="soft-card p-6 flex flex-col justify-between">
+            <!-- Card 1 (100% Clickable Card) -->
+            <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="soft-card p-6 flex flex-col justify-between group no-underline block hover:shadow-lg transition cursor-pointer">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <h3 class="font-bold text-base text-[#162219]">Agroforestry & Tree Planting</h3>
-                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" aria-label="Agroforestry" class="w-7 h-7 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center transition no-underline">
+                  <h3 class="font-bold text-base text-[#162219] group-hover:text-[#54a630] transition">Agroforestry &amp; Tree Planting</h3>
+                  <span class="w-7 h-7 rounded-full bg-[#162219] group-hover:bg-[#54a630] text-white flex items-center justify-center transition flex-shrink-0">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
-                  </a>
+                  </span>
                 </div>
                 <p class="text-xs text-gray-500 leading-relaxed mb-6">
                   Block, bund and boundary plantations with 16 high-value species tailored to local soil conditions.
                 </p>
               </div>
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img data-cms-img="sol1" src="${imgUrl('sol1')}" alt="Agroforestry" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                <img data-cms-img="sol1" src="${imgUrl('sol1')}" alt="Agroforestry" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               </div>
-            </div>
+            </a>
 
-            <!-- Card 2 -->
-            <div class="soft-card p-6 flex flex-col justify-between">
+            <!-- Card 2 (100% Clickable Card) -->
+            <a href="${routeUrl('awd')}" data-nav="awd" class="soft-card p-6 flex flex-col justify-between group no-underline block hover:shadow-lg transition cursor-pointer">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <h3 class="font-bold text-base text-[#162219]">Alternate Wetting &amp; Drying (AWD)</h3>
-                  <a href="${routeUrl('awd')}" data-nav="awd" aria-label="AWD" class="w-7 h-7 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center transition no-underline">
+                  <h3 class="font-bold text-base text-[#162219] group-hover:text-[#54a630] transition">Alternate Wetting &amp; Drying (AWD)</h3>
+                  <span class="w-7 h-7 rounded-full bg-[#162219] group-hover:bg-[#54a630] text-white flex items-center justify-center transition flex-shrink-0">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
-                  </a>
+                  </span>
                 </div>
                 <p class="text-xs text-gray-500 leading-relaxed mb-6">
                   Water-saving paddy method conserving up to 30% irrigation water and cutting methane emissions.
                 </p>
               </div>
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img data-cms-img="sol2" src="${imgUrl('sol2')}" alt="AWD Paddy" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                <img data-cms-img="sol2" src="${imgUrl('sol2')}" alt="AWD Paddy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               </div>
-            </div>
+            </a>
 
-            <!-- Card 3 -->
-            <div class="soft-card p-6 flex flex-col justify-between">
+            <!-- Card 3 (100% Clickable Card) -->
+            <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="soft-card p-6 flex flex-col justify-between group no-underline block hover:shadow-lg transition cursor-pointer">
               <div>
                 <div class="flex items-center justify-between gap-2 mb-3">
-                  <h3 class="font-bold text-base text-[#162219]">Carbon Offsets &amp; Ecology</h3>
-                  <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" aria-label="Carbon Credits" class="w-7 h-7 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center transition no-underline">
+                  <h3 class="font-bold text-base text-[#162219] group-hover:text-[#54a630] transition">Carbon Offsets &amp; Ecology</h3>
+                  <span class="w-7 h-7 rounded-full bg-[#162219] group-hover:bg-[#54a630] text-white flex items-center justify-center transition flex-shrink-0">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/></svg>
-                  </a>
+                  </span>
                 </div>
                 <p class="text-xs text-gray-500 leading-relaxed mb-6">
                   Quantifying tree biomass and carbon sequestration under international standards for verified revenue.
                 </p>
               </div>
               <div class="rounded-2xl overflow-hidden aspect-square">
-                <img data-cms-img="sol3" src="${imgUrl('sol3')}" alt="Carbon Credits" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                <img data-cms-img="sol3" src="${imgUrl('sol3')}" alt="Carbon Credits" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               </div>
-            </div>
+            </a>
+          </div>
           </div>
         </section>
 

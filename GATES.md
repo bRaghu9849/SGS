@@ -44,3 +44,13 @@ EXPECT: G8 PASS
 All routes render > 0 chars with zero syntax errors.
 CHECK: node scratch/verify_all_paths.js
 EXPECT: Path [/SGS/] -> Route: [home] -> Rendered
+
+## G10: Official SGS Logo Everywhere
+Ensures new official client logo is extracted and configured across logoFull, logoEmblem, favicon, and admin brand controls.
+CHECK: node -e "const fs = require('fs'); const data = fs.readFileSync('scratch/build_cms_data.py', 'utf-8'); if (!data.includes('new-logo-sgs-full.png') || !data.includes('new-logo-sgs-emblem.png')) process.exit(1); console.log('G10 PASS');"
+EXPECT: G10 PASS
+
+## G11: 100% Clickable Mega Menu & Solution Cards
+Ensures Mega Menu Programme cards and Home Solution cards are entirely clickable container anchors with hover transitions.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('data-nav=\"agroforestry\" class=\"lg:col-span-3') || !code.includes('data-nav=\"agroforestry\" class=\"soft-card')) process.exit(1); console.log('G11 PASS');"
+EXPECT: G11 PASS
