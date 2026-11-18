@@ -527,6 +527,10 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/sgs-official-logo.png",
       logoEmblem: "assets/images/sgs-official-logo.png",
@@ -4886,8 +4890,9 @@
                 <label class="block font-bold text-gray-600 mb-1">Alternate Email</label>
                 <input type="email" value="${g.emailAlt || ''}" oninput="CMS.global.emailAlt=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
               </div>
-              <div class="pt-2">
+              <div class="pt-2 space-y-3">
                 ${renderCmsImageCard('logoFull', 'Official Society Logo Emblem', 'Used across Navbar, Footer, and Admin.')}
+                ${renderCmsImageCard('contactHero', 'Contact Page Hero Image')}
               </div>
             </div>
           </div>
@@ -5735,27 +5740,7 @@
         `;
       }
 
-      // -----------------------------------------------------------------------
-      // TAB 17: PHOTO REPLACER STUDIO (52 Slots)
-      // -----------------------------------------------------------------------
-      else if (t === "images") {
-        const keys = Object.keys(DEFAULT_IMAGES);
-        ws.innerHTML = `
-          <div class="pb-4 border-b border-gray-200 flex items-center justify-between mb-6">
-            <div>
-              <h3 class="text-xl font-extrabold text-[#162219]">📷 Universal Photo Replacer Studio</h3>
-              <p class="text-xs text-gray-500">Live preview, upload file, or paste image URL for all 52 website image slots.</p>
-            </div>
-            <button type="button" onclick="saveCmsSection('All Images', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm">
-              💾 Save All Images
-            </button>
-          </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            ${keys.map(k => renderCmsImageCard(k, k)).join('')}
-          </div>
-        `;
-      }
 
       // -----------------------------------------------------------------------
       // TAB 18: CHANGE PASSWORD
