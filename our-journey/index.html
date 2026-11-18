@@ -525,49 +525,57 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/sgs-official-logo.png",
       logoEmblem: "assets/images/sgs-official-logo.png",
       founder: "assets/images/founder/b-raghu-bhaskar-professional.png",
       fieldManFarmer: "assets/images/plantation-field-team-hd.jpg",
-      fieldWomanFarmer: "assets/images/template/womanGreenhouse.jpg",
-      heroAerial: "assets/images/template/heroAerial.jpg",
-      heroAerialClean: "assets/images/template/heroAerial.jpg",
+      fieldWomanFarmer: "assets/images/template/features-section-background.webp",
+      heroAerial: "assets/images/template/home-hero-bg.jpg",
+      heroAerialClean: "assets/images/template/home-hero-bg-clean.jpg",
       greenTractor: "assets/images/template/greenTractor.jpg",
       redTractor: "assets/images/template/redTractor.jpg",
-      splitField: "assets/images/template/splitField.jpg",
+      splitField: "assets/images/template/home-commitment-image-1.webp",
       twoFarmersTablet: "assets/images/template/twoFarmersTablet.jpg",
-      womanGreenhouse: "assets/images/template/womanGreenhouse.jpg",
+      womanGreenhouse: "assets/images/template/dark-woman-nursery.jpg",
       farmerTomatoes: "assets/images/template/farmerTomatoes.jpg",
       womanPhone: "assets/images/template/womanPhone.jpg",
-      aboutHero: "assets/images/template/splitField.jpg",
-      servicesHero: "assets/images/template/heroAerial.jpg",
-      contactHero: "assets/images/template/contactHero.jpg",
-      aboutNewsHub: "assets/images/template/heroAerial.jpg",
-      sol1: "assets/images/template/sol1.jpg",
-      sol2: "assets/images/template/sol2.jpg",
-      sol3: "assets/images/template/sol3.jpg",
-      nl1: "assets/images/template/nl1.jpg",
-      nl2: "assets/images/template/nl2.jpg",
-      nl3: "assets/images/template/nl3.jpg",
-      windBanner: "assets/images/template/windBanner.jpg",
-      aboutField1: "assets/images/template/aboutField1.jpg",
-      aboutField2: "assets/images/template/aboutField2.jpg",
-      team1: "assets/images/template/team1.jpg",
-      team2: "assets/images/template/team2.jpg",
-      team3: "assets/images/template/team3.jpg",
-      team4: "assets/images/template/team4.jpg",
-      team5: "assets/images/template/team5.jpg",
-      team6: "assets/images/template/team6.jpg",
-      team7: "assets/images/template/team7.jpg",
-      team8: "assets/images/template/team8.jpg",
-      post1: "assets/images/template/post1.jpg",
-      post2: "assets/images/template/post2.jpg",
-      post3: "assets/images/template/post3.jpg",
-      post4: "assets/images/template/post4.jpg",
-      post5: "assets/images/template/post5.jpg",
-      newsThumbGreenhouse: "assets/images/template/newsThumbGreenhouse.jpg",
-      newsThumbTomatoes: "assets/images/template/newsThumbTomatoes.jpg",
+      aboutHero: "assets/images/template/about-us-hero-image.webp",
+      servicesHero: "assets/images/template/services-hero-background.webp",
+      contactHero: "assets/images/template/contact-us-hero-image.webp",
+      aboutNewsHub: "assets/images/template/blog-hero-image.webp",
+      sol1: "assets/images/template/home-solutions-image-1.webp",
+      sol2: "assets/images/template/home-solutions-image-2.webp",
+      sol3: "assets/images/template/home-solutions-image-3.webp",
+      nl1: "assets/images/template/home-subscribe-image-1.webp",
+      nl2: "assets/images/template/home-subscribe-image-2.webp",
+      nl3: "assets/images/template/home-subscribe-image-3.webp",
+      windBanner: "assets/images/template/wind-turbine-banner.jpg",
+      aboutField1: "assets/images/template/about-us-image-1.webp",
+      aboutField2: "assets/images/template/about-us-image-2.webp",
+      team1: "assets/images/template/farmer-1.webp",
+      team2: "assets/images/template/farmer-2.webp",
+      team3: "assets/images/template/farmer-3.webp",
+      team4: "assets/images/template/farmer-4.webp",
+      team5: "assets/images/template/farmer-5.webp",
+      team6: "assets/images/template/farmer-6.webp",
+      team7: "assets/images/template/farmer-7.webp",
+      team8: "assets/images/template/farmer-8.webp",
+      post1: "assets/images/template/article-image-3.webp",
+      post2: "assets/images/template/article-image-4.webp",
+      post3: "assets/images/template/article-image-5.webp",
+      post4: "assets/images/template/article-image-6.webp",
+      post5: "assets/images/template/article-image-7.webp",
+      newsThumbGreenhouse: "assets/images/template/article-image-4.webp",
+      newsThumbTomatoes: "assets/images/template/article-image-5.webp",
       news1: "assets/images/news/news-clipping-01.jpg",
       news2: "assets/images/news/news-clipping-02.jpg",
       news3: "assets/images/news/news-clipping-03.jpg",
@@ -759,21 +767,21 @@
     function showMegaMenu(key) {
       clearTimeout(megaMenuHoverTimer);
       state.megaMenu = key;
-      const agro = document.getElementById("mega-menu-agro");
-      const prog = document.getElementById("mega-menu-prog");
-      const caretAgro = document.getElementById("caret-agro");
-      const caretProg = document.getElementById("caret-prog");
+      const serv = document.getElementById("mega-menu-services");
+      const expl = document.getElementById("mega-menu-explore");
+      const caretServ = document.getElementById("caret-services");
+      const caretExpl = document.getElementById("caret-explore");
 
-      if (key === "agro") {
-        if (agro) agro.classList.remove("hidden");
-        if (prog) prog.classList.add("hidden");
-        if (caretAgro) caretAgro.classList.add("rotate-180");
-        if (caretProg) caretProg.classList.remove("rotate-180");
-      } else if (key === "prog") {
-        if (prog) prog.classList.remove("hidden");
-        if (agro) agro.classList.add("hidden");
-        if (caretProg) caretProg.classList.add("rotate-180");
-        if (caretAgro) caretAgro.classList.remove("rotate-180");
+      if (key === "services" || key === "agro") {
+        if (serv) serv.classList.remove("hidden");
+        if (expl) expl.classList.add("hidden");
+        if (caretServ) caretServ.classList.add("rotate-180");
+        if (caretExpl) caretExpl.classList.remove("rotate-180");
+      } else if (key === "explore" || key === "prog") {
+        if (expl) expl.classList.remove("hidden");
+        if (serv) serv.classList.add("hidden");
+        if (caretExpl) caretExpl.classList.add("rotate-180");
+        if (caretServ) caretServ.classList.remove("rotate-180");
       }
     }
 
@@ -781,14 +789,14 @@
       clearTimeout(megaMenuHoverTimer);
       megaMenuHoverTimer = setTimeout(() => {
         state.megaMenu = null;
-        const agro = document.getElementById("mega-menu-agro");
-        const prog = document.getElementById("mega-menu-prog");
-        const caretAgro = document.getElementById("caret-agro");
-        const caretProg = document.getElementById("caret-prog");
-        if (agro) agro.classList.add("hidden");
-        if (prog) prog.classList.add("hidden");
-        if (caretAgro) caretAgro.classList.remove("rotate-180");
-        if (caretProg) caretProg.classList.remove("rotate-180");
+        const serv = document.getElementById("mega-menu-services");
+        const expl = document.getElementById("mega-menu-explore");
+        const caretServ = document.getElementById("caret-services");
+        const caretExpl = document.getElementById("caret-explore");
+        if (serv) serv.classList.add("hidden");
+        if (expl) expl.classList.add("hidden");
+        if (caretServ) caretServ.classList.remove("rotate-180");
+        if (caretExpl) caretExpl.classList.remove("rotate-180");
       }, delay);
     }
 
@@ -1505,6 +1513,16 @@
           heroTitle: "New Plantation Application 🌱",
           heroSubtitle: "Register farmer and land details, add land photographs using Camera or Gallery, and capture the GPS location of the field.",
           heroImgKey: "fieldManFarmer",
+          formConfig: {
+            badge: "OFFICIAL FARMER REGISTRATION • AP, TG & KARNATAKA",
+            title: "Apply for Agroforestry Saplings & AWD Programme",
+            subtitle: "Direct application for farmers across Kurnool, Nandyal, Anantapur, Kadapa, Gadwal, Mahabubnagar and Bellary.",
+            benefitsNotice: "Free certified nursery saplings & GIS field mapping for eligible farmers.",
+            successMsg: "Application Submitted Successfully! Reference ID has been generated and our local field officer will contact you within 48 hours.",
+            helpPhone: "+91 99666 11855",
+            whatsappNumber: "+91 99634 90444",
+            districts: "Kurnool, Nandyal, Anantapur, Kadapa, Jogulamba Gadwal, Mahabubnagar, Bellary, Raichur"
+          },
           guidelinesTitle: "Farmer Eligibility & Programme Guidelines",
           guidelinesP1: "Sadana Green Society partners with landowners, smallholders, and tenant farmers across Andhra Pradesh, Telangana, and Karnataka to establish verified agroforestry plantations and water-saving AWD systems.",
           guidelinesP2: "Participating farmers receive free high-survival saplings, on-site technical agronomy guidance, GPS polygon land mapping, and direct access to carbon revenue sharing upon verified tree growth.",
@@ -1716,7 +1734,36 @@
           ]
         },
         submissions: {
-          plantations: [],
+          plantations: [
+            {
+              id: "SGS-PL-2026-001",
+              farmerName: "K. Venkateswarlu (కె. వెంకటేశ్వర్లు)",
+              phone: "+91 98480 12345",
+              village: "Nandikotkur",
+              district: "Kurnool, Andhra Pradesh",
+              acres: "4.5 Acres",
+              varieties: "Red Sanders, Teak, Mango",
+              gps: "15.8281° N, 78.0373° E",
+              soilType: "Red Loamy Soil",
+              waterSource: "Borewell & Canal",
+              notes: "Applied for boundary planting and drip subsidy under SGS 2026 campaign.",
+              submittedAt: "16 Feb 2026, 10:30 AM"
+            },
+            {
+              id: "SGS-PL-2026-002",
+              farmerName: "B. Somasekhar Reddy (బి. సోమశేఖర్ రెడ్డి)",
+              phone: "+91 94401 67890",
+              village: "Alampur",
+              district: "Jogulamba Gadwal, Telangana",
+              acres: "7.0 Acres",
+              varieties: "Melia Dubia, Custard Apple, Guava",
+              gps: "15.8785° N, 78.1342° E",
+              soilType: "Black Cotton Soil",
+              waterSource: "Rainfed with Farm Pond",
+              notes: "Interested in AWD paddy transition and carbon credit revenue share.",
+              submittedAt: "17 Feb 2026, 03:15 PM"
+            }
+          ],
           enquiries: []
         }
       };
@@ -1743,7 +1790,7 @@
     // Initialize CMS Data
     function initCmsData() {
       const initial = getInitialCmsData();
-      const raw = localStorage.getItem("sgs_cms_data_v8");
+      const raw = localStorage.getItem("sgs_cms_data_v9");
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
@@ -1765,7 +1812,7 @@
     // Save CMS Data to LocalStorage
     function saveCmsData() {
       try {
-        localStorage.setItem("sgs_cms_data_v8", JSON.stringify(CMS));
+        localStorage.setItem("sgs_cms_data_v9", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
@@ -1832,11 +1879,15 @@
     // =========================================================================
     // CLEAN SINGLE-LINE FLOATING WHITE PILL NAVBAR + REFERENCE MEGA MENU
     // =========================================================================
+    // =========================================================================
+    // HEADER & DUAL MEGA MENUS (100% Blocksy Design Aesthetic, Un-Cluttered)
+    // =========================================================================
     function renderHeader() {
       const p = state.currentPage;
       const activeCls = "text-[#54a630]";
       const idleCls = "text-[#162219] hover:text-[#54a630]";
-      const isServices = ["services", "agroforestry", "forest", "fruit", "species", "carbon", "carbon-credits", "awd", "environment", "impact", "gallery", "plantation", "new-plantation"].includes(p) || state.megaMenu === "agro" || state.megaMenu === "prog";
+      const isServices = ["services", "agroforestry", "awd", "carbon", "carbon-credits", "environment"].includes(p) || state.megaMenu === "services";
+      const isExplore = ["species", "forest", "fruit", "plantation", "new-plantation", "gallery", "faq", "faqs"].includes(p) || state.megaMenu === "explore";
 
       return `
         <header class="relative z-30 pt-5 px-4 sm:px-8">
@@ -1851,15 +1902,23 @@
                 </div>
               </a>
 
-              <!-- Center: Nav Items with Blocksy Reference Mega Menu -->
+              <!-- Center: Nav Items with Two Clean Blocksy Dropdowns -->
               <nav class="desktop-nav-links hidden lg:flex items-center gap-7 text-[12px] font-bold tracking-wider uppercase whitespace-nowrap">
                 <a href="${routeUrl('home')}" data-nav="home" class="${p === 'home' ? activeCls : idleCls} transition">HOME</a>
 
-                <!-- MEGA MENU: SERVICES & PROGRAMMES -->
-                <div class="relative flex items-center gap-1 py-2 cursor-pointer" onmouseenter="showMegaMenu('agro')" onmouseleave="hideMegaMenu('agro')">
+                <!-- MENU 1: SERVICES ▾ (4 Core Farmer Programmes) -->
+                <div class="relative flex items-center gap-1 py-2 cursor-pointer" onmouseenter="showMegaMenu('services')" onmouseleave="hideMegaMenu('services')">
                   <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="${isServices ? activeCls : idleCls} transition flex items-center gap-1">
                     <span>SERVICES</span>
-                    <svg id="caret-agro" class="w-3.5 h-3.5 transition-transform ${state.megaMenu === 'agro' || state.megaMenu === 'prog' ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    <svg id="caret-services" class="w-3.5 h-3.5 transition-transform ${state.megaMenu === 'services' ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                  </a>
+                </div>
+
+                <!-- MENU 2: EXPLORE ▾ (Species, Plantation, Gallery, FAQs) -->
+                <div class="relative flex items-center gap-1 py-2 cursor-pointer" onmouseenter="showMegaMenu('explore')" onmouseleave="hideMegaMenu('explore')">
+                  <a href="${routeUrl('species')}" data-nav="species" class="${isExplore ? activeCls : idleCls} transition flex items-center gap-1">
+                    <span>EXPLORE</span>
+                    <svg id="caret-explore" class="w-3.5 h-3.5 transition-transform ${state.megaMenu === 'explore' ? 'rotate-180' : ''}" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                   </a>
                 </div>
 
@@ -1885,9 +1944,9 @@
               </div>
             </div>
 
-            <!-- MEGA MENU DROPDOWN (100% Matching Blocksy Landscape Reference Screenshot) -->
-            <div id="mega-menu-agro" onmouseenter="showMegaMenu('agro')" onmouseleave="hideMegaMenu('agro')" class="${state.megaMenu === 'agro' || state.megaMenu === 'prog' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-gray-100/80 p-8 z-50">
-              <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-8">
+            <!-- DROPDOWN 1: SERVICES (Agroforestry, AWD, Carbon Credits, Soil Testing) -->
+            <div id="mega-menu-services" onmouseenter="showMegaMenu('services')" onmouseleave="hideMegaMenu('services')" class="${state.megaMenu === 'services' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-gray-100/80 p-8 z-50">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mb-6">
                 <!-- Column 1: Agroforestry -->
                 <div class="lg:col-span-3 bg-[#f8faf8] p-6 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group">
                   <div>
@@ -1963,54 +2022,112 @@
                 </div>
               </div>
 
-              <!-- Bottom Row: Latest News & Updates + Quick Navigation -->
-              <div class="pt-6 border-t border-gray-200/80">
-                <div class="flex items-center justify-between mb-4">
-                  <h5 class="text-xs font-extrabold text-[#162219] tracking-wider uppercase">Latest News &amp; Key Programmes</h5>
+              <!-- Services Bottom Quick Links -->
+              <div class="pt-5 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4 text-xs font-bold">
+                <div class="flex items-center gap-6">
+                  <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="text-[#54a630] hover:underline flex items-center gap-1.5">
+                    <span>🌱 Apply for Free Saplings</span>
+                    <span>&rarr;</span>
+                  </a>
+                  <a href="${routeUrl('agroforestry')}#suitability-matrix" data-nav="agroforestry" class="text-gray-600 hover:text-[#54a630]">
+                    <span>🗺️ View Soil Suitability Matrix</span>
+                  </a>
+                </div>
+                <span class="text-gray-400 font-normal">Registered under AP Societies Act 129/2021 &bull; Kurnool</span>
+              </div>
+            </div>
+
+            <!-- DROPDOWN 2: EXPLORE (Species Directory, Plantation, Gallery, FAQs) -->
+            <div id="mega-menu-explore" onmouseenter="showMegaMenu('explore')" onmouseleave="hideMegaMenu('explore')" class="${state.megaMenu === 'explore' ? '' : 'hidden'} absolute top-full left-0 right-0 mt-3 bg-white rounded-[32px] shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-gray-100/80 p-8 z-50">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+                <!-- Card 1: 16 Species Directory -->
+                <a href="${routeUrl('species')}" data-nav="species" class="bg-[#f8faf8] p-5 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group no-underline border border-gray-100">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-4 shadow-sm text-xl">
+                      🌳
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-1 group-hover:text-[#54a630] transition">16 Species Directory</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      Complete botanical profiles of 8 timber &amp; 8 fruit trees with harvest timelines and soil compatibility.
+                    </p>
+                  </div>
+                  <div class="text-xs font-extrabold text-[#54a630] flex items-center gap-1 mt-4">
+                    <span>Browse Species &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Card 2: Apply for Plantation -->
+                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="bg-[#f8faf8] p-5 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group no-underline border border-gray-100">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-4 shadow-sm text-xl">
+                      📝
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-1 group-hover:text-[#54a630] transition">Apply for Plantation</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      Submit land area, crop history and GPS coordinates for free nursery saplings and field survey.
+                    </p>
+                  </div>
+                  <div class="text-xs font-extrabold text-[#54a630] flex items-center gap-1 mt-4">
+                    <span>Register Farmland &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Card 3: 24 Photo Gallery -->
+                <a href="${routeUrl('gallery')}" data-nav="gallery" class="bg-[#f8faf8] p-5 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group no-underline border border-gray-100">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-4 shadow-sm text-xl">
+                      🖼️
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-1 group-hover:text-[#54a630] transition">Photo Gallery</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      24 authentic uncropped ground photographs of field inspections, AWD installations, and plantation drives.
+                    </p>
+                  </div>
+                  <div class="text-xs font-extrabold text-[#54a630] flex items-center gap-1 mt-4">
+                    <span>View 24 Photos &rarr;</span>
+                  </div>
+                </a>
+
+                <!-- Card 4: Bilingual FAQs -->
+                <a href="${routeUrl('faq')}" data-nav="faq" class="bg-[#f8faf8] p-5 rounded-[24px] flex flex-col justify-between hover:bg-[#f1f6f1] transition group no-underline border border-gray-100">
+                  <div>
+                    <div class="w-12 h-12 rounded-full bg-[#54a630] text-white flex items-center justify-center mb-4 shadow-sm text-xl">
+                      ❓
+                    </div>
+                    <h4 class="font-extrabold text-[#162219] text-base mb-1 group-hover:text-[#54a630] transition">Bilingual FAQs</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                      14 official answers on sapling distribution, 70% carbon share, AWD watering, and land eligibility.
+                    </p>
+                  </div>
+                  <div class="text-xs font-extrabold text-[#54a630] flex items-center gap-1 mt-4">
+                    <span>Read FAQs &rarr;</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Explore Bottom Row: Latest News Clippings -->
+              <div class="pt-5 border-t border-gray-200/80">
+                <div class="flex items-center justify-between mb-3">
+                  <h5 class="text-xs font-extrabold text-[#162219] tracking-wider uppercase">Latest News &amp; Telugu Press Clippings</h5>
                   <a href="${routeUrl('news')}" data-nav="news" class="text-xs font-bold text-[#54a630] hover:underline">View All News Clippings &rarr;</a>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <!-- News Item 1 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <a href="${routeUrl('news')}" data-nav="news" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-[#f8faf8] transition no-underline">
                     <div class="w-14 h-14 rounded-2xl overflow-hidden bg-gray-100 flex-shrink-0">
                       <img src="${imgUrl('news1')}" alt="News 1" class="w-full h-full object-cover" />
                     </div>
                     <div class="min-w-0">
                       <div class="text-xs font-bold text-[#162219] truncate leading-tight mb-1">వరిలో నీటి పొదుపు - AWD పైపుల ప్రదర్శన</div>
-                      <div class="text-[11px] text-gray-400">మార్చి 2026 &bull; ఈనాడు</div>
+                      <div class="text-[11px] text-gray-400">మార్చి 2026 &bull; ఈనాడు పత్రికా కథనం</div>
                     </div>
                   </a>
-
-                  <!-- News Item 2 -->
                   <a href="${routeUrl('news')}" data-nav="news" class="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-[#f8faf8] transition no-underline">
                     <div class="w-14 h-14 rounded-2xl overflow-hidden bg-gray-100 flex-shrink-0">
                       <img src="${imgUrl('news2')}" alt="News 2" class="w-full h-full object-cover" />
                     </div>
                     <div class="min-w-0">
                       <div class="text-xs font-bold text-[#162219] truncate leading-tight mb-1">రైతులకు పండ్ల మొక్కల ఉచిత సరఫరా</div>
-                      <div class="text-[11px] text-gray-400">ఫిబ్రవరి 2026 &bull; సాక్షి</div>
-                    </div>
-                  </a>
-
-                  <!-- Quick Link: 16 Species Catalog -->
-                  <a href="${routeUrl('species')}" data-nav="species" class="flex items-center gap-3 p-2.5 rounded-2xl bg-[#f8faf8] hover:bg-[#f1f6f1] transition no-underline border border-gray-100">
-                    <div class="w-10 h-10 rounded-xl bg-[#54a630]/15 text-[#54a630] flex items-center justify-center font-extrabold text-sm flex-shrink-0">
-                      🌱
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-xs font-bold text-[#162219] leading-tight">16 Species Directory</div>
-                      <div class="text-[11px] text-gray-500">8 Forest &bull; 8 Fruit Trees</div>
-                    </div>
-                  </a>
-
-                  <!-- Quick Link: 24 Photo Gallery -->
-                  <a href="${routeUrl('gallery')}" data-nav="gallery" class="flex items-center gap-3 p-2.5 rounded-2xl bg-[#f8faf8] hover:bg-[#f1f6f1] transition no-underline border border-gray-100">
-                    <div class="w-10 h-10 rounded-xl bg-[#54a630]/15 text-[#54a630] flex items-center justify-center font-extrabold text-sm flex-shrink-0">
-                      🖼️
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-xs font-bold text-[#162219] leading-tight">Photo Gallery</div>
-                      <div class="text-[11px] text-gray-500">24 Authentic Field Photos</div>
+                      <div class="text-[11px] text-gray-400">ఫిబ్రవరి 2026 &bull; సాక్షి దినపత్రిక</div>
                     </div>
                   </a>
                 </div>
@@ -2022,62 +2139,103 @@
     }
 
     // =========================================================================
-    // FOOTER (100% Grounded in Official SGS Identity)
+    // FOOTER (100% Matching Reference Website White Footer Design)
     // =========================================================================
     function renderFooter() {
       return `
-        <footer class="bg-[#0b160e] text-white pt-16 pb-12 border-t border-white/10">
+        <footer id="footer" class="footer-white bg-[#fbfdfb] text-[#162219] pt-16 pb-12 border-t border-gray-200/80">
           <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-              <div class="lg:col-span-5">
-                <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-3 mb-4 no-underline">
-                  <img data-cms-img="logoFull" src="${imgUrl('logoFull')}" alt="Sadana Green Society" class="h-10 w-auto object-contain" />
-                  <div>
-                    <div class="font-extrabold text-base text-white tracking-tight leading-tight">${CMS.global.orgName}</div>
-                    <div class="text-[10px] text-[#7fd858] font-bold uppercase tracking-wider">Regd. No. 129/2021 &bull; Kurnool</div>
-                  </div>
-                </a>
-                <p class="text-xs text-white/70 leading-relaxed mb-6 max-w-sm">
-                  People, nature and sustainable futures. Working with farmers across Andhra Pradesh, Telangana and Karnataka on agroforestry, carbon credits and AWD.
-                </p>
-                <div class="text-xs text-white/80 space-y-1.5 font-medium">
-                  <div><strong>Founder &amp; President:</strong> ${CMS.global.founderName}</div>
-                  <div><strong>Headquarters:</strong> ${CMS.global.address}</div>
+            <!-- Top Row: Logo & Horizontal Nav Links -->
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-10 border-b border-gray-200/80">
+              <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-3 no-underline">
+                <img data-cms-img="logoFull" src="${imgUrl('logoFull')}" alt="Sadana Green Society" class="h-11 w-auto object-contain" />
+                <div>
+                  <div class="font-extrabold text-lg text-[#162219] tracking-tight leading-tight">${CMS.global.orgName}</div>
+                  <div class="text-[10px] text-[#54a630] font-extrabold uppercase tracking-widest mt-0.5">REGD. NO. 129/2021 &bull; KURNOOL</div>
+                </div>
+              </a>
+
+              <div class="flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs font-extrabold text-[#162219] tracking-wider uppercase">
+                <a href="${routeUrl('home')}" data-nav="home" class="hover:text-[#54a630] transition">HOME</a>
+                <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="hover:text-[#54a630] transition">AGROFORESTRY</a>
+                <a href="${routeUrl('our-journey')}" data-nav="our-journey" class="hover:text-[#54a630] transition">OUR JOURNEY</a>
+                <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="hover:text-[#54a630] transition">CARBON CREDITS</a>
+                <a href="${routeUrl('awd')}" data-nav="awd" class="hover:text-[#54a630] transition">AWD</a>
+                <a href="${routeUrl('species')}" data-nav="species" class="hover:text-[#54a630] transition">SPECIES</a>
+                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="hover:text-[#54a630] transition">PLANTATION</a>
+                <a href="${routeUrl('environment')}" data-nav="environment" class="hover:text-[#54a630] transition">ENVIRONMENT</a>
+                <a href="${routeUrl('about')}" data-nav="about" class="hover:text-[#54a630] transition">ABOUT</a>
+                <a href="${routeUrl('gallery')}" data-nav="gallery" class="hover:text-[#54a630] transition">GALLERY</a>
+                <a href="${routeUrl('news')}" data-nav="news" class="hover:text-[#54a630] transition">NEWS</a>
+                <a href="${routeUrl('contact')}" data-nav="contact" class="hover:text-[#54a630] transition">CONTACT</a>
+              </div>
+            </div>
+
+            <!-- Middle Row: 4 Contact Columns with Circular Icons -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10 border-b border-gray-200/80">
+              <!-- Address -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-[#162219] mb-1">Address:</div>
+                  <div class="text-xs text-gray-600 leading-relaxed">Near Nandyal Checkpost, Kurnool, AP 518003</div>
                 </div>
               </div>
 
-              <div class="lg:col-span-3">
-                <div class="text-xs font-bold text-[#7fd858] uppercase tracking-wider mb-4">Explore</div>
-                <ul class="space-y-2 text-xs text-white/75">
-                  <li><a href="${routeUrl('about')}" data-nav="about" class="hover:text-white transition">About us</a></li>
-                  <li><a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="hover:text-white transition">Why agroforestry</a></li>
-                  <li><a href="${routeUrl('species')}#sp-1" data-nav="species" class="hover:text-white transition">Forest species</a></li>
-                  <li><a href="${routeUrl('species')}#sp-9" data-nav="species" class="hover:text-white transition">Fruit species</a></li>
-                  <li><a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="hover:text-white transition">Carbon credits</a></li>
-                  <li><a href="${routeUrl('awd')}" data-nav="awd" class="hover:text-white transition">AWD in paddy</a></li>
-                  <li><a href="${routeUrl('environment')}" data-nav="environment" class="hover:text-white transition">Environment</a></li>
-                  <li><a href="${routeUrl('faq')}" data-nav="faq" class="hover:text-white transition">FAQ</a></li>
-                </ul>
+              <!-- Phone -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-[#162219] mb-1">Phone:</div>
+                  <a href="tel:${CMS.global.phone}" class="text-xs text-gray-600 hover:text-[#54a630] transition leading-relaxed">${CMS.global.phone}</a>
+                </div>
               </div>
 
-              <div class="lg:col-span-4">
-                <div class="text-xs font-bold text-[#7fd858] uppercase tracking-wider mb-4">Contact</div>
-                <div class="space-y-2.5 text-xs text-white/75">
-                  <div class="leading-relaxed">${CMS.global.address}</div>
-                  <div><strong>Phone:</strong> <a href="tel:${CMS.global.phone}" class="hover:text-white transition">${CMS.global.phone}</a></div>
-                  <div><strong>WhatsApp:</strong> <a href="https://wa.me/${CMS.global.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" class="hover:text-white transition">${CMS.global.whatsapp}</a></div>
-                  <div><strong>Email:</strong> <a href="mailto:${CMS.global.email}" class="hover:text-white transition">${CMS.global.email}</a></div>
-                  <div><strong>Alternate:</strong> <a href="mailto:${CMS.global.emailAlt}" class="hover:text-white transition">${CMS.global.emailAlt}</a></div>
+              <!-- WhatsApp -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-[#162219] mb-1">WhatsApp:</div>
+                  <a href="https://wa.me/${CMS.global.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" class="text-xs text-gray-600 hover:text-[#54a630] transition leading-relaxed">${CMS.global.whatsapp}</a>
+                </div>
+              </div>
+
+              <!-- Working States -->
+              <div class="flex items-start gap-3.5">
+                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-[#162219] mb-1">Working States:</div>
+                  <div class="text-xs text-gray-600 leading-relaxed">${CMS.global.workingStates || 'Andhra Pradesh, Telangana & Karnataka'}</div>
                 </div>
               </div>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+            <!-- Social Media Icons Row (Black Circular Pills) -->
+            <div class="flex items-center justify-center gap-3.5 py-8 border-b border-gray-200/80">
+              <a href="#" aria-label="Facebook" class="w-11 h-11 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center text-sm font-bold transition shadow-sm">f</a>
+              <a href="#" aria-label="X" class="w-11 h-11 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center text-sm font-bold transition shadow-sm">𝕏</a>
+              <a href="#" aria-label="Instagram" class="w-11 h-11 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center text-sm font-bold transition shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="w-11 h-11 rounded-full bg-[#162219] hover:bg-[#54a630] text-white flex items-center justify-center text-sm font-bold transition shadow-sm">in</a>
+            </div>
+
+            <!-- Bottom Row: Copyright & Legal Links -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
               <div>${CMS.global.copyright}</div>
               <div class="flex items-center gap-6">
-                <a href="${routeUrl('privacy')}" data-nav="privacy" class="hover:text-white transition">Privacy Policy</a>
-                <a href="${routeUrl('terms')}" data-nav="terms" class="hover:text-white transition">Terms of Service</a>
-                <a href="${routeUrl('admin')}" data-nav="admin" class="hover:text-[#7fd858] transition flex items-center gap-1"><span>🔐</span><span>Admin Studio</span></a>
+                <a href="${routeUrl('privacy')}" data-nav="privacy" class="hover:text-[#54a630] transition">Privacy Policy</a>
+                <a href="${routeUrl('terms')}" data-nav="terms" class="hover:text-[#54a630] transition">Terms of Use</a>
+                <a href="${routeUrl('faq')}" data-nav="faq" class="hover:text-[#54a630] transition">Bilingual FAQs</a>
+                <a href="${routeUrl('admin')}" data-nav="admin" class="hover:text-[#54a630] transition flex items-center gap-1"><span>⚙</span><span>Admin Portal</span></a>
               </div>
             </div>
           </div>
@@ -3597,6 +3755,15 @@
     // =========================================================================
     function renderPlantationPage() {
       const pl = CMS.plantation || {};
+      const fc = pl.formConfig || {
+        badge: "OFFICIAL FARMER REGISTRATION • AP, TG & KARNATAKA",
+        title: "Apply for Agroforestry Saplings & AWD Programme",
+        subtitle: "Direct application for farmers across Kurnool, Nandyal, Anantapur, Kadapa, Gadwal, Mahabubnagar and Bellary.",
+        benefitsNotice: "Free certified nursery saplings & GIS field mapping for eligible farmers.",
+        successMsg: "Application Submitted Successfully! Reference ID has been generated and our local field officer will contact you within 48 hours.",
+        helpPhone: "+91 99666 11855",
+        districts: "Kurnool, Nandyal, Anantapur, Kadapa, Jogulamba Gadwal, Mahabubnagar, Bellary, Raichur"
+      };
       const termsEn = pl.termsEnglish || [];
       const termsTe = pl.termsTelugu || [];
 
@@ -3607,15 +3774,23 @@
           ${renderHeader()}
 
           <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-4 text-center">
-            <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Farmer Registration</span>
-            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">${pl.heroTitle || 'New Plantation Application'}</h1>
+            <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">${fc.badge || 'Farmer Registration'}</span>
+            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">${fc.title || pl.heroTitle || 'New Plantation Application'}</h1>
             <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
-              ${pl.heroSubtitle || 'Register farmer and land details, add land photographs using Camera or Gallery, and capture the GPS location of the field.'}
+              ${fc.subtitle || pl.heroSubtitle || 'Register farmer and land details, add land photographs using Camera or Gallery, and capture the GPS location of the field.'}
             </p>
           </div>
         </section>
 
         <section class="py-14 max-w-[960px] mx-auto px-5 sm:px-8">
+          <!-- Benefits Notice Banner -->
+          ${fc.benefitsNotice ? `
+            <div class="bg-[#f0f8ec] border border-[#54a630]/30 rounded-2xl p-4 sm:p-5 mb-6 flex items-center gap-3 text-xs text-[#204a11] font-bold">
+              <span class="text-lg">🌱</span>
+              <div>${fc.benefitsNotice} &bull; Districts covered: <span class="font-normal text-gray-700">${fc.districts}</span></div>
+            </div>
+          ` : ''}
+
           <!-- Guidelines Card -->
           <div class="soft-card p-6 sm:p-8 mb-8 border border-gray-200">
             <h2 class="text-lg font-extrabold text-[#162219] mb-3">${pl.guidelinesTitle || 'Farmer Eligibility & Programme Guidelines'}</h2>
@@ -5310,6 +5485,7 @@
         const ag = CMS.agroforestry || {};
         const models = ag.models || [];
         const matrix = ag.suitabilityMatrix || [];
+        const ben = ag.benefits || { forFarmers: [], forSoilWater: [], forClimate: [] };
 
         ws.innerHTML = `
           <!-- Hero & What is -->
@@ -5327,6 +5503,42 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 ${renderCmsImageCard('servicesHero', 'Agroforestry Page Hero Image')}
                 ${renderCmsImageCard('twoFarmersTablet', 'Field Agronomists with Farmers')}
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits of Agroforestry (Farmers, Soil & Water, Climate) -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-5 text-xs mb-6">
+            ${renderAdminCardHeader('🌱 Benefits of Agroforestry (From why agriforect.pdf)', 'Core farmer benefits, soil/water advantages, and climate impact.', 'Agroforestry Benefits')}
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <!-- For Farmers -->
+              <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                <div class="font-bold text-[#54a630] text-sm flex items-center gap-1.5">
+                  <span>🧑‍🌾</span><span>For Farmers (5 Points)</span>
+                </div>
+                ${(ben.forFarmers || []).map((pt, idx) => `
+                  <input type="text" value="${pt}" oninput="if(!CMS.agroforestry.benefits) CMS.agroforestry.benefits={}; if(!CMS.agroforestry.benefits.forFarmers) CMS.agroforestry.benefits.forFarmers=[]; CMS.agroforestry.benefits.forFarmers[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs" />
+                `).join('')}
+              </div>
+
+              <!-- For Soil & Water -->
+              <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                <div class="font-bold text-blue-600 text-sm flex items-center gap-1.5">
+                  <span>💧</span><span>For Soil &amp; Water (5 Points)</span>
+                </div>
+                ${(ben.forSoilWater || []).map((pt, idx) => `
+                  <input type="text" value="${pt}" oninput="if(!CMS.agroforestry.benefits) CMS.agroforestry.benefits={}; if(!CMS.agroforestry.benefits.forSoilWater) CMS.agroforestry.benefits.forSoilWater=[]; CMS.agroforestry.benefits.forSoilWater[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs" />
+                `).join('')}
+              </div>
+
+              <!-- For Climate -->
+              <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                <div class="font-bold text-teal-600 text-sm flex items-center gap-1.5">
+                  <span>🌍</span><span>For Climate (5 Points)</span>
+                </div>
+                ${(ben.forClimate || []).map((pt, idx) => `
+                  <input type="text" value="${pt}" oninput="if(!CMS.agroforestry.benefits) CMS.agroforestry.benefits={}; if(!CMS.agroforestry.benefits.forClimate) CMS.agroforestry.benefits.forClimate=[]; CMS.agroforestry.benefits.forClimate[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs" />
+                `).join('')}
               </div>
             </div>
           </div>
@@ -5373,6 +5585,7 @@
         const awd = CMS.awd || {};
         const steps = awd.paymentCycleSteps || [];
         const q4 = awd.questionsBeforeJoining || {};
+        const awdBen = awd.benefits || { forFarmers: [], forEnvironment: [] };
 
         ws.innerHTML = `
           <!-- Hero & What is -->
@@ -5390,6 +5603,32 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 ${renderCmsImageCard('sol2', 'AWD Water Conservation in Paddy')}
                 ${renderCmsImageCard('aboutField1', 'Field Demonstration Photo')}
+              </div>
+            </div>
+          </div>
+
+          <!-- AWD Benefits (For Farmers & Environment) -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-5 text-xs mb-6">
+            ${renderAdminCardHeader('💧 Benefits of AWD in Paddy', 'Water savings, pumping cost cuts, and methane reduction.', 'AWD Benefits')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- For Farmers -->
+              <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                <div class="font-bold text-[#54a630] text-sm flex items-center gap-1.5">
+                  <span>🌾</span><span>For Farmers (5 Points)</span>
+                </div>
+                ${(awdBen.forFarmers || []).map((pt, idx) => `
+                  <input type="text" value="${pt}" oninput="if(!CMS.awd.benefits) CMS.awd.benefits={}; if(!CMS.awd.benefits.forFarmers) CMS.awd.benefits.forFarmers=[]; CMS.awd.benefits.forFarmers[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs" />
+                `).join('')}
+              </div>
+
+              <!-- For Environment -->
+              <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                <div class="font-bold text-cyan-600 text-sm flex items-center gap-1.5">
+                  <span>🌍</span><span>For Environment (5 Points)</span>
+                </div>
+                ${(awdBen.forEnvironment || []).map((pt, idx) => `
+                  <input type="text" value="${pt}" oninput="if(!CMS.awd.benefits) CMS.awd.benefits={}; if(!CMS.awd.benefits.forEnvironment) CMS.awd.benefits.forEnvironment=[]; CMS.awd.benefits.forEnvironment[${idx}]=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs" />
+                `).join('')}
               </div>
             </div>
           </div>
@@ -5490,60 +5729,77 @@
       else if (t === "species") {
         const forest = CMS.forestSpecies || [];
         const fruit = CMS.fruitSpecies || [];
+        const currentSubTab = state.adminSpeciesTab || "all";
 
         ws.innerHTML = `
-          <div class="pb-4 border-b border-gray-200 flex items-center justify-between mb-6">
+          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
             <div>
-              <h3 class="text-xl font-extrabold text-[#162219]">🌱 16 Species Directory Editor</h3>
-              <p class="text-xs text-gray-500">Edit botanical names, Telugu names, soil fit, maturity, uses, and advisory notes.</p>
+              <h3 class="text-xl font-extrabold text-[#162219]">🌱 16 Species Directory Editor (Compact Mode)</h3>
+              <p class="text-xs text-gray-500">Edit botanical names, Telugu names, soil fit, maturity, uses, and advisory notes in a dense, compact view.</p>
             </div>
             <button type="button" onclick="saveCmsSection('All Species Catalog', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm">
               💾 Save All Species
             </button>
           </div>
 
-          <!-- Forest Species (8 Trees) -->
-          <div class="space-y-4 mb-8">
-            <h4 class="font-extrabold text-base text-[#162219]">🌳 8 Forest &amp; Timber Species</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              ${forest.map((s, idx) => `
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-3 text-xs">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-[#54a630]">#${s.id} Forest Tree</span>
-                    <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-3 py-1 rounded-lg text-[10px] font-bold">Save</button>
-                  </div>
-                  <div class="grid grid-cols-2 gap-2">
-                    <input type="text" value="${s.name}" oninput="CMS.forestSpecies[${idx}].name=this.value;" class="border border-gray-200 rounded-lg px-2 py-1 font-bold" />
-                    <input type="text" value="${s.telugu}" oninput="CMS.forestSpecies[${idx}].telugu=this.value;" class="border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold" />
-                  </div>
-                  <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.forestSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic" />
-                  <textarea rows="2" placeholder="Best for..." oninput="CMS.forestSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${s.fit}</textarea>
-                  <textarea rows="2" placeholder="Special Note..." oninput="CMS.forestSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs text-[#8a5b00]">${s.note || ''}</textarea>
-                </div>
-              `).join('')}
-            </div>
+          <!-- Filter Pills -->
+          <div class="flex items-center gap-2 mb-4 overflow-x-auto pb-1 text-xs font-bold">
+            <button type="button" onclick="state.adminSpeciesTab='all'; renderCmsWorkspace();" class="species-tab-btn px-4 py-1.5 rounded-full border transition ${currentSubTab === 'all' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
+              All 16 Species
+            </button>
+            <button type="button" onclick="state.adminSpeciesTab='forest'; renderCmsWorkspace();" class="species-tab-btn px-4 py-1.5 rounded-full border transition ${currentSubTab === 'forest' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
+              🌳 8 Forest Trees
+            </button>
+            <button type="button" onclick="state.adminSpeciesTab='fruit'; renderCmsWorkspace();" class="species-tab-btn px-4 py-1.5 rounded-full border transition ${currentSubTab === 'fruit' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
+              🥭 8 Fruit Trees
+            </button>
           </div>
 
-          <!-- Fruit Species (8 Trees) -->
-          <div class="space-y-4">
-            <h4 class="font-extrabold text-base text-[#162219]">🥭 8 Fruit &amp; Commercial Species</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              ${fruit.map((s, idx) => `
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-3 text-xs">
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-[#54a630]">#${s.id} Fruit Tree</span>
-                    <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-3 py-1 rounded-lg text-[10px] font-bold">Save</button>
+          <!-- Compact Species Grid -->
+          <div class="compact-species-grid grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+            ${(currentSubTab === 'fruit' ? [] : forest).map((s, idx) => `
+              <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 space-y-2">
+                <div class="flex items-center justify-between pb-1.5 border-b border-gray-200">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-[#54a630]/15 text-[#54a630] flex items-center justify-center font-bold text-[11px]">#${s.id}</span>
+                    <span class="font-extrabold text-[#162219] text-xs">Forest &bull; ${s.name}</span>
                   </div>
-                  <div class="grid grid-cols-2 gap-2">
-                    <input type="text" value="${s.name}" oninput="CMS.fruitSpecies[${idx}].name=this.value;" class="border border-gray-200 rounded-lg px-2 py-1 font-bold" />
-                    <input type="text" value="${s.telugu}" oninput="CMS.fruitSpecies[${idx}].telugu=this.value;" class="border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold" />
-                  </div>
-                  <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.fruitSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic" />
-                  <textarea rows="2" placeholder="Best for..." oninput="CMS.fruitSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${s.fit}</textarea>
-                  <textarea rows="2" placeholder="Special Note..." oninput="CMS.fruitSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs text-[#8a5b00]">${s.note || ''}</textarea>
+                  <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2.5 py-0.5 rounded-md text-[10px] font-bold">Save</button>
                 </div>
-              `).join('')}
-            </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <input type="text" value="${s.name}" oninput="CMS.forestSpecies[${idx}].name=this.value;" placeholder="English Name" class="border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
+                  <input type="text" value="${s.telugu}" oninput="CMS.forestSpecies[${idx}].telugu=this.value;" placeholder="Telugu Name" class="border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold text-xs" />
+                </div>
+                <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.forestSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic text-[11px]" />
+                <div class="grid grid-cols-1 gap-1.5">
+                  <input type="text" value="${s.fit || ''}" placeholder="Best for (soil/climate)..." oninput="CMS.forestSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
+                  <input type="text" value="${s.maturity || ''}" placeholder="Maturity timeline..." oninput="CMS.forestSpecies[${idx}].maturity=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
+                  <input type="text" value="${s.note || ''}" placeholder="Advisory Note..." oninput="CMS.forestSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px] text-[#8a5b00]" />
+                </div>
+              </div>
+            `).join('')}
+
+            ${(currentSubTab === 'forest' ? [] : fruit).map((s, idx) => `
+              <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 space-y-2">
+                <div class="flex items-center justify-between pb-1.5 border-b border-gray-200">
+                  <div class="flex items-center gap-2">
+                    <span class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-600 flex items-center justify-center font-bold text-[11px]">#${s.id}</span>
+                    <span class="font-extrabold text-[#162219] text-xs">Fruit &bull; ${s.name}</span>
+                  </div>
+                  <button type="button" onclick="saveCmsSection('${s.name}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2.5 py-0.5 rounded-md text-[10px] font-bold">Save</button>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <input type="text" value="${s.name}" oninput="CMS.fruitSpecies[${idx}].name=this.value;" placeholder="English Name" class="border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
+                  <input type="text" value="${s.telugu}" oninput="CMS.fruitSpecies[${idx}].telugu=this.value;" placeholder="Telugu Name" class="border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold text-xs" />
+                </div>
+                <input type="text" value="${s.botanical || ''}" placeholder="Botanical name" oninput="CMS.fruitSpecies[${idx}].botanical=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 italic text-[11px]" />
+                <div class="grid grid-cols-1 gap-1.5">
+                  <input type="text" value="${s.fit || ''}" placeholder="Best for (soil/climate)..." oninput="CMS.fruitSpecies[${idx}].fit=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
+                  <input type="text" value="${s.maturity || ''}" placeholder="Maturity timeline..." oninput="CMS.fruitSpecies[${idx}].maturity=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px]" />
+                  <input type="text" value="${s.note || ''}" placeholder="Advisory Note..." oninput="CMS.fruitSpecies[${idx}].note=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px] text-[#8a5b00]" />
+                </div>
+              </div>
+            `).join('')}
           </div>
         `;
       }
@@ -5622,10 +5878,47 @@
       // -----------------------------------------------------------------------
       else if (t === "plantation") {
         const pl = CMS.plantation || {};
+        const fc = pl.formConfig || {
+          title: "Apply for Agroforestry Saplings & AWD Programme",
+          subtitle: "Direct application for farmers across Kurnool, Nandyal, Anantapur, Kadapa, Gadwal, Mahabubnagar and Bellary.",
+          benefitsNotice: "Free certified nursery saplings & GIS field mapping for eligible farmers.",
+          successMsg: "Application Submitted Successfully! Reference ID has been generated and our local field officer will contact you within 48 hours.",
+          helpPhone: "+91 99666 11855",
+          districts: "Kurnool, Nandyal, Anantapur, Kadapa, Jogulamba Gadwal, Mahabubnagar, Bellary, Raichur"
+        };
         const termsEn = pl.termsEnglish || [];
         const termsTe = pl.termsTelugu || [];
 
         ws.innerHTML = `
+          <!-- Application Form Configuration Card -->
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('📝 Plantation Application Form Settings', 'Customize the online farmer application form title, eligibility notice, districts and success message.', 'Form Settings')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">Form Main Heading</label>
+                <input type="text" value="${fc.title}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">District / Territory Coverage</label>
+                <input type="text" value="${fc.districts}" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.districts=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-bold text-gray-700 mb-1">Form Subtitle / Intro</label>
+              <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.subtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${fc.subtitle}</textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">Farmer Eligibility / Benefits Banner Notice</label>
+                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.benefitsNotice=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-[#54a630] font-bold">${fc.benefitsNotice}</textarea>
+              </div>
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">Application Success Message (Displayed upon submission)</label>
+                <textarea rows="2" oninput="if(!CMS.plantation.formConfig) CMS.plantation.formConfig={}; CMS.plantation.formConfig.successMsg=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-blue-700 font-bold">${fc.successMsg}</textarea>
+              </div>
+            </div>
+          </div>
+
           <!-- Terms & Conditions (Bilingual) -->
           <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
             ${renderAdminCardHeader('Important Terms &amp; Conditions (Bilingual from new plantation application.pdf)', 'English and Telugu declaration clauses.', 'Plantation Terms')}
@@ -5662,20 +5955,25 @@
       else if (t === "inbox") {
         const list = (CMS.submissions && CMS.submissions.plantations) || [];
         ws.innerHTML = `
-          <div class="pb-4 border-b border-gray-200 flex items-center justify-between">
+          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
             <div>
               <h3 class="text-xl font-extrabold text-[#162219]">📥 Farmer Submissions Inbox</h3>
               <p class="text-xs text-gray-500">Total ${list.length} plantation application(s) received from the public website.</p>
             </div>
-            <button type="button" onclick="exportSubmissionsCSV('plantations')" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
-              <span>📥 Export CSV</span>
-            </button>
+            <div class="flex items-center gap-2">
+              <button type="button" onclick="addMockFarmerSubmission()" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                <span>➕ Add Test Application</span>
+              </button>
+              <button type="button" onclick="exportSubmissionsCSV('plantations')" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+                <span>📥 Export CSV</span>
+              </button>
+            </div>
           </div>
 
           ${list.length === 0 ? `
             <div class="text-center py-12 text-gray-400 text-xs font-medium">No plantation submissions received yet. Applications submitted on /new-plantation/ will appear here live.</div>
           ` : `
-            <div class="border border-gray-200 rounded-2xl overflow-x-auto text-xs">
+            <div class="border border-gray-200 rounded-2xl overflow-x-auto text-xs shadow-sm">
               <table class="w-full text-left border-collapse">
                 <thead class="bg-gray-50 border-b border-gray-200">
                   <tr>
@@ -5685,19 +5983,33 @@
                     <th class="p-3 font-bold text-gray-600">Location</th>
                     <th class="p-3 font-bold text-gray-600">Acres</th>
                     <th class="p-3 font-bold text-gray-600">Varieties</th>
-                    <th class="p-3 font-bold text-gray-600">GPS</th>
+                    <th class="p-3 font-bold text-gray-600">GPS &amp; Soil</th>
+                    <th class="p-3 font-bold text-gray-600">Submitted</th>
+                    <th class="p-3 font-bold text-gray-600 text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-                  ${list.map(item => `
-                    <tr class="hover:bg-gray-50">
-                      <td class="p-3 font-mono font-bold text-[#54a630]">${item.id}</td>
-                      <td class="p-3 font-bold text-[#162219]">${item.farmerName}</td>
-                      <td class="p-3">${item.phone}</td>
+                  ${list.map((item, idx) => `
+                    <tr class="hover:bg-gray-50/80 transition">
+                      <td class="p-3 font-mono font-bold text-[#54a630] whitespace-nowrap">${item.id}</td>
+                      <td class="p-3 font-bold text-[#162219]">
+                        <div>${item.farmerName}</div>
+                        ${item.notes ? `<div class="text-[10px] text-gray-500 font-normal line-clamp-1 mt-0.5">${item.notes}</div>` : ''}
+                      </td>
+                      <td class="p-3 whitespace-nowrap">
+                        <a href="tel:${item.phone}" class="hover:text-[#54a630] transition">${item.phone}</a>
+                      </td>
                       <td class="p-3">${item.village}, ${item.district}</td>
-                      <td class="p-3 font-bold">${item.acres}</td>
-                      <td class="p-3">${item.varieties}</td>
-                      <td class="p-3 text-[10px] font-mono text-gray-500">${item.gps}</td>
+                      <td class="p-3 font-bold text-[#162219]">${item.acres}</td>
+                      <td class="p-3 text-[11px] text-gray-700 max-w-xs">${item.varieties}</td>
+                      <td class="p-3 text-[11px]">
+                        <div class="font-mono text-gray-500">${item.gps}</div>
+                        <div class="text-[10px] text-gray-400 mt-0.5">${item.soilType || 'Soil'} &bull; ${item.waterSource || 'Water'}</div>
+                      </td>
+                      <td class="p-3 text-[11px] text-gray-500 whitespace-nowrap">${item.submittedAt || 'Recent'}</td>
+                      <td class="p-3 text-center whitespace-nowrap">
+                        <button type="button" onclick="deleteFarmerSubmission(${idx})" aria-label="Delete" class="text-red-400 hover:text-red-600 font-bold text-xs p-1">🗑️</button>
+                      </td>
                     </tr>
                   `).join('')}
                 </tbody>
@@ -5713,71 +6025,86 @@
       else if (t === "gallery") {
         const items = CMS.galleryItems || [];
         const cats = ["Field", "AWD", "Training", "Carbon", "Plantation", "Community"];
+        const curCat = state.adminGalleryFilter || "all";
+        const filteredItems = curCat === "all" ? items : items.filter(it => (it.cat || '').toLowerCase() === curCat.toLowerCase());
+
         ws.innerHTML = `
-          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div class="pb-4 border-b border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
             <div>
-              <h3 class="text-xl font-extrabold text-[#162219]">🖼️ Photo Gallery Manager (${items.length} Photos)</h3>
-              <p class="text-xs text-gray-500">Edit titles, Telugu descriptions, categories, and upload or replace photos for the Gallery page.</p>
+              <h3 class="text-xl font-extrabold text-[#162219]">🖼️ Photo Gallery Manager (${items.length} Photos - Compact View)</h3>
+              <p class="text-xs text-gray-500">Edit titles, Telugu descriptions, categories, and upload or replace photos. All options preserved in a compact multi-column grid.</p>
             </div>
             <div class="flex items-center gap-3">
-              <button type="button" onclick="addGalleryItem()" class="bg-gray-900 hover:bg-black text-white px-4 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
-                ➕ Add New Photo
+              <button type="button" onclick="addGalleryItem()" class="bg-gray-900 hover:bg-black text-white px-3.5 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+                ➕ Add Photo
               </button>
-              <button type="button" onclick="saveCmsSection('All Gallery Photos', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-5 py-2.5 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
+              <button type="button" onclick="saveCmsSection('All Gallery Photos', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5">
                 💾 Save All Photos
               </button>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 text-xs">
-            ${items.map((item, idx) => `
-              <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5 space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="font-extrabold text-[#54a630]">Photo #${idx + 1}</span>
-                  <div class="flex items-center gap-2">
-                    <button type="button" onclick="deleteGalleryItem(${idx})" class="text-red-500 hover:text-red-700 font-bold text-[11px]">🗑️ Delete</button>
-                    <button type="button" onclick="saveCmsSection('Photo #${idx + 1}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2.5 py-1 rounded-lg text-[10px] font-bold">Save</button>
+          <!-- Category Filter Pills -->
+          <div class="flex items-center gap-2 mb-4 overflow-x-auto pb-1 text-xs font-bold">
+            <button type="button" onclick="state.adminGalleryFilter='all'; renderCmsWorkspace();" class="px-3 py-1 rounded-full border transition ${curCat === 'all' ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
+              All (${items.length})
+            </button>
+            ${cats.map(c => `
+              <button type="button" onclick="state.adminGalleryFilter='${c.toLowerCase()}'; renderCmsWorkspace();" class="px-3 py-1 rounded-full border transition ${curCat === c.toLowerCase() ? 'bg-[#54a630] text-white border-[#54a630]' : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200'}">
+                ${c} (${items.filter(it => (it.cat || '').toLowerCase() === c.toLowerCase()).length})
+              </button>
+            `).join('')}
+          </div>
+
+          <!-- Compact Gallery Grid -->
+          <div class="compact-gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 text-xs">
+            ${filteredItems.map((item, originalIdx) => {
+              const idx = items.indexOf(item);
+              return `
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 space-y-2.5">
+                  <div class="flex items-center justify-between pb-1 border-b border-gray-200">
+                    <span class="font-extrabold text-[#54a630] text-xs">Photo #${idx + 1}</span>
+                    <div class="flex items-center gap-1.5">
+                      <button type="button" onclick="deleteGalleryItem(${idx})" class="text-red-500 hover:text-red-700 font-bold text-[11px]">🗑️ Delete</button>
+                      <button type="button" onclick="saveCmsSection('Photo #${idx + 1}', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-2 py-0.5 rounded text-[10px] font-bold">Save</button>
+                    </div>
+                  </div>
+
+                  <!-- Compact Image preview and upload -->
+                  <div class="relative rounded-lg overflow-hidden h-28 bg-gray-200 border border-gray-200">
+                    <img src="${imgUrl(item.imgKey)}" alt="${item.title}" class="w-full h-full object-cover" />
+                    <span class="absolute top-1.5 right-1.5 px-2 py-0.5 rounded-full bg-black/65 text-white text-[9px] font-bold">${item.cat}</span>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <label class="flex-1 cursor-pointer bg-[#54a630] hover:bg-[#468c28] text-white text-center py-1.5 px-2 rounded-lg font-bold text-[11px] transition shadow-sm">
+                      📁 Upload Photo
+                      <input type="file" accept="image/*" onchange="handleGalleryItemUpload(${idx}, event)" class="hidden" />
+                    </label>
+                  </div>
+
+                  <div>
+                    <input type="text" placeholder="Or paste image URL" value="${(CMS.images && CMS.images[item.imgKey]) || ''}" onchange="if(!CMS.images) CMS.images={}; CMS.images['${item.imgKey}']=this.value; saveCmsData(); renderCmsWorkspace(); renderApp();" class="w-full border border-gray-200 rounded-lg px-2 py-1 text-[11px] bg-white" />
+                  </div>
+
+                  <div>
+                    <input type="text" value="${item.title || ''}" placeholder="English Title" oninput="CMS.galleryItems[${idx}].title=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
+                  </div>
+
+                  <div>
+                    <input type="text" value="${item.sub || ''}" placeholder="Telugu Subtitle" oninput="CMS.galleryItems[${idx}].sub=this.value;" class="w-full border border-gray-200 rounded-lg px-2 py-1 telugu-text text-[#54a630] font-bold text-xs" />
+                  </div>
+
+                  <div>
+                    <select onchange="CMS.galleryItems[${idx}].cat=this.value; renderApp();" class="w-full border border-gray-200 rounded-lg px-2 py-1 bg-white font-medium text-xs">
+                      ${cats.map(c => `
+                        <option value="${c}" ${c.toLowerCase() === (item.cat || '').toLowerCase() ? 'selected' : ''}>${c}</option>
+                      `).join('')}
+                    </select>
                   </div>
                 </div>
-
-                <!-- Image preview and upload -->
-                <div class="relative rounded-xl overflow-hidden h-40 bg-gray-200 border border-gray-200">
-                  <img src="${imgUrl(item.imgKey)}" alt="${item.title}" class="w-full h-full object-cover" />
-                  <span class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/60 text-white text-[10px] font-bold">${item.cat}</span>
-                </div>
-
-                <div class="flex items-center gap-2">
-                  <label class="flex-1 cursor-pointer bg-[#54a630] hover:bg-[#468c28] text-white text-center py-2 px-3 rounded-xl font-bold text-xs transition shadow-sm">
-                    📁 Upload Photo
-                    <input type="file" accept="image/*" onchange="handleGalleryItemUpload(${idx}, event)" class="hidden" />
-                  </label>
-                </div>
-
-                <div>
-                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Or Paste Image URL</label>
-                  <input type="text" placeholder="https://..." value="${(CMS.images && CMS.images[item.imgKey]) || ''}" onchange="if(!CMS.images) CMS.images={}; CMS.images['${item.imgKey}']=this.value; saveCmsData(); renderCmsWorkspace(); renderApp();" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 text-xs bg-white" />
-                </div>
-
-                <div>
-                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Title (English)</label>
-                  <input type="text" value="${item.title || ''}" oninput="CMS.galleryItems[${idx}].title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 font-bold" />
-                </div>
-
-                <div>
-                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Subtitle (Telugu)</label>
-                  <input type="text" value="${item.sub || ''}" oninput="CMS.galleryItems[${idx}].sub=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 telugu-text text-[#54a630] font-bold" />
-                </div>
-
-                <div>
-                  <label class="block text-[10px] text-gray-500 font-bold mb-0.5">Category</label>
-                  <select onchange="CMS.galleryItems[${idx}].cat=this.value; renderApp();" class="w-full border border-gray-200 rounded-xl px-3 py-1.5 bg-white font-medium">
-                    ${cats.map(c => `
-                      <option value="${c}" ${c.toLowerCase() === (item.cat || '').toLowerCase() ? 'selected' : ''}>${c}</option>
-                    `).join('')}
-                  </select>
-                </div>
-              </div>
-            `).join('')}
+              `;
+            }).join('')}
           </div>
         `;
       }
@@ -5852,15 +6179,93 @@
         const tr = CMS.terms || { sections: [] };
 
         ws.innerHTML = `
-          ${renderAdminCardHeader('⚖️ Privacy Policy &amp; Terms of Service Editor', 'All legal clauses and terms are fully editable.', 'Legal Pages')}
-          <div class="space-y-6 text-xs">
-            <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200 space-y-3">
-              <h4 class="font-extrabold text-sm text-[#162219]">Privacy Policy Intro</h4>
-              <textarea rows="2" oninput="CMS.privacy.intro=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${pr.intro || ''}</textarea>
+          ${renderAdminCardHeader('⚖️ Legal Pages Editor (Privacy Policy &amp; Terms of Service)', 'All legal clauses, farmer data protection terms, and regulatory provisions are fully editable.', 'Legal Pages')}
+          
+          <div class="space-y-8 text-xs">
+            <!-- Privacy Policy Editor -->
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-gray-200">
+                <div>
+                  <h4 class="font-extrabold text-base text-[#162219]">🔒 Privacy Policy Clauses (${(pr.sections || []).length} Sections)</h4>
+                  <p class="text-gray-500 text-[11px]">Governs farmer personal data, GPS GIS polygon confidentiality, and audit disclosure.</p>
+                </div>
+                <button type="button" onclick="saveCmsSection('Privacy Policy', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm">
+                  💾 Save Privacy Policy
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-bold text-gray-700 mb-1">Badge Tag</label>
+                  <input type="text" value="${pr.badge || ''}" oninput="if(!CMS.privacy) CMS.privacy={}; CMS.privacy.badge=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 font-bold" />
+                </div>
+                <div>
+                  <label class="block font-bold text-gray-700 mb-1">Effective Date</label>
+                  <input type="text" value="${pr.effectiveDate || ''}" oninput="if(!CMS.privacy) CMS.privacy={}; CMS.privacy.effectiveDate=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">Privacy Policy Preamble / Intro</label>
+                <textarea rows="3" oninput="if(!CMS.privacy) CMS.privacy={}; CMS.privacy.intro=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-xs leading-relaxed">${pr.intro || ''}</textarea>
+              </div>
+
+              <!-- All Privacy Policy Sections -->
+              <div class="space-y-3 pt-2">
+                <div class="font-bold text-gray-700">Editable Legal Clauses:</div>
+                ${(pr.sections || []).map((sec, idx) => `
+                  <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-[#54a630]">Clause #${idx+1}</span>
+                      <input type="text" value="${sec.title}" oninput="CMS.privacy.sections[${idx}].title=this.value;" class="flex-1 ml-3 border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
+                    </div>
+                    <textarea rows="3" oninput="CMS.privacy.sections[${idx}].content=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs leading-relaxed">${sec.content}</textarea>
+                  </div>
+                `).join('')}
+              </div>
             </div>
-            <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200 space-y-3">
-              <h4 class="font-extrabold text-sm text-[#162219]">Terms of Service Intro</h4>
-              <textarea rows="2" oninput="CMS.terms.intro=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs">${tr.intro || ''}</textarea>
+
+            <!-- Terms of Service Editor -->
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-gray-200">
+                <div>
+                  <h4 class="font-extrabold text-base text-[#162219]">📜 Terms of Service Clauses (${(tr.sections || []).length} Sections)</h4>
+                  <p class="text-gray-500 text-[11px]">Governs society membership, sapling eligibility verification, carbon credit benefit sharing, and Kurnool legal jurisdiction.</p>
+                </div>
+                <button type="button" onclick="saveCmsSection('Terms of Service', this)" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm">
+                  💾 Save Terms of Service
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block font-bold text-gray-700 mb-1">Badge Tag</label>
+                  <input type="text" value="${tr.badge || ''}" oninput="if(!CMS.terms) CMS.terms={}; CMS.terms.badge=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 font-bold" />
+                </div>
+                <div>
+                  <label class="block font-bold text-gray-700 mb-1">Effective Date</label>
+                  <input type="text" value="${tr.effectiveDate || ''}" oninput="if(!CMS.terms) CMS.terms={}; CMS.terms.effectiveDate=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-bold text-gray-700 mb-1">Terms of Service Preamble / Intro</label>
+                <textarea rows="3" oninput="if(!CMS.terms) CMS.terms={}; CMS.terms.intro=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 text-xs leading-relaxed">${tr.intro || ''}</textarea>
+              </div>
+
+              <!-- All Terms of Service Sections -->
+              <div class="space-y-3 pt-2">
+                <div class="font-bold text-gray-700">Editable Legal Clauses:</div>
+                ${(tr.sections || []).map((sec, idx) => `
+                  <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                    <div class="flex items-center justify-between">
+                      <span class="font-bold text-[#54a630]">Clause #${idx+1}</span>
+                      <input type="text" value="${sec.title}" oninput="CMS.terms.sections[${idx}].title=this.value;" class="flex-1 ml-3 border border-gray-200 rounded-lg px-2 py-1 font-bold text-xs" />
+                    </div>
+                    <textarea rows="3" oninput="CMS.terms.sections[${idx}].content=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-xs leading-relaxed">${sec.content}</textarea>
+                  </div>
+                `).join('')}
+              </div>
             </div>
           </div>
         `;
@@ -5995,6 +6400,40 @@
         renderApp();
         renderCmsWorkspace();
         showToast("Photo deleted!");
+      }
+    }
+
+    function addMockFarmerSubmission() {
+      if (!CMS.submissions) CMS.submissions = { plantations: [], enquiries: [] };
+      if (!CMS.submissions.plantations) CMS.submissions.plantations = [];
+      const num = CMS.submissions.plantations.length + 1;
+      const ref = "SGS-PL-2026-" + String(num).padStart(3, '0');
+      CMS.submissions.plantations.unshift({
+        id: ref,
+        farmerName: "T. Chennakesavulu (టి. చెన్నకేశవులు)",
+        phone: "+91 97012 34567",
+        village: "Gudur Mandal",
+        district: "Kurnool, Andhra Pradesh",
+        acres: "5.0 Acres",
+        varieties: "Red Sanders, Bamboo, Custard Apple",
+        gps: "15.7540° N, 77.8920° E",
+        soilType: "Red Gravelly Soil",
+        waterSource: "Drip Irrigation",
+        notes: "Boundary plantation requested for Kharif 2026 season.",
+        submittedAt: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+      });
+      saveCmsData();
+      renderCmsWorkspace();
+      showToast("Added new test farmer submission " + ref + "!");
+    }
+
+    function deleteFarmerSubmission(idx) {
+      if (!CMS.submissions || !CMS.submissions.plantations) return;
+      if (confirm("Delete this farmer submission record?")) {
+        CMS.submissions.plantations.splice(idx, 1);
+        saveCmsData();
+        renderCmsWorkspace();
+        showToast("Submission deleted.");
       }
     }
 

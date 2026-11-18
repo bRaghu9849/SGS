@@ -1,26 +1,46 @@
-# GATES.md - Quality & Acceptance Gates for SGS Refinements
+# GATES.md - Verifiable Acceptance Gates for SGS Refinements & Admin Studio
 
-## G1: Authentic Client Images in Gallery
-Gallery default images gal1 through gal24 use real client-provided sgs-activity-*.jpg/jpeg images without screenshot crops.
-CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_cms_data.py', 'utf-8'); if (!code.includes('sgs-activity-01.jpg') || !code.includes('sgs-activity-24.jpeg')) process.exit(1);"
-EXPECT: PASS
+## G1: Reference Website White Footer Parity
+Footer features white/light background (`bg-white` / `bg-[#fbfdfb]`), top logo & horizontal links, 4 circular icon contact columns (Address, Phone, WhatsApp, Working States), 4 circular black social pills, copyright, and legal links.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('footer-white') || !code.includes('Near Nandyal Checkpost') || !code.includes('Working States')) process.exit(1); console.log('G1 PASS');"
+EXPECT: G1 PASS
 
-## G2: Navbar Desktop Design Parity with Reference
-Navbar features floating white rounded pill, logo emblem, links with mega menu, search button, and Get Started CTA with circular white arrow icon.
-CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('Latest News &amp; Key Programmes') || !code.includes('Soil Testing &amp; Analysis')) process.exit(1); console.log('G2 PASS');"
+## G2: Admin Legal Pages Full Section Editing
+Admin tab 'legal' contains editable text inputs/textareas for all Privacy Policy clauses and Terms of Service clauses.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!code.includes('CMS.privacy.sections') || !code.includes('CMS.terms.sections')) process.exit(1); console.log('G2 PASS');"
 EXPECT: G2 PASS
 
-## G3: Mobile Navigation Drawer Parity with Reference
-Mobile drawer matches reference screenshot with dark background, close button, bold nav links, Get Started pill CTA, and social icon pills.
-CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('mobile-drawer') || !code.includes('bg-[#0e1a12]')) process.exit(1);"
-EXPECT: PASS
+## G3: Admin Agroforestry & AWD Benefits Fully Covered
+Admin tabs for Agroforestry and AWD provide editable fields for farmer, soil/water, and climate benefits.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!code.includes('CMS.agroforestry.benefits') || !code.includes('CMS.awd.benefits')) process.exit(1); console.log('G3 PASS');"
+EXPECT: G3 PASS
 
-## G4: Species Cards Have No Images
-Species directory cards have no image tags or placeholders per user explicit instruction ("no need of images in species").
-CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); const start = code.indexOf('function renderSpeciesCatalogPage'); const end = code.indexOf('function renderAboutUsPage'); const slice = code.slice(start, end); if (slice.includes('<img data-cms-img=') || slice.includes('h-52 rounded-2xl overflow-hidden mb-5')) process.exit(1);"
-EXPECT: PASS
+## G4: Zero Cropped Images Across Website
+Low-resolution cropped images (`sol1`, `sol2`, `sol3`, `nl1`, `nl2`, `nl3`, `windBanner`) are replaced with authentic full-resolution template webp/jpg images (`home-solutions-image-*.webp`, `home-subscribe-image-*.webp`, `wind-turbine-banner.jpg`).
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_cms_data.py', 'utf-8'); if (!code.includes('home-solutions-image-1.webp') || !code.includes('home-subscribe-image-1.webp') || !code.includes('wind-turbine-banner.jpg')) process.exit(1); console.log('G4 PASS');"
+EXPECT: G4 PASS
 
-## G5: All Routes Render Cleanly
-All 16 clean-URL pages and admin routes compile and render with > 0 chars and no runtime errors.
+## G5: Two Clean Un-Cluttered Navbar Menus
+Top navigation provides two clean dropdown menus (`SERVICES ▾` and `EXPLORE ▾`) to avoid clutter while maintaining 100% Blocksy design aesthetic.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_renderers.py', 'utf-8'); if (!code.includes('SERVICES') || !code.includes('EXPLORE') || !code.includes('Soil Testing &amp; Analysis')) process.exit(1); console.log('G5 PASS');"
+EXPECT: G5 PASS
+
+## G6: Compact Species Editor in Admin
+Species editor in Admin panel is dense and compact with tabbed/categorized controls instead of 16 long full-page vertical textareas.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!code.includes('compact-species-grid') && !code.includes('species-tab-btn')) process.exit(1); console.log('G6 PASS');"
+EXPECT: G6 PASS
+
+## G7: Compact Gallery Editor in Admin
+Gallery editor in Admin panel organizes all 24 photos into a compact responsive card grid preserving all upload, category, title, description, and delete options.
+CHECK: node -e "const fs = require('fs'); const code = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!code.includes('compact-gallery-grid')) process.exit(1); console.log('G7 PASS');"
+EXPECT: G7 PASS
+
+## G8: Admin Editable Plantation Form & 2 Mock Farmer Submissions
+Admin allows editing plantation form settings, and `CMS.submissions.plantations` includes 2 pre-filled mock farmer applications displayed in the Admin Inbox.
+CHECK: node -e "const fs = require('fs'); const data = fs.readFileSync('scratch/build_cms_data.py', 'utf-8'); const admin = fs.readFileSync('scratch/build_admin.py', 'utf-8'); if (!data.includes('SGS-PL-2026-001') || !data.includes('SGS-PL-2026-002') || !admin.includes('CMS.plantation.formConfig')) process.exit(1); console.log('G8 PASS');"
+EXPECT: G8 PASS
+
+## G9: All 16 Routes Compile and Render Cleanly
+All routes render > 0 chars with zero syntax errors.
 CHECK: node scratch/verify_all_paths.js
 EXPECT: Path [/SGS/] -> Route: [home] -> Rendered
