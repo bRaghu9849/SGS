@@ -670,6 +670,10 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/logo/new-logo-sgs-full.png",
       logoEmblem: "assets/images/logo/new-logo-sgs-emblem.png",
@@ -2042,7 +2046,8 @@
       const bgImg = hm.imageUrl || imgUrl(fallbackImgKey || "heroAerial");
 
       if (hm.mode === "video" && hm.videoUrl) {
-        const vUrl = resolveAssetUrl(hm.videoUrl);
+        const rawUrl = hm.videoUrl.includes("?") ? hm.videoUrl : (hm.videoUrl + "?v=hq2");
+        const vUrl = resolveAssetUrl(rawUrl);
         return `
           <div class="absolute inset-0 overflow-hidden bg-[#0c1810]">
             <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="${bgImg}" src="${vUrl}" class="absolute inset-0 w-full h-full object-cover" style="object-fit: cover; width: 100%; height: 100%;">
