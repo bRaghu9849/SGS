@@ -32,3 +32,5 @@ old website screenshots/
 template_reference_screenshots/
 *.backup
 sadhana.pdf
+# Local video drops
+/hero video*.mp4
