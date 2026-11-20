@@ -648,6 +648,14 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/logo/new-logo-sgs-full.png",
       logoEmblem: "assets/images/logo/new-logo-sgs-emblem.png",
@@ -1975,7 +1983,7 @@
     // Initialize CMS Data
     function initCmsData() {
       const initial = getInitialCmsData();
-      const raw = localStorage.getItem("sgs_cms_data_v11");
+      const raw = localStorage.getItem("sgs_cms_data_v12");
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
@@ -1992,12 +2000,15 @@
       for (const k of Object.keys(initial.heroes)) {
         if (!CMS.heroes[k]) CMS.heroes[k] = initial.heroes[k];
       }
+      if (!CMS.heroes.home) CMS.heroes.home = initial.heroes.home;
+      CMS.heroes.home.mode = "video";
+      CMS.heroes.home.videoUrl = "assets/hero-video.mp4";
     }
 
     // Save CMS Data to LocalStorage
     function saveCmsData() {
       try {
-        localStorage.setItem("sgs_cms_data_v11", JSON.stringify(CMS));
+        localStorage.setItem("sgs_cms_data_v12", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
@@ -2017,10 +2028,10 @@
       const bgImg = hm.imageUrl || imgUrl(fallbackImgKey || "heroAerial");
 
       if (hm.mode === "video" && hm.videoUrl) {
-        const vUrl = hm.videoUrl;
+        const vUrl = resolveAssetUrl(hm.videoUrl);
         return `
           <div class="absolute inset-0 overflow-hidden bg-[#0c1810]">
-            <video autoplay loop muted playsinline poster="${bgImg}" class="absolute inset-0 w-full h-full object-cover">
+            <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="${bgImg}" src="${vUrl}" class="absolute inset-0 w-full h-full object-cover" style="object-fit: cover; width: 100%; height: 100%;">
               <source src="${vUrl}" type="video/mp4" />
             </video>
             <div class="absolute inset-0 bg-gradient-to-b from-[#0b170f]/75 via-[#0e1c12]/70 to-[#0b170f]/90"></div>
@@ -4936,6 +4947,21 @@
       // Reattach mobile drawer
       const md = document.getElementById("mobile-drawer-container");
       if (md) md.innerHTML = renderMobileDrawer();
+
+      // Ensure hero video autoplays smoothly across all browsers & devices
+      if (typeof setTimeout !== "undefined") {
+        setTimeout(() => {
+          if (typeof document !== "undefined") document.querySelectorAll("video").forEach(v => {
+          v.muted = true;
+          const p = v.play();
+          if (p && typeof p.catch === "function") {
+            p.catch(e => {
+              console.log("Video autoplay handling:", e);
+            });
+          }
+        });
+      }, 50);
+      }
     }
 
 
