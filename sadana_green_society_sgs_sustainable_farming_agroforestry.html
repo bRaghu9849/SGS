@@ -241,6 +241,17 @@
     body.mobile-preview-mode .hero-title-lg { font-size: 2.1rem !important; line-height: 1.15 !important; }
     body.mobile-preview-mode .section-title-lg { font-size: 1.55rem !important; line-height: 1.25 !important; }
     body.mobile-preview-mode .stack-on-mobile-sim { flex-direction: column !important; align-items: flex-start !important; }
+
+    /* Secondary Font Rule: 18px everywhere as requested */
+    .secondary-text,
+    .text-secondary,
+    p.section-subtitle,
+    p.hero-sub,
+    .card-desc,
+    .lead-text {
+      font-size: 18px !important;
+      line-height: 1.65;
+    }
   </style>
 </head>
 <body class="bg-white">
@@ -483,6 +494,18 @@
   <script>
     // =========================================================================
     // CENTRALIZED BASE64 IMAGE ASSETS (Inlined once by Step 3 script)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
     
     // =========================================================================
@@ -948,7 +971,7 @@
       return {
         images: Object.assign({}, DEFAULT_IMAGES),
         heroes: {
-          home: { mode: "image", videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-green-crops-in-a-field-41645-large.mp4", imageUrl: "", fallback: "heroAerial" },
+          home: { mode: "video", videoUrl: "assets/hero-video.mp4", imageUrl: "assets/images/template/hero-leaf.jpg", fallback: "heroAerial" },
           about: { mode: "image", videoUrl: "", imageUrl: "", fallback: "aboutHero" },
           "our-journey": { mode: "image", videoUrl: "", imageUrl: "", fallback: "aboutHero" },
           agroforestry: { mode: "image", videoUrl: "", imageUrl: "", fallback: "servicesHero" },
@@ -966,6 +989,7 @@
           terms: { mode: "image", videoUrl: "", imageUrl: "", fallback: "aboutHero" }
         },
         global: {
+          headerCtaText: "Get Started",
           orgName: "Sadana Green Society",
           orgLocationSub: "Kurnool, Andhra Pradesh",
           tagline: "People • Plants • Livelihoods • Climate Resilience",
@@ -1663,7 +1687,7 @@
             declaration1: "I have read and understood the eligibility terms above in English/Telugu. I declare that the details given are true. / పై అర్హత నిబంధనలను చదివి అర్థం చేసుకున్నాను. నేను ఇచ్చిన వివరాలు నిజమైనవని ప్రకటిస్తున్నాను. *",
             declaration2: "I confirm that the information provided is accurate and authorize Sadana Green Society to contact me and verify the land. / ఈ దరఖాస్తును పరిశీలించడానికి సదన గ్రీన్ సొసైటీ నన్ను సంప్రదించవచ్చని అంగీకరిస్తున్నాను. *"
           },
-          guidelinesTitle: "Farmer Eligibility & Programme Guidelines",
+          // guidelinesTitle removed
           guidelinesP1: "Sadana Green Society partners with landowners, smallholders, and tenant farmers across Andhra Pradesh, Telangana, and Karnataka to establish verified agroforestry plantations and water-saving AWD systems.",
           guidelinesP2: "Participating farmers receive free high-survival saplings, on-site technical agronomy guidance, GPS polygon land mapping, and direct access to carbon revenue sharing upon verified tree growth.",
           formIntro: "Please complete the applicant and land details below. Our field officer will contact you within 48 hours for baseline field inspection.",
@@ -1822,30 +1846,50 @@
           }
         ],
         galleryItems: [
-          { title: "Agroforestry Sapling Distribution", sub: "రైతులకు మొక్కల పంపిణీ కార్యక్రమం", cat: "Field", imgKey: "gal1" },
-          { title: "AWD Field Water Tube Demonstration", sub: "వరిలో AWD పైపుల ప్రత్యక్ష ప్రదర్శన", cat: "AWD", imgKey: "gal2" },
-          { title: "District Level Farmer Training Workshop", sub: "జిల్లా స్థాయి రైతు శిక్షణ సదస్సు", cat: "Training", imgKey: "gal3" },
-          { title: "GPS Farmland Mapping & Survey", sub: "భూమి సర్వే & జియో ట్యాగింగ్", cat: "Carbon", imgKey: "gal4" },
-          { title: "Nursery Quality Inspection", sub: "నర్సరీ నాణ్యత తనిఖీ", cat: "Plantation", imgKey: "gal5" },
-          { title: "Gram Panchayat Awareness Camp", sub: "గ్రామ సభలో పర్యావరణ అవగాహన", cat: "Community", imgKey: "gal6" },
-          { title: "Teak Block Plantation Growth Audit", sub: "టేకు తోటల క్షేత్రస్థాయి పరిశీలన", cat: "Plantation", imgKey: "gal7" },
-          { title: "Paddy Soil Moisture Verification", sub: "వరి పొలంలో తేమ శాతం కొలత", cat: "AWD", imgKey: "gal8" },
-          { title: "Fruit Saplings Field Delivery", sub: "పండ్ల తోటల మొక్కల సరఫరా", cat: "Plantation", imgKey: "gal9" },
-          { title: "Carbon Credit Farmer Enrolment Desk", sub: "రైతుల వివరాల నమోదు & అవగాహన", cat: "Carbon", imgKey: "gal10" },
-          { title: "Women Farmer Self-Help Group Meet", sub: "మహిళా రైతు గ్రూపుల సమావేశం", cat: "Community", imgKey: "gal11" },
-          { title: "Malabar Neem Agroforestry Boundary", sub: "మలబార్ వేప సరిహద్దు పెంపకం", cat: "Field", imgKey: "gal12" },
-          { title: "Soil Health Testing & Leaf Mulch", sub: "నేల ఆరోగ్యం & ఆకుల ఎరువు", cat: "Training", imgKey: "gal13" },
-          { title: "Community Tree Guard Installation", sub: "మొక్కలకు రక్షణ కంచెల ఏర్పాటు", cat: "Plantation", imgKey: "gal14" },
-          { title: "Water Conservation Channel Work", sub: "నీటి సంరక్షణ కాలువల పరిశీలన", cat: "AWD", imgKey: "gal15" },
-          { title: "Field Officer Orientation Kurnool", sub: "కర్నూలు క్షేత్ర అధికారుల శిక్షణ", cat: "Field", imgKey: "gal16" },
-          { title: "Farmer Cooperative Dialogue", sub: "రైతు సహకార సంఘాలతో చర్చలు", cat: "Community", imgKey: "gal17" },
-          { title: "Sapling Health & Growth Check", sub: "మొక్కల ఎదుగుదల పర్యవేక్షణ", cat: "Plantation", imgKey: "gal18" },
-          { title: "Rayalaseema Dryland Field Visit", sub: "రాయలసీమ మెట్ట భూముల పరిశీలన", cat: "Field", imgKey: "gal19" },
-          { title: "Digital Polygon Verification", sub: "డిజిటల్ పాలిగాన్ మ్యాపింగ్ తనిఖీ", cat: "Carbon", imgKey: "gal20" },
-          { title: "Village Leader Consultative Meet", sub: "గ్రామ పెద్దలతో సంప్రదింపులు", cat: "Community", imgKey: "gal21" },
-          { title: "Harvest & Pruning Guidance", sub: "కత్తిరింపు & దిగుబడి నిర్వహణ", cat: "Training", imgKey: "gal22" },
-          { title: "Regional Environmental Seminar", sub: "ప్రాంతీయ పర్యావరణ సదస్సు", cat: "Community", imgKey: "gal23" },
-          { title: "Farmer Certificate Distribution", sub: "పాల్గొన్న రైతులకు ప్రశంసాపత్రాలు", cat: "Field", imgKey: "gal24" }
+          { id: "sgs-1", src: "images/gallery/sgs-activity-01.jpg", title: "Sadana Green Society Activity 01", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 01", desc: "Explore Sadana Green Society’s plantation activities, farmer engagement, field programmes and community work.", descTe: "సదన గ్రీన్ సొసైటీ మొక్కల పెంపకం, రైతులతో అనుసంధానం మరియు సామాజిక కార్యక్రమాలు.", cat: "SGS Activity" },
+          { id: "sgs-2", src: "images/gallery/sgs-activity-02.jpg", title: "Sadana Green Society Activity 02", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 02", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-3", src: "images/gallery/sgs-activity-03.jpg", title: "Sadana Green Society Activity 03", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 03", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-4", src: "images/gallery/sgs-activity-04.jpg", title: "Sadana Green Society Activity 04", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 04", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-5", src: "images/gallery/sgs-activity-05.jpg", title: "Sadana Green Society Activity 05", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 05", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-6", src: "images/gallery/sgs-activity-06.jpg", title: "Sadana Green Society Activity 06", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 06", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-7", src: "images/gallery/sgs-activity-07.jpg", title: "Sadana Green Society Activity 07", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 07", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-8", src: "images/gallery/sgs-activity-08.jpg", title: "Sadana Green Society Activity 08", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 08", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-9", src: "images/gallery/sgs-activity-09.jpg", title: "Sadana Green Society Activity 09", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 09", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-10", src: "images/gallery/sgs-activity-10.jpg", title: "Sadana Green Society Activity 10", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 10", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-11", src: "images/gallery/sgs-activity-11.jpg", title: "Sadana Green Society Activity 11", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 11", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-12", src: "images/gallery/sgs-activity-12.jpg", title: "Sadana Green Society Activity 12", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 12", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-13", src: "images/gallery/sgs-activity-13.jpg", title: "Sadana Green Society Activity 13", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 13", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-14", src: "images/gallery/sgs-activity-14.jpg", title: "Sadana Green Society Activity 14", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 14", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-15", src: "images/gallery/sgs-activity-15.jpg", title: "Sadana Green Society Activity 15", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 15", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-16", src: "images/gallery/sgs-activity-16.jpeg", title: "Sadana Green Society Activity 16", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 16", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-17", src: "images/gallery/sgs-activity-17.jpeg", title: "Sadana Green Society Activity 17", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 17", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-18", src: "images/gallery/sgs-activity-18.jpeg", title: "Sadana Green Society Activity 18", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 18", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-19", src: "images/gallery/sgs-activity-19.jpeg", title: "Sadana Green Society Activity 19", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 19", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "sgs-20", src: "images/gallery/sgs-activity-20.jpeg", title: "Sadana Green Society Activity 20", titleTe: "సదన గ్రీన్ సొసైటీ కార్యక్రమం 20", desc: "SGS field programme photo", descTe: "ఎస్.జి.ఎస్ క్షేత్రస్థాయి కార్యక్రమ ఫోటో", cat: "SGS Activity" },
+          { id: "field-1", src: "images/gallery/field-photos/field-activity-01.jpg", title: "Field Activity 01", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 01", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-2", src: "images/gallery/field-photos/field-activity-02.jpg", title: "Field Activity 02", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 02", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-3", src: "images/gallery/field-photos/field-activity-03.jpg", title: "Field Activity 03", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 03", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-4", src: "images/gallery/field-photos/field-activity-04.jpg", title: "Field Activity 04", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 04", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-5", src: "images/gallery/field-photos/field-activity-05.jpg", title: "Field Activity 05", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 05", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-6", src: "images/gallery/field-photos/field-activity-06.jpg", title: "Field Activity 06", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 06", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-7", src: "images/gallery/field-photos/field-activity-07.jpg", title: "Field Activity 07", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 07", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-8", src: "images/gallery/field-photos/field-activity-08.jpg", title: "Field Activity 08", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 08", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-9", src: "images/gallery/field-photos/field-activity-09.jpg", title: "Field Activity 09", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 09", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-10", src: "images/gallery/field-photos/field-activity-10.jpg", title: "Field Activity 10", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 10", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-11", src: "images/gallery/field-photos/field-activity-11.jpg", title: "Field Activity 11", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 11", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-12", src: "images/gallery/field-photos/field-activity-12.jpg", title: "Field Activity 12", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 12", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-13", src: "images/gallery/field-photos/field-activity-13.jpg", title: "Field Activity 13", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 13", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-14", src: "images/gallery/field-photos/field-activity-14.jpg", title: "Field Activity 14", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 14", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-15", src: "images/gallery/field-photos/field-activity-15.jpg", title: "Field Activity 15", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 15", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-16", src: "images/gallery/field-photos/field-activity-16.jpg", title: "Field Activity 16", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 16", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-17", src: "images/gallery/field-photos/field-activity-17.jpg", title: "Field Activity 17", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 17", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-18", src: "images/gallery/field-photos/field-activity-18.jpg", title: "Field Activity 18", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 18", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-19", src: "images/gallery/field-photos/field-activity-19.jpg", title: "Field Activity 19", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 19", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-20", src: "images/gallery/field-photos/field-activity-20.jpg", title: "Field Activity 20", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 20", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-21", src: "images/gallery/field-photos/field-activity-21.jpg", title: "Field Activity 21", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 21", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-22", src: "images/gallery/field-photos/field-activity-22.jpg", title: "Field Activity 22", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 22", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-23", src: "images/gallery/field-photos/field-activity-23.jpg", title: "Field Activity 23", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 23", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" },
+          { id: "field-24", src: "images/gallery/field-photos/field-activity-24.jpg", title: "Field Activity 24", titleTe: "క్షేత్రస్థాయి కార్యక్రమం 24", desc: "Plantation, farmer engagement and SGS field work", descTe: "మొక్కల పెంపకం, రైతు నిమగ్నత మరియు ఎస్.జి.ఎస్ క్షేత్ర పరిశీలన", cat: "Field Activity" }
         ],
         privacy: {
           badge: "LEGAL & COMPLIANCE • REGD. NO. 129/2021",
@@ -2073,7 +2117,7 @@
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
                 </button>
                 <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="hidden sm:inline-flex items-center gap-2.5 bg-[#54a630] hover:bg-[#468e26] text-white pl-5 pr-2 py-1.5 rounded-full font-bold text-xs tracking-wider uppercase transition shadow-md no-underline">
-                  <span class="font-extrabold">Get Started</span>
+                  <span data-cms-key="global.headerCtaText" class="font-extrabold">${CMS.global.headerCtaText || "Get Started"}</span>
                   <span class="w-7 h-7 rounded-full bg-white text-[#54a630] flex items-center justify-center font-bold">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                   </span>
@@ -2295,7 +2339,7 @@
           <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
             <!-- Top Row: Logo & Horizontal Nav Links -->
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-10 border-b border-gray-200/80">
-              <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-3 no-underline">
+              <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-3.5 no-underline flex-shrink-0 w-auto">
                 <img data-cms-img="logoEmblem" src="${imgUrl('logoEmblem')}" alt="Sadana Green Society Logo" class="w-11 h-11 rounded-full object-contain p-0.5 bg-white ring-1 ring-gray-200 flex-shrink-0 shadow-sm" />
                 <div>
                   <div class="font-extrabold text-lg text-[#162219] tracking-tight leading-tight">${CMS.global.orgName}</div>
@@ -2303,19 +2347,24 @@
                 </div>
               </a>
 
-              <div class="flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs font-extrabold text-[#162219] tracking-wider uppercase">
-                <a href="${routeUrl('home')}" data-nav="home" class="hover:text-[#54a630] transition">HOME</a>
-                <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="hover:text-[#54a630] transition">AGROFORESTRY</a>
-                <a href="${routeUrl('our-journey')}" data-nav="our-journey" class="hover:text-[#54a630] transition">OUR JOURNEY</a>
-                <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="hover:text-[#54a630] transition">CARBON CREDITS</a>
-                <a href="${routeUrl('awd')}" data-nav="awd" class="hover:text-[#54a630] transition">AWD</a>
-                <a href="${routeUrl('species')}" data-nav="species" class="hover:text-[#54a630] transition">SPECIES</a>
-                <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="hover:text-[#54a630] transition">PLANTATION</a>
-                <a href="${routeUrl('environment')}" data-nav="environment" class="hover:text-[#54a630] transition">ENVIRONMENT</a>
-                <a href="${routeUrl('about')}" data-nav="about" class="hover:text-[#54a630] transition">ABOUT</a>
-                <a href="${routeUrl('gallery')}" data-nav="gallery" class="hover:text-[#54a630] transition">GALLERY</a>
-                <a href="${routeUrl('news')}" data-nav="news" class="hover:text-[#54a630] transition">NEWS</a>
-                <a href="${routeUrl('contact')}" data-nav="contact" class="hover:text-[#54a630] transition">CONTACT</a>
+              <!-- Balanced Two-Row Links Layout -->
+              <div class="flex flex-col gap-3 items-start lg:items-end text-xs font-extrabold text-[#162219] tracking-wider uppercase">
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                  <a href="${routeUrl('home')}" data-nav="home" class="hover:text-[#54a630] transition">HOME</a>
+                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="hover:text-[#54a630] transition">AGROFORESTRY</a>
+                  <a href="${routeUrl('our-journey')}" data-nav="our-journey" class="hover:text-[#54a630] transition">OUR JOURNEY</a>
+                  <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="hover:text-[#54a630] transition">CARBON CREDITS</a>
+                  <a href="${routeUrl('awd')}" data-nav="awd" class="hover:text-[#54a630] transition">AWD</a>
+                  <a href="${routeUrl('species')}" data-nav="species" class="hover:text-[#54a630] transition">SPECIES</a>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                  <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="hover:text-[#54a630] transition">PLANTATION</a>
+                  <a href="${routeUrl('environment')}" data-nav="environment" class="hover:text-[#54a630] transition">ENVIRONMENT</a>
+                  <a href="${routeUrl('about')}" data-nav="about" class="hover:text-[#54a630] transition">ABOUT</a>
+                  <a href="${routeUrl('gallery')}" data-nav="gallery" class="hover:text-[#54a630] transition">GALLERY</a>
+                  <a href="${routeUrl('news')}" data-nav="news" class="hover:text-[#54a630] transition">NEWS</a>
+                  <a href="${routeUrl('contact')}" data-nav="contact" class="hover:text-[#54a630] transition">CONTACT</a>
+                </div>
               </div>
             </div>
 
@@ -2549,65 +2598,73 @@
           ${renderHeroMediaLayer('home', 'heroAerial')}
           ${renderHeader()}
 
-          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-14 pb-16 lg:pt-20 lg:pb-20">
-            <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
-              <!-- Left Hero Text -->
-              <div class="lg:col-span-6">
-                <h1 data-cms-key="home.heroTitle" class="hero-title-lg text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.1] tracking-tight mb-5">
-                  ${h.heroTitle || 'Sustainable Farming for a Thriving Future'}
-                </h1>
-                <p data-cms-key="home.heroSubtitle" class="text-white/80 text-sm sm:text-[15px] leading-relaxed mb-8 max-w-xl">
-                  ${h.heroSubtitle || 'We empower farmers with sustainable practices, quality seeds, and modern technologies to cultivate abundant harvests, support communities, protect resources, and ensure global food security.'}
-                </p>
-                <div class="flex flex-wrap items-center gap-6">
-                  <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="cta-pill no-underline">
-                    <span data-cms-key="home.ctaPrimary">${h.ctaPrimary || 'Explore Solutions'}</span>
-                    ${arrowCircleSvg()}
-                  </a>
-                  <a href="${routeUrl('contact')}" data-nav="contact" class="px-6 py-2.5 rounded-full border border-white/30 text-white font-bold text-xs tracking-wider uppercase hover:bg-white/10 transition no-underline">
-                    Contact Us
-                  </a>
-                  <div class="flex items-center gap-2 text-sm">
-                    <span class="font-extrabold text-lg">${h.heroRating || '4.9'}</span>
-                    <span class="text-[#7fd858]">★</span>
-                    <span class="text-white/75 text-xs">${h.heroRatingText || '1,20,000+ enrolled farmers'}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Hero Cards (Video Thumbnail + Frosted Feature Card) -->
-              <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="relative rounded-[22px] overflow-hidden h-52 sm:h-56 cursor-pointer group" onclick="openVideoModal('Sustainable Farming in Action', '${imgUrl('womanGreenhouse')}')">
-                  <img data-cms-img="womanGreenhouse" src="${imgUrl('womanGreenhouse')}" alt="Farmer in field" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <span class="play-btn-overlay">
-                      <svg class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </span>
-                  </div>
-                </div>
-
-                <div class="frosted-dark rounded-[22px] p-6 flex flex-col justify-between h-52 sm:h-56">
-                  <span class="w-10 h-10 rounded-full bg-white text-[#162219] flex items-center justify-center">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-8m0 0C12 8.5 9 6 5.5 6c0 3.5 2.5 6 6.5 6zm0 0c0-3.5 3-6 6.5-6 0 3.5-2.5 6-6.5 6z"/></svg>
-                  </span>
-                  <div>
-                    <h3 data-cms-key="home.heroCardTitle" class="font-bold text-sm text-white mb-2">${h.heroCardTitle || 'Field-First Farmer Support'}</h3>
-                    <p data-cms-key="home.heroCardDesc" class="text-xs text-white/75 leading-relaxed">${h.heroCardDesc || 'Working directly with farming families across Andhra Pradesh, Telangana and Karnataka.'}</p>
-                  </div>
+          <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28">
+            <div class="max-w-3xl">
+              <h1 data-cms-key="home.heroTitle" class="hero-title-lg text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.1] tracking-tight mb-5">
+                ${h.heroTitle || 'Sustainable Farming for a Thriving Future'}
+              </h1>
+              <p data-cms-key="home.heroSubtitle" class="secondary-text text-white/85 text-[18px] leading-relaxed mb-8 max-w-2xl font-normal">
+                ${h.heroSubtitle || 'We empower farmers with sustainable practices, quality seeds, and modern technologies to cultivate abundant harvests, support communities, protect resources, and ensure global food security.'}
+              </p>
+              <div class="flex flex-wrap items-center gap-6">
+                <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="cta-pill no-underline">
+                  <span data-cms-key="home.ctaPrimary">${h.ctaPrimary || 'Explore Solutions'}</span>
+                  ${arrowCircleSvg()}
+                </a>
+                <a href="${routeUrl('contact')}" data-nav="contact" class="px-7 py-3 rounded-full border border-white/30 text-white font-bold text-xs tracking-wider uppercase hover:bg-white/10 transition no-underline">
+                  Contact Us
+                </a>
+                <div class="flex items-center gap-2 text-sm bg-black/25 backdrop-blur-md px-4 py-2 rounded-full border border-white/15">
+                  <span class="font-extrabold text-lg text-[#7fd858]">${h.heroRating || '4.9'}</span>
+                  <span class="text-[#7fd858]">★</span>
+                  <span class="text-white/85 text-xs font-semibold">${h.heroRatingText || '1,20,000+ enrolled farmers'}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Bottom Partner Logo Bar -->
-          <div class="relative z-10 border-t border-white/10 bg-[#0d1911]/80 backdrop-blur-md py-6">
-            <div class="max-w-[1220px] mx-auto px-5 sm:px-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center justify-items-center opacity-75 text-white text-xs font-bold tracking-wider">
-              <div class="flex items-center gap-2"><span class="w-5 h-5 rounded bg-white/20 flex items-center justify-center">✦</span><span>Logoipsum</span></div>
-              <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">◉</span><span>LOGOIPSUM</span></div>
-              <div class="flex items-center gap-2"><span class="w-5 h-5 rounded bg-white/20 flex items-center justify-center">❖</span><span>logoipsum</span></div>
-              <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">❂</span><span>Logoipsum</span></div>
-              <div class="flex items-center gap-2"><span class="w-5 h-5 rounded bg-white/20 flex items-center justify-center">▲</span><span>LOGOIPSUM</span></div>
-              <div class="flex items-center gap-2"><span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">✿</span><span>Logoipsum</span></div>
+          <!-- Bottom 4 Core Programme Pillars Bar (Agroforestry, Carbon, AWD, Livelihoods) -->
+          <div class="relative z-10 border-t border-white/10 bg-[#0d1911]/90 backdrop-blur-md py-5 sm:py-6">
+            <div class="max-w-[1220px] mx-auto px-5 sm:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-center">
+              <!-- Agroforestry and plantations -->
+              <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition border border-white/10 no-underline text-white group">
+                <div class="w-10 h-10 rounded-lg bg-[#54a630]/20 text-[#7fd858] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-8m0 0C12 8.5 9 6 5.5 6c0 3.5 2.5 6 6.5 6zm0 0c0-3.5 3-6 6.5-6 0 3.5-2.5 6-6.5 6z"/></svg>
+                </div>
+                <div>
+                  <div class="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#7fd858] transition leading-snug">Agroforestry and plantations</div>
+                </div>
+              </a>
+
+              <!-- Carbon credit programmes -->
+              <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition border border-white/10 no-underline text-white group">
+                <div class="w-10 h-10 rounded-lg bg-[#54a630]/20 text-[#7fd858] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20M2 12h20"/></svg>
+                </div>
+                <div>
+                  <div class="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#7fd858] transition leading-snug">Carbon credit programmes</div>
+                </div>
+              </a>
+
+              <!-- Alternate Wetting and Drying -->
+              <a href="${routeUrl('awd')}" data-nav="awd" class="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition border border-white/10 no-underline text-white group">
+                <div class="w-10 h-10 rounded-lg bg-[#54a630]/20 text-[#7fd858] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <div>
+                  <div class="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#7fd858] transition leading-snug">Alternate Wetting and Drying</div>
+                </div>
+              </a>
+
+              <!-- Farmer livelihoods -->
+              <a href="${routeUrl('our-journey')}" data-nav="our-journey" class="flex items-center gap-3.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition border border-white/10 no-underline text-white group">
+                <div class="w-10 h-10 rounded-lg bg-[#54a630]/20 text-[#7fd858] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                </div>
+                <div>
+                  <div class="text-[15px] sm:text-[16px] font-bold text-white group-hover:text-[#7fd858] transition leading-snug">Farmer livelihoods</div>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -3308,25 +3365,31 @@
           </div>
         </section>
 
-        <!-- EXPLORE THE PLANTS CARDS (From why agriforect.pdf) -->
+        <!-- EXPLORE THE PLANTS CARDS (Segregated Forest & Fruit with Direct Navigation) -->
         <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl p-8 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-[#edf5eb] rounded-3xl p-8 sm:p-10 border border-[#cfe3cc] shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
               <div>
-                <div class="text-2xl mb-3">🌳</div>
-                <h3 class="font-extrabold text-lg text-[#162219] mb-2">Forest species</h3>
-                <p class="text-xs text-gray-500 leading-relaxed mb-6">Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul and Red sanders.</p>
+                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4">🌳</div>
+                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Forest Species (8 Trees)</h3>
+                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-8">Teak, Melia dubia, Casuarina, Pongamia, Neem, Bamboo, Subabul and Red sanders for timber, windbreak and carbon sequestration.</p>
               </div>
-              <a href="${routeUrl('species')}#sp-1" data-nav="species" class="text-xs font-bold text-[#54a630] hover:text-[#468e26]">See forest species &rarr;</a>
+              <a href="${routeUrl('species')}#forest-species-section" onclick="navigateTo('species'); setTimeout(() => document.getElementById('forest-species-section')?.scrollIntoView({behavior:'smooth'}), 120);" data-nav="species" class="inline-flex items-center gap-2 text-base font-bold text-[#54a630] hover:text-[#468e26] transition group-hover:translate-x-1 duration-200">
+                <span>See forest species</span>
+                <span class="text-lg">&rarr;</span>
+              </a>
             </div>
 
-            <div class="bg-white rounded-2xl p-8 border border-gray-200/90 shadow-sm flex flex-col justify-between">
+            <div class="bg-[#edf5eb] rounded-3xl p-8 sm:p-10 border border-[#cfe3cc] shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
               <div>
-                <div class="text-2xl mb-3">🥭</div>
-                <h3 class="font-extrabold text-lg text-[#162219] mb-2">Fruit species</h3>
-                <p class="text-xs text-gray-500 leading-relaxed mb-6">Mango, Guava, Sapota, Custard apple, Amla, Lemon, Coconut and Cashew.</p>
+                <div class="w-12 h-12 rounded-2xl bg-[#f4a100]/20 text-[#c27800] text-2xl flex items-center justify-center mb-4">🥭</div>
+                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Fruit Species (8 Trees)</h3>
+                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-8">Mango, Guava, Sapota, Custard apple, Amla, Lemon, Coconut and Cashew for annual and recurring household income.</p>
               </div>
-              <a href="${routeUrl('species')}#sp-9" data-nav="species" class="text-xs font-bold text-[#54a630] hover:text-[#468e26]">See fruit species &rarr;</a>
+              <a href="${routeUrl('species')}#fruit-species-section" onclick="navigateTo('species'); setTimeout(() => document.getElementById('fruit-species-section')?.scrollIntoView({behavior:'smooth'}), 120);" data-nav="species" class="inline-flex items-center gap-2 text-base font-bold text-[#54a630] hover:text-[#468e26] transition group-hover:translate-x-1 duration-200">
+                <span>See fruit species</span>
+                <span class="text-lg">&rarr;</span>
+              </a>
             </div>
           </div>
         </section>
@@ -3694,20 +3757,8 @@
       let activeTab = state.speciesTab || kind || "all";
       if (!["all", "forest", "fruit"].includes(activeTab)) activeTab = "all";
 
-      let list = [];
-      if (activeTab === "forest") list = CMS.forestSpecies || [];
-      else if (activeTab === "fruit") list = CMS.fruitSpecies || [];
-      else list = [...(CMS.forestSpecies || []), ...(CMS.fruitSpecies || [])];
-
-      const title = activeTab === "forest"
-        ? "Forest Species for Agroforestry (8 Trees)"
-        : (activeTab === "fruit" ? "Fruit Species for Agroforestry (8 Trees)" : "16 Promoted Tree & Fruit Species");
-
-      const sub = activeTab === "forest"
-        ? "Timber, pulpwood and soil-building trees we promote on farmland, with their benefits and uses."
-        : (activeTab === "fruit"
-          ? "High-yielding fruit tree varieties tailored for diverse soils across Andhra Pradesh, Telangana, and Karnataka to ensure recurring farmer revenue."
-          : "Complete bilingual directory of 8 timber/forest species and 8 high-yield fruit species promoted by Sadana Green Society for sustainable agroforestry.");
+      const forestList = CMS.forestSpecies || [];
+      const fruitList = CMS.fruitSpecies || [];
 
       return `
         <!-- HERO SECTION -->
@@ -3719,18 +3770,20 @@
             <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
               <div class="lg:col-span-7">
                 <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Agroforestry Species Directory</span>
-                <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">${title}</h1>
-                <p class="text-white/80 text-xs sm:text-sm leading-relaxed max-w-xl">${sub}</p>
+                <h1 class="hero-title-lg text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight mb-4">16 Promoted Tree &amp; Fruit Species</h1>
+                <p class="secondary-text text-white/85 text-[18px] leading-relaxed max-w-xl font-normal">
+                  Complete segregated directory of 8 timber/forest species and 8 high-yield fruit species promoted by Sadana Green Society for sustainable agroforestry.
+                </p>
               </div>
 
               <div class="lg:col-span-5 flex flex-wrap lg:justify-end gap-3">
                 <button type="button" onclick="setSpeciesFilter('all')" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'all' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
                   All 16 Species
                 </button>
-                <button type="button" onclick="setSpeciesFilter('forest')" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'forest' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
+                <button type="button" onclick="setSpeciesFilter('forest'); setTimeout(() => document.getElementById('forest-species-section')?.scrollIntoView({behavior:'smooth'}), 80);" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'forest' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
                   🌳 8 Forest Species
                 </button>
-                <button type="button" onclick="setSpeciesFilter('fruit')" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'fruit' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
+                <button type="button" onclick="setSpeciesFilter('fruit'); setTimeout(() => document.getElementById('fruit-species-section')?.scrollIntoView({behavior:'smooth'}), 80);" class="px-5 py-2.5 rounded-full font-bold text-xs transition ${activeTab === 'fruit' ? 'bg-[#54a630] text-white shadow-md' : 'bg-white/10 hover:bg-white/20 text-white'}">
                   🥭 8 Fruit Species
                 </button>
               </div>
@@ -3738,76 +3791,144 @@
           </div>
         </section>
 
-        <!-- SPECIES DIRECTORY GRID -->
-        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
-          <div class="flex flex-wrap gap-2 mb-10">
-            ${list.map(s => `
-              <a href="#sp-${s.id}" onclick="event.preventDefault(); document.getElementById('sp-${s.id}')?.scrollIntoView({behavior:'smooth'});" class="px-4 py-2 rounded-full bg-[#edf5ea] border border-[#d0e3cb] hover:bg-[#54a630] hover:text-white text-xs font-bold text-[#162219] transition no-underline shadow-sm">
-                ${s.name} <span class="telugu-text opacity-75">(${s.telugu})</span>
+        <!-- QUICK JUMP PILLS -->
+        <section class="py-6 bg-[#f4faf2] border-b border-[#cfe3cc]">
+          <div class="max-w-[1220px] mx-auto px-5 sm:px-8 flex flex-wrap items-center justify-between gap-4">
+            <div class="text-xs font-bold text-[#162219]">Jump to Segregated Category:</div>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="#forest-species-section" onclick="event.preventDefault(); document.getElementById('forest-species-section')?.scrollIntoView({behavior:'smooth'});" class="px-4 py-2 rounded-full bg-white border border-[#cfe3cc] text-xs font-bold text-[#162219] hover:bg-[#54a630] hover:text-white transition shadow-sm no-underline">
+                🌳 Forest &amp; Timber (8 Species)
               </a>
-            `).join('')}
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            ${list.map(s => `
-              <div id="sp-${s.id}" class="bg-[#edf5eb] border border-[#cfe3cc] rounded-[28px] p-7 sm:p-9 shadow-sm hover:shadow-xl hover:border-[#54a630] transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div class="flex items-start justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
-                    <div>
-                      <div class="flex items-center gap-2 mb-1">
-                        <span class="w-8 h-8 rounded-full bg-white border border-[#cfe3cc] text-[#54a630] flex items-center justify-center font-extrabold text-xs">
-                          ${s.id}
-                        </span>
-                        <h3 class="text-xl font-extrabold text-[#162219]">${s.name}</h3>
-                      </div>
-                      <div class="text-sm font-bold text-[#54a630] telugu-text">${s.telugu}</div>
-                      ${s.botanical ? `<div class="text-xs text-gray-400 italic">${s.botanical}</div>` : ''}
-                    </div>
-                    <span class="inline-block px-3 py-1 rounded-full bg-white border border-[#cfe3cc] text-[#162219] text-[11px] font-bold">
-                      ${s.category || (activeTab === 'forest' ? 'Forest / Timber' : 'Fruit')}
-                    </span>
-                  </div>
-
-                  <div class="space-y-3 text-xs sm:text-[13px] text-gray-600 mb-6">
-                    <div><strong class="text-[#162219]">Best for:</strong> ${s.fit}</div>
-                    <div><strong class="text-[#162219]">Maturity / Harvest:</strong> ${s.maturity}</div>
-                    
-                    ${Array.isArray(s.benefits) ? `
-                      <div>
-                        <strong class="text-[#162219] block mb-1">Benefits:</strong>
-                        <ul class="space-y-1 pl-4">
-                          ${s.benefits.map(b => `<li class="list-disc">${b}</li>`).join('')}
-                        </ul>
-                      </div>
-                    ` : `<div><strong class="text-[#162219]">Benefits:</strong> ${s.benefits}</div>`}
-
-                    ${s.uses ? `
-                      <div>
-                        <strong class="text-[#162219] block mb-1">Main uses:</strong>
-                        <div class="flex flex-wrap gap-1.5">
-                          ${(Array.isArray(s.uses) ? s.uses : [s.uses]).map(u => `<span class="px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700 text-[11px] font-medium">${u}</span>`).join('')}
-                        </div>
-                      </div>
-                    ` : ''}
-
-                    ${s.note ? `
-                      <div class="bg-[#fef9ec] border border-[#f2a922]/40 rounded-xl p-3 text-[11px] text-[#8a5b00]">
-                        <strong>Note:</strong> ${s.note}
-                      </div>
-                    ` : ''}
-                  </div>
-                </div>
-
-                <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <span class="text-[11px] text-gray-500">AP &bull; TG &bull; Karnataka</span>
-                  <a href="${routeUrl('new-plantation')}" data-nav="new-plantation" class="text-xs font-extrabold text-[#54a630] hover:text-[#468e26] flex items-center gap-1 no-underline">
-                    <span>Request Saplings &rarr;</span>
-                  </a>
-                </div>
-              </div>
-            `).join('')}
+              <a href="#fruit-species-section" onclick="event.preventDefault(); document.getElementById('fruit-species-section')?.scrollIntoView({behavior:'smooth'});" class="px-4 py-2 rounded-full bg-white border border-[#cfe3cc] text-xs font-bold text-[#162219] hover:bg-[#54a630] hover:text-white transition shadow-sm no-underline">
+                🥭 High-Yield Fruit (8 Species)
+              </a>
+            </div>
           </div>
         </section>
+
+        ${(activeTab === 'all' || activeTab === 'forest') ? `
+          <!-- SECTION 1: 8 FOREST & TIMBER SPECIES -->
+          <section id="forest-species-section" class="pt-16 pb-14 max-w-[1220px] mx-auto px-5 sm:px-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-gray-200">
+              <div>
+                <span class="inline-block px-3 py-1 rounded-full bg-[#54a630]/15 text-[#54a630] font-bold text-xs tracking-wider uppercase mb-2">🌳 Category 1 • Forest &amp; Timber</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#162219]">Forest Species for Agroforestry (8 Trees)</h2>
+                <p class="secondary-text text-gray-600 text-[18px] mt-1 font-normal">Timber, pulpwood and soil-building trees we promote on farmland, with their benefits and uses.</p>
+              </div>
+              <span class="text-xs font-bold text-gray-500 bg-gray-100 px-3.5 py-1.5 rounded-full">8 Verified Species</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              ${forestList.map((s, idx) => `
+                <div id="sp-${s.id}" class="bg-[#edf5eb] border border-[#cfe3cc] rounded-[28px] p-7 sm:p-9 shadow-sm hover:shadow-xl hover:border-[#54a630] transition-all duration-300 flex flex-col justify-between group">
+                  <div>
+                    <div class="flex items-start justify-between gap-4 mb-3">
+                      <div class="flex items-center gap-3">
+                        <span class="w-9 h-9 rounded-full bg-white text-[#54a630] border border-[#cfe3cc] font-extrabold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                          ${idx + 1}
+                        </span>
+                        <div>
+                          <h3 class="text-2xl font-extrabold text-[#162219] tracking-tight group-hover:text-[#54a630] transition">${s.name}</h3>
+                          <div class="text-[#54a630] font-bold text-base telugu-text">${s.telugu || ''}</div>
+                        </div>
+                      </div>
+                      <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/80 text-gray-600 border border-[#cfe3cc]">Forest</span>
+                    </div>
+
+                    <div class="text-xs text-gray-500 italic mb-6 font-mono">${s.botanical || ''}</div>
+
+                    <div class="space-y-4 secondary-text text-[18px] text-[#162219] leading-relaxed mb-6 font-normal">
+                      <div>
+                        <strong class="font-bold text-[#162219]">Best for:</strong>
+                        <span class="text-gray-700">${s.bestFor || ''}</span>
+                      </div>
+                      <div>
+                        <strong class="font-bold text-[#162219]">Maturity / Harvest:</strong>
+                        <span class="text-gray-700">${s.harvest || ''}</span>
+                      </div>
+                      <div>
+                        <strong class="font-bold text-[#162219]">Benefits:</strong>
+                        <ul class="list-disc pl-5 mt-2 space-y-1.5 text-gray-700">
+                          ${(s.benefits || []).map(b => `<li>${b}</li>`).join('')}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6 border-t border-[#cfe3cc]/60 flex items-center justify-between">
+                    <a href="${routeUrl('new-plantation')}?species=${encodeURIComponent(s.name)}" data-nav="new-plantation" class="inline-flex items-center gap-2 text-xs font-bold text-[#54a630] hover:text-[#468e26] transition no-underline group-hover:translate-x-1 duration-200">
+                      <span>Apply for this sapling</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <span class="text-[11px] text-gray-500 font-medium">Free saplings &bull; SGS Nursery</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        ` : ''}
+
+        ${(activeTab === 'all' || activeTab === 'fruit') ? `
+          <!-- SECTION 2: 8 HIGH-YIELD FRUIT TREES -->
+          <section id="fruit-species-section" class="pt-10 pb-20 max-w-[1220px] mx-auto px-5 sm:px-8 scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-4 border-b border-gray-200">
+              <div>
+                <span class="inline-block px-3 py-1 rounded-full bg-[#f4a100]/15 text-[#c27800] font-bold text-xs tracking-wider uppercase mb-2">🥭 Category 2 • High-Yield Fruit</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#162219]">Fruit Species for Agroforestry (8 Trees)</h2>
+                <p class="secondary-text text-gray-600 text-[18px] mt-1 font-normal">High-yielding fruit tree varieties tailored for diverse soils to ensure recurring farmer revenue.</p>
+              </div>
+              <span class="text-xs font-bold text-gray-500 bg-gray-100 px-3.5 py-1.5 rounded-full">8 Verified Species</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              ${fruitList.map((s, idx) => `
+                <div id="sp-${s.id}" class="bg-[#edf5eb] border border-[#cfe3cc] rounded-[28px] p-7 sm:p-9 shadow-sm hover:shadow-xl hover:border-[#54a630] transition-all duration-300 flex flex-col justify-between group">
+                  <div>
+                    <div class="flex items-start justify-between gap-4 mb-3">
+                      <div class="flex items-center gap-3">
+                        <span class="w-9 h-9 rounded-full bg-white text-[#54a630] border border-[#cfe3cc] font-extrabold text-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                          ${idx + 1}
+                        </span>
+                        <div>
+                          <h3 class="text-2xl font-extrabold text-[#162219] tracking-tight group-hover:text-[#54a630] transition">${s.name}</h3>
+                          <div class="text-[#54a630] font-bold text-base telugu-text">${s.telugu || ''}</div>
+                        </div>
+                      </div>
+                      <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/80 text-gray-600 border border-[#cfe3cc]">Fruit</span>
+                    </div>
+
+                    <div class="text-xs text-gray-500 italic mb-6 font-mono">${s.botanical || ''}</div>
+
+                    <div class="space-y-4 secondary-text text-[18px] text-[#162219] leading-relaxed mb-6 font-normal">
+                      <div>
+                        <strong class="font-bold text-[#162219]">Best for:</strong>
+                        <span class="text-gray-700">${s.bestFor || ''}</span>
+                      </div>
+                      <div>
+                        <strong class="font-bold text-[#162219]">Maturity / Harvest:</strong>
+                        <span class="text-gray-700">${s.harvest || ''}</span>
+                      </div>
+                      <div>
+                        <strong class="font-bold text-[#162219]">Benefits:</strong>
+                        <ul class="list-disc pl-5 mt-2 space-y-1.5 text-gray-700">
+                          ${(s.benefits || []).map(b => `<li>${b}</li>`).join('')}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pt-6 border-t border-[#cfe3cc]/60 flex items-center justify-between">
+                    <a href="${routeUrl('new-plantation')}?species=${encodeURIComponent(s.name)}" data-nav="new-plantation" class="inline-flex items-center gap-2 text-xs font-bold text-[#54a630] hover:text-[#468e26] transition no-underline group-hover:translate-x-1 duration-200">
+                      <span>Apply for this sapling</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <span class="text-[11px] text-gray-500 font-medium">Free saplings &bull; SGS Nursery</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        ` : ''}
 
         <!-- YELLOW PARTNERSHIP CTA BANNER -->
         ${renderYellowCtaBanner()}
@@ -3819,104 +3940,7 @@
       renderApp();
     }
 
-    // =========================================================================
-    // 6. ENVIRONMENT & ECOLOGICAL IMPACT (100% Old Site Parity: 6 Pillars + Farmer Checklist)
-    // =========================================================================
-    function renderEnvironmentPage() {
-      const env = CMS.environment || {};
-      const pillars = env.pillars || [];
-      const checklist = env.whatFarmerCanDo || [];
 
-      return `
-        <!-- HERO SECTION -->
-        <section class="relative bg-[#111e15] text-white pb-16">
-          ${renderHeroMediaLayer('environment', 'sol3')}
-          ${renderHeader()}
-
-          <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-4 text-center">
-            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">${env.heroTitle || 'Environment'}</h1>
-            <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
-              ${env.heroSubtitle || 'Healthy land, water and air are the base of farming. Everything SGS does is built around protecting them.'}
-            </p>
-          </div>
-        </section>
-
-        <!-- HOW OUR WORK HELPS THE ENVIRONMENT (6 Pillars from Environtment.pdf) -->
-        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
-          <div class="text-center max-w-2xl mx-auto mb-14">
-            <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold mb-3">
-              How our work helps the environment
-            </h2>
-            <p class="text-xs text-gray-500 leading-relaxed">
-              Six areas where farm-level action makes a real difference.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            ${pillars.map(c => `
-              <div class="bg-[#edf5ea] rounded-3xl p-7 border border-[#d0e3cc] shadow-sm hover:shadow-md hover:border-[#54a630] transition duration-300 flex flex-col justify-between group">
-                <div>
-                  <div class="h-40 rounded-xl overflow-hidden mb-4 bg-gray-100">
-                    <img src="${imgUrl(c.imgKey || 'gal1')}" alt="${c.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  </div>
-                  <h3 class="font-extrabold text-base text-[#162219] mb-2">${c.title}</h3>
-                  <p class="text-xs text-gray-500 leading-relaxed mb-4">${c.desc}</p>
-                </div>
-                <a href="${routeUrl(c.nav || 'agroforestry')}" data-nav="${c.nav || 'agroforestry'}" class="text-xs font-bold text-[#54a630] hover:text-[#468e26] flex items-center gap-1">
-                  <span>Explore programme &rarr;</span>
-                </a>
-              </div>
-            `).join('')}
-          </div>
-        </section>
-
-        <!-- WHAT ANY FARMER CAN DO (Checklist from Environtment.pdf) -->
-        <section class="py-16 bg-[#f8faf8] border-y border-gray-100">
-          <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-              <div class="lg:col-span-5">
-                <span class="text-[#54a630] font-bold text-xs tracking-wider uppercase mb-1 block">Farmer Action</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-[#162219] mb-3">What any farmer can do</h2>
-                <p class="text-xs text-gray-500 leading-relaxed">Simple steps that help the environment and the farm at the same time.</p>
-              </div>
-
-              <div class="lg:col-span-7 space-y-3">
-                ${checklist.map(item => `
-                  <div class="bg-white rounded-xl p-4 border border-gray-200/80 shadow-sm flex items-center gap-3">
-                    <span class="w-5 h-5 rounded-full bg-[#54a630] text-white flex items-center justify-center text-xs font-bold flex-shrink-0">&check;</span>
-                    <span class="text-xs text-gray-700 font-medium">${item}</span>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- CLIMATE ACTION YOU CAN MEASURE BANNER (From Environtment.pdf) -->
-        <section class="py-16 bg-[#122316] text-white">
-          <div class="max-w-[1220px] mx-auto px-5 sm:px-8 flex flex-col md:flex-row md:items-center justify-between gap-8">
-            <div>
-              <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">Climate action you can measure</h2>
-              <p class="text-xs text-white/70 max-w-lg leading-relaxed">${env.climateActionMeasure || ''}</p>
-            </div>
-            <div class="flex items-center gap-4">
-              <a href="${routeUrl('carbon-credits')}" data-nav="carbon-credits" class="px-6 py-3 rounded-full bg-[#54a630] hover:bg-[#468e26] text-white text-xs font-bold uppercase tracking-wider transition no-underline">
-                Carbon Credits
-              </a>
-              <a href="${routeUrl('awd')}" data-nav="awd" class="px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider transition no-underline">
-                AWD in Paddy
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- YELLOW PARTNERSHIP CTA BANNER -->
-        ${renderYellowCtaBanner()}
-      `;
-    }
-
-    // =========================================================================
-    // 7. NEW PLANTATION APPLICATION (100% Old Site Parity: Full Fields, Telugu Declaration)
     // =========================================================================
     function renderPlantationPage() {
       const pl = CMS.plantation || {};
@@ -3948,23 +3972,7 @@
         </section>
 
         <section class="py-14 max-w-[960px] mx-auto px-5 sm:px-8">
-          <!-- Benefits Notice Banner -->
-          ${fc.benefitsNotice ? `
-            <div class="bg-[#f0f8ec] border border-[#54a630]/30 rounded-2xl p-4 sm:p-5 mb-6 flex items-center gap-3 text-xs text-[#204a11] font-bold">
-              <span class="text-lg">🌱</span>
-              <div>${fc.benefitsNotice} &bull; Districts covered: <span class="font-normal text-gray-700">${fc.districts}</span></div>
-            </div>
-          ` : ''}
-
-          <!-- Guidelines Card -->
-          <div class="soft-card p-6 sm:p-8 mb-8 border border-gray-200">
-            <h2 class="text-lg font-extrabold text-[#162219] mb-3">${pl.guidelinesTitle || 'Farmer Eligibility & Programme Guidelines'}</h2>
-            <div class="space-y-3 text-xs text-gray-600 leading-relaxed mb-4">
-              <p>${pl.guidelinesP1 || ''}</p>
-              <p>${pl.guidelinesP2 || ''}</p>
-            </div>
-            <div class="text-[11px] font-bold text-[#54a630]">${pl.formIntro || ''}</div>
-          </div>
+          <!-- Top Banners Removed as requested -->
 
           <form onsubmit="handlePlantationFormSubmit(event)" class="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200/90 shadow-sm space-y-8">
             <!-- Part 1: Applicant Details -->
@@ -4514,10 +4522,106 @@
     // =========================================================================
     // 11. PHOTO GALLERY (24 Authentic Photos with Category Filters)
     // =========================================================================
+    
+    // =========================================================================
+    // ENVIRONMENTAL IMPACT & CLIMATE RESILIENCE PAGE
+    // =========================================================================
+    function renderEnvironmentPage() {
+      return `
+        <!-- HERO SECTION -->
+        <section class="relative bg-[#111e15] text-white pb-16">
+          ${renderHeroMediaLayer('environment', 'sol3')}
+          ${renderHeader()}
+
+          <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-4 text-center">
+            <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Ecological Stewardship</span>
+            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">Environmental Impact &amp; Climate Resilience</h1>
+            <div class="text-lg sm:text-xl font-bold text-[#7fd858] telugu-text mb-3">పర్యావరణ పరిరక్షణ మరియు వాతావరణ మార్పుల నిరోధకత</div>
+            <p class="secondary-text text-white/85 text-[18px] leading-relaxed font-normal">
+              How agroforestry, AWD water conservation, and community biodiversity projects fight drought, build fertile topsoil, and sequester carbon across southern India.
+            </p>
+          </div>
+        </section>
+
+        <!-- 4 IMPACT PILLARS -->
+        <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Soil Health -->
+            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4">🌱</div>
+                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Soil Health &amp; Organic Regeneration</h3>
+                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Leaf litter from timber and fruit trees supplies continuous organic matter, improving cation-exchange capacity, microbial health, and water retention in dryland soils.</p>
+                <div class="text-sm text-[#54a630] font-bold telugu-text">సేంద్రీయ ఎరువులతో నేల సారవంతం మరియు తేమ రక్షణ.</div>
+              </div>
+            </div>
+
+            <!-- Water Conservation -->
+            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4">💧</div>
+                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Water Conservation &amp; Aquifer Recharge</h3>
+                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Alternate Wetting and Drying (AWD) saves up to 30% irrigation water in paddy cultivation while deep tree roots channel monsoon rains directly into groundwater reserves.</p>
+                <div class="text-sm text-[#54a630] font-bold telugu-text">AWD పద్ధతి ద్వారా 30% నీటి ఆదా మరియు భూగర్భ జలాల పెరుగుదల.</div>
+              </div>
+            </div>
+
+            <!-- Carbon Sequestration -->
+            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4">🌍</div>
+                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Atmospheric Carbon Sequestration</h3>
+                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Fast-growing timber like Melia dubia and deep-rooted Teak trap atmospheric CO₂ into permanent woody biomass, generating verified carbon revenues for farming households.</p>
+                <div class="text-sm text-[#54a630] font-bold telugu-text">చెట్ల ద్వారా కార్బన్ నిల్వ మరియు కర్బన ఆదాయం.</div>
+              </div>
+            </div>
+
+            <!-- Biodiversity & Microclimate -->
+            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4">🐝</div>
+                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Biodiversity &amp; Microclimate Moderation</h3>
+                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Multi-layered agroforestry creates natural canopy cover that reduces field temperatures by 2-4°C and provides food corridors for beneficial pollinators and birds.</p>
+                <div class="text-sm text-[#54a630] font-bold telugu-text">పక్షులు, తేనెటీగలకు ఆవాసం మరియు వేడి వాతావరణం నుండి రక్షణ.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Metrics -->
+          <div class="bg-[#122316] text-white rounded-3xl p-8 sm:p-12">
+            <h2 class="text-2xl sm:text-3xl font-extrabold mb-8 text-center">Verified Field Impact Numbers</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#7fd858] mb-1">1,20,000+</div>
+                <div class="text-xs text-white/80 font-bold uppercase tracking-wider">Enrolled Farmers</div>
+              </div>
+              <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#7fd858] mb-1">50,000+</div>
+                <div class="text-xs text-white/80 font-bold uppercase tracking-wider">Acres Cultivated</div>
+              </div>
+              <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#7fd858] mb-1">30%</div>
+                <div class="text-xs text-white/80 font-bold uppercase tracking-wider">Water Saved in AWD</div>
+              </div>
+              <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                <div class="text-3xl sm:text-4xl font-extrabold text-[#7fd858] mb-1">16</div>
+                <div class="text-xs text-white/80 font-bold uppercase tracking-wider">Promoted Species</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- YELLOW PARTNERSHIP CTA BANNER -->
+        ${renderYellowCtaBanner()}
+      `;
+    }
+
     function renderGalleryPage() {
       const allItems = CMS.galleryItems || [];
-      const filter = state.galleryFilter || "all";
-      const items = filter === "all" ? allItems : allItems.filter(i => i.cat.toLowerCase() === filter.toLowerCase());
+      const filter = (state.galleryFilter || "all").toLowerCase();
+      const items = filter === "all"
+        ? allItems
+        : allItems.filter(i => (i.cat || "").toLowerCase().includes(filter) || (i.title || "").toLowerCase().includes(filter));
 
       return `
         <!-- HERO SECTION -->
@@ -4526,35 +4630,50 @@
           ${renderHeader()}
 
           <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-4 text-center">
-            <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Photographic Records</span>
+            <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Photographic Records • 44 Original Photos</span>
             <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">Field Photo Gallery</h1>
-            <p class="text-xs sm:text-sm text-white/85 leading-relaxed">
-              Authentic photographic documentation from villages across Andhra Pradesh, Telangana and Karnataka.
+            <div class="text-lg sm:text-xl font-bold text-[#7fd858] telugu-text mb-3">సదన గ్రీన్ సొసైటీ కార్యక్రమాల నిజమైన ఫోటోలు</div>
+            <p class="secondary-text text-white/85 text-[18px] leading-relaxed font-normal">
+              Authentic photographic documentation from villages across Andhra Pradesh, Telangana and Karnataka. Strict original client photos with exact field records.
             </p>
           </div>
         </section>
 
         <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
           <!-- Filter Buttons -->
-          <div class="flex flex-wrap gap-2 justify-center mb-10">
-            ${["all", "Field", "AWD", "Training", "Carbon", "Plantation", "Community"].map(cat => `
-              <button type="button" onclick="setGalleryFilter('${cat}')" class="px-5 py-2 rounded-full font-bold text-xs transition ${filter.toLowerCase() === cat.toLowerCase() ? 'bg-[#54a630] text-white shadow' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}">
-                ${cat === 'all' ? 'All Photos (24)' : cat}
-              </button>
-            `).join('')}
+          <div class="flex flex-wrap gap-3 justify-center mb-12">
+            <button type="button" onclick="setGalleryFilter('all')" class="px-6 py-2.5 rounded-full font-bold text-xs transition ${filter === 'all' ? 'bg-[#54a630] text-white shadow-md' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}">
+              All Photos (44)
+            </button>
+            <button type="button" onclick="setGalleryFilter('sgs')" class="px-6 py-2.5 rounded-full font-bold text-xs transition ${filter.includes('sgs') ? 'bg-[#54a630] text-white shadow-md' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}">
+              🌳 SGS Activity Photos (20)
+            </button>
+            <button type="button" onclick="setGalleryFilter('field')" class="px-6 py-2.5 rounded-full font-bold text-xs transition ${filter.includes('field') ? 'bg-[#54a630] text-white shadow-md' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}">
+              🌾 Field Activity Photos (24)
+            </button>
           </div>
 
-          <!-- 24 Photo Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- 44 Photo Grid with Exact Headings & Paragraphs + Authentic Telugu -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             ${items.map(img => `
-              <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/90 shadow-sm hover:shadow-md transition group cursor-pointer" onclick="openVideoModal('${img.title}', imgUrl('${img.imgKey}'))">
-                <div class="aspect-[4/3] overflow-hidden bg-gray-100 relative">
-                  <img src="${imgUrl(img.imgKey)}" alt="${img.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                  <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-black/60 text-white text-[10px] font-bold">${img.cat}</span>
+              <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-[24px] overflow-hidden shadow-sm hover:shadow-xl hover:border-[#54a630] transition duration-300 group cursor-pointer flex flex-col justify-between" onclick="openVideoModal('${img.title}', '${img.src}')">
+                <div class="aspect-[4/3] overflow-hidden bg-gray-200 relative">
+                  <img src="${img.src}" alt="${img.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <span class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-white text-[11px] font-bold">
+                    ${img.cat || 'Field Photo'}
+                  </span>
                 </div>
-                <div class="p-4">
-                  <h4 class="font-extrabold text-xs text-[#162219] mb-1">${img.title}</h4>
-                  <div class="text-[11px] text-[#54a630] telugu-text">${img.sub}</div>
+                <div class="p-6 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 class="font-extrabold text-xl text-[#162219] mb-1.5 leading-snug group-hover:text-[#54a630] transition">${img.title}</h3>
+                    <div class="text-[15px] text-[#54a630] font-bold telugu-text mb-3">${img.titleTe || ''}</div>
+                    <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-2 font-normal">${img.desc || ''}</p>
+                    <p class="text-[15px] text-gray-600 telugu-text leading-relaxed font-normal">${img.descTe || ''}</p>
+                  </div>
+                  <div class="pt-4 mt-4 border-t border-[#cfe3cc]/60 flex items-center justify-between text-xs text-[#54a630] font-bold">
+                    <span>View full photograph</span>
+                    <span class="text-base group-hover:translate-x-1 transition">&rarr;</span>
+                  </div>
                 </div>
               </div>
             `).join('')}
@@ -5361,6 +5480,11 @@
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Founder Role Title</label>
                 <input type="text" value="${g.founderRole || ''}" oninput="CMS.global.founderRole=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Header CTA Button Text</label>
+                <input type="text" id="cms-header-cta-input" value="${g.headerCtaText || 'Get Started'}" oninput="CMS.global.headerCtaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+                <span class="text-[10px] text-gray-400">Controls the text of the pill CTA button in the main navigation bar.</span>
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Operating States</label>
