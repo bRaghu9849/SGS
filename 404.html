@@ -281,10 +281,10 @@
     <div id="mobile-drawer-container"></div>
 
     <!-- GLOBAL FOOTER (100% Exact Blocksy Landscape Footer Layout) -->
-    <footer id="site-footer" class="bg-white pt-14 pb-10 border-t border-gray-100">
+    <footer id="site-footer" class="footer-white bg-[#edf5eb] text-[#162219] pt-14 pb-10 border-t border-[#cfe3cc]">
       <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
         <!-- Top Row: Brand & 6 Clean Nav Links -->
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-9 border-b border-gray-200/80 stack-on-mobile-sim">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-9 border-b border-[#cfe3cc] stack-on-mobile-sim">
           <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-3 text-[#162219] no-underline">
             <img id="footer-logo-img" data-cms-img="logoEmblem" src="assets/images/logo/new-logo-sgs-emblem.png" alt="Sadana Green Society Logo" class="w-10 h-10 rounded-full object-contain p-0.5 bg-white ring-1 ring-gray-200 flex-shrink-0" />
             <div class="flex flex-col line-tight text-left">
@@ -509,6 +509,10 @@
   <script>
     // =========================================================================
     // CENTRALIZED BASE64 IMAGE ASSETS (Inlined once by Step 3 script)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
     
     // =========================================================================
@@ -2072,7 +2076,7 @@
       return `
         <div class="absolute inset-0 overflow-hidden bg-[#0c1810]">
           <img src="${bgImg}" alt="Hero background" class="w-full h-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-b from-[#0b170f]/75 via-[#0e1c12]/70 to-[#0b170f]/90"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-[#0b170f]/35 via-[#0e1c12]/25 to-[#0b170f]/45"></div>
         </div>
       `;
     }
@@ -2377,10 +2381,10 @@
     // =========================================================================
     function renderFooter() {
       return `
-        <footer id="footer" class="footer-white bg-[#fbfdfb] text-[#162219] pt-16 pb-12 border-t border-gray-200/80">
+        <footer id="footer" class="footer-white bg-[#edf5eb] text-[#162219] pt-16 pb-12 border-t border-[#cfe3cc]">
           <div class="max-w-[1220px] mx-auto px-5 sm:px-8">
             <!-- Top Row: Logo & Horizontal Nav Links -->
-            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-10 border-b border-gray-200/80">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-10 border-b border-[#cfe3cc]">
               <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-3.5 no-underline flex-shrink-0 w-auto">
                 <img data-cms-img="logoEmblem" src="${imgUrl('logoEmblem')}" alt="Sadana Green Society Logo" class="w-11 h-11 rounded-full object-contain p-0.5 bg-white ring-1 ring-gray-200 flex-shrink-0 shadow-sm" />
                 <div>
@@ -2411,10 +2415,10 @@
             </div>
 
             <!-- Middle Row: 4 Contact Columns with Circular Icons -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10 border-b border-gray-200/80">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10 border-b border-[#cfe3cc]">
               <!-- Address -->
               <div class="flex items-start gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div class="w-11 h-11 rounded-full bg-[#54a630] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
                 </div>
                 <div>
@@ -2425,7 +2429,7 @@
 
               <!-- Phone -->
               <div class="flex items-start gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div class="w-11 h-11 rounded-full bg-[#54a630] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 </div>
                 <div>
@@ -2436,7 +2440,7 @@
 
               <!-- WhatsApp -->
               <div class="flex items-start gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div class="w-11 h-11 rounded-full bg-[#54a630] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
                 </div>
                 <div>
@@ -2447,7 +2451,7 @@
 
               <!-- Working States -->
               <div class="flex items-start gap-3.5">
-                <div class="w-11 h-11 rounded-full bg-[#162219] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div class="w-11 h-11 rounded-full bg-[#54a630] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/></svg>
                 </div>
                 <div>
