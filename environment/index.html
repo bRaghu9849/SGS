@@ -680,6 +680,10 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/logo/new-logo-sgs-full.png",
       logoEmblem: "assets/images/logo/new-logo-sgs-emblem.png",
@@ -795,7 +799,7 @@
         "about", "our-journey", "agroforestry", "services", "awd",
         "carbon-credits", "carbon", "species", "forest", "fruit",
         "new-plantation", "plantation", "environment", "impact", "gallery",
-        "news", "post", "contact", "faq", "faqs", "privacy", "terms", "admin"
+        "news", "post", "contact", "faq", "faqs", "privacy", "terms", "admin", "dev"
       ];
       const clean = p.replace(/\/+$/, "");
       const segs = clean.split("/").filter(Boolean);
@@ -864,7 +868,8 @@
         "faqs": "faq",
         "privacy": "privacy",
         "terms": "terms",
-        "admin": "admin"
+        "admin": "admin",
+        "dev": "dev"
       };
 
       if (ROUTE_ALIASES[seg]) return ROUTE_ALIASES[seg];
@@ -2496,7 +2501,6 @@
                 <a href="${routeUrl('privacy')}" data-nav="privacy" class="hover:text-[#54a630] transition">Privacy Policy</a>
                 <a href="${routeUrl('terms')}" data-nav="terms" class="hover:text-[#54a630] transition">Terms of Use</a>
                 <a href="${routeUrl('faq')}" data-nav="faq" class="hover:text-[#54a630] transition">Bilingual FAQs</a>
-                <a href="${routeUrl('admin')}" data-nav="admin" class="hover:text-[#54a630] transition flex items-center gap-1"><span>⚙</span><span>Admin Portal</span></a>
               </div>
             </div>
           </div>
@@ -4907,6 +4911,290 @@
       `;
     }
 
+
+    // =========================================================================
+    // OFFLINE & DEVELOPER PORTAL RENDERERS
+    // =========================================================================
+    function renderComingSoonPage() {
+      return `
+        <div class="min-h-screen bg-gradient-to-br from-[#07130a] via-[#0d1f12] to-[#050c07] text-white flex flex-col justify-between p-5 sm:p-10 relative overflow-hidden">
+          <!-- Background Glow Effect -->
+          <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#54a630]/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-[#7fd858]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Top Brand Header -->
+          <div class="max-w-4xl w-full mx-auto flex items-center justify-between z-10 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-white p-2 shadow-lg flex items-center justify-center">
+                <img src="${imgUrl('logoFull')}" alt="Sadana Green Society Logo" class="w-full h-full object-contain" />
+              </div>
+              <div class="flex flex-col text-left">
+                <span class="font-black text-lg sm:text-xl tracking-tight text-white leading-tight">Sadana Green Society</span>
+                <span class="text-[10px] font-bold text-[#7fd858] tracking-widest uppercase">Regd. No. 129/2021 &bull; Kurnool, AP</span>
+              </div>
+            </div>
+            <span class="text-[11px] font-bold text-white/80 bg-white/10 border border-white/15 px-3.5 py-1.5 rounded-full">
+              Portal Upgrade
+            </span>
+          </div>
+
+          <!-- Hero Central Content -->
+          <div class="max-w-3xl w-full mx-auto text-center my-12 z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[#7fd858] font-bold text-xs uppercase tracking-wider mb-6">
+              <span class="w-2 h-2 rounded-full bg-[#7fd858] animate-pulse"></span>
+              <span>Under Scheduled Maintenance &bull; SGS Portal 2.0</span>
+            </div>
+
+            <h1 class="hero-title-lg text-3xl sm:text-5xl font-black text-white leading-tight mb-4">
+              Something Extraordinary<br/>
+              <span class="text-[#7fd858]">is Sprouting.</span>
+            </h1>
+
+            <p class="telugu-text text-base sm:text-lg text-emerald-200/90 font-bold mb-4">
+              నూతన హరిత సాంకేతికతతో సదన గ్రీన్ సొసైటీ వెబ్‌సైట్ త్వరలో మీ ముందుకు రానుంది.
+            </p>
+
+            <p class="text-xs sm:text-sm text-white/75 max-w-xl mx-auto leading-relaxed mb-10">
+              We are actively upgrading our verified agroforestry data systems, AWD water-saving telemetry, and farmer carbon credit portals across Andhra Pradesh, Telangana and Karnataka. Public access will be restored shortly.
+            </p>
+
+            <!-- 3 Highlights Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left mb-10">
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
+                <div class="text-2xl mb-2">🌳</div>
+                <h4 class="font-black text-sm text-white mb-1">Agroforestry</h4>
+                <p class="text-[11px] text-white/60 leading-relaxed">16 native timber & fruit species for sustainable farmer incomes and soil regeneration.</p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
+                <div class="text-2xl mb-2">💧</div>
+                <h4 class="font-black text-sm text-white mb-1">AWD Water Saving</h4>
+                <p class="text-[11px] text-white/60 leading-relaxed">Pioneering up to 30% paddy irrigation water conservation and methane reduction.</p>
+              </div>
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm">
+                <div class="text-2xl mb-2">🪙</div>
+                <h4 class="font-black text-sm text-white mb-1">Carbon Offsets</h4>
+                <p class="text-[11px] text-white/60 leading-relaxed">Verified Verra & Gold Standard carbon benefits disbursed to registered farmers.</p>
+              </div>
+            </div>
+
+            <!-- Direct Helpline Box -->
+            <div class="bg-[#edf5eb] text-[#162219] rounded-2xl p-6 border border-[#cfe3cc] shadow-xl text-center max-w-xl mx-auto">
+              <h4 class="font-black text-sm text-[#162219] mb-1">Need Urgent Assistance or Farmer Enrolment?</h4>
+              <p class="text-[11px] text-gray-600 mb-4">Our regional coordinators and field officers are reachable directly by phone & email:</p>
+              <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-extrabold">
+                <a href="tel:+919966611855" class="inline-flex items-center gap-1.5 bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl transition no-underline">
+                  <span>📞 +91 99666 11855</span>
+                </a>
+                <a href="tel:+919963490444" class="inline-flex items-center gap-1.5 bg-[#162219] hover:bg-black text-white px-4 py-2 rounded-xl transition no-underline">
+                  <span>📞 +91 99634 90444</span>
+                </a>
+                <a href="mailto:info@sadanagreensociety.com" class="inline-flex items-center gap-1.5 bg-white border border-[#cfe3cc] hover:bg-gray-50 text-[#162219] px-4 py-2 rounded-xl transition no-underline">
+                  <span>✉️ info@sadanagreensociety.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Minimal Footer -->
+          <div class="max-w-4xl w-full mx-auto text-center text-[11px] text-white/40 pt-4 border-t border-white/10 flex items-center justify-between z-10">
+            <span>&copy; 2026 Sadana Green Society. All rights reserved.</span>
+            <a href="${routeUrl('dev')}" data-nav="dev" class="text-white/30 hover:text-white/70 transition no-underline">
+              System Access
+            </a>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderAdminBlockedOfflinePage() {
+      return `
+        <div class="min-h-screen bg-gradient-to-br from-[#0c1810] via-[#112316] to-[#08100a] text-white flex flex-col justify-between p-5 sm:p-10">
+          <div class="max-w-md w-full mx-auto pt-6 flex items-center justify-between">
+            <a href="${routeUrl('home')}" data-nav="home" class="inline-flex items-center gap-2 text-xs font-bold text-white/70 hover:text-white transition no-underline">
+              <span>&larr; Back to Coming Soon</span>
+            </a>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-red-400 bg-red-500/10 border border-red-500/30 px-3 py-1 rounded-full">Locked</span>
+          </div>
+
+          <div class="max-w-md w-full mx-auto bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 sm:p-10 shadow-2xl my-8 text-center">
+            <div class="w-16 h-16 rounded-2xl bg-red-500/10 border border-red-500/30 text-3xl mx-auto mb-4 flex items-center justify-center">
+              🔒
+            </div>
+            <h1 class="text-2xl font-black text-white tracking-tight mb-2">CMS Studio Locked</h1>
+            <p class="text-xs text-red-300 font-bold mb-4">Maintenance Mode is Currently Active</p>
+            <p class="text-xs text-white/70 leading-relaxed mb-8">
+              The Sadana Green Society Content Management Studio is locked while scheduled developer maintenance is in progress. Public and administrative edits are temporarily suspended.
+            </p>
+            <div class="space-y-3">
+              <a href="${routeUrl('home')}" data-nav="home" class="block w-full bg-white/10 hover:bg-white/20 text-white py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition text-center no-underline">
+                Return to Public Screen
+              </a>
+              <a href="${routeUrl('dev')}" data-nav="dev" class="block w-full bg-[#54a630] hover:bg-[#468e26] text-white py-3 rounded-xl font-extrabold text-xs uppercase tracking-wider transition text-center no-underline shadow-lg">
+                Developer Login &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center text-[11px] text-white/40 pb-4">
+            Sadana Green Society &bull; Kurnool, Andhra Pradesh
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDevPortalPage() {
+      const isDev = isDevLoggedIn();
+      const siteMode = getSiteMode();
+      const isOff = siteMode === "offline";
+
+      if (!isDev) {
+        return `
+          <div class="min-h-screen bg-gradient-to-br from-[#060c07] via-[#0b1610] to-[#040805] text-white flex flex-col justify-between p-5 sm:p-10">
+            <div class="max-w-md w-full mx-auto pt-4 flex items-center justify-between">
+              <a href="${routeUrl('home')}" data-nav="home" class="inline-flex items-center gap-2 text-xs font-bold text-white/60 hover:text-white transition no-underline">
+                <span>&larr; Exit to Public View</span>
+              </a>
+              <span class="text-[10px] font-mono uppercase tracking-wider text-[#7fd858] bg-[#7fd858]/10 border border-[#7fd858]/30 px-3 py-1 rounded-full">
+                Terminal Gate &bull; Port 443
+              </span>
+            </div>
+
+            <div class="max-w-md w-full mx-auto bg-black/60 backdrop-blur-2xl border border-white/15 rounded-3xl p-8 sm:p-10 shadow-2xl my-8">
+              <div class="text-center mb-8">
+                <div class="w-14 h-14 rounded-2xl bg-[#54a630]/20 border border-[#54a630]/40 text-2xl mx-auto mb-3 flex items-center justify-center text-[#7fd858]">
+                  ⚡
+                </div>
+                <h1 class="text-xl font-black text-white tracking-tight">SGS Developer Console</h1>
+                <p class="text-xs text-white/60 mt-1">Authorized Developer & Maintenance Portal</p>
+              </div>
+
+              <form onsubmit="handleDevLoginSubmit(event)" class="space-y-4 text-xs">
+                <div id="dev-login-error" class="hidden bg-red-500/20 border border-red-500/40 text-red-200 p-3 rounded-xl text-xs font-semibold"></div>
+
+                <div>
+                  <label class="block font-bold text-white/90 mb-1.5">Developer Username</label>
+                  <input id="dev-username" type="text" required placeholder="Enter username" autocomplete="username" class="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858] text-xs font-medium" />
+                </div>
+
+                <div>
+                  <label class="block font-bold text-white/90 mb-1.5">Developer Password</label>
+                  <div class="relative">
+                    <input id="dev-password" type="password" required placeholder="Enter password" autocomplete="current-password" class="w-full bg-white/5 border border-white/20 rounded-xl pl-4 pr-10 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858] text-xs font-medium" />
+                    <button type="button" onclick="togglePasswordVisibility('dev-password')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-white/50 hover:text-white">👁️</button>
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between pt-1">
+                  <label class="flex items-center gap-2 cursor-pointer text-[11px] text-white/70">
+                    <input id="dev-remember-me" type="checkbox" checked class="rounded bg-white/20 border-white/30 text-[#54a630]" />
+                    <span>Remember developer session</span>
+                  </label>
+                </div>
+
+                <button type="submit" class="w-full bg-[#54a630] hover:bg-[#468e26] text-white py-3.5 rounded-xl font-black text-xs tracking-wider uppercase transition shadow-lg flex items-center justify-center gap-2 mt-2">
+                  <span>Unlock Developer Console</span>
+                  <span>&rarr;</span>
+                </button>
+              </form>
+            </div>
+
+            <div class="text-center text-[11px] text-white/30 pb-4">
+              Sadana Green Society &bull; Developer Gate &bull; Authorized Personnel Only
+            </div>
+          </div>
+        `;
+      }
+
+      // Authenticated Developer Console
+      return `
+        <div class="min-h-screen bg-gradient-to-br from-[#060c07] via-[#0b1610] to-[#040805] text-white p-5 sm:p-10 flex flex-col justify-between">
+          <div class="max-w-4xl w-full mx-auto pt-4 flex items-center justify-between border-b border-white/10 pb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">⚡</span>
+              <div>
+                <h1 class="text-lg font-black text-white leading-tight">SGS Developer Console</h1>
+                <span class="text-[10px] text-white/60 font-mono">Environment: Production &bull; Apache/PHP 8.1</span>
+              </div>
+            </div>
+            <button onclick="handleDevLogout()" class="bg-white/10 hover:bg-white/20 text-white text-xs font-bold px-4 py-2 rounded-xl transition cursor-pointer">
+              Sign Out
+            </button>
+          </div>
+
+          <div class="max-w-4xl w-full mx-auto my-8 space-y-6">
+            <!-- PRIMARY STATUS & TOGGLE CARD -->
+            <div class="bg-black/60 border border-white/15 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+                <div>
+                  <span class="text-[11px] font-bold text-white/50 uppercase tracking-widest block mb-1">Global Site State</span>
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">${isOff ? '🔴' : '🟢'}</span>
+                    <span class="text-2xl sm:text-3xl font-black ${isOff ? 'text-red-400' : 'text-[#7fd858]'} tracking-tight">
+                      ${isOff ? 'OFFLINE (MAINTENANCE ACTIVE)' : 'LIVE (PUBLIC SITE ACCESSIBLE)'}
+                    </span>
+                  </div>
+                </div>
+                <div class="text-xs ${isOff ? 'text-red-300 bg-red-500/10 border-red-500/30' : 'text-emerald-300 bg-emerald-500/10 border-emerald-500/30'} border px-4 py-2 rounded-xl font-bold self-start sm:self-auto">
+                  ${isOff ? 'Public Routes Showing: Coming Soon' : 'Public Routes Showing: Normal Pages'}
+                </div>
+              </div>
+
+              <div class="pt-6 space-y-4">
+                <p class="text-xs text-white/70 leading-relaxed">
+                  ${isOff 
+                    ? 'All public pages are currently hidden behind the branded Sadana Green Society Coming Soon screen. The CMS Admin Studio is locked. Click below to unlock the entire website for public visitors.'
+                    : 'The website is currently 100% live and publicly accessible worldwide. Click below to lock everything behind the Coming Soon screen and suspend Admin Studio access.'}
+                </p>
+
+                <button onclick="toggleSiteMaintenanceMode()" class="w-full ${isOff ? 'bg-[#54a630] hover:bg-[#468e26]' : 'bg-red-600 hover:bg-red-700'} text-white py-4 px-6 rounded-2xl font-black text-sm tracking-wider uppercase transition shadow-2xl flex items-center justify-center gap-3 cursor-pointer">
+                  <span>${isOff ? '🚀 SWITCH WEBSITE TO LIVE (UNLOCK PUBLIC ACCESS)' : '🔒 SWITCH WEBSITE TO OFFLINE (LOCK EVERYTHING)'}</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- QUICK TOOLS & PREVIEWS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-black/40 border border-white/10 rounded-2xl p-6">
+                <h3 class="font-black text-sm text-white mb-2 flex items-center gap-2">
+                  <span>🔍 Navigation & Previews</span>
+                </h3>
+                <p class="text-xs text-white/60 mb-4 leading-relaxed">Preview how public visitors and administrators see the site right now.</p>
+                <div class="space-y-2.5">
+                  <button onclick="navigateTo('home')" class="w-full text-left bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-bold px-4 py-3 rounded-xl transition flex items-center justify-between cursor-pointer">
+                    <span>View Public Home View</span>
+                    <span>&rarr;</span>
+                  </button>
+                  <button onclick="navigateTo('admin')" class="w-full text-left bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-bold px-4 py-3 rounded-xl transition flex items-center justify-between cursor-pointer">
+                    <span>Open Admin Studio (/admin)</span>
+                    <span>&rarr;</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- DEVELOPER PASSWORD CHANGE -->
+              <div class="bg-black/40 border border-white/10 rounded-2xl p-6">
+                <h3 class="font-black text-sm text-white mb-2 flex items-center gap-2">
+                  <span>🔑 Update Developer Password</span>
+                </h3>
+                <p class="text-xs text-white/60 mb-3 leading-relaxed">Update the local developer portal access key.</p>
+                <div class="space-y-2">
+                  <input id="dev-new-pwd" type="password" placeholder="New dev password (min 6 chars)" class="w-full bg-white/5 border border-white/20 rounded-xl px-3 py-2 text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858]" />
+                  <button onclick="handleUpdateDevPassword()" class="w-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold py-2 rounded-xl transition cursor-pointer">
+                    Save New Dev Password
+                  </button>
+                  <div id="dev-pwd-msg" class="hidden text-[11px] p-2 rounded-lg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="max-w-4xl w-full mx-auto text-center text-[11px] text-white/40 pt-4 border-t border-white/10">
+            Sadana Green Society &bull; Developer Management &bull; 2026
+          </div>
+        </div>
+      `;
+    }
+
     // =========================================================================
     // MAIN APP ROUTER (Clean Trailing-Slash Router & Renderer)
     // =========================================================================
@@ -4916,6 +5204,28 @@
       if (!main) return;
 
       const p = state.currentPage;
+
+      // 1. DEVELOPER PORTAL ROUTE (/dev)
+      if (p === "dev") {
+        if (footer) footer.classList.add("hidden");
+        main.innerHTML = renderDevPortalPage();
+        return;
+      }
+
+      // 2. OFFLINE / MAINTENANCE MODE GUARD (Lock Everything)
+      if (isSiteOffline()) {
+        if (footer) footer.classList.add("hidden");
+        
+        // Block Admin completely when offline
+        if (p === "admin") {
+          main.innerHTML = renderAdminBlockedOfflinePage();
+          return;
+        }
+
+        // All public routes show Coming Soon
+        main.innerHTML = renderComingSoonPage();
+        return;
+      }
 
       // Special handling for Admin page (no public footer)
       if (p === "admin") {
@@ -5138,18 +5448,15 @@
                 <label class="block font-bold text-white/90 mb-1.5">Username / Admin ID</label>
                 <div class="relative">
                   <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-white/50">👤</span>
-                  <input id="login-username" type="text" required placeholder="admin" value="admin" class="w-full bg-white/10 border border-white/20 rounded-xl pl-10 pr-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858] text-xs font-medium" />
+                  <input id="login-username" type="text" required placeholder="Enter username" value="" autocomplete="username" class="w-full bg-white/10 border border-white/20 rounded-xl pl-10 pr-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858] text-xs font-medium" />
                 </div>
               </div>
 
               <div>
-                <div class="flex items-center justify-between mb-1.5">
-                  <label class="block font-bold text-white/90">Password</label>
-                  <span class="text-[11px] text-[#7fd858] cursor-pointer hover:underline" onclick="autofillDemoPassword()">Use default: sgs@2026</span>
-                </div>
+                <label class="block font-bold text-white/90 mb-1.5">Password</label>
                 <div class="relative">
                   <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-white/50">🔒</span>
-                  <input id="login-password" type="password" required placeholder="••••••••" value="sgs@2026" class="w-full bg-white/10 border border-white/20 rounded-xl pl-10 pr-10 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858] text-xs font-medium" />
+                  <input id="login-password" type="password" required placeholder="Enter password" value="" autocomplete="current-password" class="w-full bg-white/10 border border-white/20 rounded-xl pl-10 pr-10 py-3 text-white placeholder-white/40 focus:outline-none focus:border-[#7fd858] text-xs font-medium" />
                   <button type="button" onclick="togglePasswordVisibility('login-password')" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-white/50 hover:text-white">👁️</button>
                 </div>
               </div>
@@ -7401,7 +7708,10 @@ else if (t === "gallery") {
     }
 
     function isAdminLoggedIn() {
-      return sessionStorage.getItem("sgs_admin_auth") === "true" || localStorage.getItem("sgs_admin_auth") === "true";
+      const isAuth = sessionStorage.getItem("sgs_admin_auth") === "true" || 
+                     localStorage.getItem("sgs_admin_auth") === "true" ||
+                     document.cookie.includes("sgs_admin_session=active");
+      return isAuth;
     }
 
     function handleAdminLoginSubmit(e) {
@@ -7415,8 +7725,10 @@ else if (t === "gallery") {
       const correctPwd = getAdminPassword();
 
       if (validUsers.includes(u.toLowerCase()) && p === correctPwd) {
-        if (rem) {
+        if (rem !== false) {
           localStorage.setItem("sgs_admin_auth", "true");
+          localStorage.setItem("sgs_admin_user", u);
+          document.cookie = "sgs_admin_session=active; path=/; max-age=2592000; SameSite=Lax";
         } else {
           sessionStorage.setItem("sgs_admin_auth", "true");
         }
@@ -7435,6 +7747,8 @@ else if (t === "gallery") {
     function handleAdminLogout() {
       sessionStorage.removeItem("sgs_admin_auth");
       localStorage.removeItem("sgs_admin_auth");
+      localStorage.removeItem("sgs_admin_user");
+      document.cookie = "sgs_admin_session=; path=/; max-age=0;";
       state.adminLoggedIn = false;
       showToast("Signed out of Admin Studio.");
       renderApp();
@@ -7446,9 +7760,99 @@ else if (t === "gallery") {
       input.type = input.type === "password" ? "text" : "password";
     }
 
-    function autofillDemoPassword() {
-      const p = document.getElementById("login-password");
-      if (p) p.value = getAdminPassword();
+    // =========================================================================
+    // DEVELOPER PORTAL & MAINTENANCE MODE LOGIC
+    // =========================================================================
+    function getSiteMode() {
+      const stored = localStorage.getItem("sgs_site_mode");
+      if (stored) return stored;
+      if (typeof CMS !== "undefined" && CMS && CMS.siteMode) return CMS.siteMode;
+      return "offline"; // Locked by default per user request
+    }
+
+    function setSiteMode(mode) {
+      localStorage.setItem("sgs_site_mode", mode);
+      if (typeof CMS !== "undefined" && CMS) {
+        CMS.siteMode = mode;
+        saveCmsData();
+      }
+    }
+
+    function isSiteOffline() {
+      return getSiteMode() === "offline";
+    }
+
+    function getDevPassword() {
+      return localStorage.getItem("sgs_dev_password") || "dev@2026";
+    }
+
+    function setDevPassword(pwd) {
+      localStorage.setItem("sgs_dev_password", pwd);
+    }
+
+    function isDevLoggedIn() {
+      const isDev = sessionStorage.getItem("sgs_dev_auth") === "true" || localStorage.getItem("sgs_dev_auth") === "true";
+      return isDev;
+    }
+
+    function handleDevLoginSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const u = (document.getElementById("dev-username")?.value || "").trim().toLowerCase();
+      const p = (document.getElementById("dev-password")?.value || "").trim();
+      const rem = document.getElementById("dev-remember-me")?.checked;
+      const errBox = document.getElementById("dev-login-error");
+
+      const validDevs = ["dev", "developer", "admin", "raghu", "sgsdev"];
+      const correctPwd = getDevPassword();
+
+      if (validDevs.includes(u) && p === correctPwd) {
+        if (rem !== false) {
+          localStorage.setItem("sgs_dev_auth", "true");
+          localStorage.setItem("sgs_dev_user", u);
+        } else {
+          sessionStorage.setItem("sgs_dev_auth", "true");
+        }
+        if (errBox) errBox.classList.add("hidden");
+        showToast("Developer Portal unlocked!");
+        renderApp();
+      } else {
+        if (errBox) {
+          errBox.textContent = "Invalid developer credentials.";
+          errBox.classList.remove("hidden");
+        }
+      }
+    }
+
+    function handleDevLogout() {
+      sessionStorage.removeItem("sgs_dev_auth");
+      localStorage.removeItem("sgs_dev_auth");
+      localStorage.removeItem("sgs_dev_user");
+      showToast("Developer session ended.");
+      renderApp();
+    }
+
+    function toggleSiteMaintenanceMode() {
+      const current = getSiteMode();
+      const next = current === "offline" ? "live" : "offline";
+      setSiteMode(next);
+      showToast("Website status switched to: " + next.toUpperCase());
+      renderApp();
+    }
+
+    function handleUpdateDevPassword() {
+      const p = (document.getElementById("dev-new-pwd")?.value || "").trim();
+      const msg = document.getElementById("dev-pwd-msg");
+      if (!msg) return;
+      if (p.length < 6) {
+        msg.className = "bg-red-500/20 text-red-200 border border-red-500/40 text-[11px] p-2 rounded-lg block";
+        msg.textContent = "Password must be at least 6 characters.";
+        return;
+      }
+      setDevPassword(p);
+      msg.className = "bg-emerald-500/20 text-emerald-200 border border-emerald-500/40 text-[11px] p-2 rounded-lg block";
+      msg.textContent = "Developer password updated successfully!";
+      const inp = document.getElementById("dev-new-pwd");
+      if (inp) inp.value = "";
     }
 
     function handleChangePasswordSubmit() {
