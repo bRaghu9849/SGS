@@ -683,6 +683,14 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/logo/new-logo-sgs-full.png",
       logoEmblem: "assets/images/logo/new-logo-sgs-emblem.png",
@@ -7707,10 +7715,14 @@ else if (t === "gallery") {
     }
 
     function isAdminLoggedIn() {
-      const isAuth = sessionStorage.getItem("sgs_admin_auth") === "true" || 
-                     localStorage.getItem("sgs_admin_auth") === "true" ||
-                     document.cookie.includes("sgs_admin_session=active");
-      return isAuth;
+      try {
+        const isAuth = (typeof sessionStorage !== "undefined" && sessionStorage.getItem("sgs_admin_auth") === "true") || 
+                       (typeof localStorage !== "undefined" && localStorage.getItem("sgs_admin_auth") === "true") ||
+                       (typeof document !== "undefined" && document.cookie && document.cookie.includes("sgs_admin_session=active"));
+        return !!isAuth;
+      } catch(e) {
+        return false;
+      }
     }
 
     function handleAdminLoginSubmit(e) {
@@ -7766,7 +7778,7 @@ else if (t === "gallery") {
       const stored = localStorage.getItem("sgs_site_mode");
       if (stored) return stored;
       if (typeof CMS !== "undefined" && CMS && CMS.siteMode) return CMS.siteMode;
-      return "offline"; // Locked by default per user request
+      return "live";
     }
 
     function setSiteMode(mode) {
@@ -7790,8 +7802,12 @@ else if (t === "gallery") {
     }
 
     function isDevLoggedIn() {
-      const isDev = sessionStorage.getItem("sgs_dev_auth") === "true" || localStorage.getItem("sgs_dev_auth") === "true";
-      return isDev;
+      try {
+        return (typeof sessionStorage !== "undefined" && sessionStorage.getItem("sgs_dev_auth") === "true") || 
+               (typeof localStorage !== "undefined" && localStorage.getItem("sgs_dev_auth") === "true");
+      } catch(e) {
+        return false;
+      }
     }
 
     function handleDevLoginSubmit(e) {
