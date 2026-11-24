@@ -690,6 +690,10 @@
     // =========================================================================
     // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
     // =========================================================================
+    
+    // =========================================================================
+    // CENTRALIZED AUTHENTIC IMAGE ASSETS (No Greenhouse, No Baked-in Text!)
+    // =========================================================================
     const DEFAULT_IMAGES = {
       logoFull: "assets/images/logo/new-logo-sgs-full.png",
       logoEmblem: "assets/images/logo/new-logo-sgs-emblem.png",
@@ -2035,21 +2039,49 @@
         if (!CMS.heroes[k]) CMS.heroes[k] = initial.heroes[k];
       }
       if (!CMS.heroes.home) CMS.heroes.home = initial.heroes.home;
-      CMS.heroes.home.mode = "video";
-      CMS.heroes.home.videoUrl = "assets/hero-video.mp4";
+      if (!CMS.heroes.home.mode) CMS.heroes.home.mode = "video";
+      if (!CMS.heroes.home.videoUrl) CMS.heroes.home.videoUrl = "assets/hero-video.mp4";
     }
 
-    // Save CMS Data to LocalStorage
+    // Save CMS Data to LocalStorage and Server Backend
     function saveCmsData() {
       try {
         localStorage.setItem("sgs_cms_data_v14", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
+      try {
+        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms.php") : "api/cms.php";
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(CMS)
+        }).catch(() => {});
+      } catch(e) {}
     }
 
-    // Initialize CMS data immediately
+    // Synchronize CMS Data with Server
+    async function syncCmsWithServer() {
+      try {
+        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms.php") : "api/cms.php";
+        const res = await fetch(url);
+        if (res.ok) {
+          const srv = await res.json();
+          if (srv && !srv.status && srv.global) {
+            const initial = getInitialCmsData();
+            CMS = deepMerge(initial, srv);
+            try {
+              localStorage.setItem("sgs_cms_data_v14", JSON.stringify(CMS));
+            } catch(e) {}
+            if (typeof renderApp === "function") renderApp();
+          }
+        }
+      } catch(e) {}
+    }
+
+    // Initialize CMS data immediately and sync
     initCmsData();
+    syncCmsWithServer();
 
 
 
@@ -5509,7 +5541,7 @@
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Or Paste Video URL (.mp4 / .webm)</label>
-                <input type="text" placeholder="https://..." value="${hConfig.videoUrl || ''}" oninput="CMS.heroes['${selectedPage}'].videoUrl=this.value; renderApp();" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+                <input type="text" placeholder="https://..." value="${hConfig.videoUrl || ''}" oninput="CMS.heroes['${selectedPage}'].videoUrl=this.value; renderApp();" onchange="CMS.heroes['${selectedPage}'].videoUrl=this.value; saveCmsData(); renderApp();" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
               </div>
             </div>
           </div>
@@ -7097,18 +7129,44 @@ else if (t === "gallery") {
     function handleHeroPageVideoUpload(pageKey, event) {
       const file = event.target.files && event.target.files[0];
       if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function(ev) {
-        if (!CMS.heroes) CMS.heroes = {};
-        if (!CMS.heroes[pageKey]) CMS.heroes[pageKey] = { mode: "video" };
-        CMS.heroes[pageKey].videoUrl = ev.target.result;
-        CMS.heroes[pageKey].mode = "video";
-        saveCmsData();
-        renderApp();
-        renderCmsWorkspace();
-        showToast("Hero video uploaded for " + pageKey + "!");
-      };
-      reader.readAsDataURL(file);
+      showToast("Uploading video to server assets...");
+      const fd = new FormData();
+      fd.append("video", file);
+      const uploadUrl = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/upload_video.php") : "api/upload_video.php";
+      fetch(uploadUrl, {
+        method: "POST",
+        body: fd
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.success && data.url) {
+          if (!CMS.heroes) CMS.heroes = {};
+          if (!CMS.heroes[pageKey]) CMS.heroes[pageKey] = { mode: "video" };
+          CMS.heroes[pageKey].videoUrl = data.url;
+          CMS.heroes[pageKey].mode = "video";
+          saveCmsData();
+          renderApp();
+          renderCmsWorkspace();
+          showToast("Hero video uploaded and saved for " + pageKey + "!");
+        } else {
+          showToast("Upload error: " + ((data && data.error) || "Server error"));
+        }
+      })
+      .catch(err => {
+        console.warn("Server upload failed, falling back to local:", err);
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          if (!CMS.heroes) CMS.heroes = {};
+          if (!CMS.heroes[pageKey]) CMS.heroes[pageKey] = { mode: "video" };
+          CMS.heroes[pageKey].videoUrl = ev.target.result;
+          CMS.heroes[pageKey].mode = "video";
+          saveCmsData();
+          renderApp();
+          renderCmsWorkspace();
+          showToast("Hero video loaded locally for " + pageKey + "!");
+        };
+        reader.readAsDataURL(file);
+      });
     }
 
     // Generic Image Key Upload Helper for inline section image cards
