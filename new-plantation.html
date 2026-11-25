@@ -209,7 +209,7 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Farmer Full Name / రైతు పేరు <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">👤</span>
+                    <span class="selio-icon"></span>
                     <input type="text" id="farmerName" name="farmerName" class="selio-input" placeholder="e.g. B. Venkata Reddy" required>
                   </div>
                 </div>
@@ -226,7 +226,7 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Mobile Number / ఫోన్ నంబర్ <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">📞</span>
+                    <span class="selio-icon"></span>
                     <input type="tel" id="mobile" name="mobile" pattern="[0-9]10" class="selio-input" placeholder="10-digit mobile number" required>
                   </div>
                 </div>
@@ -251,7 +251,7 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">State / రాష్ట్రం <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">🏛️</span>
+                    <span class="selio-icon">🏛</span>
                     <select id="state" name="state" class="selio-select" required>
                       <option value="">Select State</option>
                       <option value="Andhra Pradesh" selected>Andhra Pradesh / ఆంధ్రప్రదేశ్</option>
@@ -263,7 +263,7 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">District / జిల్లా <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">🗺️</span>
+                    <span class="selio-icon"></span>
                     <select id="district" name="district" class="selio-select" required>
                       <option value="">Select District</option>
                       <option value="Kurnool" selected>Kurnool / కర్నూలు</option>
@@ -282,14 +282,14 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Mandal or Taluk / మండలం <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">📍</span>
+                    <span class="selio-icon"></span>
                     <input type="text" id="mandal" name="mandal" class="selio-input" placeholder="e.g. Banaganapalle" required>
                   </div>
                 </div>
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Village / గ్రామం <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">🏡</span>
+                    <span class="selio-icon"></span>
                     <input type="text" id="village" name="village" class="selio-input" placeholder="e.g. Nandavaram" required>
                   </div>
                 </div>
@@ -338,7 +338,7 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Water Facility Available / నీటి వసతి <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">💧</span>
+                    <span class="selio-icon"></span>
                     <select id="waterFacility" name="waterFacility" class="selio-select" required>
                       <option value="">Select Water Source</option>
                       <option value="Yes - Borewell (బోరుబావి)" selected>Yes - Borewell / బోరుబావి ఉంది</option>
@@ -352,10 +352,10 @@
                 <div>
                   <label style="display:block; font-size:0.88rem; font-weight:700; color:#172723; margin-bottom:6px;">Primary Species Needed / ప్రాథమిక మొక్కల రకం <span style="color:#d9534f;">*</span></label>
                   <div class="selio-field">
-                    <span class="selio-icon">🌳</span>
+                    <span class="selio-icon"></span>
                     <select id="primarySpecies" name="primarySpecies" class="selio-select" required onchange="handlePrimarySpeciesChange(this.value)">
                       <option value="">Select Primary Plant</option>
-                      <optgroup label="🌲 Forest &amp; Timber Species (అటవీ జాతులు)">
+                      <optgroup label="Forest &amp; Timber Species (అటవీ జాతులు)">
                         <option value="Teak (టేకు)">Teak / టేకు (Timber)</option>
                         <option value="Melia dubia (మలబార్ వేప)">Melia dubia / మలబార్ వేప (Fast Timber)</option>
                         <option value="Casuarina (సర్వి)">Casuarina / సర్వి (Pole Timber)</option>
@@ -365,7 +365,7 @@
                         <option value="Subabul (సుబాబుల్)">Subabul / సుబాబుల్ (Fodder &amp; Pulp)</option>
                         <option value="Red Sanders (ఎర్రచందనం)">Red Sanders / ఎర్రచందనం (Precious Heartwood)</option>
                       </optgroup>
-                      <optgroup label="🥭 Fruit &amp; Horticulture Species (పండ్ల జాతులు)">
+                      <optgroup label="Fruit &amp; Horticulture Species (పండ్ల జాతులు)">
                         <option value="Mango (మామిడి)">Mango / మామిడి (Banganapalli &amp; Totapuri)</option>
                         <option value="Guava (జామ)">Guava / జామ (Taiwan Pink &amp; Allahabad)</option>
                         <option value="Sapota (సపోటా)">Sapota / సపోటా (Kalipatti &amp; Cricket Ball)</option>
@@ -477,10 +477,10 @@
 
               <div style="background:#f7faf8; border:1.5px dashed var(--color-primary); border-radius:20px; padding:24px; text-align:center;">
                 <button type="button" onclick="captureGPS()" class="btn-pill-cta" style="padding:10px 24px; font-size:0.92rem; margin:0 auto 10px;">
-                  <span>📍 Capture My Farm GPS Coordinates</span>
+                  <span> Capture My Farm GPS Coordinates</span>
                 </button>
                 <div class="selio-field" style="max-width:440px; margin:0 auto;">
-                  <span class="selio-icon">📍</span>
+                  <span class="selio-icon"></span>
                   <input type="text" id="gpsField" name="gpsField" readonly class="selio-input" placeholder="GPS Coordinates not captured yet" style="text-align:center; font-weight:600; padding-left:46px !important;">
                 </div>
                 <div id="gpsMapLink" style="margin-top:10px; font-size:0.85rem;"></div>
@@ -498,7 +498,7 @@
 
           <!-- Success Card -->
           <div id="submitSuccessCard" style="display:none; margin-top:30px; padding:36px; background:#e8f5e9; border:2px solid #2e7d32; border-radius:24px; text-align:center;">
-            <div style="font-size:3rem; margin-bottom:12px;">🌾</div>
+            <div style="font-size:3rem; margin-bottom:12px;"></div>
             <h3 style="font-size:1.6rem; font-weight:800; color:#1b5e20; margin-bottom:8px;">Application Submitted Successfully!</h3>
             <p style="font-size:1.05rem; color:#2e7d32; margin-bottom:16px;">
               Your application reference number is: <strong id="appRefCode" style="background:#ffffff; padding:4px 12px; border-radius:8px; border:1px solid #2e7d32;">SGS-2026-XXXX</strong>
@@ -568,7 +568,7 @@
             const lat = pos.coords.latitude.toFixed(6);
             const lon = pos.coords.longitude.toFixed(6);
             field.value = lat + ", " + lon + " (Accuracy: " + Math.round(pos.coords.accuracy) + "m)";
-            mapLink.innerHTML = `<a href="https://maps.google.com/?q=${lat},${lon}" target="_blank" style="color:var(--color-primary); font-weight:700; text-decoration:underline;">📍 View on Google Maps &nearr;</a>`;
+            mapLink.innerHTML = `<a href="https://maps.google.com/?q=${lat},${lon}" target="_blank" style="color:var(--color-primary); font-weight:700; text-decoration:underline;"> View on Google Maps &nearr;</a>`;
           },
           (err) => {
             field.value = "15.828100, 78.037300 (Kurnool Field Default)";
