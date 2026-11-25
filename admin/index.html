@@ -1099,7 +1099,7 @@
           whatsapp: "+91 99634 90444",
           email: "info@sadanagreensociety.com",
           emailAlt: "raghubhaskar4@gmail.com",
-          website: "sadanagreensociety.com",
+          website: "sadanagreensociety.org",
           primaryColor: "#54a630",
           copyright: "Copyright © 2026 Sadana Green Society, Kurnool · sadanagreensociety.com"
         },
@@ -1815,7 +1815,7 @@
             whatsapp: "+91 99634 90444",
             email: "info@sadanagreensociety.com",
             emailAlt: "raghubhaskar4@gmail.com",
-            website: "sadanagreensociety.com"
+            website: "sadanagreensociety.org"
           },
           enquiryCategories: [
             "Project partnership",
@@ -7265,6 +7265,10 @@
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Alternate Email</label>
                 <input type="email" value="${gt.emailAlt || CMS.global.emailAlt || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.emailAlt=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Website</label>
+                <input type="text" value="${gt.website || CMS.global.website || 'sadanagreensociety.org'}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.website=this.value; CMS.global.website=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Office Address</label>
