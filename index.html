@@ -5743,6 +5743,7 @@
             { id: "carbon", title: "Carbon Credits", icon: "globe" },
             { id: "environment", title: "Environment", icon: "globe" },
             { id: "journey", title: "Our Journey", icon: "journey" },
+            { id: "contact", title: "Contact Us", icon: "brand" },
             { id: "legal", title: "Privacy & Terms", icon: "legal" }
           ]
         },
@@ -7225,6 +7226,66 @@
       // -----------------------------------------------------------------------
       // TAB 18: CHANGE PASSWORD
       // -----------------------------------------------------------------------
+      else if (t === "contact") {
+        if (!CMS.contact) CMS.contact = {};
+        if (!CMS.contact.getInTouch) CMS.contact.getInTouch = {};
+        const c = CMS.contact;
+        const gt = c.getInTouch;
+        ws.innerHTML = `
+          ${renderInlineHeroEditor('contact')}
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('Contact Us Hero &amp; Banner Image', 'Edit the Contact page heading, subtitle, and hero photo.', 'Contact Hero')}
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Hero Title</label>
+              <input type="text" value="${c.heroTitle || 'Contact Sadana Green Society'}" oninput="CMS.contact.heroTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold bg-white" />
+            </div>
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Hero Subtitle</label>
+              <textarea rows="2" oninput="CMS.contact.heroSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${c.heroSubtitle || 'For project enquiries, farmer engagement, institutional partnerships or CSR collaboration.'}</textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              ${renderCmsImageCard('contactHero', 'Contact Page Hero Image')}
+            </div>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+            ${renderAdminCardHeader('Get in Touch Details Table', 'All contact details displayed on the Contact Us page.', 'Contact Details')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Organisation Name</label>
+                <input type="text" value="${gt.orgName || CMS.global.orgName || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.orgName=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Founder / President Line</label>
+                <input type="text" value="${gt.founder || 'Founder and President: B. Raghu Bhaskar'}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.founder=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Working States</label>
+                <input type="text" value="${gt.workingStates || CMS.global.workingStates || 'Andhra Pradesh, Telangana & Karnataka'}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.workingStates=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Phone</label>
+                <input type="text" value="${gt.phone || CMS.global.phone || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.phone=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">WhatsApp</label>
+                <input type="text" value="${gt.whatsapp || CMS.global.whatsapp || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.whatsapp=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Primary Email</label>
+                <input type="email" value="${gt.email || CMS.global.email || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.email=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Alternate Email</label>
+                <input type="email" value="${gt.emailAlt || CMS.global.emailAlt || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.emailAlt=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block font-bold text-gray-600 mb-1">Office Address</label>
+                <textarea rows="2" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.office=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${gt.office || CMS.global.address || ''}</textarea>
+              </div>
+            </div>
+          </div>
+        `;
+      }
       else if (t === "security") {
         ws.innerHTML = `
           <div class="pb-4 border-b border-gray-200 mb-6">
