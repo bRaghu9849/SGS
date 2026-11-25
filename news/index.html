@@ -409,7 +409,7 @@
 
         <!-- Bottom Row: Copyright & Quick Links -->
         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11.5px] text-gray-400">
-          <div data-cms-key="global.copyright">Copyright © 2026 Sadana Green Society, Kurnool · sadanagreensociety.com</div>
+          <div data-cms-key="global.copyright">Copyright © 2026 Sadana Green Society, Kurnool · sadanagreensociety.org</div>
           <div class="flex items-center gap-4">
             <a href="${routeUrl('privacy')}" data-nav="privacy" class="hover:text-[#162219] underline transition">Privacy Policy</a>
             <a href="${routeUrl('terms')}" data-nav="terms" class="hover:text-[#162219] underline transition">Terms of Use</a>
@@ -1097,11 +1097,11 @@
           address: "Near Nandyal Checkpost, Kurnool, Andhra Pradesh 518003",
           phone: "+91 99666 11855",
           whatsapp: "+91 99634 90444",
-          email: "info@sadanagreensociety.com",
+          email: "info@sadanagreensociety.org",
           emailAlt: "raghubhaskar4@gmail.com",
           website: "sadanagreensociety.org",
           primaryColor: "#54a630",
-          copyright: "Copyright © 2026 Sadana Green Society, Kurnool · sadanagreensociety.com"
+          copyright: "Copyright © 2026 Sadana Green Society, Kurnool · sadanagreensociety.org"
         },
         home: {
           heroTitle: "Growing Green. Empowering Farmers.",
@@ -1813,7 +1813,7 @@
             office: "Near Nandyal Checkpost, Kurnool, Andhra Pradesh 518003",
             phone: "+91 99666 11855",
             whatsapp: "+91 99634 90444",
-            email: "info@sadanagreensociety.com",
+            email: "info@sadanagreensociety.org",
             emailAlt: "raghubhaskar4@gmail.com",
             website: "sadanagreensociety.org"
           },
@@ -1939,8 +1939,8 @@
             cat: "Contact",
             q: "How can I contact Sadana Green Society?",
             qTe: "సాధన గ్రీన్ సొసైటీని ఎలా సంప్రదించాలి?",
-            a: "Email info@sadanagreensociety.com or visit our Contact Us page.",
-            aTe: "info@sadanagreensociety.com కు ఈమెయిల్ పంపండి లేదా Contact Us పేజీని చూడండి."
+            a: "Email info@sadanagreensociety.org or visit our Contact Us page.",
+            aTe: "info@sadanagreensociety.org కు ఈమెయిల్ పంపండి లేదా Contact Us పేజీని చూడండి."
           }
         ],
         galleryItems: [
@@ -1999,13 +1999,13 @@
             { id: "sec-3", title: "3. Field GPS & Land Mapping Data", content: "Field coordinates and boundary polygons gathered by our field officers are stored securely in encrypted GIS mapping repositories. They are shared strictly with accredited third-party validation and verification bodies (VVBs) and carbon registries for official audit compliance." },
             { id: "sec-4", title: "4. Data Sharing & Third Parties", content: "Sadana Green Society never sells, leases, or trades farmer personal contact details or land records to commercial advertisers or marketing agencies. Data is disclosed only to accredited environmental registries, auditing bodies, or regulatory authorities as required by Indian law." },
             { id: "sec-5", title: "5. Data Security & Storage", content: "We maintain industry-standard physical, electronic, and procedural safeguards to protect all submitted farmer records and GIS data against unauthorized access, alteration, or disclosure." },
-            { id: "sec-6", title: "6. Farmer Rights & Contact", content: "Farmers and contributors have the right to inspect, correct, or update their registered land and contact details at any time by contacting our headquarters at Near Nandyal Checkpost, Kurnool, Andhra Pradesh 518003, or emailing privacy@sadanagreensociety.com." }
+            { id: "sec-6", title: "6. Farmer Rights & Contact", content: "Farmers and contributors have the right to inspect, correct, or update their registered land and contact details at any time by contacting our headquarters at Near Nandyal Checkpost, Kurnool, Andhra Pradesh 518003, or emailing privacy@sadanagreensociety.org." }
           ]
         },
         terms: {
           badge: "TERMS OF USE • SADANA GREEN SOCIETY",
           effectiveDate: "Effective Date: January 01, 2026 | Kurnool, Andhra Pradesh",
-          intro: "Welcome to the official digital portal of Sadana Green Society (sadanagreensociety.com). By accessing or using this website, submitting plantation applications, or enrolling in our carbon credit or AWD programmes, you agree to comply with and be bound by the following Terms of Use.",
+          intro: "Welcome to the official digital portal of Sadana Green Society (sadanagreensociety.org). By accessing or using this website, submitting plantation applications, or enrolling in our carbon credit or AWD programmes, you agree to comply with and be bound by the following Terms of Use.",
           sections: [
             { id: "term-1", title: "1. Organisation Mandate & Non-Profit Status", content: "Sadana Green Society is an officially registered non-governmental society (Regd. No. 129/2021, Kurnool) dedicated to ecological restoration, agroforestry, farmer empowerment, and climate change mitigation across Andhra Pradesh, Telangana, and Karnataka." },
             { id: "term-2", title: "2. Programme Enrolment & Field Verification", content: "Submission of a new plantation application or carbon enrollment form does not automatically guarantee issuance of saplings or monetary credits. All applications are subject to mandatory on-site land inspection, soil suitability verification, and GPS coordinate validation by our field teams." },
@@ -4494,7 +4494,7 @@
       // Trigger mailto link
       const subject = encodeURIComponent(`SGS Enquiry [${cat}]: ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCategory: ${cat}\n\nMessage:\n${msg}`);
-      window.location.href = `mailto:info@sadanagreensociety.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:${(CMS.contact && CMS.contact.getInTouch && CMS.contact.getInTouch.email) || CMS.global.email || "info@sadanagreensociety.org"}?subject=${subject}&body=${body}`;
 
       showToast("Enquiry recorded! Opening your mail client...");
       form.reset();
@@ -5069,8 +5069,8 @@
                 <a href="tel:+919963490444" class="inline-flex items-center gap-1.5 bg-[#162219] hover:bg-black text-white px-4 py-2 rounded-xl transition no-underline">
                   <span>+91 99634 90444</span>
                 </a>
-                <a href="mailto:info@sadanagreensociety.com" class="inline-flex items-center gap-1.5 bg-white border border-[#cfe3cc] hover:bg-gray-50 text-[#162219] px-4 py-2 rounded-xl transition no-underline">
-                  <span>info@sadanagreensociety.com</span>
+                <a href="mailto:info@sadanagreensociety.org" class="inline-flex items-center gap-1.5 bg-white border border-[#cfe3cc] hover:bg-gray-50 text-[#162219] px-4 py-2 rounded-xl transition no-underline">
+                  <span>info@sadanagreensociety.org</span>
                 </a>
               </div>
             </div>
@@ -7212,7 +7212,7 @@
       const rem = document.getElementById("remember-me")?.checked;
       const errBox = document.getElementById("login-error-msg");
 
-      const validUsers = ["admin", "sgs", "raghubhaskar", "info@sadanagreensociety.com"];
+      const validUsers = ["admin", "sgs", "raghubhaskar", "info@sadanagreensociety.org", "info@sadanagreensociety.org"];
       const correctPwd = getAdminPassword();
 
       if (validUsers.includes(u.toLowerCase()) && p === correctPwd) {
