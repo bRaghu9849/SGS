@@ -4607,6 +4607,14 @@
     // ENVIRONMENTAL IMPACT & CLIMATE RESILIENCE PAGE
     // =========================================================================
     function renderEnvironmentPage() {
+      const env = CMS.environment || {};
+      const defaultPillars = [
+        { title: "Soil Health & Organic Regeneration", desc: "Leaf litter from timber and fruit trees supplies continuous organic matter, improving cation-exchange capacity, microbial health, and water retention in dryland soils.", telugu: "సేంద్రీయ ఎరువులతో నేల సారవంతం మరియు తేమ రక్షణ." },
+        { title: "Water Conservation & Aquifer Recharge", desc: "Alternate Wetting and Drying (AWD) saves up to 30% irrigation water in paddy cultivation while deep tree roots channel monsoon rains directly into groundwater reserves.", telugu: "AWD పద్ధతి ద్వారా 30% నీటి ఆదా మరియు భూగర్భ జలాల పెరుగుదల." },
+        { title: "Atmospheric Carbon Sequestration", desc: "Fast-growing timber like Melia dubia and deep-rooted Teak trap atmospheric CO₂ into permanent woody biomass, generating verified carbon revenues for farming households.", telugu: "చెట్ల ద్వారా కార్బన్ నిల్వ మరియు కర్బన ఆదాయం." },
+        { title: "Biodiversity & Microclimate Moderation", desc: "Multi-layered agroforestry creates natural canopy cover that reduces field temperatures by 2-4°C and provides food corridors for beneficial pollinators and birds.", telugu: "పక్షులు, తేనెటీగలకు ఆవాసం మరియు వేడి వాతావరణం నుండి రక్షణ." }
+      ];
+      const pillars = (Array.isArray(env.pillars) && env.pillars.length) ? env.pillars : defaultPillars;
       return `
         <!-- HERO SECTION -->
         <section class="relative bg-[#111e15] text-white pb-16">
@@ -4615,10 +4623,10 @@
 
           <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-4 text-center">
             <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-[#7fd858] font-bold text-xs tracking-wider uppercase mb-3">Ecological Stewardship</span>
-            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">Environmental Impact &amp; Climate Resilience</h1>
-            <div class="text-lg sm:text-xl font-bold text-[#7fd858] telugu-text mb-3">పర్యావరణ పరిరక్షణ మరియు వాతావరణ మార్పుల నిరోధకత</div>
+            <h1 class="hero-title-lg text-3xl sm:text-5xl font-extrabold leading-tight mb-3">${env.heroTitle || 'Environmental Impact &amp; Climate Resilience'}</h1>
+            <div class="text-lg sm:text-xl font-bold text-[#7fd858] telugu-text mb-3">${env.heroTitleTe || 'పర్యావరణ పరిరక్షణ మరియు వాతావరణ మార్పుల నిరోధకత'}</div>
             <p class="secondary-text text-white/85 text-[18px] leading-relaxed font-normal">
-              How agroforestry, AWD water conservation, and community biodiversity projects fight drought, build fertile topsoil, and sequester carbon across southern India.
+              ${env.heroSubtitle || 'How agroforestry, AWD water conservation, and community biodiversity projects fight drought, build fertile topsoil, and sequester carbon across southern India.'}
             </p>
           </div>
         </section>
@@ -4626,45 +4634,15 @@
         <!-- 4 IMPACT PILLARS -->
         <section class="py-16 max-w-[1220px] mx-auto px-5 sm:px-8">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <!-- Soil Health -->
-            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
-              <div>
-                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4"></div>
-                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Soil Health &amp; Organic Regeneration</h3>
-                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Leaf litter from timber and fruit trees supplies continuous organic matter, improving cation-exchange capacity, microbial health, and water retention in dryland soils.</p>
-                <div class="text-sm text-[#54a630] font-bold telugu-text">సేంద్రీయ ఎరువులతో నేల సారవంతం మరియు తేమ రక్షణ.</div>
+            ${pillars.map(p => `
+              <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
+                <div>
+                  <h3 class="font-extrabold text-2xl text-[#162219] mb-3">${p.title || ''}</h3>
+                  <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">${p.desc || ''}</p>
+                  <div class="text-sm text-[#54a630] font-bold telugu-text">${p.telugu || ''}</div>
+                </div>
               </div>
-            </div>
-
-            <!-- Water Conservation -->
-            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
-              <div>
-                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4"></div>
-                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Water Conservation &amp; Aquifer Recharge</h3>
-                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Alternate Wetting and Drying (AWD) saves up to 30% irrigation water in paddy cultivation while deep tree roots channel monsoon rains directly into groundwater reserves.</p>
-                <div class="text-sm text-[#54a630] font-bold telugu-text">AWD పద్ధతి ద్వారా 30% నీటి ఆదా మరియు భూగర్భ జలాల పెరుగుదల.</div>
-              </div>
-            </div>
-
-            <!-- Carbon Sequestration -->
-            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
-              <div>
-                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4"></div>
-                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Atmospheric Carbon Sequestration</h3>
-                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Fast-growing timber like Melia dubia and deep-rooted Teak trap atmospheric CO₂ into permanent woody biomass, generating verified carbon revenues for farming households.</p>
-                <div class="text-sm text-[#54a630] font-bold telugu-text">చెట్ల ద్వారా కార్బన్ నిల్వ మరియు కర్బన ఆదాయం.</div>
-              </div>
-            </div>
-
-            <!-- Biodiversity & Microclimate -->
-            <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col justify-between group hover:border-[#54a630] transition duration-300">
-              <div>
-                <div class="w-12 h-12 rounded-2xl bg-[#54a630]/20 text-[#54a630] text-2xl flex items-center justify-center mb-4"></div>
-                <h3 class="font-extrabold text-2xl text-[#162219] mb-3">Biodiversity &amp; Microclimate Moderation</h3>
-                <p class="secondary-text text-[18px] text-gray-700 leading-relaxed mb-4">Multi-layered agroforestry creates natural canopy cover that reduces field temperatures by 2-4°C and provides food corridors for beneficial pollinators and birds.</p>
-                <div class="text-sm text-[#54a630] font-bold telugu-text">పక్షులు, తేనెటీగలకు ఆవాసం మరియు వేడి వాతావరణం నుండి రక్షణ.</div>
-              </div>
-            </div>
+            `).join('')}
           </div>
 
           <!-- Impact Metrics -->
@@ -6668,6 +6646,163 @@
                   </div>
                 </div>
               `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      else if (t === "environment") {
+        if (!CMS.environment) CMS.environment = {};
+        if (!Array.isArray(CMS.environment.pillars) || !CMS.environment.pillars.length) {
+          CMS.environment.pillars = [
+            { title: "Soil Health & Organic Regeneration", desc: "Leaf litter from timber and fruit trees supplies continuous organic matter, improving cation-exchange capacity, microbial health, and water retention in dryland soils.", telugu: "సేంద్రీయ ఎరువులతో నేల సారవంతం మరియు తేమ రక్షణ." },
+            { title: "Water Conservation & Aquifer Recharge", desc: "Alternate Wetting and Drying (AWD) saves up to 30% irrigation water in paddy cultivation while deep tree roots channel monsoon rains directly into groundwater reserves.", telugu: "AWD పద్ధతి ద్వారా 30% నీటి ఆదా మరియు భూగర్భ జలాల పెరుగుదల." },
+            { title: "Atmospheric Carbon Sequestration", desc: "Fast-growing timber like Melia dubia and deep-rooted Teak trap atmospheric CO₂ into permanent woody biomass, generating verified carbon revenues for farming households.", telugu: "చెట్ల ద్వారా కార్బన్ నిల్వ మరియు కర్బన ఆదాయం." },
+            { title: "Biodiversity & Microclimate Moderation", desc: "Multi-layered agroforestry creates natural canopy cover that reduces field temperatures by 2-4°C and provides food corridors for beneficial pollinators and birds.", telugu: "పక్షులు, తేనెటీగలకు ఆవాసం మరియు వేడి వాతావరణం నుండి రక్షణ." }
+          ];
+        }
+        const env = CMS.environment;
+        ws.innerHTML = `
+          ${renderInlineHeroEditor('environment')}
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('Environment Page Heading & Intro', 'Edit the Ecological Stewardship hero title, Telugu subtitle, and description.', 'Environment Hero')}
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Hero Title</label>
+              <input type="text" value="${env.heroTitle || 'Environmental Impact & Climate Resilience'}" oninput="CMS.environment.heroTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold" />
+            </div>
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Telugu Subtitle</label>
+              <input type="text" value="${env.heroTitleTe || 'పర్యావరణ పరిరక్షణ మరియు వాతావరణ మార్పుల నిరోధకత'}" oninput="CMS.environment.heroTitleTe=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 telugu-text" />
+            </div>
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Hero Description</label>
+              <textarea rows="2" oninput="CMS.environment.heroSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5">${env.heroSubtitle || ''}</textarea>
+            </div>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+            ${renderAdminCardHeader('4 Ecological Impact Pillars', 'Edit all 4 impact cards on the Environment page.', 'Environment Pillars')}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${env.pillars.map((p, idx) => `
+                <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+                  <div class="font-bold text-[#54a630]">Pillar #${idx+1}</div>
+                  <input type="text" value="${p.title || ''}" oninput="CMS.environment.pillars[${idx}].title=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 font-bold" />
+                  <textarea rows="3" oninput="CMS.environment.pillars[${idx}].desc=this.value;" class="w-full border border-gray-200 rounded-lg p-2">${p.desc || ''}</textarea>
+                  <input type="text" value="${p.telugu || ''}" oninput="CMS.environment.pillars[${idx}].telugu=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 telugu-text" />
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      else if (t === "gallery") {
+        const items = CMS.galleryItems || [];
+        ws.innerHTML = `
+          ${renderInlineHeroEditor('gallery')}
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-200">
+              <div>
+                <h4 class="font-extrabold text-sm text-[#162219]">Photo Gallery (${items.length} Photos)</h4>
+                <p class="text-[11px] text-gray-500">Click Edit on any photo card to update its title, category, location, or image.</p>
+              </div>
+              <button type="button" onclick="addGalleryItem()" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm">+ Add Photo</button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              ${items.map((g, idx) => {
+                const isEditing = state.editingGalleryIdx === idx;
+                const src = g.src || imgUrl(g.imgKey || 'gal1');
+                if (!isEditing) {
+                  return `
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                      <div>
+                        <div class="h-36 bg-gray-100 overflow-hidden">
+                          <img src="${src}" alt="${g.title || 'Gallery'}" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-3.5">
+                          <div class="text-[10px] font-bold text-[#54a630] uppercase">${g.category || 'Field Activity'}</div>
+                          <div class="font-extrabold text-xs text-[#162219] truncate mt-0.5">${g.title || 'Untitled Photo'}</div>
+                          <div class="text-[11px] text-gray-500 truncate">${g.location || ''}</div>
+                        </div>
+                      </div>
+                      <div class="px-3.5 pb-3.5 flex items-center gap-2">
+                        <button type="button" onclick="toggleEditGallery(${idx})" class="flex-1 py-1.5 rounded-lg bg-gray-100 hover:bg-[#54a630] hover:text-white font-bold transition">Edit</button>
+                        <button type="button" onclick="deleteGalleryItem(${idx})" class="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-bold transition">Del</button>
+                      </div>
+                    </div>
+                  `;
+                }
+                return `
+                  <div class="sm:col-span-2 lg:col-span-3 bg-white rounded-2xl border-2 border-[#54a630] p-5 space-y-3 shadow-md">
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                      <span class="font-extrabold text-sm text-[#54a630]">Editing Photo #${idx+1}</span>
+                      <button type="button" onclick="state.editingGalleryIdx=null; saveCmsData(); renderCmsWorkspace();" class="px-4 py-1.5 rounded-xl bg-[#54a630] text-white font-bold">Done &amp; Save</button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div>
+                        <label class="block font-bold text-gray-600 mb-1">Title (English)</label>
+                        <input type="text" value="${g.title || ''}" oninput="CMS.galleryItems[${idx}].title=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5 font-bold" />
+                      </div>
+                      <div>
+                        <label class="block font-bold text-gray-600 mb-1">Category</label>
+                        <input type="text" value="${g.category || ''}" oninput="CMS.galleryItems[${idx}].category=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5" />
+                      </div>
+                      <div>
+                        <label class="block font-bold text-gray-600 mb-1">Location</label>
+                        <input type="text" value="${g.location || ''}" oninput="CMS.galleryItems[${idx}].location=this.value;" class="w-full border border-gray-200 rounded-lg px-2.5 py-1.5" />
+                      </div>
+                      <div>
+                        <label class="block font-bold text-gray-600 mb-1">Upload Replacement Photo</label>
+                        <input type="file" accept="image/*" onchange="uploadGalleryItemImage(${idx}, event)" class="w-full text-[11px]" />
+                      </div>
+                      <div class="sm:col-span-2">
+                        <label class="block font-bold text-gray-600 mb-1">Description / Details</label>
+                        <textarea rows="2" oninput="CMS.galleryItems[${idx}].desc=this.value;" class="w-full border border-gray-200 rounded-lg p-2">${g.desc || ''}</textarea>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }
+      else if (t === "inbox") {
+        const plantations = (CMS.submissions && CMS.submissions.plantations) || [];
+        const enquiries = (CMS.submissions && CMS.submissions.enquiries) || [];
+        ws.innerHTML = `
+          <div class="space-y-6 text-xs">
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-200 mb-4">
+                <div>
+                  <h4 class="font-extrabold text-sm text-[#162219]">Plantation Applications (${plantations.length})</h4>
+                  <p class="text-[11px] text-gray-500">Submitted from /new-plantation/ by farmers and field officers.</p>
+                </div>
+                <button type="button" onclick="addPlantationSubmission()" class="bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl font-bold">+ Add Record</button>
+              </div>
+              <div class="space-y-3">
+                ${plantations.length ? plantations.map((p, idx) => `
+                  <div class="bg-white p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                      <div class="font-extrabold text-[#162219]">${p.farmerName || 'Farmer'} <span class="text-[#54a630] font-mono text-[11px]">${p.id || ''}</span></div>
+                      <div class="text-[11px] text-gray-500">${p.phone || ''} &bull; ${p.village || ''}, ${p.district || ''} &bull; ${p.acres || ''}</div>
+                      <div class="text-[11px] text-gray-600 mt-1">${p.varieties || ''} ${p.gps ? '(' + p.gps + ')' : ''}</div>
+                    </div>
+                    <button type="button" onclick="deletePlantationSubmission(${idx})" class="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-bold self-start sm:self-center">Delete</button>
+                  </div>
+                `).join('') : '<div class="text-gray-400 py-4 text-center">No plantation applications yet.</div>'}
+              </div>
+            </div>
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+              <h4 class="font-extrabold text-sm text-[#162219] pb-3 border-b border-gray-200 mb-4">Contact Enquiries (${enquiries.length})</h4>
+              <div class="space-y-3">
+                ${enquiries.length ? enquiries.map((eq, idx) => `
+                  <div class="bg-white p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                      <div class="font-extrabold text-[#162219]">${eq.name || 'Enquiry'} <span class="text-gray-400 text-[11px]">${eq.phone || eq.email || ''}</span></div>
+                      <div class="text-[11px] text-gray-600 mt-1">${eq.message || ''}</div>
+                    </div>
+                    <button type="button" onclick="CMS.submissions.enquiries.splice(${idx},1); saveCmsData(); renderCmsWorkspace();" class="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-bold self-start sm:self-center">Delete</button>
+                  </div>
+                `).join('') : '<div class="text-gray-400 py-4 text-center">No contact enquiries yet.</div>'}
+              </div>
             </div>
           </div>
         `;
