@@ -991,13 +991,13 @@
       const caretExpl = document.getElementById("caret-explore");
 
       if (key === "services" || key === "agro") {
-        if (serv) serv.classList.remove("hidden");
-        if (expl) expl.classList.add("hidden");
+        if (serv) { serv.classList.remove("hidden"); serv.classList.add("open"); }
+        if (expl) { expl.classList.remove("open"); }
         if (caretServ) caretServ.classList.add("rotate-180");
         if (caretExpl) caretExpl.classList.remove("rotate-180");
       } else if (key === "explore" || key === "prog") {
-        if (expl) expl.classList.remove("hidden");
-        if (serv) serv.classList.add("hidden");
+        if (expl) { expl.classList.remove("hidden"); expl.classList.add("open"); }
+        if (serv) { serv.classList.remove("open"); }
         if (caretExpl) caretExpl.classList.add("rotate-180");
         if (caretServ) caretServ.classList.remove("rotate-180");
       }
@@ -1011,8 +1011,8 @@
         const expl = document.getElementById("mega-menu-explore");
         const caretServ = document.getElementById("caret-services");
         const caretExpl = document.getElementById("caret-explore");
-        if (serv) serv.classList.add("hidden");
-        if (expl) expl.classList.add("hidden");
+        if (serv) serv.classList.remove("open");
+        if (expl) expl.classList.remove("open");
         if (caretServ) caretServ.classList.remove("rotate-180");
         if (caretExpl) caretExpl.classList.remove("rotate-180");
       }, delay);
