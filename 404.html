@@ -5716,6 +5716,18 @@
     function renderCmsWorkspace() {
       const ws = document.getElementById("cms-workspace");
       if (!ws) return;
+      if (!ws.__autoSaveBound) {
+        ws.__autoSaveBound = true;
+        let _cmsTimer = null;
+        ws.addEventListener("input", function() {
+          clearTimeout(_cmsTimer);
+          _cmsTimer = setTimeout(function() { saveCmsData(); }, 500);
+        });
+        ws.addEventListener("change", function() {
+          clearTimeout(_cmsTimer);
+          saveCmsData();
+        });
+      }
 
       const badge = document.getElementById("cms-inbox-badge");
       if (badge && CMS.submissions) {
