@@ -1,7 +1,9 @@
 /**
  * Cloudflare Pages Function: /api/media
- * Streams D1-stored media files with HTTP Range support for smooth <video> playback.
+ * Streams D1-stored media files using byte-range chunk fetching (supports up to 50 MB without Worker OOM).
  */
+
+const RAW_CHUNK_SIZE = 450 * 1024;
 
 function base64ToUint8(b64) {
   const bin = atob(b64);
@@ -24,39 +26,69 @@ export async function onRequestGet(context) {
     const meta = await db.prepare('SELECT filename, mime_type, total_size, total_chunks FROM media_files WHERE id = ?').bind(id).first();
     if (!meta) return new Response('Not found', { status: 404 });
 
-    const chunksRes = await db.prepare(
-      'SELECT chunk_index, data FROM media_chunks WHERE media_id = ? ORDER BY chunk_index ASC'
-    ).bind(id).all();
-
-    const decoded = (chunksRes.results || []).map(r => base64ToUint8(r.data));
-    const full = new Uint8Array(meta.total_size);
-    let offset = 0;
-    for (const part of decoded) {
-      full.set(part, offset);
-      offset += part.length;
-    }
-
     const rangeHeader = context.request.headers.get('Range');
     if (rangeHeader) {
       const m = /bytes=(\d+)-(\d*)/.exec(rangeHeader);
       if (m) {
         const start = parseInt(m[1], 10);
-        const end = m[2] ? Math.min(parseInt(m[2], 10), meta.total_size - 1) : meta.total_size - 1;
-        const slice = full.subarray(start, end + 1);
-        return new Response(slice, {
+        // Cap single range response to ~4 MB so browser streams smoothly without exceeding Worker RAM
+        const requestedEnd = m[2] ? Math.min(parseInt(m[2], 10), meta.total_size - 1) : Math.min(start + 4 * 1024 * 1024 - 1, meta.total_size - 1);
+        const end = Math.max(start, requestedEnd);
+
+        const startChunk = Math.floor(start / RAW_CHUNK_SIZE);
+        const endChunk = Math.floor(end / RAW_CHUNK_SIZE);
+
+        const chunksRes = await db.prepare(
+          'SELECT chunk_index, data FROM media_chunks WHERE media_id = ? AND chunk_index BETWEEN ? AND ? ORDER BY chunk_index ASC'
+        ).bind(id, startChunk, endChunk).all();
+
+        const sliceLen = end - start + 1;
+        const out = new Uint8Array(sliceLen);
+        let written = 0;
+
+        for (const row of chunksRes.results || []) {
+          const chunkBytes = base64ToUint8(row.data);
+          const chunkGlobalStart = row.chunk_index * RAW_CHUNK_SIZE;
+          const localStart = Math.max(0, start - chunkGlobalStart);
+          const localEnd = Math.min(chunkBytes.length, end - chunkGlobalStart + 1);
+          const part = chunkBytes.subarray(localStart, localEnd);
+          out.set(part, written);
+          written += part.length;
+        }
+
+        return new Response(out.subarray(0, written), {
           status: 206,
           headers: {
             'Content-Type': meta.mime_type || 'video/mp4',
             'Content-Range': `bytes ${start}-${end}/${meta.total_size}`,
             'Accept-Ranges': 'bytes',
-            'Content-Length': String(slice.length),
+            'Content-Length': String(written),
             'Cache-Control': 'public, max-age=31536000'
           }
         });
       }
     }
 
-    return new Response(full, {
+    // Stream full file chunk-by-chunk for non-Range requests
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          for (let i = 0; i < meta.total_chunks; i++) {
+            const row = await db.prepare(
+              'SELECT data FROM media_chunks WHERE media_id = ? AND chunk_index = ?'
+            ).bind(id, i).first();
+            if (row && row.data) {
+              controller.enqueue(base64ToUint8(row.data));
+            }
+          }
+          controller.close();
+        } catch (e) {
+          controller.error(e);
+        }
+      }
+    });
+
+    return new Response(stream, {
       status: 200,
       headers: {
         'Content-Type': meta.mime_type || 'video/mp4',
