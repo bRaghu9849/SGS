@@ -242,7 +242,29 @@
     body.mobile-preview-mode .section-title-lg { font-size: 1.55rem !important; line-height: 1.25 !important; }
     body.mobile-preview-mode .stack-on-mobile-sim { flex-direction: column !important; align-items: flex-start !important; }
 
-    /* Secondary Font Rule: 18px everywhere as requested */
+    /* Universal 18px Non-Heading Text Rule (keeps headings, sticky navbar, buttons/pills, and admin/dev UI intact) */
+    body {
+      font-size: 18px;
+    }
+    #app-main section p,
+    #app-main section .frosted-dark,
+    #app-main section .frosted-green,
+    #app-main section li,
+    #app-main section dd,
+    #app-main section td,
+    #app-main section th,
+    #app-main section blockquote,
+    #app-main section .text-xs:not(#site-header *):not(button):not(.cta-pill):not(a.cta-pill):not(.hero-badge):not([class*="badge"]),
+    #app-main section .text-sm:not(#site-header *):not(button):not(.cta-pill):not(a.cta-pill),
+    #app-main section .text-base:not(#site-header *):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6),
+    #app-main section .text-\[13px\]:not(#site-header *),
+    #app-main section .text-\[14px\]:not(#site-header *),
+    #app-main section .text-\[15px\]:not(#site-header *),
+    #app-main section .text-\[16px\]:not(#site-header *),
+    #site-footer p,
+    #site-footer .text-xs:not(nav a):not(span.text-\[10px\]),
+    #site-footer .text-sm:not(nav a),
+    #site-footer li,
     .secondary-text,
     .text-secondary,
     p.section-subtitle,
@@ -2162,9 +2184,9 @@
       const isExplore = ["species", "forest", "fruit", "plantation", "new-plantation", "gallery", "faq", "faqs"].includes(p) || state.megaMenu === "explore";
 
       return `
-        <header class="relative z-30 pt-5 px-4 sm:px-8">
+        <header id="site-header" class="fixed top-0 left-0 right-0 z-40 pt-4 pb-2 px-4 sm:px-8 transition-all duration-300">
           <div class="max-w-[1220px] mx-auto relative">
-            <div class="bg-white rounded-full px-5 sm:px-7 py-3 shadow-[0_4px_25px_rgba(0,0,0,0.06)] flex items-center justify-between gap-4 border border-gray-100/60">
+            <div class="bg-white/95 backdrop-blur-md rounded-full px-5 sm:px-7 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-between gap-4 border border-gray-100/80">
               <!-- Left: Logo + Official Tagline -->
               <a href="${routeUrl('home')}" data-nav="home" class="flex items-center gap-2.5 sm:gap-3 text-[#162219] no-underline flex-shrink-0">
                 <img data-cms-img="logoFull" src="${imgUrl('logoFull')}" alt="Sadana Green Society Logo" class="h-9 sm:h-10 w-auto object-contain flex-shrink-0" />
@@ -2415,6 +2437,7 @@
             </div>
           </div>
         </header>
+        <div class="h-[88px] sm:h-[92px]"></div>
       `;
     }
 
