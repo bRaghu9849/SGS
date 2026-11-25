@@ -279,7 +279,39 @@
 </head>
 <body class="bg-white">
 
-  
+  <!-- Branded Page Preloader (dismisses on hero video canplay or max 1.5s fallback) -->
+  <div id="sgs-page-loader" style="position:fixed;inset:0;z-index:9999;background:#0e1a12;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity 0.45s ease,visibility 0.45s ease;">
+    <img src="assets/images/logo/new-logo-sgs-emblem.png" alt="Sadana Green Society" style="width:72px;height:72px;border-radius:9999px;background:#fff;padding:4px;object-fit:contain;box-shadow:0 10px 30px rgba(0,0,0,0.4);" onerror="this.style.display='none'" />
+    <div style="color:#ffffff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;letter-spacing:-0.01em;">Sadana Green Society</div>
+    <div style="width:160px;height:4px;background:rgba(255,255,255,0.14);border-radius:9999px;overflow:hidden;">
+      <div style="width:45%;height:100%;background:#54a630;border-radius:9999px;animation:sgsLoaderSlide 1.1s ease-in-out infinite;"></div>
+    </div>
+  </div>
+  <style>
+    @keyframes sgsLoaderSlide { 0% { transform: translateX(-100%); } 100% { transform: translateX(320%); } }
+  </style>
+  <script>
+    (function() {
+      var done = false;
+      window.__sgsHideLoader = function() {
+        if (done) return;
+        done = true;
+        var el = document.getElementById("sgs-page-loader");
+        if (!el) return;
+        el.style.opacity = "0";
+        el.style.visibility = "hidden";
+        setTimeout(function() { if (el.parentNode) el.parentNode.removeChild(el); }, 500);
+      };
+      // Skip loader on /admin or /dev routes, or auto-dismiss after max 1.5s
+      var p = (window.location.pathname || "").toLowerCase();
+      if (p.indexOf("/admin") !== -1 || p.indexOf("/dev") !== -1) {
+        window.__sgsHideLoader();
+      } else {
+        window.addEventListener("load", function() { setTimeout(window.__sgsHideLoader, 350); });
+        setTimeout(window.__sgsHideLoader, 1500);
+      }
+    })();
+  </script>
 
   <!-- MAIN WEBSITE VIEWPORT -->
   <div id="site-viewport" class="relative min-h-screen flex flex-col">
@@ -2129,8 +2161,9 @@
         const rawUrl = hm.videoUrl.includes("?") ? hm.videoUrl : (hm.videoUrl + "?v=hq2");
         const vUrl = resolveAssetUrl(rawUrl);
         return `
-          <div class="absolute inset-0 overflow-hidden bg-black">
-            <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="${bgImg}" src="${vUrl}" class="absolute inset-0 w-full h-full object-cover" style="object-fit: cover; width: 100%; height: 100%; filter: none !important; -webkit-filter: none !important; opacity: 1 !important;">
+          <div class="absolute inset-0 overflow-hidden bg-[#0c1810]">
+            <img src="${bgImg}" alt="Hero background" class="absolute inset-0 w-full h-full object-cover" />
+            <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="${bgImg}" src="${vUrl}" oncanplay="this.style.opacity='1'; window.__sgsHideLoader && window.__sgsHideLoader();" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500" style="object-fit: cover; width: 100%; height: 100%; filter: none !important; -webkit-filter: none !important; opacity: 0;">
               <source src="${vUrl}" type="video/mp4" />
             </video>
           </div>
