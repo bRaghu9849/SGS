@@ -2050,20 +2050,31 @@
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
       try {
-        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms.php") : "api/cms.php";
+        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms") : "api/cms";
         fetch(url, {
           method: "POST",
+          cache: "no-store",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(CMS)
-        }).catch(() => {});
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (!data || !data.success) {
+            console.error("CMS server save failed:", data);
+            if (typeof showToast === "function") showToast("Warning: Server save failed!");
+          }
+        })
+        .catch(err => {
+          console.error("CMS server save error:", err);
+        });
       } catch(e) {}
     }
 
     // Synchronize CMS Data with Server
     async function syncCmsWithServer() {
       try {
-        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms.php") : "api/cms.php";
-        const res = await fetch(url);
+        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms") : "api/cms";
+        const res = await fetch(url, { cache: "no-store" });
         if (res.ok) {
           const srv = await res.json();
           if (srv && !srv.status && srv.global) {
@@ -7433,7 +7444,7 @@ else if (t === "gallery") {
       showToast("Uploading video to server assets...");
       const fd = new FormData();
       fd.append("video", file);
-      const uploadUrl = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/upload_video.php") : "api/upload_video.php";
+      const uploadUrl = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/upload_video") : "api/upload_video";
       fetch(uploadUrl, {
         method: "POST",
         body: fd

@@ -1,0 +1,10 @@
+node_modules
+scratch
+tests
+checklists
+new_website
+old website screenshots
+template_reference_screenshots
+.git
+*.zip
+*.tar.gz

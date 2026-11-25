@@ -412,7 +412,7 @@
       } catch (e) {}
 
       // Try server API
-      fetch('../api/navigation.php')
+      fetch('../api/navigation')
         .then(function(r) { return r.json(); })
         .then(function(res) {
           if (res && res.success && res.data) {
@@ -545,7 +545,7 @@
       localStorage.setItem('sgs_navigation_settings', JSON.stringify(currentNavConfig));
 
       // Save to Server API
-      fetch('../api/navigation.php', {
+      fetch('../api/navigation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

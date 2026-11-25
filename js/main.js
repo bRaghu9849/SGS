@@ -290,7 +290,7 @@
   } catch (err) {}
 
   // Fetch updated settings from backend API
-  fetch('api/navigation.php')
+  fetch('api/navigation')
     .then(r => r.json())
     .then(res => {
       if (res && res.success && res.data) {
