@@ -5438,7 +5438,6 @@
     // =========================================================================
     function toggleAdminSidebar() {
       state.adminSidebarCollapsed = !state.adminSidebarCollapsed;
-      renderCmsAdminPage();
       const main = document.getElementById("app-main") || document.getElementById("app-mount");
       if (main) {
         main.innerHTML = renderCmsAdminPage();
@@ -5738,7 +5737,7 @@
           <!-- MAIN CONTAINER -->
           <div class="flex-1 max-w-[1540px] w-full mx-auto p-3 sm:p-5 flex flex-col lg:flex-row gap-5">
             <!-- COLLAPSIBLE SIDEBAR -->
-            <aside class="w-full ${collapsed ? 'lg:w-[72px]' : 'lg:w-64'} bg-white rounded-2xl p-3 shadow-sm border border-gray-200/80 flex-shrink-0 flex flex-col gap-4 transition-all duration-200 lg:sticky lg:top-5 lg:max-h-[calc(100vh-100px)] overflow-y-auto">
+            <aside class="${collapsed ? 'hidden lg:flex lg:w-[72px]' : 'flex w-full lg:w-64'} bg-white rounded-2xl p-3 shadow-sm border border-gray-200/80 flex-shrink-0 flex-col gap-4 transition-all duration-200 lg:sticky lg:top-5 lg:max-h-[calc(100vh-100px)] overflow-y-auto">
               ${navGroups.map(grp => `
                 <div>
                   ${!collapsed ? `<div class="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider px-3 mb-1.5">${grp.label}</div>` : '<div class="border-t border-gray-100 my-1"></div>'}
@@ -5819,13 +5818,14 @@
         badge.textContent = ((CMS.submissions.plantations || []).length + (CMS.submissions.enquiries || []).length).toString();
       }
 
+      const isCol = !!state.adminSidebarCollapsed;
       document.querySelectorAll(".cms-tab-btn").forEach(btn => {
         const active = btn.getAttribute("data-tab") === state.cmsTab;
-        btn.className = "cms-tab-btn w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition flex items-center justify-between " +
+        btn.className = "cms-tab-btn w-full " + (isCol ? "justify-center px-2" : "justify-between px-3") + " py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2 " +
           (active ? "bg-[#54a630] text-white shadow-sm" : "text-gray-700 hover:bg-gray-100");
       });
 
-      const t = state.cmsTab || "dashboard";
+      const t = (state.cmsTab && !["dashboard", "heroes"].includes(state.cmsTab)) ? state.cmsTab : "home";
 
       // -----------------------------------------------------------------------
       // TAB 1: DASHBOARD OVERVIEW
