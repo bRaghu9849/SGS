@@ -2904,14 +2904,14 @@
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
             <div class="flex items-center gap-3">
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold">
-                Our Impact <span class="muted-heading">in Numbers</span>
+                ${h.impactTitleDark || 'Our Impact'} <span class="muted-heading">${h.impactTitleMuted || 'in Numbers'}</span>
               </h2>
               <button type="button" onclick="toggleImpactNumbers()" class="text-[11px] px-2.5 py-1 rounded-full bg-gray-100 hover:bg-[#54a630] hover:text-white text-gray-600 font-semibold transition">
                 ${state.animateImpactNumbers ? 'Show Verified Mode' : 'Animate Totals'}
               </button>
             </div>
             <p class="text-xs text-gray-500 max-w-md leading-relaxed">
-              Our commitment to sustainable agriculture drives measurable results, building healthier ecosystems, stronger communities, and lasting prosperity across Southern India.
+              ${h.impactSubtitle || 'Our commitment to sustainable agriculture drives measurable results, building healthier ecosystems, stronger communities, and lasting prosperity across Southern India.'}
             </p>
           </div>
 
@@ -2949,7 +2949,10 @@
             </div>
 
             <div class="space-y-4">
-              <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630]">Where we work</h4>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630]">Where we work</h4>
+                <span class="text-[11px] font-bold text-[#162219] bg-white px-2.5 py-0.5 rounded-full border border-gray-200/80">${h.statStates || '3'} ${h.statStatesLabel || 'States'}</span>
+              </div>
               <p class="text-xs text-gray-600 leading-relaxed">
                 ${(h.whereWeWork && h.whereWeWork.desc) || 'Operating across contiguous rural clusters with ground teams walking fields, GPS mapping parcels, and supporting farming families.'}
               </p>
@@ -2975,6 +2978,12 @@
         ${(() => {
           const st = h.story || {};
           const stImg = st.imgKey || 'redTractor';
+          const stCards = (Array.isArray(st.cards) && st.cards.length === 4) ? st.cards : [
+            { title: 'Since 2020', desc: 'Working in sustainable agriculture and climate-focused projects.' },
+            { title: '3 States', desc: 'Andhra Pradesh, Telangana and Karnataka.' },
+            { title: 'Our Mission', desc: 'Empowering farmers through agroforestry and sustainable agriculture.' },
+            { title: 'Our Vision', desc: 'Building a greener, healthier and more sustainable future for generations to come.' }
+          ];
           return `
         <section class="py-14 lg:py-20 max-w-[1220px] mx-auto px-5 sm:px-8">
           <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -2987,66 +2996,70 @@
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
                 ${st.headingDark || 'Discover the'} <span class="muted-heading">${st.headingMuted || 'Journey That Built Our Story'}</span>
               </h2>
-              <p class="text-xs sm:text-[13.5px] text-gray-500 leading-relaxed mb-8">
-                ${st.sub1 || 'Founded with a passion for sustainable farming, Sadana Green Society has grown into a trusted partner for rural farmers across Andhra Pradesh, Telangana and Karnataka. Since our inception, we have worked tirelessly on the ground.'}
-              </p>`;
-        })()}
+              <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mb-6">
+                <p>${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</p>
+                <p>${st.sub2 || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</p>
+                <p>${st.sub3 || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</p>
+              </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <span class="w-10 h-10 rounded-full bg-[#f3f5f3] text-[#162219] flex items-center justify-center mb-4">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-8m0 0C12 8.5 9 6 5.5 6c0 3.5 2.5 6 6.5 6zm0 0c0-3.5 3-6 6.5-6 0 3.5-2.5 6-6.5 6z"/></svg>
-                  </span>
-                  <div class="text-2xl font-extrabold text-[#162219] mb-1">+60%</div>
-                  <div class="text-xs text-gray-500 leading-relaxed">Sustaining our future through farming tradition.</div>
-                </div>
-                <div>
-                  <span class="w-10 h-10 rounded-full bg-[#f3f5f3] text-[#162219] flex items-center justify-center mb-4">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 010 18"/></svg>
-                  </span>
-                  <div class="text-2xl font-extrabold text-[#162219] mb-1">+45%</div>
-                  <div class="text-xs text-gray-500 leading-relaxed">From local harvests to global impact everywhere.</div>
-                </div>
+              <h3 class="text-sm font-extrabold text-[#162219] uppercase tracking-wider mb-3">${st.glanceTitle || 'Our Journey at a Glance'}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7">
+                ${stCards.map((card, i) => `
+                  <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-2xl p-4">
+                    <div class="text-sm font-extrabold text-[#2e6f19] mb-1">${card.title || ''}</div>
+                    <div class="text-xs text-gray-600 leading-relaxed">${card.desc || ''}</div>
+                  </div>
+                `).join('')}
               </div>
 
               <a href="${routeUrl('our-journey')}" data-nav="our-journey" class="cta-pill no-underline">
-                <span>Our Journey</span>
+                <span>${st.ctaText || 'Discover Our Journey'}</span>
                 ${arrowCircleSvg()}
               </a>
             </div>
           </div>
-        </section>
+        </section>`;
+        })()}
 
         <!-- SECTION 5: OUR COMMITMENT GROWS STRONGER WITH TIME -->
+        ${(() => {
+          const cm = h.commitment || {};
+          const cmCards = (Array.isArray(cm.cards) && cm.cards.length === 2) ? cm.cards : [
+            { val: '2020', title: 'Since Our Beginning', desc: 'Our commitment to sustainable agriculture.' },
+            { val: '03', title: 'States of Operation', desc: 'Andhra Pradesh, Telangana & Karnataka.' }
+          ];
+          return `
         <section class="py-12 lg:py-20 max-w-[1220px] mx-auto px-5 sm:px-8">
           <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div class="lg:col-span-6 order-2 lg:order-1">
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
-                Our Commitment <span class="muted-heading">Grows<br class="hidden sm:inline" /> Stronger With Time</span>
+                ${cm.headingDark || 'Our Commitment'} <span class="muted-heading">${cm.headingMuted || 'Grows Stronger With Time'}</span>
               </h2>
-              <p class="text-xs sm:text-[13.5px] text-gray-500 leading-relaxed mb-8">
-                We are committed to empowering farmers with cutting-edge tools and knowledge, from distributing 16 high-value timber and fruit tree saplings to promoting regenerative farming practices.
+              <p class="text-xs sm:text-[13.5px] text-gray-500 leading-relaxed mb-7">
+                ${cm.desc || 'We are committed to empowering farmers with cutting-edge tools and knowledge, from distributing 16 high-value timber and fruit tree saplings to promoting regenerative farming practices.'}
               </p>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <span class="w-10 h-10 rounded-full bg-[#f3f5f3] text-[#162219] flex items-center justify-center mb-4">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-2xl p-5">
+                  <span class="w-8 h-8 rounded-lg bg-white text-[#2e6f19] flex items-center justify-center mb-3 shadow-xs">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-8m0 0C12 8.5 9 6 5.5 6c0 3.5 2.5 6 6.5 6zm0 0c0-3.5 3-6 6.5-6 0 3.5-2.5 6-6.5 6z"/></svg>
                   </span>
-                  <div class="text-2xl font-extrabold text-[#162219] mb-1">9.5</div>
-                  <div class="text-xs text-gray-500 leading-relaxed">Innovative solutions shaping the future of farming.</div>
+                  <div class="text-2xl font-extrabold text-[#2e6f19] mb-1">${cmCards[0].val || '2020'}</div>
+                  <div class="text-sm font-extrabold text-[#162219] mb-0.5">${cmCards[0].title || 'Since Our Beginning'}</div>
+                  <div class="text-xs text-gray-600 leading-relaxed">${cmCards[0].desc || 'Our commitment to sustainable agriculture.'}</div>
                 </div>
-                <div>
-                  <span class="w-10 h-10 rounded-full bg-[#f3f5f3] text-[#162219] flex items-center justify-center mb-4">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-2xl p-5">
+                  <span class="w-8 h-8 rounded-lg bg-white text-[#2e6f19] flex items-center justify-center mb-3 shadow-xs">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                   </span>
-                  <div class="text-2xl font-extrabold text-[#162219] mb-1">+75%</div>
-                  <div class="text-xs text-gray-500 leading-relaxed">Nurturing the land with farmer support always.</div>
+                  <div class="text-2xl font-extrabold text-[#2e6f19] mb-1">${cmCards[1].val || '03'}</div>
+                  <div class="text-sm font-extrabold text-[#162219] mb-0.5">${cmCards[1].title || 'States of Operation'}</div>
+                  <div class="text-xs text-gray-600 leading-relaxed">${cmCards[1].desc || 'Andhra Pradesh, Telangana & Karnataka.'}</div>
                 </div>
               </div>
 
               <a href="${routeUrl('contact')}" data-nav="contact" class="cta-pill no-underline">
-                <span>Get in Touch</span>
+                <span>${cm.ctaText || 'Get in Touch'}</span>
                 ${arrowCircleSvg()}
               </a>
             </div>
@@ -3057,7 +3070,8 @@
               </div>
             </div>
           </div>
-        </section>
+        </section>`;
+        })()}
 
         <!-- SECTION 6: EMPOWERING YOUR FARM WITH EXPERT SOLUTIONS (DARK GREEN SECTION) -->
         ${(() => {
@@ -3137,10 +3151,10 @@
         <section class="py-16 lg:py-24 max-w-[1220px] mx-auto px-5 sm:px-8">
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug">
-              Comprehensive Solutions <span class="muted-heading">For<br class="hidden sm:inline" /> Modern Farming</span>
+              ${h.solutionsTitleDark || 'Comprehensive Solutions'} <span class="muted-heading">${h.solutionsTitleMuted || 'For Modern Farming'}</span>
             </h2>
             <p class="text-xs text-gray-500 max-w-md leading-relaxed">
-              Unlock the full potential of your land today through our verified agroforestry, carbon credits, and water-saving programmes.
+              ${h.solutionsSubtitle || 'Unlock the full potential of your land today through our verified agroforestry, carbon credits, and water-saving programmes.'}
             </p>
           </div>
 
@@ -3175,22 +3189,22 @@
             <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div class="lg:col-span-6">
                 <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-5">
-                  Stay Updated with <span class="muted-heading">SGS &amp;<br class="hidden sm:inline" /> Farming News</span>
+                  ${h.newsTitleDark || 'Stay Updated with'} <span class="muted-heading">${h.newsTitleMuted || 'SGS & Farming News'}</span>
                 </h2>
                 <div class="flex items-center gap-3 mb-5">
                   ${renderAvatarStack()}
-                  <span class="text-xs font-bold text-[#162219]">1,20,000+ Community</span>
+                  <span class="text-xs font-bold text-[#162219]">${h.newsCommunityText || '1,20,000+ Community'}</span>
                 </div>
                 <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                  Receive verified ground updates on sapling distribution, rainfall advisories, AWD tube monitoring, and international carbon credit market benchmarks.
+                  ${h.newsP1 || 'Receive verified ground updates on sapling distribution, rainfall advisories, AWD tube monitoring, and international carbon credit market benchmarks.'}
                 </p>
                 <p class="text-xs text-gray-500 leading-relaxed mb-7">
-                  Join thousands of farmers across Andhra Pradesh, Telangana and Karnataka building sustainable rural livelihoods.
+                  ${h.newsP2 || 'Join thousands of farmers across Andhra Pradesh, Telangana and Karnataka building sustainable rural livelihoods.'}
                 </p>
                 <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-2.5 bg-white p-1.5 rounded-full border border-gray-200/80 max-w-md">
                   <input type="email" required placeholder="Enter your email" class="flex-1 bg-transparent px-4 py-2 text-xs focus:outline-none" />
                   <button type="submit" class="brand-green-bg text-white text-xs font-bold px-6 py-2.5 rounded-full transition">
-                    Subscribe Now
+                    ${h.newsCtaText || 'Subscribe Now'}
                   </button>
                 </form>
               </div>
