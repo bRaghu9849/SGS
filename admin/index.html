@@ -3314,7 +3314,7 @@
                   </div>
                   <h3 class="font-extrabold text-base text-[#162219] mb-1">${m.name}</h3>
                   <div class="text-xs font-bold text-[#54a630] uppercase tracking-wide mb-2.5">${m.role}</div>
-                  <p class="text-xs text-gray-500 leading-relaxed">${m.desc}</p>
+                  <p class="text-xs text-gray-500 leading-relaxed">${m.bio || m.desc || ''}</p>
                 </div>
               </div>
             `).join('')}
@@ -5886,23 +5886,11 @@
                 <input type="text" value="${h.heroRatingText || ''}" oninput="CMS.home.heroRatingText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
               </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block font-bold text-gray-600 mb-1">Right Card Title</label>
-                <input type="text" value="${h.heroCardTitle || ''}" oninput="CMS.home.heroCardTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
-              </div>
-              <div>
-                <label class="block font-bold text-gray-600 mb-1">Right Card Description</label>
-                <input type="text" value="${h.heroCardDesc || ''}" oninput="CMS.home.heroCardDesc=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
-              </div>
-            </div>
-            <!-- Hero Images inline -->
+            <!-- Hero Image inline -->
             <div class="border-t border-gray-200 pt-4 mt-2">
-              <p class="font-bold text-gray-600 mb-3">Hero Section Images</p>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <p class="font-bold text-gray-600 mb-3">Hero Background Image</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 ${renderCmsImageCard('heroAerial', 'Hero Background (Aerial Field)')}
-                ${renderCmsImageCard('womanGreenhouse', 'Right Card Photo (Greenhouse)')}
-                ${renderCmsImageCard('farmerTomatoes', 'Right Card Video Thumb 1')}
               </div>
             </div>
           </div>
@@ -6178,7 +6166,7 @@
 
                   <div>
                     <label class="block font-bold text-gray-600 mb-1 text-[11px]">Short Description / Bio</label>
-                    <textarea rows="2" oninput="CMS.about.teamMembers[${idx}].bio=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-[11px]">${m.bio}</textarea>
+                    <textarea rows="2" oninput="CMS.about.teamMembers[${idx}].bio=this.value; CMS.about.teamMembers[${idx}].desc=this.value;" class="w-full border border-gray-200 rounded-lg p-2 text-[11px]">${m.bio || m.desc || ''}</textarea>
                   </div>
 
                   <div class="flex items-center justify-between pt-1 border-t border-gray-100">

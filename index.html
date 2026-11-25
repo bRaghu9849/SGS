@@ -2936,7 +2936,10 @@
             </div>
 
             <div class="space-y-4">
-              <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630]">Where we work</h4>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630]">Where we work</h4>
+                <span class="text-[11px] font-bold text-[#162219] bg-white px-2.5 py-0.5 rounded-full border border-gray-200/80">${h.statStates || '3'} ${h.statStatesLabel || 'States'}</span>
+              </div>
               <p class="text-xs text-gray-600 leading-relaxed">
                 ${(h.whereWeWork && h.whereWeWork.desc) || 'Operating across contiguous rural clusters with ground teams walking fields, GPS mapping parcels, and supporting farming families.'}
               </p>
@@ -3313,7 +3316,7 @@
                   </div>
                   <h3 class="font-extrabold text-base text-[#162219] mb-1">${m.name}</h3>
                   <div class="text-xs font-bold text-[#54a630] uppercase tracking-wide mb-2.5">${m.role}</div>
-                  <p class="text-xs text-gray-500 leading-relaxed">${m.desc}</p>
+                  <p class="text-xs text-gray-500 leading-relaxed">${m.bio || m.desc || ''}</p>
                 </div>
               </div>
             `).join('')}
@@ -4204,7 +4207,8 @@
               </div>
             </div>
 
-            <div class="pt-6 border-t border-gray-100 flex items-center justify-end">
+            <div class="pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-xs text-gray-500">Need help? Call <a href="tel:${fc.helpPhone || CMS.global.phone}" class="font-bold text-[#54a630] hover:underline">${fc.helpPhone || CMS.global.phone}</a></div>
               <button type="submit" class="bg-[#54a630] hover:bg-[#468e26] text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center gap-2">
                 <span>${fc.submitBtnText || 'Submit Plantation Application'}</span>
                 <span>&rarr;</span>
@@ -5214,7 +5218,19 @@
     // =========================================================================
     // MAIN APP ROUTER (Clean Trailing-Slash Router & Renderer)
     // =========================================================================
+    function applyDynamicBranding() {
+      try {
+        const fav = imgUrl("logoEmblem");
+        if (fav) {
+          document.querySelectorAll('link[rel*="icon"]').forEach(el => { el.href = fav; });
+        }
+        const loaderImg = document.querySelector("#sgs-loader img");
+        if (loaderImg && fav) loaderImg.src = fav;
+      } catch(e) {}
+    }
+
     function renderApp() {
+      applyDynamicBranding();
       const main = document.getElementById("app-main") || document.getElementById("app-mount");
       const footer = document.getElementById("site-footer");
       if (!main) return;

@@ -3328,7 +3328,7 @@
                   </div>
                   <h3 class="font-extrabold text-base text-[#162219] mb-1">${m.name}</h3>
                   <div class="text-xs font-bold text-[#54a630] uppercase tracking-wide mb-2.5">${m.role}</div>
-                  <p class="text-xs text-gray-500 leading-relaxed">${m.desc}</p>
+                  <p class="text-xs text-gray-500 leading-relaxed">${m.bio || m.desc || ''}</p>
                 </div>
               </div>
             `).join('')}
