@@ -2096,16 +2096,44 @@
 
     let _cmsSaveInFlight = null;
     let _cmsSaveQueued = false;
-    function saveCmsData() {
+    function setD1StatusBadge(mode) {
+      const el = document.getElementById("cms-d1-status");
+      if (!el) return;
+      if (mode === "saving") {
+        el.innerHTML = '<span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span><span>Saving to D1...</span>';
+        el.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-200 text-[11px] font-bold";
+      } else if (mode === "error") {
+        el.innerHTML = '<span class="w-2 h-2 rounded-full bg-red-400"></span><span>Save Failed</span>';
+        el.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/20 text-red-200 text-[11px] font-bold";
+      } else {
+        el.innerHTML = '<span class="w-2 h-2 rounded-full bg-[#7fd858]"></span><span>D1 Saved</span>';
+        el.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[#7fd858] text-[11px] font-bold";
+      }
+    }
+    function saveCmsLocalFallback() {
       try {
         localStorage.setItem("sgs_cms_data_v14", JSON.stringify(CMS));
       } catch(e) {
-        console.warn("Storage quota exceeded, preserving memory state:", e);
+        try {
+          const slim = JSON.parse(JSON.stringify(CMS));
+          if (slim.images) {
+            for (const k of Object.keys(slim.images)) {
+              if (typeof slim.images[k] === "string" && slim.images[k].startsWith("data:") && slim.images[k].length > 150000) {
+                delete slim.images[k];
+              }
+            }
+          }
+          localStorage.setItem("sgs_cms_data_v14", JSON.stringify(slim));
+        } catch(e2) {}
       }
+    }
+    function saveCmsData() {
+      saveCmsLocalFallback();
       if (_cmsSaveInFlight) {
         _cmsSaveQueued = true;
         return _cmsSaveInFlight;
       }
+      setD1StatusBadge("saving");
       const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms") : "api/cms";
       _cmsSaveInFlight = fetch(url, {
         method: "POST",
@@ -2117,14 +2145,17 @@
       .then(data => {
         if (!data || !data.success) {
           console.error("CMS server save failed:", data);
+          setD1StatusBadge("error");
           if (typeof showToast === "function") showToast("Warning: Server save failed!");
           return false;
         }
         state.cmsDirty = false;
+        setD1StatusBadge("saved");
         return true;
       })
       .catch(err => {
         console.error("CMS server save error:", err);
+        setD1StatusBadge("error");
         if (typeof showToast === "function") showToast("Warning: Server save error!");
         return false;
       })
@@ -5799,7 +5830,7 @@
             </div>
 
             <div class="flex items-center gap-2.5">
-              <span class="hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[#7fd858] text-[11px] font-bold">
+              <span id="cms-d1-status" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-[#7fd858] text-[11px] font-bold">
                 <span class="w-2 h-2 rounded-full bg-[#7fd858]"></span>
                 <span>D1 Connected</span>
               </span>
