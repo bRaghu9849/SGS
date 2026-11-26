@@ -2209,7 +2209,7 @@
                   merged.home.empower.bullets = initEmp.bullets;
                 }
                 for (const k of Object.keys(initEmp)) {
-                  if (merged.home.empower[k] === undefined || merged.home.empower[k] === null || merged.home.empower[k] === "") {
+                  if (merged.home.empower[k] === undefined || merged.home.empower[k] === null) {
                     merged.home.empower[k] = initEmp[k];
                   }
                 }
@@ -2841,23 +2841,23 @@
           <div class="relative z-10 max-w-[1220px] mx-auto px-5 sm:px-8 pt-8 pb-16 lg:pt-12 lg:pb-22">
             <div class="max-w-3xl">
               <h1 data-cms-key="home.heroTitle" class="hero-title-lg text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.1] tracking-tight mb-5" style="text-shadow: 0 2px 16px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9);">
-                ${h.heroTitle || 'Sustainable Farming for a Thriving Future'}
+                ${h.heroTitle ?? 'Sustainable Farming for a Thriving Future'}
               </h1>
               <p data-cms-key="home.heroSubtitle" class="secondary-text text-white text-[18px] leading-relaxed mb-8 max-w-2xl font-normal" style="text-shadow: 0 1px 12px rgba(0,0,0,0.85);">
-                ${h.heroSubtitle || 'We empower farmers with sustainable practices, quality seeds, and modern technologies to cultivate abundant harvests, support communities, protect resources, and ensure global food security.'}
+                ${h.heroSubtitle ?? 'We empower farmers with sustainable practices, quality seeds, and modern technologies to cultivate abundant harvests, support communities, protect resources, and ensure global food security.'}
               </p>
               <div class="flex flex-wrap items-center gap-6">
                 <a href="${routeUrl('agroforestry')}" data-nav="agroforestry" class="cta-pill no-underline">
-                  <span data-cms-key="home.ctaPrimary">${h.ctaPrimary || 'Explore Solutions'}</span>
+                  <span data-cms-key="home.ctaPrimary">${h.ctaPrimary ?? 'Explore Solutions'}</span>
                   ${arrowCircleSvg()}
                 </a>
                 <a href="${routeUrl('contact')}" data-nav="contact" class="h-[44px] px-6 rounded-full border border-white/35 text-white font-bold text-[13px] tracking-wide inline-flex items-center justify-center hover:bg-white/15 transition no-underline">
                   Contact Us
                 </a>
                 <div class="h-[44px] inline-flex items-center gap-2 text-xs bg-black/30 backdrop-blur-md px-4 rounded-full border border-white/15">
-                  <span class="font-extrabold text-sm text-[#7fd858]">${h.heroRating || '4.9'}</span>
+                  <span class="font-extrabold text-sm text-[#7fd858]">${h.heroRating ?? '4.9'}</span>
                   <span class="text-[#7fd858]">★</span>
-                  <span class="text-white/90 text-xs font-semibold">${h.heroRatingText || '1,20,000+ enrolled farmers'}</span>
+                  <span class="text-white/90 text-xs font-semibold">${h.heroRatingText ?? '1,20,000+ enrolled farmers'}</span>
                 </div>
               </div>
             </div>
@@ -2923,20 +2923,20 @@
           return `
         <section class="py-16 lg:py-24 max-w-[1220px] mx-auto px-5 sm:px-8">
           <h2 class="section-title-lg text-center text-2xl sm:text-3xl font-extrabold max-w-2xl mx-auto leading-snug mb-12">
-            ${h.bentoTitleDark || 'Showcasing the Beauty and Impact of Sustainable Agroforestry'}
-            <span class="muted-heading">${h.bentoTitleMuted || 'Across Andhra Pradesh, Telangana and Karnataka'}</span>
+            ${h.bentoTitleDark ?? 'Showcasing the Beauty and Impact of Sustainable Agroforestry'}
+            <span class="muted-heading">${h.bentoTitleMuted ?? 'Across Andhra Pradesh, Telangana and Karnataka'}</span>
           </h2>
 
           <div class="rg-bento grid grid-cols-1 lg:grid-cols-12 gap-6">
             <!-- Left Tall Card -->
             <a href="${routeUrl(b0.linkPage || 'agroforestry')}" data-nav="${b0.linkPage || 'agroforestry'}" class="lg:col-span-5 relative rounded-[24px] overflow-hidden min-h-[380px] lg:min-h-[520px] group block no-underline">
-              <img data-cms-img="${img0}" src="${imgUrl(img0)}" alt="${b0.title || 'Agroforestry Plantations'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <img data-cms-img="${img0}" src="${imgUrl(img0)}" alt="${b0.title ?? 'Agroforestry Plantations'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between px-4 py-2 rounded-full bg-black/55 backdrop-blur-md text-white text-xs font-bold transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
-                <span>${b0.title || 'Agroforestry Plantations'}</span>
+                <span>${b0.title ?? 'Agroforestry Plantations'}</span>
                 <span class="text-[#7fd858]">Hover to read &rarr;</span>
               </div>
               <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-5 text-white text-xs leading-relaxed opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                <div class="font-bold text-[#7fd858] mb-1">${b0.title || 'Agroforestry Plantations'}</div>
+                <div class="font-bold text-[#7fd858] mb-1">${b0.title ?? 'Agroforestry Plantations'}</div>
                 ${b0.caption || ''}
               </div>
             </a>
@@ -2944,37 +2944,37 @@
             <!-- Right 7 Cols: Top Wide Card + Bottom 2 Cards -->
             <div class="lg:col-span-7 flex flex-col gap-6">
               <a href="${routeUrl(b1.linkPage || 'carbon-credits')}" data-nav="${b1.linkPage || 'carbon-credits'}" class="relative rounded-[24px] overflow-hidden h-[250px] group block no-underline">
-                <img data-cms-img="${img1}" src="${imgUrl(img1)}" alt="${b1.title || 'Carbon Credit Programmes'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                <img data-cms-img="${img1}" src="${imgUrl(img1)}" alt="${b1.title ?? 'Carbon Credit Programmes'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                 <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between px-4 py-2 rounded-full bg-black/55 backdrop-blur-md text-white text-xs font-bold transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
-                  <span>${b1.title || 'Carbon Credit Programmes'}</span>
+                  <span>${b1.title ?? 'Carbon Credit Programmes'}</span>
                   <span class="text-[#7fd858]">Hover to read &rarr;</span>
                 </div>
                 <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-4 text-white text-xs leading-relaxed opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  <div class="font-bold text-[#7fd858] mb-1">${b1.title || 'Carbon Credit Programmes'}</div>
+                  <div class="font-bold text-[#7fd858] mb-1">${b1.title ?? 'Carbon Credit Programmes'}</div>
                   ${b1.caption || ''}
                 </div>
               </a>
 
               <div class="rg-2 grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1">
                 <a href="${routeUrl(b2.linkPage || 'awd')}" data-nav="${b2.linkPage || 'awd'}" class="relative rounded-[24px] overflow-hidden min-h-[240px] group block no-underline">
-                  <img data-cms-img="${img2}" src="${imgUrl(img2)}" alt="${b2.title || 'AWD Water Conservation'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <img data-cms-img="${img2}" src="${imgUrl(img2)}" alt="${b2.title ?? 'AWD Water Conservation'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                   <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between px-3.5 py-1.5 rounded-full bg-black/55 backdrop-blur-md text-white text-xs font-bold transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
-                    <span class="truncate">${b2.title || 'AWD Water Conservation'}</span>
+                    <span class="truncate">${b2.title ?? 'AWD Water Conservation'}</span>
                     <span class="text-[#7fd858] flex-shrink-0">&rarr;</span>
                   </div>
                   <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-4 text-white text-xs leading-relaxed opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <div class="font-bold text-[#7fd858] mb-1">${b2.title || 'AWD Water Conservation'}</div>
+                    <div class="font-bold text-[#7fd858] mb-1">${b2.title ?? 'AWD Water Conservation'}</div>
                     ${b2.caption || ''}
                   </div>
                 </a>
                 <a href="${routeUrl(b3.linkPage || 'gallery')}" data-nav="${b3.linkPage || 'gallery'}" class="relative rounded-[24px] overflow-hidden min-h-[240px] group block no-underline">
-                  <img data-cms-img="${img3}" src="${imgUrl(img3)}" alt="${b3.title || 'Community Field Support'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <img data-cms-img="${img3}" src="${imgUrl(img3)}" alt="${b3.title ?? 'Community Field Support'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                   <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between px-3.5 py-1.5 rounded-full bg-black/55 backdrop-blur-md text-white text-xs font-bold transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
-                    <span class="truncate">${b3.title || 'Community Field Support'}</span>
+                    <span class="truncate">${b3.title ?? 'Community Field Support'}</span>
                     <span class="text-[#7fd858] flex-shrink-0">&rarr;</span>
                   </div>
                   <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-4 text-white text-xs leading-relaxed opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <div class="font-bold text-[#7fd858] mb-1">${b3.title || 'Community Field Support'}</div>
+                    <div class="font-bold text-[#7fd858] mb-1">${b3.title ?? 'Community Field Support'}</div>
                     ${b3.caption || ''}
                   </div>
                 </a>
@@ -2989,14 +2989,14 @@
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
             <div class="flex items-center gap-3">
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold">
-                ${h.impactTitleDark || 'Our Impact'} <span class="muted-heading">${h.impactTitleMuted || 'in Numbers'}</span>
+                ${h.impactTitleDark ?? 'Our Impact'} <span class="muted-heading">${h.impactTitleMuted ?? 'in Numbers'}</span>
               </h2>
               <button type="button" onclick="toggleImpactNumbers()" class="text-[11px] px-2.5 py-1 rounded-full bg-gray-100 hover:bg-[#54a630] hover:text-white text-gray-600 font-semibold transition">
                 ${state.animateImpactNumbers ? 'Show Verified Mode' : 'Animate Totals'}
               </button>
             </div>
             <p class="text-xs text-gray-500 max-w-md leading-relaxed">
-              ${h.impactSubtitle || 'Our commitment to sustainable agriculture drives measurable results, building healthier ecosystems, stronger communities, and lasting prosperity across Southern India.'}
+              ${h.impactSubtitle ?? 'Our commitment to sustainable agriculture drives measurable results, building healthier ecosystems, stronger communities, and lasting prosperity across Southern India.'}
             </p>
           </div>
 
@@ -3015,8 +3015,8 @@
               <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630]">Enrolment by programme</h4>
               <div>
                 <div class="flex items-center justify-between text-xs mb-1.5 font-bold text-[#162219]">
-                  <span>${h.statAgroLabel || 'Agroforestry carbon credits'}</span>
-                  <span class="text-[#54a630]">${h.statAgroFarmers || '1,20,000'}+ Farmers</span>
+                  <span>${h.statAgroLabel ?? 'Agroforestry carbon credits'}</span>
+                  <span class="text-[#54a630]">${h.statAgroFarmers ?? '1,20,000'}+ Farmers</span>
                 </div>
                 <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                   <div class="bg-[#54a630] h-full rounded-full" style="width: ${Math.min(100, Math.max(0, Number(h.progressAgroPct || 95)))}%"></div>
@@ -3024,8 +3024,8 @@
               </div>
               <div>
                 <div class="flex items-center justify-between text-xs mb-1.5 font-bold text-[#162219]">
-                  <span>${h.statAwdLabel || 'Alternate Wetting and Drying (AWD)'}</span>
-                  <span class="text-[#54a630]">${h.statAwdFarmers || '5,000'}+ Farmers</span>
+                  <span>${h.statAwdLabel ?? 'Alternate Wetting and Drying (AWD)'}</span>
+                  <span class="text-[#54a630]">${h.statAwdFarmers ?? '5,000'}+ Farmers</span>
                 </div>
                 <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                   <div class="bg-[#438b22] h-full rounded-full" style="width: ${Math.min(100, Math.max(0, Number(h.progressAwdPct || 25)))}%"></div>
@@ -3036,10 +3036,10 @@
             <div class="space-y-4">
               <div class="flex flex-wrap items-center justify-between gap-2">
                 <h4 class="font-extrabold text-xs uppercase tracking-wider text-[#54a630]">Where we work</h4>
-                <span class="text-[11px] font-bold text-[#162219] bg-white px-2.5 py-0.5 rounded-full border border-gray-200/80">${h.statStates || '3'} ${h.statStatesLabel || 'States'}</span>
+                <span class="text-[11px] font-bold text-[#162219] bg-white px-2.5 py-0.5 rounded-full border border-gray-200/80">${h.statStates ?? '3'} ${h.statStatesLabel ?? 'States'}</span>
               </div>
               <p class="text-xs text-gray-600 leading-relaxed">
-                ${(h.whereWeWork && h.whereWeWork.desc) || 'Operating across contiguous rural clusters with ground teams walking fields, GPS mapping parcels, and supporting farming families.'}
+                ${(h.whereWeWork && h.whereWeWork.desc) ?? 'Operating across contiguous rural clusters with ground teams walking fields, GPS mapping parcels, and supporting farming families.'}
               </p>
               <div class="grid grid-cols-3 gap-3 pt-1">
                 <div class="bg-white p-3 rounded-2xl border border-gray-200/80 text-center">
@@ -3079,7 +3079,7 @@
             </div>
             <div class="lg:col-span-6">
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
-                ${st.headingDark || 'Discover the'} <span class="muted-heading">${st.headingMuted || 'Journey That Built Our Story'}</span>
+                ${st.headingDark ?? 'Discover the'} <span class="muted-heading">${st.headingMuted ?? 'Journey That Built Our Story'}</span>
               </h2>
               <details class="group bg-[#f8fbf8] border border-[#cfe3cc] rounded-2xl p-4 mb-6">
                 <summary class="cursor-pointer list-none flex items-center justify-between text-xs font-extrabold text-[#2e6f19] select-none">
@@ -3087,13 +3087,13 @@
                   <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </summary>
                 <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mt-3 pt-3 border-t border-[#cfe3cc]/60 whitespace-pre-line">
-                  <p>${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</p>
+                  <p>${st.sub1 ?? 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</p>
                   ${st.sub2 ? `<p>${st.sub2}</p>` : '<p>We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.</p>'}
                   ${st.sub3 ? `<p>${st.sub3}</p>` : '<p>Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.</p>'}
                 </div>
               </details>
 
-              <h3 class="text-sm font-extrabold text-[#162219] uppercase tracking-wider mb-3">${st.glanceTitle || 'Our Journey at a Glance'}</h3>
+              <h3 class="text-sm font-extrabold text-[#162219] uppercase tracking-wider mb-3">${st.glanceTitle ?? 'Our Journey at a Glance'}</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7">
                 ${stCards.map((card, i) => `
                   <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-2xl p-4">
@@ -3104,7 +3104,7 @@
               </div>
 
               <a href="${routeUrl('our-journey')}" data-nav="our-journey" class="cta-pill no-underline">
-                <span>${st.ctaText || 'Discover Our Journey'}</span>
+                <span>${st.ctaText ?? 'Discover Our Journey'}</span>
                 ${arrowCircleSvg()}
               </a>
             </div>
@@ -3124,10 +3124,10 @@
           <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div class="lg:col-span-6 order-2 lg:order-1">
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
-                ${cm.headingDark || 'Our Commitment'} <span class="muted-heading">${cm.headingMuted || 'Grows Stronger With Time'}</span>
+                ${cm.headingDark ?? 'Our Commitment'} <span class="muted-heading">${cm.headingMuted ?? 'Grows Stronger With Time'}</span>
               </h2>
               <p class="text-xs sm:text-[13.5px] text-gray-500 leading-relaxed mb-7">
-                ${cm.desc || 'We are committed to empowering farmers with cutting-edge tools and knowledge, from distributing 16 high-value timber and fruit tree saplings to promoting regenerative farming practices.'}
+                ${cm.desc ?? 'We are committed to empowering farmers with cutting-edge tools and knowledge, from distributing 16 high-value timber and fruit tree saplings to promoting regenerative farming practices.'}
               </p>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -3135,22 +3135,22 @@
                   <span class="w-8 h-8 rounded-lg bg-white text-[#2e6f19] flex items-center justify-center mb-3 shadow-xs">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 20v-8m0 0C12 8.5 9 6 5.5 6c0 3.5 2.5 6 6.5 6zm0 0c0-3.5 3-6 6.5-6 0 3.5-2.5 6-6.5 6z"/></svg>
                   </span>
-                  <div class="text-2xl font-extrabold text-[#2e6f19] mb-1">${cmCards[0].val || '2020'}</div>
-                  <div class="text-sm font-extrabold text-[#162219] mb-0.5">${cmCards[0].title || 'Since Our Beginning'}</div>
-                  <div class="text-xs text-gray-600 leading-relaxed">${cmCards[0].desc || 'Our commitment to sustainable agriculture.'}</div>
+                  <div class="text-2xl font-extrabold text-[#2e6f19] mb-1">${cmCards[0].val ?? '2020'}</div>
+                  <div class="text-sm font-extrabold text-[#162219] mb-0.5">${cmCards[0].title ?? 'Since Our Beginning'}</div>
+                  <div class="text-xs text-gray-600 leading-relaxed">${cmCards[0].desc ?? 'Our commitment to sustainable agriculture.'}</div>
                 </div>
                 <div class="bg-[#edf5eb] border border-[#cfe3cc] rounded-2xl p-5">
                   <span class="w-8 h-8 rounded-lg bg-white text-[#2e6f19] flex items-center justify-center mb-3 shadow-xs">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                   </span>
-                  <div class="text-2xl font-extrabold text-[#2e6f19] mb-1">${cmCards[1].val || '03'}</div>
-                  <div class="text-sm font-extrabold text-[#162219] mb-0.5">${cmCards[1].title || 'States of Operation'}</div>
-                  <div class="text-xs text-gray-600 leading-relaxed">${cmCards[1].desc || 'Andhra Pradesh, Telangana & Karnataka.'}</div>
+                  <div class="text-2xl font-extrabold text-[#2e6f19] mb-1">${cmCards[1].val ?? '03'}</div>
+                  <div class="text-sm font-extrabold text-[#162219] mb-0.5">${cmCards[1].title ?? 'States of Operation'}</div>
+                  <div class="text-xs text-gray-600 leading-relaxed">${cmCards[1].desc ?? 'Andhra Pradesh, Telangana & Karnataka.'}</div>
                 </div>
               </div>
 
               <a href="${routeUrl('contact')}" data-nav="contact" class="cta-pill no-underline">
-                <span>${cm.ctaText || 'Get in Touch'}</span>
+                <span>${cm.ctaText ?? 'Get in Touch'}</span>
                 ${arrowCircleSvg()}
               </a>
             </div>
@@ -3204,30 +3204,31 @@
                 <div class="lg:col-span-6 space-y-5">
                   <div class="relative rounded-[24px] overflow-hidden h-[300px] sm:h-[340px]">
                     <img data-cms-img="${empMainImg}" src="${imgUrl(empMainImg)}" alt="Sadana Green Society field team and agronomists" class="w-full h-full object-cover" />
+                    ${(emp.caption ?? 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.').trim() ? `
                     <div class="absolute inset-x-4 bottom-4 frosted-dark rounded-2xl p-4 text-xs text-white/90 leading-relaxed">
-                      ${emp.caption || 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.'}
-                    </div>
+                      ${emp.caption ?? 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.'}
+                    </div>` : ''}
                   </div>
                   <div class="grid grid-cols-2 gap-4">
                     <div class="group">
                       <div class="relative rounded-[20px] overflow-hidden h-36 sm:h-40 mb-2.5">
-                        <img data-cms-img="${empThumb1}" src="${imgUrl(empThumb1)}" alt="${emp.thumb1Title || 'Agroforestry Projects'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <img data-cms-img="${empThumb1}" src="${imgUrl(empThumb1)}" alt="${emp.thumb1Title ?? 'Agroforestry Projects'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                       </div>
-                      <div class="font-bold text-sm text-white">${emp.thumb1Title || 'Agroforestry Projects'}</div>
-                      <div class="text-xs text-white/70 telugu-text leading-snug mt-0.5">${emp.thumb1Sub || 'మొక్కల పెంపకం, భూమి మ్యాపింగ్, డ్రిప్ ఇరిగేషన్.'}</div>
+                      <div class="font-bold text-sm text-white">${emp.thumb1Title ?? 'Agroforestry Projects'}</div>
+                      <div class="text-xs text-white/70 telugu-text leading-snug mt-0.5">${emp.thumb1Sub ?? 'మొక్కల పెంపకం, భూమి మ్యాపింగ్, డ్రిప్ ఇరిగేషన్.'}</div>
                     </div>
                     <div class="group">
                       <div class="relative rounded-[20px] overflow-hidden h-36 sm:h-40 mb-2.5">
-                        <img data-cms-img="${empThumb2}" src="${imgUrl(empThumb2)}" alt="${emp.thumb2Title || 'AWD Project'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                        <img data-cms-img="${empThumb2}" src="${imgUrl(empThumb2)}" alt="${emp.thumb2Title ?? 'AWD Project'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                       </div>
-                      <div class="font-bold text-sm text-white">${emp.thumb2Title || 'AWD Project'}</div>
-                      <div class="text-xs text-white/70 telugu-text leading-snug mt-0.5">${emp.thumb2Sub || 'వరి సాగులో నీటి పొదుపు పద్ధతులు.'}</div>
+                      <div class="font-bold text-sm text-white">${emp.thumb2Title ?? 'AWD Project'}</div>
+                      <div class="text-xs text-white/70 telugu-text leading-snug mt-0.5">${emp.thumb2Sub ?? 'వరి సాగులో నీటి పొదుపు పద్ధతులు.'}</div>
                     </div>
                   </div>
 
                   <!-- 4 Feature Cards (Matching Reference) -->
                   <div class="bg-white/5 border border-white/15 rounded-2xl p-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    ${empCards.map((c, idx) => `
+                    ${empCards.filter(c => (c.title || '').trim() || (c.desc || '').trim()).map((c, idx) => `
                       <div class="flex items-start gap-3">
                         <span class="w-8 h-8 rounded-lg bg-[#54a630]/20 text-[#7fd858] flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">${cardIcons[idx % cardIcons.length]}</svg>
@@ -3244,16 +3245,16 @@
                 <!-- Right Column: Content -->
                 <div class="lg:col-span-6">
                   <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
-                    ${emp.title || 'Empowering Farmers'} <span class="text-white/55">${emp.titleHighlight || 'With Expert Solutions'}</span>
+                    ${emp.title ?? 'Empowering Farmers'} <span class="text-white/55">${emp.titleHighlight ?? 'With Expert Solutions'}</span>
                   </h2>
 
                   <p class="text-xs sm:text-[13px] text-white/80 leading-relaxed mb-5">
-                    ${emp.p1 || 'Sadana Green Society (SGS) provides practical, field-level support to farmers through sustainable agriculture, agroforestry and climate-focused initiatives.'}
+                    ${emp.p1 ?? 'Sadana Green Society (SGS) provides practical, field-level support to farmers through sustainable agriculture, agroforestry and climate-focused initiatives.'}
                   </p>
 
-                  <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#7fd858] mb-3">${emp.servicesTitle || 'Our Key Services'}</h3>
+                  <h3 class="text-sm font-extrabold uppercase tracking-wider text-[#7fd858] mb-3">${emp.servicesTitle ?? 'Our Key Services'}</h3>
                   <ul class="space-y-2.5 text-xs sm:text-[13px] text-white/90 mb-6">
-                    ${empBullets.map(b => `
+                    ${empBullets.filter(b => b && b.trim()).map(b => `
                       <li class="flex items-start gap-2.5">
                         <span class="w-4 h-4 rounded bg-white text-[#162219] flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-1">✓</span>
                         <span>${b}</span>
@@ -3262,13 +3263,14 @@
                   </ul>
 
                   <p class="text-xs sm:text-[13px] text-white/75 leading-relaxed mb-8">
-                    ${emp.p2 || 'Our experienced field teams work with farming communities across Andhra Pradesh, Telangana and Karnataka. We combine ground-level implementation, digital mapping and farmer engagement to create sustainable agricultural opportunities.'}
+                    ${emp.p2 ?? 'Our experienced field teams work with farming communities across Andhra Pradesh, Telangana and Karnataka. We combine ground-level implementation, digital mapping and farmer engagement to create sustainable agricultural opportunities.'}
                   </p>
 
+                  ${(emp.ctaText ?? 'Get in Touch').trim() ? `
                   <a href="${routeUrl('contact')}" data-nav="contact" class="cta-pill no-underline">
-                    <span>${emp.ctaText || 'Get in Touch'}</span>
+                    <span>${emp.ctaText ?? 'Get in Touch'}</span>
                     ${arrowCircleSvg()}
-                  </a>
+                  </a>` : ''}
                 </div>
               </div>
             </div>
@@ -3279,10 +3281,10 @@
         <section class="py-16 lg:py-24 max-w-[1220px] mx-auto px-5 sm:px-8">
           <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug">
-              ${h.solutionsTitleDark || 'Comprehensive Solutions'} <span class="muted-heading">${h.solutionsTitleMuted || 'For Modern Farming'}</span>
+              ${h.solutionsTitleDark ?? 'Comprehensive Solutions'} <span class="muted-heading">${h.solutionsTitleMuted ?? 'For Modern Farming'}</span>
             </h2>
             <p class="text-xs text-gray-500 max-w-md leading-relaxed">
-              ${h.solutionsSubtitle || 'Unlock the full potential of your land today through our verified agroforestry, carbon credits, and water-saving programmes.'}
+              ${h.solutionsSubtitle ?? 'Unlock the full potential of your land today through our verified agroforestry, carbon credits, and water-saving programmes.'}
             </p>
           </div>
 
@@ -3303,7 +3305,7 @@
                   <p class="text-xs text-gray-500 leading-relaxed mb-6">${sol.sub || ''}</p>
                 </div>
                 <div class="rounded-2xl overflow-hidden aspect-square">
-                  <img data-cms-img="${sol.imgKey || 'sol1'}" src="${imgUrl(sol.imgKey || 'sol1')}" alt="${sol.title || 'Solution'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <img data-cms-img="${sol.imgKey || 'sol1'}" src="${imgUrl(sol.imgKey || 'sol1')}" alt="${sol.title ?? 'Solution'}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                 </div>
               </a>
             `).join('')}
@@ -3317,22 +3319,22 @@
             <div class="rg-2 grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
               <div class="lg:col-span-6">
                 <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-5">
-                  ${h.newsTitleDark || 'Stay Updated with'} <span class="muted-heading">${h.newsTitleMuted || 'SGS & Farming News'}</span>
+                  ${h.newsTitleDark ?? 'Stay Updated with'} <span class="muted-heading">${h.newsTitleMuted ?? 'SGS & Farming News'}</span>
                 </h2>
                 <div class="flex items-center gap-3 mb-5">
                   ${renderAvatarStack()}
-                  <span class="text-xs font-bold text-[#162219]">${h.newsCommunityText || '1,20,000+ Community'}</span>
+                  <span class="text-xs font-bold text-[#162219]">${h.newsCommunityText ?? '1,20,000+ Community'}</span>
                 </div>
                 <p class="text-xs text-gray-500 leading-relaxed mb-3">
-                  ${h.newsP1 || 'Receive verified ground updates on sapling distribution, rainfall advisories, AWD tube monitoring, and international carbon credit market benchmarks.'}
+                  ${h.newsP1 ?? 'Receive verified ground updates on sapling distribution, rainfall advisories, AWD tube monitoring, and international carbon credit market benchmarks.'}
                 </p>
                 <p class="text-xs text-gray-500 leading-relaxed mb-7">
-                  ${h.newsP2 || 'Join thousands of farmers across Andhra Pradesh, Telangana and Karnataka building sustainable rural livelihoods.'}
+                  ${h.newsP2 ?? 'Join thousands of farmers across Andhra Pradesh, Telangana and Karnataka building sustainable rural livelihoods.'}
                 </p>
                 <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-2.5 bg-white p-1.5 rounded-full border border-gray-200/80 max-w-md">
                   <input type="email" required placeholder="Enter your email" class="flex-1 bg-transparent px-4 py-2 text-xs focus:outline-none" />
                   <button type="submit" class="brand-green-bg text-white text-xs font-bold px-6 py-2.5 rounded-full transition">
-                    ${h.newsCtaText || 'Subscribe Now'}
+                    ${h.newsCtaText ?? 'Subscribe Now'}
                   </button>
                 </form>
               </div>
@@ -6077,7 +6079,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Hero Rating Value</label>
-                <input type="text" value="${h.heroRating || '4.9'}" oninput="CMS.home.heroRating=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
+                <input type="text" value="${h.heroRating ?? '4.9'}" oninput="CMS.home.heroRating=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Hero Rating Subtext</label>
@@ -6099,15 +6101,15 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-3 border-b border-gray-200">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Section Heading (Dark)</label>
-                <input type="text" value="${h.impactTitleDark || 'Our Impact'}" oninput="CMS.home.impactTitleDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.impactTitleDark ?? 'Our Impact'}" oninput="CMS.home.impactTitleDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Section Heading (Muted)</label>
-                <input type="text" value="${h.impactTitleMuted || 'in Numbers'}" oninput="CMS.home.impactTitleMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.impactTitleMuted ?? 'in Numbers'}" oninput="CMS.home.impactTitleMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Impact Section Subtitle</label>
-                <textarea rows="2" oninput="CMS.home.impactSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.impactSubtitle || 'Our commitment to sustainable agriculture drives measurable results, building healthier ecosystems, stronger communities, and lasting prosperity across Southern India.'}</textarea>
+                <textarea rows="2" oninput="CMS.home.impactSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.impactSubtitle ?? 'Our commitment to sustainable agriculture drives measurable results, building healthier ecosystems, stronger communities, and lasting prosperity across Southern India.'}</textarea>
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -6185,31 +6187,31 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-gray-200">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Story Heading (Dark)</label>
-                <input type="text" value="${(h.story && h.story.headingDark) || 'Discover the'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.headingDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.story && h.story.headingDark) ?? 'Discover the'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.headingDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Story Heading (Muted)</label>
-                <input type="text" value="${(h.story && h.story.headingMuted) || 'Journey That Built Our Story'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.headingMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.story && h.story.headingMuted) ?? 'Journey That Built Our Story'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.headingMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Story Paragraph 1</label>
-                <textarea rows="2" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.sub1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.story && h.story.sub1) || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</textarea>
+                <textarea rows="2" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.sub1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.story && h.story.sub1) ?? 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</textarea>
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Story Paragraph 2</label>
-                <textarea rows="2" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.sub2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.story && h.story.sub2) || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</textarea>
+                <textarea rows="2" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.sub2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.story && h.story.sub2) ?? 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</textarea>
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Story Paragraph 3</label>
-                <textarea rows="2" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.sub3=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.story && h.story.sub3) || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</textarea>
+                <textarea rows="2" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.sub3=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.story && h.story.sub3) ?? 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</textarea>
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Glance Subheading</label>
-                <input type="text" value="${(h.story && h.story.glanceTitle) || 'Our Journey at a Glance'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.glanceTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.story && h.story.glanceTitle) ?? 'Our Journey at a Glance'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.glanceTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Story Button Text</label>
-                <input type="text" value="${(h.story && h.story.ctaText) || 'Discover Our Journey'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.story && h.story.ctaText) ?? 'Discover Our Journey'}" oninput="if(!CMS.home.story) CMS.home.story={}; CMS.home.story.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               ${[
                 { title: 'Since 2020', desc: 'Working in sustainable agriculture and climate-focused projects.' },
@@ -6233,15 +6235,15 @@
               <div class="sm:col-span-2 font-extrabold text-sm text-[#162219]">Our Commitment Section</div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Commitment Heading (Dark)</label>
-                <input type="text" value="${(h.commitment && h.commitment.headingDark) || 'Our Commitment'}" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.headingDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.commitment && h.commitment.headingDark) ?? 'Our Commitment'}" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.headingDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Commitment Heading (Muted)</label>
-                <input type="text" value="${(h.commitment && h.commitment.headingMuted) || 'Grows Stronger With Time'}" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.headingMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.commitment && h.commitment.headingMuted) ?? 'Grows Stronger With Time'}" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.headingMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Commitment Description</label>
-                <textarea rows="2" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.desc=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.commitment && h.commitment.desc) || 'We are committed to empowering farmers with cutting-edge tools and knowledge, from distributing 16 high-value timber and fruit tree saplings to promoting regenerative farming practices.'}</textarea>
+                <textarea rows="2" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.desc=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.commitment && h.commitment.desc) ?? 'We are committed to empowering farmers with cutting-edge tools and knowledge, from distributing 16 high-value timber and fruit tree saplings to promoting regenerative farming practices.'}</textarea>
               </div>
               ${[
                 { val: '2020', title: 'Since Our Beginning', desc: 'Our commitment to sustainable agriculture.' },
@@ -6259,7 +6261,7 @@
               }).join('')}
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Commitment Button Text</label>
-                <input type="text" value="${(h.commitment && h.commitment.ctaText) || 'Get in Touch'}" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.commitment && h.commitment.ctaText) ?? 'Get in Touch'}" oninput="if(!CMS.home.commitment) CMS.home.commitment={}; CMS.home.commitment.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
             </div>
           </div>
@@ -6270,21 +6272,21 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Section Title</label>
-                <input type="text" value="${(h.empower && h.empower.title) || 'Empowering Farmers'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold bg-white" />
+                <input type="text" value="${(h.empower && h.empower.title) ?? 'Empowering Farmers'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Title Highlight (Muted)</label>
-                <input type="text" value="${(h.empower && h.empower.titleHighlight) || 'With Expert Solutions'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.titleHighlight=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.empower && h.empower.titleHighlight) ?? 'With Expert Solutions'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.titleHighlight=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Services Subheading</label>
-                <input type="text" value="${(h.empower && h.empower.servicesTitle) || 'Our Key Services'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.servicesTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.empower && h.empower.servicesTitle) ?? 'Our Key Services'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.servicesTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
             </div>
 
             <div>
               <label class="block font-bold text-gray-600 mb-1">Intro Paragraph 1</label>
-              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.p1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.empower && h.empower.p1) || 'Sadana Green Society (SGS) provides practical, field-level support to farmers through sustainable agriculture, agroforestry and climate-focused initiatives.'}</textarea>
+              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.p1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.empower && h.empower.p1) ?? 'Sadana Green Society (SGS) provides practical, field-level support to farmers through sustainable agriculture, agroforestry and climate-focused initiatives.'}</textarea>
             </div>
 
             <div class="space-y-2">
@@ -6306,7 +6308,7 @@
 
             <div>
               <label class="block font-bold text-gray-600 mb-1">Closing Paragraph 2</label>
-              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.p2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.empower && h.empower.p2) || 'Our experienced field teams work with farming communities across Andhra Pradesh, Telangana and Karnataka. We combine ground-level implementation, digital mapping and farmer engagement to create sustainable agricultural opportunities.'}</textarea>
+              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.p2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.empower && h.empower.p2) ?? 'Our experienced field teams work with farming communities across Andhra Pradesh, Telangana and Karnataka. We combine ground-level implementation, digital mapping and farmer engagement to create sustainable agricultural opportunities.'}</textarea>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-gray-200">
@@ -6331,30 +6333,30 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-gray-200">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">2nd Image Title</label>
-                <input type="text" value="${(h.empower && h.empower.thumb1Title) || 'Agroforestry Projects'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb1Title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.empower && h.empower.thumb1Title) ?? 'Agroforestry Projects'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb1Title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">2nd Image Telugu Subtitle</label>
-                <input type="text" value="${(h.empower && h.empower.thumb1Sub) || 'మొక్కల పెంపకం, భూమి మ్యాపింగ్, డ్రిప్ ఇరిగేషన్.'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb1Sub=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white telugu-text" />
+                <input type="text" value="${(h.empower && h.empower.thumb1Sub) ?? 'మొక్కల పెంపకం, భూమి మ్యాపింగ్, డ్రిప్ ఇరిగేషన్.'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb1Sub=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white telugu-text" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">3rd Image Title</label>
-                <input type="text" value="${(h.empower && h.empower.thumb2Title) || 'AWD Project'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb2Title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${(h.empower && h.empower.thumb2Title) ?? 'AWD Project'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb2Title=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">3rd Image Telugu Subtitle</label>
-                <input type="text" value="${(h.empower && h.empower.thumb2Sub) || 'వరి సాగులో నీటి పొదుపు పద్ధతులు.'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb2Sub=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white telugu-text" />
+                <input type="text" value="${(h.empower && h.empower.thumb2Sub) ?? 'వరి సాగులో నీటి పొదుపు పద్ధతులు.'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.thumb2Sub=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white telugu-text" />
               </div>
             </div>
 
             <div>
               <label class="block font-bold text-gray-600 mb-1">Farmer Photo Caption (Frosted overlay on main image)</label>
-              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.caption=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.empower && h.empower.caption) || 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.'}</textarea>
+              <textarea rows="2" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.caption=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${(h.empower && h.empower.caption) ?? 'Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.'}</textarea>
             </div>
 
             <div>
               <label class="block font-bold text-gray-600 mb-1">CTA Button Text</label>
-              <input type="text" value="${(h.empower && h.empower.ctaText) || 'Get in Touch'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              <input type="text" value="${(h.empower && h.empower.ctaText) ?? 'Get in Touch'}" oninput="if(!CMS.home.empower) CMS.home.empower={}; CMS.home.empower.ctaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
             </div>
 
             <!-- Inline Section Images -->
@@ -6374,15 +6376,15 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-3 border-b border-gray-200">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Solutions Heading (Dark)</label>
-                <input type="text" value="${h.solutionsTitleDark || 'Comprehensive Solutions'}" oninput="CMS.home.solutionsTitleDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.solutionsTitleDark ?? 'Comprehensive Solutions'}" oninput="CMS.home.solutionsTitleDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Solutions Heading (Muted)</label>
-                <input type="text" value="${h.solutionsTitleMuted || 'For Modern Farming'}" oninput="CMS.home.solutionsTitleMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.solutionsTitleMuted ?? 'For Modern Farming'}" oninput="CMS.home.solutionsTitleMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Solutions Subtitle</label>
-                <textarea rows="2" oninput="CMS.home.solutionsSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.solutionsSubtitle || 'Unlock the full potential of your land today through our verified agroforestry, carbon credits, and water-saving programmes.'}</textarea>
+                <textarea rows="2" oninput="CMS.home.solutionsSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.solutionsSubtitle ?? 'Unlock the full potential of your land today through our verified agroforestry, carbon credits, and water-saving programmes.'}</textarea>
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -6414,27 +6416,27 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pb-3 border-b border-gray-200">
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Newsletter Heading (Dark)</label>
-                <input type="text" value="${h.newsTitleDark || 'Stay Updated with'}" oninput="CMS.home.newsTitleDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.newsTitleDark ?? 'Stay Updated with'}" oninput="CMS.home.newsTitleDark=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Newsletter Heading (Muted)</label>
-                <input type="text" value="${h.newsTitleMuted || 'SGS & Farming News'}" oninput="CMS.home.newsTitleMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.newsTitleMuted ?? 'SGS & Farming News'}" oninput="CMS.home.newsTitleMuted=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Community Badge Text</label>
-                <input type="text" value="${h.newsCommunityText || '1,20,000+ Community'}" oninput="CMS.home.newsCommunityText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.newsCommunityText ?? '1,20,000+ Community'}" oninput="CMS.home.newsCommunityText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div>
                 <label class="block font-bold text-gray-600 mb-1">Subscribe Button Text</label>
-                <input type="text" value="${h.newsCtaText || 'Subscribe Now'}" oninput="CMS.home.newsCtaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+                <input type="text" value="${h.newsCtaText ?? 'Subscribe Now'}" oninput="CMS.home.newsCtaText=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Paragraph 1</label>
-                <textarea rows="2" oninput="CMS.home.newsP1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.newsP1 || 'Receive verified ground updates on sapling distribution, rainfall advisories, AWD tube monitoring, and international carbon credit market benchmarks.'}</textarea>
+                <textarea rows="2" oninput="CMS.home.newsP1=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.newsP1 ?? 'Receive verified ground updates on sapling distribution, rainfall advisories, AWD tube monitoring, and international carbon credit market benchmarks.'}</textarea>
               </div>
               <div class="sm:col-span-2">
                 <label class="block font-bold text-gray-600 mb-1">Paragraph 2</label>
-                <textarea rows="2" oninput="CMS.home.newsP2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.newsP2 || 'Join thousands of farmers across Andhra Pradesh, Telangana and Karnataka building sustainable rural livelihoods.'}</textarea>
+                <textarea rows="2" oninput="CMS.home.newsP2=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${h.newsP2 ?? 'Join thousands of farmers across Andhra Pradesh, Telangana and Karnataka building sustainable rural livelihoods.'}</textarea>
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
