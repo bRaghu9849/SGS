@@ -2996,17 +2996,15 @@
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
                 ${st.headingDark || 'Discover the'} <span class="muted-heading">${st.headingMuted || 'Journey That Built Our Story'}</span>
               </h2>
-              <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mb-4">
-                ${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}
-              </p>
               <details class="group bg-[#f8fbf8] border border-[#cfe3cc] rounded-2xl p-4 mb-6">
                 <summary class="cursor-pointer list-none flex items-center justify-between text-xs font-extrabold text-[#2e6f19] select-none">
                   <span>Read Full Story &amp; Field Approach</span>
                   <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </summary>
-                <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mt-3 pt-3 border-t border-[#cfe3cc]/60">
-                  <p>${st.sub2 || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</p>
-                  <p>${st.sub3 || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</p>
+                <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mt-3 pt-3 border-t border-[#cfe3cc]/60 whitespace-pre-line">
+                  <p>${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</p>
+                  ${st.sub2 ? `<p>${st.sub2}</p>` : '<p>We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.</p>'}
+                  ${st.sub3 ? `<p>${st.sub3}</p>` : '<p>Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.</p>'}
                 </div>
               </details>
 
