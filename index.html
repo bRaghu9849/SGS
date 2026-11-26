@@ -1159,21 +1159,35 @@
             { title: "Carbon Offsets & Ecology", sub: "Quantifying tree biomass and carbon sequestration under international standards to generate transparent farmer carbon revenue.", stat: "1,20,000+", statLabel: "Registered Farmers", imgKey: "sol3", page: "carbon-credits" }
           ],
           empower: {
-            title: "Empowering Your Farm",
-            titleHighlight: "With Expert Solutions",
+            title: "Empowering Farmers",
+            titleHighlight: "With Sustainable Solutions",
             rating: "4.9/5",
-            caption: "Dedicated agronomists and ground officers walking fields with GPS polygons across AP, Telangana and Karnataka.",
+            caption: "Our Field Team Supporting Farmers Across Three States",
             bullets: [
               "16 High-Value Forest & Fruit Species supplied directly from nurseries",
               "Alternate Wetting and Drying (AWD) cutting water consumption by 30%",
-              "Transparent 70% farmer carbon benefit sharing"
+              "Transparent 70% farmer carbon benefit sharing",
+              "Agroforestry Development – Promoting fruit and forestry plantation",
+              "GPS Land Mapping & Digital Survey Verification",
+              "Carbon Credit Programme – 70% benefit directly to farmers"
             ],
             p1: "We provide a comprehensive suite of tailored services designed to optimize farming operations, enhance soil health, and promote environmentally sustainable practices for long-term agricultural prosperity.",
             p2: "Our team combines satellite monitoring and ground validation to deliver innovative solutions, empowering farmers to achieve efficiency, earn carbon income, and build resilient agrarian futures.",
             ctaText: "Get in Touch",
             mainImg: "womanGreenhouse",
             videoThumb1: "aboutField1",
-            videoThumb2: "aboutField2"
+            videoThumb2: "aboutField2",
+            thumb1Title: "Agroforestry Projects",
+            thumb1Sub: "మొక్కల పెంపకం, భూమి మ్యాపింగ్, డ్రిప్ ఇరిగేషన్.",
+            thumb2Title: "AWD Project",
+            thumb2Sub: "వరి సాగులో నీటి పొదుపు పద్ధతులు.",
+            servicesTitle: "Our Key Services",
+            cards: [
+              { title: "Agroforestry", desc: "Fruit & Forestry Plantation Development" },
+              { title: "GPS Mapping", desc: "Digital Land Survey & Verification" },
+              { title: "AWD Irrigation", desc: "Water-saving paddy cultivation methods" },
+              { title: "Carbon Credits", desc: "70% benefit sharing with farmers" }
+            ]
           },
           steps: {
             headingDark: "How We Work With Farmers",
@@ -2050,12 +2064,17 @@
       };
     }
 
-    // Deep merge helper to backfill new sections into older cached localStorage data
+    // Deep merge helper to backfill new sections into older cached localStorage data.
+    // Arrays: source replaces target fully (no element-by-element merge).
+    // Objects: deep merged so new keys from initial defaults are preserved.
     function deepMerge(target, source) {
       if (!source || typeof source !== "object") return target;
       const output = Object.assign({}, target);
       for (const key of Object.keys(source)) {
-        if (source[key] && typeof source[key] === "object" && !Array.isArray(source[key])) {
+        // Arrays: full replacement — never merge element-by-element
+        if (Array.isArray(source[key])) {
+          output[key] = source[key];
+        } else if (source[key] && typeof source[key] === "object") {
           if (key in target && typeof target[key] === "object" && !Array.isArray(target[key])) {
             output[key] = deepMerge(target[key], source[key]);
           } else {
@@ -2071,7 +2090,7 @@
     // Initialize CMS Data
     function initCmsData() {
       const initial = getInitialCmsData();
-      const raw = localStorage.getItem("sgs_cms_data_v14");
+      const raw = localStorage.getItem("sgs_cms_data_v15");
       if (raw) {
         try {
           const parsed = JSON.parse(raw);
@@ -2111,7 +2130,7 @@
     }
     function saveCmsLocalFallback() {
       try {
-        localStorage.setItem("sgs_cms_data_v14", JSON.stringify(CMS));
+        localStorage.setItem("sgs_cms_data_v15", JSON.stringify(CMS));
       } catch(e) {
         try {
           const slim = JSON.parse(JSON.stringify(CMS));
@@ -2122,7 +2141,7 @@
               }
             }
           }
-          localStorage.setItem("sgs_cms_data_v14", JSON.stringify(slim));
+          localStorage.setItem("sgs_cms_data_v15", JSON.stringify(slim));
         } catch(e2) {}
       }
     }
@@ -2169,6 +2188,9 @@
     }
 
     // Synchronize CMS Data with Server
+    // Strategy: merge server data ON TOP of full initial defaults so no field is ever
+    // missing, then save locally. If user has unsaved changes (cmsDirty), skip to avoid
+    // overwriting in-progress edits.
     async function syncCmsWithServer() {
       try {
         const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms") : "api/cms";
@@ -2177,9 +2199,25 @@
           const srv = await res.json();
           if (srv && !srv.status && srv.global) {
             const initial = getInitialCmsData();
-            CMS = deepMerge(initial, srv);
+            // deepMerge(initial, srv): initial provides all defaults, srv overrides with saved values.
+            const merged = deepMerge(initial, srv);
+            // Stale data guard: if D1 bullets are fewer than initial defaults, keep initial
+            if (merged.home && merged.home.empower) {
+              const initEmp = initial.home && initial.home.empower;
+              if (initEmp) {
+                if (!Array.isArray(merged.home.empower.bullets) || merged.home.empower.bullets.length < (initEmp.bullets || []).length) {
+                  merged.home.empower.bullets = initEmp.bullets;
+                }
+                for (const k of Object.keys(initEmp)) {
+                  if (merged.home.empower[k] === undefined || merged.home.empower[k] === null || merged.home.empower[k] === "") {
+                    merged.home.empower[k] = initEmp[k];
+                  }
+                }
+              }
+            }
+            CMS = merged;
             try {
-              localStorage.setItem("sgs_cms_data_v14", JSON.stringify(CMS));
+              localStorage.setItem("sgs_cms_data_v15", JSON.stringify(CMS));
             } catch(e) {}
             if (typeof renderApp === "function") renderApp();
           }
