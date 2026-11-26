@@ -2997,11 +2997,19 @@
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
                 ${st.headingDark || 'Discover the'} <span class="muted-heading">${st.headingMuted || 'Journey That Built Our Story'}</span>
               </h2>
-              <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mb-6">
-                <p>${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</p>
-                <p>${st.sub2 || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</p>
-                <p>${st.sub3 || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</p>
-              </div>
+              <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mb-4">
+                ${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}
+              </p>
+              <details class="group bg-[#f8fbf8] border border-[#cfe3cc] rounded-2xl p-4 mb-6">
+                <summary class="cursor-pointer list-none flex items-center justify-between text-xs font-extrabold text-[#2e6f19] select-none">
+                  <span>Read Full Story &amp; Field Approach</span>
+                  <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mt-3 pt-3 border-t border-[#cfe3cc]/60">
+                  <p>${st.sub2 || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</p>
+                  <p>${st.sub3 || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</p>
+                </div>
+              </details>
 
               <h3 class="text-sm font-extrabold text-[#162219] uppercase tracking-wider mb-3">${st.glanceTitle || 'Our Journey at a Glance'}</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7">
@@ -5843,10 +5851,12 @@
         ws.__autoSaveBound = true;
         let _cmsTimer = null;
         ws.addEventListener("input", function() {
+          state.cmsDirty = true;
           clearTimeout(_cmsTimer);
-          _cmsTimer = setTimeout(function() { saveCmsData(); }, 500);
+          _cmsTimer = setTimeout(function() { saveCmsData(); }, 1200);
         });
         ws.addEventListener("change", function() {
+          state.cmsDirty = true;
           clearTimeout(_cmsTimer);
           saveCmsData();
         });
@@ -6164,8 +6174,10 @@
                 "Plantation Monitoring – Field inspections, sapling monitoring and farmer support.",
                 "Sustainable Agriculture – Encouraging environmentally responsible farming and improved farmer livelihoods."
               ].map((def, idx) => {
-                const val = (h.empower && Array.isArray(h.empower.bullets) && h.empower.bullets.length >= 6 && h.empower.bullets[idx]) ? h.empower.bullets[idx] : def;
-                return `<input type="text" value="${val}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!Array.isArray(CMS.home.empower.bullets) || CMS.home.empower.bullets.length < 6) CMS.home.empower.bullets=['Agroforestry Development – Promoting fruit and forestry plantations.','Farmer Mobilization & Onboarding – Connecting farmers with sustainable agricultural projects.','GPS Land Survey & Mapping – Digital land measurement, polygon mapping and field verification.','Alternate Wetting and Drying (AWD) – Supporting water-efficient rice cultivation practices.','Plantation Monitoring – Field inspections, sapling monitoring and farmer support.','Sustainable Agriculture – Encouraging environmentally responsible farming and improved farmer livelihoods.']; CMS.home.empower.bullets[${idx}]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" placeholder="Service ${idx+1}" />`;
+                const hasCustomBullets = h.empower && Array.isArray(h.empower.bullets) && h.empower.bullets.length >= 6;
+                const val = hasCustomBullets ? (h.empower.bullets[idx] ?? '') : def;
+                const safeVal = String(val).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                return `<input type="text" value="${safeVal}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!Array.isArray(CMS.home.empower.bullets) || CMS.home.empower.bullets.length < 6) CMS.home.empower.bullets=['Agroforestry Development – Promoting fruit and forestry plantations.','Farmer Mobilization & Onboarding – Connecting farmers with sustainable agricultural projects.','GPS Land Survey & Mapping – Digital land measurement, polygon mapping and field verification.','Alternate Wetting and Drying (AWD) – Supporting water-efficient rice cultivation practices.','Plantation Monitoring – Field inspections, sapling monitoring and farmer support.','Sustainable Agriculture – Encouraging environmentally responsible farming and improved farmer livelihoods.']; CMS.home.empower.bullets[${idx}]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" placeholder="Service ${idx+1}" />`;
               }).join('')}
             </div>
 
@@ -7186,6 +7198,70 @@
       // -----------------------------------------------------------------------
       // TAB 18: CHANGE PASSWORD
       // -----------------------------------------------------------------------
+      else if (t === "contact") {
+        if (!CMS.contact) CMS.contact = {};
+        if (!CMS.contact.getInTouch) CMS.contact.getInTouch = {};
+        const c = CMS.contact;
+        const gt = c.getInTouch;
+        ws.innerHTML = `
+          ${renderInlineHeroEditor('contact')}
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs mb-6">
+            ${renderAdminCardHeader('Contact Us Hero &amp; Banner Image', 'Edit the Contact page heading, subtitle, and hero photo.', 'Contact Hero')}
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Hero Title</label>
+              <input type="text" value="${c.heroTitle || 'Contact Sadana Green Society'}" oninput="CMS.contact.heroTitle=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 font-bold bg-white" />
+            </div>
+            <div>
+              <label class="block font-bold text-gray-600 mb-1">Hero Subtitle</label>
+              <textarea rows="2" oninput="CMS.contact.heroSubtitle=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${c.heroSubtitle || 'For project enquiries, farmer engagement, institutional partnerships or CSR collaboration.'}</textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              ${renderCmsImageCard('contactHero', 'Contact Page Hero Image')}
+            </div>
+          </div>
+          <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 space-y-4 text-xs">
+            ${renderAdminCardHeader('Get in Touch Details Table', 'All contact details displayed on the Contact Us page.', 'Contact Details')}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Organisation Name</label>
+                <input type="text" value="${gt.orgName || CMS.global.orgName || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.orgName=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Founder / President Line</label>
+                <input type="text" value="${gt.founder || 'Founder and President: B. Raghu Bhaskar'}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.founder=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Working States</label>
+                <input type="text" value="${gt.workingStates || CMS.global.workingStates || 'Andhra Pradesh, Telangana & Karnataka'}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.workingStates=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Phone</label>
+                <input type="text" value="${gt.phone || CMS.global.phone || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.phone=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">WhatsApp</label>
+                <input type="text" value="${gt.whatsapp || CMS.global.whatsapp || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.whatsapp=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Primary Email</label>
+                <input type="email" value="${gt.email || CMS.global.email || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.email=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Alternate Email</label>
+                <input type="email" value="${gt.emailAlt || CMS.global.emailAlt || ''}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.emailAlt=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label class="block font-bold text-gray-600 mb-1">Website</label>
+                <input type="text" value="${gt.website || CMS.global.website || 'sadanagreensociety.org'}" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.website=this.value; CMS.global.website=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block font-bold text-gray-600 mb-1">Office Address</label>
+                <textarea rows="2" oninput="if(!CMS.contact.getInTouch) CMS.contact.getInTouch={}; CMS.contact.getInTouch.office=this.value;" class="w-full border border-gray-200 rounded-xl p-2.5 bg-white">${gt.office || CMS.global.address || ''}</textarea>
+              </div>
+            </div>
+          </div>
+        `;
+      }
       else if (t === "security") {
         ws.innerHTML = `
           <div class="pb-4 border-b border-gray-200 mb-6">

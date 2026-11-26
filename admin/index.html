@@ -2094,32 +2094,48 @@
       if (!CMS.heroes.home.videoUrl) CMS.heroes.home.videoUrl = "assets/hero-video.mp4";
     }
 
-    // Save CMS Data to LocalStorage and Server Backend
+    let _cmsSaveInFlight = null;
+    let _cmsSaveQueued = false;
     function saveCmsData() {
       try {
         localStorage.setItem("sgs_cms_data_v14", JSON.stringify(CMS));
       } catch(e) {
         console.warn("Storage quota exceeded, preserving memory state:", e);
       }
-      try {
-        const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms") : "api/cms";
-        fetch(url, {
-          method: "POST",
-          cache: "no-store",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(CMS)
-        })
-        .then(res => res.json())
-        .then(data => {
-          if (!data || !data.success) {
-            console.error("CMS server save failed:", data);
-            if (typeof showToast === "function") showToast("Warning: Server save failed!");
-          }
-        })
-        .catch(err => {
-          console.error("CMS server save error:", err);
-        });
-      } catch(e) {}
+      if (_cmsSaveInFlight) {
+        _cmsSaveQueued = true;
+        return _cmsSaveInFlight;
+      }
+      const url = typeof resolveAssetUrl === "function" ? resolveAssetUrl("api/cms") : "api/cms";
+      _cmsSaveInFlight = fetch(url, {
+        method: "POST",
+        cache: "no-store",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(CMS)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data || !data.success) {
+          console.error("CMS server save failed:", data);
+          if (typeof showToast === "function") showToast("Warning: Server save failed!");
+          return false;
+        }
+        state.cmsDirty = false;
+        return true;
+      })
+      .catch(err => {
+        console.error("CMS server save error:", err);
+        if (typeof showToast === "function") showToast("Warning: Server save error!");
+        return false;
+      })
+      .finally(() => {
+        _cmsSaveInFlight = null;
+        if (_cmsSaveQueued) {
+          _cmsSaveQueued = false;
+          saveCmsData();
+        }
+      });
+      return _cmsSaveInFlight;
     }
 
     // Synchronize CMS Data with Server
@@ -2130,6 +2146,7 @@
         if (res.ok) {
           const srv = await res.json();
           if (srv && !srv.status && srv.global) {
+            if (state.cmsDirty) return;
             const initial = getInitialCmsData();
             CMS = deepMerge(initial, srv);
             try {
@@ -2997,11 +3014,19 @@
               <h2 class="section-title-lg text-2xl sm:text-3xl font-extrabold leading-snug mb-4">
                 ${st.headingDark || 'Discover the'} <span class="muted-heading">${st.headingMuted || 'Journey That Built Our Story'}</span>
               </h2>
-              <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mb-6">
-                <p>${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}</p>
-                <p>${st.sub2 || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</p>
-                <p>${st.sub3 || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</p>
-              </div>
+              <p class="text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mb-4">
+                ${st.sub1 || 'Founded on a vision of environmental sustainability and rural development, Sadana Green Society (SGS) has been actively working in sustainable agriculture, agroforestry and climate-focused agricultural initiatives since 2020.'}
+              </p>
+              <details class="group bg-[#f8fbf8] border border-[#cfe3cc] rounded-2xl p-4 mb-6">
+                <summary class="cursor-pointer list-none flex items-center justify-between text-xs font-extrabold text-[#2e6f19] select-none">
+                  <span>Read Full Story &amp; Field Approach</span>
+                  <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="space-y-3 text-xs sm:text-[13.5px] text-gray-600 leading-relaxed mt-3 pt-3 border-t border-[#cfe3cc]/60">
+                  <p>${st.sub2 || 'We work closely with farmers and rural communities across Andhra Pradesh, Telangana and Karnataka, promoting tree-based farming, sustainable agricultural practices, water conservation and improved farmer livelihoods.'}</p>
+                  <p>${st.sub3 || 'Through grassroots mobilization, farmer engagement and field-level project implementation, SGS is committed to creating a greener environment and a sustainable future for farming communities.'}</p>
+                </div>
+              </details>
 
               <h3 class="text-sm font-extrabold text-[#162219] uppercase tracking-wider mb-3">${st.glanceTitle || 'Our Journey at a Glance'}</h3>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7">
@@ -5427,7 +5452,7 @@
     // =========================================================================
     // INDIVIDUAL SAVE BUTTON INTERACTIVE HANDLER
     // =========================================================================
-    function saveCmsSection(sectionKey, buttonElement) {
+    async function saveCmsSection(sectionKey, buttonElement) {
       if (buttonElement) {
         buttonElement.disabled = true;
         buttonElement.innerHTML = `
@@ -5440,21 +5465,23 @@
         buttonElement.className = "bg-yellow-600 text-white px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-sm";
       }
 
-      saveCmsData();
-      renderApp();
+      const ok = await saveCmsData();
 
-      setTimeout(() => {
-        if (buttonElement) {
+      if (buttonElement) {
+        if (ok) {
           buttonElement.innerHTML = `✓ Saved!`;
           buttonElement.className = "bg-green-700 text-white px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-md";
-          showToast(`✓ Changes to ${sectionKey} saved successfully!`);
-          setTimeout(() => {
-            buttonElement.disabled = false;
-            buttonElement.innerHTML = `Save Changes`;
-            buttonElement.className = "bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5";
-          }, 2500);
+          showToast(`✓ Changes to ${sectionKey} saved to D1!`);
+        } else {
+          buttonElement.innerHTML = `Retry Save`;
+          buttonElement.className = "bg-red-600 text-white px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-md";
         }
-      }, 400);
+        setTimeout(() => {
+          buttonElement.disabled = false;
+          buttonElement.innerHTML = `Save Changes`;
+          buttonElement.className = "bg-[#54a630] hover:bg-[#468e26] text-white px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm flex items-center gap-1.5";
+        }, 2500);
+      }
     }
 
     function renderAdminCardHeader(title, desc, sectionKey) {
@@ -5871,10 +5898,12 @@
         ws.__autoSaveBound = true;
         let _cmsTimer = null;
         ws.addEventListener("input", function() {
+          state.cmsDirty = true;
           clearTimeout(_cmsTimer);
-          _cmsTimer = setTimeout(function() { saveCmsData(); }, 500);
+          _cmsTimer = setTimeout(function() { saveCmsData(); }, 1200);
         });
         ws.addEventListener("change", function() {
+          state.cmsDirty = true;
           clearTimeout(_cmsTimer);
           saveCmsData();
         });
@@ -6192,8 +6221,10 @@
                 "Plantation Monitoring – Field inspections, sapling monitoring and farmer support.",
                 "Sustainable Agriculture – Encouraging environmentally responsible farming and improved farmer livelihoods."
               ].map((def, idx) => {
-                const val = (h.empower && Array.isArray(h.empower.bullets) && h.empower.bullets.length >= 6 && h.empower.bullets[idx]) ? h.empower.bullets[idx] : def;
-                return `<input type="text" value="${val}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!Array.isArray(CMS.home.empower.bullets) || CMS.home.empower.bullets.length < 6) CMS.home.empower.bullets=['Agroforestry Development – Promoting fruit and forestry plantations.','Farmer Mobilization & Onboarding – Connecting farmers with sustainable agricultural projects.','GPS Land Survey & Mapping – Digital land measurement, polygon mapping and field verification.','Alternate Wetting and Drying (AWD) – Supporting water-efficient rice cultivation practices.','Plantation Monitoring – Field inspections, sapling monitoring and farmer support.','Sustainable Agriculture – Encouraging environmentally responsible farming and improved farmer livelihoods.']; CMS.home.empower.bullets[${idx}]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" placeholder="Service ${idx+1}" />`;
+                const hasCustomBullets = h.empower && Array.isArray(h.empower.bullets) && h.empower.bullets.length >= 6;
+                const val = hasCustomBullets ? (h.empower.bullets[idx] ?? '') : def;
+                const safeVal = String(val).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+                return `<input type="text" value="${safeVal}" oninput="if(!CMS.home.empower) CMS.home.empower={}; if(!Array.isArray(CMS.home.empower.bullets) || CMS.home.empower.bullets.length < 6) CMS.home.empower.bullets=['Agroforestry Development – Promoting fruit and forestry plantations.','Farmer Mobilization & Onboarding – Connecting farmers with sustainable agricultural projects.','GPS Land Survey & Mapping – Digital land measurement, polygon mapping and field verification.','Alternate Wetting and Drying (AWD) – Supporting water-efficient rice cultivation practices.','Plantation Monitoring – Field inspections, sapling monitoring and farmer support.','Sustainable Agriculture – Encouraging environmentally responsible farming and improved farmer livelihoods.']; CMS.home.empower.bullets[${idx}]=this.value;" class="w-full border border-gray-200 rounded-xl px-3 py-2 bg-white" placeholder="Service ${idx+1}" />`;
               }).join('')}
             </div>
 
